@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Fraud Rules Get Stale, Anomaly Detection Adapts</title>
+  <meta name="description" content="Rule-based fraud detection breaks the moment fraudsters find a new angle. Taliferro on why automated anomaly alerts catch what static rules miss.">
+  <meta name="keywords" content="Fraud detection, automated alerts, machine learning, cybersecurity, anomaly detection, temporal efficacy, adaptive learning, scalability, operational efficiency, false positives, risk assessment, fraud prevention, traditional methods, technological advancements">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Fraud Rules Get Stale, Anomaly Detection Adapts">
+  <meta property="og:description" content="Rule-based fraud detection breaks the moment fraudsters find a new angle. Taliferro on why automated anomaly alerts catch what static rules miss.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/sep2023/sep262023/setting-up-alerts-for-unusual-patterns-can-catch-fraudulent-activity-faster-than-traditional-methods.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Fraud Rules Get Stale, Anomaly Detection Adapts">
+  <meta name="twitter:description" content="Rule-based fraud detection breaks the moment fraudsters find a new angle. Taliferro on why automated anomaly alerts catch what static rules miss.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/sep2023/sep262023/setting-up-alerts-for-unusual-patterns-can-catch-fraudulent-activity-faster-than-traditional-methods.html">
+  <link rel="canonical" href="https://taliferro.com/blog/sep2023/sep262023/setting-up-alerts-for-unusual-patterns-can-catch-fraudulent-activity-faster-than-traditional-methods.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Fraud Rules Get Stale, Anomaly Detection Adapts", "item": "https://taliferro.com/blog/sep2023/sep262023/setting-up-alerts-for-unusual-patterns-can-catch-fraudulent-activity-faster-than-traditional-methods.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/sep2023/sep262023/setting-up-alerts-for-unusual-patterns-can-catch-fraudulent-activity-faster-than-traditional-methods.html"
+        },
+        "headline": "Fraud Rules Get Stale, Anomaly Detection Adapts",
+        "description": "Rule-based fraud detection breaks the moment fraudsters find a new angle. Taliferro on why automated anomaly alerts catch what static rules miss.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-09-26",
+        "dateModified": "2026-09-12",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#the-limits-of-traditional-methods">Limits of Traditional Methods</a>
+        <a href="#the-paradigm-of-automated-alerts">Automated Alerts</a>
+        <a href="#advantages-of-automated-alert-systems">Advantages</a>
+        <a href="#considerations-for-implementation">Considerations</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Fraud Rules Get Stale, Anomaly Detection Adapts</h1>
+          <p>A fixed rule catches the fraud pattern you already knew about. Taliferro on why anomaly-detection alerts, which learn what "normal" looks like and flag what isn't, catch the fraud you didn't see coming.</p>
+          <p class="fine">Published: 26 Sep 2023 · Updated: 12 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp">Fraud detection has long relied on manual audits and rule-based systems: if a transaction matches a known bad pattern, flag it. That approach works until fraudsters find a pattern the rules don't cover, which is exactly when it fails. Automated alerts built on anomaly detection take a different approach — instead of checking transactions against a fixed list of known fraud signatures, they learn what normal activity looks like for an account or a system, and flag whatever doesn't fit. Taliferro helps clients set up that kind of monitoring on top of the data they already have.</p>
+          <h2 id="the-limits-of-traditional-methods" class="text-capitalize wow fadeInUp"> The Limits of Traditional Methods </h2>
+          <p class="wow fadeInUp">Rule-based fraud detection and manual review have real strengths — they're auditable, predictable, and easy to explain to a regulator. But both are reactive by design. A rule only catches the fraud pattern someone already wrote a rule for, and manual audits can't scale to the volume most systems see today. Fraudsters adapt faster than most rule sets get updated, which is why <a href="https://taliferro.com/blog/may2023/may312023/seven-essential-steps-to-boost-cybersecurity-expert-advice-from-taliferro-group-it-consulting.html">cybersecurity</a> teams increasingly treat static rules as a baseline, not the whole defense.</p>
+          <h2 id="the-paradigm-of-automated-alerts" class="text-capitalize wow fadeInUp"> Automated Alerts and Anomaly Detection </h2>
+          <p class="wow fadeInUp">Automated alert systems typically run on <a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a> models or statistical baselines that continuously watch for deviations from established behavior, rather than checking against a fixed rulebook. When an account or transaction moves outside its normal pattern, the system raises an alert immediately, without waiting for a human to notice. That removes the fatigue and inconsistency that come with manual review, and it runs around the clock.</p>
+          <h2 id="advantages-of-automated-alert-systems" class="text-capitalize wow fadeInUp"> Advantages of Automated Alert Systems </h2>
+          <ul>
+            <li><strong>Speed:</strong> Automated systems flag anomalies as they happen, often before real damage is done.</li>
+            <li><strong>Adaptive learning:</strong> The underlying models can be retrained as new fraud patterns emerge, instead of waiting for someone to write a new rule.</li>
+            <li><strong>Scale:</strong> These systems scale across large volumes of activity without a matching increase in headcount.</li>
+            <li><strong>Fewer false positives over time:</strong> As the model sees more data, it gets better at telling genuine anomalies apart from ordinary variation.</li>
+          </ul>
+          <h2 id="considerations-for-implementation" class="text-capitalize wow fadeInUp"> Considerations for Implementation </h2>
+          <p class="wow fadeInUp">None of this means adopting an automated alert system uncritically. Before rolling one out, it's worth vetting the underlying model for robustness and running a real risk assessment to confirm it actually fits the use case — a model tuned for credit card fraud won't necessarily transfer to account takeover or insurance claims.</p>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp">Automated, anomaly-based alerts aren't a replacement for every rule-based check, but they close the gap that static rules leave open — catching the fraud pattern nobody wrote a rule for yet. Paired with the audits and controls already in place, they give a fraud program a chance to keep up with how fraud actually evolves.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need stronger model confidence?</strong>
+            <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">how we validate models</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the model problem</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Fraud detection</em></li>
+                <li><em>automated alerts</em></li>
+                <li><em>machine learning</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Fraud detection</li>
+              <li>automated alerts</li>
+              <li>machine learning</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="ai_ml" data-source="blog_cta" data-page="setting-up-alerts-for-unusual-patterns-can-catch-fraudulent-activity-faster-than-traditional-methods">Machine learning consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/sep2023/sep252023/geospatial-heat-maps-can-tell-you-where-your-local-customers-are.html">&larr; A Geospatial Heat Map Shows Where, Not Why</a>
+            <a class="button" href="https://taliferro.com/blog/sep2023/sep272023/how-to-choose-a-web-development-company-a-comprehensive-guide.html">Choosing the Right Web Development Company: A Guide &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

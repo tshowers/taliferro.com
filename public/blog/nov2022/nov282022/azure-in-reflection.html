@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>My Azure Cheat Sheet, Because I Keep Forgetting What Half of This Does</title>
+  <meta name="description" content="A brain dump of Azure components — virtual networks, Data Factory, Data Lake, Cosmos DB, and the rest — written so future me (and anyone else) doesn't have to relearn what each one is for.">
+  <meta name="keywords" content="Azure Products, Azure Cheat Sheet, Virtual Network, Azure Active Directory, Network Security Groups, Azure Data Factory, Azure Data Lake, Azure Data Store, Azure Backup Vault, Virtual Machine, Azure Data Bricks, Azure Storage Blob, Machine Learning Workspaces, Azure SQL Database, Cosmos DB, Azure Slots, WebApp, API App, Cloud Computing, Microsoft Azure, Azure Services, Cloud Architecture">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="My Azure Cheat Sheet, Because I Keep Forgetting What Half of This Does">
+  <meta property="og:description" content="A brain dump of Azure components — virtual networks, Data Factory, Data Lake, Cosmos DB, and the rest — written so future me (and anyone else) doesn't have to relearn what each one is for.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/nov2022/nov282022/azure-in-reflection.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="My Azure Cheat Sheet, Because I Keep Forgetting What Half of This Does">
+  <meta name="twitter:description" content="A brain dump of Azure components — virtual networks, Data Factory, Data Lake, Cosmos DB, and the rest — written so future me (and anyone else) doesn't have to relearn what each one is for.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/nov2022/nov282022/azure-in-reflection.html">
+  <link rel="canonical" href="https://taliferro.com/blog/nov2022/nov282022/azure-in-reflection.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "My Azure Cheat Sheet, Because I Keep Forgetting What Half of This Does", "item": "https://taliferro.com/blog/nov2022/nov282022/azure-in-reflection.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/nov2022/nov282022/azure-in-reflection.html"
+        },
+        "headline": "My Azure Cheat Sheet, Because I Keep Forgetting What Half of This Does",
+        "description": "A brain dump of Azure components — virtual networks, Data Factory, Data Lake, Cosmos DB, and the rest — written so future me (and anyone else) doesn't have to relearn what each one is for.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-11-28",
+        "dateModified": "2026-08-04",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#products">Products</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>My Azure Cheat Sheet, Because I Keep Forgetting What Half of This Does</h1>
+          <p>The longer I'm away from a full Azure buildout, the harder it gets to remember what each component actually does versus what it sounds like it does. This is the brain dump — written for future me, and for anyone else who needs a fast, honest answer instead of another marketing page.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p> The longer I am away from Azure, the harder it is for me to remember all the components I used to work with. Thus I am creating this post as a cheat sheet — a brain dump that can be useful to future me and any architects who want a quick understanding of some of the Azure products. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">When cloud complexity starts slowing delivery, <a href="https://taliferro.com/cloud-architecture-consulting/">how we untangle cloud systems</a> shows how Taliferro turns cloud architecture into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="products" class="text-capitalize"> Products </h2>
+          <p>
+            <strong>Virtual Network</strong> - in the Azure environment, a virtual network is established as the platform for data, middleware execution, and resource retrieval. All the resources will communicate outbound to the internet and inbound with Azure components.
+          </p>
+          <p>
+            <strong>Data Private Subnet</strong> - A dedicated data subnet within the virtual network. The advantage of breaking the data and app environment up into a subnet is that the subnet allows the division of one network into logical subnetworks, separating data duties from middleware and web resource duties.
+          </p>
+          <p>
+            <strong>App Environment Subnet</strong> - This subnet is responsible for all business logic, web service, and resource access.
+          </p>
+          <p>
+            <strong>Azure Active Directory</strong> - The Azure Active Directory component serves as an identity management service and can filter access to applications by enforcing security rules. In addition, the AD services allow a project to leverage Single Sign On (SSO).
+          </p>
+          <p>
+            <strong>Azure Network Security Groups (NSG)</strong> - An NSG is used to filter network traffic to and from Azure resources in a virtual network.
+          </p>
+          <p>
+            <strong>Azure Data Factory</strong> - The Data Factory can issue custom commands to extract data from external sources through the VM. The Azure Data Factory allows a project to create extract-transform-load (ETL) commands that populate a proposed Unified Data Platform (UDP).
+          </p>
+          <p>
+            <strong>Azure Data Lake</strong><span><span> - The Azure Data Lake works in conjunction with the storage blob for data that is structured, imported through a batch process, and used for streaming <a href="https://taliferro.com/blog/oct2023/oct092023/how-we-uncover-hidden-revenue-in-your-data.html">analytics</a> and </span><a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a>. The Data Lake is designed to scale across SQL services. If there will be <a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a> aspects to a project, the structured data can live here. </span>
+          </p>
+          <p>
+            <strong>Azure Data Store</strong> - Used as a repository for data analytics workflow for unstructured, semi-structured, or structured data. It automatically replicates for unexpected hardware failures and has unlimited size and no limits to scale.
+          </p>
+          <p>
+            <strong>Azure Backup Vault</strong> - is a cloud-to-cloud implementation where cloud-based VMs and data can be backed up to the Backup Vault without disrupting services.
+          </p>
+          <p>
+            <strong> Virtual Machine (VM)</strong> - The virtual machine will act as the gateway for the Azure Data Factory to extract data from external data stores such as ServiceNow, Rally, and so on.
+          </p>
+          <p>
+            <strong>Azure Data Bricks</strong><span> - This can provide the service necessary to harness all the data collected and apply <a href="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html">data science</a> to the acquired data. </span>
+          </p>
+          <p>
+            <strong>Azure Storage Blob</strong> - If there will be extraction from many systems, the data can grow exponentially, and if the data is possibly unstructured, or the information is in a binary format. A blob is used to store the data and for analysis by other Azure services.
+          </p>
+          <p>
+            <strong>Azure Machine Learning Workspaces</strong> - Data scientists use the machine learning workspace to conduct experiments on the data.
+          </p>
+          <p>
+            <strong>Azure SQL database</strong> - The SQL database is used to create custom data tables and enforce referential integrity, in addition to running necessary stored procedures to generate the data the UI needs.
+          </p>
+          <p>
+            <strong>Cosmos DB </strong> - Cosmos DB can house transformed SQL tables into NoSQL for easy access to middleware. The NoSQL can be a prepackaged summary and lists for easy retrieval, thus decoupling transformation from middleware.
+          </p>
+          <p>
+            <strong>Slots</strong> - are used as a way to version deployed code. The active slot will permanently house the most current copy code, while deprecated code is pushed down a slot.
+          </p>
+          <p>
+            <strong>WebApp</strong> - The only difference between the web app and API App is that the WebApp does not contain a defined interface. The web app is the nodejs portion of a project.
+          </p>
+          <p>
+            <strong>API App</strong> - The <a href="https://taliferro.com/api-design-services/" title="Learn About Taliferro Group's API Consulting"><strong>API</strong></a> houses the middleware (with interfaces) that contains the business logic that returns the data. Handles all CRUD requests, with the direction to allow the full-range of operations.
+          </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cloud architecture reality check?</strong>
+            <p class="mb-0">Use the article to frame the issue, then review <a href="https://taliferro.com/cloud-architecture-consulting/">cloud design support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a cloud review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Azure Products</em></li>
+                <li><em>Azure Cheat Sheet</em></li>
+                <li><em>Virtual Network</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Azure Products</li>
+              <li>Azure Cheat Sheet</li>
+              <li>Virtual Network</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="blog" data-source="blog_cta" data-page="azure-in-reflection">Cloud architecture</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/nov2022/nov272022/application-architecture.html">&larr; A Good Architecture Doesn't Prevent Failure. It Contains It.</a>
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec012022/how-your-websites-poor-performance-is-costing-you-money.html">A Slow Website Isn't an Inconvenience. It's a Sales Number. &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

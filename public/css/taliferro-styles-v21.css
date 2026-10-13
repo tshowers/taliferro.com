@@ -1,0 +1,1837 @@
+/* taliferro-styles-v15.css — Taliferro Group site-wide stylesheet */
+
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root {
+    --ink: #05070a;
+    --muted: #5e6a75;
+    --soft: #f5f5f7;
+    --line: rgba(5, 7, 10, 0.10);
+    --teal: #2585a2;
+    --teal-dark: #1d6e88;
+    --blue: #13293d;
+    --white: #ffffff;
+    --shadow: 0 18px 42px rgba(5, 7, 10, 0.07);
+    --radius: 24px;
+    --max: 1180px;
+    color-scheme: light;
+}
+
+body.theme-dark {
+    --ink: #f5f5f7;
+    --muted: #a8b0b8;
+    --soft: #111318;
+    --line: rgba(245, 245, 247, 0.12);
+    --teal: #33c2d9;
+    --teal-dark: #7dd8ea;
+    --blue: #d8e7f5;
+    --white: #05070a;
+    --shadow: none;
+    color-scheme: dark;
+    background: #05070a;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: #ffffff;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main p a,
+main li a,
+main dd a,
+main address a,
+.article-body a,
+.card a:not(.button):not(.btn):not(.pill),
+.story-card a:not(.button):not(.btn):not(.pill),
+.project-card a:not(.button):not(.btn):not(.pill),
+.contact-card a:not(.button):not(.btn):not(.pill) {
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--teal) 40%, transparent);
+    transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+main p a:hover,
+main li a:hover,
+main dd a:hover,
+main address a:hover,
+.article-body a:hover,
+.card a:not(.button):not(.btn):not(.pill):hover,
+.story-card a:not(.button):not(.btn):not(.pill):hover,
+.project-card a:not(.button):not(.btn):not(.pill):hover,
+.contact-card a:not(.button):not(.btn):not(.pill):hover {
+    color: var(--teal-dark);
+    border-bottom-color: var(--teal-dark);
+}
+
+main p a:focus-visible,
+main li a:focus-visible,
+main dd a:focus-visible,
+main address a:focus-visible,
+.article-body a:focus-visible,
+.card a:not(.button):not(.btn):not(.pill):focus-visible,
+.story-card a:not(.button):not(.btn):not(.pill):focus-visible,
+.project-card a:not(.button):not(.btn):not(.pill):focus-visible,
+.contact-card a:not(.button):not(.btn):not(.pill):focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--teal) 32%, transparent);
+    outline-offset: 3px;
+    border-bottom-color: transparent;
+}
+
+body.theme-dark main p a,
+body.theme-dark main li a,
+body.theme-dark main dd a,
+body.theme-dark main address a,
+body.theme-dark .article-body a,
+body.theme-dark .card a:not(.button):not(.btn):not(.pill),
+body.theme-dark .story-card a:not(.button):not(.btn):not(.pill),
+body.theme-dark .project-card a:not(.button):not(.btn):not(.pill),
+body.theme-dark .contact-card a:not(.button):not(.btn):not(.pill) {
+    color: var(--teal-dark);
+    border-bottom-color: color-mix(in srgb, var(--teal-dark) 42%, transparent);
+}
+
+/* ============================================================
+   Layout containers
+   ============================================================ */
+.page-shell,
+.wrap {
+    width: min(var(--max), calc(100% - 40px));
+    margin: 0 auto;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================================
+   Sticky topbar
+   ============================================================ */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(22px);
+    background: rgba(255, 255, 255, 0.86);
+    border-bottom: 1px solid rgba(5, 7, 10, 0.08);
+}
+
+body.theme-dark .topbar {
+    background: rgba(5, 7, 10, 0.78);
+    border-bottom-color: rgba(245, 245, 247, 0.10);
+}
+
+.topbar-inner {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 760;
+}
+
+.brandLogo,
+.statement-logo {
+    display: block;
+    object-fit: contain;
+}
+
+.brandLogo {
+    width: 34px;
+    height: 34px;
+}
+
+.statement-logo {
+    width: 76px;
+    height: auto;
+    margin-bottom: 28px;
+}
+
+body.theme-dark .brandLogo,
+body.theme-dark .statement-logo {
+    filter: brightness(0) invert(1);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+
+
+.story-page .hero {
+    padding-top: clamp(48px, 7vh, 88px);
+}
+
+.story-page .hero>.page-shell,
+.story-page section>.page-shell,
+.story-page .section>.page-shell {
+    width: min(var(--max), calc(100% - 40px));
+}
+
+.story-page .hero .bottom-pad,
+.story-page section .bottom-pad,
+.story-page .section .bottom-pad {
+    display: none;
+}
+
+.story-page .hero-grid,
+.story-page .story-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+    gap: clamp(36px, 6vw, 72px);
+    align-items: center;
+}
+
+.story-page .story-panel {
+    max-width: 760px;
+}
+
+.story-page .story-panel--center {
+    max-width: 880px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* Find: hero image is a tall vertical poster, not a landscape graphic —
+   stack copy above it and center it as a standalone centerpiece instead
+   of forcing it into a side-by-side column. */
+.story-page .hero-grid.hero-grid--stacked {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 48px;
+}
+
+.hero-media--centerpiece {
+    max-width: 460px;
+}
+
+.hero-media--centerpiece img {
+    display: block;
+    margin: 0 auto;
+}
+
+.story-page h1 {
+    font-size: clamp(2.4rem, 4.2vw, 4rem);
+    line-height: 1.0;
+}
+
+.story-page h2 {
+    font-size: clamp(2.8rem, 5.5vw, 5.7rem);
+    line-height: 0.94;
+    font-weight: 840;
+}
+
+.story-page .story-summary,
+.story-page .story-detail {
+    color: var(--muted);
+    font-size: clamp(1.08rem, 1.6vw, 1.32rem);
+    line-height: 1.46;
+}
+
+
+.story-page .contact-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.service-card,
+.proof-card,
+.product-card,
+.quote-card,
+.stat-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 30px;
+}
+
+.service-card {
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-index {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-weight: 750;
+}
+
+.service-card h3,
+.proof-card h3,
+.product-card h3 {
+    font-size: 1.45rem;
+    line-height: 1;
+}
+
+.service-card p,
+.proof-card p,
+.product-card p,
+.quote-card blockquote,
+.quote-card span {
+    color: var(--muted);
+}
+
+.proof-grid,
+.product-grid,
+.quote-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.quote-wrap {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dark-panel {
+    border-radius: var(--radius);
+    background: var(--ink);
+    color: var(--white);
+    padding: 44px;
+}
+
+.product-band {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--soft);
+}
+
+.product-band-inner {
+    padding: 44px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 44px;
+}
+
+/* ============================================================
+   Support material / team engagement pages
+   ============================================================ */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+}
+
+.column-panel {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: clamp(28px, 4vw, 44px);
+}
+
+.column-panel>h2 {
+    margin-bottom: 10px;
+    font-size: clamp(2rem, 3vw, 3.2rem);
+    line-height: 0.95;
+    font-weight: 840;
+}
+
+.column-subtitle {
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-weight: 750;
+}
+
+.stack {
+    display: grid;
+    gap: 14px;
+}
+
+.column-panel .service-card,
+.stack .service-card {
+    min-height: 0;
+    padding: 24px;
+    justify-content: flex-start;
+    gap: 52px;
+    background: transparent;
+}
+
+.column-panel .service-card h3,
+.stack .service-card h3 {
+    margin-bottom: 0;
+}
+
+.column-panel .service-card p,
+.stack .service-card p {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.fit-grid,
+.engagement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.fit-card,
+.engagement-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    padding: 30px;
+}
+
+.fit-card {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fit-index,
+.tag {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.fit-card h3,
+.engagement-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.55rem;
+    line-height: 1;
+}
+
+.fit-card p,
+.engagement-card p {
+    color: var(--muted);
+}
+
+.stat-stack {
+    display: grid;
+    gap: 14px;
+}
+
+.stat-stack .stat-card {
+    min-height: 0;
+    padding: 24px;
+}
+
+.stat-number {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--ink);
+    font-size: 1.45rem;
+    line-height: 1;
+    font-weight: 840;
+}
+
+.cta-link,
+.print-button,
+.theme-toggle {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--white);
+    padding: 10px 16px;
+    font-weight: 750;
+    display: inline-block;
+}
+
+.print-button,
+.theme-toggle {
+    background: var(--white);
+    color: var(--ink);
+}
+
+.print-meta {
+    display: none;
+}
+
+body.theme-dark .column-panel,
+body.theme-dark .fit-card,
+body.theme-dark .engagement-card,
+body.theme-dark .stat-stack .stat-card {
+    background: #05070a;
+    border-color: rgba(245, 245, 247, 0.14);
+}
+
+body.theme-dark .column-panel .service-card,
+body.theme-dark .stack .service-card {
+    background: #05070a;
+    border-color: rgba(245, 245, 247, 0.14);
+}
+
+body.theme-dark .cta-link {
+    background: #f5f5f7;
+    color: #05070a;
+    border-color: #f5f5f7;
+}
+
+body.theme-dark .print-button,
+body.theme-dark .theme-toggle {
+    background: #111318;
+    color: #f5f5f7;
+    border-color: rgba(245, 245, 247, 0.16);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+button,
+.button,
+.btn {
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-weight: 750;
+    cursor: pointer;
+    font: inherit;
+    box-shadow: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.button-primary,
+.btn.primary {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+}
+
+.btn.ghost {
+    background: transparent;
+    border-color: var(--line);
+}
+
+body.theme-dark .button-primary,
+body.theme-dark .btn.primary {
+    background: #f5f5f7;
+    color: #05070a;
+    border-color: #f5f5f7;
+}
+
+body.theme-dark button,
+body.theme-dark .button,
+body.theme-dark .btn {
+    background: #111318;
+    color: #f5f5f7;
+    border-color: rgba(245, 245, 247, 0.16);
+}
+
+.btnrow,
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* ============================================================
+   Hero section
+   ============================================================ */
+.hero {
+    padding: 96px 0 72px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 72px;
+    align-items: end;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 34px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 999px;
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    max-width: 900px;
+    margin-bottom: 24px;
+    font-size: clamp(3.6rem, 7.2vw, 7rem);
+    line-height: 0.9;
+    font-weight: 840;
+}
+
+.hero-copy {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: clamp(1.2rem, 2vw, 1.68rem);
+    line-height: 1.34;
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+.hero-card,
+.identity-card,
+.info-card,
+.codes-card,
+.metric-card,
+.story-card,
+.panel,
+.contact-card,
+.card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: none;
+}
+
+.hero-card {
+    padding: 38px;
+    background: var(--soft);
+}
+
+.identity-card {
+    align-self: center;
+    justify-self: end;
+    width: min(100%, 420px);
+    padding: 38px;
+    background: var(--soft);
+}
+
+.identity-card h2 {
+    margin-bottom: 22px;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.identity-list {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+}
+
+.identity-row {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+}
+
+.identity-row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.identity-row dt {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.identity-row dd {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 650;
+    line-height: 1.45;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.service-grid,
+.codes-layout {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.info-card,
+.codes-card {
+    padding: 30px;
+    background: var(--white);
+}
+
+.info-card h3,
+.codes-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.45rem;
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.info-card p,
+.codes-card li {
+    color: var(--muted);
+}
+
+.codes-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.codes-card li {
+    margin-bottom: 8px;
+}
+
+.hero-card h2 {
+    margin-bottom: 18px;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.hero-media {
+    padding: 38px;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+/* Blog posts: no hero image, so the hero is a single column and the
+   title is free to grow into the full width of the page shell. */
+.page-blog .hero-grid {
+    grid-template-columns: 1fr;
+}
+
+.page-blog h1 {
+    max-width: none;
+    font-size: clamp(3.6rem, 8.6vw, 7.6rem);
+}
+
+.card {
+    padding: 30px;
+}
+
+/* In-article internal-link callout box (border-left accent + heading + link paragraph) */
+.callout {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--soft);
+    border-radius: 0 12px 12px 0;
+}
+
+.callout strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink);
+}
+
+.callout p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    letter-spacing: -0.04em;
+}
+
+/* ============================================================
+   Quick list
+   ============================================================ */
+.quick-list {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.quick-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+}
+
+.quick-list li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.quick-list strong {
+    color: var(--ink);
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+section,
+.section,
+.hero {
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    isolation: isolate;
+}
+
+section,
+.section {
+    padding: 10px 0;
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, var(--line) 50%, transparent) 1;
+}
+
+/* Near-invisible fade at the bottom edge of each full-height section —
+   stays fully transparent for the first 70% so it never reads as a tint
+   while you're looking at the section's own content, then eases in just
+   enough that the seam into the next section doesn't feel like a hard
+   cut. Uses --ink (near-black in light mode, near-white in dark mode),
+   so it's correct in both themes automatically — no dark-mode override
+   needed. */
+section::before,
+.section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+            transparent 70%,
+            color-mix(in srgb, var(--ink) 1%, transparent) 100%);
+}
+
+/* Sections whose background is permanently dark regardless of theme (the
+   home hero, the Featured Product band) must pin this fade to the same
+   fixed near-black tone their background uses. Left to var(--ink), the
+   fade would flip to near-white in dark mode — lightening toward the
+   bottom of an always-black section, which at 1% opacity renders as
+   visible banding instead of a smooth blend. */
+.hero-dark::before,
+.section--dark-fixed::before {
+    background: linear-gradient(180deg,
+            transparent 70%,
+            rgba(5, 7, 10, 0.01) 100%);
+}
+
+.section-heading {
+    max-width: 860px;
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    margin-bottom: 14px;
+    font-size: clamp(2.8rem, 5vw, 5.6rem);
+    line-height: 0.94;
+    letter-spacing: -0.07em;
+    font-weight: 830;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 1.18rem;
+    letter-spacing: -0.02em;
+}
+
+.article-body {
+    max-width: 900px;
+}
+
+.article-body p {
+    color: var(--muted);
+    font-size: clamp(1.08rem, 1.8vw, 1.32rem);
+    line-height: 1.62;
+    letter-spacing: -0.025em;
+}
+
+/* ============================================================
+   Kicker / breadcrumb label
+   ============================================================ */
+.kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 18px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.kicker a {
+    color: var(--muted);
+    border-bottom: 1px solid color-mix(in srgb, var(--muted) 32%, transparent);
+}
+
+.kicker a:hover {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+}
+
+/* ============================================================
+   Grids
+   ============================================================ */
+.grid {
+    display: grid;
+    gap: 18px;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.metric-card {
+    padding: 30px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.metric-number {
+    display: block;
+    font-size: clamp(3rem, 6vw, 5.6rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+    font-weight: 850;
+}
+
+.metric-card p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+/* Old .metric style */
+.metric {
+    margin-bottom: 16px;
+}
+
+.metric strong {
+    display: block;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    font-weight: 850;
+}
+
+.metric span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.story-card {
+    padding: 30px;
+    min-height: 310px;
+}
+
+.story-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.75rem;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.story-card p,
+.story-card li {
+    color: var(--muted);
+}
+
+.story-card ul {
+    margin: 20px 0 0;
+    padding-left: 1.1rem;
+}
+
+.story-card li {
+    margin-bottom: 8px;
+}
+
+/* ============================================================
+   Pills
+   ============================================================ */
+.pill {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 24px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    color: #1d4ed8;
+    background: #eff6ff;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+body.theme-dark .pill {
+    background: rgba(59, 130, 246, 0.12);
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.22);
+}
+
+.pillrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.pillrow .pill {
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   Numbered list
+   ============================================================ */
+.numbered-list {
+    display: grid;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: item;
+}
+
+.numbered-list li {
+    position: relative;
+    padding: 28px 28px 28px 86px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--muted);
+}
+
+.numbered-list li::before {
+    counter-increment: item;
+    content: counter(item, decimal-leading-zero);
+    position: absolute;
+    left: 28px;
+    top: 28px;
+    color: var(--ink);
+    font-weight: 840;
+    letter-spacing: -0.05em;
+}
+
+.numbered-list strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 1.2rem;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+/* ============================================================
+   Split / panel
+   ============================================================ */
+.split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 20px;
+    align-items: stretch;
+}
+
+.panel {
+    padding: 44px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel-dark {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.panel-dark p,
+.panel-dark li {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+body.theme-dark .panel-dark {
+    background: #f5f5f7;
+    color: #05070a;
+}
+
+body.theme-dark .panel-dark p,
+body.theme-dark .panel-dark li {
+    color: #4f5963;
+}
+
+.panel h2 {
+    margin-bottom: 18px;
+    font-size: clamp(2.8rem, 5vw, 5.6rem);
+    line-height: 0.94;
+    letter-spacing: -0.075em;
+}
+
+.panel p {
+    color: var(--muted);
+    font-size: 1.12rem;
+}
+
+/* ============================================================
+   Forms
+   ============================================================ */
+form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-row,
+.form-field,
+.form-group,
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+label {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--soft);
+    color: var(--ink);
+    padding: 12px 14px;
+    font: inherit;
+    line-height: 1.35;
+    outline: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: color-mix(in srgb, var(--muted) 72%, transparent);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--teal);
+    background: var(--white);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--teal) 16%, transparent);
+}
+
+form button[type="submit"],
+form input[type="submit"] {
+    width: fit-content;
+    min-height: 48px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--white);
+    padding: 12px 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+body.theme-dark input,
+body.theme-dark textarea,
+body.theme-dark select {
+    background: #111318;
+    color: #f5f5f7;
+    border-color: rgba(245, 245, 247, 0.16);
+}
+
+body.theme-dark input:focus,
+body.theme-dark textarea:focus,
+body.theme-dark select:focus {
+    background: #0c0e12;
+    border-color: var(--teal-dark);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--teal-dark) 18%, transparent);
+}
+
+body.theme-dark form button[type="submit"],
+body.theme-dark form input[type="submit"] {
+    background: #f5f5f7;
+    color: #05070a;
+    border-color: #f5f5f7;
+}
+
+/* ============================================================
+   Contact section
+   ============================================================ */
+.contact-section {
+    padding-bottom: 48px;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px;
+    padding: 44px;
+    align-items: end;
+    background: var(--soft);
+}
+
+.contact-card h2 {
+    margin-bottom: 18px;
+    font-size: clamp(2.6rem, 5vw, 5.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.075em;
+}
+
+.contact-card p {
+    color: var(--muted);
+    font-size: 1.12rem;
+}
+
+.contact-list {
+    display: grid;
+    gap: 10px;
+    min-width: 310px;
+    color: var(--ink);
+    font-weight: 650;
+    font-style: normal;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+    padding: 26px 0 46px;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+}
+
+.footer-copy {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    white-space: nowrap;
+}
+
+.footer-links a {
+    color: var(--muted);
+    transition: color 0.15s;
+}
+
+.footer-links a:hover {
+    color: var(--ink);
+}
+
+@media (max-width: 640px) {
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ============================================================
+   Utility / legacy compat
+   ============================================================ */
+.video-16x9,
+.video-9x16 {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--soft);
+}
+
+.video-16x9 {
+    padding-bottom: 56.25%;
+}
+
+.video-9x16 {
+    width: min(100%, 240px);
+    margin-inline: auto;
+    padding-bottom: min(177.777%, 426px);
+}
+
+.video-16x9 iframe,
+.video-16x9 video,
+.video-9x16 iframe,
+.video-9x16 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* In-article video: floats beside the text instead of sitting as its
+   own centered block, so paragraphs wrap around it like a pull image. */
+.blog-video-float-right {
+    float: right;
+    width: min(45%, 260px);
+    margin: 4px 0 20px 28px;
+}
+
+.blog-video-float-right .video-9x16,
+.blog-video-float-right .video-16x9 {
+    width: 100%;
+    margin-inline: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Contains floated children (e.g. .blog-video-float-right) so a card's
+   border/background doesn't collapse above the float. */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Crops a photo to a consistent box regardless of its native dimensions,
+   so cards sitting side by side in a grid stay the same height instead of
+   stretching to whatever aspect ratio the source image happened to be. */
+.card-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+    display: block;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 640px) {
+    .blog-video-float-right {
+        float: none;
+        width: min(100%, 260px);
+        margin: 4px auto 20px;
+    }
+}
+
+.list {
+    padding-left: 1.25rem;
+    color: var(--muted);
+}
+
+.list li {
+    margin-bottom: 6px;
+    font-size: 1.06rem;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 24px 0;
+    height: 0;
+}
+
+.bottom-pad {
+    height: 48px;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1.18rem;
+}
+
+.fine {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.ph {
+    margin-bottom: 20px;
+}
+
+.ph:last-child {
+    margin-bottom: 0;
+}
+
+details {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 12px 0;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 1rem;
+}
+
+/* ============================================================
+   No-print helper
+   ============================================================ */
+/* .no-print is handled in @media print below */
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 980px) {
+    .nav-links a {
+        display: none;
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid,
+    .story-page .story-split,
+    .split,
+    .two-column,
+    .two-column-grid,
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+
+    .identity-card {
+        justify-self: stretch;
+        width: 100%;
+    }
+
+    .metric-grid,
+    .story-grid,
+    .service-grid,
+    .codes-layout,
+    .fit-grid,
+    .engagement-grid,
+    .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+
+    .page-shell,
+    .wrap {
+        width: min(100% - 24px, var(--max));
+    }
+
+    .topbar-inner {
+        min-height: 64px;
+    }
+
+    .hero-card,
+    .identity-card,
+    .info-card,
+    .codes-card,
+    .metric-card,
+    .story-card,
+    .panel,
+    .contact-card,
+    .card,
+    .column-panel,
+    .fit-card,
+    .engagement-card,
+    .numbered-list li {
+        padding: 24px;
+    }
+
+    input,
+    textarea,
+    select {
+        border-radius: 14px;
+        min-height: 46px;
+    }
+
+    .numbered-list li {
+        padding-left: 64px;
+    }
+
+    .metric-grid,
+    .story-grid,
+    .service-grid,
+    .codes-layout,
+    .fit-grid,
+    .engagement-grid,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .identity-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    section,
+    .section,
+    .hero,
+    .story-page .hero,
+    .story-page section,
+    .story-page .section {
+        min-height: auto;
+        padding: 66px 0;
+        display: block;
+    }
+
+    .hero {
+        padding: 60px 0 48px;
+    }
+
+    .hero-grid {
+        gap: 40px;
+    }
+
+    .video-9x16 {
+        width: min(100%, 220px);
+    }
+
+    .story-page h1 {
+        font-size: clamp(2rem, 7vw, 3rem);
+        line-height: 1.08;
+    }
+
+    .story-page h2 {
+        font-size: clamp(2.3rem, 12vw, 3.8rem);
+    }
+
+    .story-page .story-panel--center {
+        text-align: left;
+    }
+}
+
+/* Paid story flow */
+.paid-story-flow {
+    padding: clamp(72px, 10vh, 132px) 0;
+}
+
+.paid-story-flow>.page-shell,
+.paid-story-flow>.wrap {
+    display: grid;
+    gap: clamp(28px, 4vw, 56px);
+}
+
+.paid-story-card {
+    padding: clamp(30px, 5vw, 64px);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: none;
+}
+
+.paid-story-card h2 {
+    max-width: 960px;
+    margin-bottom: clamp(48px, 7vw, 82px);
+    font-size: clamp(3.4rem, 7vw, 7.2rem);
+    line-height: 0.88;
+    font-weight: 850;
+}
+
+.paid-story-card p {
+    max-width: 760px;
+    margin-bottom: 0;
+    color: var(--ink);
+    font-size: clamp(1.02rem, 1.4vw, 1.22rem);
+    line-height: 1.48;
+}
+
+
+
+/* ============================================================
+   Print
+   ============================================================ */
+@media print {
+    @page {
+        size: letter;
+        margin: 0.45in;
+    }
+
+    body,
+    body.theme-dark {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 9.4pt;
+    }
+
+    .topbar,
+    .hero-actions,
+    .btnrow,
+    .no-print {
+        display: none !important;
+    }
+
+    .print-meta {
+        display: block !important;
+        margin-top: 10pt;
+        color: #333333 !important;
+        font-size: 8.6pt;
+    }
+
+    .page-shell,
+    .wrap {
+        width: 100%;
+    }
+
+    .statement-logo {
+        display: block !important;
+        width: 54pt;
+        margin-bottom: 10pt;
+        filter: none !important;
+    }
+
+    .hero,
+    section,
+    .section {
+        padding: 14pt 0;
+        break-inside: avoid;
+    }
+
+    .hero-grid,
+    .split,
+    .two-column,
+    .contact-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 10pt;
+    }
+
+    .service-grid,
+    .codes-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8pt;
+    }
+
+    h1 {
+        font-size: 34pt;
+        line-height: 0.95;
+        margin-bottom: 10pt;
+    }
+
+    .hero-copy,
+    .section-heading p,
+    .contact-card p,
+    .article-body p {
+        font-size: 10pt;
+    }
+
+    .section-heading {
+        margin-bottom: 10pt;
+    }
+
+    .section-heading h2,
+    .panel h2,
+    .contact-card h2 {
+        font-size: 20pt;
+        line-height: 1;
+        margin-bottom: 6pt;
+    }
+
+    .hero-card,
+    .identity-card,
+    .info-card,
+    .codes-card,
+    .metric-card,
+    .story-card,
+    .panel,
+    .contact-card,
+    .card,
+    .numbered-list li {
+        background: #ffffff !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        border: 1px solid #cccccc;
+        break-inside: avoid;
+    }
+
+    .panel-dark,
+    body.theme-dark .panel-dark {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+
+    .hero-card p,
+    .identity-list,
+    .identity-row dt,
+    .identity-row dd,
+    .info-card p,
+    .codes-card li,
+    .metric-card p,
+    .story-card p,
+    .story-card li,
+    .panel p,
+    .panel li,
+    .contact-card p,
+    .contact-list,
+    .article-body p,
+    .numbered-list li,
+    body.theme-dark .panel-dark p,
+    body.theme-dark .panel-dark li {
+        color: #333333 !important;
+    }
+
+    .metric-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8pt;
+    }
+
+    .story-grid,
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8pt;
+    }
+
+    .hero-card,
+    .identity-card,
+    .info-card,
+    .codes-card,
+    .metric-card,
+    .story-card,
+    .panel,
+    .contact-card,
+    .card {
+        padding: 12pt;
+        min-height: 0;
+    }
+
+    .numbered-list li {
+        padding: 12pt 12pt 12pt 38pt;
+    }
+
+    .numbered-list li::before {
+        left: 12pt;
+        top: 12pt;
+    }
+
+    .metric-number {
+        font-size: 28pt;
+    }
+
+    .pill {
+        background: #ffffff !important;
+        border: 1px solid #cccccc;
+        color: #000000 !important;
+    }
+
+    a {
+        color: #000000 !important;
+        text-decoration: none !important;
+        border-bottom: 0 !important;
+    }
+
+    input,
+    textarea,
+    select {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #cccccc !important;
+        box-shadow: none !important;
+    }
+
+    .footer {
+        padding: 10pt 0 0;
+    }
+}

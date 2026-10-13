@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>An MVP Is Supposed to Test an Assumption. Not Just Ship a Smaller Product.</title>
+  <meta name="description" content="How to build an MVP that tests a real assumption — not just ships a smaller product nobody asked for. Scoping, user recruitment, what to build first, and when to stop calling it an MVP.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="An MVP Is Supposed to Test an Assumption. Not Just Ship a Smaller Product.">
+  <meta property="og:description" content="How to build an MVP that tests a real assumption — not just ships a smaller product nobody asked for. Scoping, user recruitment, what to build first, and when to stop calling it an MVP.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/mar2023/mar282023/the-process-of-building-an-mvp.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="An MVP Is Supposed to Test an Assumption. Not Just Ship a Smaller Product.">
+  <meta name="twitter:description" content="How to build an MVP that tests a real assumption — not just ships a smaller product nobody asked for. Scoping, user recruitment, what to build first, and when to stop calling it an MVP.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/mar2023/mar282023/the-process-of-building-an-mvp.html">
+  <link rel="canonical" href="https://taliferro.com/blog/mar2023/mar282023/the-process-of-building-an-mvp.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "An MVP Is Supposed to Test an Assumption. Not Just Ship a Smaller Product.", "item": "https://taliferro.com/blog/mar2023/mar282023/the-process-of-building-an-mvp.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="keywords" content="MVP development, Minimum Viable Product, startup, entrepreneurship, ideation, market research, core features, design, prototyping, development, testing, user feedback">
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/mar2023/mar282023/the-process-of-building-an-mvp.html"
+        },
+        "headline": "An MVP Is Supposed to Test an Assumption. Not Just Ship a Smaller Product.",
+        "description": "How to build an MVP that tests a real assumption — not just ships a smaller product nobody asked for. Scoping, user recruitment, what to build first, and when to stop calling it an MVP.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-03-28",
+        "dateModified": "2026-08-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introdution">Introduction</a>
+        <a href="#ideation-and-market-research">Ideation and</a>
+        <a href="#defining-the-core-features">Defining the</a>
+        <a href="#design-and-prototyping">Design and</a>
+        <a href="#development">Development</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>An MVP Is Supposed to Test an Assumption — Not Just Ship a Smaller Product</h1>
+          <p>Most "MVPs" are just smaller versions of a product someone already decided to build — they don't test anything, they just ship faster. A real MVP exists to answer one specific question: does this problem matter enough that someone will use an ugly, incomplete answer to it. Everything below is built around answering that question first.</p>
+          <p class="fine">Published: 28 Mar 2023 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introdution"> Introduction </h2>
+          <p><span><span> I'll dive into the exciting world of startups and entrepreneurship as I explore "The Process of Building an MVP (Minimum Viable Product)." As the name suggests, an MVP is the essential product version that still delivers value to early adopters, allowing startups to test their ideas, gather invaluable feedback, and iterate before investing significant time and resources into a fully-featured offering. </span></span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">system design that removes drag</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <p> Whether you're an aspiring entrepreneur or an experienced business owner looking to launch a new product or service, understanding the MVP development process is essential. It helps you minimize risks and lays the foundation for your venture's long-term success. </p>
+          <p><span><span> In this blog post, I will guide you through the various stages of creating an MVP, from ideation and market research to prototyping and user testing. Along the way, we'll share valuable tips, best practices, and real-life examples to help you navigate the challenges and opportunities of bringing a new product or service to market. </span></span></p>
+          <p> So, buckle up and get ready to embark on an entrepreneurial journey as we delve into the world of MVPs and learn how to turn your ideas into successful, market-ready solutions! </p>
+          <h2 id="ideation-and-market-research" class="text-capitalize"> Ideation and Market Research </h2>
+          <p> The first step in building an MVP is identifying a problem your product or service will address. To do this, brainstorm ideas based on your experience, industry knowledge, or any gaps you've noticed in the market. Once you clearly understand the problem, conduct market research to validate your assumptions, identify your target audience, and assess the competition. </p>
+          <p>
+            <i> Tip: Use online surveys, focus groups, and competitor analysis tools to gather data and insights to help you make informed decisions about your product. </i>
+          </p>
+          <h2 id="defining-the-core-features" class="text-capitalize"> Defining the Core Features </h2>
+          <p> After validating your idea, the next step is identifying the core features that will make up your MVP. These features should be essential to solving the problem and providing value to users while being minimal enough to keep development time and cost low. List all the potential features and prioritize them using the MoSCoW method (Must-have, Should-have, Could-have, and Won't-have). </p>
+          <p>
+            <i><span> Tip: Focus on must-have features that directly address the problem and deliver the most value to your <a href="https://taliferro.com/blog/apr2023/apr012023/approaching-strangers-about-your-product-or-service-a-step-by-step-guide.html">target audience</a>. Avoid feature creep, which can delay your launch and increase development costs. </span></i>
+          </p>
+          <h2 id="design-and-prototyping" class="text-capitalize"> Design and Prototyping </h2>
+          <p><span> With your core features in place, it's time to create a visual representation of your MVP. Start by sketching out wireframes or using a digital prototyping tool to design the user interface (UI) and <a href="https://taliferro.com/blog/oct2023/oct052023/how-i-perform-mobile-app-rationalization.html">user experience</a> (UX). This will help you better understand the user flow and how your product will function. </span></p>
+          <p>
+            <i> Tip: Keep your design simple, focusing on usability and easy navigation. Test your prototype with potential users to gather feedback and iterate on your design before moving to the development phase. </i>
+          </p>
+          <h2 id="development" class="text-capitalize"> Development </h2>
+          <p> Now that you have a well-defined, user-tested prototype, it's time to develop the MVP. Choose the right technology stack and development methodology for your project, whether Agile, Scrum, or another approach that suits your needs. Assemble a skilled development team or partner with an experienced development agency to bring your MVP to life. </p>
+          <p>
+            <i> Tip: Set clear expectations and maintain open communication with your development team. Regularly review their progress and ensure they stay focused on the core features and objectives of your MVP. </i>
+          </p>
+          <h2 id="testing-and-quality-assurance" class="text-capitalize"> Testing and Quality Assurance </h2>
+          <p><span> Before launching your MVP, conducting thorough testing is crucial to ensure its functionality, performance, and security. Identify and fix any bugs or issues that could impact the <a href="https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html">user experience</a> or undermine the value proposition of your product. </span></p>
+          <p>
+            <i><span> Tip: Use a mix of manual and <a href="https://taliferro.com/blog/mar2023/mar092023/automated-testing.html">automated testing</a><span> methods, and consider employing beta testers from your <a href="https://taliferro.com/blog/apr2023/apr012023/approaching-strangers-about-your-product-or-service-a-step-by-step-guide.html">target audience</a> to provide real-world feedback on your MVP. </span></span></i>
+          </p>
+          <h2 id="launch-and-gather-feedback" class="text-capitalize"> Launch and Gather Feedback </h2>
+          <p> With a functional, tested MVP, it's time to launch! Share your MVP with early adopters, collect feedback, and monitor its performance. This valuable input will help you identify areas for improvement and guide your product development roadmap. </p>
+          <p><span><span> Implement in-app <a href="https://taliferro.com/blog/oct2023/oct092023/how-we-uncover-hidden-revenue-in-your-data.html">analytics</a> and feedback tools to track user behavior, engagement, and satisfaction. Use this data to make </span><a href="https://taliferro.com/blog/dec2023/dec082023/machine-learning-a-force-for-business-growth.html">data-driven decisions</a> about future updates and enhancements. </span></p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p> Building an MVP is a crucial and rewarding step in developing any successful product or service. It enables entrepreneurs to test their ideas, gather invaluable feedback, and iterate quickly to refine their vision. By following a structured process that includes problem identification, solution hypothesis, feature prioritization, and iterative design and development, startups can create an MVP that genuinely resonates with their target audience. </p>
+          <p> Ultimately, an MVP is not just about building a stripped-down product version; it is a strategic tool that helps businesses minimize risks, save time and resources, and validate market demand. Embracing the lean startup mindset and continually learning from user feedback is essential to long-term success. As entrepreneurs embark on this exciting journey, they should remember that the MVP is just the beginning – the real magic happens when they use it to unlock the potential of their ideas and turn them into thriving businesses. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+          <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">tell us what is stuck</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><em>MVP development</em></li>
+              <li><em>Minimum Viable Product</em></li>
+              <li><em>startup</em></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li>MVP development</li>
+            <li>Minimum Viable Product</li>
+            <li>startup</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="the-process-of-building-an-mvp">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar272023/socioeconomic-privilege-and-its-impact-on-the-justice-system.html">&larr; The Sacklers Prove Wealth Buys You Out of Justice</a>
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar292023/acknowledging-your-short-comings.html">You Can't Fix a Weakness You Haven't Admitted &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

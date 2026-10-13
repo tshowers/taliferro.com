@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="44px" viewBox="0 0 50 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sign/light" transform="translate(-48.000000, -51.000000)" fill="#cccccc" fill-rule="nonzero">
+            <path d="M57.4336358,51 C52.2234269,51 48,55.4773333 48,61 C48,66.5233333 52.2234269,71 57.4336358,71 C66.8666245,71 60.5777497,90.3333333 48,90.3333333 L48,95 C70.4468637,95 79.2444295,51 57.4336358,51 Z M85.4336358,51 C80.2234269,51 76,55.4773333 76,61 C76,66.5233333 80.2234269,71 85.4336358,71 C94.8666245,71 88.5777497,90.3333333 76,90.3333333 L76,95 C98.4468637,95 107.244429,51 85.4336358,51 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

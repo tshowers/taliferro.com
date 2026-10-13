@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>This Isn't a Design Spec. It's a Template for Writing One.</title>
+  <meta name="description" content="A guideline-first software design specification template drawn from Pressman, Sommerville, Booch, and IEEE-1016 — steal the sections you actually need, skip the ones you don't.">
+  <meta name="keywords" content="Software Design Specification, System Architecture, Detailed Design, Software Development, Design Considerations, API Design, Software Components, Development Methods, System Overview, Architectural Strategies, Software Engineering, Design Document, Coding Guidelines, Software Constraints, Interface Design, Software Glossary, Design Best Practices">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="This Isn't a Design Spec. It's a Template for Writing One.">
+  <meta property="og:description" content="A guideline-first software design specification template drawn from Pressman, Sommerville, Booch, and IEEE-1016 — steal the sections you actually need, skip the ones you don't.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:image:alt" content="Taliferro Group" />
+  <meta property="og:url" content="https://taliferro.com/blog/nov2022/nov262022/software-design-guide.html">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="This Isn't a Design Spec. It's a Template for Writing One.">
+  <meta name="twitter:description" content="A guideline-first software design specification template drawn from Pressman, Sommerville, Booch, and IEEE-1016 — steal the sections you actually need, skip the ones you don't.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/nov2022/nov262022/software-design-guide.html">
+  <link rel="canonical" href="https://taliferro.com/blog/nov2022/nov262022/software-design-guide.html">
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/nov2022/nov262022/software-design-guide.html"
+        },
+        "headline": "This Isn't a Design Spec. It's a Template for Writing One.",
+        "description": "A guideline-first software design specification template drawn from Pressman, Sommerville, Booch, and IEEE-1016 — steal the sections you actually need, skip the ones you don't.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": [
+            "https://www.linkedin.com/in/tyrone-showers",
+            "https://www.wikihow.com/Author/Tyrone-Showers",
+            "https://taliferro.com/"
+          ]
+        },
+        "datePublished": "2022-11-26",
+        "dateModified": "2026-08-04",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    {"@type":"ListItem","position":4,"name":"This Isn't a Design Spec. It's a Template for Writing One.","item":"https://taliferro.com/blog/nov2022/nov262022/software-design-guide.html"}
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most important principle in software design?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There isn’t a single one. Most developers start with SOLID principles, which cover responsibility, extensibility, and dependency management as a foundation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does software design differ from software architecture?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Design focuses on module-level structure and interactions, while architecture sets the overall system blueprint — infrastructure, scalability, and integration patterns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the role of design patterns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Design patterns are proven templates for solving common coding problems, such as Singleton for resource control or Observer for event-driven systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I choose the right design pattern?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Match the pattern to the problem domain. For example, use Factory when object creation needs flexibility, or Strategy when algorithms may vary at runtime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does TODD apply software design principles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODD follows modular design and separation of concerns, letting outreach, enrichment, and follow-up run independently but still integrate seamlessly."
+      }
+    }
+  ]
+}
+</script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#system-overview">System Overview</a>
+        <a href="#design-considerations">Design Considerations</a>
+        <a href="#assumptions-and-dependencies">Assumptions and</a>
+        <a href="#general-constraints">General Constraints</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>This Isn't a Design Spec It's a Template for Writing One</h1>
+          <p>Most design-spec templates either say too little to be useful or demand so much detail nobody finishes them. This one is built from real sources — Pressman, Sommerville, Booch, IEEE-1016, DoD-Std — as guidelines, not requirements. Use the sections that fit your project. Skip the ones that don't.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p> This is an attempt to put together a complete yet reasonably flexible set of guidelines for a software design specification. Wherever possible, these are guidelines instead of prescribed requirements for the contents of various sections and subsections — some projects will want more detailed subsections in a particular area; others can skip sections entirely. This post is a template for a template, built from several sources: </p>
+          <ul>
+            <li> Software Engineering (Pressman, Sommerville, and Van Vliet), Object-Oriented Development (Booch, Rumbaugh, Berard, Wirfs-Brock) </li>
+            <li> DoD-Std </li>
+            <li> various SEI reports </li>
+            <li> Mil-Std documentation requirements (2167/2167A) </li>
+            <li> IEEE-830 for software requirements </li>
+            <li> IEEE documentation standards (particularly IEEE-1016 for software designs) </li>
+          </ul>
+          <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+          <p> Related reading: <a href="https://taliferro.com/blog/mar2023/mar082023/building-an-effective-laboratory-information-system-architecture.html">system architecture in practice</a>, <a href="https://taliferro.com/blog/oct2023/oct022023/did-you-know-that-predictive-modeling-isnt-just-for-customer-behavior.html">predictive modeling for design choices</a>, and <a href="https://taliferro.com/api-design-services/api-design-excellence.html">API design excellence</a>. </p>
+          <p><span> I tried avoiding assuming or imposing a particular <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> methodology or paradigm and emphasizing content more than format. My desire would be that a completed software design specification meet the following criteria: </span></p>
+          <ul>
+            <li> The guide should help in conveying enough information and understanding about a project implementation. It should be able to serve as training material for new project members adequately. The reader can understand what is being said in design meetings and will feel free when they are first asked to create or modify source code. </li>
+            <li> It should serve as "objective evidence" that the designers and implementers are following through on their commitment to implement the functionality described in the requirements specification. </li>
+            <li> It needs to be as detailed as possible while at the same time not imposing too much of a burden on the designers and implementers that it becomes overly difficult to create or maintain. </li>
+          </ul>
+          <blockquote> Please note that there are no sections in this post describing administrative or business duties or proposing plans or schedules for testing or development. The areas in this post are concerned solely with the design of the software. While there are places in this post where it is appropriate to discuss the effects of such plans on the software design, most of the details concerning such procedures belong in one or more separate documents. </blockquote>
+          <h2 id="system-overview" class="text-capitalize"> System Overview </h2>
+          <p> Provide a general description of the software system, including its functionality and matters related to the overall strategy and its design (perhaps including a discussion of the basic design approach or organization). Feel free to split this up into subsections (and subsubsections, etc ...). </p>
+          <h2 id="design-considerations" class="text-capitalize"> Design Considerations </h2>
+          <p> Describe any issues that need to be addressed or resolved before attempting to devise a complete design solution. </p>
+          <h2 id="assumptions-and-dependencies" class="text-capitalize"> Assumptions and Dependencies </h2>
+          <p> Describe any assumptions or dependencies regarding the software and its use. These may concern such issues as: </p>
+          <ul>
+            <li> Related software or hardware </li>
+            <li> Operating systems </li>
+            <li> End-user characteristics </li>
+            <li> Possible and probable changes in functionality </li>
+          </ul>
+          <h2 id="general-constraints" class="text-capitalize"> General Constraints </h2>
+          <p> Describe any global limitations or constraints that significantly impact the design of the system's software (and describe the associated implications). Such conditions may be imposed by any of the following (the list is not exhaustive): </p>
+          <ul>
+            <li> Hardware or software environment </li>
+            <li> End-user environment </li>
+            <li> Availability or volatility of resources </li>
+            <li> Standards compliance </li>
+            <li> Interoperability requirements </li>
+            <li> Interface/protocol requirements </li>
+            <li> Data repository and distribution requirements </li>
+            <li> Security requirements (or other such regulations) </li>
+            <li> Memory and other capacity limitations </li>
+            <li> Performance requirements </li>
+            <li> Network communications </li>
+            <li> Verification and validation requirements (testing) </li>
+            <li> Other means of addressing quality goals </li>
+            <li> Other requirements described in the requirements specification </li>
+          </ul>
+          <h2 id="goals" class="text-capitalize"> Goals </h2>
+          <p> Describe any goals, guidelines, principles, or priorities which dominate or embody the design of the system's software. Such goals might be: </p>
+          <ul>
+            <li> The KISS principle ("Keep it simple stupid!") </li>
+            <li> Emphasis on speed versus memory use </li>
+            <li> working, looking, or "feeling" like an existing product </li>
+          </ul>
+          <p> For each such goal or guideline, unless it is implicitly obvious, describe the reason for its desirability. Feel free to state and explain each plan in its subsubsection if you wish. </p>
+          <h2 id="development-methods" class="text-capitalize"> Development Methods </h2>
+          <p> Briefly describe the method or approach used for the software design. Provide a brief explanation of why all or part of it was used or not used. If several methods were seriously considered, each such practice should be mentioned. If one or more formal/published methods were adopted or adapted, include a reference to a more detailed description of these methods. </p>
+          <h2 id="architectural-strategies" class="text-capitalize"> Architectural Strategies </h2>
+          <p><span> Describe any design decisions and strategies that affect the overall organization of the system and its higher-level structures. These strategies should provide insight into the fundamental abstractions and mechanisms used in the <a href="https://taliferro.com/blog/mar2023/mar082023/building-an-effective-laboratory-information-system-architecture.html">system architecture</a>. Describe the reasoning employed for each decision and procedure (possibly referring to previously stated design goals and principles) and how any design goals or priorities were balanced or traded off. Such choices might concern (but are not limited to) things like the following: </span></p>
+          <ul>
+            <li><span> Use a particular product type (<a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> language, database, library, etc. ...) </span></li>
+            <li> Reuse of existing software components to implement various parts/features of the system </li>
+            <li> plans for extending or enhancing the software </li>
+            <li> User interface paradigms (or system input and output models) </li>
+            <li> Hardware and software interface paradigms </li>
+            <li> Error detection and recovery </li>
+            <li> Memory management policies </li>
+            <li> External databases and data storage management and persistence </li>
+            <li> Distributed data or control over a network </li>
+            <li> Generalized approaches to control </li>
+            <li> Concurrency and synchronization </li>
+            <li> Communication mechanisms </li>
+            <li> Management of other resources </li>
+          </ul>
+          <p> Each effective strategy employed should be discussed in its subsection or (if it is complex enough) in a separate design document (with an appropriate reference here). When describing a design decision, make sure that you also discuss any other significant alternatives that were considered and your reasons for rejecting them (as well as your reasons for accepting the choice you finally chose). Sometimes it may be most effective to employ the "pattern format" for describing a strategy. </p>
+          <h2 id="system-architecture" class="text-capitalize"> System Architecture </h2>
+          <p> This section should provide a high-level overview of how the functionality and responsibilities of the system were partitioned and then assigned to subsystems or components. Please don't go into too much detail about the individual members themselves (there is a subsequent section for detailed component descriptions). The primary purpose here is to understand how and why the system was decomposed, and how the individual parts work together to provide the desired functionality. </p>
+          <p> At the top-most level, describe the software's major responsibilities and the various roles that the system (or portions of the system) must play. Please explain how the system was broken down into components/subsystems (identifying each top-level component/subsystem and the roles/responsibilities assigned to it). Describe how the higher-level components collaborate to achieve the required results. Remember to provide some rationale for choosing this system decomposition (perhaps discussing other proposed decays and why they were rejected). Feel free to use design patterns, either in describing parts of the architecture (in pattern format) or referring to elements of the architecture that employ them. </p>
+          <p> Suppose there are diagrams, models, flowcharts, documented scenarios, or use cases of the system behavior and structure. In that case, they may be included here (unless you feel they are complex enough to merit being placed in the Detailed System Design section). Diagrams that describe a particular component or subsystem should be included within the specific subsection that describes that component or subsystem. </p>
+          <blockquote> Note: This section (and its subsections) applies only to the system's newly developed (or yet-to-be-developed) portions. Suppose parts of the system already existed before this development effort began. In that case, you only need to describe the pre-existing features that the new parts of the system depend upon and only in enough detail to describe the relationships and interactions between the old and new parts. Pre-existing parts that are modified or enhanced need to be related only to the extent necessary for the reader to understand the nature of the changes that were made. </blockquote>
+          <h2 id="subsystem-architecture" class="text-capitalize"> Subsystem Architecture </h2>
+          <p> If a particular component merits a more detailed discussion than what was presented in the System Architecture section, provide that more detailed discussion in a subsection of the System Architecture section (or it may even be more appropriate to describe the component in its design document). If necessary, describe how the component was further divided into subcomponents and the relationships and interactions between the subcomponents (similar to what was done for top-level components in the System Architecture section). </p>
+          <p> If any subcomponents are also deemed to further merit discussion, then describe them in a separate subsection of this section (and in a similar fashion). Proceed to go into as many levels/subsections of discussion as needed for the reader to gain a high-level understanding of the entire system or subsystem (but remember to leave the gory details for the Detailed System Design section). </p>
+          <p> Suppose this component is substantial and complex. In that case, consider documenting its design in a separate document and simply including a reference to it in this section. If this is the option you choose, the design document for this component should have an organizational format that is very similar (if not identical to) this post. </p>
+          <h2 id="policies-and-tactics" class="text-capitalize"> Policies and Tactics </h2>
+          <p> Describe design policies and tactics that do not have sweeping architectural implications. This means the guidelines would not significantly affect the overall organization of the system and its high-level structures), but affect the interface details and implementation of various aspects of the system. Such decisions might concern (but are not limited to) things like the following: </p>
+          <ul>
+            <li> Choice of which specific product to use (compiler, interpreter, database, library, etc. ...) </li>
+            <li> Engineering trade-offs </li>
+            <li> Coding guidelines and conventions </li>
+            <li><span> The protocol of one or more subsystems, <a href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">modules</a>, or subroutines </span></li>
+            <li> The choice of a particular algorithm or programming idiom (or design pattern) to implement portions of the system's functionality </li>
+            <li> Plans for ensuring requirements traceability </li>
+            <li> Plans for testing the software </li>
+            <li> Plans for maintaining the software </li>
+            <li> Interfaces for end-users, software, hardware, and communications </li>
+            <li> Hierarchical organization of the source code into its physical components (files and directories). </li>
+            <li> How to build and generate the system's deliverables (how to compile, link, load, etc. ...) </li>
+          </ul>
+          <p> Each particular policy or set of tactics employed should probably be discussed in its own subsection or (if it is large or complex enough) in a separate design document (with an appropriate reference here, of course). When describing a design decision, make sure that you also discuss any other significant alternatives that were considered and your reasons for rejecting them (as well as your reasons for accepting the choice you finally chose). For this reason, it may be convenient to use one of the more popular "pattern formats" to describe a given tactic. </p>
+          <p> For this particular section, it may become difficult to decide whether a particular policy or set of tactics should be discussed in this section, in the System Architecture section, or the Detailed System Design section for the appropriate component. You will have to use your "best" judgment to decide this. There will usually be some global policies and tactics that should be discussed here. Still, decisions about interfaces, algorithms, and/or data structures might be more appropriately discussed in the same (sub)section as its corresponding software component in one of these other sections. </p>
+          <h2 id="detailed-system-design" class="text-capitalize"> Detailed System Design </h2>
+          <p> Most components described in the System Architecture section require a more detailed discussion. Other lower-level components and subcomponents may need to be described as well. Each subsection of this section will refer to or contain a detailed description of a system software component. The discussion provided should cover the following software component attributes: </p>
+          <h2 id="classification" class="text-capitalize"> Classification </h2>
+          <p> The kind of component, such as a subsystem, module, class, package, function, file, etc. </p>
+          <h2 id="definition" class="text-capitalize"> Definition </h2>
+          <p> The specific purpose and semantic meaning of the component. This should refer back to the requirements specification. </p>
+          <h2 id="responsibilities" class="text-capitalize"> Responsibilities </h2>
+          <p> The primary responsibilities and behavior of this component. What does this component accomplish? What roles does it play? What kinds of services does it provide to its clients? For some features, this may need to refer back to the requirements specification. </p>
+          <h2 id="constraints" class="text-capitalize"> Constraints </h2>
+          <p> Any relevant assumptions, limitations, or constraints for this component. This should include restrictions on timing, storage, or component state and might consist of rules for interacting with this component (encompassing preconditions, postconditions, invariants, other constraints on input or output values and local or global values, data formats and data access, synchronization, exceptions, etc.) </p>
+          <h2 id="composition" class="text-capitalize"> Composition </h2>
+          <p> A description of the use and meaning of the subcomponents that are a part of this component. </p>
+          <h2 id="usesinteractions" class="text-capitalize"> Uses/Interactions </h2>
+          <p> A description of these components' collaborations with other features. What other components is this entity used? What further details does this entity use (including any side-effects this entity might have on different parts of the system)? This concerns the method of interaction as well as the exchange itself. Object-oriented designs should describe any known or anticipated subclasses, superclasses, and metaclasses. </p>
+          <h2 id="resources" class="text-capitalize"> Resources </h2>
+          <p> A description of any managed, affected, or needed resources by this entity. This should include discussing possible race conditions and deadlock situations and how they might be resolved. Resources such as memory, processors, printers, databases, or a software library are external to the design. </p>
+          <h2 id="processing" class="text-capitalize"> Processing </h2>
+          <p> A description of precisely how this component performs the duties necessary to fulfill its responsibilities. This should encompass a description of any algorithms used; changes of state; appropriate time or space complexity; concurrency; methods of creation, initialization, and cleanup; and handling of exceptional conditions. </p>
+          <h2 id="interfaceexports" class="text-capitalize"> Interface/Exports </h2>
+          <p> The set of services (resources, data, types, constants, subroutines, and exceptions) that are provided by this component. The precise definition or declaration of each such element should be present, along with comments or annotations describing the meanings of values, parameters, etc. .... For each service element described, include (or provide a reference) in its discussion a description of its important software component attributes (Classification, Definition, Responsibilities, Constraints, Composition, Uses, Resources, Processing, and Interface). </p>
+          <p> Much of the information in this section is not necessarily expected to be kept separate from the source code. Much of the information can be gleaned from the source (especially if it is adequately commented). This section should not copy or reproduce information that can be easily obtained from reading the source code (this would be an unwanted and unnecessary duplication of effort and would be very difficult to keep up-to-date). It is recommended that most of this information be contained in the source (with appropriate comments for each component, subsystem, module, and subroutine). Hence, it is expected that this section will primarily consist of references to or excerpts of annotated diagrams and source code. Any referenced charts or source code excerpts should be provided in any design reviews. </p>
+          <h2 id="detailed-subsystem-design" class="text-capitalize"> Detailed Subsystem Design </h2>
+          <p> Provide a detailed description of this software component (or a reference to such a description). Complex diagrams showing the details of component structure, behavior, or information/control flow may be included in the subsection devoted to that particular component (although, unless they are very large or complex, some of these diagrams might be more appropriately included in the System Architecture section. The description should cover any applicable software component attributes (some of which may be adequately described solely by a source code declaration or excerpt). </p>
+          <h2 id="glossary" class="text-capitalize"> Glossary </h2>
+          <p> An ordered list of defined terms and concepts used throughout the document. </p>
+          <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+          <div class="faq">
+            <h3>What is the most important principle in software design?</h3>
+            <p>There isn’t a single one. Most developers start with SOLID principles, which cover responsibility, extensibility, and dependency management as a foundation.</p>
+            <h3>How does software design differ from software architecture?</h3>
+            <p>Design focuses on module-level structure and interactions, while architecture sets the overall system blueprint — infrastructure, scalability, and integration patterns.</p>
+            <h3>What is the role of design patterns?</h3>
+            <p>Design patterns are proven templates for solving common coding problems, such as Singleton for resource control or Observer for event-driven systems.</p>
+            <h3>How do I choose the right design pattern?</h3>
+            <p>Match the pattern to the problem domain. For example, use Factory when object creation needs flexibility, or Strategy when algorithms may vary at runtime.</p>
+            <h3>How does TODD apply software design principles?</h3>
+            <p>TODD follows modular design and separation of concerns, letting outreach, enrichment, and follow-up run independently but still integrate seamlessly.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><a href="https://taliferro.com/blog/mar2023/mar082023/building-an-effective-laboratory-information-system-architecture.html" title="Architecture article">system architecture</a></li>
+              <li><a href="https://taliferro.com/api-design-services/api-design-excellence.html" title="API design">API design</a></li>
+              <li><a href="https://taliferro.com/blog/oct2023/oct022023/did-you-know-that-predictive-modeling-isnt-just-for-customer-behavior.html" title="Predictive modeling">predictive modeling</a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="software-design-guide">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/nov2022/nov252022/virtual-networks-why-bother.html">&larr; Why Bother With a Virtual Network? Because the Alternative Is a Physical Cable Run.</a>
+          <a class="button" href="https://taliferro.com/blog/nov2022/nov272022/application-architecture.html">Comprehensive Guide to Application Architecture Design &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

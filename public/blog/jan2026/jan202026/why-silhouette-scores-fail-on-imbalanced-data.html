@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Why Silhouette Scores Fail on Imbalanced Data</title>
+  <meta name="description" content="Silhouette score can look great even when clustering is wrong on imbalanced data. Learn why it fails, what to check, and better ways to validate clusters before decisions depend on them.">
+  <meta name="keywords" content="silhouette score, imbalanced data, clustering validation, clustering metrics, k-means, dbscan, hdbscan, gaussian mixture model, davies bouldin index, calinski harabasz, segmentation, anomaly detection, model validation, cluster stability" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Why Silhouette Scores Fail on Imbalanced Data">
+  <meta property="og:description" content="Silhouette score can look great even when clustering is wrong on imbalanced data. Learn why it fails, what to check, and better ways to validate clusters before decisions depend on them.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="Why Silhouette Scores Fail on Imbalanced Data" />
+  <meta name="twitter:description" content="Silhouette score can look great even when clustering is wrong on imbalanced data. Learn why it fails, what to check, and better ways to validate clusters before decisions depend on them.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Why Silhouette Scores Fail on Imbalanced Data", "item": "https://taliferro.com/blog/jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html"
+        },
+        "headline": "Why Silhouette Scores Fail on Imbalanced Data",
+        "description": "Silhouette score can look great even when clustering is wrong on imbalanced data. Learn why it fails, what to check, and better ways to validate clusters before decisions depend on them.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2026-01-20T09:00:00-08:00",
+        "dateModified": "2026-08-01T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <script src="https://taliferro.com/js/exit-intent.js" defer></script>
+  <meta name="page-intent" content="ai_ml">
+  <meta name="page-title" content="Why Silhouette Scores Fail on Imbalanced Data">
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#quick-refresher-what-silhouette-score-measures">Quick refresher:</a>
+        <a href="#what-imbalanced-data-means-in-clustering">What “imbalanced</a>
+        <a href="#why-silhouette-scores-fail-on-imbalanced-data">Why silhouette</a>
+        <a href="#a-simple-example-youve-probably-seen">A simple</a>
+        <a href="#what-to-check-instead-of-trusting-a-single-silhoue">What to</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>The average is hiding the failure</h1>
+          <p>A high silhouette score can make a clustering model look reliable while a large majority cluster overwhelms the result. The dashboard says the model works. The rare customers, fraud patterns, or failure cases you needed it to find quietly disappear.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p> Silhouette score is one of the most popular ways to judge clustering. It is also one of the easiest metrics to misread when your data is imbalanced. If one group is much bigger than the others, you can get a “great” silhouette score while your clusters are useless for decisions. </p>
+          <p> Taliferro ran into this building <a href="https://taliferro.com/business-momentum-system/">TODD</a>, our own product. Signals coming in split roughly 95% routine follow-ups to 5% genuinely urgent ones. The clustering looked fine on paper — a strong silhouette score, tight majority cluster. But that score was mostly a report card on the 95%. The handful of urgent signals kept getting absorbed into the routine cluster, which is exactly backwards from what the clustering was supposed to catch. </p>
+          <p> This post breaks down why that happens, what to look for, and what to do instead. If you use clustering for segmentation, anomaly detection, or “let’s see what patterns show up,” this will save you from false confidence. </p>
+          <h2 id="quick-refresher-what-silhouette-score-measures"> Quick refresher: what silhouette score measures </h2>
+          <p> For each data point, silhouette score compares two things: </p>
+          <ul>
+            <li> a: the average distance from the point to other points in its own cluster (how tight the cluster is) </li>
+            <li> b: the average distance from the point to points in the nearest other cluster (how separated clusters are) </li>
+          </ul>
+          <p> The silhouette value for a point is (b − a) / max(a, b). Values range from −1 to 1. Higher is better. People often treat “higher” as “correct.” That’s the trap. </p>
+          <p> Silhouette score is a geometry-based metric. It rewards clusters that look like clean “blobs” with clear spacing between them. Real-world data, especially imbalanced data, rarely behaves like that. </p>
+          <h2 id="what-imbalanced-data-means-in-clustering"> What “imbalanced data” means in clustering </h2>
+          <p> In clustering, imbalance usually shows up in one of these ways: </p>
+          <ul>
+            <li> Skewed cluster sizes: one cluster contains most points, the rest are small. </li>
+            <li> Uneven densities: one cluster is tight, another is spread out. </li>
+            <li> Rare segments: the patterns you care about are small by definition (fraud, edge cases, special customer types). </li>
+          </ul>
+          <p> In real life, imbalance is normal. Customer behavior is not evenly distributed. Network traffic is not evenly distributed. Claims data is not evenly distributed. The question is not “can clustering handle imbalance?” The question is “can your validation metric tell you the truth under imbalance?” </p>
+          <h2 id="why-silhouette-scores-fail-on-imbalanced-data"> Why silhouette scores fail on imbalanced data </h2>
+          <p><strong> 1) The majority cluster dominates the average </strong></p>
+          <p> Most teams report a single average silhouette score. If 90% of your points fall into one cluster, that cluster controls the average. If the big cluster is tight and well-separated, the score looks strong even if the small clusters are garbage. </p>
+          <p> That means you can ship a model that performs well for the majority, while misclassifying the rare segments you actually care about. The metric says “great.” The business says “why are we missing the high-value customers?” </p>
+          <p> If you only take one thing from this post, take this: a single silhouette number is not a report. </p>
+          <p><strong> 2) Small clusters get punished by geometry </strong></p>
+          <p> Small clusters have fewer neighbors. That makes a (within-cluster distance) noisy — one outlier can inflate it quickly. Meanwhile, b (distance to the nearest other cluster) might not increase much, especially if the small cluster sits near the boundary of the big one. </p>
+          <p> Result: points in small clusters get low or negative silhouette values, even when the cluster is meaningful. The metric is not asking “does this cluster represent a real segment?” It is asking “does this cluster look like a clean geometric blob?” Those are different questions. </p>
+          <p><strong> 3) Different densities break “one-size” distance assumptions </strong></p>
+          <p> Silhouette score relies on distances behaving consistently across clusters. If one cluster is dense and another is diffuse, the within-cluster distance a is not comparable across clusters. A diffuse cluster can be perfectly valid (think: “casual shoppers” with varied behavior), but silhouette penalizes it because its points are farther apart. </p>
+          <p> You see this a lot with K-Means, because K-Means prefers equal-sized spherical clusters. If your data is not shaped that way, K-Means will still return something — and silhouette score can still look decent — while the segmentation is misleading. </p>
+          <p><strong> 4) The metric can reward splitting the big cluster into pieces </strong></p>
+          <p> On imbalanced data, it is common to get a better silhouette score by splitting the majority cluster into multiple clusters, even when the split has no business meaning. That can happen because separation increases (higher b) and within-cluster distances shrink (lower a) simply due to smaller groups. </p>
+          <p> So you can “optimize” the score and end up with three clusters that are all basically the same majority behavior, and still fail to isolate the rare segment. </p>
+          <p>
+            <strong> 5) High-dimensional data makes distances lie </strong>
+          </p>
+          <p> If you are clustering embeddings or wide feature sets, distance measures can suffer from the curse of dimensionality (distances become less informative as dimensions increase). When most points are similarly far apart, the silhouette math becomes unstable. You can get a smooth-looking score that does not reflect real separability. </p>
+          <p> This is why teams working with text embeddings can see “okay” silhouette scores while human review says “these clusters are nonsense.” </p>
+          <h2 id="a-simple-example-youve-probably-seen"> A simple example you’ve probably seen </h2>
+          <p> Imagine customer segmentation where: </p>
+          <ul>
+            <li> 90% are “regular buyers” </li>
+            <li> 9% are “deal hunters” </li>
+            <li> 1% are “high-value repeat buyers” </li>
+          </ul>
+          <p> Silhouette score often favors the split between regular buyers and everyone else. The 1% group can get absorbed into the 9% group, because they are both “not regular.” Your score looks good. Your marketing team can’t find the high-value segment. That is not a modeling issue. That is a validation issue. </p>
+          <p> The same pattern shows up in: </p>
+          <ul>
+            <li> fraud detection clusters </li>
+            <li> rare failure mode clustering </li>
+            <li> healthcare risk segmentation </li>
+            <li> operational incident grouping </li>
+          </ul>
+          <p> If the minority group is the business goal, silhouette score will often under-report value. </p>
+          <h2 id="what-to-check-instead-of-trusting-a-single-silhoue"> What to check instead of trusting a single silhouette number </h2>
+          <p>
+            <strong> 1) Look at the silhouette plot, not just the average </strong>
+          </p>
+          <p> A silhouette plot shows the distribution of scores per cluster. On imbalanced data, this is where the truth lives. If the big cluster has strong scores and the small clusters have messy scores, the average is lying by omission. </p>
+          <p>
+            <strong> 2) Report per-cluster silhouette and size </strong>
+          </p>
+          <p> Make it a rule: every clustering report includes cluster size and per-cluster silhouette. If the “rare” cluster is tiny and has poor silhouette, you do not automatically delete it. You investigate it. That rare cluster might be the entire reason you are clustering. </p>
+          <p>
+            <strong> 3) Add at least one alternative metric </strong>
+          </p>
+          <p> Silhouette score is not wrong. It is incomplete. Add at least one other view: </p>
+          <ul>
+            <li> Davies–Bouldin Index (DBI): lower is better. It can catch overlaps silhouette hides. </li>
+            <li> Calinski–Harabasz: helpful for comparing K values, but still shape-sensitive. </li>
+            <li> Density-based validity (DBCV): better for DBSCAN/HDBSCAN-style clusters. </li>
+          </ul>
+          <p> If metrics disagree, that is useful information. Disagreement usually means your clustering method and your data shape are not aligned. </p>
+          <p><strong> 4) Test cluster stability </strong></p>
+          <p> If you resample the data and rerun clustering, do you get the same clusters? On imbalanced data, unstable clusters are common. A cluster that appears and disappears is not a segment. It is noise dressed up as structure. </p>
+          <p><strong> 5) Validate against downstream impact </strong></p>
+          <p> The most honest validation is: does the clustering improve a real decision? </p>
+          <ul>
+            <li> Does it improve campaign lift when you target by cluster? </li>
+            <li> Does it improve fraud review precision when you prioritize by cluster? </li>
+            <li> Does it reduce support time when you route tickets by cluster? </li>
+          </ul>
+          <p> If a clustering has a “great” silhouette score but no impact, it is not a win. It is a number. </p>
+          <h2 id="how-to-cluster-imbalanced-data-more-safely"> How to cluster imbalanced data more safely </h2>
+          <p> Use the right algorithm for the shape </p>
+          <ul>
+            <li> K-Means: fast, but expects equal-sized spherical clusters. </li>
+            <li> Gaussian Mixture Models (GMM): better for elliptical clusters, still sensitive to imbalance. </li>
+            <li> DBSCAN/HDBSCAN: better for uneven shapes and noise, often better for rare groups. </li>
+          </ul>
+          <h3> Use features that reflect the decision </h3>
+          <p> Many imbalance problems are feature problems. If your “rare group” is rare because the features do not capture what makes it unique, silhouette score will not save you. Start with a feature set that mirrors the decision you plan to make. </p>
+          <h3> Don’t optimize K purely on silhouette </h3>
+          <p> If you tune K by maximizing silhouette on imbalanced data, you often get clusters that look clean but ignore minority behavior. Use multi-signal selection: silhouette plus stability plus downstream impact. </p>
+          <h2 id="how-this-connects-to-clustering-algorithms-and-sil"> How this connects to Clustering Algorithms and Silhouette Scores </h2>
+          <p> If you want the broader context on silhouette score itself, start with <a href="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html">Clustering Algorithms and Silhouette Scores</a>. This post is the “watch out” version for imbalanced, real-world data.</p>
+          <p> Bottom line: silhouette score can look great even when clustering is wrong on imbalanced data. The fix is not to throw it away. The fix is to stop using it as a single-number verdict. Use per-cluster views, stability checks, and impact tests. That is how you avoid shipping clusters that impress dashboards and fail reality. </p>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222;">
+            <strong>Building clustering into production?</strong>
+            <p class="mb-0">Taliferro helps teams validate clustering, segmentation, and ML outputs before they drive business decisions. <a href="https://taliferro.com/machine-learning-services/">Explore machine learning consulting</a>.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need stronger model confidence?</strong>
+          <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">predictive analytics services</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a consult</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><a href="https://taliferro.com/machine-learning-services/" target="_blank" title="Machine Learning Services">machine learning</a></li>
+              <li><a href="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html" target="_blank" title="Clustering Algorithms and Silhouette Scores">clustering</a></li>
+              <li><a href="https://taliferro.com/blog/jan2026/jan062026/when-high-clustering-scores-still-break-decisions.html">clustering scores</a></li>
+              <li><a href="https://taliferro.com/api-design-services/" target="_blank" title="API Design Services">api design</a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="why-silhouette-scores-fail-on-imbalanced-data">Machine learning consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/jan2026/jan172026/why-does-escalation-feel-slower-than-the-problem-itself.html">&larr; Why does escalation feel slower than the problem itself?</a>
+          <a class="button" href="https://taliferro.com/blog/feb2026/feb012026/ai-and-real-estate.html">AI in Real Estate: Why Most Firms Are Using It Incorrectly &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

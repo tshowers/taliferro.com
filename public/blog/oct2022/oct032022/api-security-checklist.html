@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most Security Checklists Are Padding. This One Is a Decade of Notes.</title>
+  <meta name="description" content="An 80-item API security checklist collected from a decade of real assessments, organized by where each item actually applies: the gateway, authorization, requests, responses, data, and operations.">
+  <meta name="keywords" content="API security checklist, TLS, JWT, OAuth, API Gateway, authentication, authorization, secure API development">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Most Security Checklists Are Padding. This One Is a Decade of Notes.">
+  <meta property="og:description" content="An 80-item API security checklist collected from a decade of real assessments, organized by where each item actually applies: the gateway, authorization, requests, responses, data, and operations.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/oct2022/oct032022/api-security-checklist.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Most Security Checklists Are Padding. This One Is a Decade of Notes.">
+  <meta name="twitter:description" content="An 80-item API security checklist collected from a decade of real assessments, organized by where each item actually applies: the gateway, authorization, requests, responses, data, and operations.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/oct2022/oct032022/api-security-checklist.html">
+  <link rel="canonical" href="https://taliferro.com/blog/oct2022/oct032022/api-security-checklist.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Most Security Checklists Are Padding. This One Is a Decade of Notes.", "item": "https://taliferro.com/blog/oct2022/oct032022/api-security-checklist.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/oct2022/oct032022/api-security-checklist.html"
+        },
+        "headline": "Most Security Checklists Are Padding. This One Is a Decade of Notes.",
+        "description": "An 80-item API security checklist collected from a decade of real assessments, organized by where each item actually applies: the gateway, authorization, requests, responses, data, and operations.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers"
+        },
+        "datePublished": "2022-10-03",
+        "dateModified": "2026-08-03T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#network-security-authentication">Network &amp; Auth</a>
+        <a href="#authorization-access-control">Authorization</a>
+        <a href="#request-validation">Requests</a>
+        <a href="#response-handling">Responses</a>
+        <a href="#data-protection-handling">Data</a>
+        <a href="#access-control-operations">Operations</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Most Security Checklists Are Padding This One Is a Decade of Notes</h1>
+          <p class="hero-sub">Most "API security checklist" posts are padding wrapped around ten generic tips. This is the actual list — eighty-some items collected from a decade of real API assessments, organized by where they actually apply: the gateway, authorization, request handling, responses, data, and operations. Skim to the section relevant to what you're building or reviewing.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="wow fadeInUp">Introduction</h2>
+          <p class="wow fadeInUp mb--80"> This started as an Apple Notes list I'd pull up before every API assessment. It's not a generic best-practices roundup — every item on it earned its place because I've seen the specific way skipping it goes wrong. It's organized into six groups matching where the check actually happens: at the gateway, in authorization, in the request, in the response, in the data itself, and in day-to-day operations. If you only have time for one section, pick the one closest to what you're building or reviewing right now. </p>
+          <h2 id="network-security-authentication" class="wow fadeInUp">Network Security &amp; Authentication</h2>
+          <ul class="list wow fadeInUp mb--80">
+            <li>Check certificate revocation on every call.</li>
+            <li>A trusted PKI issues certificates.</li>
+            <li>No export-grade encryption algorithms.</li>
+            <li>All communications from the network's edge to backends are secured using the most recent version of mutual TLS with perfect forward secrecy and a modern cipher set.</li>
+            <li>All communications to the network's edge are secured using the most recent version of TLS with perfect forward secrecy and a modern cipher set.</li>
+            <li>Authentication should include a set of claims.</li>
+            <li>Use the API Gateway to validate the Bearer token.</li>
+            <li>Ensure the API Gateway does not cache.</li>
+            <li>All calling applications provide an API key in the header.</li>
+            <li>Use an API Gateway for handling authentication.</li>
+            <li>Use an authentication method to authenticate access to all endpoints.</li>
+            <li>Use OAuth 2.0 instead of 1.0.</li>
+            <li>Certificate pinning or another suitable certificate protection method should be employed.</li>
+            <li>Ensure private keys are protected.</li>
+            <li>Check certificates uniquely identify a system.</li>
+            <li>Check the certificate against the presented server names for every call.</li>
+            <li>Check the certificate for the validity period on every call.</li>
+            <li>Use encrypted, signed bearer tokens (JWTs).</li>
+            <li>Ensure the API Gateway transmits claims to backend business logic.</li>
+            <li>The API Gateway is the only authorized caller to backend systems.</li>
+            <li>Guard for remote system impersonators.</li>
+            <li>Ensure the API delivery stack validates the identity of its caller.</li>
+            <li>Ensure the API Gateway validates JWTs.</li>
+            <li>Return a 401 status for authentication failure.</li>
+          </ul>
+          <h2 id="authorization-access-control" class="wow fadeInUp">Authorization &amp; Access Control</h2>
+          <ul class="list wow fadeInUp mb--80">
+            <li>The API Gateway evaluates the calling application to authorize access to an endpoint.</li>
+            <li>Have the API Gateway evaluate Bearer token scope.</li>
+            <li>Use authorization that requires domain knowledge below the API Gateway.</li>
+            <li>The API Gateway provides claims to underlying systems to perform authorization.</li>
+            <li>Authorization results are not cached.</li>
+            <li>Backend systems should validate that the provider of a claim set is authorized.</li>
+            <li>If OAuth, users can revoke tokens without administrator assistance.</li>
+            <li>Return a 403 for OAuth authorization failure.</li>
+            <li>Ensure authorization occurs early — before any business logic.</li>
+            <li>All code paths should require authorization.</li>
+            <li>Use scope claims to constrain the activities of a caller.</li>
+          </ul>
+          <h2 id="request-validation" class="wow fadeInUp">Request Validation</h2>
+          <ul class="list wow fadeInUp mb--80">
+            <li>Sensitive information should not be visible in paths.</li>
+            <li>Sensitive information should not be visible in headers.</li>
+            <li>Use correlation keys requested from clients.</li>
+            <li>If a client does not provide a correlation key, have the API Gateway create one.</li>
+            <li>Encrypt context.</li>
+            <li>Verify content types in request bodies.</li>
+            <li>Reject requests that do not send accepted content.</li>
+            <li>Content is verified to be syntactically correct.</li>
+            <li>Verify content against a schema.</li>
+            <li>Request bodies are not directly bound to data objects.</li>
+            <li>Ignore properties, headers, and content the API does not expect.</li>
+            <li>Accept binary objects as base64-encoded strings.</li>
+            <li>Caller and endpoints should throttle.</li>
+          </ul>
+          <h2 id="response-handling" class="wow fadeInUp">Response Handling</h2>
+          <ul class="list wow fadeInUp mb--80">
+            <li>Return errors in a consistent structure.</li>
+            <li>Do not return stack traces.</li>
+            <li>Response headers or bodies should not return server and platform names.</li>
+            <li>Do not return unnecessary information about the nature of an error.</li>
+            <li>Error responses should only include sufficient information for a consumer to know how to correct their request.</li>
+            <li>Sensitive information should not be visible in response headers.</li>
+            <li>Use the no-cache directive on API endpoints.</li>
+            <li>Use Cache-Control headers to identify stale information.</li>
+            <li>Disable caching where it isn't explicitly needed.</li>
+            <li>Redact sensitive information.</li>
+            <li>Enable CORS for APIs running in a browser.</li>
+            <li>Return HSTS headers to enforce upgrades to HTTPS on all endpoints.</li>
+            <li>Verify headers against a schema.</li>
+          </ul>
+          <h2 id="data-protection-handling" class="wow fadeInUp">Data Protection &amp; Handling</h2>
+          <ul class="list wow fadeInUp mb--80">
+            <li>Responses should not contain sensitive data.</li>
+            <li>Parameterize SQL queries.</li>
+            <li>Do not use dynamic SQL in stored procedures.</li>
+            <li>JSON is not evaluated directly as JavaScript.</li>
+            <li>Do not execute binary code or script code in the body.</li>
+            <li>Log security events into a centralized security event system.</li>
+            <li>Convert exceptions to standardized errors.</li>
+            <li>All type shapes in the API's contract definition have clearly defined and explicit descriptions and validation patterns.</li>
+          </ul>
+          <h2 id="access-control-operations" class="wow fadeInUp">Access Control &amp; Operations</h2>
+          <ul class="list wow fadeInUp mb--80">
+            <li>Have information security personnel as part of API product teams.</li>
+            <li>Test APIs for security flaws with penetration testing tools.</li>
+            <li>Test APIs with static code analysis tools.</li>
+            <li>Use managed code for API development.</li>
+            <li>Patch critical vulnerabilities immediately.</li>
+            <li>Use network isolation techniques.</li>
+            <li>Check for sudden changes in API usage.</li>
+            <li>Only appropriate personnel can disable an API.</li>
+            <li>Only appropriate personnel can disable access to APIs by applications.</li>
+            <li>Mark data with a security classification to identify its appropriate usage.</li>
+            <li>Developers cannot modify code in any environment without following the standard code progression path.</li>
+            <li>Use automated tests.</li>
+            <li>Record and track technical debt.</li>
+            <li>Non-production endpoints should not be accessible to API consumers — keep an API inventory for review and analysis.</li>
+          </ul>
+          <h2 id="conclusion" class="wow fadeInUp">Conclusion</h2>
+          <p class="wow fadeInUp mb--80"> No single item on this list is the one that matters — the value is in going through all six sections once, deliberately, instead of assuming the parts you didn't think about are fine. Taliferro turned the same underlying methodology into an <a href="https://taliferro.com/api-certification/">API security certification</a> for teams who want an independent pass through it rather than a self-check, and <a href="https://taliferro.com/api-design-services/">API design and integration services</a> for when the issue is upstream of security — the contract itself. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book an API review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li><a href="https://taliferro.com/api-certification/">API security</a></li>
+              <li><a href="https://taliferro.com/api-design-services/">API design</a></li>
+              <li><a href="https://taliferro.com/blog/toc.html">security checklist</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="api-security-checklist">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/oct2022/oct022022/what-makes-a-good-architecture-one-thats-based-on-academia-or-experience.html">&larr; Hire the Scar Tissue, Not the Credential</a>
+            <a class="button" href="https://taliferro.com/blog/oct2022/oct042022/restful-checklist.html">Calling It REST Doesn't Make It REST &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Stop Writing Proposals from Scratch | Taliferro Blog</title>
+  <meta name="description" content="Most proposals reuse 80% of the same content, yet teams rebuild from a blank page every time. See how Taliferro built TODD to draft from what's already been written.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="tech">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Stop Writing Proposals from Scratch">
+  <meta property="og:description" content="Most proposals reuse 80% of the same content, yet teams rebuild from a blank page every time. Here's what Taliferro built instead.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jun2025/jun152025/stop-writing-proposals-from-scratch.html">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="Stop Writing Proposals from Scratch" />
+  <meta name="twitter:description" content="Most proposals reuse 80% of the same content, yet teams rebuild from a blank page every time. Here's what Taliferro built instead.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/jun2025/jun152025/stop-writing-proposals-from-scratch.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jun2025/jun152025/stop-writing-proposals-from-scratch.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Stop Writing Proposals from Scratch", "item": "https://taliferro.com/blog/jun2025/jun152025/stop-writing-proposals-from-scratch.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jun2025/jun152025/stop-writing-proposals-from-scratch.html"
+        },
+        "headline": "Stop Writing Proposals from Scratch",
+        "description": "Most proposals reuse 80% of the same content, yet teams rebuild from a blank page every time. See how Taliferro built TODD to draft from what's already been written.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2025-06-15T09:00:00-07:00",
+        "dateModified": "2026-08-02T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#why-rfp-responses-fail-without-a-system">Why RFP</a>
+        <a href="#how-todd-automates-proposal-writing">How TODD</a>
+        <a href="#proposal-automation-real-time-savings">Proposal Automation:</a>
+        <a href="#continuous-improvement-with-proposal-templates">Continuous Improvement</a>
+        <a href="#bottom-line">Bottom Line</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Stop Writing Proposals from Scratch</h1>
+          <p>Most proposals reuse 80% of the same content — company info, approach, bios, references, past work — yet teams rebuild from a blank page every time. Taliferro built TODD to read the RFP, pull what's already been written, and hand back a draft instead of a cursor blinking on an empty document. The writing was never the bottleneck. The rebuilding was.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div>
+            <p>If your process for responding to RFPs starts with a blank document, you're already wasting time.</p>
+            <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">system design that removes drag</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a> keeps the work tied to outcomes instead of activity.</p>
+            <p>Most proposals reuse 80% of the same content—company info, approach, bios, references, past work. But instead of reusing, most teams rebuild. From scratch. Every time. That's hours lost on formatting, copying, and checking version history.</p>
+            <p>That's not strategy. That's busywork.</p>
+            <h2 id="why-rfp-responses-fail-without-a-system">Why RFP Responses Fail Without a System</h2>
+            <p>When I talk to teams that struggle with RFPs, it's not because they lack expertise. It's because they lack a system. Everyone scrambles to find the last good proposal. No one remembers which version had the strongest messaging. By the time the draft is done, half the team is burned out and the deadline is too close to polish it.</p>
+            <h2 id="how-todd-automates-proposal-writing">How TODD Automates Proposal Writing</h2>
+            <p>I wanted <a href="https://ask.taliferro.tech">TODD</a> to read the RFP like a person would—pull out the key pieces, connect them to past proposals, and suggest a draft.</p>
+            <p><a href="https://taliferro.com/business-momentum-system/see-how-todd-automates-follow-ups.html">See how TODD drafts outreach and follow-ups from structured templates</a> to keep proposals and communication consistent.</p>
+            <p>Now it does exactly that:</p>
+            <ul>
+              <li>Parses the RFP and finds required sections</li>
+              <li>Matches them to similar past responses and inserts content</li>
+              <li>Flags anything missing so I don't overlook details</li>
+              <li>Outputs a clean draft I can review—not write from scratch</li>
+            </ul>
+            <p>No guessing. No digging. Just a solid draft ready to refine.</p>
+            <h2 id="proposal-automation-real-time-savings">Proposal Automation: Real Time Savings</h2>
+            <p>Before TODD, I spent 6–10 hours on every proposal. Most of that wasn't writing—it was hunting, formatting, stitching. Now, I spend 1–2 hours reviewing, editing, and tailoring. That's it.</p>
+            <p>And I'm more consistent. My responses don't miss key points. My tone stays aligned. And I never scramble at the last minute.</p>
+            <h2 id="continuous-improvement-with-proposal-templates">Continuous Improvement with Proposal Templates</h2>
+            <p>Every time I finalize a proposal, TODD learns from it. So the next draft is even tighter. It's not just automation—it's accumulation. Smarter each time.</p>
+            <h2 id="bottom-line">Bottom Line</h2>
+            <p>If you're still writing from scratch, you're spending too much time on what's already been written.</p>
+            <p>TODD flips the process. It gives you a strong draft out the gate—so you can focus on winning, not formatting.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="stop-writing-proposals-from-scratch">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/jun2025/jun012025/how-i-got-back-10-hours-a-week-without-hiring-anyone.html">&larr; How I Got Back 10 Hours a Week Without Hiring Anyone</a>
+          <a class="button" href="https://taliferro.com/blog/jul2025/jul092025/why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do.html">Why Your CRM Isn&#39;t Broken — It&#39;s Doing Exactly What It Was Built to Do &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

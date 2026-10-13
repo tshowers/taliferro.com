@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most Network Budgets Aren't Too Small. They're Spent in the Wrong Order.</title>
+  <meta name="description" content="You can't buy everything. But you can buy things in the right order. A plain-English guide to sequencing network security, redundancy, and monitoring when the budget doesn't stretch to all three.">
+  <meta name="keywords" content="Network Security, Efficient Networking, Cost-Effective Network Solutions, Network Design, Hardware Selection, Load Balancers, Proxies, Redundancy, Cloud Computing, Network Monitoring, Data Backup, VPN, Firewalls, DDoS Protection, IDS, IPS, Network Maintenance, Capacity Planning, Network Best Practices">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Most Network Budgets Aren't Too Small. They're Spent in the Wrong Order.">
+  <meta property="og:description" content="You can't buy everything. But you can buy things in the right order. A plain-English guide to sequencing network security, redundancy, and monitoring when the budget doesn't stretch to all three.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/nov2022/nov022022/best-practices-for-network-systems.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Most Network Budgets Aren't Too Small. They're Spent in the Wrong Order.">
+  <meta name="twitter:description" content="You can't buy everything. But you can buy things in the right order. A plain-English guide to sequencing network security, redundancy, and monitoring when the budget doesn't stretch to all three.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/nov2022/nov022022/best-practices-for-network-systems.html">
+  <link rel="canonical" href="https://taliferro.com/blog/nov2022/nov022022/best-practices-for-network-systems.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Most Network Budgets Aren't Too Small. They're Spent in the Wrong Order.", "item": "https://taliferro.com/blog/nov2022/nov022022/best-practices-for-network-systems.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/nov2022/nov022022/best-practices-for-network-systems.html"
+        },
+        "headline": "Most Network Budgets Aren't Too Small. They're Spent in the Wrong Order.",
+        "description": "You can't buy everything. But you can buy things in the right order. A plain-English guide to sequencing network security, redundancy, and monitoring when the budget doesn't stretch to all three.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-11-02",
+        "dateModified": "2026-08-04",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#network-security-and-performance">Network security</a>
+        <a href="#secure-network-devices">Secure Network</a>
+        <a href="#firewalls">Firewalls</a>
+        <a href="#vpn">VPN</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Most Network Budgets Aren't Too Small They're Spent in the Wrong Order</h1>
+          <p>Nobody has money for the best firewall, full redundancy, and round-the-clock monitoring all at once. That's not a networking problem — it's a sequencing problem. Buy in the wrong order and you end up with a great firewall protecting a single point of failure. Taliferro sets that order before we spec any hardware.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p> Say you're a 40-person company with $15,000 to spend on your network this year. That's not enough for the best firewall, full hardware redundancy, and round-the-clock monitoring. Most guides pretend you'll eventually afford all of it, so they list everything with equal weight. That's not useful advice — it's a wish list. What actually matters when the budget is finite is the order you buy in. Get the order right and a modest budget covers the failures that actually happen. Get it backward and a big budget still leaves you exposed. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">When cloud complexity starts slowing delivery, <a href="https://taliferro.com/cloud-architecture-consulting/">cloud design support</a> shows how Taliferro turns cloud architecture into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="network-security-and-performance" class="text-capitalize"> Buy security before you buy speed </h2>
+          <p> Security has to be part of the network design from day one, not a line item added after something goes wrong. It also isn't a one-time purchase — the same firewall rule that was correct in January can be wrong by June because the threats it's defending against changed. Budget for the review, not just the box. </p>
+          <p> Protect against outside attackers, yes, but also design for the ordinary internal mistake: someone clicks a bad link, someone plugs in the wrong cable, someone's laptop leaves the building with access it shouldn't have. Most breaches start inside the perimeter, not outside it. </p>
+          <h2 id="secure-network-devices" class="text-capitalize"> Every device on the network is a device to secure </h2>
+          <p> Routers, switches, load balancers, and firewalls all sit on the network, and all of them ship with a default password somewhere. "Secure the network" means securing each of these individually — not just the firewall at the edge. A hardened firewall behind an unsecured switch is a locked front door with an open window around back. </p>
+          <h2 id="firewalls" class="text-capitalize"> Firewalls </h2>
+          <p> A firewall's job is simple to describe: decide what traffic gets in and out, and watch for patterns that look like an attack. In practice, that means writing rules that allow only what the business actually needs — not "allow everything, then figure out what to block." </p>
+          <p> A basic firewall solves most of what a small business needs. Distributed Denial of Service (DDoS) protection is a separate layer worth adding once you have something worth flooding — a public-facing app, a storefront, an API other companies depend on. </p>
+          <h2 id="vpn" class="text-capitalize"> VPN </h2>
+          <p> A VPN builds an encrypted tunnel across a network you don't control — home WiFi, a coffee shop, a hotel — so traffic inside that tunnel can't be read even if the network it's crossing is compromised. If anyone on the team works outside the office, this isn't optional; it's the difference between "our data crossed an untrusted network" and "our data crossed an untrusted network in the clear." </p>
+          <h2 id="intrusion-and-loss-prevention" class="text-capitalize"> Intrusion detection and data loss prevention </h2>
+          <p> Intrusion Detection (IDS) watches and alerts. Intrusion Prevention (IPS) watches and blocks. IDS tells you something happened; IPS stops it from finishing. Neither one catches attacks it's never seen before — both work off known patterns — but tracking what they do catch tells you how an attacker's tactics are shifting over time, which is worth more than the alert itself. </p>
+          <p> Data Loss Prevention (DLP) is the mirror image: instead of watching for things coming in, it watches for things going out — a customer database attached to a personal email, a spreadsheet of records copied to a USB drive — and blocks the exchange if it doesn't match policy. </p>
+          <h2 id="load-balancers-and-proxies" class="text-capitalize"> Load balancers and proxies </h2>
+          <p> A load balancer spreads incoming requests across multiple servers so no single one gets overwhelmed. If one server's health check fails, the load balancer stops sending it traffic until it recovers — visitors never see the failure, they just get served by a different server. A proxy sits in front of that and adds filtering: caching content, blocking traffic that doesn't match expected patterns, absorbing some denial-of-service attempts before they reach anything real. </p>
+          <h2 id="hardware-and-design" class="text-capitalize"> Hardware and network design </h2>
+          <p> Pick hardware after you know what it needs to run, not before. A network built for a database-heavy application has different requirements than one built for a video-heavy one, and buying general-purpose gear "to be safe" usually means overpaying for capacity you don't use and underbuying the one spec that mattered. Test every new component before it touches production — a firewall or switch that fails during a live cutover is a worse outage than the one you were trying to prevent. </p>
+          <h2 id="redundancy" class="text-capitalize"> Redundancy: find your single points of failure </h2>
+          <p> Redundancy means no single failure takes down the whole system. The way to find where you need it is to ask, for every component: if this one thing breaks right now, what stops working? A single server with a single internet connection is a single point of failure twice over — the box and the link. </p>
+          <p> You don't need to duplicate everything. You need to duplicate the handful of things where the answer to that question is "everything downstream of it." That's usually the internet connection, the core switch, and whatever holds your primary data — not the printer on the third floor. </p>
+          <h2 id="security-policy-and-isp" class="text-capitalize"> Policy and your ISP </h2>
+          <p> A written security policy — device management rules, VPN requirements, firewall standards — matters less for what it says and more for the fact that it exists and someone owns keeping it current. And test your own internet connection periodically; a slow ISP link looks identical to a slow application from the user's chair, and misdiagnosing it wastes hours pointed at the wrong system. </p>
+          <h2 id="monitoring-logging-and-backups" class="text-capitalize"> Monitoring, logging, and backups </h2>
+          <p> Monitoring catches problems as they happen. Logging lets you reconstruct what happened after the fact. You need both — monitoring without logging means you get paged for outages you can never fully explain; logging without monitoring means you find out about the outage from a customer instead of a dashboard. </p>
+          <p> Backups only count if they're tested. An untested backup is a belief, not a plan. Store them in a different location and, ideally, a different format than the original — if the failure that destroyed your data was a ransomware attack or a fire, "the backup was on the same drive" or "in the same building" defeats the point. </p>
+          <h2 id="conclusion" class="text-capitalize"> The order, one more time </h2>
+          <p> Secure the devices you already have. Add the firewall rules and VPN that stop the common attacks. Find your real single points of failure and fix the two or three that matter, not all of them. Add monitoring so you find out about problems before a customer does. Test the backup. Buy the impressive hardware last, once the boring things are covered — it's the boring things that fail first. </p>
+          <p> This is the same sequencing work Taliferro walks through with clients before recommending a single piece of hardware: what breaks first, what breaks worst, and what actually fits the budget in front of you — not the one you wish you had. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cloud architecture reality check?</strong>
+            <p class="mb-0">Use the article to frame the issue, then review <a href="https://taliferro.com/cloud-architecture-consulting/">cloud design support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a cloud review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Network Security</em></li>
+                <li><em>Efficient Networking</em></li>
+                <li><em>Cost-Effective Network Solutions</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="blog" data-source="blog_cta" data-page="best-practices-for-network-systems">Cloud architecture</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/nov2022/nov012022/security-vulnerability-management-white-paper.html">&larr; You Don't Have a Vulnerability Problem. You Have a Prioritization Problem.</a>
+            <a class="button" href="https://taliferro.com/blog/nov2022/nov032022/modern-e-commerce-architecture.html">Innovating E-Commerce Architecture for the Digital Era &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

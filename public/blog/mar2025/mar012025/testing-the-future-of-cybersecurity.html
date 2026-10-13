@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>When Every Alert Screams, None of Them Matter | Taliferro Blog</title>
+  <meta name="description" content="A security stack can generate thousands of alerts a day and still miss what matters. See how Taliferro scores the noise, enforces configuration accuracy, and makes AI-assisted decisions auditable." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="When Every Alert Screams, None of Them Matter">
+  <meta property="og:description" content="A security stack can generate thousands of alerts a day and still miss what matters. Here's how Taliferro fixes the signal-to-noise problem.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:image:alt" content="Taliferro Group">
+  <link rel="preload" as="image" href="https://taliferro.com/img/taliferro-blog.webp" imagesrcset="https://taliferro.com/img/taliferro-blog.webp 1600w" imagesizes="100vw">
+  <meta property="og:url" content="https://taliferro.com/blog/mar2025/mar012025/testing-the-future-of-cybersecurity.html">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="When Every Alert Screams, None of Them Matter" />
+  <meta name="twitter:description" content="A security stack can generate thousands of alerts a day and still miss what matters. Here's how Taliferro fixes the signal-to-noise problem." />
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/mar2025/mar012025/testing-the-future-of-cybersecurity.html">
+  <link rel="canonical" href="https://taliferro.com/blog/mar2025/mar012025/testing-the-future-of-cybersecurity.html">
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/mar2025/mar012025/testing-the-future-of-cybersecurity.html"
+        },
+        "headline": "When Every Alert Screams, None of Them Matter",
+        "description": "A security stack can generate thousands of alerts a day and still miss what matters. See how Taliferro scores the noise, enforces configuration accuracy, and makes AI-assisted decisions auditable.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "inLanguage": "en-US",
+        "articleSection": "Cybersecurity",
+        "about": [
+          {"@type": "Thing", "name": "Threat Entropy Index (TEI)"},
+          {"@type": "Thing", "name": "Integrity Gradient Mapping (IGM)"},
+          {"@type": "Thing", "name": "Consistent Output Protocol (COP)"},
+          {"@type": "Thing", "name": "AI in Cybersecurity"}
+        ],
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "isBasedOn": {
+            "@type": "Article",
+            "name": "If I Were Advising T-Mobile",
+            "url": "https://taliferro.com/blog/may2023/may092023/an-argument-for-a-shift-in-contractor-relationships-and-cybersecurity-priorities.html"
+        },
+        "datePublished": "2025-03-01T09:00:00-07:00",
+        "dateModified": "2026-08-02T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+    </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+      { "@type": "ListItem", "position": 4, "name": "When Every Alert Screams, None of Them Matter", "item": "https://taliferro.com/blog/mar2025/mar012025/testing-the-future-of-cybersecurity.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this based on a real client engagement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This walks through the framework Taliferro uses to reduce alert noise and enforce configuration integrity, illustrated with a representative pilot scenario rather than one specific client's numbers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does TODD replace existing security tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not at all. TODD acts as the connective tissue — orchestrating and validating what already exists. Think of it as a conductor, not a replacement musician."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do teams typically start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With a 30-day baseline measuring noise before changing anything, then connecting identity, API, and cloud logs first."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#why-alerts-stop-working">Why alerts fail</a>
+        <a href="#what-we-actually-track">What we track</a>
+        <a href="#how-a-pilot-like-this-runs">How a pilot runs</a>
+        <a href="#what-this-actually-changes">What changes</a>
+        <a href="#faq">FAQ</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>When Every Alert Screams, None of Them Matter</h1>
+          <p>A security stack can generate thousands of alerts a day and still miss what matters, because when everything is flagged urgent, nothing is. Taliferro built a way to test this directly: score the noise, enforce configuration accuracy, and make every AI-assisted decision reproducible enough to audit. Not fewer alerts because you're ignoring more. Fewer alerts because the system finally knows which ones are real.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div>
+            <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">workflow execution support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a> keeps the work tied to outcomes instead of activity.</p>
+            <h2 id="why-alerts-stop-working">Why alerts stop working</h2>
+            <p>Security teams don't fail because they miss alerts. They fail because they get too many of them. When every tool is tuned to flag anything remotely suspicious, analysts stop trusting the queue. Real threats end up sitting next to duplicate noise and stale false positives, and the team has no fast way to tell which is which. That's not a tooling gap. It's a signal problem.</p>
+            <p>After writing <a href="https://taliferro.com/blog/may2023/may092023/an-argument-for-a-shift-in-contractor-relationships-and-cybersecurity-priorities.html" target="_blank" rel="noopener">If I Were Advising T-Mobile</a>, we wanted a concrete way to test that argument: could an AI-driven coordination layer actually cut the noise and surface what matters, instead of adding one more dashboard to check?</p>
+            <h2 id="what-we-actually-track">What we actually track</h2>
+            <p>The approach rests on three ideas from the Taliferro playbook:</p>
+            <ul>
+              <li><strong>Threat Entropy Index (TEI)</strong> — measures how chaotic the event data is. When every tool shouts, TEI spikes.</li>
+              <li><strong>Integrity Gradient Mapping (IGM)</strong> — tracks how complete and trustworthy configuration data is over time.</li>
+              <li><strong>Consistent Output Protocol (COP)</strong> — ensures every AI-assisted decision is traceable, repeatable, and independently verifiable.</li>
+            </ul>
+            <p>The question we're testing: can these three measures actually lower noise, raise confidence, and produce evidence that holds up under scrutiny — not just a cleaner-looking dashboard.</p>
+            <hr>
+            <h2 id="how-a-pilot-like-this-runs">How a pilot like this runs</h2>
+            <p>In a typical rollout, the sequence looks like this:</p>
+            <ol>
+              <li><strong>Ingest and normalize.</strong> Connect endpoint EDR, cloud control plane, API gateway, and identity logs into a single entity timeline per user, service, or asset.</li>
+              <li><strong>Score TEI.</strong> Apply entropy scoring to collapse duplicates and de-prioritize redundant patterns. Analysts accept or reject clusters to retrain priorities.</li>
+              <li><strong>Raise IGM.</strong> Reconcile assets from cloud APIs and deployment manifests; enforce <i>owner</i> and <i>security contact</i> fields as deploy-time gates.</li>
+              <li><strong>Automate with guardrails.</strong> Confidence-gated playbooks — no automation below 90% confidence, explicit human approval above it.</li>
+              <li><strong>Evidence by default.</strong> Every action produces a COP bundle: the record that shows why the system decided what it decided.</li>
+            </ol>
+            <p>Two design choices matter more than the others. First, one unified timeline instead of many dashboards — people don't triage well across a dozen open tabs under pressure. Second, confidence-gated automation instead of full autonomy: it keeps humans in control exactly when the signal is weak enough to be wrong.</p>
+            <h2 id="how-tei-is-scored-simplified">How TEI is scored (simplified)</h2>
+            <pre><code>{
+            "tei": w1*duplication_rate + w2*inconsistent_context + w3*alert_burstiness - w4*confirmed_correlation
+          }
+          // Weights (w1..w4) get adjusted on a regular cadence based on analyst feedback and false-positive review.
+          </code></pre>
+            <h2 id="example-cop-evidence-bundle">Example: COP evidence bundle</h2>
+            <pre><code>{
+            "bundle_id": "cop-example-001",
+            "entity": "svc:payments-api",
+            "finding": "stolen_session_token",
+            "inputs": {
+              "logs": ["hash:ab12...", "hash:9f45..."],
+              "trace": "hash:7cde...",
+              "config": "hash:31aa..."
+            },
+            "decision": {
+              "confidence": 0.93,
+              "action": ["revoke_token", "rotate_keys", "notify_owner"],
+              "approved_by": "on-call analyst"
+            },
+            "timestamps": {"observed": "T+0", "acted": "T+1min"}
+          }
+          </code></pre>
+            <h2 id="igm-enforcement-policy-excerpt">IGM enforcement policy (excerpt)</h2>
+            <ul>
+              <li>Deploys blocked if <i>owner</i> or <i>security_contact</i> is missing.</li>
+              <li>Records flagged <i>amber</i> if telemetry is older than 24 hours; <i>red</i> after 72 hours.</li>
+              <li>Weekly integrity reviews focus on the lowest-IGM 10% of assets.</li>
+            </ul>
+            <h2 id="risks-and-mitigations">Risks and mitigations</h2>
+            <ul>
+              <li><strong>Over-automation risk:</strong> mitigated by confidence gates plus required human approval.</li>
+              <li><strong>Analyst fatigue:</strong> mitigated by cluster-level feedback instead of alert-by-alert review.</li>
+              <li><strong>Configuration drift:</strong> mitigated by continuous write-back to the source of truth and integrity heatmaps.</li>
+            </ul>
+            <h2 id="how-to-start-a-pilot">How to start a pilot</h2>
+            <ol>
+              <li>Start with a 30-day TEI baseline — measurement only, no changes.</li>
+              <li>Connect identity, API, and cloud logs first; add EDR and network in week two.</li>
+              <li>Define three playbooks you're willing to automate at 90%+ confidence.</li>
+              <li>Enforce owner and security-contact gates at deploy time.</li>
+              <li>Review COP bundles weekly; tune weights and thresholds from there.</li>
+            </ol>
+            <h2 id="what-this-actually-changes">What this actually changes</h2>
+            <p>Teams running this playbook typically see duplicate alerts collapse into unified timelines within the first weeks, and ownership data improve once it's enforced by policy rather than requested by email. The bigger shift isn't the numbers — it's that engineers start trusting automation because they can audit it. Once AI stops being a black box, the adoption resistance mostly disappears.</p>
+            <h2 id="ais-real-role">AI's real role</h2>
+            <p>There's a persistent myth in cybersecurity that AI replaces human judgment. It doesn't — it magnifies it. <a href="https://ask.taliferro.tech">TODD</a> doesn't act autonomously here; it coordinates. When an analyst marks something a false positive, the system doesn't just suppress that one alert — it recalibrates thresholds across related signals. That's machine learning doing something useful at ground level, not a model running unsupervised.</p>
+            <p>And it points at something worth saying plainly: AI's real advantage in this context isn't prediction. It's <strong>consistency</strong>. Under the <a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Consistent Output Protocol</a>, the same evidence produces the same decision every time — a standard most human analysts can't hold on a long day.</p>
+            <h2 id="the-lessons-so-far">The lessons so far</h2>
+            <p>Not everything works on the first pass. When AI confidence thresholds are set too aggressively, the noise comes back. When teams skip COP validation steps to move faster, the transparency that makes the system trustworthy slips with it. The pattern holds: clarity scales faster than complexity. The more transparent the process, the faster a team moves together instead of around each other.</p>
+            <h2 id="whats-next">What's next</h2>
+            <p>The Threat Entropy Index keeps getting tuned to factor in behavioral baselines and adaptive thresholds. COP is expanding to cover cross-domain validation, from cloud configuration to endpoint signatures. And IGM is being connected to the same bias-drift monitoring described in <a href="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">Fair Once Isn't Fair Forever</a>, so fairness gets checked on the same schedule as everything else.</p>
+            <p>The next phase isn't about more dashboards or KPIs. It's proof of consistency — knowing that when something breaks, the system explains why, with receipts. Not just automation. Accountable automation.</p>
+            <h2 id="the-bigger-picture">The bigger picture</h2>
+            <p>This ties back to the core argument in the original T-Mobile piece: speed without clarity is just noise. The right architecture — TEI for focus, IGM for trust, COP for evidence — is what lets speed mean progress instead of panic.</p>
+            <p>If you haven't read <a href="https://taliferro.com/blog/may2023/may092023/an-argument-for-a-shift-in-contractor-relationships-and-cybersecurity-priorities.html" target="_blank" rel="noopener">If I Were Advising T-Mobile</a>, that's the blueprint this framework is built from.</p>
+            <h2 id="video-roi-first-security-architecture-taliferro-gr">Video: ROI-First Security Architecture (Taliferro Group)</h2>
+            <div class="video video-responsive" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+              <video controls preload="metadata" poster="https://taliferro.com/blog/img/websites/taliferro-group.webp" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;">
+                <source src="https://taliferro.com/blog/img/video/the-expense-myth.mp4" type="video/mp4"> Your browser does not support the video tag.
+              </video>
+            </div>
+            <h2 id="faq">FAQ</h2>
+            <h3>Is this based on a real client engagement?</h3>
+            <p>This walks through the framework Taliferro uses to reduce alert noise and enforce configuration integrity, illustrated with a representative pilot scenario rather than one specific client's numbers.</p>
+            <h3>Does TODD replace existing security tools?</h3>
+            <p>Not at all. TODD acts as the connective tissue — orchestrating and validating what already exists. Think of it as a conductor, not a replacement musician.</p>
+            <h3>How do teams typically start?</h3>
+            <p>With a 30-day baseline measuring noise before changing anything, then connecting identity, API, and cloud logs first.</p>
+            <h2 id="related-reading">Related Reading</h2>
+            <ul>
+              <li><a href="https://taliferro.com/blog/may2023/may092023/an-argument-for-a-shift-in-contractor-relationships-and-cybersecurity-priorities.html">If I Were Advising T-Mobile — The Original Playbook</a></li>
+              <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Ask It Twice. Get Two Different Answers.</a></li>
+              <li><a href="https://taliferro.com/blog/nov2022/nov012022/security-vulnerability-management-white-paper.html">Security Vulnerability Management — White Paper</a></li>
+            </ul>
+            <p><i>This isn't about showing off technology. It's about proving that AI, governed by transparency and repeatability, can turn cybersecurity from a reaction into a rhythm.</i></p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">software development support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><a href="https://taliferro.com/machine-learning-services/" target="_blank" title="Machine Learning Services">AI security</a></li>
+              <li><a href="https://taliferro.com/business-momentum-system/" target="_blank" title="Momentum System (MS)">business momentum system</a></li>
+              <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html" target="_blank" title="Ask It Twice. Get Two Different Answers.">AI reliability</a></li>
+              <li><a href="https://ask.taliferro.tech" title="TODD">TODD</a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="testing-the-future-of-cybersecurity">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">&larr; Ask It Twice. Get Two Different Answers.</a>
+          <a class="button" href="https://taliferro.com/blog/mar2025/mar112025/the-power-of-the-follow-up.html">You Colored the Cell. You Didn't Make the Call. &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

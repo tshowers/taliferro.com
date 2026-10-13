@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Stop Organizing Angular Projects by File Type. Organize by Feature.</title>
+  <meta name="description" content="A components folder, a services folder, a directives folder — that structure feels tidy on day one and becomes unnavigable by month six. What actually keeps a growing Angular codebase organized.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Stop Organizing Angular Projects by File Type. Organize by Feature.">
+  <meta property="og:description" content="A components folder, a services folder, a directives folder — that structure feels tidy on day one and becomes unnavigable by month six. What actually keeps a growing Angular codebase organized.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Stop Organizing Angular Projects by File Type. Organize by Feature.">
+  <meta name="twitter:description" content="A components folder, a services folder, a directives folder — that structure feels tidy on day one and becomes unnavigable by month six. What actually keeps a growing Angular codebase organized.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">
+  <link rel="canonical" href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Stop Organizing Angular Projects by File Type. Organize by Feature.", "item": "https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="keywords" content="Angular project, project structure, modules, directives, pipes, best practices, lazy loading, SharedModule, attribute directives, pure pipes, impure pipes, performance optimization">
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html"
+        },
+        "headline": "Stop Organizing Angular Projects by File Type. Organize by Feature.",
+        "description": "A components folder, a services folder, a directives folder — that structure feels tidy on day one and becomes unnavigable by month six. What actually keeps a growing Angular codebase organized.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-03-21",
+        "dateModified": "2026-08-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#project-structure">Project Structure</a>
+        <a href="#organize-files-by-feature">Organize Files</a>
+        <a href="#use-barrel-files">Use Barrel</a>
+        <a href="#follow-the-angular-style-guide">Follow the</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Stop Organizing Angular Projects by File Type — Organize by Feature</h1>
+          <p>The default instinct is to put all your components in one folder, all your services in another. It feels organized. It stops being organized the moment the project has more than a handful of features, because finding everything related to one thing means hunting across five folders. Group by feature instead, and the codebase stays navigable as it grows.</p>
+          <p class="fine">Published: 21 Mar 2023 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p><span> <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a> is a popular and powerful front-end framework for building complex, interactive web applications. When starting a new <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a><span> project, it's essential to follow <a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a> to ensure the project is well-organized, maintainable, and scalable. In this blog post, we'll cover how to properly construct an </span><a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a><span> project and best practices for developing modules, <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">directives</a>, and pipes. </span></span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the frontend has to perform in the real world, <a href="https://taliferro.com/website-development/">frontend delivery support</a> shows how Taliferro turns frontend work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum framework</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="project-structure" class="text-capitalize"> Project Structure </h2>
+          <p><span> <a href="https://taliferro.com/blog/mar2023/mar062023/angular-project-strategy.html">Angular</a> provides a basic project structure out of the box, but it's often necessary to customize it to suit the specific project's needs. Here are some best practices for structuring an <a href="https://taliferro.com/blog/mar2023/mar062023/angular-project-strategy.html">Angular</a> project: </span></p>
+          <h2 id="organize-files-by-feature" class="text-capitalize"> Organize Files by Feature </h2>
+          <p> Rather than organizing files by type (e.g., all components in one directory, all services in another), it's better to manage them by feature. For example, if you have a feature that lets users view and edit their profile, you might create a profile directory containing all the components, services, and other files related to that feature. </p>
+          <h2 id="use-barrel-files" class="text-capitalize"> Use Barrel Files </h2>
+          <p> A barrel file is a TypeScript file that exports all the files in a directory. This is useful for simplifying imports, especially when working with deep directory structures. </p>
+          <h2 id="follow-the-angular-style-guide" class="text-capitalize"><span> Follow the <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a> Style Guide </span></h2>
+          <p><span> The Angular team has compiled a comprehensive style guide covering everything from <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">naming conventions</a> to file organization. Following the style guide will help ensure consistency across the project and make it easier for others to understand the code. </span></p>
+          <h2 id="modules" class="text-capitalize"> Modules </h2>
+          <p><span> Angular modules are a fundamental building block of any Angular application. They organize and encapsulate related functionality and can contain components, services, <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">directives</a>, and pipes. It's important to follow some best practices: Keeping modules small and focused on a specific feature or functionality is recommended. This helps to keep the code organized and maintainable. Use lazy loading to improve the performance of your application. This means loading modules only when needed rather than all at once. This can significantly improve the load time of your application. Create shared modules for commonly used components, <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">directives</a>, and pipes. This helps to reduce code duplication and keep the codebase clean. It's also essential to avoid circular dependencies between modules, which can lead to hard-to-debug issues. Use the forRoot method to configure services and providers that should be available to the entire application. Following these best practices, you can create modular, maintainable, and performant Angular applications. </span></p>
+          <h2 id="keep-modules-small" class="text-capitalize"> Keep Modules Small </h2>
+          <p> Modules should be small and focused. Aim for a single responsibility per module. If a module becomes too large, consider splitting it into smaller, more concentrated modules. </p>
+          <h2 id="use-lazy-loading" class="text-capitalize"> Use Lazy Loading </h2>
+          <p> Lazy loading is a technique where modules are only loaded when needed. This can significantly improve the performance of an application, especially if it has many features or is complex. To use lazy loading, create a separate module for each feature and use the loadChildren property in the RouterModule to specify the path to the module. </p>
+          <h2 id="sharedmodule" class="text-capitalize"><span> <a href="https://taliferro.com/blog/jun2023/jun282023/the-angular-shared-module-reducing-repetition-and-exploring-its-advantages-and-disadvantages.html">SharedModule</a> </span></h2>
+          <p><span> The <a href="https://taliferro.com/blog/jun2023/jun282023/the-angular-shared-module-reducing-repetition-and-exploring-its-advantages-and-disadvantages.html">SharedModule</a> is a module that contains components, directives, and pipes that are used throughout the application. By importing the <a href="https://taliferro.com/blog/jun2023/jun282023/the-angular-shared-module-reducing-repetition-and-exploring-its-advantages-and-disadvantages.html">SharedModule</a> into other modules, you can reduce code duplication and ensure consistency across the application. </span></p>
+          <h2 id="directives" class="text-capitalize"> Directives </h2>
+          <p> Angular directives are a powerful tool for manipulating the DOM and adding behavior to elements. To use directives effectively in your Angular application, it's important to follow some best practices. First, use directives sparingly and avoid creating directives for every functionality. Instead, develop directives for specific use cases and ensure they have a clear and well-defined purpose. Secondly, use attribute selectors to make your directives easy to use and understand. This means prefixing your directive names with app and using descriptive names for your directives. Additionally, use input and output properties to communicate with the directive and its parent component. This helps to make your directive more flexible and reusable. It's also essential to use the ElementRef and Renderer2 APIs to manipulate the DOM safely and avoid direct manipulation of the DOM. Finally, test your directives thoroughly to ensure they are working as expected. By following these best practices, you can create reusable and maintainable directives that enhance the functionality and usability of your Angular application. </p>
+          <div class="code-block">
+            <pre>                                <code>
+          
+                                            <span class="comment">
+          &lt;!-- Using a custom attribute directive --&gt;
+          </span>
+          &lt;div <span class="keyword">appHighlight</span>&gt;Highlight me on hover&lt;/div&gt;
+          
+          </code>
+          </pre>
+          </div>
+          <br>
+          <div class="code-block">
+            <pre><code>
+          
+          <span class="comment">
+          &lt;!-- Using a custom attribute directive with input --&gt;
+          </span>
+          &lt;div [<span class="keyword">appCustomColor</span>]="color"&gt;Change my color&lt;/div&gt;
+          
+          </code>
+          </pre>
+          </div>
+          <h2 id="use-attribute-directives" class="text-capitalize"> Use Attribute Directives </h2>
+          <p> Attribute directives are the most common type of directive in Angular. They're used to add, remove, or modify the behavior of an element. When creating an attribute directive, ensure it's self-contained and doesn't rely on other components or services. </p>
+          <h2 id="use-hostlisteners-and-hostbindings" class="text-capitalize"> Use HostListeners and HostBindings </h2>
+          <p> HostListeners and HostBindings are decorator functions that can interact with a directive's host element. HostListeners are used to listen for events on the host element, while HostBindings bind the properties of the host element to the properties of the directive. </p>
+          <h2 id="pipes" class="text-capitalize"> Pipes </h2>
+          <p> Angular pipes are a powerful tool for transforming and formatting data in templates. To use pipes effectively in your Angular application, following some best practices is important. Firstly, using pure pipes whenever possible is recommended, as they are faster and have no side effects. Keeping the pipe logic simple and focused on a single responsibility is also important. Avoid creating complex pipes that perform multiple operations or rely on external states. Additionally, test your pipes thoroughly to ensure they are working as expected. Finally, it's important to use pipes sparingly and avoid creating too many pipes, leading to cluttered code and decreased performance. By following these best practices, you can effectively use Angular pipes to enhance the functionality and usability of your application. </p>
+          <h2 id="keep-pipes-pure" class="text-capitalize"> Keep Pipes Pure </h2>
+          <p> Pipes should be pure functions, meaning they don't have side effects and always return the same output for the same input. This makes them easier to test and reason about. </p>
+          <div class="code-block">
+            <pre>                                <code>
+          <span class="comment">
+            &lt;!-- HTML Template --&gt;
+          </span>  
+            &lt;div&gt;
+              &lt;p&gt;{{ text | uppercase }}&lt;/p&gt;
+              &lt;button (<span class="keyword">click</span>)="changeText()"&gt;Change Text&lt;/button&gt;
+            &lt;/div&gt;
+            <span class="comment">
+            &lt;!-- Component TypeScript --&gt;
+            </span>
+            import { Component } from '@angular/core';
+          
+            @Component({
+              selector: 'app-root',
+              templateUrl: './app.component.html',
+            })
+            export class AppComponent {
+              text = 'hello, world';
+          
+              changeText() {
+                this.text = 'new text';
+              }
+            }
+          
+          </code>
+          </pre>
+          </div>
+          <h2 id="use-impure-pipes-with-caution" class="text-capitalize"> Use Impure Pipes with Caution </h2>
+          <p> While impure pipes can be helpful in certain situations, using them cautiously is essential. Impure pipes can negatively impact the performance of your application as they can be called frequently, even when the input data hasn't changed. This can result in unnecessary calculations and slow down your application. Therefore, it's essential to consider whether an impure pipe is necessary and limit its use when possible. It's also essential to ensure that the impure pipe's logic is optimized and has no unnecessary operations. By using impure pipes judiciously, you can avoid performance issues and ensure that your application runs smoothly. </p>
+          <div class="code-block">
+            <pre>                                  <code>
+                                              <span class="comment">
+          
+            &lt;!-- HTML Template --&gt;</span>
+            &lt;div&gt;
+              &lt;p&gt;{{ currentDate | async | date:'medium' }}&lt;/p&gt;
+              &lt;button (<span class="keyword">click</span>)="refreshDate()"&gt;Refresh Date&lt;/button&gt;
+            &lt;/div&gt;
+            <span class="comment">
+          
+            &lt;!-- Component TypeScript --&gt;
+            </span>
+            import { Component } from '@angular/core';
+            import { Observable, interval } from 'rxjs';
+          
+            @Component({
+              selector: 'app-root',
+              templateUrl: './app.component.html',
+            })
+            export class AppComponent {
+              currentDate: Observable<date> = interval(1000).pipe(map(() =&gt; new Date()));
+          
+              refreshDate() {
+                // Manually trigger a change in currentDate
+                this.currentDate = interval(1000).pipe(map(() =&gt; new Date()));
+              }
+            }
+          </date></code>
+          </pre>
+          </div>
+          <h2 id="conclusion" class="text-capitalize"> Conclusion </h2>
+          <p> Constructing an Angular project requires following some best practices for developing modules, directives, and pipes. These practices help organize the code and improve the application's performance. It is essential to keep the modules small and focused, use lazy loading, and avoid circular dependencies. Directives should use the @Directive decorator and emit events using the @Output decorator. Pipes should use the @Pipe decorator and use pure lines when possible. You can build scalable and maintainable Angular applications by following these best practices. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+          <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need the frontend to move faster?</strong>
+          <p class="mb-0">If you want execution instead of more rework, start with <a href="https://taliferro.com/website-development/">web development that ships clean</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the delivery bottleneck</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><em>Angular project</em></li>
+              <li><em>project structure</em></li>
+              <li><em>modules</em></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li>Angular project</li>
+            <li>project structure</li>
+            <li>modules</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="angular-project-best-practices">Website development</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar202023/questions-to-ask-in-a-data-analytics-project.html">&larr; Most Data Analytics Projects Fail Before Anyone Opens a Dataset</a>
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar222023/learning-platform-user-experience.html">Students Don't Quit Because the Material Is Hard &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

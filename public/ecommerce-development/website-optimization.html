@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Commerce Website Optimization: Speed, UX, Core Web Vitals</title>
+  <meta name="description" content="Website optimization for e-commerce: speed, Core Web Vitals, UX cleanup, and technical SEO fixes." />
+  <!-- Schema: WebPage + Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"E-Commerce Website Optimization: Speed, UX, Core Web Vitals",
+    "url":"https://taliferro.com/ecommerce-development/website-optimization.html",
+    "description":"Website optimization for e-commerce: speed, Core Web Vitals, UX cleanup, and technical SEO fixes.",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"Taliferro Group",
+      "url":"https://taliferro.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"E-Commerce",
+        "item":"https://taliferro.com/ecommerce-development/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Website Optimization",
+        "item":"https://taliferro.com/ecommerce-development/website-optimization.html"
+      }
+    ]
+  }
+  </script>
+  <!-- Schema: FAQPage (matches on-page FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"What should we optimize first for an e-commerce website?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Start with the pages that drive revenue: product pages and checkout. Improve mobile speed and remove layout shifts. Then reduce script weight and third-party bloat." 
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Do Core Web Vitals matter for e-commerce?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. Core Web Vitals reflect real user experience. Faster pages and stable layouts reduce bounce and increase conversion, especially on mobile." 
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"How do you improve speed without breaking tracking and ads?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"We reduce third-party load, defer non-critical scripts, and keep the tracking events you actually use. The goal is fewer tags, cleaner events, and reliable attribution." 
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Can you optimize Shopify or WooCommerce performance?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. We optimize themes/templates, images, app/script load, caching, and measurement. For custom stacks, we also optimize server response, CDN, and build tooling." 
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body>
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#most-slow-sites-are-slow-because-of-script-and-ima">Slow</a>
+        <a href="#a-clean-order-of-operations-that-avoids-breaking-t">Clean</a>
+        <a href="#speed-work-that-shows-up-in-conversion">Speed</a>
+        <a href="#common-questions-about-website-performance">FAQ</a>
+        <a href="#want-speed-improvements-that-dont-break-the-store">Improvements</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker"><a href="https://taliferro.com/">Taliferro</a> • Website Optimization • Speed • UX • Core Web Vitals</div>
+        <h1>Make your site feel fast — not just score fast</h1>
+        <p> Most stores chase Lighthouse numbers and still feel slow on mobile. We optimize what customers feel: load time, layout stability, and the path to checkout. The goal is simple: less bounce, more completion. </p>
+        <div class="pillrow">
+          <div class="pill">Core Web Vitals</div>
+          <div class="pill">Mobile performance</div>
+          <div class="pill">Script reduction</div>
+          <div class="pill">Clean tracking</div>
+        </div>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/contact.html">Book a performance review</a>
+          <a class="button" href="./">Back to e-commerce services</a>
+          <a class="button" href="#plan">Optimization plan</a>
+        </div>
+        <div class="divider"></div>
+        <div class="grid grid-3">
+          <div class="card">
+            <div class="metric"><b class="nowrap">LCP</b><br><span>faster product pages</span></div>
+            <div class="fine">Largest Contentful Paint.</div>
+          </div>
+          <div class="card">
+            <div class="metric"><b class="nowrap">CLS</b><br><span>no layout jumping</span></div>
+            <div class="fine">Cumulative Layout Shift.</div>
+          </div>
+          <div class="card">
+            <div class="metric"><b class="nowrap">INP</b><br><span>snappy interactions</span></div>
+            <div class="fine">Interaction to Next Paint.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="ph">
+          <img src="https://taliferro.com/ecommerce-development/img/design-and-development.webp" alt="Website optimization and performance" />
+        </div>
+        <div class="card">
+          <h3>Fast self‑check</h3>
+          <ul class="list">
+            <li>Is mobile slower than desktop by 2x?</li>
+            <li>Do pages jump while loading?</li>
+            <li>Do third‑party scripts pile up?</li>
+            <li>Do you avoid changes because performance drops?</li>
+          </ul>
+          <div class="btnrow">
+            <a class="btn small primary" href="https://taliferro.com/contact.html">Get a speed audit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- PROBLEM -->
+  <section class="section">
+    <div class="wrap grid grid-2">
+      <div>
+        <div class="kicker">The real issue</div>
+        <h2 id="most-slow-sites-are-slow-because-of-script-and-ima">Most “slow sites” are slow because of script and image debt</h2>
+        <p> E-commerce sites get slower over time: apps, tags, chat widgets, A/B testing tools, reviews, personalization. Each one adds weight and delay. Customers don’t care why it’s slow. They just leave. </p>
+        <ul class="list">
+          <li><strong>Third‑party bloat</strong> — tags load before the page is usable.</li>
+          <li><strong>Unoptimized images</strong> — too large, wrong format, no lazy loading.</li>
+          <li><strong>Theme debt</strong> — templates accumulate unused code.</li>
+          <li><strong>Measurement clutter</strong> — many events, few used.</li>
+        </ul>
+      </div>
+      <div class="ph">
+        <img src="https://taliferro.com/ecommerce-development/img/assets/e-commerce-consulting-video.webp" alt="Performance bottlenecks from third-party scripts" />
+      </div>
+    </div>
+  </section>
+  <!-- PLAN -->
+  <section id="plan" class="section">
+    <div class="page-shell">
+      <div class="kicker">Optimization plan</div>
+      <h2 id="a-clean-order-of-operations-that-avoids-breaking-t">A clean order of operations that avoids breaking the store</h2>
+      <p> Performance work fails when teams “optimize everything” and ship risky changes. We sequence the work so wins land safely and stack. </p>
+      <div class="grid grid-4">
+        <div class="card">
+          <h3>1) Measure reality</h3>
+          <p>Field data first, lab data second. We review real-user performance and the revenue path.</p>
+          <div class="fine">Output: top pages + baseline.</div>
+        </div>
+        <div class="card">
+          <h3>2) Remove weight</h3>
+          <p>Reduce or defer scripts, remove unused tags, compress and modernize images.</p>
+          <div class="fine">Output: load reduction plan.</div>
+        </div>
+        <div class="card">
+          <h3>3) Stabilize UX</h3>
+          <p>Fix layout shifts, font loading, image dimensions, and interaction delays.</p>
+          <div class="fine">Output: CLS/INP improvements.</div>
+        </div>
+        <div class="card">
+          <h3>4) Protect measurement</h3>
+          <p>Keep tracking clean: fewer events, reliable attribution, dashboards that match reality.</p>
+          <div class="fine">Output: measurement checklist.</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>What we optimize</h3>
+          <ul class="list">
+            <li>Product pages (PDP)</li>
+            <li>Collection and search pages</li>
+            <li>Cart and checkout</li>
+            <li>Images, fonts, and theme templates</li>
+            <li>Third‑party scripts and tags</li>
+            <li>Server response and caching (custom stacks)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What you get</h3>
+          <ul class="list">
+            <li>Baseline report + prioritized fixes</li>
+            <li>Implementation on the highest-impact items</li>
+            <li>Before/after metrics that are easy to trust</li>
+            <li>A repeatable performance checklist</li>
+            <li>Guardrails so performance doesn’t regress</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CREDIBILITY -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="kicker">Credibility</div>
+      <h2 id="speed-work-that-shows-up-in-conversion">Speed work that shows up in conversion</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Lower bounce</h3>
+          <p>Faster first load keeps intent alive.</p>
+          <div class="fine">Especially on mobile.</div>
+        </div>
+        <div class="card">
+          <h3>Higher completion</h3>
+          <p>Stable layouts reduce drop-off on PDP and checkout.</p>
+          <div class="fine">Less frustration.</div>
+        </div>
+        <div class="card">
+          <h3>Cleaner decisions</h3>
+          <p>Tracking stays accurate while scripts get lighter.</p>
+          <div class="fine">Less noise, more signal.</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="grid grid-2">
+        <div class="ph">
+          <img src="https://taliferro.com/ecommerce-development/img/assets/website-optimization.webp" alt="Website performance and Core Web Vitals improvements" />
+        </div>
+        <div class="card">
+          <h3>A pattern we see often</h3>
+          <p> A mobile product page loads slowly because scripts and images quietly piled up over time — nobody added them all at once, but nobody removed anything either. Clearing unused tags, deferring what isn't critical, modernizing images, and fixing layout shifts usually adds up to a faster mobile experience and better checkout completion. </p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/contact.html">Talk performance</a>
+            <a class="button" href="./">Back to services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="kicker">FAQ</div>
+      <h2 id="common-questions-about-website-performance">Common questions about website performance</h2>
+      <div class="grid">
+        <details>
+          <summary>What should we optimize first for an e-commerce website?</summary>
+          <p> Start with the pages that drive revenue: product pages and checkout. Improve mobile speed and remove layout shifts. Then reduce script weight and third-party bloat. </p>
+        </details>
+        <details>
+          <summary>Do Core Web Vitals matter for e-commerce?</summary>
+          <p> Yes. Core Web Vitals reflect real user experience. Faster pages and stable layouts reduce bounce and increase conversion, especially on mobile. </p>
+        </details>
+        <details>
+          <summary>How do you improve speed without breaking tracking and ads?</summary>
+          <p> We reduce third-party load, defer non-critical scripts, and keep the tracking events you actually use. The goal is fewer tags, cleaner events, and reliable attribution. </p>
+        </details>
+        <details>
+          <summary>Can you optimize Shopify or WooCommerce performance?</summary>
+          <p> Yes. We optimize themes/templates, images, app/script load, caching, and measurement. For custom stacks, we also optimize server response, CDN, and build tooling. </p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="wrap grid grid-2">
+      <div>
+        <div class="kicker">Next step</div>
+        <h2 id="want-speed-improvements-that-dont-break-the-store">Want speed improvements that don’t break the store?</h2>
+        <p> Book a short call. We’ll identify the slowest revenue pages and the safest fixes to ship first. </p>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/contact.html">Book a performance review</a>
+          <a class="button" href="./next-level-e-commerce-advice.html">Back to Next-Level Advice</a>
+        </div>
+        <p class="fine" style="margin-top:12px"> Prefer email? <a href="mailto:info@taliferro.com">info@taliferro.com</a>
+        </p>
+      </div>
+      <div class="card">
+        <h3>What to send us</h3>
+        <p>To make the call useful, send whatever you already have. Even partial info helps.</p>
+        <ul class="list">
+          <li>Your store URL and platform</li>
+          <li>Any recent performance report (Lighthouse / PageSpeed / CrUX)</li>
+          <li>Top pages that matter most (PDPs, collections, checkout)</li>
+          <li>List of major apps/tags/scripts in use</li>
+          <li>Upcoming promo dates or traffic spikes</li>
+        </ul>
+        <p class="fine">Screenshots, notes, or a quick paragraph all work.</p>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+    <!-- RELATED SERVICES -->
+    <section class="section" data-related-services="true">
+        <div class="page-shell">
+            <div class="kicker">Related services</div>
+            <h2>Take it further</h2>
+            <div class="grid grid-3">
+                <a class="card" href="https://taliferro.com/ecommerce-development/">
+                    <h3>E-Commerce Development</h3>
+                    <p>Custom Shopify and WooCommerce builds that convert and scale.</p>
+                    <div class="fine">Consulting service</div>
+                </a>
+                <a class="card" href="https://taliferro.com/website-development/">
+                    <h3>Website Development</h3>
+                    <p>Custom sites and software from a team that sticks around after launch.</p>
+                    <div class="fine">Consulting service</div>
+                </a>
+                <a class="card" href="https://taliferro.com/small-business-it-consultant/">
+                    <h3>Small Business IT Consultant</h3>
+                    <p>Senior IT help without enterprise pricing.</p>
+                    <div class="fine">Consulting service</div>
+                </a>
+            </div>
+        </div>
+    </section>
+<footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

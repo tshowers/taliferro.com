@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Boosting Recommendation Systems with Neural Collaborative Filtering</title>
+  <meta name="description" content="Explore the benefits of Neural Collaborative Filtering (NCF) for recommendation systems, including cross-sell and upsell opportunities.">
+  <meta name="keywords" content="Neural Collaborative Filtering, NCF, recommendation systems, cross-sell, upsell, advanced capabilities, financial benefits, ROI, implementation tips, user satisfaction, Taliferro Group">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Did You Know That Neural Collaborative Filtering Can Augment Recommendation Engines?">
+  <meta property="og:description" content="Recommendation engines play a pivotal role in enhancing user engagement and driving sales">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/oct2023/oct062023/did-you-know-that-neural-collaborative-filtering-can-augment-recommendation-engines.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Did You Know That Neural Collaborative Filtering Can Augment Recommendation Engines?">
+  <meta name="twitter:description" content="Recommendation engines play a pivotal role in enhancing user engagement and driving sales">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/oct2023/oct062023/did-you-know-that-neural-collaborative-filtering-can-augment-recommendation-engines.html">
+  <link rel="canonical" href="https://taliferro.com/blog/oct2023/oct062023/did-you-know-that-neural-collaborative-filtering-can-augment-recommendation-engines.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Boosting Recommendation Systems with Neural Collaborative Filtering", "item": "https://taliferro.com/blog/oct2023/oct062023/did-you-know-that-neural-collaborative-filtering-can-augment-recommendation-engines.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://taliferro.com/blog/oct2023/oct062023/did-you-know-that-neural-collaborative-filtering-can-augment-recommendation-engines.html"
+      },
+      "headline": "Boosting Recommendation Systems with Neural Collaborative Filtering",
+      "description": "Explore the benefits of Neural Collaborative Filtering (NCF) for recommendation systems, including cross-sell and upsell opportunities. Learn about NCF's advanced capabilities and technical tips for implementation.",
+      "image": "https://taliferro.com/img/taliferro-blog.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Tyrone Showers"
+      },
+      "datePublished": "2023-10-06",
+      "dateModified": "2023-12-19",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Taliferro Group",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+          "width": 842,
+          "height": 514
+        }
+      }
+    }
+    
+  </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#the-limitations-of-traditional-collaborative-filte">The Limitations</a>
+        <a href="#what-is-neural-collaborative-filtering">What is</a>
+        <a href="#financial-benefits-and-roi">Financial Benefits</a>
+        <a href="#technical-tips-for-implementing-ncf">Technical Tips</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Did You Know That Neural Collaborative Filtering Can Augment Recommendation Engines?</h1>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp"><span> Recommendation engines play a pivotal role in enhancing user engagement and driving sales. Traditional collaborative filtering techniques have served us well, but as we transition into a more data-driven world, the need for more advanced solutions becomes evident. This is where Neural Collaborative Filtering (NCF) comes into play, offering a more sophisticated, flexible, and accurate way to power recommendation systems. By implementing NCF, companies can significantly boost their cross-sell and upsell opportunities, leading to increased revenue and a more personalized <a href="https://taliferro.com/blog/oct2023/oct052023/how-i-perform-mobile-app-rationalization.html">user experience</a>. </span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">software development support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="the-limitations-of-traditional-collaborative-filte" class="text-capitalize wow fadeInUp"> The Limitations of Traditional Collaborative Filtering </h2>
+          <p class="wow fadeInUp"> While traditional collaborative filtering methods like User-Item and Item-Item filtering have been useful, they come with limitations: </p>
+          <ul>
+            <li> Scalability: Handling massive datasets can be challenging. </li>
+            <li> Sparsity: Inadequate data can lead to inaccurate recommendations. </li>
+            <li> Flexibility: These models often struggle with incorporating auxiliary data like user demographics or item descriptions. </li>
+          </ul>
+          <h2 id="what-is-neural-collaborative-filtering" class="text-capitalize wow fadeInUp"> What is Neural Collaborative Filtering? </h2>
+          <p class="wow fadeInUp"> Neural Collaborative Filtering is a deep learning-based approach that utilizes neural networks to model the complex relationships between users and items. Unlike its traditional counterparts, NCF can: </p>
+          <ul>
+            <li> Handle Large Scale Data: Neural networks are well-equipped to manage voluminous data. </li>
+            <li> Solve Sparsity Issues: NCF can make more accurate predictions even when data is sparse. </li>
+            <li> Incorporate Auxiliary Information: Easily integrates additional features for more robust recommendations. </li>
+          </ul>
+          <h2 id="financial-benefits-and-roi" class="text-capitalize wow fadeInUp"> Financial Benefits and ROI </h2>
+          <p class="wow fadeInUp"> The advanced capabilities of NCF can be leveraged for tangible financial gains: </p>
+          <ul>
+            <li> Cross-Sell Opportunities: Recommending complementary products based on user behavior can boost cart size. </li>
+            <li> Upsell Opportunities: By accurately predicting what premium services or products a user is likely to purchase, you can increase the average transaction value. </li>
+            <li><span> <a href="https://taliferro.com/blog/sep2023/sep062023/enhancing-e-commerce-retention-through-webrtc-enabled-customer-support.html">customer retention</a>: More accurate recommendations lead to higher user satisfaction, thereby increasing <a href="https://taliferro.com/blog/sep2023/sep062023/enhancing-e-commerce-retention-through-webrtc-enabled-customer-support.html">customer retention</a> rates. </span></li>
+          </ul>
+          <p class="wow fadeInUp"><span><span> All these contribute to a better ROI, aligning perfectly with the offerings at Taliferro Group where we specialize in <a href="https://taliferro.com/blog/oct2023/oct092023/how-we-uncover-hidden-revenue-in-your-data.html">analytics</a>, </span><a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a><span>, and <a href="https://taliferro.com/blog/sep2023/sep152023/leveraging-flow-hooks-in-api-proxies.html">performance optimization</a>. </span></span></p>
+          <h2 id="technical-tips-for-implementing-ncf" class="text-capitalize wow fadeInUp"> Technical Tips for Implementing NCF </h2>
+          <ul>
+            <li> Hyperparameter Tuning: Spend time on fine-tuning your model's hyperparameters. Tools like GridSearch can automate this process. </li>
+            <li> Batch Normalization: This technique can make your neural network training more stable and faster, contributing to better recommendation results. </li>
+            <li> Embedding Layers: Use embedding layers to capture high-dimensional categorical variables, such as user IDs and item IDs, and convert them into continuous features. </li>
+            <li><span> Real-<a href="https://taliferro.com/blog/aug2023/aug092023/the-symbiotic-dance-of-two-life-constants.html">Time</a> Data Pipeline: Implement a real-<a href="https://taliferro.com/blog/aug2023/aug092023/the-symbiotic-dance-of-two-life-constants.html">Time</a> data pipeline to continually train your model, making your recommendation system more responsive to changing user behavior. </span></li>
+          </ul>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp"> Neural Collaborative Filtering represents a significant advancement over traditional recommendation systems. By taking advantage of its capabilities, businesses can make more accurate recommendations, thereby increasing cross-sell and upsell opportunities. This not only enhances user satisfaction but also contributes to a healthier bottom line. </p>
+          <p class="wow fadeInUp"> If you're interested in incorporating Neural Collaborative Filtering into your recommendation engine, Taliferro Group offers specialized services in machine learning and analytics to help you achieve this. Feel free to reach out to us at our Seattle office for more information. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Neural Collaborative Filtering</em></li>
+                <li><em>NCF</em></li>
+                <li><em>recommendation systems</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Neural Collaborative Filtering</li>
+              <li>NCF</li>
+              <li>recommendation systems</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="did-you-know-that-neural-collaborative-filtering-can-augment-recommendation-engines">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/oct2023/oct052023/how-i-perform-mobile-app-rationalization.html">&larr; How I Perform Mobile App Rationalization</a>
+            <a class="button" href="https://taliferro.com/blog/oct2023/oct072023/how-to-survive-waning-consumer-interest.html">How to Survive Waning Consumer Interest? &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

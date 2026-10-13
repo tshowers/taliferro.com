@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Design Your API for the Developer Who Isn't You</title>
+  <meta name="description" content="Endpoint names, documentation, and consistent patterns are the only context an outside developer has. Design for them, not for yourself.">
+  <meta name="keywords" content="API Design, User-Centric Development, Endpoint Selection, API Versioning, Metadata in APIs, Simplifying API Usability, Software Development, Documentation Best Practices, Data-First Approach, API Integration">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Design Your API for the Developer Who Isn't You">
+  <meta property="og:description" content="Endpoint names, documentation, and consistent patterns are the only context an outside developer has. Design for them, not for yourself.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jan2023/jan262023/tips-for-excellent-api-design.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Design Your API for the Developer Who Isn't You">
+  <meta name="twitter:description" content="Endpoint names, documentation, and consistent patterns are the only context an outside developer has. Design for them, not for yourself.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/jan2023/jan262023/tips-for-excellent-api-design.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jan2023/jan262023/tips-for-excellent-api-design.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Design Your API for the Developer Who Isn't You", "item": "https://taliferro.com/blog/jan2023/jan262023/tips-for-excellent-api-design.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jan2023/jan262023/tips-for-excellent-api-design.html"
+        },
+        "headline": "Design Your API for the Developer Who Isn't You",
+        "description": "Endpoint names, documentation, and consistent patterns are the only context an outside developer has. Design for them, not for yourself.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers"
+        },
+        "datePublished": "2023-01-26",
+        "dateModified": "2026-08-06T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#enhancing-user-efficiency-with-your-api">Enhancing User</a>
+        <a href="#design-with-the-user-in-mind">Design with</a>
+        <a href="#embracing-a-data-first-approach">Embracing a</a>
+        <a href="#precision-in-endpoint-selection">Precision in</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Design Your API for the Developer Who Isn't You</h1>
+          <p>The most common API design mistake is building for how you already understand the system, not for the developer who's seeing it for the first time. Endpoint names, documentation, and consistent patterns matter because they're the only context an outside developer actually has.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp"> <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a> design, often an overlooked aspect, holds paramount importance in ensuring a prosperous API. An API that lacks usability or fails to make logical sense will not only frustrate developers but also fall short of providing them with the necessary tools to build the desired applications. By adhering to the following guidelines, you can guarantee the success of your API by ensuring its ease of understanding and usage. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">API design support</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="enhancing-user-efficiency-with-your-api" class="text-capitalize wow fadeInUp"> Enhancing User Efficiency with Your API </h2>
+          <p class="wow fadeInUp"><span> Maximizing user <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">efficiency</a> while working with your </span><a href="https://taliferro.com/api-design-services/"><strong>API</strong></a> is of utmost significance. The most effective approach to achieve this is by designing for others rather than solely for yourself. Pondering how others might utilize the <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a> will facilitate their comprehension of your product or service's potential. When designing an API, consider the following tips: </p>
+          <h2 id="design-with-the-user-in-mind" class="text-capitalize wow fadeInUp"> Design with the user in mind</h2>
+          <p class="wow fadeInUp"> Facilitate a seamless onboarding experience by comprehensively addressing user inquiries at every stage of their journey, including fundamental aspects such as account setup and site feature utilization. Your aim is to instill confidence in users, ensuring they feel empowered and informed as they explore new features that promise both utility and enjoyment. </p>
+          <h2 id="embracing-a-data-first-approach" class="text-capitalize wow fadeInUp"> Embracing a Data-First Approach </h2>
+          <p class="wow fadeInUp"><span> In the conventional <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> process, APIs often adopt a data-last approach, functioning as support mechanisms for other aspects of the business. While this approach is generally effective, it may not always yield optimal results. </span></p>
+          <p class="wow fadeInUp"> When initiating the design of a new <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a>, prioritizing the required data over the needs of external applications is crucial. If you are constructing an application that may eventually be exposed through an <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a>, focus on identifying the data your application necessitates and how it can effectively leverage that information before considering how third parties will consume your product via an <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a>. </p>
+          <h2 id="precision-in-endpoint-selection" class="text-capitalize wow fadeInUp"> Precision in Endpoint Selection </h2>
+          <p class="wow fadeInUp"> Endpoint names should be concise and precise. Avoid using the same endpoint name for distinct actions within your API, as well as for additional resources or data formats. </p>
+          <p class="wow fadeInUp"> Endpoints often serve as resource identifiers, thus warranting careful selection to ensure ease of recall when accessing information through GET requests or performing POST/PUT operations. </p>
+          <h2 id="versioning-considerations" class="text-capitalize wow fadeInUp"> Versioning Considerations </h2>
+          <p class="wow fadeInUp"> Versioning is a prevalent practice in software engineering and typically proves advantageous. The primary purpose of versioning an API is to enable clients to seamlessly transition to a new version of the client library while continuing to work with the same URL. However, since this can be achieved through content negotiation by modifying the Accept header, versioning is not essential for all APIs. It particularly applies to APIs that provide multiple data types or represent various iterations of themselves. </p>
+          <p class="wow fadeInUp"> It is important to note that versioning encompasses two aspects: servers and clients. </p>
+          <h2 id="harnessing-metadata-and-links-effectively" class="text-capitalize wow fadeInUp"> Harnessing Metadata and Links Effectively </h2>
+          <p class="wow fadeInUp"> Metadata refers to data contained in a resource's header, describing its properties. Links, on the other hand, act as pointers to other resources, serving purposes such as documentation linking or aiding users in navigating through an <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a>. </p>
+          <p class="wow fadeInUp"> In certain cases, resources may exhibit relationships or shared characteristics. For instance, a user object may possess a "friends" relationship with another user object, or an invoice object may demonstrate an "invoice_lines" relationship with an invoice line item object. When designing your APIs, it is crucial to consider these relationships, allowing clients to effortlessly navigate through them by following the links provided in respective headers and descriptions. </p>
+          <h2 id="simplicity-and-clarity-for-ongoing-usability" class="text-capitalize wow fadeInUp"> Simplicity and Clarity for Ongoing Usability </h2>
+          <p class="wow fadeInUp"> <a href="https://taliferro.com/api-design-services/">API design</a> not only revolves around ease of use but also hinges on ensuring comprehensibility. If your API proves difficult to understand and use, it will inevitably drive away potential users. To maintain simplicity and comprehensibility, adhere to the following five tips for exceptional <a href="https://taliferro.com/blog/feb2023/feb022023/five-tips-for-proper-api-design.html">API design</a>: </p>
+          <ul>
+            <li> Keep documentation up-to-date </li>
+            <li> Ensure simplicity and readability in documentation </li>
+            <li> Assign unique and descriptive names to each endpoint, avoiding abbreviations </li>
+            <li><span> Ensure that all <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">endpoints</a> possess self-explanatory descriptions for users unfamiliar with their functionality </span></li>
+          </ul>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp"> Adhering to these guidelines will empower you to design engaging APIs that facilitate seamless integration with your platform for developers. Remember that the ultimate goal is to create an enjoyable experience for all stakeholders, as this will foster user loyalty and repeated usage. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">book an API review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API Design</em></li>
+                <li><em>User-Centric Development</em></li>
+                <li><em>Endpoint Selection</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li><a href="https://taliferro.com/api-design-services/">API Design</a></li>
+              <li>User-Centric Development</li>
+              <li>Endpoint Selection</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="tips-for-excellent-api-design">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/jan2023/jan252023/your-project-is-not-ci-cd.html">&larr; Most Teams Doing CI/CD Are Just a Human Manually Doing the Steps</a>
+            <a class="button" href="https://taliferro.com/blog/jan2023/jan272023/a-different-perspective-on-software-delivery.html">Being the Only One in the Room Taught Me to Catch What Everyone Else Missed &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

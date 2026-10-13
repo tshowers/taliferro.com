@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Off-the-Shelf Software Wasn't Built for Your Lab | Taliferro Blog</title>
+  <meta name="description" content="Generic lab software gets built to handle every workflow reasonably well, which means it handles none of them particularly well. See why Taliferro built its LIS from scratch instead.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Off-the-Shelf Software Wasn't Built for Your Lab">
+  <meta property="og:description" content="Generic lab software handles every workflow a little, and none of them well. Here's why Taliferro built its LIS from scratch.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/sep2022/sep172022/the-top-five-reasons-our-laboratory-information-system-is-the-best.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Off-the-Shelf Software Wasn't Built for Your Lab">
+  <meta name="twitter:description" content="Generic lab software handles every workflow a little, and none of them well. Here's why Taliferro built its LIS from scratch.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/sep2022/sep172022/the-top-five-reasons-our-laboratory-information-system-is-the-best.html">
+  <link rel="canonical" href="https://taliferro.com/blog/sep2022/sep172022/the-top-five-reasons-our-laboratory-information-system-is-the-best.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Off-the-Shelf Software Wasn't Built for Your Lab", "item": "https://taliferro.com/blog/sep2022/sep172022/the-top-five-reasons-our-laboratory-information-system-is-the-best.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/sep2022/sep172022/the-top-five-reasons-our-laboratory-information-system-is-the-best.html"
+        },
+        "headline": "Off-the-Shelf Software Wasn't Built for Your Lab",
+        "description": "Generic lab software gets built to handle every workflow reasonably well, which means it handles none of them particularly well. See why Taliferro built its LIS from scratch instead.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers"
+        },
+        "datePublished": "2022-09-17",
+        "dateModified": "2026-08-02T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#built-from-scratch-not-bolted-on">Built from scratch</a>
+        <a href="#what-that-actually-lets-us-do">What that unlocks</a>
+        <a href="#access-anywhere-nothing-to-install">Access anywhere</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Off-the-Shelf Software Wasn't Built for Your Lab</h1>
+          <p>Generic lab software gets built to handle every workflow reasonably well, which means it handles none of them particularly well. Taliferro built its Laboratory Information System from scratch instead of bolting features onto an existing platform — cloud-based, accessible from any browser, with nothing to install or maintain. The system was designed around how labs actually work, not adapted to fit.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p class="wow fadeInUp" data-link-bridge="true">When cloud complexity starts slowing delivery, <a href="https://taliferro.com/cloud-architecture-consulting/">how we untangle cloud systems</a> shows how Taliferro turns cloud architecture into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="built-from-scratch-not-bolted-on">Built from scratch, not bolted on</h2>
+          <p>Most <a href="https://taliferro.com/blog/mar2023/mar082023/building-an-effective-laboratory-information-system-architecture.html">laboratory information systems</a> on the market started as something else and had lab-specific features added on top. Taliferro built its LIS the other way around — from the ground up, shaped by actual lab processes instead of retrofitted to approximate them. That means updates ship when they're needed instead of waiting on a vendor's release calendar, and because the software isn't built on someone else's foundation, the team that built it actually understands every layer of how it works.</p>
+          <h2 id="what-that-actually-lets-us-do">What that actually lets us do</h2>
+          <p>A system built around real lab workflows does more than store results — it helps solve the specific problems a lab runs into moving or collecting data. That starts with understanding where a lab actually is today and where it's trying to go, then building toward that instead of a generic checklist of features every LIS claims to have.</p>
+          <h2 id="access-anywhere-nothing-to-install">Access anywhere, nothing to install</h2>
+          <p>Because it's cloud-based and browser-compatible, updating patient information or reviewing results doesn't require being at a specific desk with specific software installed — any device with an internet connection works, which matters for a team that's rarely in one place all day. There's nothing to install, nothing to patch, and no IT ticket required just to keep working while traveling. That's fewer workflow interruptions, which adds up to real efficiency over a year, not just a nice feature on a spec sheet.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cloud architecture reality check?</strong>
+            <p class="mb-0">Use the article to frame the issue, then review <a href="https://taliferro.com/cloud-architecture-consulting/">how we untangle cloud systems</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the cloud bottleneck</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li><a href="https://taliferro.com/laboratory-information-system/" target="_blank" rel="noopener">Laboratory Information System</a></li>
+              <li><a href="https://taliferro.com/blog/mar2023/mar042023/eagle-strategies.html" target="_blank" rel="noopener">data management</a></li>
+              <li><a href="https://taliferro.com/cloud-architecture-consulting/" target="_blank" rel="noopener">cloud-based software</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="blog" data-source="blog_cta" data-page="the-top-five-reasons-our-laboratory-information-system-is-the-best">Cloud architecture</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/sep2022/sep162022/how-to-improve-and-innovate-dev-ops-environments-and-ci-cd-processes.html">&larr; If Your Pipeline Is Slowing You Down, It&#39;s Not Doing Its Job</a>
+            <a class="button" href="https://taliferro.com/blog/sep2022/sep182022/five-tips-on-preventing-medical-errors-when-ordering-lab-tests.html">The Test Wasn't the Hard Part. Understanding It Was. &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

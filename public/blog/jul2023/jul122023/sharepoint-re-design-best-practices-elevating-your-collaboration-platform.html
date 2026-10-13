@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most SharePoint Redesigns Fail Before a Single Page Gets Rebuilt</title>
+  <meta name="description" content="A SharePoint redesign that skips assessment, clear objectives, and stakeholder input fails regardless of how good the new design looks. Here's the order that actually works.">
+  <meta name="keywords" content="SharePoint re-design, collaboration platform, document management, intranet development, user experience, responsive design, SharePoint security, data compliance, content migration, SharePoint customization, digital workplace, information architecture, metadata tagging, user interface, SharePoint adoption, SharePoint updates, SharePoint maintenance, platform optimization, business productivity">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Most SharePoint Redesigns Fail Before a Single Page Gets Rebuilt">
+  <meta property="og:description" content="A SharePoint redesign that skips assessment, clear objectives, and stakeholder input fails regardless of how good the new design looks. Here's the order that actually works.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jul2023/jul122023/sharepoint-re-design-best-practices-elevating-your-collaboration-platform.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Most SharePoint Redesigns Fail Before a Single Page Gets Rebuilt">
+  <meta name="twitter:description" content="A SharePoint redesign that skips assessment, clear objectives, and stakeholder input fails regardless of how good the new design looks. Here's the order that actually works.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/jul2023/jul122023/sharepoint-re-design-best-practices-elevating-your-collaboration-platform.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jul2023/jul122023/sharepoint-re-design-best-practices-elevating-your-collaboration-platform.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Most SharePoint Redesigns Fail Before a Single Page Gets Rebuilt", "item": "https://taliferro.com/blog/jul2023/jul122023/sharepoint-re-design-best-practices-elevating-your-collaboration-platform.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jul2023/jul122023/sharepoint-re-design-best-practices-elevating-your-collaboration-platform.html"
+        },
+        "headline": "Most SharePoint Redesigns Fail Before a Single Page Gets Rebuilt",
+        "description": "A SharePoint redesign that skips assessment, clear objectives, and stakeholder input fails regardless of how good the new design looks. Here's the order that actually works.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-07-12",
+        "dateModified": "2026-09-04",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#assess-your-current-state">Assess Your</a>
+        <a href="#define-clear-objectives">Define Clear</a>
+        <a href="#engage-key-stakeholders">Engage Key</a>
+        <a href="#information-architecture-matters">Information Architecture</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Most SharePoint Redesigns Fail Before a Single Page Gets Rebuilt</h1>
+          <p>Teams almost always start a SharePoint redesign by picking a template, then wonder why adoption stalls six months later. Taliferro lays out the assessment, planning, and stakeholder work that has to happen before the visual redesign — because that's usually where the real failure starts.</p>
+          <p class="fine">Published: 12 Jul 2023 · Updated: 4 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp"> SharePoint redesigns fail more often at the planning stage than the execution stage. A team picks a new template, moves the same disorganized content into it, and six months later adoption looks exactly like it did before — because the actual problems (unclear objectives, no stakeholder input, messy information architecture) never got addressed. Here's the order that actually works. </p>
+          <h2 id="assess-your-current-state" class="text-capitalize wow fadeInUp"> Assess Your Current State </h2>
+          <p class="wow fadeInUp"> Before touching the design, find out what's actually broken — pull real user feedback, check which pages get used and which are ghost towns, and look at performance complaints. A redesign built on assumptions instead of this kind of evidence tends to fix problems nobody had while leaving the real ones untouched. </p>
+          <h2 id="define-clear-objectives" class="text-capitalize wow fadeInUp"> Define Clear Objectives </h2>
+          <p class="wow fadeInUp"><span><span> "Make it better" isn't an objective. Improving <a href="https://taliferro.com/blog/oct2023/oct052023/how-i-perform-mobile-app-rationalization.html">user experience</a>, fixing document management, or tightening </span><a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a> are each different projects with different priorities — naming the specific goal up front is what keeps a redesign from turning into a scope-creeping visual refresh that solves nothing. </span></p>
+          <h2 id="engage-key-stakeholders" class="text-capitalize wow fadeInUp"> Engage Key Stakeholders </h2>
+          <p class="wow fadeInUp"> The people who'll use the redesigned site daily know things a project team doesn't — which workflows are actually painful, which features get ignored, what they've given up trying to find. Interviews, surveys, and short workshops with actual end-users, not just department heads, are what keep the redesign grounded in real usage instead of leadership's mental model of how the site gets used. </p>
+          <h2 id="information-architecture-matters" class="text-capitalize wow fadeInUp"> Information Architecture Matters </h2>
+          <p class="wow fadeInUp"><span> A prettier interface on top of the same disorganized content structure fixes nothing — most SharePoint frustration is people not being able to find things, not the visual design. Logical content organization and consistent metadata tagging are what make <a href="https://taliferro.com/blog/oct2023/oct262023/the-power-of-gesture-based-contextual-search.html">search</a> actually work, which matters more to daily users than any layout choice. </span></p>
+          <h2 id="responsive-design-for-accessibility" class="text-capitalize wow fadeInUp"> Responsive Design for Accessibility </h2>
+          <p class="wow fadeInUp"> A meaningful share of SharePoint access now happens on a phone or tablet, so a <a href="https://taliferro.com/blog/may2023/may272023/the-inside-out-approach.html">responsive design</a> that adapts cleanly to different screen sizes isn't optional anymore — a site that only works well on desktop is failing a growing share of the people trying to use it. </p>
+          <h2 id="focus-on-user-experience-ux" class="text-capitalize wow fadeInUp"> Focus on User Experience (UX) </h2>
+          <p class="wow fadeInUp"> Adoption lives or dies on whether people can do the basics — upload a document, find something, collaborate on a file — without hunting for the right menu. An intuitive layout and clear navigation aren't cosmetic details; they're the actual reason a redesign gets used or gets ignored in favor of emailing files back and forth like before. </p>
+          <h2 id="security-and-compliance" class="text-capitalize wow fadeInUp"> Security and Compliance </h2>
+          <p class="wow fadeInUp"><span> A redesign is the natural moment to review <a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a> settings, permissions, and compliance features that have drifted since the last setup — stale access grants, missing encryption, no multi-factor authentication. Fixing these during the redesign is far cheaper than discovering the gap during an audit or a breach. </span></p>
+          <h2 id="customization-and-personalization" class="text-capitalize wow fadeInUp"> Customization and Personalization </h2>
+          <p class="wow fadeInUp"> Different teams use SharePoint differently, and a rigid one-size-fits-all layout ignores that. Letting users personalize dashboards and surface the content relevant to their role — using SharePoint's own web parts and templates — is what makes the platform feel built for the people using it instead of imposed on them. </p>
+          <h2 id="content-migration-strategy" class="text-capitalize wow fadeInUp"> Content Migration Strategy </h2>
+          <p class="wow fadeInUp"> Moving content during a redesign without a real plan is how files go missing, permissions break, and version history gets lost. A migration plan with data integrity checks and a rollback path is what keeps the transition from becoming its own crisis. </p>
+          <h2 id="training-and-adoption-strategy" class="text-capitalize wow fadeInUp"> Training and Adoption Strategy </h2>
+          <p class="wow fadeInUp"> Shipping the redesign is half the job — if people don't understand what changed or why, they'll route around it. A real training plan that explains the new features and directly addresses "why did you move my stuff" is what actually converts a redesign into adoption instead of quiet resentment. </p>
+          <h2 id="regular-maintenance-and-updates" class="text-capitalize wow fadeInUp"> Regular Maintenance and Updates </h2>
+          <p class="wow fadeInUp"> A SharePoint redesign isn't a one-time project that's "done" at launch — it needs ongoing review as usage patterns shift and Microsoft ships new features. Treating it as finished the day it launches is how it drifts right back into the state that triggered the redesign in the first place. </p>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp"><span><span> A SharePoint redesign succeeds or fails based on the work done before anyone touches a template — assessment, clear objectives, and real stakeholder input. Skip those, and even a beautifully designed site inherits the same problems as the one it replaced: improved <a href="https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html">user experience</a>, stronger </span><a href="https://taliferro.com/blog/may2023/may012023/a-gastrointestinal-metaphor-for-corporate-data-security.html">security</a>, and real productivity gains all depend on getting that groundwork right first. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need the frontend to move faster?</strong>
+            <p class="mb-0">If you want execution instead of more rework, start with <a href="https://taliferro.com/website-development/">frontend delivery support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum framework</a>, or <a href="https://taliferro.com/contact.html">book a frontend consult</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>SharePoint re-design</em></li>
+                <li><em>collaboration platform</em></li>
+                <li><em>document management</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>SharePoint re-design</li>
+              <li>collaboration platform</li>
+              <li>document management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="sharepoint-re-design-best-practices-elevating-your-collaboration-platform">Website development</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/jul2023/jul112023/how-apples-vision-pro-will-transform-industries-and-experiences.html">&larr; Vision Pro Doesn't Fix Your Workflow — It Exposes It</a>
+            <a class="button" href="https://taliferro.com/blog/jul2023/jul132023/the-future-of-artificial-intelligence-opportunities-and-challenges.html">Every AI Opportunity on This List Comes With a Matching Risk &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

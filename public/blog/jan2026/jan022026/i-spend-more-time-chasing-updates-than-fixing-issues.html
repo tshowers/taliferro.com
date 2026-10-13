@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>I spend more time chasing updates than fixing issues.</title>
+  <meta name="description" content="Why middle managers spend more time chasing updates than fixing issues—and how coordination work quietly slows execution in operations-heavy organizations.">
+  <meta name="keywords" content="chasing updates, middle management problems, operational drag, coordination work, execution slowdown, escalation issues, data silos, operations management" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="I spend more time chasing updates than fixing issues.">
+  <meta property="og:description" content="Why middle managers spend more time chasing updates than fixing issues—and how coordination work quietly slows execution in operations-heavy organizations.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jan2026/jan022026/i-spend-more-time-chasing-updates-than-fixing-issues.html">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="I spend more time chasing updates than fixing issues." />
+  <meta name="twitter:description" content="Why middle managers spend more time chasing updates than fixing issues—and how coordination work quietly slows execution in operations-heavy organizations.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/jan2026/jan022026/i-spend-more-time-chasing-updates-than-fixing-issues.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jan2026/jan022026/i-spend-more-time-chasing-updates-than-fixing-issues.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "I spend more time chasing updates than fixing issues.", "item": "https://taliferro.com/blog/jan2026/jan022026/i-spend-more-time-chasing-updates-than-fixing-issues.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jan2026/jan022026/i-spend-more-time-chasing-updates-than-fixing-issues.html"
+        },
+        "headline": "I spend more time chasing updates than fixing issues.",
+        "description": "Why middle managers spend more time chasing updates than fixing issues—and how coordination work quietly slows execution in operations-heavy organizations.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2026-01-02T09:00:00-07:00",
+        "dateModified": "2026-01-02T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do managers spend so much time chasing updates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because systems don’t carry context, ownership, and decisions forward. When work can’t move end-to-end, people become the coordination layer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is chasing updates a communication problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It’s an execution problem. Meetings and messages fill the gap when systems can’t advance work on their own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Momentum System (MS)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Momentum System is built to keep work moving by focusing on next actions, handoffs, and follow-through before data reaches a CRM or reporting layer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does TODD fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODD is a Momentum System that reduces coordination work by turning next actions into system behavior instead of manual follow-up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we have to replace our existing tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Most teams keep their core systems and add a momentum layer that reduces the need for chasing updates."
+      }
+    }
+  ]
+}
+</script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#chasing-updates-is-invisible-work">Chasing updates</a>
+        <a href="#why-the-work-shifts-from-fixing-to-coordinating">Why the</a>
+        <a href="#the-middle-manager-trap">The middle-manager</a>
+        <a href="#why-escalation-feels-slower-than-the-problem">Why escalation</a>
+        <a href="#coordination-is-stealing-time-from-real-work">Coordination is</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>I spend more time chasing updates than fixing issues</h1>
+          <p>Following up, checking status, reconfirming facts, translating between teams — none of it appears on a job description, but it quietly becomes the full-time job of middle managers who are accountable for outcomes without owning any of the tools. That work feels necessary. It produces no durable progress.</p>
+          <p class="fine">Published: 2 Jan 2026 · Category: Operations</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+      <!-- NOTE: no bottom-pad here to avoid a huge gap -->
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p>This sentence shows up in every operations-heavy organization. Airlines. Travel. Construction. Healthcare. Government. Technology.</p>
+          <p class="wow fadeInUp" data-link-bridge="true">If the goal is better decisions instead of more dashboards, <a href="https://taliferro.com/machine-learning-services/">decision-ready analytics services</a> shows how Taliferro turns analytics work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <p>It’s not a complaint about effort. It’s a signal that something deeper is broken.</p>
+          <h2 id="chasing-updates-is-invisible-work">Chasing updates is invisible work</h2>
+          <p>Nobody puts “chase updates” on a job description. But it quietly becomes the full-time job of middle managers.</p>
+          <p>Following up. Checking status. Reconfirming facts. Translating between teams. Forwarding screenshots. Summarizing calls. Escalating issues that should have moved automatically.</p>
+          <p>This work feels necessary, but it produces no durable progress.</p>
+          <h2 id="why-the-work-shifts-from-fixing-to-coordinating">Why the work shifts from fixing to coordinating</h2>
+          <p>When data, ownership, and decisions are split across systems, the system stops moving on its own. People have to push it forward manually.</p>
+          <p>The moment a problem crosses team boundaries, execution turns into coordination.</p>
+          <p>Instead of solving the issue, managers spend their time answering:</p>
+          <ul>
+            <li>What’s the latest status?</li>
+            <li>Who owns the next step?</li>
+            <li>Has this been approved?</li>
+            <li>Did anyone notify leadership?</li>
+            <li>Are we sure this is still accurate?</li>
+          </ul>
+          <h2 id="the-middle-manager-trap">The middle-manager trap</h2>
+          <p>Middle managers are accountable for outcomes, but they don’t own the tools.</p>
+          <p>They’re expected to keep things moving without control over systems, workflows, or escalation paths. So they compensate by chasing.</p>
+          <blockquote>
+            <p>“I’m accountable for keeping things moving, but I don’t own any of the tools.”</p>
+          </blockquote>
+          <h2 id="why-escalation-feels-slower-than-the-problem">Why escalation feels slower than the problem</h2>
+          <p>Escalation is often a conversation instead of a mechanism.</p>
+          <p>Someone notices a risk. Someone validates it. Someone screenshots it. Someone pings leadership. Leadership asks for a meeting.</p>
+          <p>By the time a decision lands, the situation has changed.</p>
+          <h2 id="coordination-is-stealing-time-from-real-work">Coordination is stealing time from real work</h2>
+          <p>Every hour spent chasing updates is an hour not spent fixing root causes.</p>
+          <p>This is why teams feel busy while progress feels slow.</p>
+          <p>This gap between effort and progress is the defining symptom of coordination-heavy systems.</p>
+          <h2 id="what-to-fix-first">What to fix first</h2>
+          <ul>
+            <li>Create one shared source of truth for active issues.</li>
+            <li>Attach a next action and owner to every update.</li>
+            <li>Capture decisions where the work happens.</li>
+            <li>Turn escalation into a system behavior, not a meeting.</li>
+          </ul>
+          <p> If this sounds familiar, these related posts expand the picture: <a href="https://taliferro.com/blog/ai-adoption/" target="_blank" rel="noopener">AI Adoption</a>, <a href="https://taliferro.com/blog/outreach-cost/" target="_blank" rel="noopener">Outreach Cost</a>, <a href="https://taliferro.com/blog/crm-alternatives/" target="_blank" rel="noopener">CRM Alternatives</a>, and <a href="https://taliferro.com/blog/bms/" target="_blank" rel="noopener">Momentum System (MS)</a>. </p>
+          <h2 id="faq">FAQ</h2>
+          <h3>Why do managers spend so much time chasing updates?</h3>
+          <p>Because systems don’t carry context, ownership, and decisions forward. People become the glue.</p>
+          <h3>Is this a communication problem?</h3>
+          <p>No. It’s an execution problem. Meetings and messages fill the gap when systems can’t move work end-to-end.</p>
+          <h3>What is a Momentum System (MS)?</h3>
+          <p>A <a href="https://taliferro.com/business-momentum-system/">Momentum System is designed to keep work moving</a>. It sits before your CRM and before reporting tools, focusing on next actions, handoffs, and follow-through.</p>
+          <h3>Where does TODD fit?</h3>
+          <p>TODD is our Momentum System. It reduces coordination work by turning next actions into system behavior instead of manual follow-up.</p>
+          <h3>Do we have to replace our existing tools?</h3>
+          <p>No. Most teams keep their core systems and add a momentum layer that reduces the need for chasing updates.</p>
+          <div class="divider"></div>
+          <p class="fine"><strong>Tyrone Showers</strong></p>
+          <p class="fine"><a href="mailto:ty.showers@taliferro.com">ty.showers@taliferro.com</a></p>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li><a href="https://taliferro.com/api-design-services/" target="_blank" rel="noopener">api service</a></li>
+            <li><a href="https://taliferro.com/website-development/" target="_blank" rel="noopener">bespoke development</a></li>
+            <li><a href="https://taliferro.com/ecommerce-development/" target="_blank" rel="noopener">e-commerce</a></li>
+            <li><a href="https://taliferro.com/website-development/" target="_blank" rel="noopener">website development</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card" aria-label="Related reading">
+        <p class="quote">Related reading</p>
+        <ul class="list">
+          <li><a href="https://taliferro.com/blog/jan2026/jan172026/why-does-escalation-feel-slower-than-the-problem-itself.html">Why does escalation feel slower than the problem itself</a></li>
+          <li><a href="https://taliferro.com/blog/dec2025/dec302025/we-have-the-data-but-its-spread-across-five-systems.html">We have the data, but it’s spread across five systems</a></li>
+          <li><a href="https://taliferro.com/blog/dec2025/dec312025/why-does-every-disruption-turn-into-ten-meetings.html">Why does every disruption turn into ten meetings</a></li>
+        </ul>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want help reducing coordination?</p>
+        <p class="fine">Tell us what’s breaking and where the handoffs keep slipping.</p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="execution_problems" data-source="blog_cta" data-page="i-spend-more-time-chasing-updates-than-fixing-issues">Machine learning and analytics consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="bottom-pad" aria-hidden="true"></div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/jan2026/jan012026/your-best-leads-arent-new.html">&larr; Your Best Leads Aren&#39;t New. They&#39;re Neglected</a>
+          <a class="button" href="https://taliferro.com/blog/jan2026/jan042026/todd-spinners-mean-working.html">Those Little Spinners Mean TODD Is Working &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

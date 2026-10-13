@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>The Script You Write in Five Minutes Is the One You'll Maintain for Five Years</title>
+  <meta name="description" content="Every 'quick' shell script becomes permanent infrastructure eventually. The habits that separate a script that survives from one that becomes a 2am mystery — planning, comments, error handling, and version control.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="The Script You Write in Five Minutes Is the One You'll Maintain for Five Years">
+  <meta property="og:description" content="Every 'quick' shell script becomes permanent infrastructure eventually. The habits that separate a script that survives from one that becomes a 2am mystery — planning, comments, error handling, and version control.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/mar2023/mar052023/shell-script-best-practices.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="The Script You Write in Five Minutes Is the One You'll Maintain for Five Years">
+  <meta name="twitter:description" content="Every 'quick' shell script becomes permanent infrastructure eventually. The habits that separate a script that survives from one that becomes a 2am mystery — planning, comments, error handling, and version control.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/mar2023/mar052023/shell-script-best-practices.html">
+  <link rel="canonical" href="https://taliferro.com/blog/mar2023/mar052023/shell-script-best-practices.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "The Script You Write in Five Minutes Is the One You'll Maintain for Five Years", "item": "https://taliferro.com/blog/mar2023/mar052023/shell-script-best-practices.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="keywords" content="Shell scripts, Python scripts, scripting tips, automation, code planning, comments, clear code, functions, error handling, libraries, testing, documentation, version control, learning from others, productivity">
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/mar2023/mar052023/shell-script-best-practices.html"
+        },
+        "headline": "The Script You Write in Five Minutes Is the One You'll Maintain for Five Years",
+        "description": "Every 'quick' shell script becomes permanent infrastructure eventually. The habits that separate a script that survives from one that becomes a 2am mystery — planning, comments, error handling, and version control.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-03-05",
+        "dateModified": "2026-08-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#plan-before-you-start-coding">Plan before</a>
+        <a href="#use-comments">Use comments</a>
+        <a href="#write-clear-and-concise-code">Write clear</a>
+        <a href="#use-functions">Use functions</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>The Script You Write in Five Minutes Is the One You'll Maintain for Five Years</h1>
+          <p>Nobody plans to still be running that one-off script two years later, but it happens constantly — a five-minute hack becomes the thing a deploy pipeline quietly depends on. The habits below aren't about writing perfect code; they're about writing scripts that don't turn into a 2am mystery when something finally breaks.</p>
+          <p class="fine">Published: 5 Mar 2023 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p><span> Shell and Python scripts are potent ways to automate tasks and increase <a href="https://taliferro.com/blog/feb2023/feb242023/playing-games-to-clear-your-mind-for-real-client-work.html">productivity</a>. Whether you're a seasoned developer or just starting, there are always ways to improve your scripting skills. This post will explore some tips for writing better and more productive Shell/Python scripts. </span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">system design that removes drag</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="plan-before-you-start-coding" class="text-capitalize"> Plan before you start coding </h2>
+          <p> One of the most important things you can do before writing any code is to plan your script. Start by defining the problem you want to solve, identify the requirements, and consider any edge cases that might arise. This process will help you to create a clear and structured plan for your script. </p>
+          <h2 id="use-comments" class="text-capitalize"> Use comments </h2>
+          <p> Adding comments to your code is essential for clarity and understanding. Comments are notes you add to your code to explain what it does and why you wrote it in a particular way. Make sure to add comments to your script, explaining the purpose of each section of code and how it fits into the overall structure. </p>
+          <pre>  <code>
+              # This is a comment in Python
+              # It explains the purpose of the code below
+          
+              def calculate_average(numbers):
+                  # Calculate and return the average of a list of numbers
+                  total = sum(numbers)
+                  return total / len(numbers)
+            </code>
+          </pre>
+          <h2 id="write-clear-and-concise-code" class="text-capitalize"> Write clear and concise code </h2>
+          <p> Clear and concise code is easier to read and understand and less likely to contain errors. Use meaningful variable names, avoid abbreviations, and follow a consistent coding style. This will make your code more readable, which will help you and others to understand it better. </p>
+          <pre>  <code>
+              # Python code example
+              def greet(name):
+                  print(f"Hello, {name}!")
+          
+              # Shell script example
+              # This is a comment in Shell
+              echo "Hello, World!"
+            </code>
+          </pre>
+          <h2 id="use-functions" class="text-capitalize"> Use functions </h2>
+          <p> Functions are a way to break down complex scripts into smaller, more manageable parts. They can be reused multiple times throughout your code, which reduces the amount of code you need to write and makes it easier to maintain. Use functions to perform specific tasks within your script, such as reading a file or parsing data. </p>
+          <pre>  <code>
+              # Python code example using functions
+              def calculate_square(num):
+                  return num ** 2
+          
+              def calculate_cube(num):
+                  return num ** 3
+          
+              result_square = calculate_square(5)
+              result_cube = calculate_cube(3)
+          
+              print(f"Square: {result_square}")
+              print(f"Cube: {result_cube}")
+            </code>
+          </pre>
+          <h2 id="handle-errors-gracefully" class="text-capitalize"> Handle errors gracefully </h2>
+          <p> Errors can occur at any time during the execution of your script. Handling errors gracefully means that your script should be able to recover from mistakes, display helpful error messages, and continue to run without crashing. You can use error-handling techniques such as try-except blocks to handle errors in your script. </p>
+          <pre>  <code>
+              # Python code example handling errors
+              try:
+                  file = open("nonexistent.txt", "r")
+                  content = file.read()
+                  file.close()
+              except FileNotFoundError:
+                  print("The file does not exist.")
+              except Exception as e:
+                  print(f"An error occurred: {e}")
+            </code>
+          </pre>
+          <h2 id="use-libraries-and-modules" class="text-capitalize"><span> Use libraries and <a href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">modules</a> </span></h2>
+          <p><span> Libraries and <a href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">modules</a> are pre-written code that you can use in your script. They save time and effort and provide additional functionality you may be unable to write yourself. Use libraries and <a href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">modules</a> to perform tasks such as reading and writing files, connecting to databases, and sending an email. </span></p>
+          <h2 id="test-your-script" class="text-capitalize"> Test your script </h2>
+          <p> Testing is an essential part of script writing. Test your script to ensure it works as intended and can handle different inputs and edge cases. This will help you catch errors early and ensure your script is robust and reliable. </p>
+          <h2 id="document-your-script" class="text-capitalize"> Document your script </h2>
+          <p> Document your code to explain what it does and how it works. Documentation is essential for any codebase, and it's vital for scripts you might not touch again for months or even years. Use a consistent format for your documentation, such as the Python docstring convention. </p>
+          <h2 id="use-version-control" class="text-capitalize"> Use version control </h2>
+          <p> Version control is a way to manage changes to your code over time. It allows you to track changes, collaborate with others, and revert to previous versions if necessary. Use version control for all of your scripts to keep track of changes and ensure you always have a working understanding of your code. </p>
+          <h2 id="learn-from-others" class="text-capitalize"> Learn from others </h2>
+          <p> Finally, learning from others is one of the best ways to improve your scripting skills. You can learn much from others' coding styles, techniques, and solutions to common problems. Read code written by experienced developers, participate in online communities, and attend meetups or conferences. </p>
+          <h2 id="conclusion" class="text-capitalize"> Conclusion </h2>
+          <p> Writing better and more productive Shell/Python scripts requires careful planning, clear and concise code, error handling, testing, and documentation. Use functions, libraries, and modules to break down complex tasks, and use version control to manage changes to your code. Finally, learn from others to improve your skills and become a better scriptwriter. By following these tips, you can create powerful, useful scripts. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+          <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">software development support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><em>Shell scripts</em></li>
+              <li><em>Python scripts</em></li>
+              <li><em>scripting tips</em></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li>Shell scripts</li>
+            <li>Python scripts</li>
+            <li>scripting tips</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="shell-script-best-practices">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar042023/eagle-strategies.html">&larr; Eagle Doesn't Underperform</a>
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar062023/angular-project-strategy.html">The Angular Decisions You Skip in Week One &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

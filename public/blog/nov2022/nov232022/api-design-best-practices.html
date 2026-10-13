@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Your API Doesn't Need to Be Clever. It Needs to Be Boring.</title>
+  <meta name="description" content="Every developer who's had to reverse-engineer a 'creative' API wishes it had just used CRUD and nouns. A plain-English guide to API design choices that pay off the day someone else has to integrate with it.">
+  <meta name="keywords" content="API Design Best Practices, JSON, Consistency in Coding, API Status Codes, CRUD Operations, API Usability, Clear API Design, API Development, API Security, Efficient API Structure, API Documentation, RESTful API Design, Software Development, API Debugging, Idempotent Methods in API, API Integration Techniques">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Your API Doesn't Need to Be Clever. It Needs to Be Boring.">
+  <meta property="og:description" content="Every developer who's had to reverse-engineer a 'creative' API wishes it had just used CRUD and nouns. A plain-English guide to API design choices that pay off the day someone else has to integrate with it.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/nov2022/nov232022/api-design-best-practices.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Your API Doesn't Need to Be Clever. It Needs to Be Boring.">
+  <meta name="twitter:description" content="Every developer who's had to reverse-engineer a 'creative' API wishes it had just used CRUD and nouns. A plain-English guide to API design choices that pay off the day someone else has to integrate with it.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/nov2022/nov232022/api-design-best-practices.html">
+  <link rel="canonical" href="https://taliferro.com/blog/nov2022/nov232022/api-design-best-practices.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Your API Doesn't Need to Be Clever. It Needs to Be Boring.", "item": "https://taliferro.com/blog/nov2022/nov232022/api-design-best-practices.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/nov2022/nov232022/api-design-best-practices.html"
+        },
+        "headline": "Your API Doesn't Need to Be Clever. It Needs to Be Boring.",
+        "description": "Every developer who's had to reverse-engineer a 'creative' API wishes it had just used CRUD and nouns. A plain-English guide to API design choices that pay off the day someone else has to integrate with it.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-11-23",
+        "dateModified": "2026-08-04",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#easy-to-read">easy-to-read</a>
+        <a href="#keep-it-consistent">Keep it</a>
+        <a href="#return-the-correct-status-codes">Return the</a>
+        <a href="#proportion">Proportion</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Your API Doesn't Need to Be Clever It Needs to Be Boring</h1>
+          <p>The most interesting-looking APIs are usually the most frustrating to integrate with — a custom naming scheme, a clever non-standard structure, a "better way" to do CRUD. The best ones are the ones a developer can guess correctly without reading the docs, because they already look like every other well-built API. Boring is the feature.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p> An API is a contract with every developer who will ever integrate with it — including the version of your own team six months from now who forgot the details. It doesn't need to be impressive. It needs to behave exactly the way someone would guess it behaves, without opening the documentation. These practices apply regardless of language or framework, and they all point the same direction: fewer surprises. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="easy-to-read" class="text-capitalize"> Use JSON, because everyone else already does </h2>
+          <p> JSON won as the default API data format for a boring reason: it's readable without a decoder, and nearly every language can parse it without extra libraries. That's the whole case for it — not that it's the most elegant format, but that a developer debugging your API at 2am doesn't have to look anything up to read the response body. </p>
+          <h2 id="keep-it-consistent" class="text-capitalize"> Keep it consistent </h2>
+          <p> The same field should mean the same thing everywhere it appears. A <code>user_id</code> that's a string in one endpoint's response and an integer in another isn't a small inconsistency — it's a bug waiting for the one client that assumes the wrong type and breaks in production. Consistency isn't a style preference; it's the difference between an integration that works on the first try and one that fails in a way that's hard to trace back to its actual cause. </p>
+          <h2 id="return-the-correct-status-codes" class="text-capitalize"> Return the correct status codes </h2>
+          <p> Status codes are how a client knows what happened without parsing the response body. <code>200</code> means the request succeeded — even if the real-world effect takes a few minutes to finish, like an email that's been accepted for delivery but hasn't landed in an inbox yet. <code>4xx</code> means the client did something wrong (bad parameters, missing auth). <code>5xx</code> means the server did. Getting this right means a client can handle errors generically — retry on 5xx, don't retry on 4xx — without inspecting every response by hand. </p>
+          <h2 id="proportion" class="text-capitalize"> Keep business logic out of the endpoint itself </h2>
+          <p> An endpoint handler should be readable at a glance: validate the input, call the logic that does the real work, return the result. When business rules get written directly into the handler, two things go wrong — the endpoint becomes harder to read because request-handling and business logic are tangled together, and that logic can't be reused or tested independently of an HTTP request. Move the rules into their own functions or classes; the endpoint just calls them. </p>
+          <h2 id="dont-get-cute-stick-with-crud" class="text-capitalize"> Don't get cute — stick with CRUD </h2>
+          <p> A relational or graph-style API that doesn't look like anything else a developer has integrated with before will cost every single integrator extra time figuring out how it works, no matter how elegant the underlying idea is. Create, Read, Update, Delete is boring for a reason: everyone already knows it. A few concrete rules that follow from that: </p>
+          <ul>
+            <li> <strong>Use nouns, not verbs, in the URL.</strong> <code>/orders/42</code>, not <code>/getOrder?id=42</code> — the HTTP method (GET, POST, DELETE) is already the verb. </li>
+            <li> <strong>Keep URLs resource-restrictive.</strong> Every path segment should point to a real data element or collection, not an arbitrary action. </li>
+            <li> <strong>Only require what each operation actually needs.</strong> A <code>PATCH</code> that updates one field shouldn't demand the entire object back — the whole point of <code>PATCH</code> is a partial update. </li>
+          </ul>
+          <p> <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, and <code>DELETE</code> are the verbs that change something; <code>GET</code> should never have a side effect. <code>PUT</code> and <code>DELETE</code> should also be idempotent — sending the same request five times in a row should leave the resource in the same state as sending it once. That matters most on a flaky connection: a client that isn't sure whether its request landed can safely retry a <code>PUT</code> without fear of applying it twice, which is exactly why payment APIs pair this with an idempotency key — a unique ID the client generates once per logical request, so a retried request with the same key returns the original result instead of charging the customer again. </p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p> None of this is clever. That's the point — an API that behaves exactly the way a developer expects is the one nobody remembers fighting with, and that's the actual goal. Taliferro designs APIs around that same discipline: predictable over impressive, every time. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book an API review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API Design</em></li>
+                <li><em>REST</em></li>
+                <li><em>CRUD Operations</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>API Design</li>
+              <li>REST</li>
+              <li>CRUD Operations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="website_performance" data-source="blog_cta" data-page="api-design-best-practices">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/nov2022/nov222022/gcp-cloud-architecture.html">&larr; I Tried AWS, Then Azure. GCP Is the One I Kept.</a>
+            <a class="button" href="https://taliferro.com/blog/nov2022/nov242022/software-as-a-service-has-come-a-long-way.html">Exploring the Growth and Impact of Software as a Service &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Built From Getting It Wrong at Three Different Companies First</title>
+  <meta name="description" content="Not a textbook architecture framework — the reference Taliferro actually uses, assembled from real system design work at Accenture, T-Mobile, and AT&T. Organized by decision, not alphabetized by term.">
+  <meta name="keywords" content="system architecture, technical architecture, cloud architecture, data architecture, CI/CD, application architecture, network security">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="Cloud Architecture">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Built From Getting It Wrong at Three Different Companies First">
+  <meta property="og:description" content="Not a textbook architecture framework — the reference Taliferro actually uses, assembled from real system design work at Accenture, T-Mobile, and AT&T. Organized by decision, not alphabetized by term.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:image:alt" content="Taliferro Group">
+  <meta property="og:url" content="https://taliferro.com/blog/oct2022/oct082022/architectural-cheat-sheet.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Built From Getting It Wrong at Three Different Companies First">
+  <meta name="twitter:description" content="Not a textbook architecture framework — the reference Taliferro actually uses, assembled from real system design work at Accenture, T-Mobile, and AT&T. Organized by decision, not alphabetized by term.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/oct2022/oct082022/architectural-cheat-sheet.html">
+  <link rel="canonical" href="https://taliferro.com/blog/oct2022/oct082022/architectural-cheat-sheet.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Built From Getting It Wrong at Three Different Companies First", "item": "https://taliferro.com/blog/oct2022/oct082022/architectural-cheat-sheet.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/oct2022/oct082022/architectural-cheat-sheet.html"
+        },
+        "headline": "Built From Getting It Wrong at Three Different Companies First",
+        "description": "Not a textbook architecture framework — the reference Taliferro actually uses, assembled from real system design work at Accenture, T-Mobile, and AT&T. Organized by decision, not alphabetized by term.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "about": {"@type": "Thing", "name": "System Architecture Cheat Sheet"},
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers"
+        },
+        "datePublished": "2022-10-08",
+        "dateModified": "2026-08-03T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+    </script>
+  <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "VideoObject",
+     "name": "Taliferro Tech Design Approach to Architecture",
+     "description": "How Taliferro approaches IT and system architecture with accountability, fairness, and scalability.",
+     "thumbnailUrl": "https://img.youtube.com/vi/lLGAIj0nW2Y/maxresdefault.jpg",
+     "uploadDate": "2023-09-01T09:00:00-07:00",
+     "embedUrl": "https://www.youtube.com/embed/lLGAIj0nW2Y",
+     "publisher": {
+       "@type": "Organization",
+       "name": "Taliferro Tech",
+       "logo": {"@type": "ImageObject", "url": "https://taliferro.com/img/general/taliferro-group-logo.png"}
+     }
+   }
+   </script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What’s the difference between logical and physical architecture?","acceptedAnswer":{"@type":"Answer","text":"Logical architecture maps capabilities and relationships; physical architecture maps those capabilities to concrete services, networks, and storage. Keep them separate to clarify decisions."}},
+    {"@type":"Question","name":"How many environments should teams maintain?","acceptedAnswer":{"@type":"Answer","text":"At minimum: integration, staging, and production. For regulated workloads, add a validation environment mirroring production for change control."}},
+    {"@type":"Question","name":"What’s a solid CI/CD baseline in 2025?","acceptedAnswer":{"@type":"Answer","text":"Automated tests on every commit, artifact versioning, environment-specific configs, one-click deploys, and rollback. Add change-freeze windows only when justified."}},
+    {"@type":"Question","name":"When should I use materialized views for SPAs?","acceptedAnswer":{"@type":"Answer","text":"When components repeatedly need aggregated data across entities. Precompute views to cut latency and reduce over-fetching."}},
+    {"@type":"Question","name":"How do I communicate architecture to executives?","acceptedAnswer":{"@type":"Answer","text":"Tie decisions to measurable outcomes: latency, resiliency targets, risk reduction, and cost-to-serve. Use a one-page ADR summary with options, trade-offs, and a clear recommendation."}}
+  ]
+}
+</script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#foundations">Foundations</a>
+        <a href="#application-state">App &amp; State</a>
+        <a href="#network-security">Network &amp; Security</a>
+        <a href="#data-cloud-services">Data &amp; Cloud</a>
+        <a href="#app-layer">App Layer</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#architecture-faq-2025">FAQ</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Built From Getting It Wrong at Three Different Companies First</h1>
+          <p class="hero-sub">This isn't a textbook architecture framework — it's the reference Taliferro actually uses, assembled from real system design work at Accenture, T-Mobile, and AT&amp;T, where a wrong call meant an outage at scale, not a bad grade. Organized into groups so you can jump to what's relevant to the decision in front of you, instead of scrolling through 25 flat headings to find it.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp mb--80"> This started as personal notes from system design work at Accenture, T-Mobile, and AT&amp;T, where a wrong architectural call meant an outage at scale, not a bad grade — and it's been kept current since with cloud-native patterns, CI/CD practices, and lessons from newer enterprise environments. It's organized into six groups: foundations, application and state, network and security, data and cloud services, the app layer, and delivery. Each entry covers roughly the same three things: a summary of what it is, how the architectural issue it addresses actually gets handled, and guidance for choosing between alternatives where they exist. See also <a href="https://taliferro.com/blog/apr2024/apr012024/controlling-cloud-cost.html">Controlling Cloud Cost</a> and <a href="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">Building Ethical AI</a>. </p>
+          <h2 id="foundations" class="wow fadeInUp">Foundations</h2>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Architecture Principle Context </h3>
+          <ul class="wow fadeInUp mb--80">
+            <li><span><a href="https://taliferro.com/blog/aug2023/aug092023/the-symbiotic-dance-of-two-life-constants.html">Time</a>-based </span></li>
+            <li>Granularity</li>
+            <li>Don't break subscribers</li>
+            <li>Horizontal data growth</li>
+            <li>Decoupling</li>
+            <li>State rebuild</li>
+            <li>Temporal queries </li>
+            <li>Data consistency</li>
+            <li>Serve only data needed by client </li>
+            <li>Data availability </li>
+            <li>Materialized View Pattern</li>
+            <li>Circuit Breaker Pattern</li>
+            <li>API Gateway</li>
+          </ul>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Logical Architecture </h3>
+          <p class="wow fadeInUp"> A diagram should indicate the critical capabilities of an Application Architecture. These capabilities determine what applications are necessary to deliver on the business vision. This consists of a summary of the types and numbers of assets, data requirements, asset characteristics, and so on, for each Application. </p>
+          <p class="wow fadeInUp"> A middleware layer describes the various mechanisms by which consumers access data. </p>
+          <p class="wow fadeInUp"><span> The Data layer can be described separately as part of the <a href="https://taliferro.com/blog/jun2023/jun072023/unveiling-the-consequences-of-poor-data-design.html">Data Architecture</a> or as part of the application architecture. </span></p>
+          <p class="wow fadeInUp"> The discussion of the Data Architecture should include a description of the enterprise data access methods, direct and replicated local data access methods, and guidelines regarding data location. </p>
+          <p class="wow fadeInUp mb--80"> An integration plan provides the data access method used. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Environments </h3>
+          <p class="wow fadeInUp"> A project's technical architecture can comprise multiple environments — usually integration, staging, and production. Staging isn't an active environment; it's designed to mirror production and assume its activities for real-world testing. </p>
+          <p class="wow fadeInUp"> The cloud provides redundancy and failover through configuration rather than custom code. A well-architected system should meet the challenges of: </p>
+          <ul class="list wow fadeInUp mb--80">
+            <li> Availability </li>
+            <li> Data Management </li>
+            <li> Management and Monitoring </li>
+            <li> Performance and Scalability </li>
+            <li> Resiliency </li>
+            <li> Security </li>
+          </ul>
+          <h2 id="application-state" class="wow fadeInUp">Application &amp; State</h2>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Single Page Application Considerations </h3>
+          <p class="wow fadeInUp"> Typically, best practice development in the SPA world aligns with an aggregate approach instead of a series of rows. The consequence of querying a row/series in a SPA application has a negative effect because the query only needs a subset of data from some entities, such as a summary of services for several microservices without all of the service details. If the SPA must extract all of the data for the relevant entities to obtain the required information, it will negatively impact the user experience. A best practice for SPA applications is to generate, in advance, a view that materializes the data in a format suited to the required component. </p>
+          <p class="wow fadeInUp mb--80"> The view should only contain the data required by a particular SPA component. Materialized views can include values from calculations or other data items. You can even optimize the materialized view for just a single query. If the source changes, the view can be updated to include the new information automatically via a cloud function/database trigger. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> State and Session Context Management </h3>
+          <p class="wow fadeInUp"> Context management refers to storing and retrieving information entered by the user across a sequence of screen exchanges or page submissions. Specifically, provide facilities that enable an application programmer to : </p>
+          <ul class="wow fadeInUp">
+            <li> Store data to be displayed on the user's screen </li>
+            <li> Retrieve user input </li>
+            <li> Store temporary data that should persist across screens </li>
+          </ul>
+          <p class="wow fadeInUp"> Consider a context framework that gives developers access to context through a single interface. Examples of context components are: </p>
+          <ul class="wow fadeInUp mb--80">
+            <li><span> Client side state component. This component stores the temporary state in an HTML cookie on the client. The component is rebuilt at each request. The component is stateless and is suitable for applications with high <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a> requirements. It is unsuitable if a large amount of temporary data is stored. </span></li>
+            <li> Temporary data store state component. This component uses stores the temporary state data in the cloud. </li>
+            <li> In-memory state component. A component stores the temporary state in the cloud's memory. The component must be stateful between user pages, and so it is stored in a session object. This component is unsuitable if the Application requires a high level of scalability since the cloud stores the user information, and subsequent client requests must be directed at the same Application. </li>
+          </ul>
+          <h2 id="network-security" class="wow fadeInUp">Network &amp; Security</h2>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> The Virtual Network </h3>
+          <p class="wow fadeInUp mb--80"> Establish a virtual network to handle middleware execution and resource retrieval. All the resources communicate outbound to the internet and inbound with cloud components. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Data Private Subnet </h3>
+          <p class="wow fadeInUp mb--80"> Within the virtual network, there can be a dedicated data subnet. The advantage to breaking the data and app environment up into a subnet is that it allows the division of one network into logical subnetworks, separating data duties from middleware and web resource duties. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> App Environment Subnet </h3>
+          <p class="wow fadeInUp mb--80"> An app environment subnet is responsible for all business logic, web service, and resource access. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Active Directory </h3>
+          <p class="wow fadeInUp mb--80"><span> If utilizing Active Directory, a component can serve as an identity management service and filter applications' access by enforcing <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a> rules. In addition, the AD service can facilitate Single Sign On (SSO). </span></p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Network Security Groups (NSG) </h3>
+          <p class="wow fadeInUp mb--80"> NSGs filter network traffic to and from resources in a virtual network. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Security Management </h3>
+          <p class="wow fadeInUp mb--80"> The purpose of the security approach is to provide a consistent infrastructure for ensuring that only authorized users can access web services and that those users can only access the data pertinent to their function. </p>
+          <h2 id="data-cloud-services" class="wow fadeInUp">Data &amp; Cloud Services</h2>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Data Factory </h3>
+          <p class="wow fadeInUp mb--80"> A Data Factory will issue custom commands to extract data from external sources. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Data Lake </h3>
+          <p class="wow fadeInUp mb--80"><span><span> A Data Lake can work in conjunction with a storage blob for data that is structured, imported through a batch process, and used for streaming <a href="https://taliferro.com/blog/oct2023/oct092023/how-we-uncover-hidden-revenue-in-your-data.html">analytics</a> and </span><a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a>. </span></p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Data Store </h3>
+          <p class="wow fadeInUp mb--80"> DSs can be used as a repository for big data analytics workflow, either unstructured, semi-structured, or structured data. Automatically replicates for unexpected hardware failures and has unlimited size and no limits to scale. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Backup Vault </h3>
+          <p class="wow fadeInUp mb--80"> Works as a cloud-to-cloud implementation where cloud-based VMs and data can be backed-up to the Backup Vault without disrupting services. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Virtual Machine </h3>
+          <p class="wow fadeInUp mb--80"> Virtual machines can act as gateways to extract data from external data stores. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Data Bricks </h3>
+          <p class="wow fadeInUp mb--80"><span> It can provide the service necessary to harness all the data collected and apply <a href="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html">data science</a> to the acquired data. </span></p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Storage Blob </h3>
+          <p class="wow fadeInUp mb--80"> If there is data extraction from many systems, the data can grow exponentially. The data is possibly unstructured, or the information is in a binary format. A blob stores the data and can be used for analysis by other services. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Machine Learning Workspaces </h3>
+          <p class="wow fadeInUp mb--80"> Data scientists use the machine learning workspace to conduct experiments on the data. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> SQL database </h3>
+          <p class="wow fadeInUp mb--80"> Use an SQL database to create custom data tables, enforce referential integrity, and run necessary stored procedures to generate the data for UI needs. </p>
+          <h2 id="app-layer" class="wow fadeInUp">App Layer</h2>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> WebApp </h3>
+          <p class="wow fadeInUp mb--80"> The only difference between the WebApp and an API App is that the WebApp does not contain a defined interface. The WebApp is usually the Node.js portion of a project. </p>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> API App </h3>
+          <p class="wow fadeInUp mb--80"> The middleware (with interfaces) contains the business logic that returns the data. </p>
+          <h2 id="delivery" class="wow fadeInUp">Delivery</h2>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> CI / CD Considerations </h3>
+          <ul class="list wow fadeInUp mb--80">
+            <li> Define and agree on release and deployment with customers/stakeholders </li>
+            <li> Ensure the release consists of related assets and compatible service components </li>
+            <li> Ensure integrity of release and its components </li>
+            <li> Ensure release is recorded accurately in the configuration management system </li>
+            <li> Ensure release is tracked, installed, tested, verified, and uninstalled or backed out </li>
+            <li> Manage change during release and deployment </li>
+            <li> Address deviations, risks, and issues related to new features or changes </li>
+            <li> Ensure a process for knowledge transfer optimizes and supports business activities </li>
+            <li> Ensure skills and knowledge are transferred to operations and support staff </li>
+          </ul>
+          <h3 class="title mb--30 text-capitalize wow fadeInUp"> Testing Considerations </h3>
+          <p class="wow fadeInUp"> Code is stamped and frozen, and this code version is pushed to an integration environment where all code is tested as a single unit. Once bugs are fixed, each team pushes the revised code to the source control repository. The code is stamped with a minor version change and moved to the integration server. </p>
+          <p class="wow fadeInUp"> If there are no bugs, the release manager reviews the results with the product owner, then pushes the code to a staging server. </p>
+          <p class="wow fadeInUp mb--80"> A QA team performs quality acceptance testing on the code, testing for bugs, performance, and user story match. The QA team sends a bug report (if applicable) back to the development team for bug fixes. Each development team reviews the QA report and fixes bugs found in staging. </p>
+          <h2 id="video-taliferros-design-approach">Video: Taliferro’s Design Approach</h2>
+          <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/lLGAIj0nW2Y" title="Taliferro Tech Design Approach" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+          </div>
+          <p>This video explains how Taliferro approaches design with accountability, fairness, and scalability — principles at the core of modern system architecture.</p>
+          <h2 id="further-reading">Further Reading</h2>
+          <ul>
+            <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Consistent Output Protocol (COP): Make AI Reliable</a></li>
+            <li><a href="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">Bias Drift Detection: Keep AI Fair Over Time</a></li>
+            <li><a href="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">Building Ethical AI: Washington’s Accountability Framework</a></li>
+            <li><a href="https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html">Secure Client Access to Project Data</a></li>
+            <li><a href="https://taliferro.com/blog/sep2024/sep212024/get-massive-e-commerce-growth-with-cloud-architecture-now.html">Cloud Architecture for Real-World Growth</a></li>
+          </ul>
+          <h2 id="architecture-faq-2025">Architecture FAQ (2025)</h2>
+          <div class="faq">
+            <h3>What’s the difference between logical and physical architecture?</h3>
+            <p>Logical architecture maps capabilities and relationships; physical architecture maps those capabilities to concrete services, networks, and storage. Keep them separate to clarify decisions.</p>
+            <h3>How many environments should teams maintain?</h3>
+            <p>At minimum: integration, staging, and production. For regulated workloads, add a validation environment mirroring production for change control.</p>
+            <h3>What’s a solid CI/CD baseline in 2025?</h3>
+            <p>Automated tests on every commit, artifact versioning, environment-specific configs, one-click deploys, and rollback. Add change-freeze windows only when justified.</p>
+            <h3>When should I use materialized views for SPAs?</h3>
+            <p>When components repeatedly need aggregated data across entities. Precompute views to cut latency and reduce over-fetching.</p>
+            <h3>How do I communicate architecture to executives?</h3>
+            <p>Tie decisions to measurable outcomes: latency, resiliency targets, risk reduction, and cost-to-serve. Use a one-page ADR summary with options, trade-offs, and a clear recommendation.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">software development support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li><a href="https://taliferro.com/website-development/">system architecture</a></li>
+            <li><a href="https://taliferro.com/blog/toc.html">cloud architecture</a></li>
+            <li><a href="https://taliferro.com/blog/toc.html">CI/CD</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="architectural-cheat-sheet">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/oct2022/oct072022/how-to-choose-a-custom-website-development-company.html">&larr; Ask Who Owns Your Site When the Contract Ends</a>
+          <a class="button" href="https://taliferro.com/blog/oct2022/oct092022/using-the-lighthouse-google-developer-tool-to-measure-your-websites-performance.html">Lighthouse Isn't Something You Install Anymore &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>A Security Report Nobody Reads Doesn't Protect Anything | Taliferro</title>
+  <meta name="description" content="Running a scan and filing a PDF isn't the same as fixing what it found. Taliferro treats an API security assessment as the start of the work, not the end of it.">
+  <meta name="keywords" content="API Security Assessment, API Penetration Testing, API Security Best Practices, OWASP, Taliferro">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="A Security Report Nobody Reads Doesn't Protect Anything | Taliferro">
+  <meta property="og:description" content="Running a scan and filing a PDF isn't the same as fixing what it found. Taliferro treats an API security assessment as the start of the work, not the end of it.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jan2024/jan182024/api-security-assessment-protecting-your-data.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="A Security Report Nobody Reads Doesn't Protect Anything | Taliferro">
+  <meta name="twitter:description" content="Running a scan and filing a PDF isn't the same as fixing what it found. Taliferro treats an API security assessment as the start of the work, not the end of it.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/jan2024/jan182024/api-security-assessment-protecting-your-data.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jan2024/jan182024/api-security-assessment-protecting-your-data.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "A Security Report Nobody Reads Doesn't Protect Anything", "item": "https://taliferro.com/blog/jan2024/jan182024/api-security-assessment-protecting-your-data.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jan2024/jan182024/api-security-assessment-protecting-your-data.html"
+        },
+        "headline": "A Security Report Nobody Reads Doesn't Protect Anything",
+        "description": "Running a scan and filing a PDF isn't the same as fixing what it found. Taliferro treats an API security assessment as the start of the work, not the end of it.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2024-01-18T09:00:00-07:00",
+        "dateModified": "2026-08-01",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-api-security-assessment page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#api-security-assessment">The Assessment</a>
+        <a href="#1-api-security-checklist">Checklist</a>
+        <a href="#2-api-penetration-testing">Penetration Testing</a>
+        <a href="#api-security-best-practices">Best Practices</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>A Security Report Nobody Reads Doesn't Protect Anything</h1>
+          <p>Running a scan, generating a checklist, and filing a PDF is not the same as fixing the vulnerabilities the scan found — and a striking number of security assessments end exactly there. Taliferro treats an API security assessment as the start of the work, not the end of it: the checklist, the penetration test, and then, critically, someone actually closing every gap it turns up. A report is a diagnosis. Nobody gets healthier from a diagnosis alone.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="api-security-assessment">The Assessment Is the Easy Part</h2>
+          <p>Running an assessment against an API — checking authentication, encryption, input handling, and the rest — is genuinely useful and genuinely not the hard part. Taliferro's <a href="https://taliferro.com/api-certification/">API Security Certification checker</a> will give any team a real starting score based on how the API actually behaves. The hard part, the part that separates a secured API from a scored one, is what happens with that score afterward: does someone own the list of findings, fix them, and verify the fix — or does the report sit in a shared drive while the API ships unchanged?</p>
+          <h2 id="1-api-security-checklist">The Checklist</h2>
+          <p>Before testing, know what you're testing against:</p>
+          <ul>
+            <li>Authentication mechanisms</li>
+            <li>Data encryption</li>
+            <li>Input validation</li>
+            <li>Rate limiting</li>
+            <li>Error handling</li>
+            <li>Logging and monitoring</li>
+          </ul>
+          <p>A checklist without an owner is a list of things nobody's responsible for. Assign each item to a person, with a date, before the assessment even starts — otherwise the findings become a to-do list that everyone agrees is important and nobody schedules.</p>
+          <h2 id="2-api-penetration-testing">Penetration Testing: Finding What the Checklist Misses</h2>
+          <p>Penetration testing simulates real attacks against the API to find what a static checklist can't — the vulnerabilities that only show up when something actively tries to break in. Tools like OWASP ZAP and Burp Suite automate a meaningful chunk of this, scanning and actively probing for the vulnerability classes attackers actually use.</p>
+          <div class="code-block">
+            <pre>    <code>
+          
+          # Example using OWASP ZAP for API penetration testing
+          import zapv2
+          
+          api_url = "https://your-api-url.com"
+          target = zapv2.Target(api_url)
+          scan_id = zapv2.spider.scan(target)
+          zapv2.pscan.enable_all_scanners()
+          
+          while int(zapv2.spider.status(scan_id)) &lt; 100:
+              print(f"Spider progress: {zapv2.spider.status(scan_id)}%")
+          
+          print("Spider completed. Starting Active Scan...")
+          scan_id = zapv2.ascan.scan(api_url)
+          
+          while int(zapv2.ascan.status(scan_id)) &lt; 100:
+              print(f"Active Scan progress: {zapv2.ascan.status(scan_id)}%")
+          
+          print("Active Scan completed.")
+          </code>
+          </pre>
+          </div>
+          <p> This Python code uses OWASP ZAP to perform spidering and active scanning on your API, helping to uncover potential vulnerabilities. </p>
+          <h2 id="api-security-best-practices"> API Security Best Practices </h2>
+          <p> To enhance API security, follow these best practices: </p>
+          <h3> Authentication and Authorization </h3>
+          <p> Implement strong authentication mechanisms, such as OAuth 2.0, and enforce proper authorization to restrict access to authorized users only. </p>
+          <h3> Data Encryption </h3>
+          <p> Encrypt sensitive data during transmission using protocols like HTTPS, and consider encrypting data at rest. </p>
+          <h3> Input Validation </h3>
+          <p> Validate all input data to prevent SQL injection, XSS attacks, and other common vulnerabilities. </p>
+          <h3> Rate Limiting </h3>
+          <p> Implement rate limiting to prevent abuse of your API by limiting the number of requests a user or IP can make in a specific timeframe. </p>
+          <h3> Error Handling </h3>
+          <p> Provide informative error messages without exposing sensitive information. Handle errors gracefully to avoid potential security risks. </p>
+          <h3> Logging and Monitoring </h3>
+          <p> Regularly monitor API traffic and log relevant activities. Set up alerts for suspicious behavior. </p>
+          <h2 id="conclusion">Conclusion</h2>
+          <p>An assessment, a penetration test, and a best-practices checklist are all necessary. None of them are sufficient on their own, and none of them protect anything until someone closes the gaps they found. Taliferro's role in this isn't just running the scan — it's making sure the findings turn into fixes, verified, before the API ships. A security score is a snapshot. What happens in the weeks after it is the part that actually determines whether the data is protected.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">workflow execution support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API Security Assessment</em></li>
+                <li><em>Penetration Testing</em></li>
+                <li><em>API Security Certification</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>API Security Assessment</li>
+              <li>Penetration Testing</li>
+              <li>API Security Certification</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="api_design" data-source="blog_cta" data-page="api-security-assessment-protecting-your-data">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/jan2024/jan172024/what-is-affordable-web-development.html">&larr; Cheap and Affordable Aren't the Same Word</a>
+            <a class="button" href="https://taliferro.com/blog/jan2024/jan192024/hiring-a-professional-website-developer.html">Hiring a Professional Website Developer &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>If Your Pipeline Is Slowing You Down, It's Not Doing Its Job | Taliferro Blog</title>
+  <meta name="description" content="A CI/CD pipeline can run every check and still be the reason a team ships slower than it used to. See why Taliferro treats DevOps tooling as a means, not a ritual.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="If Your Pipeline Is Slowing You Down, It's Not Doing Its Job">
+  <meta property="og:description" content="A CI/CD pipeline can run every check and still be why a team ships slower than it used to. Here's what Taliferro checks first.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/sep2022/sep162022/how-to-improve-and-innovate-dev-ops-environments-and-ci-cd-processes.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="If Your Pipeline Is Slowing You Down, It's Not Doing Its Job">
+  <meta name="twitter:description" content="A CI/CD pipeline can run every check and still be why a team ships slower than it used to. Here's what Taliferro checks first.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/sep2022/sep162022/how-to-improve-and-innovate-dev-ops-environments-and-ci-cd-processes.html">
+  <link rel="canonical" href="https://taliferro.com/blog/sep2022/sep162022/how-to-improve-and-innovate-dev-ops-environments-and-ci-cd-processes.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "If Your Pipeline Is Slowing You Down, It's Not Doing Its Job", "item": "https://taliferro.com/blog/sep2022/sep162022/how-to-improve-and-innovate-dev-ops-environments-and-ci-cd-processes.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/sep2022/sep162022/how-to-improve-and-innovate-dev-ops-environments-and-ci-cd-processes.html"
+        },
+        "headline": "If Your Pipeline Is Slowing You Down, It's Not Doing Its Job",
+        "description": "A CI/CD pipeline can run every check and still be the reason a team ships slower than it used to. See why Taliferro treats DevOps tooling as a means, not a ritual.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers"
+        },
+        "datePublished": "2022-09-16",
+        "dateModified": "2026-08-02T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#visibility-comes-first">Visibility first</a>
+        <a href="#speed-and-quality-arent-a-trade-off">Speed vs. quality</a>
+        <a href="#keep-data-safe-without-slowing-anyone-down">Keep data safe</a>
+        <a href="#automate-what-repeats-understand-the-rest">Automate &amp; understand</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>If Your Pipeline Is Slowing You Down, It's Not Doing Its Job</h1>
+          <p>A CI/CD pipeline can run every check and still be the reason a team ships slower than it used to, because process that isn't examined tends to accumulate steps nobody remembers approving. Taliferro treats DevOps tooling as a means, not a ritual — the pipeline exists to serve the team, not the other way around. If it's getting in the way, that's the signal to fix it, not push through it.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">system design that removes drag</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="visibility-comes-first">Visibility comes first</h2>
+          <p>The first step to improving a DevOps environment isn't a new tool — it's seeing what's actually happening in it. Monitoring aggregates data from logs and metrics so you can spot performance anomalies or security issues before they become incidents, instead of finding out from a customer. That visibility needs to be usable by more than one person; a dashboard only the ops team can read doesn't help a developer who's trying to understand why staging looks different from production.</p>
+          <h2 id="speed-and-quality-arent-a-trade-off">Speed and quality aren't a trade-off</h2>
+          <p>A good CI/CD process doesn't sacrifice one for the other. Shipping fast and shipping broken code that causes problems later isn't actually fast — it's borrowed time with interest. The way to get both is the same either way: streamlined steps, best practices baked into the workflow, automation wherever it's genuinely repeatable, and feedback loops that catch problems while they're still small.</p>
+          <h2 id="keep-data-safe-without-slowing-anyone-down">Keep data safe without slowing anyone down</h2>
+          <p>Encrypt sensitive data both in transit and at rest, so a compromised network connection or database server doesn't hand an attacker anything usable. Use secure connections for remote infrastructure, and prefer SSH keys over passwords or long-lived API tokens for developers who need temporary access during a CI/CD run — access that expires is access that can't be quietly reused later.</p>
+          <h2 id="automate-what-repeats-understand-the-rest">Automate what repeats, understand the rest</h2>
+          <p>Automation is one of the highest-leverage changes you can make to a DevOps environment — it improves speed, consistency, security, and visibility all at once, and it only works if people understand why it's being introduced. Explain what's changing and what it's meant to fix before rolling it out, not after someone notices a step disappeared.</p>
+          <p>Beyond automation, understanding the process itself matters: know what actually happens when someone pushes a commit, what the data at each step is used for, who owns which part of the pipeline, and which tools are actually in use versus which ones are legacy. That inventory is what makes it possible to actually improve the process instead of just adding to it.</p>
+          <p>Cloud infrastructure helps here too — it's typically more secure than an unmanaged on-premise setup, scales with workload instead of requiring capacity planning years in advance, and only costs what you actually use.</p>
+          <p>Your CI/CD process exists to serve the team, not the other way around. If it's slowing progress down instead of protecting it, that's the signal to fix the process — not to push through it and hope it gets better on its own. It's the same standard Taliferro applies when it audits a client's pipeline: the tooling has to earn its place, not just accumulate.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">workflow execution support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">tell us what is stuck</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li><a href="https://taliferro.com/agile-coaching/" target="_blank" rel="noopener">DevOps</a></li>
+              <li><a href="https://taliferro.com/website-development/" target="_blank" rel="noopener">CI/CD processes</a></li>
+              <li><a href="https://taliferro.com/cloud-architecture-consulting/" target="_blank" rel="noopener">cloud computing</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="how-to-improve-and-innovate-dev-ops-environments-and-ci-cd-processes">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/sep2022/sep152022/so-you-want-a-technology-thought-leader-well-here-are-some-thoughts.html">&larr; Thought Leadership Isn&#39;t PR</a>
+            <a class="button" href="https://taliferro.com/blog/sep2022/sep172022/the-top-five-reasons-our-laboratory-information-system-is-the-best.html">Off-the-Shelf Software Wasn't Built for Your Lab &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

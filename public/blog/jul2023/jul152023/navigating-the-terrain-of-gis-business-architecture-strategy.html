@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>The GIS Techniques That Separate a Demo From a Production System</title>
+  <meta name="description" content="Graph databases, server-side rendering, multi-resolution raster, WKT indexing, and parallel processing: the technical choices that decide whether a GIS system scales.">
+  <meta name="keywords" content="GIS business architecture, spatial analytics, risk assessment, strategic planning, spatial intelligence, infrastructure planning, graph databases, server-side rendering, multi-resolution raster data, WKT geospatial indexing, parallel processing, spatial data optimization, Mapbox GL JS, Neo4j, geospatial analysis, GIS in decision-making, business competitiveness, GIS technology, spatial strategy">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="The GIS Techniques That Separate a Demo From a Production System">
+  <meta property="og:description" content="Graph databases, server-side rendering, multi-resolution raster, WKT indexing, and parallel processing: the technical choices that decide whether a GIS system scales.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jul2023/jul152023/navigating-the-terrain-of-gis-business-architecture-strategy.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="The GIS Techniques That Separate a Demo From a Production System">
+  <meta name="twitter:description" content="Graph databases, server-side rendering, multi-resolution raster, WKT indexing, and parallel processing: the technical choices that decide whether a GIS system scales.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/jul2023/jul152023/navigating-the-terrain-of-gis-business-architecture-strategy.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jul2023/jul152023/navigating-the-terrain-of-gis-business-architecture-strategy.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "The GIS Techniques That Separate a Demo From a Production System", "item": "https://taliferro.com/blog/jul2023/jul152023/navigating-the-terrain-of-gis-business-architecture-strategy.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jul2023/jul152023/navigating-the-terrain-of-gis-business-architecture-strategy.html"
+        },
+        "headline": "The GIS Techniques That Separate a Demo From a Production System",
+        "description": "Graph databases, server-side rendering, multi-resolution raster, WKT indexing, and parallel processing: the technical choices that decide whether a GIS system scales.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-07-15",
+        "dateModified": "2026-09-04",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#gis-in-business">GIS in</a>
+        <a href="#the-nucleus-of-gis-business-architecture-strategy">The Nucleus</a>
+        <a href="#technical-tips-the-road-less-traveled">Technical Tips:</a>
+        <a href="#conclusion-the-pinnacle-of-spatial-strategy">Conclusion</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>The GIS Techniques That Separate a Demo From a Production System</h1>
+          <p>Most GIS demos fall over the moment real data volume hits them — the database choice, the rendering approach, and the indexing strategy underneath are what actually decide whether a spatial system holds up in production. Taliferro walks through five of those decisions with working code.</p>
+          <p class="fine">Published: 15 Jul 2023 · Updated: 4 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="gis-in-business" class="text-capitalize wow fadeInUp"> GIS in Business </h2>
+          <p><span><span> Geographic Information Systems moved past basic mapping tools years ago — they're now the backbone for spatial <a href="https://taliferro.com/blog/oct2023/oct092023/how-we-uncover-hidden-revenue-in-your-data.html">analytics</a>, risk assessment, and infrastructure planning. What separates a GIS system that scales from one that buckles under real data volume comes down to a handful of specific technical decisions, covered below with working code, using </span><a href="https://taliferro.com/blog/sep2023/sep252023/geospatial-heat-maps-can-tell-you-where-your-local-customers-are.html">spatial data</a> as the throughline. </span></p>
+          <h2 id="the-nucleus-of-gis-business-architecture-strategy"> Why GIS Belongs in Business Architecture </h2>
+          <h3> Spatial Intelligence And Business Decisions </h3>
+          <p><span> A real GIS strategy turns location data into insight on market trends, <a href="https://taliferro.com/blog/oct2023/oct022023/did-you-know-that-predictive-modeling-isnt-just-for-customer-behavior.html">customer behavior</a><span>, and logistics — the kind of <a href="https://taliferro.com/blog/may2023/may222023/succumbing-to-competitors-leveraging-ai-ml-for-a-competitive-edge.html">edge</a> that shows up in which store location gets picked or which delivery route gets optimized, not just a map on a dashboard nobody acts on. </span></span></p>
+          <h3> Infrastructure Planning </h3>
+          <p><span> Spatial analytics is what makes decisions like retail site selection or distribution-center placement evidence-based instead of a guess — the payoff is lower cost and better <a href="https://taliferro.com/blog/sep2023/sep202023/navigating-the-quagmire-of-stagnation.html">operational efficiency</a> from getting the location right the first time. </span></p>
+          <h3> Risk Assessment And Mitigation </h3>
+          <p><span> A lot of business risk is inherently geographic — flood zones, regulatory boundaries, proximity to a competitor or a supplier. Insurance, <a href="https://taliferro.com/blog/aug2023/aug282023/resplendent-vistas-and-pragmatic-pecuniary-pursuits.html">real estate</a>, and utilities lean on GIS specifically because spatial context is what turns a generic risk model into one that's actually accurate for a specific location. </span></p>
+          <h2 id="technical-tips-the-road-less-traveled"> Five Technical Decisions That Actually Matter </h2>
+          <h3> Employing Graph Databases </h3>
+          <p> Relational databases handle most workloads fine, but spatial relationships — proximity, shortest paths, connectivity patterns — are exactly the kind of query they're not built for. Graph databases represent data as nodes and edges instead, which maps naturally onto spatial relationships and is why they tend to outperform relational databases on this specific class of query. </p>
+          <h4> Why Consider Graph Databases for GIS? </h4>
+          <ul>
+            <li><strong>Efficient handling of spatial relationships:</strong> proximity, shortest-path, and connectivity queries map directly onto a graph's node-and-edge structure instead of requiring expensive joins. </li>
+            <li><strong>Flexibility in data modeling:</strong> points, lines, polygons, and multi-dimensional data can all be represented without forcing them into a rigid relational schema. </li>
+            <li><strong>Query performance:</strong> specialized indexing and traversal algorithms keep even complex spatial queries fast enough for real-time use. </li>
+            <li><strong>Scalability:</strong><span> graph databases scale horizontally, so growing data volume is a capacity question, not an architecture rewrite — a real concern as <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">geospatial</a> datasets keep growing. </span></li>
+            <li><strong>Relationship discovery:</strong> patterns in transportation networks or ecosystem connectivity are often invisible in tabular data but immediately visible in a graph. </li>
+            <li><strong>Real-time spatial analytics:</strong> live data ingestion and analysis matters most in logistics, where a faster route recalculation translates directly into cost savings. </li>
+          </ul>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          // Create a spatial point
+          </span>
+          CREATE (location:Location {name: "Business HQ", coordinates: point({longitude: -122.335167, latitude: 47.608013})})
+          
+          <span class="comment">
+          // Find nearby locations within a radius of 5 kilometers
+          </span>
+          MATCH (l:Location)
+          WHERE distance(location.coordinates, l.coordinates) &lt; 5000
+          RETURN l.name
+          
+            </code>
+            </pre>
+          </div>
+          <i>This Cypher query demonstrates how to create spatial points and perform spatial queries using Neo4j, a graph database that excels in handling spatial data.</i>
+          <p>&nbsp;</p>
+          <h4> Embracing Neo4j and Beyond </h4>
+          <p> Neo4j is the leading graph database for this use case — nodes and edges for spatial relationships, plus the Cypher query language, cover most of what a GIS application needs from its data layer. Adopting it is a real architectural decision, not a minor tooling swap, but it's the one that keeps spatial analytics fast as a dataset grows past what a relational schema comfortably handles.</p>
+          <h3> Server-Side Rendering For Scalability </h3>
+          <p><span> Client-side rendering works fine for small maps, but it falls apart once the geospatial dataset gets large — the browser simply can't hold and render that much data smoothly. Server-side rendering with a tool like Mapbox GL JS moves that load off the client, which is what keeps <a href="https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html">user experience</a> responsive even on a dataset with millions of points. </span></p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          
+              // Initialize a Mapbox map with server-side rendering
+              </span>
+              var map = new mapboxgl.Map({
+                  container: 'map',
+                  style: 'mapbox://styles/mapbox/streets-v11',
+                  center: [-122.335167, 47.608013],
+                  zoom: 10
+              });
+              <span class="comment">
+          
+              // Add a GeoJSON layer with server-side rendering
+              </span>
+              map.on('load', function() {
+                  map.addSource('your-data-source', {
+                      type: 'geojson',
+                      data: 'your-geojson-data.json'
+                  });
+              
+                  map.addLayer({
+                      id: 'your-layer-id',
+                      type: 'circle',
+                      source: 'your-data-source',
+                      paint: {
+                          'circle-color': '#FF5733',
+                          'circle-radius': 5
+                      }
+                  });
+              });
+              
+            </code>
+            </pre>
+          </div>
+          <i>This JavaScript code demonstrates how to use Mapbox GL JS for server-side rendering of geospatial data, which enhances scalability for large datasets.</i>
+          <p>&nbsp;</p>
+          <h3> Multi-Resolution Raster Data </h3>
+          <p> Raster data represents spatial information as a grid of valued cells, and a GIS application that needs to move fluidly between a bird's-eye overview and a zoomed-in detail view needs more than one fixed resolution to do that well. Multi-resolution raster data solves this with a hierarchy of image pyramids: each level holds the same area at a different level of detail, so the system only loads what a given zoom level actually needs instead of the full-resolution dataset every time. </p>
+          <h4> Why It's a Balancing Act </h4>
+          <ul>
+            <li><strong>Performance vs. detail:</strong> users expect fast pan and zoom but also want fine detail on demand — multi-resolution pyramids deliver the right level for each zoom step instead of forcing a tradeoff. </li>
+            <li><strong>Bandwidth efficiency:</strong><span><span> sending only the data needed for the current view cuts network load and <a href="https://taliferro.com/blog/oct2023/oct102023/minimize-costs-innovative-strategies-and-hidden-gems.html">operational cost</a> compared to transmitting a full-resolution dataset for every </span><a href="https://taliferro.com/blog/may2023/may282023/decoding-web-design.html">request</a>. </span></li>
+            <li><strong>Storage optimization:</strong> storing only the necessary pyramid levels avoids the cost of keeping full-resolution data for an entire spatial extent that's rarely viewed at that detail. </li>
+            <li><strong>User experience:</strong> the practical effect is a map that stays responsive whether someone's looking at a whole region or one city block. </li>
+          </ul>
+          <h4> Implementing Multi-Resolution Raster Data </h4>
+          <p> The standard technique is image pyramiding — pre-computing and storing downsampled versions of a raster dataset at multiple resolutions, then having the system pick the right pyramid level automatically based on the user's current zoom. It's a well-understood pattern, and the code below shows the core of it. </p>
+          <div class="code-block">
+            <pre>  <code>
+              from osgeo import gdal
+          
+              <span class="comment">
+                # Open a multi-resolution raster dataset
+                </span>
+              dataset = gdal.Open('your-raster-data.tif', gdal.GA_ReadOnly)
+              
+              <span class="comment">
+                # Set the desired zoom level
+                </span>
+              zoom_level = <span class="keyword">10</span>
+              
+              <span class="comment">
+                # Calculate the appropriate resolution based on zoom level
+                </span>
+              target_resolution = dataset.GetGeoTransform()[<span class="keyword">1</span>] / (<span class="keyword">2</span> ** zoom_level)
+              
+              <span class="comment">
+                # Read the raster data with the target resolution
+                </span>
+              data = dataset.ReadAsArray(resampleAlg=gdal.GRIORA_Bilinear, xRes=target_resolution, yRes=target_resolution)
+              
+              <span class="comment">
+                # Perform analysis or visualization with the data
+                </span>
+              
+            </code>
+            </pre>
+          </div>
+          <i>This Python code using GDAL demonstrates how to handle multi-resolution raster data and adapt the resolution based on the user's zoom level for efficient visualization and analysis.</i>
+          <p>&nbsp;</p>
+          <h3> Implementing WKT For Geospatial Indexing </h3>
+          <p> Well-Known Text (WKT) is a plain-text markup language for representing vector geometry, and it does more work than its unassuming appearance suggests. </p>
+          <h4> Why WKT Matters </h4>
+          <ul>
+            <li><strong>Human-readable:</strong> a plain text representation of geometric objects that a developer can read and debug directly, instead of decoding a binary or proprietary format. </li>
+            <li><strong>Enables efficient spatial indexing:</strong> storing geometry in WKT lets a database build spatial indexes on top of it, which is what actually accelerates spatial queries at scale. </li>
+            <li><strong>Precision and consistency:</strong> a standardized format for geometry removes the ambiguity that creeps in when spatial data gets merged from multiple sources with different conventions. </li>
+          </ul>
+          <h4> How WKT Enhances Speed and Precision </h4>
+          <p> Take a common query — find every point within a given distance of a reference location. Without proper indexing, that's a slow, brute-force scan on any dataset of real size. With a spatial index built on WKT-formatted geometry, the database narrows the <a href="https://taliferro.com/blog/oct2023/oct262023/the-power-of-gesture-based-contextual-search.html">search</a> space immediately instead of checking every row, and the standardized format keeps geometric operations — distance, intersection, overlay — consistent regardless of where the underlying data originated. </p>
+          <p> That combination — searchable, precise, and standardized — is why WKT quietly underpins most production-grade geospatial indexing rather than being something GIS teams reach for only as a special case.</p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+                -- Create a table with a geometry column using WKT
+                </span>
+              CREATE TABLE locations (
+                  id serial PRIMARY KEY,
+                  name <span class="keyword">VARCHAR</span>(<span class="keyword">255</span>),
+                  location GEOMETRY
+              );
+              
+              <span class="comment">
+                -- Insert data with WKT format
+                </span>
+              INSERT INTO locations (name, location)
+              VALUES ('Business HQ', ST_GeomFromText('POINT(-122.335167 47.608013)', 4326));
+              
+              <span class="comment">
+                -- Perform a spatial query
+                </span>
+              SELECT name FROM locations
+              WHERE ST_DWithin(location, ST_GeomFromText('POINT(-122.335167 47.608013)', 4326), 0.05);
+              
+            </code>
+            </pre>
+          </div>
+          <i>This SQL code demonstrates how to create a table with a geometry column using WKT, insert data in WKT format, and perform a spatial query using PostGIS, a spatial extension for PostgreSQL.</i>
+          <p>&nbsp;</p>
+          <h3> Parallel Processing For Spatial Analytics </h3>
+          <p> Large-scale spatial analysis runs into predictable bottlenecks: sheer data volume from imagery and vector layers, computationally expensive operations like proximity analysis and network analysis, single-threaded processing that can't use more than one core, and datasets too large to fit comfortably in memory. Parallel processing is the direct answer to all four. </p>
+          <h4> Why Parallel Processing Matters </h4>
+          <ul>
+            <li><strong>Efficient resource utilization:</strong> spreading work across multiple cores or machines uses the hardware that's already available instead of leaving it idle. </li>
+            <li><strong>Scalability:</strong> parallel algorithms distribute work in a way that holds up whether the dataset is regional or global, instead of degrading linearly with size. </li>
+            <li><strong>Concurrency:</strong> multiple spatial operations can run simultaneously without one blocking another. </li>
+            <li><strong>Real-time analytics:</strong> tracking a logistics fleet or monitoring live sensor data depends on getting results fast enough to still be useful, which single-threaded processing usually can't deliver at scale. </li>
+          </ul>
+          <p> Multi-threading, distributed computing, and cloud-based frameworks are the common ways to implement this — the example below uses Dask, which handles the distribution automatically. </p>
+          <div class="code-block">
+            <pre>  <code>
+              import dask.dataframe as dd
+              from dask.distributed import Client
+              
+              <span class="comment">
+                # Set up a Dask cluster
+                </span>
+              client = Client()
+              
+              <span class="comment">
+                # Read and process a large geospatial dataset in parallel
+                </span>
+              df = dd.read_csv('large-spatial-data.csv')
+              result = df.groupby('region').mean().compute()
+              
+              <span class="comment">
+                # Perform spatial analytics on the result
+                </span>
+              
+            </code>
+            </pre>
+          </div>
+          <i>This Python code showcases how to use Dask, a parallel computing library, to read and process large geospatial datasets efficiently, distributing tasks across multiple processors.</i>
+          <p>&nbsp;</p>
+          <h2 id="conclusion-the-pinnacle-of-spatial-strategy"> Conclusion </h2>
+          <p> None of these five techniques are exotic — graph databases, server-side rendering, multi-resolution raster, WKT indexing, and parallel processing are all well-established patterns. What they have in common is that most GIS projects skip them until the system already can't handle the data volume it's being asked to process, at which point the fix is far more expensive than building it in from the start. </p>
+          <p><span> GIS earns a place in business architecture because it turns location into a decision input, not because it's trendy — and the technical choices covered here are what determine whether that system holds up as the <a href="https://taliferro.com/blog/aug2023/aug192023/corporate-social-responsibility-in-the-twenty-first-century.html">data</a> and the demands on it keep growing. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need analytics people will actually use?</strong>
+            <p class="mb-0">Move from reporting to action with <a href="https://taliferro.com/machine-learning-services/">machine learning and analytics consulting</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">talk through the dashboard</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>GIS business architecture</em></li>
+                <li><em>spatial analytics</em></li>
+                <li><em>risk assessment</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>GIS business architecture</li>
+              <li>spatial analytics</li>
+              <li>risk assessment</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="navigating-the-terrain-of-gis-business-architecture-strategy">Machine learning and analytics consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/jul2023/jul142023/how-to-accelerate-your-shopify-online-store-and-enhance-performance-without-financial-investment.html">&larr; Speed Up Your Shopify Store Without Spending a Dollar</a>
+            <a class="button" href="https://taliferro.com/blog/jul2023/jul162023/elevating-gis-architecture.html">The GIS Tools Most Directors Have Never Heard Of &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

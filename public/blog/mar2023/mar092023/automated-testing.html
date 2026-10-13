@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Manual Testing Catches What You Remember to Check. Automated Testing Catches What You Forgot.</title>
+  <meta name="description" content="Every code change risks breaking something nobody thought to retest by hand. Automated testing isn't about speed — it's about catching the regression a human would only find after a customer already had.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Manual Testing Catches What You Remember to Check. Automated Testing Catches What You Forgot.">
+  <meta property="og:description" content="Every code change risks breaking something nobody thought to retest by hand. Automated testing isn't about speed — it's about catching the regression a human would only find after a customer already had.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/mar2023/mar092023/automated-testing.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Manual Testing Catches What You Remember to Check. Automated Testing Catches What You Forgot.">
+  <meta name="twitter:description" content="Every code change risks breaking something nobody thought to retest by hand. Automated testing isn't about speed — it's about catching the regression a human would only find after a customer already had.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/mar2023/mar092023/automated-testing.html">
+  <link rel="canonical" href="https://taliferro.com/blog/mar2023/mar092023/automated-testing.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Manual Testing Catches What You Remember to Check. Automated Testing Catches What You Forgot.", "item": "https://taliferro.com/blog/mar2023/mar092023/automated-testing.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="keywords" content="Automated testing, software development, testing efficiency, cost reduction, software quality, test coverage, scalability, manual testing, software testing tools, test automation, test automation benefits, software testing process, automated testing advantages">
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/mar2023/mar092023/automated-testing.html"
+        },
+        "headline": "Manual Testing Catches What You Remember to Check. Automated Testing Catches What You Forgot.",
+        "description": "Every code change risks breaking something nobody thought to retest by hand. Automated testing isn't about speed — it's about catching the regression a human would only find after a customer already had.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-03-09",
+        "dateModified": "2026-08-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#improved-testing-efficiency">Improved Testing</a>
+        <a href="#reduced-cost-and-time">Reduced Cost</a>
+        <a href="#improved-software-quality">Improved Software</a>
+        <a href="#better-test-coverage">Better Test</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Manual Testing Catches What You Remember to Check — Automated Testing Catches What You Forgot</h1>
+          <p>The real case for automated tests isn't that they're faster than a person clicking through a checklist — it's that a person's checklist only covers what they remembered to check. Every change to a codebase risks breaking something nobody thought to retest, and automated tests are the only practical way to catch that before a customer does.</p>
+          <p class="fine">Published: 9 Mar 2023 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p><span> <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> is a complex and iterative process that involves numerous steps, from coding to testing and deployment. Automated testing is a critical aspect of <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> that should not be overlooked. Automated testing uses software tools to automatically test software code and functionality, ensuring that it meets the intended requirements and specifications. </span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">system design that removes drag</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+          <p><span> Automated testing has become integral to modern <a href="https://taliferro.com/blog/oct2023/oct232023/the-lamentable-state-of-government-software-a-ticking-time-bomb.html">software development</a><span> because of its many <a href="https://taliferro.com/benefits-of-partnering-with-taliferro.html">benefits</a>. This post will discuss the importance of automated testing and why more than manual testing is required. </span></span></p>
+          <h2 id="improved-testing-efficiency" class="text-capitalize"> Improved Testing Efficiency </h2>
+          <p> Automated testing tools can perform testing procedures faster and more accurately than manual testing. These tools can quickly run thousands of tests and produce detailed reports, which can help developers identify and fix issues more efficiently. In contrast, manual testing is a slow and time-consuming process that is prone to errors and requires much human effort. </p>
+          <h2 id="reduced-cost-and-time" class="text-capitalize"><span> Reduced Cost and <a href="https://taliferro.com/blog/aug2023/aug092023/the-symbiotic-dance-of-two-life-constants.html">Time</a> </span></h2>
+          <p><span> Automated testing can significantly reduce the cost and time of <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a>. Manual testing requires a lot of resources, such as staffing and equipment, which can be costly. Automated testing, on the other hand, is relatively inexpensive and requires minimal human resources. Moreover, automated testing can be performed simultaneously with development, reducing the time it takes to release the software to the market. </span></p>
+          <h2 id="improved-software-quality" class="text-capitalize"> Improved Software Quality </h2>
+          <p> Automated testing ensures that software meets the intended requirements and specifications, reducing the chances of defects or bugs in the final product. With automated testing, developers can identify and fix issues early in the development cycle, leading to better-quality software. Manual testing, on the other hand, is prone to errors and may overlook critical defects, leading to poor-quality software. </p>
+          <h2 id="better-test-coverage" class="text-capitalize"> Better Test Coverage </h2>
+          <p><span> Automated testing can provide better test coverage than manual testing. Automated tests can run 24/7 and cover different aspects of the software, such as performance, <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a><span>, and <a href="https://taliferro.com/blog/oct2023/oct052023/how-i-perform-mobile-app-rationalization.html">user experience</a>. In contrast, manual testing can only cover a limited number of test cases, and it is challenging to ensure that all critical test scenarios are covered. </span></span></p>
+          <h2 id="scalability" class="text-capitalize"> Scalability </h2>
+          <p> Automated testing tools can handle large and complex <a href="https://taliferro.com/blog/dec2022/dec082022/how-to-start-a-software-project-that-inspires-excitement.html">software project</a><span><span>s, making it easier for developers to test the software in a scalable and efficient manner. Automated testing can scale to handle large and complex software projects. As software projects grow in size and complexity, the number of test cases increases, making it challenging to perform manual testing. </span></span></p>
+          <p><span> More than manual testing is required because it cannot keep up with the pace of <a href="https://taliferro.com/blog/oct2023/oct232023/the-lamentable-state-of-government-software-a-ticking-time-bomb.html">software development</a>. When new features are added or changes are made to the code, the entire software must be re-tested. This process is time-consuming and prone to errors, leading to delays and poor-quality software. </span></p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p><span><span> Automated testing is an essential part of modern <a href="https://taliferro.com/website-development/">software development</a>. Automated testing can significantly improve testing </span><a href="https://taliferro.com/blog/oct2023/oct282023/the-real-secret-to-e-commerce-efficiency.html">efficiency</a>, reduce cost and time, improve software quality, provide better test coverage, and scale to handle large and complex software projects. Manual testing cannot keep up with the pace of software development, and it is prone to errors and delays. Automated testing should be an integral part of the software development process to ensure that software meets the intended requirements and specifications. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+          <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><em>Automated testing</em></li>
+              <li><em>software development</em></li>
+              <li><em><span>testing <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">efficiency</a></span></em></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li>Automated testing</li>
+            <li>software development</li>
+            <li>testing efficiency</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="automated-testing">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar082023/building-an-effective-laboratory-information-system-architecture.html">&larr; The Architecture Shortcuts That Are Fine Elsewhere</a>
+          <a class="button" href="https://taliferro.com/blog/mar2023/mar102023/advantages-and-disadvantages-of-using-popular-e-commerce-platforms.html">Custom E-Commerce Platform Disadvantages vs Pre-Built &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

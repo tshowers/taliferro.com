@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Stop Rebuilding the Same Angular Service in Every Module</title>
+  <meta name="description" content="Discover the advantages of using a shared core module with singleton services in Angular development.">
+  <meta name="keywords" content="Angular Development, Singleton Services, Shared Core Module, Dependency Injection, Code Reusability, Modularity, Application Performance, Angular Best Practices, Dependency Management, Angular Modules">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Stop Rebuilding the Same Angular Service in Every Module">
+  <meta property="og:description" content="Discover the advantages of using a shared core module with singleton services in Angular development.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jun2023/jun082023/harnessing-the-power-of-shared-core-mdules-in-angular.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Stop Rebuilding the Same Angular Service in Every Module">
+  <meta name="twitter:description" content="Discover the advantages of using a shared core module with singleton services in Angular development.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/jun2023/jun082023/harnessing-the-power-of-shared-core-mdules-in-angular.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jun2023/jun082023/harnessing-the-power-of-shared-core-mdules-in-angular.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Stop Rebuilding the Same Angular Service in Every Module", "item": "https://taliferro.com/blog/jun2023/jun082023/harnessing-the-power-of-shared-core-mdules-in-angular.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jun2023/jun082023/harnessing-the-power-of-shared-core-mdules-in-angular.html"
+        },
+        "headline": "Stop Rebuilding the Same Angular Service in Every Module",
+        "description": "Discover the advantages of using a shared core module with singleton services in Angular development.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-06-08",
+        "dateModified": "2026-08-17",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction-singleton-services-for-optimal-applic">Singleton Services</a>
+        <a href="#core-module">Core Module</a>
+        <a href="#conclusion">Conclusion</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Stop Rebuilding the Same Angular Service in Every Module</h1>
+          <p>A shared core module for singleton services is one of the highest-leverage patterns in Angular architecture — it fixes duplicate service instances, tangled dependency injection, and messy startup logic in one move. Taliferro walks through how to set it up correctly.</p>
+          <p class="fine">Published: 8 Jun 2023 · Updated: 17 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction-singleton-services-for-optimal-applic" class="text-capitalize"> Singleton Services for Cleaner Angular Apps </h2>
+          <p>As an Angular app grows, dependency management gets messy fast — services get re-instantiated where they shouldn't be, initialization logic scatters across modules, and nobody's quite sure which part of the app owns which service. A shared core module built around singleton services fixes this directly: fewer duplicate instances, cleaner dependency injection, and a predictable place for startup logic to live.</p>
+          <h2 id="core-module" class="text-capitalize"> What the Core Module Actually Does </h2>
+          <p>The core module is a single, centralized home for services and utility functions used across the app — nothing else. Unlike feature modules, which hold components and directives, the core module holds only services. Keeping that boundary strict is what makes the pattern useful: anyone looking for "where does this app-wide service live" has exactly one place to check.</p>
+          <p>The main payoff is singleton services — instantiated once, shared everywhere. That means no redundant initialization wasting resources, and it means components can share state and data cleanly through the service instead of passing data around with events and callbacks.</p>
+          <p>Setting it up comes down to two things: defining the module, and configuring the providers. Generate the core module with the Angular CLI:</p>
+          <p>
+            <code>
+                  ng generate module core --flat --module=app
+              </code>
+          </p>
+          <p>The <code>--flat</code> flag puts the module in the project root instead of its own folder, which keeps the structure simple and the module easy to find.</p>
+          <p>From there, generate each service with <code>ng generate service core/my-service</code> and list it under the <code>providers</code> property in the core module's <code>@NgModule</code> decorator. That's what guarantees the service is instantiated as a singleton and available for injection anywhere in the app.</p>
+          <p>One rule matters more than the rest: the core module should never declare components, directives, or pipes — services only. That boundary is what prevents conflicts and duplication with feature modules trying to declare the same kind of thing. Finally, import the core module into the root module (<code>app.module.ts</code>) so its services are available application-wide.</p>
+          <p>The payoff compounds as the app grows. New services slot into the existing core module without touching what's already there, and the clean split between core and feature modules makes it easier for a team to work in parallel without stepping on each other's code.</p>
+          <h2 id="conclusion" class="text-capitalize"> Conclusion </h2>
+          <p>A shared core module with singleton services is a small structural decision that prevents a specific, recurring class of Angular bugs — duplicate service instances, scattered initialization, unclear ownership. It costs almost nothing to set up early and gets expensive to retrofit later, which is exactly why it's worth doing from the start of a project, not after the dependency graph is already tangled.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need the frontend to move faster?</strong>
+            <p class="mb-0">If you want execution instead of more rework, start with <a href="https://taliferro.com/website-development/">frontend delivery support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution system</a>, or <a href="https://taliferro.com/contact.html">show us the delivery bottleneck</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Angular Development</em></li>
+                <li><em>Singleton Services</em></li>
+                <li><em>Shared Core Module</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Angular Development</li>
+              <li>Singleton Services</li>
+              <li>Shared Core Module</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="harnessing-the-power-of-shared-core-mdules-in-angular">Website development</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/jun2023/jun072023/unveiling-the-consequences-of-poor-data-design.html">&larr; What Bad Data Design Actually Costs a Business</a>
+            <a class="button" href="https://taliferro.com/blog/jun2023/jun092023/streamlining-small-business-operations-with-technology.html">Where Automation Actually Pays Off for a Small Business &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

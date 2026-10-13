@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most Cybersecurity Failures Aren't Sophisticated Hacks. They're One "Whoops" Moment.</title>
+  <meta name="description" content="It's rarely a nation-state attack. It's a shared password, a clicked link, or a login screen with no MFA on it. The single highest-leverage fix — passkeys — removes that whole category at once.">
+  <meta name="keywords" content="Cybersecurity awareness, Passkeys, MFA fatigue, Phishing, Social engineering, Business cybersecurity, Zero Trust, Small team security, Cyber threat prevention">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Tyrone Showers">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Most Cybersecurity Failures Aren't Sophisticated Hacks. They're One &quot;Whoops&quot; Moment.">
+  <meta property="og:description" content="It's rarely a nation-state attack. It's a shared password, a clicked link, or a login screen with no MFA on it. The single highest-leverage fix — passkeys — removes that whole category at once.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/oct2022/oct272022/dont-take-cybersecurity-lightly.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Most Cybersecurity Failures Aren't Sophisticated Hacks. They're One &quot;Whoops&quot; Moment.">
+  <meta name="twitter:description" content="It's rarely a nation-state attack. It's a shared password, a clicked link, or a login screen with no MFA on it. The single highest-leverage fix — passkeys — removes that whole category at once.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/oct2022/oct272022/dont-take-cybersecurity-lightly.html">
+  <link rel="canonical" href="https://taliferro.com/blog/oct2022/oct272022/dont-take-cybersecurity-lightly.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Most Cybersecurity Failures Aren't Sophisticated Hacks. They're One \"Whoops\" Moment.", "item": "https://taliferro.com/blog/oct2022/oct272022/dont-take-cybersecurity-lightly.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/oct2022/oct272022/dont-take-cybersecurity-lightly.html"
+        },
+        "headline": "Most Cybersecurity Failures Aren't Sophisticated Hacks. They're One \"Whoops\" Moment.",
+        "description": "It's rarely a nation-state attack. It's a shared password, a clicked link, or a login screen with no MFA on it. The single highest-leverage fix — passkeys — removes that whole category at once.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers"
+        },
+        "datePublished": "2022-10-27",
+        "dateModified": "2026-08-03T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        },
+        "articleSection": "Cybersecurity",
+        "wordCount": "1500"
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#whats-new-in-2025">What’s New</a>
+        <a href="#60second-safety-checklist">60‑Second Safety</a>
+        <a href="#whats-the-worst-that-can-happen-right">What's the</a>
+        <a href="#its-not-just-about-significant-data-breaches">It's not</a>
+        <a href="#cybersecurity-can-be-a-big-issue-for-small-busines">Cybersecurity can</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Most Cybersecurity Failures Aren&#39;t Sophisticated Hacks They&#39;re One &quot;Whoops&quot; Moment</h1>
+          <p class="hero-sub">It's rarely a nation-state attack. It's a shared password, a clicked link, or an admin login with no MFA on it. The single highest-leverage fix most small teams haven't turned on is passkeys — phishing-resistant login that removes the entire category of password-related "whoops" moments at once. Taliferro has built passwordless authentication before; this is what actually matters if you're starting today.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p class="wow fadeInUp"><span> Over the last few years, there's been a lot of talk about <a href="https://taliferro.com/blog/oct2023/oct122023/bolstering-system-security.html">Cybersecurity</a> and how it affects businesses. It should be no surprise that the biggest threat to business is cybercrime. There are plenty of ways your company can be affected by hackers and other cyber criminals, such as ransomware attacks or malware on your systems. While these threats are scary, they're also preventable if you take some simple steps to protect yourself and your employees from them. </span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">workflow execution support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a> keeps the work tied to outcomes instead of activity.</p>
+          <div class="wow fadeInUp">
+            <h2 id="whats-new-in-2025">What’s New in 2025</h2>
+            <ul>
+              <li><strong>Phishing‑resistant MFA (passkeys):</strong> reduces push fatigue and SIM‑swap exposure — this is the same category of problem Taliferro built a passwordless authentication product to solve.</li>
+              <li><strong>MFA fatigue defenses:</strong> no endless prompts; add rate‑limits and step‑up for risky actions.</li>
+              <li><strong>QR‑code phishing &amp; deepfakes:</strong> verify off‑channel; train for voice/video spoofing tells.</li>
+              <li><strong>SaaS misconfig checks:</strong> review email sharing, external links, and admin roles quarterly.</li>
+              <li><strong>Zero‑Trust basics for small teams:</strong> identity + device health + least privilege + segmentation.</li>
+            </ul>
+          </div>
+          <h2 id="60second-safety-checklist" class="wow fadeInUp">60‑Second Safety Checklist</h2>
+          <ul class="wow fadeInUp">
+            <li>Turn on passkeys or phishing‑resistant MFA for email, finance, code, and admin tools.</li>
+            <li>Use a password manager; unique passwords everywhere.</li>
+            <li>Auto‑update OS/browser; enable disk encryption and device lock.</li>
+            <li>Enable automatic, versioned backups; test a restore monthly.</li>
+            <li>Pause before clicking: verify sender, URL domain, and file type.</li>
+          </ul>
+          <h2 id="whats-the-worst-that-can-happen-right" class="title mb--30 text-capitalize wow fadeInUp"> What's the worst that can happen, right? </h2>
+          <p class="wow fadeInUp"><span><span><span> That's a common mindset when it comes to <a href="https://taliferro.com/blog/jun2023/jun052023/a-prominent-culprit-in-security-risk.html">Cybersecurity</a>. The best way to avoid a cyber </span><a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a> issue is to be aware of the risks. I know several CEO's who just pray that nothing ever happens. You need to look at it from all angles—identity theft and </span><a href="https://taliferro.com/blog/may2023/may092023/an-argument-for-a-shift-in-contractor-relationships-and-cybersecurity-priorities.html">data breaches</a> are just two examples. </span></p>
+          <h2 id="its-not-just-about-significant-data-breaches" class="title mb--30 text-capitalize wow fadeInUp">It's not just about significant data breaches</h2>
+          <p class="wow fadeInUp"> While you might think that if you're not storing sensitive personal information or intellectual property on your company server, you don't have anything worth stealing—that isn't always true. Even small businesses can leave themselves vulnerable by coming up short on basic security measures like antivirus software and password protection. </p>
+          <h2 id="cybersecurity-can-be-a-big-issue-for-small-busines" class="title mb--30 text-capitalize wow fadeInUp"> Cybersecurity can be a big issue for small businesses </h2>
+          <p class="wow fadeInUp"> With fewer resources available than larger companies have at their disposal, smaller companies are particularly susceptible to cyber-attacks. </p>
+          <h2 id="have-you-had-a-whoops-moment-when-it-comes-to-cybe" class="title mb--30 text-capitalize wow fadeInUp"> Have you had a "whoops" moment when it comes to Cybersecurity? </h2>
+          <p class="wow fadeInUp"> Have you ever posted something online that you shouldn't have? Have you ever been tricked by a phishing email? Did you fall for the latest "too good to be true" phone call scam, only to find out it was too late once they had your money and personal information? Even if none of these things happened to you personally, chances are your company has experienced some <a href="https://taliferro.com/blog/may2023/may312023/seven-essential-steps-to-boost-cybersecurity-expert-advice-from-taliferro-group-it-consulting.html"><strong><span><a href="https://taliferro.com/blog/sep2022/sep032022/i-hate-passwords.html">cybersecurity</a></span></strong></a> incident at one point or another. When it comes down to it, any organization can be vulnerable when it does not take security precautions seriously enough. </p>
+          <p class="wow fadeInUp"> You may wonder why or how these attacks happen if you practice good security hygiene. The answer is simple: cybercriminals are constantly inventing new ways to get around the protections we've put in place, and they don't discriminate based on company size or industry. The good news is that there are some easy ways to avoid them. For example, companies need to ensure that malware installed by hackers isn't compromising their employees' devices and networks. And businesses must go through their security systems regularly and ensure everything's working properly—especially during this time of year when so many people are sharing sensitive information online. Here's how to avoid a "whoops" moment: </p>
+          <ul class="wow fadeInUp">
+            <li> The best way to avoid a "whoops" moment is to be aware of your online information and how it can be used against you. In the age of social media, hackers can find everything from your favorite restaurant to your name and contact information. Protecting yourself from these threats requires vigilance and common sense: </li>
+            <li> Don't share passwords with anyone. Not even your spouse or significant other. If someone knows your password, they can access all of the accounts linked to that password without any problem. Encourage websites to use passwordless technology.</li>
+            <li> Don't click on links in emails or social media posts—even if they seem to be coming from someone close to you (like an old friend). These links could be harmful, and clicking on them could expose your computer's vulnerabilities or allow hackers access to it without knowing it until it's too late! </li>
+            <li> Don't open attachments in emails from unknown sources—ever. </li>
+          </ul>
+          <h2 id="social-engineering" class="title mb--30 text-capitalize wow fadeInUp"> Social Engineering </h2>
+          <p class="wow fadeInUp"> When you think about a cyber attack, what do you imagine? Maybe it's some hacker behind a keyboard trying to steal your credit card number. Or perhaps it's an email from the IRS saying that they've detected fraudulent activity on your account. Still, the message is from a scammer trying to get personal details from unsuspecting victims. While these are both common forms of cyber-attack, there is another type known as social engineering. Social engineering is a cyber-attack in which a hacker attempts to manipulate people into performing actions or divulging confidential information (like passwords). They do this by impersonating someone else or creating fake websites or phone numbers that look like they're legitimate—and then asking for sensitive information under pretenses. </p>
+          <p class="wow fadeInUp"> For example, let's say my friend calls me one day and tells me his bank needs him to change his password immediately because they've detected suspicious activity on his account—but this isn't true. He wants me to give him my password so he can log into my account and steal all my money. This is an example of social engineering gone wrong: he knew how vulnerable I was (he knows me), so he took advantage of that vulnerability by pretending he was someone else entirely. </p>
+          <p class="wow fadeInUp"> He got access but also kept me from knowing about it afterward, so I wouldn't be able to stop him before any damage was done until too late when everything had already gone downhill. </p>
+          <p class="wow fadeInUp"> Cybersecurity and social engineering are real threats we must be aware of. These threats are not just for large companies but also you as an individual. You can use the tips in this post to stay safe and secure. </p>
+          <h2 id="306090day-plan" class="wow fadeInUp">30/60/90‑Day Plan</h2>
+          <ol class="wow fadeInUp">
+            <li><strong>Days 1–30:</strong> enforce passkeys/MFA on critical apps; patch backlog; enable device encryption; inventory SaaS admins.</li>
+            <li><strong>Days 31–60:</strong> roll out phishing training + simulation; set backup policy and test restores; restrict third‑party OAuth apps.</li>
+            <li><strong>Days 61–90:</strong> implement least‑privilege roles; segment crown‑jewel data; run an incident tabletop and fix findings.</li>
+          </ol>
+          <h2 id="metrics-that-matter" class="wow fadeInUp">Metrics That Matter</h2>
+          <ul class="wow fadeInUp">
+            <li><strong>MFA/passkey adoption</strong> (target &gt; 95% workforce; admins 100%).</li>
+            <li><strong>Patch SLAs</strong> (critical vulns &lt; 7 days).</li>
+            <li><strong>Backup restore success</strong> (monthly test pass rate &gt; 90%).</li>
+            <li><strong>Phishing fail rate</strong> (trend down each quarter).</li>
+          </ul>
+          <p class="wow fadeInUp">For foundational guidance, review the <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">OWASP Top 10</a> and <a href="https://www.cisa.gov/secure-by-design" target="_blank" rel="noopener">CISA Secure‑by‑Design</a> principles.</p>
+          <h2 id="conclusion" class="wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp"> In short, the world of Cybersecurity is a complex one. And it's not just about keeping our computers safe; it's also about protecting ourselves against social engineering attacks. </p>
+          <h2 id="cybersecurity-faqs-2025" class="wow fadeInUp">Cybersecurity FAQs (2025)</h2>
+          <h3>Are passkeys actually safe?</h3>
+          <p>Yes. Passkeys are phishing‑resistant and bound to your device, preventing credential replay. Use them wherever available.</p>
+          <h3>How do I stop MFA fatigue attacks?</h3>
+          <p>Use phishing‑resistant MFA, limit push attempts, and require step‑up for sensitive actions. Educate staff to report unexpected prompts.</p>
+          <h3>What backups matter most?</h3>
+          <p>Versioned, off‑device backups of critical data (finance, customer, code). Test restores monthly.</p>
+          <h3>Do small teams really need Zero‑Trust?</h3>
+          <p>Yes. Start simple: identity + device health + least privilege. Add segmentation as you grow.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">workflow execution support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><a href="https://taliferro.com/blog/mar2024/mar012024/ten-secrets-to-unbreakable-api-security-you-need-to-know.html">API security (2025)</a></li>
+                <li><a href="https://taliferro.com/blog/oct2023/oct252023/beyond-paranoia-the-imperative-of-zero-trust-security-in-modern-enterprises.html">Zero Trust (2025)</a></li>
+                <li><a href="https://taliferro.com/blog/oct2023/oct112023/streamlining-business-operations-with-technology.html">operations &amp; delivery</a></li>
+                <li><a href="https://taliferro.com/blog/nov2023/nov072023/cybersecurity-in-the-era-of-remote-work.html">remote work security</a></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Cybersecurity awareness</li>
+              <li>Passkeys</li>
+              <li>MFA fatigue</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="dont-take-cybersecurity-lightly">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/oct2022/oct262022/lack-of-resources-or-expertise-is-not-a-big-issue-for-companies.html">&larr; You Probably Don&#39;t Need to Build It. You Need Someone Who Knows It Already Exists.</a>
+            <a class="button" href="https://taliferro.com/blog/oct2022/oct282022/how-we-can-help-with-your-digital-transformation.html">Ask Five People at Your Company What &quot;Digital Transformation&quot; Means. You&#39;ll Get Five Answers. &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Are passkeys actually safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Passkeys are phishing‑resistant and bound to your device, preventing credential replay. Use them wherever available."}},
+    {"@type": "Question", "name": "How do I stop MFA fatigue attacks?", "acceptedAnswer": {"@type": "Answer", "text": "Use phishing‑resistant MFA, limit push attempts, and require step‑up for sensitive actions. Educate staff to report unexpected prompts."}},
+    {"@type": "Question", "name": "What backups matter most?", "acceptedAnswer": {"@type": "Answer", "text": "Versioned, off‑device backups of critical data (finance, customer, code). Test restores monthly."}},
+    {"@type": "Question", "name": "Do small teams really need Zero‑Trust?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Start simple: identity + device health + least privilege. Add segmentation as you grow."}}
+  ]
+}
+</script>
+</body>
+
+</html>

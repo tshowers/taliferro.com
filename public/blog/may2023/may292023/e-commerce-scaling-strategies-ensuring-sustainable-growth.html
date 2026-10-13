@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Where E-commerce Platforms Actually Break Under Load</title>
+  <meta name="description" content="Integration bottlenecks, rule processing, analytics contention, and data reads and writes each fail differently as an e-commerce platform scales. What actually fixes each one.">
+  <meta name="keywords" content="e-commerce scalability, system architecture, data management, front-end performance, integration patterns">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Where E-commerce Platforms Actually Break Under Load">
+  <meta property="og:description" content="Integration bottlenecks, rule processing, analytics contention, and data reads and writes each fail differently at scale. What actually fixes each one.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/may2023/may292023/e-commerce-scaling-strategies-ensuring-sustainable-growth.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Where E-commerce Platforms Actually Break Under Load">
+  <meta name="twitter:description" content="Integration bottlenecks, rule processing, analytics contention, and data reads and writes each fail differently at scale. What actually fixes each one.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/may2023/may292023/e-commerce-scaling-strategies-ensuring-sustainable-growth.html">
+  <link rel="canonical" href="https://taliferro.com/blog/may2023/may292023/e-commerce-scaling-strategies-ensuring-sustainable-growth.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Where E-commerce Platforms Actually Break Under Load", "item": "https://taliferro.com/blog/may2023/may292023/e-commerce-scaling-strategies-ensuring-sustainable-growth.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/may2023/may292023/e-commerce-scaling-strategies-ensuring-sustainable-growth.html"
+        },
+        "headline": "Where E-commerce Platforms Actually Break Under Load",
+        "description": "Integration bottlenecks, rule processing, analytics contention, and data reads and writes each fail differently as an e-commerce platform scales. What actually fixes each one.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-05-29",
+        "dateModified": "2026-08-12",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#integration">Integration</a>
+        <a href="#rules">Business Rules</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#front-end">Front-End</a>
+        <a href="#data-management">Data Management</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Where E-commerce Platforms Actually Break Under Load</h1>
+          <p>An e-commerce platform doesn't fail all at once as traffic grows — it fails one subsystem at a time: integration calls that block, rules that recompute on every request, analytics queries competing with checkout, data writes that contend with each other. Taliferro breaks down where each failure actually happens and what fixes it.</p>
+          <p class="fine">Published: 29 May 2023 · Updated: 12 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p>An e-commerce platform that works fine at low traffic doesn't fail all at once when it grows — specific subsystems break in specific, predictable ways. Knowing which part is actually straining lets you fix the right thing instead of throwing more server capacity at the whole platform.</p>
+          <h2 id="integration" class="text-capitalize"> Integration </h2>
+          <p>Synchronous calls — where one system waits on another to respond before continuing — are the first thing that breaks under load, because every wait compounds under traffic. Reserve synchronous calls for what genuinely needs an immediate answer; queue everything else, which adds durability and lets the system throttle gracefully instead of falling over. A fallback plan matters just as much: a cached last-known inventory count and a backup payment path keep transactions moving when the primary inventory system or payment gateway has a bad moment.</p>
+          <h2 id="rules" class="text-capitalize"> Business Rules </h2>
+          <p>Not every rule needs to run in real time. Cross-sell recommendations pull from large datasets and get hit constantly, which makes them expensive to compute live — pre-computing results and narrowing the target dataset cuts that cost dramatically without changing what the customer sees. Transaction-processing rules are different: those need to stay real-time. Classifying rules by which category they fall into is what makes it possible to optimize one without breaking the other.</p>
+          <h2 id="analytics" class="text-capitalize"> Analytics </h2>
+          <p>Analytics queries and checkout transactions competing for the same database is a common, avoidable failure. Running analytics on separate instances from the transactional system means a heavy report doesn't slow down a customer trying to check out — and it lets analytics scale independently as data volume grows, instead of being capped by what the transactional database can spare.</p>
+          <h2 id="front-end" class="text-capitalize"> Front-End </h2>
+          <p>Front-end scalability comes down to keeping individual requests cheap: minimizing server-side state, keeping memory footprint low, and pushing static assets through a CDN so the origin server isn't serving every image to every visitor directly. Accounting for different device capabilities on top of that keeps the experience consistent instead of just fast for whoever has the best connection.</p>
+          <h2 id="data-management" class="text-capitalize"> Data Management </h2>
+          <p>Databases usually hit their limit on writes long before reads. Separating reads from writes and scaling out read replicas removes contention on the read side; splitting functionality across database instances and sharding data lets the write side scale horizontally instead of hitting a hard ceiling on one instance. None of this is free — it trades some consistency guarantees for performance, which is a tradeoff worth making deliberately, not by accident under a traffic spike.</p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p>None of these fixes require a platform rewrite — they require correctly diagnosing which subsystem is actually under strain before reaching for infrastructure spend. Integration, rules, analytics, front-end, and data each fail differently, and each has a specific fix. Scaling an e-commerce platform is mostly a matter of applying the right one to the right problem.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+          <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need analytics people will actually use?</strong>
+          <p class="mb-0">Move from reporting to action with <a href="https://taliferro.com/machine-learning-services/">predictive analytics consulting</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution framework</a>, or <a href="https://taliferro.com/contact.html">book an analytics consult</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><em>e-commerce scaling</em></li>
+              <li><em>scalability strategies</em></li>
+              <li><em>sustainable growth</em></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li>e-commerce scaling</li>
+            <li>scalability strategies</li>
+            <li>sustainable growth</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="ai_ml" data-source="blog_cta" data-page="e-commerce-scaling-strategies-ensuring-sustainable-growth">Machine learning and analytics consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/may2023/may282023/decoding-web-design.html">&larr; The Web Design Mistakes That Cost You Visitors</a>
+          <a class="button" href="https://taliferro.com/blog/may2023/may302023/five-key-strategies-for-it-scalability-insights-from-taliferro-group-it-consulting.html">Five IT Scalability Decisions That Actually Matter &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

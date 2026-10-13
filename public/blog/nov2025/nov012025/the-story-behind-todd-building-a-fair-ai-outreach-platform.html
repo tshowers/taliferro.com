@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>When Data Is Biased, AI Doesn't Correct It. It Amplifies It.</title>
+  <meta name="taliferro:division" content="tech">
+  <meta name="description" content="Algorithms reward what's already popular, not what's overlooked. Why Taliferro built TODD's Bias Drift Detection and Fairness Module with the Washington State Office of Equity, instead of treating fairness as optional.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="taliferro:category" content="Business Momentum">
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="tech">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="When Data Is Biased, AI Doesn't Correct It. It Amplifies It.">
+  <meta property="og:description" content="Algorithms reward what's already popular, not what's overlooked. Why Taliferro built TODD's Bias Drift Detection and Fairness Module with the Washington State Office of Equity, instead of treating fairness as optional.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:image:alt" content="Taliferro Group">
+  <meta name="twitter:image:alt" content="Illustration of diverse professionals collaborating around the TODD AI interface, representing fair AI outreach.">
+  <meta property="og:url" content="https://taliferro.com/blog/nov2025/nov012025/the-story-behind-todd-building-a-fair-ai-outreach-platform.html">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="When Data Is Biased, AI Doesn't Correct It. It Amplifies It." />
+  <meta name="twitter:description" content="Algorithms reward what's already popular, not what's overlooked. Why Taliferro built TODD's Bias Drift Detection and Fairness Module with the Washington State Office of Equity, instead of treating fairness as optional.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/nov2025/nov012025/the-story-behind-todd-building-a-fair-ai-outreach-platform.html">
+  <link rel="canonical" href="https://taliferro.com/blog/nov2025/nov012025/the-story-behind-todd-building-a-fair-ai-outreach-platform.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "When Data Is Biased, AI Doesn't Correct It. It Amplifies It.", "item": "https://taliferro.com/blog/nov2025/nov012025/the-story-behind-todd-building-a-fair-ai-outreach-platform.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "When Data Is Biased, AI Doesn't Correct It. It Amplifies It.",
+  "description": "Algorithms reward what's already popular, not what's overlooked. Why Taliferro built TODD's Bias Drift Detection and Fairness Module with the Washington State Office of Equity, instead of treating fairness as optional.",
+  "author": {
+    "@type": "Person",
+    "name": "Tyrone Showers"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Taliferro Tech, LLC",
+    "url": "https://taliferro.com"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "TODD Momentum System",
+    "url": "https://taliferro.com/business-momentum-system/"
+  },
+  "datePublished": "2025-11-01T09:00:00-07:00",
+  "dateModified": "2026-08-04T09:00:00-07:00"
+
+}
+      
+    </script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does \u201cdigital gentrification\u201d mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Digital gentrification is when AI systems unintentionally exclude or misrepresent certain communities by relying on biased or incomplete data. As systems learn from historic patterns, they can push opportunity away from the very people they should help."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does TODD detect bias?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TODD uses Bias Drift Detection to continuously monitor data patterns over time. When it spots imbalance or underrepresentation in the information being used to drive outreach, it flags and adjusts the system\u2019s learning pathways to keep recommendations more equitable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can fairness be measured?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. TODD\u2019s Fairness Module quantifies equity metrics and generates internal reports showing how balanced its recommendations are. Those reports help teams see whether certain groups are being overlooked and let them correct course with data instead of guesswork."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does this help small or minority-owned businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By correcting visibility gaps. TODD is designed to ensure outreach systems discover, recommend, and follow up with businesses that might otherwise be hidden by biased data or legacy patterns. That gives small and minority-owned companies a fairer shot at being seen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can TODD be used outside government or equity programs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. Fairness benefits everyone. Startups, enterprises, and public agencies can all use TODD\u2019s equity-driven approach to get cleaner, more representative data, which leads to better outreach decisions and stronger relationships."
+            }
+          }
+        ]
+      }
+    </script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "The Story Behind TODD: Building a Fair AI Outreach Platform",
+        "description": "An overview of why Taliferro Tech built TODD to fight digital gentrification and how its equity-driven architecture, Bias Drift Detection, and fairness modules keep AI outreach more balanced and accountable.",
+        "thumbnailUrl": [
+          "https://img.youtube.com/vi/YE_Dy3lqlQU/maxresdefault.jpg"
+        ],
+        "uploadDate": "2025-11-01T09:00:00-07:00",
+        "embedUrl": "https://www.youtube.com/embed/YE_Dy3lqlQU",
+        "contentUrl": "https://www.youtube.com/watch?v=YE_Dy3lqlQU",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Tech, LLC",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#the-story-behind-todd-building-a-fair-ai-outreach-">The Story</a>
+        <a href="#why-todd-had-to-be-built">Why TODD</a>
+        <a href="#the-problem-with-traditional-systems">The Problem</a>
+        <a href="#building-todd-differently">Building TODD</a>
+        <a href="#how-todd-ensures-fairness">How TODD</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>When data is biased, AI doesn&#39;t correct it It amplifies it</h1>
+          <p>Algorithms don't play favorites on purpose — they just reward what's already popular, which means the same people stay unseen every time the data repeats itself. Taliferro built TODD with Bias Drift Detection and a Fairness Module, developed in partnership with the Washington State Office of Equity, specifically to interrupt that pattern instead of automating it faster.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div class="article-container">
+            <h2 id="the-story-behind-todd-building-a-fair-ai-outreach-">When data is biased, AI doesn&#39;t correct it. It amplifies it.</h2>
+            <p>AI has changed how we do business, but it hasn’t changed who benefits. For too long, algorithms have played favorites — not intentionally, but by design. When data is biased, AI amplifies that bias. When visibility depends on patterns from the past, the same people stay unseen.</p>
+            <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">workflow execution support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+            <p>That’s <strong>digital gentrification</strong> — when technology quietly pushes out the very communities it should help bring in. We built <strong>TODD</strong> to fix that.</p>
+            <p> New to TODD? Start with the <a href="https://taliferro.com/blog/sep2025/sep212025/bms-complete-guide-2025.html">complete guide to Momentum Systems (MS)</a>, or see how you can <a href="https://taliferro.com/blog/oct2025/oct302025/have-a-conversation-with-todd-about-your-work.html">have a conversation with TODD about your work</a>. Comparing tools? Here’s our plain‑English <a href="https://taliferro.com/blog/aug2024/aug032024/how-todd-helps-you-track-performance-and-retain-customers.html">CRM alternative breakdown</a>. </p>
+            <h2 id="why-todd-had-to-be-built">Why TODD Had to Be Built</h2>
+            <p>Every day, teams use AI to find leads, build pipelines, and recommend partnerships. But under the hood, those systems reward what’s already popular. They rank data based on wealth, scale, and activity — not on potential, quality, or equity.</p>
+            <p>For minority-owned or small businesses, that means their opportunities shrink each time an algorithm “learns” from past behavior.</p>
+            <p>At Taliferro Tech, we saw it firsthand. Even on government contracts that required inclusion, the software driving outreach wasn’t built to find diverse vendors. It was built to find familiar ones.</p>
+            <p>So we built something different.</p>
+            <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:1rem 0;border:1px solid #e6ebf2;background:#000">
+              <iframe src="https://www.youtube.com/embed/YE_Dy3lqlQU" title="The Story Behind TODD: Building a Fair AI Outreach Platform" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h2 id="the-problem-with-traditional-systems">The Problem with Traditional Systems</h2>
+            <p>Most CRMs and outreach tools assume data is neutral. It’s not. When your data is biased — missing minority representation, over-representing certain industries — automation becomes an amplifier of inequity.</p>
+            <p>Traditional tools also treat fairness as optional. They optimize for clicks, conversions, and revenue — not justice, not balance, not truth.</p>
+            <p>That’s why Taliferro Tech designed TODD as a <strong>Momentum System</strong> — not just to move data faster, but to move it <em>fairly</em>.</p>
+            <h2 id="building-todd-differently">Building TODD Differently</h2>
+            <p>TODD wasn’t coded around convenience. It was engineered around conscience. Its architecture includes built-in fairness checks and proprietary learning modules that keep bias from creeping in.</p>
+            <p>Here are a few of the proprietary systems inside TODD:</p>
+            <ul>
+              <li><strong>Bias Drift Detection (BDD):</strong> Monitors when data begins to skew over time.</li>
+              <li><strong>Adaptive Learning Pathways (ALP):</strong> Adjusts AI models to maintain equity as datasets evolve.</li>
+              <li><strong>Consistent Output Protocol (COP):</strong> Ensures that identical inputs produce consistent, explainable results.</li>
+              <li><strong>Fairness Module:</strong> Audits and scores decisions to flag potential bias in recommendations or rankings.</li>
+              <li><strong>Equity-Driven AI Framework:</strong> Aligns every automation — from outreach to enrichment — with inclusive data principles.</li>
+            </ul>
+            <p>Each piece works together to keep TODD accountable, measurable, and transparent.</p>
+            <h2 id="how-todd-ensures-fairness">How TODD Ensures Fairness</h2>
+            <p>Fairness isn’t a mode you turn on — it’s a mindset baked into every line of code.</p>
+            <p>When TODD suggests a contact, it doesn’t just look at who’s “most active.” It looks at representation balance. It ensures no one gets left behind because of missing data or uneven exposure.</p>
+            <p>When TODD analyzes notes or tasks, it detects language bias. When it enriches data, it cross-validates sources to minimize cultural or demographic distortion. When it scores outreach results, it normalizes metrics to avoid favoring well-funded entities.</p>
+            <p>Fair AI isn’t about suppressing data — it’s about broadening what the data sees.</p>
+            <h2 id="working-with-the-office-of-equity">Working with the Office of Equity</h2>
+            <p>We didn’t just build TODD in isolation. Taliferro Tech worked with the <strong>Washington State Office of Equity</strong> to design a <strong>Generative AI Accountability Framework</strong> — a system that ensures AI decisions serve <em>everyone</em>, not just the majority. For a deeper dive into the policy side, read <a href="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">Building Ethical AI: Washington’s Accountability Framework for AI Bias</a>.</p>
+            <p>That collaboration helped define how TODD measures bias, explains decisions, and reports accountability metrics. It also influenced how TODD handles sensitive data — with transparency and respect for privacy while still delivering actionable intelligence.</p>
+            <h2 id="empowering-teams-not-replacing-them">Empowering Teams, Not Replacing Them</h2>
+            <p>TODD doesn’t remove people — it amplifies them. The system automates what slows humans down, not what makes them valuable.</p>
+            <ul>
+              <li>Instead of replacing outreach teams, TODD gives them AI-powered context.</li>
+              <li>Instead of replacing analysts, it highlights bias they might not see.</li>
+              <li>Instead of replacing relationships, it strengthens them through insight.</li>
+            </ul>
+            <p>When you talk to TODD, you’re not talking to a replacement for your team — you’re talking to a partner that sees what you might miss.</p>
+            <p>Learn more about the TODD <a href="https://taliferro.com/business-momentum-system/">Momentum System and how it powers pre‑CRM</a> workflows.</p>
+            <h2 id="fighting-digital-gentrification">Fighting Digital Gentrification</h2>
+            <p>When AI systems are built without inclusion, they silently gatekeep opportunity. That’s digital gentrification. TODD fights it by design — through fairness detection, representative learning, and transparent accountability.</p>
+            <p>Our goal isn’t just better outreach. It’s <em>equitable</em> outreach. Because fair systems create fair results — and fair results create opportunity.</p>
+            <h2 id="the-future-of-fair-ai">The Future of Fair AI</h2>
+            <p>The next wave of AI won’t be about scale — it’ll be about trust. Who can we trust to use AI responsibly? Who can we trust to include everyone in the process?</p>
+            <p>TODD answers that with architecture, not slogans. Every function — from auto-enrichment to note analysis — was built with fairness as a technical requirement, not a talking point.</p>
+            <p>That’s the future we’re building: AI that reflects everyone, not just the loudest voices.</p>
+            <h2 id="faqs">FAQs</h2>
+            <h3>What does “digital gentrification” mean?</h3>
+            <p>Digital gentrification is when AI systems unintentionally exclude or misrepresent certain communities by relying on biased or incomplete data.</p>
+            <h3>How does TODD detect bias?</h3>
+            <p>TODD’s Bias Drift Detection continuously monitors data patterns. When it spots imbalance or underrepresentation, it flags and adjusts the system’s learning pathways.</p>
+            <h3>Can fairness be measured?</h3>
+            <p>Yes. TODD’s Fairness Module quantifies equity metrics and creates internal reports showing how balanced its recommendations are.</p>
+            <h3>How does this help small or minority-owned businesses?</h3>
+            <p>By correcting visibility gaps. TODD ensures outreach systems discover, recommend, and follow up with businesses that might otherwise be hidden by bias.</p>
+            <h3>Can TODD be used outside government or equity programs?</h3>
+            <p>Absolutely. Fairness benefits everyone — from startups to enterprises — because clean, balanced data drives better decisions.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">software development support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><a href="https://taliferro.com/blog/sep2025/sep212025/bms-complete-guide-2025.html" title="Momentum System guide">Momentum System</a></li>
+              <li><a href="https://taliferro.com/blog/oct2025/oct302025/have-a-conversation-with-todd-about-your-work.html" title="Conversational AI with TODD">Conversational AI</a></li>
+              <li><a href="https://taliferro.com/blog/aug2024/aug032024/how-todd-helps-you-track-performance-and-retain-customers.html" title="CRM alternative with TODD">CRM Alternative</a></li>
+              <li><a href="https://taliferro.com/blog/mar2025/mar112025/the-power-of-the-follow-up.html" title="Follow-up automation strategies">Follow‑Up Automation</a></li>
+              <li><a href="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html" title="Equity-driven AI">Equity‑Driven AI</a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="the-story-behind-todd-building-a-fair-ai-outreach-platform">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/oct2025/oct302025/have-a-conversation-with-todd-about-your-work.html">&larr; Dashboards Don't Talk Back</a>
+          <a class="button" href="https://taliferro.com/blog/nov2025/nov152025/todd-vs-microsoft-copilot.html">TODD vs Microsoft Copilot: Momentum System vs AI Sidekick &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most Apigee Problems Start With How It Was Configured</title>
+  <meta name="description" content="Configure Apigee for optimal API management. Learn through practical examples how to align with business objectives, secure, optimize, monitor, integrate APIs.">
+  <meta name="keywords" content="Apigee configuration, API management, security, optimization, monitoring, integration, CI/CD, practical examples">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Most Apigee Problems Start With How It Was Configured">
+  <meta property="og:description" content="Configure Apigee for optimal API management. Learn through practical examples how to align with business objectives, secure, optimize, monitor, integrate APIs.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/jun2023/jun252023/mastering-apigee.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Most Apigee Problems Start With How It Was Configured">
+  <meta name="twitter:description" content="Configure Apigee for optimal API management. Learn through practical examples how to align with business objectives, secure, optimize, monitor, integrate APIs.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/jun2023/jun252023/mastering-apigee.html">
+  <link rel="canonical" href="https://taliferro.com/blog/jun2023/jun252023/mastering-apigee.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Most Apigee Problems Start With How It Was Configured", "item": "https://taliferro.com/blog/jun2023/jun252023/mastering-apigee.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/jun2023/jun252023/mastering-apigee.html"
+        },
+        "headline": "Most Apigee Problems Start With How It Was Configured",
+        "description": "Configure Apigee for optimal API management. Learn through practical examples how to align with business objectives, secure, optimize, monitor, integrate APIs.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-06-25",
+        "dateModified": "2026-08-17",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#apigee-configuration">Apigee Configuration</a>
+        <a href="#define-clear-business-objectives">Define Clear</a>
+        <a href="#infrastructure-deployment">Infrastructure Deployment</a>
+        <a href="#api-design-and-development">API Design</a>
+        <a href="#security-and-access-control">Security And</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Most Apigee Problems Start With How It Was Configured</h1>
+          <p>Apigee is powerful but easy to misconfigure — this guide walks through setting it up correctly, with real scenarios and working code samples, so business objectives, security, and performance are handled from the start instead of patched in later.</p>
+          <p class="fine">Published: 25 Jun 2023 · Updated: 17 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="apigee-configuration"> Apigee Configuration </h2>
+          <p><span> Getting <a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API management</a> right starts with how Apigee is configured, not how it's patched afterward. This guide walks through real scenarios and working steps for setting it up: optimizing performance, tightening <a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a>, and building in the scalability a growing </span><a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API program</a> is going to need. </span></p>
+          <h2 id="define-clear-business-objectives"> Define Clear Business Objectives </h2>
+          <p> Before touching Apigee's configuration, get specific about what the platform needs to accomplish. Take a financial institution opening up account data to third-party developers: the objective isn't just "expose an API" — it's secure access to customer data that holds up under regulatory scrutiny. Configuration decisions made without that objective in mind tend to need rework later; decisions aligned to it from the start don't. </p>
+          <div class="code-block">
+            <pre>  <code>
+              
+              &lt;Scopes&gt;
+                &lt;Scope <span class="keyword">name</span>="read:customer-data"&gt;Read Customer Data&lt;/Scope&gt;
+                &lt;Scope <span class="keyword">name</span>="write:customer-data"&gt;Write Customer Data&lt;/Scope&gt;
+              &lt;/Scopes&gt;
+              
+            
+              </code>
+              </pre>
+          </div>
+          <i>Code Sample: Example of defining API scopes in Apigee's configuration</i>
+          <h3> Example Scenario: Financial Institution Open Banking APIs </h3>
+          <h4> Objective: Facilitate secure access to customer account data for third-party developers. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li> Define API scopes and permissions precisely, so access to sensitive customer data is controlled at a granular level. </li>
+            <li> Implement OAuth 2.0 for authentication and authorization, so third-party applications never touch raw credentials. </li>
+            <li> Apply Apigee's threat protection policies, including JSON Threat Protection, to guard against malformed or malicious API payloads. </li>
+          </ul>
+          <h2 id="infrastructure-deployment"> Infrastructure Deployment </h2>
+          <p> Where and how Apigee gets deployed depends on the existing infrastructure it needs to fit into. Here's what that looks like deploying on Amazon Web Services (AWS). </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"></span>
+              <span class="keyword">Resources:
+              ApigeeInstance:
+                Type:</span> AWS::EC2::Instance
+                <span class="keyword">Properties:
+                  InstanceType:</span> t2.micro
+                  <span class="keyword">ImageId</span>  : ami-xxxxxxxx
+                  <span class="keyword">SecurityGroups</span>:
+                    - sg-xxxxxxxx
+                    <span class="keyword">KeyName</span>: my-key-pair
+            
+            
+              </code>
+              </pre>
+          </div>
+          <i>Code Sample: AWS CloudFormation template to provision Apigee resources</i>
+          <h3> Example Scenario: Cloud-Based Deployment on AWS </h3>
+          <h4> Objective: Take advantage of the cloud's scalability and flexibility for deploying Apigee. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li> Provision virtual machines or containers on AWS with enough resources for the various Apigee components — under-provisioning here shows up later as latency. </li>
+            <li> Configure security groups and network settings carefully; this is what controls which traffic can actually reach the API. </li>
+            <li> Set up a load balancer to distribute incoming requests across Apigee instances, which is what keeps the deployment highly available under load. </li>
+          </ul>
+          <h2 id="api-design-and-development"><span>
+              <a href="https://taliferro.com/blog/jan2024/jan222024/best-practices-for-api-design-and-development.html">API Design</a> And Development </span></h2>
+          <p> A well-configured Apigee instance still fails if the API behind it is poorly designed. Here's what that design process looks like for a weather data API. </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"></span>
+          
+              paths:
+              /weather:
+                get:
+                  summary: Get Weather Data
+                  responses:
+                    200:
+                      description: Successful response
+                      content:
+                        application/json:
+                          schema:
+                            type: object
+                            properties:
+                              temperature:
+                                type: number
+                              conditions:
+                                type: string
+            
+              </code>
+              </pre>
+          </div>
+          <i>Code Sample: An example of OpenAPI Specification (OAS) for a weather data API endpoint</i>
+          <h3> Example Scenario: Weather Data API </h3>
+          <h4> Objective: Deliver real-time weather data through a well-designed API. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li><span> Write the API specification using the OpenAPI Specification (OAS) — <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">endpoints</a>, request/response formats, and data models all defined up front, not discovered as the API evolves. </span></li>
+            <li> Add API key authentication so only authorized developers can call the endpoint. </li>
+            <li> Use Apigee's Quota and Spike Arrest policies to control traffic volume and protect against abuse. </li>
+          </ul>
+          <h2 id="security-and-access-control"> Security And Access Control </h2>
+          <p> Apigee's security features are extensive, but the right configuration depends on what's being protected. Here's what that looks like for a banking API. </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"></span>
+              &lt;OAuthV2 <span class="keyword">async</span>="false" <span class="keyword">continueOnError</span>="false" <span class="keyword">enabled</span>="true" <span class="keyword">name</span>="OAuth-2.0-1"&gt;
+                &lt;DisplayName&gt;OAuth 2.0&lt;/DisplayName&gt;
+                &lt;Operation&gt;VerifyAccessToken&lt;/Operation&gt;
+                &lt;AddAttributesToRequest <span class="keyword">enabled</span>="false" <span class="keyword">continueOnError</span>="false" /&gt;
+              &lt;/OAuthV2&gt;
+              
+            
+              </code>
+              </pre>
+          </div>
+          <i>Code Sample: OAuth 2.0 configuration in Apigee's XML policy</i>
+          <h3> Example Scenario: Secure Banking API </h3>
+          <h4> Objective: Protect sensitive banking data while giving authorized clients secure access. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li> Implement OAuth 2.0 with the Authorization Code grant type for secure authentication and authorization. </li>
+            <li><span> Configure Transport Layer Security (<a href="https://taliferro.com/blog/oct2022/oct032022/api-security-checklist.html">TLS</a>) encryption so API traffic and <a href="https://taliferro.com/blog/nov2023/nov132023/cybersecurity-and-data-privacy.html">data privacy</a> are protected in transit. </span></li>
+            <li> Apply Apigee's threat protection policies, including XML Threat Protection, to catch malicious or malformed payloads before they reach the backend. </li>
+          </ul>
+          <h2 id="traffic-management-and-performance-optimization"> Traffic Management And Performance Optimization </h2>
+          <p> Fast, dependable API service depends on how well traffic is managed. Here's what that looks like for an <a href="https://taliferro.com/ecommerce-development/">e-commerce</a> API. </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"></span>
+          
+              &lt;RateLimit <span class="keyword">async</span>="false" <span class="keyword">continueOnError</span>="false" enabled="true" <span class="keyword">name</span>="Rate-Limit-1"&gt;
+                &lt;DisplayName&gt;Rate Limit&lt;/DisplayName&gt;
+                &lt;Properties&gt;
+                  &lt;MaxRequestCount&gt;100&lt;/MaxRequestCount&gt;
+                  &lt;TimeInterval&gt;1&lt;/TimeInterval&gt;
+                &lt;/Properties&gt;
+              &lt;/RateLimit&gt;
+              
+              </code>
+              </pre>
+          </div>
+          <i>Code Sample: Rate limiting policy configuration in Apigee's XML policy</i>
+          <h3> Example Scenario: E-commerce API Traffic Management </h3>
+          <h4> Objective: Improve API performance and keep the shopping experience smooth under load. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li> Apply rate limiting policies to control how many requests an individual client can make, which curbs abuse and protects service integrity. </li>
+            <li> Use caching policies to store frequently accessed data, cutting down on backend calls and speeding up response times. </li>
+            <li> Combine Apigee's Response Cache and Quota policies to keep API performance consistent even during traffic spikes. </li>
+          </ul>
+          <h2 id="monitoring-and-analytics"> Monitoring And Analytics </h2>
+          <p><span> Monitoring and <a href="https://taliferro.com/blog/oct2023/oct092023/how-we-uncover-hidden-revenue-in-your-data.html">analytics</a> are what catch issues before they become outages, and what tell you where API performance is actually slipping. Here's what that looks like for tracking usage and key metrics. </span></p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"><span>
+              // Sample code to create a custom dashboard with Apigee <a href="https://taliferro.com/blog/oct2023/oct092023/how-we-uncover-hidden-revenue-in-your-data.html">analytics</a> data
+            </span></span>
+              const dashboard = new <span class="keyword">CustomDashboard</span>();
+              dashboard.<span class="keyword">addChart</span>(apiTrafficChart);
+              dashboard.<span class="keyword">addChart</span>(errorRateChart);
+              dashboard.<span class="keyword">render</span>();
+              
+            
+              </code>
+              </pre>
+          </div>
+          <i><span>Code Sample: Custom dashboard using Apigee analytics <a href="https://taliferro.com/blog/sep2023/sep252023/geospatial-heat-maps-can-tell-you-where-your-local-customers-are.html">data visualization</a></span></i>
+          <h3> Example Scenario: API Monitoring and Analytics </h3>
+          <h4> Objective: Get real insight into API performance, usage patterns, and where bottlenecks are forming. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li> Configure Apigee analytics to collect data on API traffic, response times, and error rates as the baseline for everything else. </li>
+            <li><span> Build <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">custom</a> dashboards around the metrics that actually matter for the API in question, so performance is visible in real time instead of discovered after the fact. </span></li>
+            <li> Set up automated alerts so performance anomalies get flagged and addressed quickly, before they turn into an outage. </li>
+          </ul>
+          <h2 id="integration-with-backend-systems"> Integration With Backend Systems </h2>
+          <p> Apigee sits between APIs and the backend systems they call, which means how that integration is configured matters. Here's what that looks like connecting to a customer database. </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"></span>
+              &lt;TargetEndpoint <span class="keyword">name</span>="customer-database"&gt;
+                &lt;HTTPTargetConnection&gt;
+                  &lt;URL&gt;https://api.example.com/customer&lt;/URL&gt;
+                &lt;/HTTPTargetConnection&gt;
+              &lt;/TargetEndpoint&gt;
+              
+            
+              </code>
+              </pre>
+          </div>
+          <i>Code Sample: Apigee API proxy configuration for integrating with a customer database</i>
+          <h3> Example Scenario: Customer Database Integration </h3>
+          <h4> Objective: Retrieve customer information through an API without exposing the database directly. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li> Establish secure, encrypted connectivity to the customer database — this is the foundation everything else depends on. </li>
+            <li> Handle authentication and data transformation through Apigee's API policies rather than in application code. </li>
+            <li> Use Apigee's caching policies to cut down on redundant database calls and keep response times fast. </li>
+          </ul>
+          <h2 id="continuous-integration-and-deployment"> Continuous Integration And Deployment </h2>
+          <p><span> Wiring Apigee into a Continuous Integration/Continuous Deployment (<a href="https://taliferro.com/blog/feb2024/feb032024/efficient-e-commerce-ci-cd-with-api-consulting.html">CI/CD</a>) pipeline is what keeps API deployments from being a manual, error-prone process. Here's what that looks like automating deployments through a tool like Jenkins. </span></p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"></span>
+              pipeline {
+                agent any
+                stages {
+                  stage('Build and Test') {
+                    steps {
+                      // Build and test API code
+                    }
+                  }
+                  stage('Deploy to Apigee') {
+                    steps {
+                      // Deploy API to Apigee using Jenkins plugin
+                    }
+                  }
+                }
+              }
+              
+            
+              </code>
+              </pre>
+          </div>
+          <i>Code Sample: Jenkins pipeline script for automating API deployments to Apigee</i>
+          <h3> Example Scenario: CI/CD Integration with Jenkins </h3>
+          <h4> Objective: Automate API deployments so releases stay fast and consistent. </h4>
+          <h5> How-to: </h5>
+          <ul>
+            <li> Configure Jenkins to trigger automated builds and tests on every code change, so problems surface immediately instead of after deployment. </li>
+            <li> Use Jenkins plugins to deploy APIs to Apigee directly, closing the gap between development and production. </li>
+            <li> Put version control strategies in place for API revisions, so a rollback is a quick fix rather than a scramble. </li>
+          </ul>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p><span> The steps above — clear objectives, deliberate infrastructure choices, solid API design, layered security, real traffic management, active monitoring, careful backend integration, and <a href="https://taliferro.com/blog/oct2023/oct212023/automate-automate-automate-the-self-growing-garden-of-cloud-auto-scaling.html">automated</a> deployments — are what separate an Apigee setup that scales cleanly from one that needs constant firefighting. Get the configuration right the first time, and <a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API management</a> stops being a source of ongoing pain. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">talk through the gateway design</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Apigee configuration</em></li>
+                <li><em>security</em></li>
+                <li><em>API management</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Apigee configuration</li>
+              <li>security</li>
+              <li>API management</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="mastering-apigee">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/jun2023/jun242023/empowering-marginalized-communities-with-secure-online-access.html">&larr; Empowering Inclusive Web Security</a>
+            <a class="button" href="https://taliferro.com/blog/jun2023/jun262023/the-impending-generative-ai-revolution-and-its-implications-for-employment.html">Generative AI Is Coming for Knowledge Workers Too &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

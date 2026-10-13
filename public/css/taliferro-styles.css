@@ -1,0 +1,2136 @@
+:root {
+  --bg: #ffffff;
+  --ink: #0b0b0b;
+  --muted: rgba(11, 11, 11, .72);
+  --hair: rgba(11, 11, 11, .10);
+  --card: rgba(11, 11, 11, .04);
+  --radius: 18px;
+  --max: 1120px;
+  --pad: clamp(16px, 3vw, 28px);
+  --gap: clamp(14px, 2vw, 20px);
+  --h1: clamp(34px, 4.2vw, 54px);
+  --h2: clamp(22px, 2.4vw, 34px);
+  --h3: clamp(18px, 1.6vw, 22px);
+  --p: clamp(16px, 1.35vw, 18px);
+}
+
+* {
+  box-sizing: border-box
+}
+
+
+
+body {
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad)
+}
+
+.section {
+  padding: clamp(34px, 4.6vw, 72px) 0;
+  border-top: 1px solid var(--hair)
+}
+
+
+.section:first-of-type {
+  border-top: 0
+}
+
+.kicker {
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .7
+}
+
+h1 {
+  font-size: var(--h1);
+  line-height: 1.05;
+  margin: 10px 0 14px
+}
+
+h2 {
+  font-size: var(--h2);
+  line-height: 1.15;
+  margin: 0 0 14px
+}
+
+h3 {
+  font-size: var(--h3);
+  margin: 0 0 8px
+}
+
+p {
+  font-size: var(--p);
+  color: var(--muted);
+  margin: 0 0 14px
+}
+
+
+
+.bgVideo {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -3;
+  opacity: 0;
+  filter: none;
+  transform: translateZ(0);
+  transition: opacity .45s ease;
+  pointer-events: none;
+}
+
+.bgVideo.isReady {
+  opacity: 1;
+}
+
+/* Safari dims paused videos and shows a big play overlay.
+   Keep <video> hidden unless it is actually playing. */
+.bgVideo {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -3;
+  pointer-events: none;
+
+  opacity: 0;
+  /* hidden by default */
+  transition: opacity 220ms ease;
+}
+
+.bgVideo.isPlaying {
+  opacity: 1;
+  /* only visible when playing */
+}
+
+
+
+
+/* Keep overlay lightweight even if video never autoplay's */
+.bgVideoOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+
+  /* Light mode default */
+  background: rgba(255, 255, 255, .08);
+}
+
+.bgVideoOverlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .bgVideo {
+    object-position: bottom right;
+    /* or top center */
+  }
+}
+
+/* Dark mode: stronger tint so white text stays readable */
+@media (prefers-color-scheme: dark) {
+  .bgVideoOverlay {
+    background: rgba(0, 0, 0, .78);
+  }
+
+  .bgVideoOverlay::before {
+    background:
+      radial-gradient(1200px 700px at 50% 20%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 55%, rgba(0, 0, 0, 0.34) 100%);
+  }
+
+  /* Ensure Taliferro logo is visible in dark mode (global header + home) */
+  .home-wrap .brandLogo,
+  .siteHeader .brandLogo,
+  .siteHeaderInner .brandLogo {
+    filter: brightness(0) invert(1);
+    opacity: .92;
+  }
+
+  /* Example chips (higher specificity so it wins) */
+  .home-wrap .exampleRow .exampleChip {
+    color: rgba(255, 255, 255, .72);
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(10, 10, 14, .78);
+  }
+
+  .home-wrap .exampleRow .exampleChip:hover {
+    background: rgba(18, 18, 24, .86);
+  }
+
+}
+
+
+/* Home page: forcibly disable any global “veil” pseudo-elements.
+   Some other CSS file is likely painting a dark overlay on html/body ::before/::after.
+   Autoplay may be blocked, so do NOT gate this on .videoReady. */
+html:has(.bgVideo)::before,
+html:has(.bgVideo)::after,
+body.page-home::before,
+body.page-home::after,
+body:has(.bgVideo)::before,
+body:has(.bgVideo)::after {
+  opacity: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  pointer-events: none !important;
+}
+
+/* Keep the sparkle layer from blacking out the background on home. */
+body.page-home .sparkleField,
+body:has(.bgVideo) .sparkleField {
+  opacity: .35;
+}
+
+/* Make section backgrounds slightly translucent so the video/poster reads through. */
+body.page-home .hero,
+body.page-home .section,
+body:has(.bgVideo) .hero,
+body:has(.bgVideo) .section {
+  background: transparent;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap)
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr))
+}
+
+@media (max-width: 920px) {
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: var(--radius);
+  padding: clamp(16px, 2.2vw, 22px);
+}
+
+.pillrow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px
+}
+
+.pill {
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, .65);
+}
+
+.btnrow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn.primary {
+  background: var(--ink);
+  color: #fff
+}
+
+.btn.ghost {
+  background: transparent
+}
+
+.btn.small {
+  padding: 10px 14px;
+  font-size: 13px
+}
+
+/* ===== Forms (Contact page + site-wide) ===== */
+form {
+  margin: 0;
+}
+
+/* Legacy layout helpers used in contact.html */
+.row {
+  display: block;
+}
+
+.col {
+  display: block;
+}
+
+.form__row {
+  margin-top: 12px;
+}
+
+.form__row:first-child {
+  margin-top: 0;
+}
+
+.form__col_submit {
+  margin-top: 10px;
+}
+
+/* Floating-label markup (we render as clean stacked labels) */
+.input-float {
+  display: block;
+}
+
+.input-float__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.input-float__input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid var(--hair);
+  background: rgba(255, 255, 255, .80);
+  color: var(--ink);
+  font-size: 14px;
+  outline: none;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
+  transition: box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.input-float__input:focus {
+  border-color: rgba(0, 122, 255, .55);
+  box-shadow: 0 0 0 6px rgba(0, 122, 255, .18), 0 10px 26px rgba(0, 0, 0, .06);
+  background: rgba(255, 255, 255, .92);
+}
+
+.input-float__input_textarea,
+textarea.input-float__input {
+  height: auto;
+  min-height: 140px;
+  padding: 12px 14px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+.form__error {
+  display: block;
+  font-size: 12px;
+  margin-top: 6px;
+  color: rgba(180, 0, 0, .85);
+}
+
+/* Form title inside card */
+#newsletterForm h3 {
+  margin: 0 0 10px;
+}
+
+/* Make the form button match site buttons */
+#newsletterForm .btn {
+  min-width: 120px;
+}
+
+/* Dark mode for forms */
+@media (prefers-color-scheme: dark) {
+  .input-float__label {
+    color: rgba(245, 245, 245, .72);
+  }
+
+  .input-float__input {
+    background: rgba(16, 16, 20, .88);
+    border-color: rgba(245, 245, 245, .14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 12px 36px rgba(0, 0, 0, .55);
+  }
+
+  .input-float__input:focus {
+    border-color: rgba(10, 132, 255, .65);
+    box-shadow: 0 0 0 6px rgba(10, 132, 255, .22), inset 0 1px 0 rgba(255, 255, 255, .06), 0 12px 36px rgba(0, 0, 0, .55);
+    background: rgba(18, 18, 24, .92);
+  }
+
+  .form__error {
+    color: rgba(255, 120, 120, .88);
+  }
+}
+
+.hero {
+  padding: clamp(26px, 4vw, 44px) 0 clamp(18px, 3vw, 26px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(16px, 3vw, 28px);
+  align-items: stretch;
+}
+
+@media (max-width: 920px) {
+  .hero-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+.hero-media {
+  border: 1px dashed var(--hair);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(11, 11, 11, .03), rgba(11, 11, 11, .01));
+  padding: 16px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ph {
+  border-radius: 14px;
+  border: 1px dashed var(--hair);
+  background: rgba(255, 255, 255, .55);
+  padding: 14px;
+  color: rgba(11, 11, 11, .65);
+  font-size: 13px;
+}
+
+.metric {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.metric strong {
+  font-size: 18px !important
+}
+
+.metric span {
+  font-size: 13px;
+  opacity: .8
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: var(--p)
+}
+
+.list li {
+  margin: 8px 0
+}
+
+.divider {
+  height: 1px;
+  background: var(--hair);
+  margin: 18px 0
+}
+
+.sticky-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, .56);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--hair);
+  padding: 10px var(--pad);
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+}
+
+.sticky-cta .wrap {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between
+}
+
+@media (max-width: 920px) {
+  .sticky-cta .wrap {
+    flex-direction: column;
+    align-items: stretch
+  }
+
+  .sticky-cta .btnrow {
+    margin-top: 0;
+    width: 100%
+  }
+
+  .sticky-cta .btn {
+    width: 100%
+  }
+}
+
+.quote {
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.3;
+  color: rgba(11, 11, 11, .86);
+}
+
+.fine {
+  font-size: 12px;
+  color: rgba(11, 11, 11, .55)
+}
+
+details {
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(11, 11, 11, .02)
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700
+}
+
+details p {
+  margin-top: 10px
+}
+
+/* footer padding so sticky CTA doesn't cover content */
+.bottom-pad {
+  height: 72px
+}
+
+/* Responsive media */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+/* 16x9 responsive video wrapper (YouTube/Vimeo) */
+.video-16x9 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hair);
+  background: rgba(11, 11, 11, .03);
+}
+
+.video-16x9 iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-16x9 video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+/* 9x16 responsive video wrapper (Shorts/Reels) */
+.video-9x16 {
+  position: relative;
+  width: min(360px, 100%);
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hair);
+  background: rgba(11, 11, 11, .03);
+}
+
+.video-9x16 iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-9x16 video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+
+/* Images used inside placeholder blocks */
+.ph img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--hair);
+}
+
+/* Keep the hero media card from stretching awkwardly */
+.hero-media .ph {
+  overflow: hidden;
+}
+
+/* Dark mode (system preference) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b0b;
+    --ink: #f5f5f5;
+    --muted: rgba(245, 245, 245, .72);
+    --hair: rgba(245, 245, 245, .12);
+    --card: rgba(255, 255, 255, .04);
+  }
+
+  body {
+    background-image: url("https://taliferro.com/img/home-background2.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--ink);
+  }
+
+  .card {
+    background: var(--card);
+    border-color: var(--hair);
+  }
+
+  .ph {
+    background: rgba(255, 255, 255, .06);
+    border-color: var(--hair);
+  }
+
+  .pill {
+    background: rgba(255, 255, 255, .08);
+    border-color: var(--hair);
+  }
+
+  .btn.primary {
+    background: #ffffff;
+    color: #0b0b0b;
+    border-color: #ffffff;
+  }
+
+  .btn.ghost {
+    border-color: var(--hair);
+  }
+
+  .divider {
+    background: var(--hair);
+  }
+
+  .sticky-cta {
+    background: rgba(11, 11, 11, .88);
+    border-top-color: var(--hair);
+  }
+
+  .hero-media {
+    background: linear-gradient(135deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+    border-color: var(--hair);
+  }
+}
+
+/* Dark mode (system preference) */
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: dark;
+    /* fixes native dark UI + selection behavior in some browsers */
+  }
+
+  /* Improve readability of smaller text in cards */
+  .kicker {
+    opacity: .85;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #f5f5f5;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(245, 245, 245, 0.55);
+  }
+
+  /* If you're using floating labels */
+  .input-float__label {
+    color: rgba(245, 245, 245, 0.6);
+  }
+
+  /* When focused */
+  input:focus,
+  textarea:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+    outline: none;
+  }
+
+  .ph {
+    color: rgba(245, 245, 245, .72);
+  }
+
+  .quote {
+    color: rgba(245, 245, 245, .92);
+  }
+
+  .fine {
+    color: rgba(245, 245, 245, .62);
+  }
+
+  /* Fix ugly selection highlight (tan blocks) */
+  ::selection {
+    background: rgba(255, 255, 255, .22);
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background: rgba(255, 255, 255, .22);
+    color: #fff;
+  }
+}
+
+
+/* Blog asides (callouts) */
+.card .post__content aside {
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 18px 0;
+  background: rgba(11, 11, 11, .03);
+}
+
+/* Dark mode: override inline light styles on asides */
+@media (prefers-color-scheme: dark) {
+
+  .card .post__content aside,
+  .card .post__content aside.cta-todd,
+  .card .post__content aside.note {
+    background: rgba(255, 255, 255, .06) !important;
+    border-color: rgba(245, 245, 245, .12) !important;
+    color: rgba(245, 245, 245, .86) !important;
+  }
+
+  .card .post__content aside a {
+    color: rgba(245, 245, 245, .92) !important;
+    text-decoration: underline;
+  }
+}
+
+/* Make legacy "button" links inside asides look consistent */
+.card .post__content aside a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--hair);
+  margin-right: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  background: rgba(255, 255, 255, .65);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card .post__content aside a.button {
+    background: rgba(255, 255, 255, .08) !important;
+    border-color: rgba(245, 245, 245, .12) !important;
+    color: rgba(245, 245, 245, .92) !important;
+    text-decoration: none;
+  }
+}
+
+/* Legacy two-up columns used in older blog posts (Bootstrap-free) */
+.card .post__content .card {
+  /* nested cards inside article content (often used for paired images) */
+  display: flex;
+  gap: var(--gap);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card .post__content .card>.col-lg-6 {
+  flex: 1 1 320px;
+  max-width: 420px;
+  /* keeps them from becoming massive */
+}
+
+.card .post__content .card>.col-lg-6 img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 12px;
+  display: block;
+}
+
+@media (max-width: 920px) {
+  .card .post__content .card {
+    flex-direction: column;
+  }
+
+  .card .post__content .card>.col-lg-6 {
+    max-width: 100%;
+  }
+}
+
+.blog-video-float-right {
+  float: right;
+  width: clamp(220px, 35vw, 360px);
+  margin: 0 0 1rem 1.25rem;
+}
+
+.blog-video-float-right .video-9x16 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blog-video-float-right iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 991.98px) {
+  .blog-video-float-right {
+    float: none;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+.video-embed-vert {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-embed-vert iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (min-width: 992px) {
+  .float-md-right {
+    float: right;
+    margin: 0 0 1rem 1.25rem;
+    width: 360px;
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .float-md-right {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    float: none;
+  }
+}
+
+
+/* Page-only typography spacing */
+body.page-affordable-web-dev {
+  line-height: 1.6;
+}
+
+body.page-affordable-web-dev p {
+  line-height: 2.00;
+}
+
+body.page-affordable-web-dev .card p {
+  margin-bottom: 18px;
+}
+
+/* more vertical breathing room */
+/* Optional: tighten headings if you want balance */
+body.page-affordable-web-dev h2 {
+  margin-bottom: 18px;
+}
+
+/* Optional: FAQ blocks */
+body.page-affordable-web-dev details {
+  line-height: 1.85;
+}
+
+
+
+
+/* ===== Home page assistant + dark mode ===== */
+/* ===== Home Assistant UI (scoped to .home-wrap) ===== */
+
+/* Guidance pills should NOT look clickable */
+.home-wrap .nextList li {
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Make it read like labels */
+.home-wrap .nextList {
+  gap: 10px;
+}
+
+.home-wrap .nextList li:not(:last-child)::after {
+  content: "•";
+  margin-left: 10px;
+  opacity: .45;
+}
+
+/* Ensure it never feels like a button */
+.home-wrap .nextList li {
+  cursor: default;
+}
+
+/* Warm helper copy + “what happens next” */
+.home-wrap .microCopy {
+  margin: 0 auto 14px;
+  max-width: 860px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: rgba(0, 0, 0, .62);
+}
+
+.home-wrap .nextSteps {
+  margin: 14px auto 0;
+  max-width: 760px;
+  text-align: center;
+}
+
+.home-wrap .nextTitle {
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, .52);
+  margin: 0 0 8px;
+}
+
+.home-wrap .nextList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 14px;
+}
+
+.home-wrap .nextList li {
+  font-size: 13px;
+  color: rgba(0, 0, 0, .58);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+@media (max-width: 720px) {
+  .home-wrap .microCopy {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .home-wrap .nextList {
+    gap: 8px 10px;
+  }
+
+  .home-wrap .nextList li {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Keep all home assistant content above background decoration */
+.home-wrap .top,
+.home-wrap .stage,
+.home-wrap .foot,
+.home-wrap .sparkleField {
+  position: relative;
+  z-index: 1;
+}
+
+/* Layout / structure */
+.home-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar */
+.home-wrap .top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: rgba(245, 245, 247, .50);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, .06);
+  /* hair2 */
+}
+
+.home-wrap .brand {
+  font-weight: 700;
+  letter-spacing: .1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-wrap .brandLogo {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.home-wrap .topRight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.home-wrap .ctaBtn {
+  border: 1px solid rgba(0, 0, 0, .18);
+  background: rgba(255, 255, 255, .92);
+  color: rgba(0, 0, 0, .82);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+
+.home-wrap .ctaBtn:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+
+.home-wrap .ctaBtn:active {
+  transform: translateY(0);
+}
+
+/* Main stage */
+.home-wrap .stage {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 46px 18px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Hero dialog */
+.home-wrap .dialog {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+/* Headline */
+.home-wrap .prompt {
+  margin-top: 20px;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI Variable", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  letter-spacing: -0.8px;
+  line-height: 1.05;
+  font-size: 46px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 980px) {
+  .home-wrap .prompt {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-wrap .prompt {
+    font-size: 34px;
+  }
+
+  .home-wrap .stage {
+    padding-top: 28px;
+  }
+}
+
+.home-wrap .selected {
+  margin-top: 10px;
+  color: rgba(0, 0, 0, .58);
+  font-size: 14px;
+}
+
+/* Loading */
+.home-wrap .loadingNotice {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(0, 0, 0, .58);
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.home-wrap .spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 2px solid rgba(0, 0, 0, .18);
+  border-top-color: rgba(0, 0, 0, .55);
+  animation: homeSpin 900ms linear infinite;
+}
+
+@keyframes homeSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Messages */
+.home-wrap .messages {
+  margin: 14px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 860px;
+  align-items: center;
+}
+
+.home-wrap .messages:empty {
+  display: none;
+}
+
+.home-wrap .msg {
+  margin-top: 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, .58);
+  font-size: 18px;
+  max-width: 760px;
+  font-weight: 400;
+}
+
+.home-wrap .msg.visitor {
+  display: none;
+}
+
+/* Input row */
+.home-wrap .inputRow {
+  margin: 22px auto 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  max-width: 760px;
+}
+
+.home-wrap .freeText {
+  flex: 1;
+  height: 56px;
+  padding: 0 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, .14);
+  background: #fff;
+  outline: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+}
+
+.home-wrap .freeText:focus {
+  border-color: rgba(0, 122, 255, .55);
+  box-shadow: 0 0 0 6px rgba(0, 122, 255, .18);
+}
+
+.home-wrap .sendBtn {
+  height: 56px;
+  padding: 0 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, .14);
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+  transition: transform 120ms ease;
+}
+
+.home-wrap .sendBtn:hover {
+  transform: translateY(-1px);
+}
+
+.home-wrap .sendBtn:active {
+  transform: translateY(0);
+}
+
+.home-wrap .sendBtn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.home-wrap .iconBtn {
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.home-wrap .iconBtn .icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+  opacity: .85;
+}
+
+.home-wrap .iconBtn:hover .icon {
+  opacity: 1;
+}
+
+/* Choices */
+.home-wrap .choices {
+  margin: 34px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  max-width: 980px;
+}
+
+.home-wrap .choice {
+  width: 190px;
+  height: 190px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, .10);
+  background: rgba(255, 255, 255, .88);
+  cursor: pointer;
+  font-weight: 200;
+  letter-spacing: -0.2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px;
+  box-shadow: 0 16px 46px rgba(0, 0, 0, .10);
+  transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease;
+}
+
+.home-wrap .choice:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 22px 64px rgba(0, 0, 0, .14);
+}
+
+.home-wrap .choice:active {
+  transform: translateY(0);
+}
+
+.home-wrap .choice:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+}
+
+/* Icon masks inside circles */
+.home-wrap .choice::before {
+  content: "";
+  width: 56px;
+  height: 56px;
+  margin-bottom: 14px;
+  background: rgba(0, 0, 0, .55);
+  -webkit-mask: url("https://taliferro.com/icons/default.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/default.svg") center/56px 56px no-repeat;
+  opacity: .75;
+}
+
+.home-wrap .choice[data-choice="outreach"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/outreach.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/outreach.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="cloud"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/cloud.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/cloud.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="apis"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/link.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/link.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="ai"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/book.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/book.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="security"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/security.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/security.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="explainer"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/explainer.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/explainer.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="video"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/video.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/video.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="image"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/image.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/image.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="moves"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/moves.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/moves.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="web_dev"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/web-dev.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/web-dev.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="ecommerce"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/ecommerce.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/ecommerce.svg") center/56px 56px no-repeat;
+}
+
+.home-wrap .choice[data-choice="network"]::before {
+  -webkit-mask: url("https://taliferro.com/icons/network.svg") center/56px 56px no-repeat;
+  mask: url("https://taliferro.com/icons/network.svg") center/56px 56px no-repeat;
+}
+
+/* Shelves */
+.home-wrap .shelves {
+  width: 100%;
+  max-width: 1040px;
+  margin: 44px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.home-wrap .shelves:empty {
+  display: none;
+}
+
+.home-wrap .shelf {
+  padding: 0;
+}
+
+.home-wrap .shelfHead {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.home-wrap .shelfTitle {
+  font-weight: lighter;
+  letter-spacing: -0.55px;
+  margin: 0;
+  color: rgba(0, 0, 0, .86);
+  font-size: 48px;
+}
+
+.home-wrap .shelfSummary {
+  margin: 8px auto 0;
+  max-width: 720px;
+  color: rgba(0, 0, 0, .56);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.home-wrap .shelfGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+
+  /* Make cards in the row equal height */
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.home-wrap .shelfGrid .card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.home-wrap .card {
+  border: 1px solid rgba(0, 0, 0, .08);
+  background: rgba(255, 255, 255, .92);
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  cursor: pointer;
+  align-self: stretch;
+  height: 100%;
+}
+
+.home-wrap .card.noThumb {
+  min-height: auto;
+  padding: 14px;
+  gap: 8px;
+}
+
+.home-wrap .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, .10);
+}
+
+.home-wrap .thumb {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, .06);
+}
+
+.home-wrap .cardTop {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.home-wrap .badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, .10);
+  color: rgba(0, 0, 0, .52);
+  background: rgba(255, 255, 255, .66);
+  text-transform: lowercase;
+}
+
+.home-wrap .title {
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  font-size: 15px;
+  line-height: 1.18;
+}
+
+.home-wrap .desc {
+  color: rgba(0, 0, 0, .60);
+  font-size: 13px;
+  line-height: 1.38;
+}
+
+/* Hide unused actions inside assistant cards (avoid colliding with site .btn) */
+.home-wrap .cardActions,
+.home-wrap .btn {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .home-wrap .shelfGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .home-wrap .shelves {
+    margin-top: 26px;
+    gap: 28px;
+  }
+
+  .home-wrap .shelfTitle {
+    font-size: 20px;
+  }
+
+  .home-wrap .shelfGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-wrap .thumb {
+    height: 160px;
+  }
+}
+
+/* Footer */
+.home-wrap .foot {
+  margin-top: auto;
+  padding: 18px;
+  border-top: 1px solid rgba(0, 0, 0, .06);
+  /* hair2 */
+  color: rgba(0, 0, 0, .56);
+  font-size: 10px;
+}
+
+.home-wrap .footerLinks {
+  margin-top: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.home-wrap .footerLinks a {
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  margin: 0 8px;
+  white-space: nowrap;
+}
+
+.home-wrap .footerLinks a:hover {
+  color: rgba(0, 0, 0, 0.85);
+  text-decoration: underline;
+}
+
+/* Video modal */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  z-index: 50;
+}
+
+.modalCard {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 51;
+}
+
+.modalInner {
+  width: 100%;
+  max-width: 980px;
+  border-radius: 22px;
+  background: rgba(0, 0, 0, .92);
+  box-shadow: 0 26px 90px rgba(0, 0, 0, .45);
+  overflow: hidden;
+  position: relative;
+}
+
+.modalClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(0, 0, 0, .55);
+  color: rgba(255, 255, 255, .92);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modalClose:hover {
+  background: rgba(0, 0, 0, .72);
+}
+
+.modalVideo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.modalVideo iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Decor: sparkle field */
+.home-wrap .sparkleField {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+.home-wrap .sparkleField::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, .95) 0 2.4px, transparent 6px),
+    radial-gradient(circle at 70% 22%, rgba(255, 255, 255, .80) 0 2.0px, transparent 5.5px),
+    radial-gradient(circle at 45% 40%, rgba(255, 255, 255, .92) 0 2.8px, transparent 6.5px),
+    radial-gradient(circle at 85% 48%, rgba(255, 255, 255, .75) 0 2.0px, transparent 5.5px),
+    radial-gradient(circle at 30% 62%, rgba(255, 255, 255, .95) 0 2.6px, transparent 6.2px),
+    radial-gradient(circle at 75% 70%, rgba(255, 255, 255, .85) 0 2.2px, transparent 5.8px),
+    radial-gradient(circle at 55% 84%, rgba(255, 255, 255, .92) 0 2.4px, transparent 6px);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, .35));
+  animation: homeSparkleTwinkle 2.8s ease-in-out infinite;
+}
+
+.home-wrap .sparkleField::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 35% 12%, rgba(255, 255, 255, .80) 0 2.0px, transparent 5.5px),
+    radial-gradient(circle at 10% 36%, rgba(255, 255, 255, .92) 0 2.4px, transparent 6px),
+    radial-gradient(circle at 90% 30%, rgba(255, 255, 255, .75) 0 2.0px, transparent 5.5px),
+    radial-gradient(circle at 60% 55%, rgba(255, 255, 255, .95) 0 2.8px, transparent 6.5px),
+    radial-gradient(circle at 25% 78%, rgba(255, 255, 255, .70) 0 2.0px, transparent 5.5px);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, .30));
+  animation: homeSparkleDrift 6.5s ease-in-out infinite;
+}
+
+@keyframes homeSparkleTwinkle {
+
+  0%,
+  100% {
+    opacity: .25;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: .75;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes homeSparkleDrift {
+  0% {
+    opacity: .15;
+    transform: translateY(10px);
+  }
+
+  40% {
+    opacity: .55;
+    transform: translateY(-14px);
+  }
+
+  100% {
+    opacity: .20;
+    transform: translateY(10px);
+  }
+}
+
+/* Dark mode overrides (scoped) */
+@media (prefers-color-scheme: dark) {
+  .home-wrap .top {
+    background: rgba(16, 16, 20, .55);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+
+  .home-wrap .microCopy {
+    color: rgba(255, 255, 255, .62);
+  }
+
+  .home-wrap .nextTitle {
+    color: rgba(255, 255, 255, .56);
+  }
+
+  .home-wrap .nextList li {
+    color: rgba(255, 255, 255, .62);
+  }
+
+  .home-wrap .selected,
+  .home-wrap .loadingNotice,
+  .home-wrap .msg {
+    color: rgba(255, 255, 255, .62);
+  }
+
+  .home-wrap .spinner {
+    border: 2px solid rgba(255, 255, 255, .18);
+    border-top-color: rgba(255, 255, 255, .55);
+  }
+
+  .home-wrap .ctaBtn {
+    border: 1px solid rgba(255, 255, 255, .16);
+    background: rgba(20, 20, 24, .92);
+    color: rgba(255, 255, 255, .90);
+  }
+
+  .home-wrap .freeText,
+  .home-wrap .sendBtn {
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(16, 16, 20, .88);
+    color: rgba(255, 255, 255, .92);
+  }
+
+  .home-wrap .choice {
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(18, 18, 22, .82);
+    color: rgba(255, 255, 255, .88);
+  }
+
+  .home-wrap .choice::before {
+    background: rgba(255, 255, 255, .78);
+    opacity: .70;
+  }
+
+  .home-wrap .card {
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(18, 18, 22, .86);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, .55);
+  }
+
+  .home-wrap .badge {
+    border: 1px solid rgba(255, 255, 255, .14);
+    color: rgba(255, 255, 255, .60);
+    background: rgba(255, 255, 255, .06);
+  }
+
+  .home-wrap .title {
+    color: rgba(255, 255, 255, .90);
+  }
+
+  .home-wrap .desc {
+    color: rgba(255, 255, 255, .62);
+  }
+
+  .home-wrap .foot {
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    color: rgba(255, 255, 255, .55);
+  }
+
+  .home-wrap .footerLinks a {
+    color: rgba(255, 255, 255, .58);
+  }
+
+  .home-wrap .footerLinks a:hover {
+    color: rgba(255, 255, 255, .88);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  /* Submit icon button (up-arrow) */
+  .home-wrap .sendBtn.iconBtn {
+    background: rgba(16, 16, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .home-wrap .sendBtn.iconBtn .icon,
+  .home-wrap .sendBtn.iconBtn svg {
+    color: rgba(255, 255, 255, 0.92);
+    fill: rgba(255, 255, 255, 0.92);
+    stroke: rgba(255, 255, 255, 0.92);
+  }
+
+  /* If the arrow uses hard-coded strokes/fills, force it */
+  .home-wrap .sendBtn.iconBtn svg * {
+    stroke: rgba(255, 255, 255, 0.92) !important;
+    fill: rgba(255, 255, 255, 0.92) !important;
+  }
+
+  .home-wrap .sendBtn.iconBtn:hover {
+    background: rgba(22, 22, 28, 0.92);
+  }
+
+  /* Background + base text for the home assistant area */
+  .home-wrap {
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  /* Top menu / header bar */
+  .home-wrap .top {
+    background: rgba(16, 16, 20, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  }
+
+  .home-wrap .top .brand,
+  .home-wrap .top a,
+  .home-wrap .top button {
+    color: rgba(255, 255, 255, 0.90);
+  }
+
+  .home-wrap .ctaBtn {
+    background: rgba(22, 22, 28, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.90);
+  }
+
+  .home-wrap .ctaBtn:hover {
+    background: rgba(28, 28, 36, 0.95);
+  }
+
+  /* Headline + helper copy */
+  .home-wrap .prompt {
+    color: rgba(255, 255, 255, 0.98);
+    /* slightly less "floaty" in dark mode */
+    font-weight: 300;
+  }
+
+  /* Results headings + subcopy */
+  .home-wrap .shelfTitle,
+  .home-wrap h1,
+  .home-wrap h2,
+  .home-wrap h3 {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .home-wrap .shelfSummary {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .home-wrap .msg,
+  .home-wrap .selected {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  /* Input + send button */
+  .home-wrap .freeText,
+  .home-wrap .sendBtn {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    /* a tighter, more "hardware" shadow */
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 12px 36px rgba(0, 0, 0, 0.55);
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .home-wrap .freeText::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .home-wrap .freeText:focus {
+    border-color: rgba(10, 132, 255, 0.65);
+    box-shadow:
+      0 0 0 6px rgba(10, 132, 255, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 12px 36px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Circles (the main issue) */
+  .home-wrap .choice {
+    /* subtle surface separation (no heavy black discs) */
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    color: rgba(255, 255, 255, 0.90);
+
+    /* light specular highlight + controlled depth */
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 14px 44px rgba(0, 0, 0, 0.55);
+
+    /* glass, but restrained */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition: transform 140ms ease, background 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+  }
+
+  /* If your icons are SVG or use currentColor, this helps */
+  .home-wrap .choice svg,
+  .home-wrap .choice .icon,
+  .home-wrap .choice i {
+    color: rgba(255, 255, 255, 0.86);
+    fill: rgba(255, 255, 255, 0.86);
+  }
+
+  /* Labels under the icons inside circles */
+  .home-wrap .choice .label,
+  .home-wrap .choice span,
+  .home-wrap .choice small {
+    color: rgba(255, 255, 255, 0.74);
+  }
+
+  .home-wrap .choice:hover {
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.03));
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 18px 58px rgba(0, 0, 0, 0.62);
+    transform: translateY(-2px);
+  }
+
+  .home-wrap .choice:active {
+    transform: translateY(0);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 12px 40px rgba(0, 0, 0, 0.55);
+  }
+
+  .home-wrap .choice:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 5px rgba(10, 132, 255, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 14px 44px rgba(0, 0, 0, 0.55);
+    border-color: rgba(10, 132, 255, 0.55);
+  }
+
+  /* Icon mask color (your ::before mask) */
+  .home-wrap .choice::before {
+    background: rgba(255, 255, 255, 0.84);
+    opacity: 0.78;
+  }
+
+  /* If your icons are SVG or use currentColor, keep them consistent */
+}
+
+.home-wrap .exampleRow {
+  margin: 12px auto 0;
+  max-width: 860px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.home-wrap .exampleChip {
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, .10);
+  background: rgba(255, 255, 255, .72);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, .62);
+  cursor: pointer;
+}
+
+.home-wrap .exampleChip:hover {
+  background: rgba(255, 255, 255, .90);
+}
+
+.home-wrap .exampleChip:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(0, 122, 255, .18);
+}
+
+/* ===== Home results view safety net =====
+   If the wrapper class changes or the shelves are mounted outside .home-wrap,
+   keep the results styling consistent by also targeting body.page-home. */
+body.page-home .shelves {
+  width: 100%;
+  max-width: 1040px;
+  margin: 44px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+body.page-home .shelves:empty {
+  display: none;
+}
+
+body.page-home .shelf {
+  padding: 0;
+}
+
+body.page-home .shelfHead {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+body.page-home .shelfTitle {
+  font-weight: lighter;
+  letter-spacing: -0.55px;
+  margin: 0;
+  color: rgba(0, 0, 0, .86);
+  font-size: 48px;
+}
+
+body.page-home .shelfSummary {
+  margin: 8px auto 0;
+  max-width: 720px;
+  color: rgba(0, 0, 0, .56);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+body.page-home .shelfGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+
+  /* Make cards in the row equal height */
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+body.page-home .shelfGrid .card {
+  width: 100%;
+  max-width: 420px;
+}
+
+body.page-home .card {
+  border: 1px solid rgba(0, 0, 0, .08);
+  background: rgba(255, 255, 255, .92);
+  border-radius: 22px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .08);
+  cursor: pointer;
+  align-self: stretch;
+  height: 100%;
+}
+
+body.page-home .badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, .10);
+  color: rgba(0, 0, 0, .52);
+  background: rgba(255, 255, 255, .66);
+  text-transform: lowercase;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+body.page-home .title {
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  font-size: 15px;
+  line-height: 1.18;
+  color: rgba(0, 0, 0, .86);
+}
+
+body.page-home .desc {
+  color: rgba(0, 0, 0, .60);
+  font-size: 13px;
+  line-height: 1.38;
+}
+
+/* Ensure the home assistant input stays readable in dark mode even if not nested in .home-wrap */
+@media (prefers-color-scheme: dark) {
+  body.page-home #freeText {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(16, 16, 20, 0.88);
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  body.page-home #freeText::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  body.page-home .shelfTitle,
+  body.page-home .shelfHead,
+  body.page-home .shelfHead * {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  body.page-home .shelfSummary {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  body.page-home .card {
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(18, 18, 22, .86);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, .55);
+  }
+
+  body.page-home .badge {
+    border: 1px solid rgba(255, 255, 255, .14);
+    color: rgba(255, 255, 255, .60);
+    background: rgba(255, 255, 255, .06);
+  }
+
+  body.page-home .title {
+    color: rgba(255, 255, 255, .90);
+  }
+
+  body.page-home .desc {
+    color: rgba(255, 255, 255, .62);
+  }
+}
