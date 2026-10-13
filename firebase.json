@@ -1,0 +1,682 @@
+{
+  "hosting": {
+    "public": "public",
+    "site": "taliferro-de66f",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [
+      {
+        "source": "/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/404.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/**/*.css",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/js/taliferro*.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store"
+          }
+        ]
+      },
+      {
+        "source": "/**/*.js",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/**/*.{png,jpg,jpeg,webp,svg,gif,ico}",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=31536000,immutable"
+          }
+        ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/blog/oct2022/oct052022/what-is-youtube-studio.html",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/docs/index.html",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/docs",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/docs/",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/docs/index.html",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/network/index.html",
+        "destination": "/network/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/network",
+        "destination": "/network/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/network/",
+        "destination": "/network/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/network/index.html",
+        "destination": "/network/",
+        "type": 301
+      },
+      {
+        "source": "/outreach/index.html",
+        "destination": "/outreach/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/outreach",
+        "destination": "/outreach/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/outreach/",
+        "destination": "/outreach/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/outreach/index.html",
+        "destination": "/outreach/",
+        "type": 301
+      },
+      {
+        "source": "/moves/index.html",
+        "destination": "/moves/",
+        "type": 301
+      },
+      {
+        "source": "/pulse/index.html",
+        "destination": "/pulse/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/moves",
+        "destination": "/moves/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/moves/",
+        "destination": "/moves/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/moves/index.html",
+        "destination": "/moves/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/pulse",
+        "destination": "/pulse/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/pulse/",
+        "destination": "/pulse/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/pulse/index.html",
+        "destination": "/pulse/",
+        "type": 301
+      },
+      {
+        "source": "/todd/index.html",
+        "destination": "/todd/",
+        "type": 301
+      },
+      {
+        "source": "/todd/docs",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/todd/docs/",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/todd/docs/index.html",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/todd/knowledge",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/todd/knowledge/",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/todd/knowledge/index.html",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/todd/moves",
+        "destination": "/moves/",
+        "type": 301
+      },
+      {
+        "source": "/todd/moves/",
+        "destination": "/moves/",
+        "type": 301
+      },
+      {
+        "source": "/todd/moves/index.html",
+        "destination": "/moves/",
+        "type": 301
+      },
+      {
+        "source": "/todd/network",
+        "destination": "/network/",
+        "type": 301
+      },
+      {
+        "source": "/todd/network/",
+        "destination": "/network/",
+        "type": 301
+      },
+      {
+        "source": "/todd/network/index.html",
+        "destination": "/network/",
+        "type": 301
+      },
+      {
+        "source": "/todd/outreach",
+        "destination": "/outreach/",
+        "type": 301
+      },
+      {
+        "source": "/todd/outreach/",
+        "destination": "/outreach/",
+        "type": 301
+      },
+      {
+        "source": "/todd/outreach/index.html",
+        "destination": "/outreach/",
+        "type": 301
+      },
+      {
+        "source": "/todd/pulse",
+        "destination": "/pulse/",
+        "type": 301
+      },
+      {
+        "source": "/todd/pulse/",
+        "destination": "/pulse/",
+        "type": 301
+      },
+      {
+        "source": "/todd/pulse/index.html",
+        "destination": "/pulse/",
+        "type": 301
+      },
+      {
+        "source": "/todd/automatic-lead-generation",
+        "destination": "/business-momentum-system/automatic-lead-generation/",
+        "type": 301
+      },
+      {
+        "source": "/todd/automatic-lead-generation/",
+        "destination": "/business-momentum-system/automatic-lead-generation/",
+        "type": 301
+      },
+      {
+        "source": "/todd/automatic-lead-generation/index.html",
+        "destination": "/business-momentum-system/automatic-lead-generation/",
+        "type": 301
+      },
+      {
+        "source": "/todd/landing",
+        "destination": "/business-momentum-system/landing/",
+        "type": 301
+      },
+      {
+        "source": "/todd/landing/",
+        "destination": "/business-momentum-system/landing/",
+        "type": 301
+      },
+      {
+        "source": "/todd/landing/index.html",
+        "destination": "/business-momentum-system/landing/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/index.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/machine-learning-services/index.html",
+        "destination": "/machine-learning-services/",
+        "type": 301
+      },
+      {
+        "source": "/api-consulting/",
+        "destination": "/api-design-services/",
+        "type": 301
+      },
+      {
+        "source": "/cloud-architecture/",
+        "destination": "/cloud-architecture-consulting/",
+        "type": 301
+      },
+      {
+        "source": "/cloud-architecture/index.html",
+        "destination": "/cloud-architecture-consulting/",
+        "type": 301
+      },
+      {
+        "source": "/api-consulting/index.html",
+        "destination": "/api-design-services/",
+        "type": 301
+      },
+      {
+        "source": "/laboratory-information-system/index.html",
+        "destination": "/laboratory-information-system/",
+        "type": 301
+      },
+      {
+        "source": "/team/tyrone-showers/index.html",
+        "destination": "/team/tyrone-showers/",
+        "type": 301
+      },
+      {
+        "source": "/team/vikki-owens/index.html",
+        "destination": "/team/vikki-owens/",
+        "type": 301
+      },
+      {
+        "source": "/privacy-policy/index.html",
+        "destination": "/privacy-policy/",
+        "type": 301
+      },
+      {
+        "source": "/refund-policy/index.html",
+        "destination": "/refund-policy/",
+        "type": 301
+      },
+      {
+        "source": "/are-you-benefiting-from-software-integration/index.html",
+        "destination": "/api-design-services/api-design-excellence.html",
+        "type": 301
+      },
+      {
+        "source": "/how-resource-restrictive-rest-uris-can-save-an-api-design/contact.html",
+        "destination": "/contact.html",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/todd-affiliate-program.html",
+        "destination": "/todd-affiliate-program/",
+        "type": 301
+      },
+      {
+        "source": "/index.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/blog/index.html",
+        "destination": "/blog/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/index.html%22",
+        "destination": "/business-momentum-system/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/index.html%2522",
+        "destination": "/business-momentum-system/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/index.html",
+        "destination": "/business-momentum-system/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/index.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/software-appointment.html",
+        "destination": "/contact.html",
+        "type": 301
+      },
+      {
+        "source": "/taliferro",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/home",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/home/",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/home/index.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/blog/toc.main.html",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/cloud-architecture-consulting/contact.html",
+        "destination": "/contact.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/jul2025/jul092025/index.html",
+        "destination": "/blog/jul2025/jul092025/why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/jul2025/jul092025/",
+        "destination": "/blog/jul2025/jul092025/why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do.html",
+        "type": 301
+      },
+      {
+        "source": "/cloud-architecture-consulting/cloud-architecture.html",
+        "destination": "/cloud-architecture-consulting/",
+        "type": 301
+      },
+      {
+        "source": "/cloud-architecture.html",
+        "destination": "/cloud-architecture-consulting/",
+        "type": 301
+      },
+      {
+        "source": "/services/cloud-architecture",
+        "destination": "/cloud-architecture-consulting/",
+        "type": 301
+      },
+      {
+        "source": "/cloud-architecture-consulting/.html",
+        "destination": "/cloud-architecture-consulting/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/features/communication-frequency-line-chart",
+        "destination": "/business-momentum-system/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/contact.html",
+        "destination": "/contact.html",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/pricing",
+        "destination": "https://todd.taliferro.tech/pricing",
+        "type": 301
+      },
+      {
+        "source": "/blog/benefits-of-partnering-with-taliferro.html",
+        "destination": "/benefits-of-partnering-with-taliferro.html",
+        "type": 301
+      },
+      {
+        "source": "/cyber-security.html",
+        "destination": "/blog/sep2024/sep152024/how-machine-learning-is-secretly-changing-cyber-security.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/oct-2022/index.html",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/oct-2022/be-careful-of-adding-widgets-to-your-shopify-store",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/apr-2023/creating-a-powerful-and-impactful-presentation-a-comprehensive-guide",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/oct-2023/rethinking-digital-security",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/benefits-of-partnering-with-taliferro",
+        "destination": "/benefits-of-partnering-with-taliferro.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/may-2023/a-comedy-of-errors-and-antiquated-endeavors",
+        "destination": "/blog/may2023/may232023/a-comedy-of-errors-and-antiquated-endeavors.html",
+        "type": 301
+      },
+      {
+        "source": "/unlocking-success-with-taliferro-group.html",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/dec-2022/index.html",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/blog/toc.main.html",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/blog/:rest*",
+        "destination": "/blog/:rest*",
+        "type": 301
+      },
+      {
+        "source": "/blog/template-year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/jan-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/feb-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/mar-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/apr-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/jun-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/jul-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/aug-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/sep-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/blog/nov-:year/**",
+        "destination": "/blog/toc.html",
+        "type": 301
+      },
+      {
+        "source": "/website-development/website-development.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/custom-website-development-services.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/professional-website-developer.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/professional-website-designer.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/website-developer-for-small-business.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/seattle-website-developer-for-small-teams-fast-turnaround.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/affordable-web-development-services.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/bespoke-software-website-development.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/bespoke-software-development.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/website-development/responsive-web-design-services.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/knowledge",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/knowledge/",
+        "destination": "/docs/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/knowledge/index.html",
+        "destination": "/docs/",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/concierge",
+        "function": "concierge"
+      }
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ]
+}
