@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:';
+    if (!isLocal) {
+      const s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date()); gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <title>Taliferro Group | IT Consulting, Cloud Architecture &amp; AI | Seattle</title>
+  <meta name="description" content="Taliferro helps businesses get unstuck. We find the bottleneck, restore momentum, and connect cloud, AI, software, and follow-through with TODD and the Momentum System." />
+  <link rel="canonical" href="https://taliferro.com/" />
+  <meta property="og:title" content="Taliferro Group | IT Consulting, Cloud Architecture &amp; AI | Seattle" />
+  <meta property="og:description" content="Taliferro helps businesses get unstuck by finding the bottleneck, restoring momentum, and connecting execution to TODD and the Momentum System." />
+  <meta property="og:image" content="https://taliferro.com/img/general/taliferro-group-logo.png" />
+  <meta property="og:url" content="https://taliferro.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Taliferro Group | IT Consulting, Cloud Architecture &amp; AI | Seattle" />
+  <meta name="twitter:description" content="Taliferro helps businesses get unstuck with sharper execution, stronger follow-through, and a clearer path forward across cloud, AI, software, and TODD." />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png" />
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <!-- Hero is always dark regardless of theme, so the top of this page never
+       changes color — declare one fixed value instead of a light/dark pair
+       that would mismatch what's actually rendered under the toolbar. -->
+  <meta name="theme-color" content="#05070a" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://taliferro.com/#organization",
+    "name": "Taliferro Tech, LLC",
+    "url": "https://taliferro.com/",
+    "description": "Seattle IT consulting firm specializing in cloud architecture, AI and machine learning, API design, agile coaching, web development, and e-commerce. Taliferro created the Momentum System and brings 40 years of technology expertise.",
+    "logo": "https://taliferro.com/img/general/taliferro-group-logo.png",
+    "address": { "@type": "PostalAddress", "streetAddress": "1424 11th Ave STE 400", "addressLocality": "Seattle", "addressRegion": "WA", "postalCode": "98122", "addressCountry": "US" },
+    "telephone": "+1-401-646-2662",
+    "email": "info@taliferro.com",
+    "founder": { "@type": "Person", "name": "Tyrone Showers" },
+    "sameAs": ["https://www.linkedin.com/company/taliferro-group", "https://www.linkedin.com/company/taliferro-tech"]
+  }
+  </script>
+  <script type="text/javascript">
+    if (location.protocol !== 'file:' && location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="./css/taliferro-styles-v21.css">
+  <style>
+    /* ── Home-only overrides ── */
+    /* Hero is ALWAYS dark — never flips with theme */
+    .home-hero,
+    body.theme-dark .home-hero {
+      background: #05070a;
+      color: #f5f5f7;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .home-hero .topbar,
+    body.theme-dark .home-hero .topbar {
+      background: rgba(5, 7, 10, 0.72) !important;
+      border-bottom-color: rgba(245, 245, 247, 0.10) !important;
+    }
+
+    .home-hero .topbar .brand,
+    .home-hero .topbar .nav-links,
+    body.theme-dark .home-hero .topbar .brand,
+    body.theme-dark .home-hero .topbar .nav-links {
+      color: rgba(245, 245, 247, 0.80);
+    }
+
+    .home-hero .topbar .button-primary,
+    body.theme-dark .home-hero .topbar .button-primary {
+      background: #f5f5f7 !important;
+      color: #05070a !important;
+      border-color: #f5f5f7 !important;
+    }
+
+    .home-hero .topbar button,
+    .home-hero .topbar .button:not(.button-primary),
+    body.theme-dark .home-hero .topbar button,
+    body.theme-dark .home-hero .topbar .button:not(.button-primary) {
+      background: transparent !important;
+      color: rgba(245, 245, 247, 0.80) !important;
+      border-color: rgba(245, 245, 247, 0.22) !important;
+    }
+
+    .hero-dark {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 80px 0 88px;
+      text-align: center;
+    }
+
+    .hero-dark .page-shell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Cap h1 so it doesn't overflow the two-column grid */
+    .hero-dark h1,
+    body.theme-dark .hero-dark h1 {
+      color: #f5f5f7;
+      font-size: clamp(2.6rem, 4.6vw, 5rem);
+      line-height: 0.96;
+    }
+
+    .hero-dark .hero-sub {
+      color: rgba(245, 245, 247, 0.68);
+      font-size: clamp(1.12rem, 1.8vw, 1.42rem);
+      line-height: 1.48;
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+
+    .hero-dark .button {
+      background: transparent;
+      color: rgba(245, 245, 247, 0.88);
+      border-color: rgba(245, 245, 247, 0.28);
+    }
+
+    .hero-dark .button-primary {
+      background: #f5f5f7;
+      color: #05070a;
+      border-color: #f5f5f7;
+    }
+
+    .hero-dark .pill {
+      background: rgba(59, 130, 246, 0.12);
+      color: #93c5fd;
+      border: 1px solid rgba(59, 130, 246, 0.22);
+    }
+
+    .hero-id {
+      background: #111318;
+      border: 1px solid rgba(245, 245, 247, 0.12);
+      border-radius: var(--radius);
+      padding: 36px;
+      color: rgba(245, 245, 247, 0.9);
+    }
+
+    body:not(.theme-dark) .hero-id {
+      background: #111318;
+      border-color: rgba(5, 7, 10, 0.16);
+      box-shadow: 0 24px 80px rgba(5, 7, 10, 0.10);
+    }
+
+    .hero-id-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(245, 245, 247, 0.10);
+      font-size: 0.9rem;
+    }
+
+    .hero-id-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .hero-id-label {
+      color: rgba(245, 245, 247, 0.44);
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-id-val {
+      color: rgba(245, 245, 247, 0.9);
+      font-weight: 620;
+      text-align: right;
+    }
+
+    .hero-id-val a,
+    body:not(.theme-dark) .hero-id-val a {
+      color: rgba(245, 245, 247, 0.9) !important;
+    }
+
+    /* Services grid */
+    .service-link-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      transition: box-shadow 0.18s, border-color 0.18s;
+      min-height: 180px;
+    }
+
+    .service-link-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 8px 24px rgba(0, 143, 140, 0.10);
+    }
+
+    .service-link-card .svc-kicker {
+      color: var(--teal);
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .service-link-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.28rem;
+      line-height: 1.15;
+    }
+
+    .service-link-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0 0 20px;
+      flex-grow: 1;
+    }
+
+    .service-link-card .svc-arrow {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Products band */
+    .products-band,
+    body.theme-dark .products-band {
+      background: #05070a;
+      color: #f5f5f7;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(245, 245, 247, 0.10);
+    }
+
+    /* Full-bleed variant: band runs edge-to-edge, content stays page-shell width */
+    .products-band--bleed,
+    body.theme-dark .products-band--bleed {
+      border: 0;
+      border-radius: 0;
+    }
+
+    .products-band--bleed .product-cell+.product-cell,
+    body.theme-dark .products-band--bleed .product-cell+.product-cell {
+      border-left: 0;
+    }
+
+    .products-band-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .product-cell {
+      padding: 52px 48px;
+    }
+
+    .product-cell+.product-cell,
+    body.theme-dark .product-cell+.product-cell {
+      border-left: 1px solid rgba(245, 245, 247, 0.10);
+    }
+
+    .product-cell .prod-kicker {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(245, 245, 247, 0.10);
+      color: rgba(245, 245, 247, 0.60);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .product-cell h2 {
+      font-size: clamp(2rem, 3.5vw, 3.6rem);
+      line-height: 0.96;
+      color: #f5f5f7;
+      margin-bottom: 18px;
+    }
+
+    .product-cell p {
+      color: rgba(245, 245, 247, 0.62);
+      font-size: 1.02rem;
+      line-height: 1.55;
+      margin-bottom: 28px;
+    }
+
+    .product-cell .button {
+      background: transparent;
+      color: rgba(245, 245, 247, 0.88);
+      border-color: rgba(245, 245, 247, 0.28);
+    }
+
+    .product-cell .button-primary {
+      background: #f5f5f7;
+      color: #05070a;
+      border-color: #f5f5f7;
+    }
+
+    body.theme-dark .product-cell h2 {
+      color: #f5f5f7;
+    }
+
+    body.theme-dark .product-cell p {
+      color: rgba(245, 245, 247, 0.62);
+    }
+
+    body.theme-dark .product-cell .button {
+      background: transparent;
+      color: rgba(245, 245, 247, 0.88);
+      border-color: rgba(245, 245, 247, 0.28);
+    }
+
+    body.theme-dark .product-cell .button-primary {
+      background: #f5f5f7;
+      color: #05070a;
+      border-color: #f5f5f7;
+    }
+
+    /* Stats row */
+    .stat-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .stat-cell {
+      background: var(--white);
+      padding: 36px 30px;
+      text-align: center;
+    }
+
+    .stat-num {
+      display: block;
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 0.9;
+      font-weight: 850;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    /* Rescue grid */
+    .rescue-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .rescue-card {
+      padding: 22px 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--soft);
+      transition: border-color 0.16s, background 0.16s;
+    }
+
+    .rescue-card:hover {
+      border-color: var(--teal);
+      background: var(--white);
+    }
+
+    .rescue-card .rc-problem {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .rescue-card h3 {
+      font-size: 1rem;
+      line-height: 1.3;
+      margin-bottom: 0;
+    }
+
+    /* CTA section */
+    .cta-band {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 72px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(3rem, 5.5vw, 6rem);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      margin-bottom: 22px;
+      max-width: 860px;
+    }
+
+    .cta-band p {
+      color: var(--muted);
+      font-size: 1.14rem;
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      width: min(100%, 920px);
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .products-band-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .product-cell+.product-cell,
+      body.theme-dark .product-cell+.product-cell {
+        border-left: 0;
+        border-top: 1px solid rgba(245, 245, 247, 0.10);
+      }
+
+      .stat-band {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rescue-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .company-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .rescue-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-band {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-band {
+        padding: 44px 28px;
+      }
+
+      .product-cell {
+        padding: 36px 28px;
+      }
+    }
+
+    /* Dark mode — content sections */
+    body.theme-dark .service-link-card,
+    body.theme-dark .stat-cell,
+    body.theme-dark .rescue-card {
+      background: #111318;
+    }
+
+    body.theme-dark .rescue-card:hover {
+      background: #1a1d24;
+    }
+
+    body.theme-dark .cta-band {
+      background: #111318;
+    }
+
+    /* Keep stat-band border visible in dark */
+    body.theme-dark .stat-band {
+      background: rgba(245, 245, 247, 0.08);
+    }
+
+    /* Service cards hover in dark */
+    body.theme-dark .service-link-card:hover {
+      border-color: var(--teal);
+      background: #16191f;
+    }
+  </style>
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body>
+  <!-- ── DARK HERO WRAPPER (topbar + hero share dark bg) ── -->
+  <div class="home-hero">
+    <header class="topbar no-print">
+      <div class="page-shell topbar-inner">
+        <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+          <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" style="filter:brightness(0) invert(1)" />
+          <span style="color:#f5f5f7">Taliferro</span>
+        </a>
+        <nav class="nav-links" aria-label="Site navigation">
+          <a href="/about.html" style="color:rgba(245,245,247,0.7)">About</a>
+          <a href="/services/" style="color:rgba(245,245,247,0.7)">Services</a>
+          <a href="/case-studies.html" style="color:rgba(245,245,247,0.7)">Results</a>
+          <a href="/rescue-me/ship-faster/" style="color:rgba(245,245,247,0.7)">Rescue Me</a>
+          <a href="/blog/" style="color:rgba(245,245,247,0.7)">Blog</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+          <a class="button button-primary" href="/contact.html">Book a session</a>
+        </nav>
+      </div>
+    </header>
+    <!-- HERO -->
+    <section class="hero-dark" aria-label="Taliferro introduction">
+      <div class="page-shell">
+        <h1>Stuck is expensive</h1>
+        <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;color:rgba(245,245,247,0.44);font-size:0.78rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;">
+          <span style="display:block;width:30px;height:2px;background:rgba(245,245,247,0.30);border-radius:999px"></span> Seattle IT Consulting · 40 years in technology
+        </div>
+        <p style="max-width:620px;margin:0 auto 32px">Slow releases. Lost follow-up. Cloud waste. AI that sounds exciting and changes nothing. Taliferro finds the problem, names it, and fixes it. That is why we built TODD and the Momentum System.</p>
+        <div class="btnrow">
+          <a class="button button-primary" href="/contact.html">Book a free consultation</a>
+          <a class="button" href="/case-studies.html">See client results</a>
+        </div>
+        <div class="pillrow" style="margin-top:28px">
+          <span class="pill">Momentum leaking?</span>
+          <span class="pill">Follow-up dying?</span>
+          <span class="pill">Cloud waste growing?</span>
+          <span class="pill">AI going nowhere?</span>
+          <span class="pill">Systems still disconnected?</span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- /home-hero -->
+  <!-- ── WHAT YOU GET ── -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="kicker">One session. Real answers.</div>
+      <h2 style="font-size:clamp(2rem,3.5vw,3.4rem);font-weight:830;letter-spacing:-0.04em;margin-bottom:32px">Clarity, not theater</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+        <div style="padding:28px;background:var(--card-bg);border-radius:14px;border:1px solid var(--line)">
+          <div style="font-size:1.6rem;font-weight:830;color:var(--text);margin-bottom:10px">01</div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px">A clear diagnosis</h3>
+          <p style="color:var(--muted);font-size:0.93rem;margin:0">We tell you where the problem actually lives, not where it first shows up. Example: a “slow engineering team” may really be a bad handoff, bad data, or bad priorities.</p>
+        </div>
+        <div style="padding:28px;background:var(--card-bg);border-radius:14px;border:1px solid var(--line)">
+          <div style="font-size:1.6rem;font-weight:830;color:var(--text);margin-bottom:10px">02</div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px">A written recommendation</h3>
+          <p style="color:var(--muted);font-size:0.93rem;margin:0">You get practical next steps your team can use right away. Not a vague summary. Not a pitch deck. A plain-English recommendation.</p>
+        </div>
+        <div style="padding:28px;background:var(--card-bg);border-radius:14px;border:1px solid var(--line)">
+          <div style="font-size:1.6rem;font-weight:830;color:var(--text);margin-bottom:10px">03</div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px">40 years of pattern recognition</h3>
+          <p style="color:var(--muted);font-size:0.93rem;margin:0">Cloud, AI, APIs, web, delivery, and follow-through. Taliferro has seen the same business drag show up in different forms across industries.</p>
+        </div>
+        <div style="padding:28px;background:var(--card-bg);border-radius:14px;border:1px solid var(--line)">
+          <div style="font-size:1.6rem;font-weight:830;color:var(--text);margin-bottom:10px">04</div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px">No commitment required</h3>
+          <p style="color:var(--muted);font-size:0.93rem;margin:0">The first session stands on its own. If it makes sense to keep working together, we can talk then. If not, you still leave with clarity.</p>
+        </div>
+      </div>
+      <div style="margin-top:28px">
+        <a class="button button-primary" href="/contact.html">Book your first session</a>
+      </div>
+    </div>
+  </section>
+  <!-- ── SERVICES ── -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="kicker">What we do</div>
+      <h2 style="font-size:clamp(2.8rem,5vw,5.2rem);line-height:0.94;font-weight:830;margin-bottom:10px">Where momentum goes to die</h2>
+      <p style="color:var(--muted);font-size:1.14rem;margin-bottom:40px;max-width:640px">Sometimes the drag shows up as slow software. Sometimes it looks like weak sales follow-up, messy data, or cloud spend that keeps climbing. Taliferro traces the loss of momentum back to the source.</p>
+      <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+        <a class="service-link-card" href="/cloud-architecture-consulting/">
+          <div>
+            <div class="svc-kicker">Cloud Architecture</div>
+            <h3>Infrastructure feels expensive or fragile?</h3>
+            <p>We trace where architecture, deployment, and usage create hidden cost and brittleness, then show what to simplify first.</p>
+          </div>
+          <span class="svc-arrow">Book a cloud review →</span>
+        </a>
+        <a class="service-link-card" href="/machine-learning-services/">
+          <div>
+            <div class="svc-kicker">AI &amp; Machine Learning</div>
+            <h3>Struggling to extract real value from AI?</h3>
+            <p>Teams want AI outcomes but lack clean data, clear guardrails, or one use case they can defend to leadership.</p>
+          </div>
+          <span class="svc-arrow">Book a free AI assessment →</span>
+        </a>
+        <a class="service-link-card" href="/api-design-services/">
+          <div>
+            <div class="svc-kicker">API Strategy</div>
+            <h3>Systems not talking to each other?</h3>
+            <p>When systems do not connect, teams rekey data, miss updates, and create workarounds. We fix the contract.</p>
+          </div>
+          <span class="svc-arrow">Book a free API audit →</span>
+        </a>
+        <a class="service-link-card" href="/agile-coaching/">
+          <div>
+            <div class="svc-kicker">Agile Coaching</div>
+            <h3>Software delivery stalled or noisy?</h3>
+            <p>Backlogs, standups, and handoffs that do not produce clear next moves. We reset the loop and remove the drag.</p>
+          </div>
+          <span class="svc-arrow">Book a delivery diagnostic →</span>
+        </a>
+        <a class="service-link-card" href="/website-development/">
+          <div>
+            <div class="svc-kicker">Web Development</div>
+            <h3>Website still feels like an expense?</h3>
+            <p>Speed, structure, and conversion gaps keep visitors from becoming leads. We close them with clearer pages and stronger paths to action.</p>
+          </div>
+          <span class="svc-arrow">Get a scope estimate →</span>
+        </a>
+        <a class="service-link-card" href="/ecommerce-development/">
+          <div>
+            <div class="svc-kicker">E-Commerce</div>
+            <h3>Revenue leaking from your store?</h3>
+            <p>Checkout friction and disconnected flows make buyers hesitate when they should finish. We find the leak and fix the handoff.</p>
+          </div>
+          <span class="svc-arrow">Book a store review →</span>
+        </a>
+      </div>
+      <div style="margin-top:18px;text-align:right">
+        <a class="button" href="/fractional-cto/" style="font-size:0.9rem">Fractional CTO →</a> &nbsp; <a class="button" href="/it-consultant-seattle/" style="font-size:0.9rem">IT Consultant Seattle →</a>
+      </div>
+    </div>
+  </section>
+  <!-- ── STATS ── -->
+  <section style="padding:0 0 108px">
+    <div class="page-shell">
+      <div class="stat-band">
+        <div class="stat-cell">
+          <span class="stat-num">40</span>
+          <span class="stat-label">Years in technology</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">Blog posts published</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Consulting disciplines</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">1</span>
+          <span class="stat-label">City we call home — Seattle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ── FEATURED PRODUCT ── -->
+  <section class="section--dark-fixed" style="padding:0 0 108px;background:#05070a">
+    <div class="products-band products-band--bleed">
+      <div class="page-shell">
+        <div class="products-band-inner">
+          <div class="product-cell">
+            <span class="prod-kicker">Why we built Find</span>
+            <h2>Find</h2>
+            <p>Search friction is a small problem that costs real time — ten blue links, no clear answer, another tab open. We do not just advise clients on execution discipline, we ship it. Find gives you one confident result instead of a list, with context to drill down when you need it. Free, no account, no ads — proof of the same craft we bring to every engagement.</p>
+            <div class="btnrow">
+              <a class="button button-primary" href="/find/">See the page</a>
+              <a class="button" href="https://find.taliferro.tech">Use Find</a>
+              <a href="https://apps.apple.com/us/app/taliferro-find/id6806954591" target="_blank" rel="noopener" aria-label="Download Find on the App Store">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" style="height:40px;width:auto;display:block;" />
+              </a>
+            </div>
+          </div>
+          <div class="product-cell" style="display:flex;align-items:center;justify-content:center;">
+            <div style="background:#f4f4f4;border-radius:20px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,0.35);max-width:300px;">
+              <img src="./img/a-good-search.webp" alt="Find: a good search knows when to stop" style="display:block;width:100%;height:auto;border-radius:8px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ── HOW IT WORKS ── -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="kicker">Process</div>
+      <h2 style="font-size:clamp(2.2rem,4vw,4rem);line-height:0.94;font-weight:830;margin-bottom:40px">Three steps. No fog.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+        <div>
+          <div style="font-size:3rem;font-weight:830;line-height:1;color:var(--text);margin-bottom:14px;opacity:0.15">1</div>
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:10px">Book a 30-minute call</h3>
+          <p style="color:var(--muted);font-size:0.95rem;margin:0">Tell us what feels slow, expensive, confusing, or stuck. No prep deck needed. Just describe the problem in your own words.</p>
+        </div>
+        <div>
+          <div style="font-size:3rem;font-weight:830;line-height:1;color:var(--text);margin-bottom:14px;opacity:0.15">2</div>
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:10px">We audit and diagnose</h3>
+          <p style="color:var(--muted);font-size:0.95rem;margin:0">We trace the root cause, not just the symptom. That might mean cloud waste, disconnected systems, weak follow-up, unclear ownership, or a broken delivery loop.</p>
+        </div>
+        <div>
+          <div style="font-size:3rem;font-weight:830;line-height:1;color:var(--text);margin-bottom:14px;opacity:0.15">3</div>
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:10px">Clear written recommendation</h3>
+          <p style="color:var(--muted);font-size:0.95rem;margin:0">You leave with next steps you can act on immediately. If continuing with Taliferro makes sense, we discuss it then. If not, you still know what to fix first.</p>
+        </div>
+      </div>
+      <div style="margin-top:36px">
+        <a class="button button-primary" href="/contact.html">Book a consultation</a>
+      </div>
+    </div>
+  </section>
+  <!-- ── PROOF ── -->
+  <section style="padding:0 0 72px">
+    <div class="page-shell">
+      <div class="kicker">Client result</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,3rem);font-weight:830;letter-spacing:-0.04em;margin-bottom:8px">Blair Capital Management</h2>
+      <p style="color:var(--muted);max-width:620px;margin:0 0 28px">A financial firm was running on spreadsheets, silence, and missing infrastructure. Taliferro built the site, connected the data, and gave the business a system that could move. Within 12 months:</p>
+      <div class="stat-band" style="background:var(--card-bg);border-radius:16px;border:1px solid var(--line)">
+        <div class="stat-cell">
+          <span class="stat-num">300%</span>
+          <span class="stat-label">AUM growth</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">50%</span>
+          <span class="stat-label">Cost reduction</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">80%</span>
+          <span class="stat-label">Client engagement increase</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">60%</span>
+          <span class="stat-label">Faster onboarding</span>
+        </div>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="button button-primary" href="/support-material/blair-capital-management-case-study.html">Read the case study</a>
+        <a class="button" href="/case-studies.html">All case studies</a>
+      </div>
+    </div>
+  </section>
+  <!-- ── RESCUE ME ── -->
+  <section style="padding:0 0 108px">
+    <div class="page-shell">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:32px">
+        <div>
+          <div class="kicker">Same-day advisory</div>
+          <h2 style="font-size:clamp(2.6rem,4.5vw,4.8rem);line-height:0.94;font-weight:830;margin-bottom:8px">When waiting costs too much</h2>
+          <p style="color:var(--muted);font-size:1.06rem;max-width:560px;margin:0">One focused session. A clear written recommendation. Same day. Taliferro uses this when the problem is already eating time, money, trust, or momentum.</p>
+        </div>
+        <a class="button" href="/rescue-me/ship-faster/">See all Rescue services →</a>
+      </div>
+      <div class="rescue-grid">
+        <a class="rescue-card" href="/rescue-me/cloud-cost-control/">
+          <div class="rc-problem">Cloud</div>
+          <h3>Stop overpaying for infrastructure</h3>
+        </a>
+        <a class="rescue-card" href="/rescue-me/ai-without-risk/">
+          <div class="rc-problem">AI</div>
+          <h3>Adopt AI without breaking your company</h3>
+        </a>
+        <a class="rescue-card" href="/rescue-me/ai-in-engineering/">
+          <div class="rc-problem">Engineering</div>
+          <h3>Decide where AI actually helps your team</h3>
+        </a>
+        <a class="rescue-card" href="/rescue-me/data-quality/">
+          <div class="rc-problem">Data</div>
+          <h3>Fix unreliable data before it costs more</h3>
+        </a>
+        <a class="rescue-card" href="/rescue-me/ship-faster/">
+          <div class="rc-problem">Delivery</div>
+          <h3>Remove the bottleneck slowing every release</h3>
+        </a>
+        <a class="rescue-card" href="/rescue-me/rebuild-vs-patch/">
+          <div class="rc-problem">Legacy</div>
+          <h3>Rebuild or patch? Get one honest answer</h3>
+        </a>
+        <a class="rescue-card" href="/rescue-me/right-size-team/">
+          <div class="rc-problem">Teams</div>
+          <h3>Right-size your IT team without guessing</h3>
+        </a>
+        <a class="rescue-card" href="/rescue-me/it-spend-slow/">
+          <div class="rc-problem">IT Spend</div>
+          <h3>Why costs keep rising while output stays flat</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ── FINAL CTA ── -->
+  <section style="padding:0 0 108px">
+    <div class="page-shell">
+      <div class="cta-band">
+        <div class="kicker">Ready to fix it?</div>
+        <h2>Book a free 30-minute consultation</h2>
+        <p>Tell Taliferro what is slowing your business down. We will identify the root cause, give you a written recommendation, and tell you what we would fix first and why. If the issue is follow-through, momentum, or scattered information, we can also show you where TODD and the Momentum System fit.</p>
+        <div class="btnrow" style="margin-top:0">
+          <a class="button button-primary" href="/contact.html">Book your consultation</a>
+          <a class="button" href="/case-studies.html">See client results</a>
+        </div>
+        <p style="color:var(--muted);font-size:0.88rem;margin-top:20px">Or reach us directly: <a href="mailto:info@taliferro.com" style="color:var(--muted)">info@taliferro.com</a> &nbsp;·&nbsp; <a href="tel:+14016462662" style="color:var(--muted)">401.646.2662</a> &nbsp;·&nbsp; Seattle, WA</p>
+      </div>
+    </div>
+  </section>
+  <!-- ── FOOTER ── -->
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/gallery/">Gallery</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+
+</html>
