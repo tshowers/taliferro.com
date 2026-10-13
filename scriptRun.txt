@@ -1,0 +1,26 @@
+node root/build-site-artifacts.mjs --root ./root/public --site https://taliferro.com --overwrite --emit-atom
+
+
+
+
+// Use this one
+node root/build-feeds.mjs \
+  --root ./root/public \
+  --out ./root/public \
+  --site https://taliferro.com/blog \
+  --overwrite \
+  --atom \
+  --division-feeds \
+  --no-sitemap
+
+
+node root/rebuild-toc.mjs \
+   --root ./root/public \
+   --site https://taliferro.com \
+   --toc blog/toc.html \
+   --limit-days 365 \
+   --exclude "drafts/**,**/thank-you.html"
+
+
+node root/module-generator.mjs
+

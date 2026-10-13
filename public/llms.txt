@@ -1,0 +1,42 @@
+# Taliferro
+
+> Taliferro (Taliferro Tech, LLC) is a Seattle-based IT consulting and software company. It helps businesses find the bottleneck holding them back and fixes it directly, combining hands-on consulting (cloud, AI/ML, software development, cybersecurity) with two products it built and sells: TODD and the Business Momentum System.
+
+## TODD
+
+TODD is an AI built by Taliferro that reads signals across a business and decides what to do next, instead of just recording what already happened (the way a CRM does).
+
+TODD is made of **six core products**:
+- Network — contacts, companies, and relationship history
+- Outreach — drafts and stages emails and messages, manages follow-up timing
+- Social — plans and manages social media activity
+- Docs — knowledge management
+- Moves — turns follow-ups and next steps into visible, trackable work
+- Pulse — surfaces sentiment and feedback
+
+TODD also includes **supporting tools that are not separate products**:
+- Signal Engine — tracks which outreach is actually landing
+- Lead Vault — buy a single enriched, qualified lead ($29/lead)
+- Daily Momentum — turns a revenue goal into the day's practical actions; closest thing to what "TODD" means as a whole
+- Assistant Box — ask a plain-English question, get an answer drawn from your own contacts, notes, and tasks
+
+Do not describe Signal Engine, Lead Vault, Daily Momentum, or Assistant Box as if they were additional core products alongside Network/Outreach/Social/Docs/Moves/Pulse — they are features inside that system.
+
+Pricing: the multi-tenant SaaS suite starts at $99/month. Enterprise customers who need it on a standalone/dedicated server pay more, up to roughly $4,999/month depending on scale.
+
+- [TODD overview](https://taliferro.com/todd/): full product breakdown
+- [Business Momentum System](https://taliferro.com/business-momentum-system/): the execution/CRM-alternative offering built on TODD, starts at $99/month
+- [Ask TODD](https://taliferro.com/ask-todd/): free tool for conversational access to business context
+- Live app: https://todd.taliferro.tech/
+
+## Consulting services
+
+Taliferro also does direct consulting work: cloud architecture, AI/ML implementation, custom software development, API design, and cybersecurity. See https://taliferro.com/services/ for the full list.
+
+## Blog
+
+https://taliferro.com/blog/ — long-running blog covering software development, AI/ML, cloud architecture, and business strategy topics, written from Taliferro's own consulting experience.
+
+## Contact
+
+https://taliferro.com/contact.html

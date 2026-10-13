@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Taliferro - Blog - Tech</title>
+    <link>https://taliferro.com/blog/</link>
+    <atom:link href="https://taliferro.com/blog/rss-tech.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" />
+    <description>Latest articles and announcements from Taliferro.</description>
+    <language>en-us</language>
+    <category>Taliferro Tech</category>
+    <lastBuildDate>Sat, 25 Apr 2026 01:54:31 GMT</lastBuildDate>
+    <generator>Taliferro feed builder (build-feeds.mjs)</generator>
+    <copyright>Taliferro Is Registered In The U.S. Patent And Trademark Office. All rights reserved.</copyright>
+    <image>
+      <url>https://taliferro.com/img/general/taliferro-group-logo.png</url>
+      <title>Taliferro - Blog - Tech</title>
+      <link>https://taliferro.com/blog/</link>
+    </image>
+    <item>
+      <title>Responsible Use of Technology | Taliferro</title>
+      <link>https://taliferro.com/blog/feb2026/feb102026/responsible-use-of-technology.html</link>
+      <guid isPermaLink="false">taliferro:blog-feb2026-feb102026-responsible-use-of-technology-html</guid>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Responsible use of technology means ensuring every system creates measurable forward motion. This article connects technology discipline to Business Momentum thinking.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/responsible-use-of-technology.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/responsible-use-of-technology.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/responsible-use-of-technology.webp" />
+    </item>
+    <item>
+      <title>AI in Real Estate: Why Most Firms Are Using It Incorrectly | Taliferro</title>
+      <link>https://taliferro.com/blog/feb2026/feb012026/ai-and-real-estate.html</link>
+      <guid isPermaLink="false">taliferro:blog-feb2026-feb012026-ai-and-real-estate-html</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 GMT</pubDate>
+      <description>AI in real estate is expanding rapidly, but most firms apply it at the surface level. This article explains what disciplined machine learning should look like in property markets.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/ai-and-real-estate.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/ai-and-real-estate.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/ai-and-real-estate.webp" />
+    </item>
+    <item>
+      <title>AI Adoption: Why Companies Struggle and What Actually Works | Taliferro</title>
+      <link>https://taliferro.com/blog/jan2026/jan092026/ai-adoption-why-companies-struggle-and-what-actually-works.html</link>
+      <guid isPermaLink="false">taliferro:blog-jan2026-jan092026-ai-adoption-why-companies-struggle-and-what-actually-works-html</guid>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 GMT</pubDate>
+      <description>AI adoption is accelerating, yet most companies struggle to move beyond pilots. This article explores the real barriers and how machine learning services help scale AI successfully.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/ai-adoption-why-companies-struggle-and-what-actually-works.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/ai-adoption-why-companies-struggle-and-what-actually-works.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/ai-adoption-why-companies-struggle-and-what-actually-works.webp" />
+    </item>
+    <item>
+      <title>Why AI Adoption Is Stalling (and How TODD Turns AI Into Momentum)</title>
+      <link>https://taliferro.com/blog/dec2025/dec232025/why-ai-adoption-is-stalling.html</link>
+      <guid isPermaLink="false">taliferro:blog-dec2025-dec232025-why-ai-adoption-is-stalling-html</guid>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
+      <description>AI spend is rising, but results are stalling. Learn the real reasons AI adoption gets stuck—unclear ROI, workflow friction, and tool sprawl—and how TODD, a Momentum System, turns AI into clean data and next actions.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-ai-adoption-is-stalling.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-ai-adoption-is-stalling.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-ai-adoption-is-stalling.webp" />
+    </item>
+    <item>
+      <title>The Hidden Cost of Disconnected Data (and How TODD Fixes It)</title>
+      <link>https://taliferro.com/blog/dec2025/dec202025/the-hidden-cost-of-disconnected-data.html</link>
+      <guid isPermaLink="false">taliferro:blog-dec2025-dec202025-the-hidden-cost-of-disconnected-data-html</guid>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Disconnected data slows decisions, breaks follow-ups, and creates costly rework. This post explains the hidden cost of scattered records—and how TODD, a Momentum System, cleans data and turns it into next actions.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/the-hidden-cost-of-disconnected-data.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/the-hidden-cost-of-disconnected-data.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/the-hidden-cost-of-disconnected-data.webp" />
+    </item>
+    <item>
+      <title>Why Most Business Tools Fail to Improve Productivity (and What Actually Works)</title>
+      <link>https://taliferro.com/blog/dec2025/dec152025/why-most-business-tools-fail-to-improve-productivity.html</link>
+      <guid isPermaLink="false">taliferro:blog-dec2025-dec152025-why-most-business-tools-fail-to-improve-productivity-html</guid>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Most business tools organize work but don&apos;t move it forward. Learn why productivity stalls, what actually fixes it, and how TODD—a Momentum System—keeps momentum moving across contacts, tasks, documents, and surveys.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-most-business-tools-fail-to-improve-productivity.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-most-business-tools-fail-to-improve-productivity.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-most-business-tools-fail-to-improve-productivity.webp" />
+    </item>
+    <item>
+      <title>TODD vs Salesforce: Why Momentum Beats Management</title>
+      <link>https://taliferro.com/blog/dec2025/dec052025/todd-vs-salesforce.html</link>
+      <guid isPermaLink="false">taliferro:blog-dec2025-dec052025-todd-vs-salesforce-html</guid>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Compare TODD vs Salesforce and see why a Momentum System (MS) that writes outreach, suggests next moves, and acts for you beats a CRM that only tracks data.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todd-vs-salesforce.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todd-vs-salesforce.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todd-vs-salesforce.webp" />
+    </item>
+    <item>
+      <title>Why Momentum Beats Management</title>
+      <link>https://taliferro.com/blog/dec2025/dec032025/why-momentum-beats-management.html</link>
+      <guid isPermaLink="false">taliferro:blog-dec2025-dec032025-why-momentum-beats-management-html</guid>
+      <pubDate>Wed, 03 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Management tracks activity. Momentum moves work forward. Learn why teams bog down in meetings, dashboards, and status reports, and why a focus on momentum creates clearer days, better decisions, and steady progress.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-momentum-beats-management.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-momentum-beats-management.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-momentum-beats-management.webp" />
+    </item>
+    <item>
+      <title>TODD vs HubSpot: Why a Momentum System Beats a Marketing CRM</title>
+      <link>https://taliferro.com/blog/dec2025/dec012025/todd-vs-hubspot.html</link>
+      <guid isPermaLink="false">taliferro:blog-dec2025-dec012025-todd-vs-hubspot-html</guid>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Compare TODD and HubSpot. See why a Momentum System that focuses on daily moves, follow-ups, and relationships beats a marketing-first CRM for small teams and mission-driven organizations.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todd-vs-hubspot.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todd-vs-hubspot.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todd-vs-hubspot.webp" />
+    </item>
+    <item>
+      <title>Why CRMs Slow Organizations Down (and What to Do Instead)</title>
+      <link>https://taliferro.com/blog/nov2025/nov302025/why-crms-slow-organizations-down.html</link>
+      <guid isPermaLink="false">taliferro:blog-nov2025-nov302025-why-crms-slow-organizations-down-html</guid>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 GMT</pubDate>
+      <description>Most CRMs promise control but end up slowing teams down. Learn the real reasons CRMs create drag, how they bury momentum in fields and stages, and what to do instead with a Momentum System like TODD.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-crms-slow-organizations-down.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-crms-slow-organizations-down.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-crms-slow-organizations-down.webp" />
+    </item>
+    <item>
+      <title>What is a Momentum System? Why Now?</title>
+      <link>https://taliferro.com/blog/nov2025/nov202025/what-is-a-business-momentum-system-and-why-now.html</link>
+      <guid isPermaLink="false">taliferro:blog-nov2025-nov202025-what-is-a-business-momentum-system-and-why-now-html</guid>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 GMT</pubDate>
+      <description>A Momentum System keeps your mission moving by turning data, contacts, and notes into daily moves. This article explains what a Momentum System (MS) is, why it matters now, and how it differs from a traditional CRM.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/what-is-a-business-momentum-system-and-why-now.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/what-is-a-business-momentum-system-and-why-now.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/what-is-a-business-momentum-system-and-why-now.webp" />
+    </item>
+    <item>
+      <title>TODD vs Microsoft Copilot: Momentum System vs AI Sidekick</title>
+      <link>https://taliferro.com/blog/nov2025/nov152025/todd-vs-microsoft-copilot.html</link>
+      <guid isPermaLink="false">taliferro:blog-nov2025-nov152025-todd-vs-microsoft-copilot-html</guid>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 GMT</pubDate>
+      <description>Compare TODD Momentum System with Microsoft Copilot. Learn why TODD manages outreach, follow-ups, momentum, and relationships better than reactive AI assistants.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todd-vs-microsoft-copilot.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todd-vs-microsoft-copilot.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todd-vs-microsoft-copilot.webp" />
+    </item>
+    <item>
+      <title>The Story Behind TODD: Building a Fair AI Outreach Platform</title>
+      <link>https://taliferro.com/blog/nov2025/nov012025/the-story-behind-todd-building-a-fair-ai-outreach-platform.html</link>
+      <guid isPermaLink="false">taliferro:blog-nov2025-nov012025-the-story-behind-todd-building-a-fair-ai-outreach-platform-html</guid>
+      <pubDate>Sat, 01 Nov 2025 00:00:00 GMT</pubDate>
+      <description>How Taliferro Tech built TODD to fight digital gentrification and ensure fairness in AI outreach, using Bias Drift Detection, Adaptive Learning Pathways, and an Equity-Driven AI framework.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/the-story-behind-todd-building-a-fair-ai-outreach-platform.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/the-story-behind-todd-building-a-fair-ai-outreach-platform.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/the-story-behind-todd-building-a-fair-ai-outreach-platform.webp" />
+    </item>
+    <item>
+      <title>Have a Conversation with TODD About Your Work</title>
+      <link>https://taliferro.com/blog/oct2025/oct302025/have-a-conversation-with-todd-about-your-work.html</link>
+      <guid isPermaLink="false">taliferro:blog-oct2025-oct302025-have-a-conversation-with-todd-about-your-work-html</guid>
+      <pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate>
+      <description>Discover how TODD&apos;s Assistant Box lets you talk to your business in real time — ask questions, take action, and build momentum without clicking through dashboards.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/have-a-conversation-with-todd-about-your-work.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/have-a-conversation-with-todd-about-your-work.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/have-a-conversation-with-todd-about-your-work.webp" />
+    </item>
+    <item>
+      <title>What Is a Momentum System (MS)?</title>
+      <link>https://taliferro.com/blog/oct2025/oct152025/what-is-a-business-momentum-system-bms.html</link>
+      <guid isPermaLink="false">taliferro:blog-oct2025-oct152025-what-is-a-business-momentum-system-bms-html</guid>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 GMT</pubDate>
+      <description>An in-depth explanation of the Momentum System (MS) model pioneered by Taliferro Tech through its AI-driven platform, TODD, including its conversational intelligence and trainable workflows.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/what-is-a-business-momentum-system-bms.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/what-is-a-business-momentum-system-bms.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/what-is-a-business-momentum-system-bms.webp" />
+    </item>
+    <item>
+      <title>AI Lead Generation Software: How Our Case Study Program Delivers Hot Leads</title>
+      <link>https://taliferro.com/blog/oct2025/oct012025/ai-lead-generation-software-how-our-case-study-program-delivers-hot-leads.html</link>
+      <guid isPermaLink="false">taliferro:blog-oct2025-oct012025-ai-lead-generation-software-how-our-case-study-program-delivers-hot-leads-html</guid>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 GMT</pubDate>
+      <description>Join our AI lead generation case study program: tell us your ideal buyer, get hot leads, import into TODD to validate emails, draft outreach, and win clients.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/ai-lead-generation-software-how-our-case-study-program-delivers-hot-leads.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/ai-lead-generation-software-how-our-case-study-program-delivers-hot-leads.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/ai-lead-generation-software-how-our-case-study-program-delivers-hot-leads.webp" />
+    </item>
+    <item>
+      <title>The Complete Guide to Momentum Systems (MS) in 2025: Why It Beats a CRM Every Time</title>
+      <link>https://taliferro.com/blog/sep2025/sep212025/bms-complete-guide-2025.html</link>
+      <guid isPermaLink="false">taliferro:blog-sep2025-sep212025-bms-complete-guide-2025-html</guid>
+      <pubDate>Sun, 21 Sep 2025 00:00:00 GMT</pubDate>
+      <description>A pillar guide to Momentum Systems (MS): how BMS differs from CRM, core capabilities (sequencing, follow-ups, proposals, enrichment), rollout steps, metrics, objections, and use cases across sales, customer success, partnerships, and hiring.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/bms-pillar-2025.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/bms-pillar-2025.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/bms-pillar-2025.webp" />
+    </item>
+    <item>
+      <title>AI Lead Generation (2025): TODD Momentum System (MS) vs CRM</title>
+      <link>https://taliferro.com/blog/sep2025/sep102025/ai-lead-generation-todd-bms-vs-crm.html</link>
+      <guid isPermaLink="false">taliferro:blog-sep2025-sep102025-ai-lead-generation-todd-bms-vs-crm-html</guid>
+      <pubDate>Wed, 10 Sep 2025 00:00:00 GMT</pubDate>
+      <description>AI lead generation in 2025: a third‑party LLM finds in‑market buyers; TODD BMS nurtures with reply‑aware emails, nudge queues, and cadence analytics—beyond CRM.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/ai-lead-generation-todd-bms-vs-crm.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/ai-lead-generation-todd-bms-vs-crm.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/ai-lead-generation-todd-bms-vs-crm.webp" />
+    </item>
+    <item>
+      <title>Why a Momentum System (MS) Beats a CRM in 2025</title>
+      <link>https://taliferro.com/blog/sep2025/sep012025/why-a-business-momentum-system-bms-beats-crms-in-2025.html</link>
+      <guid isPermaLink="false">taliferro:blog-sep2025-sep012025-why-a-business-momentum-system-bms-beats-crms-in-2025-html</guid>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate>
+      <description>A Momentum System (MS) is the CRM alternative for 2025. Automate outreach, follow-ups, proposals, and data enrichment so momentum never stalls.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-a-business-momentum-system-bms-beats-crms-in-2025.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-a-business-momentum-system-bms-beats-crms-in-2025.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-a-business-momentum-system-bms-beats-crms-in-2025.webp" />
+    </item>
+    <item>
+      <title>The Real Cost of Manual Outreach in 2025 (and How TODD Pays for Itself)</title>
+      <link>https://taliferro.com/blog/aug2025/aug262025/the-real-cost-of-manual-outreach-in-2025.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2025-aug262025-the-real-cost-of-manual-outreach-in-2025-html</guid>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 GMT</pubDate>
+      <description>Manual follow-ups drain time and deals. See true costs and how Momentum System (MS) with TODD automates follow-ups, boosts reply rates, and shortens cycles.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/the-real-cost-of-manual-outreach-in-2025.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/the-real-cost-of-manual-outreach-in-2025.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/the-real-cost-of-manual-outreach-in-2025.webp" />
+    </item>
+    <item>
+      <title>Why Your CRM Isn&apos;t Broken — It&apos;s Doing Exactly What It Was Built to Do</title>
+      <link>https://taliferro.com/blog/jul2025/jul092025/why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2025-jul092025-why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do-html</guid>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 GMT</pubDate>
+      <description>CRMs often feel broken because they were built for reporting and record-keeping, not daily momentum. Learn why CRMs slow teams down, why AI layers don&apos;t fix the core design, and what to use instead.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-your-crm-isnt-broken-its-doing-exactly-what-it-was-built-to-do.webp" />
+    </item>
+    <item>
+      <title>Stop Writing Proposals from Scratch (RFP Response Template &amp;amp; Automation)</title>
+      <link>https://taliferro.com/blog/jun2025/jun152025/stop-writing-proposals-from-scratch.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2025-jun152025-stop-writing-proposals-from-scratch-html</guid>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
+      <description>Win RFPs faster with reusable proposal templates and automation powered by TODD.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/stop-writing-proposals-from-scratch.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/stop-writing-proposals-from-scratch.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/stop-writing-proposals-from-scratch.webp" />
+    </item>
+    <item>
+      <title>How I Got Back 10 Hours a Week Without Hiring Anyone</title>
+      <link>https://taliferro.com/blog/jun2025/jun012025/how-i-got-back-10-hours-a-week-without-hiring-anyone.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2025-jun012025-how-i-got-back-10-hours-a-week-without-hiring-anyone-html</guid>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 GMT</pubDate>
+      <description>Most tools show dashboards. TODD gets sh*t done.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/how-i-got-back-10-hours-a-week-without-hiring-anyone.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/how-i-got-back-10-hours-a-week-without-hiring-anyone.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/how-i-got-back-10-hours-a-week-without-hiring-anyone.webp" />
+    </item>
+    <item>
+      <title>How to Use TODD as Your Go-To Follow-Up Tool</title>
+      <link>https://taliferro.com/blog/jan2025/jan012025/how-to-use-todd-as-your-go-to-follow-up-tool.html</link>
+      <guid isPermaLink="false">taliferro:blog-jan2025-jan012025-how-to-use-todd-as-your-go-to-follow-up-tool-html</guid>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+      <description>Learn how to use TODD as a Momentum System (MS) to manage follow-ups, get reminders with context, and keep leads moving without spreadsheets or sticky notes.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/how-to-use-todd-as-your-go-to-follow-up-tool.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/how-to-use-todd-as-your-go-to-follow-up-tool.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/how-to-use-todd-as-your-go-to-follow-up-tool.webp" />
+    </item>
+    <item>
+      <title>A Safe Space for Sharing: Why I Built SayIt</title>
+      <link>https://taliferro.com/blog/nov2024/nov152024/a-safe-space-for-sharing-why-i-built-sayit.html</link>
+      <guid isPermaLink="false">taliferro:blog-nov2024-nov152024-a-safe-space-for-sharing-why-i-built-sayit-html</guid>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
+      <description>SayIt is an ad-free, bot-free platform fostering open sharing, discovery, and community with no algorithms or toxic interactions. Start saying it today</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/a-safe-space-for-sharing-why-i-built-sayit.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/a-safe-space-for-sharing-why-i-built-sayit.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/a-safe-space-for-sharing-why-i-built-sayit.webp" />
+    </item>
+    <item>
+      <title>How TODD Simplifies Follow-Ups and Strengthens Connections</title>
+      <link>https://taliferro.com/blog/nov2024/nov012024/how-todd-simplifies-follow-ups-and-strengthens-connections.html</link>
+      <guid isPermaLink="false">taliferro:blog-nov2024-nov012024-how-todd-simplifies-follow-ups-and-strengthens-connections-html</guid>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD identifies who to contact, optimizes follow-ups, and builds lasting relationships through AI-driven insights and personalized communication.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/how-todd-simplifies-follow-ups-and-strengthens-connections.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/how-todd-simplifies-follow-ups-and-strengthens-connections.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/how-todd-simplifies-follow-ups-and-strengthens-connections.webp" />
+    </item>
+    <item>
+      <title>Why Generative AI Fails When You Need 100% Accurate Results</title>
+      <link>https://taliferro.com/blog/oct2024/oct042024/why-generative-ai-fails-when-you-need-one-hundred-percent-accurate-results.html</link>
+      <guid isPermaLink="false">taliferro:blog-oct2024-oct042024-why-generative-ai-fails-when-you-need-one-hundred-percent-accurate-results-html</guid>
+      <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
+      <description>Discover why Taliferro advises against using Generative AI when precision and factual accuracy are non-negotiable. Learn when to use the right tool for the job.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-generative-ai-fails-when-you-need-one-hundred-percent-accurate-results.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-generative-ai-fails-when-you-need-one-hundred-percent-accurate-results.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-generative-ai-fails-when-you-need-one-hundred-percent-accurate-results.webp" />
+    </item>
+    <item>
+      <title>TODD: Your Momentum System (2025)</title>
+      <link>https://taliferro.com/blog/sep2024/sep302024/todd-the-ai-workforce-as-a-service.html</link>
+      <guid isPermaLink="false">taliferro:blog-sep2024-sep302024-todd-the-ai-workforce-as-a-service-html</guid>
+      <pubDate>Mon, 30 Sep 2024 00:00:00 GMT</pubDate>
+      <description>TODD is a Momentum System (MS) for small teams—an affordable substitute when you can’t hire staff. Automates follow‑ups, outreach, research, and data hygiene without replacing people.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todd-the-ai-workforce-as-a-service.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todd-the-ai-workforce-as-a-service.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todd-the-ai-workforce-as-a-service.webp" />
+    </item>
+    <item>
+      <title>TODD Affiliate Program: Earn Up to $5,000 Per Referral + Recurring</title>
+      <link>https://taliferro.com/blog/sep2024/sep182024/earn-big-by-promoting-todd-the-tool-organizations-cant-ignore.html</link>
+      <guid isPermaLink="false">taliferro:blog-sep2024-sep182024-earn-big-by-promoting-todd-the-tool-organizations-cant-ignore-html</guid>
+      <pubDate>Wed, 18 Sep 2024 00:00:00 GMT</pubDate>
+      <description>Earn up to $5,000 per qualified referral plus recurring commissions on corporate subscriptions. We scope and close the deal—you get paid.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/earn-big-by-promoting-todd-the-tool-organizations-cant-ignore.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/earn-big-by-promoting-todd-the-tool-organizations-cant-ignore.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/earn-big-by-promoting-todd-the-tool-organizations-cant-ignore.webp" />
+    </item>
+    <item>
+      <title>Missing info? TODD fills in the gaps.</title>
+      <link>https://taliferro.com/blog/sep2024/sep132024/missing-info-todd-fills-in-the-gaps.html</link>
+      <guid isPermaLink="false">taliferro:blog-sep2024-sep132024-missing-info-todd-fills-in-the-gaps-html</guid>
+      <pubDate>Fri, 13 Sep 2024 00:00:00 GMT</pubDate>
+      <description>Missing contact details? TODD automatically fills in the gaps, enriching your data so you can focus on building meaningful business relationships.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/missing-info-todd-fills-in-the-gaps.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/missing-info-todd-fills-in-the-gaps.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/missing-info-todd-fills-in-the-gaps.webp" />
+    </item>
+    <item>
+      <title>Stop Entering Data for Nothing - TODD Puts It to Work</title>
+      <link>https://taliferro.com/blog/sep2024/sep012024/stop-entering-data-for-nothing-todd-puts-It-to-work.html</link>
+      <guid isPermaLink="false">taliferro:blog-sep2024-sep012024-stop-entering-data-for-nothing-todd-puts-it-to-work-html</guid>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+      <description>TODD goes beyond organizing your data. It works behind the scenes, offering insights and prioritizing tasks, even while you’re not working.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/stop-entering.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/stop-entering.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/stop-entering.webp" />
+    </item>
+    <item>
+      <title>Leads slipping through the cracks? TODD keeps things moving</title>
+      <link>https://taliferro.com/blog/aug2024/aug312024/leads-slipping-through-the-cracks-todd-keeps-things-moving.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug312024-leads-slipping-through-the-cracks-todd-keeps-things-moving-html</guid>
+      <pubDate>Sat, 31 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Worried about leads slipping through the cracks? TODD tracks, prioritizes, and follows up on leads, ensuring nothing gets missed and your business keeps moving.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/leads-slipping-through-the-cracks-todd-keeps-things-moving.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/leads-slipping-through-the-cracks-todd-keeps-things-moving.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/leads-slipping-through-the-cracks-todd-keeps-things-moving.webp" />
+    </item>
+    <item>
+      <title>Who to Reach Out To — The Science of Tactical Outreach | TODD</title>
+      <link>https://taliferro.com/blog/aug2024/aug242024/who-should-you-reach-out-to-todd-knows.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug242024-who-should-you-reach-out-to-todd-knows-html</guid>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Learn the science of Tactical Outreach with TODD — AI that prioritizes who to contact and when, turning engagement signals into real opportunities.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/who-should-you-reach-out-to-todd-knows.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/who-should-you-reach-out-to-todd-knows.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/who-should-you-reach-out-to-todd-knows.webp" />
+    </item>
+    <item>
+      <title>Why We Built Our Own Task Manager — and What We Learned</title>
+      <link>https://taliferro.com/blog/aug2024/aug152024/why-we-had-to-build-our-own-task-manager-from-scratch.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug152024-why-we-had-to-build-our-own-task-manager-from-scratch-html</guid>
+      <pubDate>Thu, 15 Aug 2024 00:00:00 GMT</pubDate>
+      <description>We built our own task manager after realizing today’s tools add work instead of removing it. Learn how software that acts, not asks, changes productivity.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-we-had-to-build-our-own-task-manager-from-scratch.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-we-had-to-build-our-own-task-manager-from-scratch.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-we-had-to-build-our-own-task-manager-from-scratch.webp" />
+    </item>
+    <item>
+      <title>Why TODD Is the Secret Weapon Your Organization Needs</title>
+      <link>https://taliferro.com/blog/aug2024/aug132024/why-todd-is-the-secret-weapon-your-organization-needs.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug132024-why-todd-is-the-secret-weapon-your-organization-needs-html</guid>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Discover why TODD is essential for managing contacts and relationships, driving growth, and turning your network into a powerful asset for success.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-todd-is-the-secret-weapon-your-organization-needs.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-todd-is-the-secret-weapon-your-organization-needs.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-todd-is-the-secret-weapon-your-organization-needs.webp" />
+    </item>
+    <item>
+      <title>Unlock TODD&apos;s Secret to Crushing Your Task List Today!</title>
+      <link>https://taliferro.com/blog/aug2024/aug112024/unlock-todds-secret-to-crushing-your-task-list-today.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug112024-unlock-todds-secret-to-crushing-your-task-list-today-html</guid>
+      <pubDate>Sun, 11 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD&apos;s real-time task analysis can boost your productivity. Prioritize tasks, balance workloads, and optimize your workflow with ease.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/unlock-todds-secret-to-crushing-your-task-list-today.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/unlock-todds-secret-to-crushing-your-task-list-today.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/unlock-todds-secret-to-crushing-your-task-list-today.webp" />
+    </item>
+    <item>
+      <title>Unlock Networking Success: Master Contact Management Now!</title>
+      <link>https://taliferro.com/blog/aug2024/aug082024/unlock-networking-success-master-contact-management-now.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug082024-unlock-networking-success-master-contact-management-now-html</guid>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Transform your networking game by mastering contact management. Discover essential strategies for effective relationship building and engagement.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/unlock-networking-success-master-contact-management-now.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/unlock-networking-success-master-contact-management-now.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/unlock-networking-success-master-contact-management-now.webp" />
+    </item>
+    <item>
+      <title>Join TODD: Turn Your Networking into Innovation!</title>
+      <link>https://taliferro.com/blog/aug2024/aug072024/join-todd-transform-your-networking-into-innovation.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug072024-join-todd-transform-your-networking-into-innovation-html</guid>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD creates a powerful community for business owners. Turn your networking into innovation with meaningful connections and measurable outcomes.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/join-todd-transform-your-networking-into-innovation.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/join-todd-transform-your-networking-into-innovation.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/join-todd-transform-your-networking-into-innovation.webp" />
+    </item>
+    <item>
+      <title>Unlock the TODD Effect: Network Authentically and Win!</title>
+      <link>https://taliferro.com/blog/aug2024/aug052024/unlock-the-todd-effect-network-authentically-and-win.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug052024-unlock-the-todd-effect-network-authentically-and-win-html</guid>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Discover how the TODD effect transforms networking through authenticity. Build genuine connections and open doors to new opportunities in your business.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/unlock-the-todd-effect-network-authentically-and-win.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/unlock-the-todd-effect-network-authentically-and-win.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/unlock-the-todd-effect-network-authentically-and-win.webp" />
+    </item>
+    <item>
+      <title>Revolutionize Your Contacts: Meet TODD&apos;s New Feature!</title>
+      <link>https://taliferro.com/blog/aug2024/aug042024/revolutionize-your-contacts-meet-todds-new-feature.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug042024-revolutionize-your-contacts-meet-todds-new-feature-html</guid>
+      <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD’s contact reconfiguration feature automates data management, ensuring accuracy and consistency while preserving critical information.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/revolutionize-your-contacts-meet-todds-new-feature.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/revolutionize-your-contacts-meet-todds-new-feature.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/revolutionize-your-contacts-meet-todds-new-feature.webp" />
+    </item>
+    <item>
+      <title>Track KPIs, Reduce Churn &amp; Improve CX with TODD Momentum System (MS) — A CRM Alternative</title>
+      <link>https://taliferro.com/blog/aug2024/aug032024/how-todd-helps-you-track-performance-and-retain-customers.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug032024-how-todd-helps-you-track-performance-and-retain-customers-html</guid>
+      <pubDate>Sat, 03 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Use TODD (Momentum System) to track KPIs, reduce churn, and improve customer experience. An AI-powered CRM alternative with predictive insights, proactive follow-ups, and performance dashboards.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/how-todd-helps-you-track-performance-and-retain-customers.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/how-todd-helps-you-track-performance-and-retain-customers.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/how-todd-helps-you-track-performance-and-retain-customers.webp" />
+    </item>
+    <item>
+      <title>Say Goodbye to Data Errors: TODD Has the Solution!</title>
+      <link>https://taliferro.com/blog/aug2024/aug022024/say-goodbye-to-data-errors-todd-has-the-solution.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug022024-say-goodbye-to-data-errors-todd-has-the-solution-html</guid>
+      <pubDate>Fri, 02 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Fix bad business data automatically. TODD cleans typos, deduplicates contacts, standardizes fields, and prevents errors at the source—so decisions are based on trustworthy data.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/say-goodbye-to-data-errors-todd-has-the-solution.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/say-goodbye-to-data-errors-todd-has-the-solution.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/say-goodbye-to-data-errors-todd-has-the-solution.webp" />
+    </item>
+    <item>
+      <title>Business Matchmaking Software for Chambers, Mentorship Programs &amp; Supplier Diversity</title>
+      <link>https://taliferro.com/blog/aug2024/aug012024/todds-matchmaking-for-investors-and-organizations.html</link>
+      <guid isPermaLink="false">taliferro:blog-aug2024-aug012024-todds-matchmaking-for-investors-and-organizations-html</guid>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 GMT</pubDate>
+      <description>Purpose‑built business matchmaking software for chambers, mentorship programs, supplier diversity and economic development teams. Automate matches, equip cohorts, and report outcomes.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todds-matchmaking-for-investors-and-organizations.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todds-matchmaking-for-investors-and-organizations.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todds-matchmaking-for-investors-and-organizations.webp" />
+    </item>
+    <item>
+      <title>Supercharge Your Email Campaigns with TODD&apos;s Easy Management!</title>
+      <link>https://taliferro.com/blog/jul2024/jul312024/supercharge-your-email-campaigns-with-todds-easy-management.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul312024-supercharge-your-email-campaigns-with-todds-easy-management-html</guid>
+      <pubDate>Wed, 31 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD&apos;s email campaign management feature lets you start, pause, and track your campaigns for maximum engagement and success.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/supercharge-your-email-campaigns-with-todds-easy-management.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/supercharge-your-email-campaigns-with-todds-easy-management.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/supercharge-your-email-campaigns-with-todds-easy-management.webp" />
+    </item>
+    <item>
+      <title>Transform Data Entry: TODD Imports Info in a Snap!</title>
+      <link>https://taliferro.com/blog/jul2024/jul272024/transform-data-entry-todd-imports-info-in-a-snap.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul272024-transform-data-entry-todd-imports-info-in-a-snap-html</guid>
+      <pubDate>Sat, 27 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD streamlines data entry by importing information from LinkedIn, spreadsheets, and documents directly into the right fields.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/transform-data-entry-todd-imports-info-in-a-snap.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/transform-data-entry-todd-imports-info-in-a-snap.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/transform-data-entry-todd-imports-info-in-a-snap.webp" />
+    </item>
+    <item>
+      <title>Community Building in 2025 with TODD: Stronger Connections</title>
+      <link>https://taliferro.com/blog/jul2024/jul252024/unlock-community-power-join-todds-supportive-network.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul252024-unlock-community-power-join-todds-supportive-network-html</guid>
+      <pubDate>Thu, 25 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Grow your community in 2025 with TODD. Keep conversations active, match partners, and measure engagement so members build lasting, supportive connections.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/unlock-community-power-join-todds-supportive-network.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/unlock-community-power-join-todds-supportive-network.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/unlock-community-power-join-todds-supportive-network.webp" />
+    </item>
+    <item>
+      <title>Maximize Efficiency: TODD&apos;s AI Task Management Secrets!</title>
+      <link>https://taliferro.com/blog/jul2024/jul242024/maximize-efficiency-todds-ai-task-management-secrets.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul242024-maximize-efficiency-todds-ai-task-management-secrets-html</guid>
+      <pubDate>Wed, 24 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD&apos;s AI-powered Task Management tool optimizes workflows with real-time analysis, tracking, and seamless collaboration for peak productivity.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/maximize-efficiency-todds-ai-task-management-secrets.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/maximize-efficiency-todds-ai-task-management-secrets.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/maximize-efficiency-todds-ai-task-management-secrets.webp" />
+    </item>
+    <item>
+      <title>Why TODD Users Are Your Best Advocates!</title>
+      <link>https://taliferro.com/blog/jul2024/jul222024/why-todd-users-are-your-best-advocates.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul222024-why-todd-users-are-your-best-advocates-html</guid>
+      <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD empowers users to elevate their outreach efforts, fostering passionate advocates through personalization, insights, and a supportive community.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/why-todd-users-are-your-best-advocates.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/why-todd-users-are-your-best-advocates.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/why-todd-users-are-your-best-advocates.webp" />
+    </item>
+    <item>
+      <title>Discover How TODD Transforms Data Management with AI Magic</title>
+      <link>https://taliferro.com/blog/jul2024/jul202024/discover-how-todd-transforms-data-management-with-ai-magic.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul202024-discover-how-todd-transforms-data-management-with-ai-magic-html</guid>
+      <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Learn how TODD, your new co-pilot, automates data organization, making contact management seamless and efficient with advanced AI technology.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/discover-how-todd-transforms-data-management-with-ai-magic.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/discover-how-todd-transforms-data-management-with-ai-magic.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/discover-how-todd-transforms-data-management-with-ai-magic.webp" />
+    </item>
+    <item>
+      <title>The Secrets of Your Emails with TODD&apos;s Insightful Tracking</title>
+      <link>https://taliferro.com/blog/jul2024/jul192024/the-secrets-of-your-emails-with-todds-insightful-tracking.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul192024-the-secrets-of-your-emails-with-todds-insightful-tracking-html</guid>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD&apos;s email tracking features reveal when emails are read, deleted, or unsubscribed, giving you unparalleled insights into your communication efforts.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/the-secrets-of-your-emails-with-todds-insightful-tracking.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/the-secrets-of-your-emails-with-todds-insightful-tracking.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/the-secrets-of-your-emails-with-todds-insightful-tracking.webp" />
+    </item>
+    <item>
+      <title>Let TODD Be Your AI Email Co-Pilot for Fast, Smart Replies</title>
+      <link>https://taliferro.com/blog/jul2024/jul182024/let-todd-be-your-co-pilot-in-crafting-perfect-email-replies.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul182024-let-todd-be-your-co-pilot-in-crafting-perfect-email-replies-html</guid>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Drowning in emails? See how TODD reads each message, drafts a smart reply in your voice, and lets you clear your inbox with just a review and a click.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/let-todd-be-your-co-pilot-in-crafting-perfect-email-replies.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/let-todd-be-your-co-pilot-in-crafting-perfect-email-replies.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/let-todd-be-your-co-pilot-in-crafting-perfect-email-replies.webp" />
+    </item>
+    <item>
+      <title>Grow My Business with TODD (MS): Plain-English Guide + Real-Time Buyer Discovery</title>
+      <link>https://taliferro.com/blog/jul2024/jul142024/todd-explained.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul142024-todd-explained-html</guid>
+      <pubDate>Sun, 14 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Explaining TODD to a layman can be straightforward if you break it down into simple terms and use relatable examples. Here’s how you might explain TODD:</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/business-momentum-system/assets/TODD.png" length="0" type="image/png" />
+      <media:content url="https://taliferro.com/business-momentum-system/assets/TODD.png" medium="image" type="image/png" />
+      <media:thumbnail url="https://taliferro.com/business-momentum-system/assets/TODD.png" />
+    </item>
+    <item>
+      <title>Automate Your Day with TODD: A Real Conversation</title>
+      <link>https://taliferro.com/blog/jul2024/jul122024/automate-your-day-with-todd-a-real-conversation.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul122024-automate-your-day-with-todd-a-real-conversation-html</guid>
+      <pubDate>Fri, 12 Jul 2024 00:00:00 GMT</pubDate>
+      <description>See how TODD turned a busy day into an efficient, automated operation. A straightforward conversation shows the benefits of using TODD for business automation.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/automate-your-day-with-todd-a-real-conversation.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/automate-your-day-with-todd-a-real-conversation.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/automate-your-day-with-todd-a-real-conversation.webp" />
+    </item>
+    <item>
+      <title>TODD: Step by Step</title>
+      <link>https://taliferro.com/blog/jul2024/jul102024/todd-step-by-step.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul102024-todd-step-by-step-html</guid>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 GMT</pubDate>
+      <description>If you were going walk through TODD step by step, here we show how it benefits you</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todd-step-by-step.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todd-step-by-step.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todd-step-by-step.webp" />
+    </item>
+    <item>
+      <title>TODD’s Automated Email Campaigns: Users Are Amazed</title>
+      <link>https://taliferro.com/blog/jul2024/jul082024/todds-automated-email-campaigns-users-are-amazed.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul082024-todds-automated-email-campaigns-users-are-amazed-html</guid>
+      <pubDate>Mon, 08 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD automates email campaigns, integrates contacts, and eliminates data entry. Users are amazed by its proactive approach to sales and communication.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todds-automated-email-campaigns-users-are-amazed.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todds-automated-email-campaigns-users-are-amazed.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todds-automated-email-campaigns-users-are-amazed.webp" />
+    </item>
+    <item>
+      <title>Hidden Profits with TODD? Boost Efficiency Now!</title>
+      <link>https://taliferro.com/blog/jul2024/jul052024/hidden-profits-with-todd-boost-efficiency-now.html</link>
+      <guid isPermaLink="false">taliferro:blog-jul2024-jul052024-hidden-profits-with-todd-boost-efficiency-now-html</guid>
+      <pubDate>Fri, 05 Jul 2024 00:00:00 GMT</pubDate>
+      <description>Discover how Taliferro&apos;s TODD can boost your business efficiency and reveal hidden profits with its automated sales pipeline and comprehensive features.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/hidden-profits-with-todd-boost-efficiency-now.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/hidden-profits-with-todd-boost-efficiency-now.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/hidden-profits-with-todd-boost-efficiency-now.webp" />
+    </item>
+    <item>
+      <title>Set Up TODD and Reap Big Rewards</title>
+      <link>https://taliferro.com/blog/jun2024/jun262024/set-up-todd-and-reap-big-rewards.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun262024-set-up-todd-and-reap-big-rewards-html</guid>
+      <pubDate>Wed, 26 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Learn how setting up TODD transforms contact management and boosts productivity. Discover real user experiences and the benefits of investing in TODD.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/set-up-todd-and-reap-big-rewards.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/set-up-todd-and-reap-big-rewards.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/set-up-todd-and-reap-big-rewards.webp" />
+    </item>
+    <item>
+      <title>Time to Look at Your Contacts Differently</title>
+      <link>https://taliferro.com/blog/jun2024/jun232024/time-to-look-at-your-contacts-differently.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun232024-time-to-look-at-your-contacts-differently-html</guid>
+      <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD can revolutionize your contact management, integrating emails, tasks, and documents for a comprehensive and insightful approach.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/time-to-look-at-your-contacts-differently.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/time-to-look-at-your-contacts-differently.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/time-to-look-at-your-contacts-differently.webp" />
+    </item>
+    <item>
+      <title>TODD&apos;s Evolution from Contact Matchmaker</title>
+      <link>https://taliferro.com/blog/jun2024/jun202024/todds-evolution-from-contact-matchmaker.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun202024-todds-evolution-from-contact-matchmaker-html</guid>
+      <pubDate>Thu, 20 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD evolved from a contact tool to a comprehensive task manager, integrating emails, tasks, and documents for business efficiency.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todds-evolution-from-contact-matchmaker.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todds-evolution-from-contact-matchmaker.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todds-evolution-from-contact-matchmaker.webp" />
+    </item>
+    <item>
+      <title>TODD&apos;s Smart Task Analysis!</title>
+      <link>https://taliferro.com/blog/jun2024/jun152024/todds-smart-task-analysis.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun152024-todds-smart-task-analysis-html</guid>
+      <pubDate>Sat, 15 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD’s task analysis can boost productivity, optimize resources, and streamline your workflow for ultimate business success.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todds-smart-task-analysis.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todds-smart-task-analysis.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todds-smart-task-analysis.webp" />
+    </item>
+    <item>
+      <title>Say Goodbye to Disjointed Tools: Meet TODD Your AI Solution</title>
+      <link>https://taliferro.com/blog/jun2024/jun062024/say-goodbye-to-disjointed-tools-meet-todd-your-ai-solution.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun062024-say-goodbye-to-disjointed-tools-meet-todd-your-ai-solution-html</guid>
+      <pubDate>Thu, 06 Jun 2024 00:00:00 GMT</pubDate>
+      <description>TODD transforms contact management by integrating email and contacts into a single platform. Discover how it improves efficiency and strengthens relationships.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/say-goodbye-to-disjointed-tools-meet-todd-your-ai-solution.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/say-goodbye-to-disjointed-tools-meet-todd-your-ai-solution.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/say-goodbye-to-disjointed-tools-meet-todd-your-ai-solution.webp" />
+    </item>
+    <item>
+      <title>Discover the Secret to Perfectly Integrated Email &amp; Contacts</title>
+      <link>https://taliferro.com/blog/jun2024/jun052024/discover-the-secret-to-perfectly-integrated-email-and-contacts.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun052024-discover-the-secret-to-perfectly-integrated-email-and-contacts-html</guid>
+      <pubDate>Wed, 05 Jun 2024 00:00:00 GMT</pubDate>
+      <description>TODD seamlessly integrates email with contact management for improved efficiency, better organization, and stronger relationships. Learn how it can transform your business</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/discover-the-secret-to-perfectly-integrated-email-and-contacts.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/discover-the-secret-to-perfectly-integrated-email-and-contacts.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/discover-the-secret-to-perfectly-integrated-email-and-contacts.webp" />
+    </item>
+    <item>
+      <title>Master Deal Flow with TODD&apos;s New Dashboard</title>
+      <link>https://taliferro.com/blog/jun2024/jun042024/master-deal-flow-with-todds-new-dashboard.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun042024-master-deal-flow-with-todds-new-dashboard-html</guid>
+      <pubDate>Tue, 04 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD&apos;s Deal Flow Dashboard enhances contact management with real-time updates and visual insights. Streamline your sales process today.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/master-deal-flow-with-todds-new-dashboard.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/master-deal-flow-with-todds-new-dashboard.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/master-deal-flow-with-todds-new-dashboard.webp" />
+    </item>
+    <item>
+      <title>Your Contacts: NLP Secrets in TODD Revealed</title>
+      <link>https://taliferro.com/blog/jun2024/jun032024/your-contacts-nlp-secrets-in-todd.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun032024-your-contacts-nlp-secrets-in-todd-html</guid>
+      <pubDate>Mon, 03 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Discover how NLP in TODD revolutionizes contact management by analyzing text data for better communication and insights. Learn how it benefits your business.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/your-contacts-nlp-secrets-in-todd.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/your-contacts-nlp-secrets-in-todd.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/your-contacts-nlp-secrets-in-todd.webp" />
+    </item>
+    <item>
+      <title>Sales Success: Predictive Analytics in TODD</title>
+      <link>https://taliferro.com/blog/jun2024/jun022024/sales-success-predictive-analytics-in-todd.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun022024-sales-success-predictive-analytics-in-todd-html</guid>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Learn how predictive analytics in TODD helps you anticipate contact needs, improving follow-ups and conversions. Discover the future of smart contact management.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/sales-success-predictive-analytics-in-todd.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/sales-success-predictive-analytics-in-todd.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/sales-success-predictive-analytics-in-todd.webp" />
+    </item>
+    <item>
+      <title>TODD: The Ultimate ML-Powered Contact Manager</title>
+      <link>https://taliferro.com/blog/jun2024/jun012024/todd-the-ultimate-ml-powered-contact-manager.html</link>
+      <guid isPermaLink="false">taliferro:blog-jun2024-jun012024-todd-the-ultimate-ml-powered-contact-manager-html</guid>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 GMT</pubDate>
+      <description>Discover how TODD revolutionizes contact management with machine learning, offering predictive analytics, NLP, and automated data cleaning for smarter business.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/todd-the-ultimate-ml-powered-contact-manager.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/todd-the-ultimate-ml-powered-contact-manager.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/todd-the-ultimate-ml-powered-contact-manager.webp" />
+    </item>
+    <item>
+      <title>Proactive Contact Management with Machine Learning</title>
+      <link>https://taliferro.com/blog/may2024/may312024/proactive-contact-management-with-machine-learning.html</link>
+      <guid isPermaLink="false">taliferro:blog-may2024-may312024-proactive-contact-management-with-machine-learning-html</guid>
+      <pubDate>Fri, 31 May 2024 00:00:00 GMT</pubDate>
+      <description>Learn how TODD uses machine learning to provide predictive insights for proactive contact management and improved business relationships.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/proactive-contact-management-with-machine-learning.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/proactive-contact-management-with-machine-learning.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/proactive-contact-management-with-machine-learning.webp" />
+    </item>
+    <item>
+      <title>Deal Flow Management with TODD (2025): Close More Deals</title>
+      <link>https://taliferro.com/blog/may2024/may292024/streamline-your-deal-flow-with-todd.html</link>
+      <guid isPermaLink="false">taliferro:blog-may2024-may292024-streamline-your-deal-flow-with-todd-html</guid>
+      <pubDate>Wed, 29 May 2024 00:00:00 GMT</pubDate>
+      <description>Deal flow management in 2025: use TODD to track every opportunity, automate follow‑ups, and prioritize the right deals so you close more with less effort and boost ROI.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/streamline-your-deal-flow-with-todd.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/streamline-your-deal-flow-with-todd.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/streamline-your-deal-flow-with-todd.webp" />
+    </item>
+    <item>
+      <title>How Our Tech Magic Is Crafting Future Industry Leaders (and Where TODD Fits)</title>
+      <link>https://taliferro.com/blog/apr2024/apr012024/how-our-tech-magic-is-crafting-future-industry-leaders.html</link>
+      <guid isPermaLink="false">taliferro:blog-apr2024-apr012024-how-our-tech-magic-is-crafting-future-industry-leaders-html</guid>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 GMT</pubDate>
+      <description>How Taliferro turns ambitious companies into category leaders—and how TODD (Outreach Relationship Management) powers cleaner data, better follow‑ups, and more revenue.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/how-our-tech-magic-is-crafting-future-industry-leaders.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/how-our-tech-magic-is-crafting-future-industry-leaders.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/how-our-tech-magic-is-crafting-future-industry-leaders.webp" />
+    </item>
+    <item>
+      <title>7 Must‑Have AI &amp; Automation Tools for 2025 (Small Business)</title>
+      <link>https://taliferro.com/blog/feb2024/feb182024/five-must-have-automation-tools-to-skyrocket-your-business.html</link>
+      <guid isPermaLink="false">taliferro:blog-feb2024-feb182024-five-must-have-automation-tools-to-skyrocket-your-business-html</guid>
+      <pubDate>Sun, 18 Feb 2024 00:00:00 GMT</pubDate>
+      <description>Discover 7 AI and automation tools redefining small‑business efficiency in 2025 — from project management to outreach with TODD and ChatGPT.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/five-must-have-automation-tools-to-skyrocket-your-business.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/five-must-have-automation-tools-to-skyrocket-your-business.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/five-must-have-automation-tools-to-skyrocket-your-business.webp" />
+    </item>
+    <item>
+      <title>Celebrating Community Growth and Sharing Valuable Resources</title>
+      <link>https://taliferro.com/blog/dec2023/dec172023/celebrating-community-growth-and-sharing-valuable-resources.html</link>
+      <guid isPermaLink="false">taliferro:blog-dec2023-dec172023-celebrating-community-growth-and-sharing-valuable-resources-html</guid>
+      <pubDate>Sun, 17 Dec 2023 00:00:00 GMT</pubDate>
+      <description>A quick look at how Taliferro grew its online community across Instagram and TikTok, plus a few practical resources you can use right now.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/celebrating-community-growth-and-sharing-valuable-resources.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/celebrating-community-growth-and-sharing-valuable-resources.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/celebrating-community-growth-and-sharing-valuable-resources.webp" />
+    </item>
+    <item>
+      <title>AI Marketing Insights (2025): Smarter Campaign Decisions</title>
+      <link>https://taliferro.com/blog/nov2023/nov122023/harnessing-ai-to-unlock-marketing-insights-from-customer-data.html</link>
+      <guid isPermaLink="false">taliferro:blog-nov2023-nov122023-harnessing-ai-to-unlock-marketing-insights-from-customer-data-html</guid>
+      <pubDate>Sun, 12 Nov 2023 00:00:00 GMT</pubDate>
+      <description>AI marketing insights in 2025: improve targeting, optimize spend, measure ROI, and use a Momentum System (MS) to act faster on data.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/harnessing-ai-to-unlock-marketing-insights-from-customer-data.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/harnessing-ai-to-unlock-marketing-insights-from-customer-data.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/harnessing-ai-to-unlock-marketing-insights-from-customer-data.webp" />
+    </item>
+    <item>
+      <title>AI as Your Tech Advisor: Transforming Choices</title>
+      <link>https://taliferro.com/blog/apr2023/apr142023/can-ai-be-your-technology-advisor-harnessing-the-power-of-artificial-intelligence-for-personalized-tech-guidance.html</link>
+      <guid isPermaLink="false">taliferro:blog-apr2023-apr142023-can-ai-be-your-technology-advisor-harnessing-the-power-of-artificial-intelligence-for-personalized-tech-guidance-html</guid>
+      <pubDate>Fri, 14 Apr 2023 00:00:00 GMT</pubDate>
+      <description>Blog Description</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/can-ai-be-your-technology-advisor-harnessing-the-power-of-artificial-intelligence-for-personalized-tech-guidance.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/can-ai-be-your-technology-advisor-harnessing-the-power-of-artificial-intelligence-for-personalized-tech-guidance.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/can-ai-be-your-technology-advisor-harnessing-the-power-of-artificial-intelligence-for-personalized-tech-guidance.webp" />
+    </item>
+    <item>
+      <title>The Unintended Consequences of AI</title>
+      <link>https://taliferro.com/blog/apr2023/apr062023/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.html</link>
+      <guid isPermaLink="false">taliferro:blog-apr2023-apr062023-ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence-html</guid>
+      <pubDate>Thu, 06 Apr 2023 00:00:00 GMT</pubDate>
+      <description>Explore ethical, privacy, bias, labor, and environmental concerns from AI&apos;s rapid adoption.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.webp" />
+    </item>
+    <item>
+      <title>Cultivating Strong Customer Relationships for Growth (2025 Guide)</title>
+      <link>https://taliferro.com/blog/feb2023/feb082023/building-customer-relationships.html</link>
+      <guid isPermaLink="false">taliferro:blog-feb2023-feb082023-building-customer-relationships-html</guid>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 GMT</pubDate>
+      <description>Discover key strategies for nurturing customer relationships to boost loyalty and business growth. Learn about customer engagement, service, and satisfaction.</description>
+      <category>Taliferro Tech</category>
+      <dc:creator>Tyrone Showers</dc:creator>
+      <enclosure url="https://taliferro.com/blog/img/blog/building-customer-relationships.webp" length="0" type="image/webp" />
+      <media:content url="https://taliferro.com/blog/img/blog/building-customer-relationships.webp" medium="image" type="image/webp" />
+      <media:thumbnail url="https://taliferro.com/blog/img/blog/building-customer-relationships.webp" />
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:';
+    if (!isLocal) {
+      const s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date()); gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <title>Can AI Replace Parts of Your Engineering Team? | CTO Guide | Taliferro</title>
+  <meta name="description" content="AI coding tools are real. But which tasks should you actually automate, and what's the risk? Taliferro gives CTOs a clear, honest assessment — $999 flat, results in 3 days." />
+  <link rel="canonical" href="https://taliferro.com/rescue-me/ai-in-engineering/" />
+  <meta property="og:title" content="Can AI Replace Parts of Your Engineering Team? | Taliferro" />
+  <meta property="og:description" content="The board read an article. Now they're asking questions. Taliferro gives CTOs an honest answer on AI in engineering — what's real, what's risk, what's ready. $999 flat." />
+  <meta property="og:url" content="https://taliferro.com/rescue-me/ai-in-engineering/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Taliferro" />
+  <meta property="og:image" content="https://taliferro.com/img/ai-in-engineering.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Can AI Replace Parts of Your Engineering Team? | Taliferro" />
+  <meta name="twitter:description" content="What's real, what's risk, what's ready. Honest AI-in-engineering assessment. $999 flat." />
+  <meta name="twitter:image" content="https://taliferro.com/img/ai-in-engineering.webp" />
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which engineering tasks can AI safely automate today?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Boilerplate code generation, unit test scaffolding, code review suggestions, documentation generation, and bug localization are genuinely mature. AI for architecture decisions, security-sensitive code, and complex business logic requires significant human oversight. The line isn't 'AI vs. humans' — it's 'supervised AI vs. unsupervised AI.'" }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can AI tools reduce software development costs?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Credible benchmarks show 20–35% productivity improvement in code generation tasks for experienced developers. For a 20-person engineering team, that's meaningful — but it typically shows up as faster delivery rather than fewer engineers. Teams that try to capture the savings as headcount reduction often find that coordination overhead absorbs the freed capacity." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the security risks of AI-assisted coding?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The main risks are: (1) IP leakage if code is sent to external models that use it for training, (2) AI generating code with subtle security vulnerabilities it doesn't flag, and (3) developers trusting AI-generated code without security review. Enterprise plans for most AI tools address risk 1. Risks 2 and 3 require process controls, not just tool selection." }
+      },
+      {
+        "@type": "Question",
+        "name": "Should we reduce engineering headcount because of AI?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Not as a first move. Most teams that try to cut headcount based on AI productivity projections find that the savings disappear into coordination overhead, quality rework, and edge cases the AI couldn't handle. The better play is to let AI handle repetitive tasks while engineers focus on higher-leverage work — and measure throughput, not headcount." }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Taliferro AI in Engineering Assessment",
+    "url": "https://taliferro.com/rescue-me/ai-in-engineering/",
+    "description": "Honest assessment of AI automation potential in software engineering. $999 flat. Intake within 24 hours. Written delivery in 3 days.",
+    "priceRange": "$999",
+    "provider": { "@type": "Organization", "name": "Taliferro Group", "url": "https://taliferro.com/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Taliferro", "item": "https://taliferro.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Rescue Me", "item": "https://taliferro.com/rescue-me/" },
+      { "@type": "ListItem", "position": 3, "name": "AI in Engineering", "item": "https://taliferro.com/rescue-me/ai-in-engineering/" }
+    ]
+  }
+</script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="story-page">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#the-hype-is-real-so-is-the-risk">Risk</a>
+        <a href="#you-cannot-treat-generated-code-like-trusted-code">Treat</a>
+        <a href="#teams-are-measuring-speed-before-they-define-safe-">Results</a>
+        <a href="#get-an-honest-view-of-where-ai-helps-where-it-hurt">Reviews</a>
+        <a href="#get-the-honest-answer-before-you-reorganize-around">Honest</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div class="story-panel">
+          <div class="kicker">CTO · AI &amp; Engineering</div>
+          <h1>Can AI Actually Replace Parts of Your Engineering Team?</h1>
+          <p class="fine story-summary">The board read an article about developers being replaced by AI. Now they want answers that are honest, specific, and safe to act on.</p>
+          <p class="story-detail">What actually gets faster, what still needs human judgment, and what risks your legal and security teams are not accounting for yet?</p>
+          <p class="story-detail">Taliferro gives leadership a clear written view of where AI helps, where it hurts, and where review still matters.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
+            <a class="button" href="mailto:info@taliferro.com?subject=AI%20in%20Engineering%20Assessment">Ask a question</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://taliferro.com/img/can-ai-actually-replace-parts-of-your-engineering-team1.webp" alt="CTO evaluating AI tools and their impact on the engineering team and software development workflow" style="width:100%;border-radius:12px;display:block;" loading="eager" />
+        </div>
+      </div>
+      <div class="bottom-pad" aria-hidden="true"></div>
+    </div>
+  </header>
+  <!-- THE REAL COST -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="story-panel story-panel--center">
+        <div class="kicker">The real picture</div>
+        <h2 id="the-hype-is-real-so-is-the-risk">The hype is real. So is the risk</h2>
+        <p class="story-summary">AI can speed up repetitive engineering work. It can also make teams overconfident about code that still needs judgment, context, and review.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="how-it-works">
+    <div class="page-shell">
+      <div class="story-split">
+        <div class="story-panel">
+          <div class="kicker">The real cost</div>
+          <h2 id="you-cannot-treat-generated-code-like-trusted-code">You cannot treat generated code like trusted code</h2>
+          <p class="story-summary">Security flaws, missing business context, and IP exposure often stay invisible right up until the team starts relying on the output.</p>
+        </div>
+        <div class="hero-media">
+          <img src="https://taliferro.com/img/can-ai-actually-replace-parts-of-your-engineering-team2.webp" alt="Engineering leaders evaluating AI-assisted development risk and productivity" style="width:100%;display:block;" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="page-shell">
+      <div class="story-panel">
+        <div class="kicker">Why it keeps happening</div>
+        <h2 id="teams-are-measuring-speed-before-they-define-safe-">Teams are measuring speed before they define safe use</h2>
+        <p class="story-summary">AI is strongest at boilerplate, scaffolding, review assistance, and repetitive drafting. It is weakest where the code depends on business nuance, architecture intent, or hidden constraints.</p>
+        <p class="story-detail">The useful question is not whether AI replaces engineers. It is where AI helps enough to matter and where human review still carries the risk.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="page-shell">
+      <div class="story-panel story-panel--center">
+        <div class="kicker">The rescue</div>
+        <h2 id="get-an-honest-view-of-where-ai-helps-where-it-hurt">Get an honest view of where AI helps, where it hurts, and where review still matters</h2>
+        <p class="story-summary">You get a written assessment of AI-ready tasks, security and IP risk, and a productivity frame leadership can use without relying on vendor claims.</p>
+      </div>
+    </div>
+  </section>
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="story-panel story-panel--center">
+        <div class="kicker">Same-Day Rescue</div>
+        <p class="story-price">$999</p>
+        <h2 id="get-the-honest-answer-before-you-reorganize-around">Get the honest answer before you reorganize around hype</h2>
+        <p class="story-summary">Book one focused session and get a written view of where AI helps, where it hurts, and where review still matters.</p>
+        <div class="btnrow" style="justify-content:center;">
+          <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
+          <a class="button" href="mailto:info@taliferro.com?subject=AI%20in%20Engineering%20Assessment">Ask a question</a>
+          <a class="button" href="tel:+14016462662">Call directly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+    <!-- RELATED SERVICES -->
+    <section class="section" data-related-services="true">
+        <div class="page-shell">
+            <div class="kicker">Related services</div>
+            <h2>If this isn't the whole problem</h2>
+            <div class="grid grid-3">
+                <a class="card" href="https://taliferro.com/rescue-me/">
+                    <h3>IT Rescue — $999 Flat</h3>
+                    <p>Diagnose the problem in 3 business days. No retainer.</p>
+                    <div class="fine">Consulting service</div>
+                </a>
+                <a class="card" href="https://taliferro.com/machine-learning-services/">
+                    <h3>Machine Learning & AI Consulting</h3>
+                    <p>Turn data into predictions and automated decisions.</p>
+                    <div class="fine">Consulting service</div>
+                </a>
+                <a class="card" href="https://taliferro.com/agile-coaching/">
+                    <h3>Agile Coaching & Scrum Consulting</h3>
+                    <p>Fix slow delivery and team coordination without a reorg.</p>
+                    <div class="fine">Consulting service</div>
+                </a>
+            </div>
+        </div>
+    </section>
+<footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

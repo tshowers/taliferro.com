@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /thank-you.html
+Allow: /
+Disallow: /scripts/
+Disallow: /temp/
+Disallow: /drafts/
+
+# Block crawl of internal tracking/intent query-parameter variants (Google supports * and $ wildcards)
+Disallow: /*?*intent=
+Disallow: /*&*intent=
+Disallow: /*?*source=
+Disallow: /*&*source=
+Disallow: /*?*page=
+Disallow: /*&*page=
+Disallow: /*?*talf_
+
+Sitemap: https://taliferro.com/sitemap.xml

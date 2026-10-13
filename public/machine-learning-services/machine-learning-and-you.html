@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most ML Projects Don't Fail on Accuracy. They Fail on Integration.</title>
+  <meta name="description" content="A model with 98% accuracy that nobody sees is worth less than an 85%-accurate one wired into the workflow where the decision happens. Taliferro ships machine learning that gets used, not shelved.">
+  <meta name="keywords" content="machine learning for business, AI tailored solutions, predictive analytics, machine learning industries, Taliferro machine learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="HandheldFriendly" content="true">
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <link rel="mask-icon" href="https://taliferro.com/img/general/safari-pinned-tab.svg" color="#5195d9">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <link rel="canonical" href="https://taliferro.com/machine-learning-services/machine-learning-and-you.html">
+  <meta property="og:title" content="Most ML Projects Don't Fail on Accuracy. They Fail on Integration.">
+  <meta property="og:description" content="A model with 98% accuracy that nobody sees is worth less than an 85%-accurate one wired into the workflow where the decision happens. Taliferro ships machine learning that gets used, not shelved.">
+  <meta property="og:url" content="https://taliferro.com/machine-learning-services/machine-learning-and-you.html">
+  <meta property="og:image" content="https://taliferro.com/machine-learning-services/img/websites/machine-learning.webp">
+  <meta property="og:video" content="https://taliferro.com/machine-learning-services/img/video/logo1.mp4">
+  <meta property="og:video:secure_url" content="https://taliferro.com/machine-learning-services/img/video/logo1.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1920">
+  <meta property="og:video:height" content="1080">
+  <meta name="twitter:title" content="Most ML Projects Don't Fail on Accuracy. They Fail on Integration.">
+  <meta name="twitter:description" content="A model with 98% accuracy that nobody sees is worth less than an 85%-accurate one wired into the workflow where the decision happens. Taliferro ships machine learning that gets used, not shelved.">
+  <meta name="twitter:image" content="https://taliferro.com/machine-learning-services/img/websites/machine-learning.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="article:section" content="AI & Automation">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Machine Learning", "item": "https://taliferro.com/machine-learning-services/" },
+    { "@type": "ListItem", "position": 3, "name": "Most ML Projects Don't Fail on Accuracy. They Fail on Integration.", "item": "https://taliferro.com/machine-learning-services/machine-learning-and-you.html" }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Most ML Projects Don't Fail on Accuracy. They Fail on Integration.",
+  "url": "https://taliferro.com/machine-learning-services/machine-learning-and-you.html",
+  "description": "A model with 98% accuracy that nobody sees is worth less than an 85%-accurate one wired into the workflow where the decision happens. Taliferro ships machine learning that gets used, not shelved.",
+  "inLanguage": "en-US",
+  "datePublished": "2024-01-01T05:58:44+00:00",
+  "dateModified": "2026-08-03T09:00:00-07:00",
+  "isPartOf": {"@type":"WebSite","name":"Taliferro Machine Learning","url":"https://taliferro.com/machine-learning-services/"},
+  "keywords": ["AI consulting services","machine learning consulting services","predictive analytics","NLP consulting","computer vision consulting","custom ML models","Taliferro Group"]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Taliferro Group Logo Animation — AI & ML Consulting",
+  "description": "Animated Taliferro Group logo introducing our AI & Machine Learning consulting services and outcomes.",
+  "thumbnailUrl": [
+    "https://taliferro.com/machine-learning-services/img/websites/machine-learning.webp"
+  ],
+  "uploadDate": "2025-09-27T00:00:00+00:00",
+  "contentUrl": "https://taliferro.com/machine-learning-services/img/video/logo1.mp4",
+  "embedUrl": "https://taliferro.com/machine-learning-services/img/video/logo1.mp4",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Taliferro Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://taliferro.com/machine-learning-services/img/general/taliferro-group-black.png"
+    }
+  }
+}
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do we need AI consulting or Machine Learning consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use AI consulting for strategy, use‑case discovery, and rapid prototypes. Choose Machine Learning consulting when you’re building predictive models (classification, regression, NLP, computer vision) and integrating them into workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a typical project take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Discovery 1–2 weeks, prototype 2–6 weeks, pilot 4–8 weeks depending on data quality and integration scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we have enough data to start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We start with what you have—CRM/email events, product usage, tickets, spreadsheets—and iterate. Perfect data isn’t required to begin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you measure success?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Business outcomes first: reply rate, retention, conversion, hours saved. Model metrics (AUC, MAE) guide quality, but decisions focus on ROI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can we see examples?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Browse our AI & ML case studies and read why AI & ML matter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do we get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Email info@taliferro.com or call 401.646.2662. We’ll align on outcomes, data access, and a fast path to a working prototype."
+          }
+        }
+      ]
+    }
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body>
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#build-the-right-thing-remove-noise">Build</a>
+        <a href="#progress-should-feel-calm-and-certain">Progress</a>
+        <a href="#measurable-lift-cleaner-decisions">Results</a>
+        <a href="#machine-learning-for-every-industry">AI</a>
+        <a href="#strategy-to-working-modelsdelivered-in-small-certa">Strategy</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="kicker"><a href="https://taliferro.com/">Taliferro</a> · Home › Machine Learning</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Most ML projects don&#39;t fail on accuracy They fail on integration</h1>
+          <div class="card">
+            <p class="quote">TL;DR</p>
+            <p> A model with 98% accuracy that nobody sees is worth less than an 85%-accurate one wired into the workflow where the decision actually happens. Taliferro ships machine learning into that workflow — predictive analytics, NLP, computer vision — not a notebook that proves a point and gets shelved. </p>
+            <p class="fine"> See examples: explore our <a href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">AI &amp; ML case studies</a> or learn <a href="https://taliferro.com/machine-learning-services/why-machine-learning-matters-to-your-business.html">why AI &amp; ML matter</a>. </p>
+          </div>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/contact.html">Contact us</a>
+            <a class="button" href="#how-we-work">How we work</a>
+            <a class="button" href="#services">Services</a>
+          </div>
+          <div class="pillrow" aria-label="Core capabilities">
+            <span class="pill">Predictive analytics</span>
+            <span class="pill">NLP</span>
+            <span class="pill">Computer vision</span>
+            <span class="pill">Integration + MLOps</span>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="ph">
+            <p class="quote">Every business is different—so is our approach.</p>
+            <p> We don’t do one-size-fits-all. We align on outcomes, then build models that fit the workflow where decisions happen. </p>
+          </div>
+          <div class="ph">
+            <div class="video-16x9" aria-label="Taliferro logo video" role="region">
+              <video autoplay muted loop playsinline preload="metadata">
+                <source src="https://taliferro.com/machine-learning-services/img/video/logo2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <p class="fine" style="margin-top:10px">Intro: outcomes, case studies, and what we build.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- APPROACH -->
+  <section class="section" id="approach">
+    <div class="page-shell">
+      <div class="kicker">Approach</div>
+      <h2 id="build-the-right-thing-remove-noise">Build the right thing. Remove noise</h2>
+      <p> Most machine learning projects don't die because the model was wrong. They die in the gap between a working notebook and a workflow someone actually checks. A prediction nobody sees never changes a decision — so we build for where the decision happens first, and treat model accuracy as the second question, not the first. </p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Where we focus</h3>
+          <ul class="list">
+            <li>Predictive Analytics (propensity scoring, forecasting)</li>
+            <li>Natural Language Processing (classification, summarization, RAG)</li>
+            <li>Computer Vision (detection, OCR, quality checks)</li>
+            <li>Custom Models &amp; Integration (APIs, data pipelines, MLOps)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What you may not know</h3>
+          <ul class="list">
+            <li><strong>Signal beats volume:</strong> 80% of predictive lift often comes from ~20% of features. We prune noise.</li>
+            <li><strong>Labeling isn’t destiny:</strong> small, precise datasets with augmentation can beat massive generic corpora.</li>
+            <li><strong>Integration beats accuracy:</strong> a 2% ROC lift matters less than getting insights into the workflow.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="btnrow">
+        <a class="button button-primary" href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">See case studies</a>
+        <a class="button" href="https://taliferro.com/machine-learning-services/why-machine-learning-matters-to-your-business.html">Why AI &amp; ML matter</a>
+      </div>
+    </div>
+  </section>
+  <!-- HOW WE WORK -->
+  <section class="section" id="how-we-work">
+    <div class="page-shell">
+      <div class="kicker">Process</div>
+      <h2 id="progress-should-feel-calm-and-certain">Progress should feel calm and certain</h2>
+      <p> Small, confident steps—discovery, prototype, pilot—each removing doubt until the result feels obvious. </p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Discovery</h3>
+          <p class="fine">1–2 weeks</p>
+          <p> Discovery reveals constraints. The biggest wins usually surface in data access and decision timing, not model choice. </p>
+        </div>
+        <div class="card">
+          <h3>Prototype</h3>
+          <p class="fine">2–6 weeks</p>
+          <p> Prototype fast, measure sooner. We validate with offline backtests and lightweight A/Bs. </p>
+        </div>
+        <div class="card">
+          <h3>Pilot</h3>
+          <p class="fine">4–8 weeks</p>
+          <p> Pilot what ships. MLOps, <a href="https://taliferro.com/api-design-services/">APIs</a>, and guardrails are part of the pilot so success scales beyond a demo. </p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Integration beats novelty.</p>
+        <p> Models are successful when decisions become simpler and results compound. We measure business lift first. </p>
+      </div>
+    </div>
+  </section>
+  <!-- WHAT YOU CAN EXPECT -->
+  <section class="section" id="results">
+    <div class="page-shell">
+      <div class="kicker">What you can expect</div>
+      <h2 id="measurable-lift-cleaner-decisions">Measurable lift. Cleaner decisions</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Typical outcomes</h3>
+          <ul class="list">
+            <li><strong>Reply rate lift:</strong> +8% to +22% (prioritization + follow-ups)</li>
+            <li><strong>Churn reduction:</strong> 5% to 15% (risk scoring + outreach)</li>
+            <li><strong>Ops hours saved:</strong> 10–30% (classification, routing, automation)</li>
+            <li><strong>Forecast error:</strong> ↓10–25% (demand, staffing, inventory)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Outcomes we see</h3>
+          <ul class="list">
+            <li><strong>Sales:</strong> better lead scoring, next-best-action, follow-up automation</li>
+            <li><strong>Support:</strong> intent detection, triage, summarization, agent assist</li>
+            <li><strong>Operations:</strong> demand forecasting, scheduling, anomaly detection</li>
+            <li><strong>Marketing:</strong> audience building, content selection, send-time optimization</li>
+          </ul>
+          <p class="fine" style="margin-top:10px">Value is the point.</p>
+        </div>
+      </div>
+      <div class="btnrow">
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Book a consult</a>
+        <a class="button" href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">Read stories</a>
+      </div>
+    </div>
+  </section>
+  <!-- INDUSTRIES -->
+  <section class="section" id="industries">
+    <div class="page-shell">
+      <div class="kicker">Industries</div>
+      <h2 id="machine-learning-for-every-industry">Machine learning for every industry</h2>
+      <p> Retail, healthcare, finance, logistics. The patterns differ; the principles do not. Shorten the loop between signal and action, and the system gets smarter with every decision. </p>
+      <div class="card">
+        <p> See how this plays out in practice in our <a href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">AI &amp; ML case studies</a>. </p>
+      </div>
+    </div>
+  </section>
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="page-shell">
+      <div class="kicker">AI consulting services</div>
+      <h2 id="strategy-to-working-modelsdelivered-in-small-certa">Strategy to working models—delivered in small, certain steps</h2>
+      <p> We focus on outcomes, integration, and measurable lift. Build the right thing. Ship value early. Measure what matters. </p>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Predictive analytics</h3>
+          <p class="fine">Propensity scoring · churn risk · demand forecasting</p>
+          <p> We identify the 20% of features that drive most of the lift and deploy where decisions happen. </p>
+          <div class="btnrow" style="margin-top:10px">
+            <a class="btn ghost small" href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">See case studies</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Natural Language Processing (NLP)</h3>
+          <p class="fine">Classification · routing · summarization · RAG</p>
+          <p> Small, precise datasets often outperform massive generic corpora. </p>
+          <div class="btnrow" style="margin-top:10px">
+            <a class="btn ghost small" href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">See case studies</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Computer vision</h3>
+          <p class="fine">Detection · OCR · defect spotting · quality checks</p>
+          <p> We use augmentation and semi-supervised learning to reduce labeling time and cost. </p>
+          <div class="btnrow" style="margin-top:10px">
+            <a class="btn ghost small" href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">See case studies</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Custom models &amp; integration</h3>
+          <p class="fine">APIs · data pipelines · guardrails · MLOps</p>
+          <p> A 2% ROC lift is less valuable than reliable insights integrated into the workflow. </p>
+          <div class="btnrow" style="margin-top:10px">
+            <a class="btn ghost small" href="https://taliferro.com/machine-learning-services/why-machine-learning-matters-to-your-business.html">Why AI &amp; ML matter</a>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Next step</p>
+        <p> Email <a href="mailto:info@taliferro.com">info@taliferro.com</a> or call <a href="tel:+14016462662">401.646.2662</a> to scope a 1–2 week discovery. </p>
+      </div>
+    </div>
+  </section>
+  <!-- VIDEO (JSON-LD VideoObject) -->
+  <section class="section" id="video">
+    <div class="page-shell">
+      <div class="kicker">Video</div>
+      <h2 id="intro">Intro</h2>
+      <p class="fine">A walkthrough of how an AI-powered dashboard comes together — from raw data to a decision someone actually uses.</p>
+      <div class="card">
+        <div class="video-16x9" aria-label="How we help you deliver an AI-powered dashboard" role="region">
+          <video muted loop playsinline controls preload="metadata">
+            <source src="https://taliferro.com/machine-learning-services/img/video/how-we-help-you-deliver-an-ai-powered-dashboard.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="btnrow">
+        <a class="button button-primary" href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">See case studies</a>
+        <a class="button" href="https://taliferro.com/machine-learning-services/why-machine-learning-matters-to-your-business.html">Why AI &amp; ML matter</a>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ (matches JSON-LD) -->
+  <section class="section" id="faq">
+    <div class="page-shell">
+      <div class="kicker">FAQs</div>
+      <h2 id="common-questions">Common questions</h2>
+      <div class="grid">
+        <details class="card">
+          <summary>Do we need AI consulting or Machine Learning consulting?</summary>
+          <p> Use AI consulting for strategy, use-case discovery, and rapid prototypes. Choose Machine Learning consulting when you’re building predictive models (classification, regression, NLP, computer vision) and integrating them into workflows. </p>
+        </details>
+        <details class="card">
+          <summary>How long does a typical project take?</summary>
+          <p>Discovery 1–2 weeks, prototype 2–6 weeks, pilot 4–8 weeks, depending on data quality and integration scope.</p>
+        </details>
+        <details class="card">
+          <summary>Do we have enough data to start?</summary>
+          <p> Yes. We start with what you have—CRM/email events, product usage, tickets, spreadsheets—and iterate. Perfect data isn’t required to begin. </p>
+        </details>
+        <details class="card">
+          <summary>How do you measure success?</summary>
+          <p> Business outcomes first: reply rate, retention, conversion, hours saved. Model metrics (AUC, MAE) guide quality, but decisions focus on ROI. </p>
+        </details>
+        <details class="card">
+          <summary>Where can we see examples?</summary>
+          <p> Browse our <a href="https://taliferro.com/machine-learning-services/machine-learning-stories.html">AI &amp; ML case studies</a> and read <a href="https://taliferro.com/machine-learning-services/why-machine-learning-matters-to-your-business.html">why AI &amp; ML matter</a>. </p>
+        </details>
+        <details class="card">
+          <summary>How do we get started?</summary>
+          <p> Email <a href="mailto:info@taliferro.com">info@taliferro.com</a> or call <a href="tel:+14016462662">401.646.2662</a>. We’ll align on outcomes, data access, and a fast path to a working prototype. </p>
+        </details>
+      </div>
+      <div class="btnrow">
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Contact us</a>
+        <a class="button" href="https://taliferro.com/machine-learning-services/">Back to Machine Learning</a>
+      </div>
+      <div class="bottom-pad" aria-hidden="true"></div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <!-- RELATED SERVICES -->
+  <section class="section" data-related-services="true">
+    <div class="page-shell">
+      <div class="kicker">Related services</div>
+      <h2>Take it further</h2>
+      <div class="grid grid-3">
+        <a class="card" href="https://taliferro.com/machine-learning-services/">
+          <h3>Machine Learning & AI Consulting</h3>
+          <p>Turn data into predictions and automated decisions.</p>
+          <div class="fine">Consulting service</div>
+        </a>
+        <a class="card" href="https://taliferro.com/api-design-services/">
+          <h3>API Consulting & Design</h3>
+          <p>Design, harden, and integrate APIs that don't break in production.</p>
+          <div class="fine">Consulting service</div>
+        </a>
+        <a class="card" href="https://taliferro.com/cloud-architecture-consulting/">
+          <h3>Cloud Architecture Consulting</h3>
+          <p>Find what's costing too much or breaking under load.</p>
+          <div class="fine">Consulting service</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
