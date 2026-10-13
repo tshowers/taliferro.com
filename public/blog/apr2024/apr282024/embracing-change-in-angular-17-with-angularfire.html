@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>AngularFire in Angular 20 Without the Usual Pain</title>
+  <meta name="description" content="Set up Firebase, standalone config, Signals, and hydration without the rework. Get the path that keeps Angular projects moving.">
+  <meta name="keywords" content="Angular 20, JavaScript framework, web development, frontend development, Angular updates, Angular features, Angular advancements, TypeScript, single-page applications, component-based architecture, reactive programming, Angular CLI, Angular Material, Angular libraries, PWAs, Angular performance improvements, best practices, Angular community, future developments">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="AngularFire in Angular 20 Without the Usual Pain">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Set up Firebase, standalone config, Signals, and hydration without the rework. Get the path that keeps Angular projects moving.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/apr2024/apr282024/embracing-change-in-angular-17-with-angularfire.html">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="AngularFire in Angular 20 Without the Usual Pain" />
+  <meta name="twitter:description" content="Set up Firebase, standalone config, Signals, and hydration without the rework. Get the path that keeps Angular projects moving.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/apr2024/apr282024/embracing-change-in-angular-17-with-angularfire.html">
+  <link rel="canonical" href="https://taliferro.com/blog/apr2024/apr282024/embracing-change-in-angular-17-with-angularfire.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "AngularFire in Angular 20 Without the Usual Pain", "item": "https://taliferro.com/blog/apr2024/apr282024/embracing-change-in-angular-17-with-angularfire.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/apr2024/apr282024/embracing-change-in-angular-17-with-angularfire.html"
+        },
+        "headline": "AngularFire in Angular 20 Without the Usual Pain",
+        "description": "Set up Firebase, standalone config, Signals, and hydration without the rework. Get the path that keeps Angular projects moving.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2024-04-28T09:00:00-07:00",
+        "dateModified": "2026-08-01T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        },
+        "video": [
+          {
+            "@type": "VideoObject",
+            "name": "Why spreadsheets slow momentum",
+            "description": "A short video on why spreadsheets block growth and momentum for engineering teams.",
+            "thumbnailUrl": "https://img.youtube.com/vi/RsDSoZvicLQ/maxresdefault.jpg",
+            "uploadDate": "2025-09-17T09:00:00-07:00",
+            "duration": "PT30S",
+            "inLanguage": "en",
+            "contentUrl": "https://www.youtube.com/watch?v=RsDSoZvicLQ",
+            "embedUrl": "https://www.youtube.com/embed/RsDSoZvicLQ"
+          },
+          {
+            "@type": "VideoObject",
+            "name": "TODD testimonial: keeping momentum",
+            "description": "A brief testimonial on how TODD helps teams move faster than spreadsheets and disconnected tools.",
+            "thumbnailUrl": "https://img.youtube.com/vi/S8axFbsagPk/maxresdefault.jpg",
+            "uploadDate": "2025-09-17T09:00:00-07:00",
+            "duration": "PT30S",
+            "inLanguage": "en",
+            "contentUrl": "https://www.youtube.com/watch?v=S8axFbsagPk",
+            "embedUrl": "https://www.youtube.com/embed/S8axFbsagPk"
+          }
+        ]
+      }
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#understanding-angular-20s-architecture">Standalone vs NgModule</a>
+        <a href="#preparing-your-project">Setup</a>
+        <a href="#integrating-angularfire">Add Firebase</a>
+        <a href="#configuring-the-application">Configure it</a>
+        <a href="#testing-firebase-integration">Test it</a>
+        <a href="#deploying-and-managing-your-project">Deploy</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Angular Changed</h1>
+          <h2> Your Firebase setup should too</h2>
+          <p>Angular now favors standalone configuration, Signals, and modern rendering patterns. This guide shows how to connect AngularFire without dragging old project habits into a new architecture.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p>If your Angular project still has an <code>AppModule</code>, or you're used to wiring Firebase into a module instead of a config file, Angular 20 is going to feel different. Standalone components are the default now, not an opt-in — and that changes exactly where and how AngularFire gets set up.</p>
+          <p>Taliferro ran into this directly rebuilding the frontend for <a href="https://taliferro.com/business-momentum-system/">TODD</a>, our own product, on Angular 20. The old NgModule-based Firebase setup didn't just need a tweak — it had to move into <code>app.config.ts</code> entirely, or the new rendering features wouldn't work correctly.</p>
+          <p>This guide walks through that exact migration: creating a standalone Angular 20 project, adding AngularFire, wiring Firebase services into <code>app.config.ts</code>, and confirming the connection actually works.</p>
+          <h2 id="understanding-angular-20s-architecture">Standalone components, not NgModule</h2>
+          <p>The biggest architectural change in Angular 20 is that <code>NgModule</code> is no longer the default. With standalone components, each component declares its own imports and dependencies directly, instead of being registered inside a shared module.</p>
+          <ul>
+            <li><strong>Angular 8–13:</strong> Every component had to be declared inside an <code>AppModule</code> (or a feature module), which imported whatever services and other modules it needed. As an app grew, that module file grew with it.</li>
+            <li><strong>Angular 20:</strong> There's no central module. Each component imports exactly what it needs, and nothing else has to know about it.</li>
+          </ul>
+          <p>This matters for Firebase specifically: in the old model, you configured Firebase once inside a module's <code>providers</code> array. In the standalone model, that configuration moves to a dedicated file — <code>app.config.ts</code> — which is what most of this guide is actually about.</p>
+          <h2 id="preparing-your-project">Create the project</h2>
+          <p>Start with a fresh Angular 20 project using the CLI:</p>
+          <div class="code-block">
+            <pre><code>ng new my-angular20-project</code></pre>
+          </div>
+          <p>This creates a standalone project by default — there's no <code>AppModule</code> unless you add one yourself. Move into the new project directory before continuing:</p>
+          <pre><code>cd my-angular20-project</code></pre>
+          <h2 id="integrating-angularfire">Add AngularFire</h2>
+          <p>From inside the project directory, run:</p>
+          <pre><code>ng add @angular/fire</code></pre>
+          <p>The CLI will ask which Firebase features you want — Firestore, Realtime Database, App Check, Cloud Storage, and hosting/deploy support, among others. Pick what you'll actually use; you can add more later with the same command.</p>
+          <p><strong>Tip (Angular 20):</strong> if you're using server rendering, enable route-level render modes and incremental hydration in your router config — that's what actually improves perceived load time, not the Firebase setup itself.</p>
+          <p>The CLI installs the AngularFire and Firebase packages and updates <code>environment.ts</code> with your project's connection details:</p>
+          <div class="code-block">
+            <pre><code>export const environment = {
+              production: false,
+              firebaseConfig: {
+                apiKey: "your-api-key",
+                authDomain: "your-project-auth-domain",
+                projectId: "your-project-id",
+                storageBucket: "your-storage-bucket",
+                messagingSenderId: "your-messaging-sender-id",
+                appId: "your-app-id",
+                measurementId: "your-measurement-id"
+              }
+            };</code></pre>
+          </div>
+          <p>That file just holds your Firebase project's connection details. The actual wiring — where Firebase services become available to your app — happens next, in <code>app.config.ts</code>.</p>
+          <h2 id="configuring-the-application">Wire it into app.config.ts</h2>
+          <p>This is the part that's genuinely different from the NgModule days. Instead of registering Firebase in a module, you register each service as a provider in <code>app.config.ts</code>:</p>
+          <div class="code-block">
+            <pre><code>import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+          import { provideRouter } from '@angular/router';
+          import { routes } from './app.routes';
+          import { provideClientHydration } from '@angular/platform-browser';
+          import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+          import { getAuth, provideAuth } from '@angular/fire/auth';
+          import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+          import { getDatabase, provideDatabase } from '@angular/fire/database';
+          import { getMessaging, provideMessaging } from '@angular/fire/messaging';
+          import { getStorage, provideStorage } from '@angular/fire/storage';
+          
+          export const appConfig: ApplicationConfig = {
+            providers: [
+            // Route-level render modes (SSR/Prerender/CSR) are stable in v20
+              provideRouter(routes),
+              provideClientHydration(),
+              importProvidersFrom(provideFirebaseApp(() =&gt; initializeApp({
+                projectId: 'your-project-id',
+                appId: 'your-app-id',
+                databaseURL: 'your-database-url',
+                storageBucket: 'your-storage-bucket',
+                apiKey: 'your-api-key',
+                authDomain: 'your-auth-domain',
+                messagingSenderId: 'your-messaging-sender-id',
+                measurementId: 'your-measurement-id'
+              }))),
+              importProvidersFrom(provideAuth(() =&gt; getAuth())),
+              importProvidersFrom(provideFirestore(() =&gt; getFirestore())),
+              importProvidersFrom(provideDatabase(() =&gt; getDatabase())),
+              importProvidersFrom(provideMessaging(() =&gt; getMessaging())),
+              importProvidersFrom(provideStorage(() =&gt; getStorage()))
+            ]
+          };</code></pre>
+          </div>
+          <p>Each <code>provideX</code> function initializes one Firebase service and makes it available anywhere in your app through dependency injection — no module imports required. Add only the services you're actually using; each one you skip is one less thing your app has to initialize on load.</p>
+          <h2 id="testing-firebase-integration">Confirm it actually works</h2>
+          <p>Don't just assume the config is correct — pull real data and check. Here's a minimal component that reads from Firestore on load:</p>
+          <div class="code-block">
+            <pre><code>import { Component, OnInit } from '@angular/core';
+          import { Firestore, getDocs, collection } from '@angular/fire/firestore';
+          import { inject } from '@angular/core';
+          
+          @Component({
+            selector: 'app-root',
+            templateUrl: './app.component.html',
+            styleUrls: ['./app.component.css'],
+            standalone: true,
+            imports: []
+          })
+          export class AppComponent implements OnInit {
+            firestore = inject(Firestore);
+          
+            ngOnInit() {
+              getDocs(collection(this.firestore, "categories")).then((response) =&gt; {
+                console.log(response.docs.map(doc =&gt; doc.data()));  // This will log the data of each document
+              }).catch(error =&gt; {
+                console.error("Error fetching documents:", error);
+              });
+            }
+          }</code></pre>
+          </div>
+          <p>This retrieves documents from a collection named "categories" and logs each one's data to the console. If real data shows up, the connection works. If you get an error instead, it's almost always one of two things: the Firebase config in <code>environment.ts</code> doesn't match your actual project, or your Firestore security rules are blocking the read.</p>
+          <p>Repeat this same check for any other service you added — Auth, Realtime Database, Messaging, Storage — before you build features on top of them.</p>
+          <h2 id="deploying-and-managing-your-project">Deploy it</h2>
+          <p>Once everything works locally, deploying to Firebase Hosting is a few commands:</p>
+          <div class="code-block">
+            <pre><code>1. Ensure you have Firebase CLI installed:
+             npm install -g firebase-tools
+          
+          2. Log in to Firebase from the CLI:
+             firebase login
+          
+          3. Initialize your Firebase project:
+             firebase init
+          
+             - Follow the prompts to select Firebase Hosting.
+             - Connect the CLI to your Firebase project.
+             - Configure as a single-page app and link to your Angular build output directory.
+          
+          4. Build your Angular project for production:
+             ng build --configuration production
+          
+          5. Deploy your project to Firebase Hosting:
+             firebase deploy</code></pre>
+          </div>
+          <p>The <code>firebase deploy</code> command compiles your app into production files and distributes them across Firebase's CDN. After that, ongoing maintenance is mostly three things:</p>
+          <div class="code-block">
+            <pre><code>- Regularly review and update Firebase security rules.
+          - Monitor usage and performance through Firebase Console.
+          - Stay updated with the latest Firebase SDKs and AngularFire releases.</code></pre>
+          </div>
+          <h2 id="conclusion">The takeaway</h2>
+          <p>The mechanics haven't changed much — Firebase still does what it always did. What changed is where the wiring lives: out of <code>NgModule</code>, into <code>app.config.ts</code>, alongside the rest of your standalone, Signals-based app. Once you've made that move once, every Firebase service you add afterward follows the same pattern.</p>
+          <h2 id="related-reading">Related Reading</h2>
+          <ul>
+            <li><a href="https://taliferro.com/blog/aug2025/aug262025/the-real-cost-of-manual-outreach-in-2025.html">The Real Cost of Manual Outreach in 2025 (and How TODD Pays for Itself)</a></li>
+            <li><a href="https://taliferro.com/blog/aug2025/aug012025/stop-missing-follow-ups-why-outreach-relationship-management-beats-crm.html">Missed Follow-Ups? Why BMS Beats CRM in 2025</a></li>
+            <li><a href="https://taliferro.com/blog/apr2025/apr022025/the-real-cost-of-not-following-up.html">The Cost of No Follow-Up (with Fixes)</a></li>
+          </ul>
+          <p>For further learning, refer to the official <a href="https://angular.io/docs">Angular documentation</a> and <a href="https://firebase.google.com/docs">Firebase documentation</a>. These resources are invaluable for deepening your understanding and keeping abreast of the latest features and best practices.</p>
+          <h2 id="see-it-in-action-short">See It in Action (Short)</h2>
+          <div class="video-embed my-3" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+            <iframe src="https://www.youtube.com/embed/ag6LK41dqVE" title="TODD testimonial" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+          </div>
+          <h2 id="call-to-action">Stuck on your own migration?</h2>
+          <p><a href="https://taliferro.com/contact.html">Tell us where it's breaking</a> and we'll point you to the fix — whether that's the AngularFire setup itself or something upstream in how the project's structured.</p>
+          <h2 id="faq">FAQ</h2>
+          <h3>Is AngularFire still recommended in Angular 20?</h3>
+          <p>Yes. AngularFire remains a clean way to wire Firebase services (Auth, Firestore, Storage, Messaging) into Angular’s standalone architecture via <code>app.config.ts</code>.</p>
+          <h3>Do I need to migrate old modules?</h3>
+          <p>If you’re on Angular 13 or earlier, create a fresh v20 project, port feature modules to standalone components, then add AngularFire with <code>ng add @angular/fire</code>. Configure providers in <code>app.config.ts</code> and test each Firebase service incrementally.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need the frontend to move faster?</strong>
+          <p class="mb-0">If you want execution instead of more rework, start with <a href="https://taliferro.com/website-development/">web development that ships clean</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution system</a>, or <a href="https://taliferro.com/contact.html">show us the delivery bottleneck</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><a href="https://taliferro.com/api-design-services/" target="_blank" title="API Design Service">api service</a></li>
+              <li><a href="https://taliferro.com/website-development/" target="_blank" title="Bespoke Development">bespoke development</a></li>
+              <li><a href="https://taliferro.com/ecommerce-development/" target="_blank" title="e-Commerce Consultation">e-commerce</a></li>
+              <li><a href="https://taliferro.com/website-development/" target="_blank" title="e-Commerce Consultation">website development</a></li>
+              <li><a href="https://ask.taliferro.tech" title="TODD">TODD</a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="embracing-change-in-angular-17-with-angularfire">Website development</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/apr2024/apr272024/success-stories-how-ml-Is-saving-lives-in-healthcare.html">&larr; Success Stories: How ML Is Saving Lives in Healthcare!</a>
+          <a class="button" href="https://taliferro.com/blog/apr2024/apr292024/fortune-telling-with-aI-how-ml-predicts-stock-market-movements.html">Fortune-Telling with AI: How ML Predicts the Stock Market &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

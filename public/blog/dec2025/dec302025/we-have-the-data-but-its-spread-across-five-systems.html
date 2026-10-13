@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>We have the data, but it’s spread across five systems</title>
+  <meta name="description" content="Travel and airline ops teams have the data, but it’s spread across systems. Here’s why that creates delays, meetings, and slow escalation—and what to fix first.">
+  <meta name="keywords" content="airline operations data silos, travel operations data silos, data spread across systems, operational coordination, disruption management, escalation, incident response, system integration" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="We have the data, but it’s spread across five systems">
+  <meta property="og:description" content="Travel and airline ops teams have the data, but it’s spread across systems. Here’s why that creates delays, meetings, and slow escalation—and what to fix first.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2025/dec302025/we-have-the-data-but-its-spread-across-five-systems.html">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="We have the data, but it’s spread across five systems" />
+  <meta name="twitter:description" content="Travel and airline ops teams have the data, but it’s spread across systems. Here’s why that creates delays, meetings, and slow escalation—and what to fix first.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2025/dec302025/we-have-the-data-but-its-spread-across-five-systems.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2025/dec302025/we-have-the-data-but-its-spread-across-five-systems.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "We have the data, but it’s spread across five systems", "item": "https://taliferro.com/blog/dec2025/dec302025/we-have-the-data-but-its-spread-across-five-systems.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2025/dec302025/we-have-the-data-but-its-spread-across-five-systems.html"
+        },
+        "headline": "We have the data, but it’s spread across five systems",
+        "description": "Travel and airline ops teams have the data, but it’s spread across systems. Here’s why that creates delays, meetings, and slow escalation—and what to fix first.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2025-12-30T09:00:00-07:00",
+        "dateModified": "2026-08-04T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does spread-out data cause so many meetings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meetings become the place where teams rebuild a single version of the truth. If tools don’t produce a shared timeline, people do it manually."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What’s the fastest way to reduce coordination?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Treat updates like steps. Every update should carry a next action and an owner so the work can move without repeated alignment calls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you connect systems without replacing everything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connect the workflow first. Pick the disruption path you run every week and make that path consistent end-to-end before attempting enterprise-wide integration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Momentum System (MS)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Momentum System is built to keep work moving. It sits before your CRM and before reporting tools. It focuses on follow-ups, handoffs, next actions, and the operational work that decides whether execution stalls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does TODD fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODD is our Momentum System. It reduces coordination drag by turning next actions into system behavior so disruptions don’t automatically become a scramble across five systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we have to replace our current tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Most teams keep their core systems and add a momentum layer that carries context, owners, and next actions forward so tools stop handing the work back to people."
+      }
+    }
+  ]
+}
+</script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <script src="https://taliferro.com/js/exit-intent.js" defer></script>
+  <meta name="page-intent" content="website_development">
+  <meta name="page-title" content="We have the data, but it’s spread across five systems">
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#we-have-the-data-but-its-spread-across-five-system">We have</a>
+        <a href="#faq">FAQ</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>We have the data, but it’s spread across five systems</h1>
+          <p>A disruption hits and everyone asks for the same thing: the latest truth. But the truth lives in five places that don't agree — ops updates, crew status, maintenance notes, customer communications, leadership summaries — so people become the integration layer, copying, re-explaining, and re-confirming instead of acting. That's where the delay actually comes from.</p>
+          <p class="fine">Published: 30 Dec 2025 · Category: Operations</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+      <!-- NOTE: no bottom-pad here to avoid a huge gap -->
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="we-have-the-data-but-its-spread-across-five-system">We have the data, but it’s spread across five systems</h2>
+          <p>This is the most common trap in travel and airline operations.</p>
+          <p class="wow fadeInUp" data-link-bridge="true">If the goal is better decisions instead of more dashboards, <a href="https://taliferro.com/machine-learning-services/">decision-ready analytics services</a> shows how Taliferro turns analytics work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <p>A disruption hits. Everyone asks for the same thing: <em>the latest truth</em>. But the truth is scattered.</p>
+          <p>You can have the data and still be blind if it lives in five places that don’t agree:</p>
+          <ul>
+            <li>ops and station updates</li>
+            <li>crew status</li>
+            <li>maintenance notes</li>
+            <li>customer communications</li>
+            <li>leadership summaries and escalations</li>
+          </ul>
+          <p> When those systems don’t share a single timeline, people become the integration layer. They copy, paste, re-explain, and re-confirm. That’s where the delays come from. </p>
+          <h3>Data spread across systems creates three predictable failures</h3>
+          <h4>1) Time gets spent reconciling instead of acting</h4>
+          <p> Teams don’t disagree because they’re stubborn. They disagree because their tools show different slices of the same event. So the first move becomes alignment, not action. </p>
+          <h4>2) Ownership gets fuzzy</h4>
+          <p> When the context is split, nobody can confidently say, “This is the next action and I own it.” Ownership turns into a negotiation. </p>
+          <h4>3) Escalation slows down</h4>
+          <p> Escalation becomes a human ritual: someone notices, someone verifies, someone screenshots, someone pings leadership, then leadership asks for a meeting. By the time the decision lands, the situation has changed. </p>
+          <h3>The middle-manager tax</h3>
+          <p> Middle managers pay first because they’re accountable for movement but they don’t own the systems. So their day becomes chasing updates. </p>
+          <blockquote>
+            <p>“We have the data, but it’s spread across five systems.”</p>
+          </blockquote>
+          <p>That sentence usually means:</p>
+          <ul>
+            <li>the team is rebuilding context over and over</li>
+            <li>handoffs are fragile</li>
+            <li>decisions disappear after calls</li>
+            <li>the same question gets answered five times</li>
+          </ul>
+          <h3>What to fix first</h3>
+          <ul>
+            <li><strong>Build one shared disruption timeline</strong> that everyone trusts.</li>
+            <li><strong>Attach next action + owner</strong> to every update.</li>
+            <li><strong>Capture decisions where the work happens</strong>, not in side chats.</li>
+            <li><strong>Turn escalation into a step</strong> with clear triggers, not vibes.</li>
+          </ul>
+          <p> If you want the broader context, these posts connect: <a href="https://taliferro.com/blog/outreach-cost/" target="_blank" rel="noopener">Outreach Cost</a>, <a href="https://taliferro.com/blog/ai-adoption/" target="_blank" rel="noopener">AI Adoption</a>, <a href="https://taliferro.com/blog/crm-alternatives/" target="_blank" rel="noopener">CRM Alternatives</a>, and <a href="https://taliferro.com/blog/bms/" target="_blank" rel="noopener">Momentum System (MS)</a>. </p>
+          <h2 id="faq">FAQ</h2>
+          <h3>Why does spread-out data cause so many meetings?</h3>
+          <p>Because meetings become the place where teams rebuild a single version of the truth. If your tools don’t produce a shared timeline, people do it manually.</p>
+          <h3>What’s the fastest way to reduce coordination?</h3>
+          <p>Stop treating updates like messages. Treat them like steps. Every update should carry a next action and an owner.</p>
+          <h3>How do you connect systems without replacing everything?</h3>
+          <p>Start by connecting the workflow, not the whole enterprise. Pick the disruption path you run every week and make that path consistent end-to-end.</p>
+          <h3>What is a Momentum System (MS)?</h3>
+          <p>A <a href="https://taliferro.com/business-momentum-system/">Momentum System is built to keep work moving</a>. It sits before your CRM and before reporting tools. It focuses on follow-ups, handoffs, next actions, and the operational work that decides whether execution stalls.</p>
+          <h3>Where does TODD fit?</h3>
+          <p>TODD is our Momentum System. It reduces coordination drag by turning next actions into system behavior—so disruptions don’t automatically become a scramble across five systems.</p>
+          <h3>Do we have to replace our current tools?</h3>
+          <p>No. Most teams keep their core systems and add a momentum layer that carries context, owners, and next actions forward—so your tools stop handing the work back to people.</p>
+          <div class="divider"></div>
+          <p class="fine"><strong>Tyrone Showers</strong></p>
+          <p class="fine"><a href="mailto:ty.showers@taliferro.com">ty.showers@taliferro.com</a></p>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li><a href="https://taliferro.com/api-design-services/" target="_blank" rel="noopener">api service</a></li>
+            <li><a href="https://taliferro.com/website-development/" target="_blank" rel="noopener">bespoke development</a></li>
+            <li><a href="https://taliferro.com/ecommerce-development/" target="_blank" rel="noopener">e-commerce</a></li>
+            <li><a href="https://taliferro.com/website-development/" target="_blank" rel="noopener">website development</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card" aria-label="Related reading">
+        <p class="quote">Related reading</p>
+        <ul class="list">
+          <li><a href="https://taliferro.com/blog/jan2026/jan172026/why-does-escalation-feel-slower-than-the-problem-itself.html">Why does escalation feel slower than the problem itself</a></li>
+          <li><a href="https://taliferro.com/blog/jan2026/jan022026/i-spend-more-time-chasing-updates-than-fixing-issues.html">I spend more time chasing updates than fixing issues</a></li>
+          <li><a href="https://taliferro.com/blog/dec2025/dec312025/why-does-every-disruption-turn-into-ten-meetings.html">Why does every disruption turn into ten meetings</a></li>
+        </ul>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want help reducing coordination?</p>
+        <p class="fine">Tell us what’s breaking and where the handoffs keep slipping.</p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="execution_problems" data-source="blog_cta" data-page="we-have-the-data-but-its-spread-across-five-systems">Machine learning and analytics consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="bottom-pad" aria-hidden="true"></div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/dec2025/dec232025/why-ai-adoption-is-stalling.html">&larr; AI Doesn't Stall Because People Are Lazy. It Stalls Because Nobody Fixed the System Underneath.</a>
+          <a class="button" href="https://taliferro.com/blog/dec2025/dec312025/why-does-every-disruption-turn-into-ten-meetings.html">Why does every disruption turn into ten meetings? &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

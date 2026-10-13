@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most API Gateway Failures Aren't Exotic. They're a Skipped Basic.</title>
+  <meta name="description" content="No auth check, no rate limit, no monitoring — the API gateway failures Taliferro actually sees in the field trace back to a skipped basic, not a hard problem.">
+  <meta name="keywords" content="API Gateway Configuration, API Security, Scalability, Performance Monitoring, API Testing, Software Development, Efficient API Design, API Management, Gateway Setup, API Development Best Practices">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Most API Gateway Failures Aren't Exotic. They're a Skipped Basic.">
+  <meta property="og:description" content="No auth check, no rate limit, no monitoring — the API gateway failures Taliferro actually sees in the field trace back to a skipped basic, not a hard problem.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/feb2023/feb072023/mistakes-in-configuring-an-api-gateway.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Most API Gateway Failures Aren't Exotic. They're a Skipped Basic.">
+  <meta name="twitter:description" content="No auth check, no rate limit, no monitoring — the API gateway failures Taliferro actually sees in the field trace back to a skipped basic, not a hard problem.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/feb2023/feb072023/mistakes-in-configuring-an-api-gateway.html">
+  <link rel="canonical" href="https://taliferro.com/blog/feb2023/feb072023/mistakes-in-configuring-an-api-gateway.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Most API Gateway Failures Aren't Exotic. They're a Skipped Basic.", "item": "https://taliferro.com/blog/feb2023/feb072023/mistakes-in-configuring-an-api-gateway.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/feb2023/feb072023/mistakes-in-configuring-an-api-gateway.html"
+        },
+        "headline": "Most API Gateway Failures Aren't Exotic. They're a Skipped Basic.",
+        "description": "No auth check, no rate limit, no monitoring — the API gateway failures Taliferro actually sees in the field trace back to a skipped basic, not a hard problem.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-02-07",
+        "dateModified": "2026-08-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#api-gateway-configuration">API Gateway</a>
+        <a href="#neglecting-security">Neglecting Security</a>
+        <a href="#overcomplicating-the-configuration">Overcomplicating The</a>
+        <a href="#ignoring-scalability">Ignoring Scalability</a>
+        <a href="#forgetting-to-monitor-performance">Forgetting To</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Most API Gateway Failures Aren't Exotic — They're a Skipped Basic</h1>
+          <p>Almost none of the gateway problems Taliferro sees are hard engineering problems. They're a missing auth check, no rate limit, no one watching response times — the boring stuff that's easy to skip when the deadline is close and the demo still works. Below is what actually goes wrong, in the order it tends to bite.</p>
+          <p class="fine">Published: 7 Feb 2023 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="api-gateway-configuration"><span>
+              <a href="https://taliferro.com/blog/oct2023/oct112023/streamlining-business-operations-with-technology.html">API Gateway Configuration</a>
+            </span></h2>
+          <p><span> Configuring an API gateway is a crucial task for developers, but it can be fraught with common mistakes that may hinder its performance and <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a>. Every one of the mistakes below has shipped to production somewhere — usually because it was easy to defer, right up until it wasn't. </span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="neglecting-security"> Neglecting Security </h2>
+          <p><span><span>
+                <a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a> is paramount when configuring an API gateway, yet it's often overlooked. Neglecting <a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a> measures can lead to </span><a href="https://taliferro.com/blog/may2023/may092023/an-argument-for-a-shift-in-contractor-relationships-and-cybersecurity-priorities.html">data breaches</a><span>, exposing sensitive information to unauthorized access. To prevent this, prioritize <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a> by implementing robust measures, including: </span></span></p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+              // Sample code for token-based authentication
+              </span>
+              app.<span class="keyword">use</span>((req, res, next) =&gt; {
+                const authToken = req.headers.authorization;
+                if (!authToken || authToken !== 'Bearer YOUR_TOKEN_HERE') {
+                  return res.<span class="keyword">status</span>(<span class="keyword">401</span>).<span class="keyword">json</span>({ message: 'Unauthorized' });
+                }
+                <span class="comment">
+                  // Continue with the request if the token is valid
+                </span>  
+                <span class="keyword">next</span>();
+              });
+              
+          </code>
+          </pre>
+          </div>
+          <i> Ensure SSL encryption and token-based authentication to safeguard your API. </i>
+          <h2 id="overcomplicating-the-configuration"> Overcomplicating The Configuration </h2>
+          <p> Some developers tend to overcomplicate the configuration of an API gateway, striving for sophistication when simplicity would suffice. Overcomplication can introduce bugs and hinder collaboration with other developers. Keep your configuration simple and straightforward to expedite the setup: </p>
+          <div class="code-block">
+            <pre>  <code>
+          <span class="comment">    
+          // Sample API Gateway configuration in JSON
+          </span>
+          {
+            "<span class="keyword">routes</span>": [
+              {
+                "<span class="keyword">path</span>": "/api",
+                "<span class="keyword">target</span>": "http://your-backend-service.com"
+              }
+            ]
+          }
+          
+          </code>
+          </pre>
+          </div>
+          <i> Simplicity allows for a quicker and smoother API deployment. </i>
+          <h2 id="ignoring-scalability"> Ignoring Scalability </h2>
+          <p><span>
+              <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a> is crucial, especially if your API is intended for a large user base. Ignoring <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a><span> can result in performance bottlenecks and a subpar <a href="https://taliferro.com/blog/oct2023/oct052023/how-i-perform-mobile-app-rationalization.html">user experience</a>. Design your API to handle increased traffic effectively: </span></span></p>
+          <div class="code-block">
+            <pre>  <code>
+          <span class="comment">
+          # Sample YAML configuration for scaling your API
+          </span>
+          <span class="keyword">
+          
+          version: 1
+          functions:
+            myFunction:
+              handler:</span> handler.myFunction<span class="keyword">
+              memorySize: 256
+              timeout: 30
+              events:
+                - http:
+                    path:</span> /myEndpoint<span class="keyword">
+                    method:</span> GET
+          
+          </code>
+          </pre>
+          </div>
+          <i><span> Planning for <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a> ensures your API can accommodate growth without compromising performance. </span></i>
+          <h2 id="forgetting-to-monitor-performance"> Forgetting To Monitor Performance </h2>
+          <p> Post-deployment, monitoring your API's performance is vital to identify and address issues promptly. Keep an eye on response times, error rates, and other performance metrics: </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+              // Sample code to monitor API performance
+            </span>
+          
+              const express = require('express');
+              const app = <span class="keyword">express</span>();
+              
+              app.<span class="keyword">use</span><span><span>((req, res, next) =&gt; {
+                const startTime = </span></span><span class="keyword">Date</span>.<span class="keyword">now</span>();
+                res.<span class="keyword">on</span>('finish', () =&gt; {
+                  const endTime = <span class="keyword">Date</span>.<span class="keyword">now</span>();
+                  const responseTime = endTime - startTime;
+                  <span class="keyword">console</span>.<span class="keyword">log</span>(`Response time: ${responseTime} ms`);
+                });
+                <span class="keyword">next</span>();
+              });
+              <span class="comment">
+              // Other middleware and route handlers
+              // ...
+            </span>
+              app.<span class="keyword">listen</span>(3000, () =&gt; {
+                <span class="keyword">console</span>.<span class="keyword">log</span>('API Gateway is running on port 3000');
+              });
+                  
+          </code>
+          </pre>
+          </div>
+          <i> Regular monitoring ensures you can address performance issues proactively. </i>
+          <h2 id="not-testing-thoroughly"> Not Testing Thoroughly </h2>
+          <p><span><span> Before launching your API, comprehensive testing is essential to ensure its functionality and reliability. Test all <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">endpoints</a>, </span><a href="https://taliferro.com/blog/may2023/may282023/decoding-web-design.html">data retrieval</a>, and the API's ability to handle high traffic loads. Invest time and resources in thorough testing to avoid critical issues post-launch. </span></p>
+          <h2 id="api-gateway-configuration-best-practices"> API Gateway Configuration Best Practices </h2>
+          <h3> What is an API Gateway, and why is its configuration important? </h3>
+          <p><span><span> An API Gateway is a server that acts as an API front-end, receiving API requests, enforcing throttling and <a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a> policies, passing requests to the </span><a href="https://taliferro.com/blog/jun2023/jun202023/enabling-robustness-unveiling-the-top-seven-back-end-technologies-for-website-development.html">back-end</a><span> service, and then passing the response back to the requester. Its configuration is crucial as it determines how APIs are exposed, secured, and managed, impacting the overall functionality and security of your <a href="https://taliferro.com/blog/sep2023/sep212023/navigating-the-complexities-of-api-quota-allocation.html">API ecosystem</a>. </span></span></p>
+          <h3> What are some common mistakes in API Gateway configuration? </h3>
+          <p> Common mistakes include neglecting security measures, overcomplicating configurations, ignoring scalability, neglecting performance monitoring, and not thoroughly testing the configuration. </p>
+          <h3> How can I enhance the security of my API Gateway? </h3>
+          <p> To enhance security, implement SSL encryption, use token-based authentication, and ensure proper access controls. Regularly update security configurations to stay ahead of emerging threats. </p>
+          <h3> Why is scalability important in API Gateway configuration? </h3>
+          <p><span> Scalability ensures your API Gateway can handle increased traffic as your user base grows. Neglecting scalability can lead to performance bottlenecks and a poor <a href="https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html">user experience</a>. </span></p>
+          <h3><span> What are the <a href="https://taliferro.com/benefits-of-partnering-with-taliferro.html">benefits</a> of monitoring API Gateway performance? </span></h3>
+          <p> Monitoring helps you identify and address issues promptly, ensuring optimal API performance. It includes tracking response times, error rates, and other performance metrics. </p>
+          <h3> How can I simplify API Gateway configuration while maintaining security? </h3>
+          <p> Focus on simplicity by using straightforward configurations that meet your specific needs. Avoid unnecessary complexity, which can introduce bugs and hinder collaboration among developers. </p>
+          <h3> Is it essential to thoroughly test the API Gateway configuration before deployment? </h3>
+          <p><span> Yes, thorough testing is crucial to ensure that your API Gateway functions as expected. Test different <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">endpoints</a>, data returns, and traffic levels to identify and rectify issues before going live. </span></p>
+          <h3><span> What benefits can I expect from following API Gateway configuration <a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a>? </span></h3>
+          <p><span><span> Following <a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a> leads to a more secure, scalable, and efficient API Gateway setup. It reduces the risk of security breaches, improves performance, and streamlines </span><a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API management</a>. </span></p>
+          <h3> Are there tools available to assist in API Gateway configuration? </h3>
+          <p> Yes, various tools and platforms, such as AWS API Gateway, Apigee, and NGINX, offer features and functionalities to simplify and enhance API Gateway configuration and management. </p>
+          <h3> How can Taliferro Group help with API Gateway configuration and best practices? </h3>
+          <p><span> Taliferro Group offers expertise in API Gateway configuration, ensuring secure, scalable, and efficient <a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API management</a><span>. We can help you implement best practices to optimize your <a href="https://taliferro.com/blog/sep2023/sep212023/navigating-the-complexities-of-api-quota-allocation.html">API ecosystem</a>. </span></span></p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p><span> Configuring an API gateway requires attention to detail and adherence to best practices. By avoiding these common mistakes and following best practices, you can ensure that your API operates smoothly and provides an excellent <a href="https://taliferro.com/blog/oct2023/oct052023/how-i-perform-mobile-app-rationalization.html">user experience</a>. Whether you're an experienced developer or just starting, taking the time to master API gateway configuration will set you on the path to building a successful API. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">API consulting</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">show us the integration problem</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API Gateway Configuration</em></li>
+                <li><em>Scalability</em></li>
+                <li><em>API Security</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>API Gateway Configuration</li>
+              <li>Scalability</li>
+              <li>API Security</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="mistakes-in-configuring-an-api-gateway">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb062023/website-optimization.html">&larr; Website Optimization Isn't a One-Time Project</a>
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb082023/building-customer-relationships.html">Your CRM Shouldn't Just Store Contacts &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

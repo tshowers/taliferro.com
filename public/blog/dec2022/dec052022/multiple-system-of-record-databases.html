@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Two Sources of Truth Are Zero Sources of Truth</title>
+  <meta name="description" content="A System of Record is supposed to be the one place an organization trusts completely. Split it across multiple databases and you lose exactly that.">
+  <meta name="keywords" content="multiple SOR databases, data consistency, data integrity, system of record, database consolidation">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Two Sources of Truth Are Zero Sources of Truth">
+  <meta property="og:description" content="Disagreements between databases go unnoticed until an audit, a report, or a customer catches the mismatch.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2022/dec052022/multiple-system-of-record-databases.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Two Sources of Truth Are Zero Sources of Truth">
+  <meta name="twitter:description" content="Disagreements between databases go unnoticed until an audit, a report, or a customer catches the mismatch.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2022/dec052022/multiple-system-of-record-databases.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2022/dec052022/multiple-system-of-record-databases.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Two Sources of Truth Are Zero Sources of Truth", "item": "https://taliferro.com/blog/dec2022/dec052022/multiple-system-of-record-databases.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2022/dec052022/multiple-system-of-record-databases.html"
+        },
+        "headline": "Two Sources of Truth Are Zero Sources of Truth",
+        "description": "A System of Record split across multiple databases stops being trustworthy the moment they disagree.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-12-05",
+        "dateModified": "2026-08-06T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#multiple-sor-databases">Multiple SoR</a>
+        <a href="#understanding-system-of-record">Understanding "System</a>
+        <a href="#the-pitfalls-of-multiple-sors">The Pitfalls</a>
+        <a href="#data-consistency-in-a-multitude-of-sors">Data Consistency</a>
+        <a href="#the-critical-importance-of-data-integrity">The Critical</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Two Sources of Truth Are Zero Sources of Truth</h1>
+          <p>A System of Record is supposed to be the one place an organization trusts completely. Split that across multiple databases and you don't get more resilience — you get disagreements between databases that nobody notices until an audit, a report, or a customer catches the mismatch.</p>
+          <p class="fine">Published: 5 Dec 2022 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="multiple-sor-databases"> Multiple SoR Databases </h2>
+          <p> As a seasoned data architect, I have witnessed numerous organizations grapple with the complexities of managing multiple System of Record (SOR) databases. While the idea of leveraging multiple SORs may seem enticing for scaling applications, it often brings along a host of unintended consequences. In this discourse, we delve into the reasons why having multiple SOR databases can be fraught with challenges and explore potential solutions to mitigate these issues, if not eliminate them altogether. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">software development support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="understanding-system-of-record"> Understanding "System Of Record" </h2>
+          <p> Before delving into the intricacies of multiple SOR databases, it is crucial to grasp the concept of a "System of Record" (SoR). A System of Record refers to a single, authoritative database that serves as the repository for an organization's most critical and immutable data. This database houses information that is sacrosanct, as it forms the bedrock of truth for the organization. Typically, SoRs are employed for the following purposes: </p>
+          <ul>
+            <li><strong>Internal Reporting and Auditing:</strong> SoRs serve as the cornerstone for generating internal reports and conducting rigorous audits. </li>
+            <li><strong>Financial Reporting:</strong> Organizations rely on SoRs to compile and present financial data accurately. </li>
+            <li><strong><span>Salesforce and <a href="https://taliferro.com/blog/sep2022/sep092022/using-a-crm-to-increase-sales.html">CRM</a> Integrations:</span></strong><span> SoRs often feed crucial data into Salesforce and Customer Relationship Management (<a href="https://taliferro.com/blog/aug2023/aug272023/about-your-crm-software.html">CRM</a>) systems, ensuring uniformity and reliability. </span></li>
+          </ul>
+          <h2 id="the-pitfalls-of-multiple-sors"> The Pitfalls of Multiple SORs </h2>
+          <p> While a single SoR database is a common practice, some organizations opt for multiple SORs, believing it to be a solution to their diverse operational needs. However, this decision comes with a set of inherent challenges. </p>
+          <p> In an ideal scenario, a team within an organization would use the same software to input data into a unified SoR database from various locations. Yet, when an organization spans multiple regions, countries, or continents, the data within its SoR may exhibit disparities due to regional cultural differences and language variations spoken by employees in different locations. Even when these systems are interconnected through network connections, inconsistencies may arise due to human errors in data entry. Employees may require assistance in understanding how to input accurate information while adhering to company regulations, including approval processes and audits. </p>
+          <h2 id="data-consistency-in-a-multitude-of-sors"> Data Consistency in a Multitude of SORs </h2>
+          <p> Data consistency stands as a paramount concern for businesses. Achieving data consistency across multiple SORs can be an arduous task. It necessitates the synchronization of data across various systems, which can be prone to errors if not executed flawlessly. Two primary methods employed for data replication are master-slave replication and peer-to-peer replication. Both methods require meticulous data synchronization, which, if mishandled, can lead to discrepancies. Peer-to-peer replication introduces an additional layer of complexity, demanding precise coordination of timestamps to ensure their accuracy concerning one another. </p>
+          <h2 id="the-critical-importance-of-data-integrity"> The Critical Importance of Data Integrity </h2>
+          <p> Data integrity is the linchpin of maintaining the authenticity and reliability of data within multiple databases. It involves preserving the structural and logical consistency of data over time, safeguarding it from corruption. Data integrity encompasses ensuring that records remain valid (i.e., they are not inadvertently deleted) and consistent (i.e., all fields contain accurate values). A system lacking data integrity is susceptible to incomplete, erroneous, inconsistent, and misleading data, which can lead to manifold problems. </p>
+          <p> Data integrity is upheld through the use of ACID (Atomicity, Consistency, Isolation, Durability) transactions on each record within a database. These transactions ensure that every update or delete request against a record adheres to atomicity, consistency, isolation, and durability principles, preserving data reliability. </p>
+          <h2 id="challenges-in-approvals-and-audits"> Challenges in Approvals and Audits </h2>
+          <p> An essential facet to consider is the audit process. Audits play a pivotal role in ensuring compliance with laws and regulations. However, audits can only be effectively conducted on a single database. In the context of multiple SORs, each database necessitates separate audits. This translates into the requirement for additional certified personnel to conduct these audits and an increase in the time and financial resources allocated to the process. </p>
+          <p> Should an audit reveal discrepancies or errors, the organization must initiate the auditing process anew for each database, a time-consuming endeavor. The duration of this endeavor can span months or even years, contingent on the timeline of audit report completions by internal teams or external auditors/consultants. </p>
+          <h2 id="exploring-alternatives-the-mono-repograph-database"> Exploring Alternatives: The Mono-repo/Graph Database </h2>
+          <p> For organizations contemplating the utilization of multiple SORs, a viable alternative warrants consideration—the adoption of a Mono-repo/Graph database. This transformative approach entails consolidating all data into a single source of truth, streamlining data accessibility, and circumventing the need for synchronization efforts that consume valuable resources during development cycles. </p>
+          <h2 id="a-mono-repograph-database-offers-several-advantage"> A Mono-repo/Graph database offers several advantages: </h2>
+          <ul>
+            <li><strong>Single Source of Truth:</strong><span> It establishes a solitary repository for all data, simplifying data access for the organization and expediting <a href="https://taliferro.com/blog/may2023/may282023/decoding-web-design.html">data retrieval</a>. </span></li>
+            <li><strong>Enhanced Security:</strong><span> The singular nature of the database enhances <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a>. In the event of system failure, all data remains secure, as there is no dispersal across multiple systems. </span></li>
+          </ul>
+          <h2 id="conclusion-the-imperative-of-rethinking-multiple-s"> Conclusion: The Imperative of Rethinking Multiple SOR Databases </h2>
+          <p><span><span> The proliferation of multiple System of Record (SOR) databases introduces a plethora of challenges that warrant careful consideration. While the allure of diversification may seem appealing, the complexities, maintenance overhead, <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a> limitations, </span><a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a> vulnerabilities, and the need for continuous synchronization make managing multiple SORs a suboptimal choice. </span></p>
+          <p><span> The Mono-repo/Graph database emerges as a compelling alternative, offering a unified, secure, and scalable solution for organizations seeking efficient <a href="https://taliferro.com/blog/sep2023/sep022023/progressive-web-apps-pwas-can-increase-mobile-conversion-rates-by-36-percent.html">data management</a>. To navigate the pitfalls of multiple SOR databases, it is imperative for organizations to rethink their data architecture and explore the benefits of consolidating their data into a single, reliable source of truth. In doing so, they can streamline operations, enhance data integrity, and fortify their position in an increasingly data-driven world. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">software development support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>multiple SOR databases</em></li>
+                <li><em>Mono-repo database</em></li>
+                <li><em>Graph database</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>multiple SOR databases</li>
+              <li>Mono-repo database</li>
+              <li>Graph database</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="multiple-system-of-record-databases">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec042022/turning-it-expense-projects-into-revenue-generating-products.html">&larr; The Internal Tool You Already Built Might Be a Product You Haven't Sold Yet</a>
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec062022/using-facebook-to-build-your-audience.html">We Set Out to Build a Facebook Audience. Hackers Got There First. &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

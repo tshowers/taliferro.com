@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>The Best APIs Are Boring. That's the Whole Point.</title>
+  <meta name="description" content="The API details that matter aren't clever — they're the boring ones: consistent naming, predictable behavior, the right HTTP verb, useful error messages. Taliferro breaks down what actually makes an API easy to build on.">
+  <meta name="keywords" content="API Design, Software Development, HTTP Verbs, Error Handling, API Documentation, Consistent API, Scalable APIs, Programming Best Practices, Software Integration, API Usability">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="The Best APIs Are Boring. That's the Whole Point.">
+  <meta property="og:description" content="The API details that matter aren't clever — they're the boring ones: consistent naming, predictable behavior, the right HTTP verb, useful error messages. Taliferro breaks down what actually makes an API easy to build on.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/feb2023/feb022023/five-tips-for-proper-api-design.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="The Best APIs Are Boring. That's the Whole Point.">
+  <meta name="twitter:description" content="The API details that matter aren't clever — they're the boring ones: consistent naming, predictable behavior, the right HTTP verb, useful error messages. Taliferro breaks down what actually makes an API easy to build on.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/feb2023/feb022023/five-tips-for-proper-api-design.html">
+  <link rel="canonical" href="https://taliferro.com/blog/feb2023/feb022023/five-tips-for-proper-api-design.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "The Best APIs Are Boring. That's the Whole Point.", "item": "https://taliferro.com/blog/feb2023/feb022023/five-tips-for-proper-api-design.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/feb2023/feb022023/five-tips-for-proper-api-design.html"
+        },
+        "headline": "The Best APIs Are Boring. That's the Whole Point.",
+        "description": "The API details that matter aren't clever — they're the boring ones: consistent naming, predictable behavior, the right HTTP verb, useful error messages. Taliferro breaks down what actually makes an API easy to build on.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-02-02",
+        "dateModified": "2026-08-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#the-art-of-api-design-crafting-interfaces-for-seam">The Art</a>
+        <a href="#the-significance-of-consistency-and-predictability">The Significance</a>
+        <a href="#designing-for-flexibility-and-scalability">Designing for</a>
+        <a href="#harnessing-the-power-of-http-verbs">Harnessing the</a>
+        <a href="#mastering-the-art-of-error-handling">Mastering the</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>The Best APIs Are Boring — That's the Whole Point</h1>
+          <p>A clever API impresses no one for long. A boring one — where every endpoint behaves the way you'd guess, every error tells you what went wrong, and nothing surprises you — is the one developers actually enjoy building on. That's the standard Taliferro holds its own API work to, and it's simpler to reach than most teams think.</p>
+          <p class="fine">Published: 2 Feb 2023 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="the-art-of-api-design-crafting-interfaces-for-seam"> The Art of API Design: Crafting Interfaces for Seamless Integration </h2>
+          <p><span><span> API (Application Programming Interface) design is the backbone of modern <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a>, facilitating the smooth interaction and integration of diverse software components. An API acts as a conduit, connecting front-end and </span><a href="https://taliferro.com/blog/jun2023/jun202023/enabling-robustness-unveiling-the-top-seven-back-end-technologies-for-website-development.html">back-end</a><span> systems, enabling the seamless sharing of data and functionality between various software applications. A well-crafted API holds the power to elevate the usability and performance of a software system. In this comprehensive essay, we embark on a journey to unravel the intricacies of <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">API design</a>, focusing on five indispensable tips for creating exemplary APIs. </span></span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">API consulting</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="the-significance-of-consistency-and-predictability"> The Significance of Consistency and Predictability </h2>
+          <p><span> At the heart of sound <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">API design</a> lie the principles of consistency and predictability. An API should boast a lucid and uniform structure that fosters developers' comprehension and utilization. All API operations must exhibit predictable behavior, with clearly delineated and well-defined responses for diverse inputs. This not only diminishes the likelihood of unforeseen errors but also streamlines the development process, empowering developers to seamlessly integrate the API into their projects. </span></p>
+          <p><span> To attain this coveted consistency, establishing a standardized naming convention for API operations and resources is paramount. This convention should extend across all <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">endpoints</a>, supplemented by meticulous documentation elucidating the inputs, outputs, and anticipated behavior of each operation. Furthermore, the API's design must prioritize intuitiveness and comprehensibility, achieved through the logical grouping of related operations and the provision of concise, unambiguous documentation. </span></p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+              # Sample endpoint naming convention
+            </span>
+              @app.route('/<span class="keyword">get_user_data</span>', methods=['GET'])
+              def get_user_data():
+                  # Logic to retrieve user data
+                  return jsonify({'user_id': <span class="keyword">1</span>, 'name': 'John Doe'})
+              
+          </code>
+          </pre>
+          </div>
+          <i>Demonstrating Consistency in Endpoint Naming</i>
+          <h2 id="designing-for-flexibility-and-scalability"> Designing for Flexibility and Scalability </h2>
+          <p><span><span>
+                <a href="https://taliferro.com/blog/feb2024/feb212024/avoid-disaster-top-api-design-blunders-revealed.html">API design</a> must embody adaptability and </span><a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a>, primed to accommodate evolving software systems and burgeoning feature sets. It is imperative to foresee future requirements and weave them into the API's fabric, ensuring its capacity to seamlessly assimilate changes and expand alongside the software system's evolution. </span></p>
+          <p> A modular design approach emerges as a potent strategy in this pursuit. Breaking down the API into discrete, reusable components facilitates their facile combination and modification to meet evolving demands. This modular approach empowers the integration of new functionality and the refinement of existing components sans extensive alterations to the overarching API design. </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment"><span>
+          
+              # Modular API design with Flask-<a href="https://taliferro.com/blog/dec2023/dec152023/leveraging-expertise-for-excellence.html">RESTful</a>
+              </span></span>
+          from flask import Flask
+          from flask_restful import Api, Resource
+          
+          app = Flask(__name__)
+          api = Api(app)
+          
+          class <span class="keyword">Users</span>(<span class="keyword">Resource</span>):
+              def <span class="keyword">get</span>(self, user_id):
+                  # Logic to retrieve user data
+                  return {'user_id': user_id, 'name': 'John Doe'}
+          
+          class <span class="keyword">Orders</span>(<span class="keyword">Resource</span>):
+              def <span class="keyword">get</span>(self, order_id):
+                  # Logic to retrieve order data
+                  return {'order_id': order_id, 'product': 'Sample Product'}
+          
+          api.add_resource(Users, '/users/<int:user_id>')
+          api.add_resource(Orders, '/orders/<int:order_id>')
+          
+          </int:order_id></int:user_id></code>
+          </pre>
+          </div>
+          <i>Designing for Flexibility with Modular Components</i>
+          <h2 id="harnessing-the-power-of-http-verbs"> Harnessing the Power of HTTP Verbs </h2>
+          <p> HTTP verbs constitute a pivotal facet of API design, serving as the language through which API operations communicate their intent. Proper employment of HTTP verbs is essential, as it reflects the nature of the operation being performed. The cardinal HTTP verbs encompass GET, POST, PUT, PATCH, and DELETE, each bearing a distinct purpose and deserving consistent usage throughout the API. </p>
+          <p><span> By adhering to the judicious use of HTTP verbs, developers can readily discern the purpose of each API operation, fostering a milieu of consistency and predictability. For instance, GET requests should be reserved for <a href="https://taliferro.com/blog/may2023/may282023/decoding-web-design.html">data retrieval</a>, POST requests for resource creation, PUT and PATCH requests for resource updates, and DELETE requests for resource removal. </span></p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">  
+          # Using HTTP verbs in Flask</span>
+          from flask import Flask, request
+          
+          app = Flask(__name__)
+          
+          @app.route('/create_user', methods=['POST'])
+          def <span class="keyword">create_user</span>():
+              # Logic to create a new user
+              data = request.json
+              # Process the user data
+              return jsonify({'message': 'User created successfully'})
+          
+          @app.route('/update_user/<int:user_id>', methods=['PUT'])
+          def <span class="keyword">update_user</span>(user_id):
+              # Logic to update user data
+              data = request.json
+              # Process the updated data
+              return jsonify({'message': f'User {user_id} updated'})
+          
+          @app.route('/delete_user/<int:user_id>', methods=['DELETE'])
+          def <span class="keyword">delete_user</span>(user_id):
+              # Logic to delete a user
+              # Delete the user with the specified ID
+              return jsonify({'message': f'User {user_id} deleted'})
+          
+          </int:user_id></int:user_id></code>
+          </pre>
+          </div>
+          <i>Proper Use of HTTP Verbs</i>
+          <h2 id="mastering-the-art-of-error-handling"> Mastering the Art of Error Handling </h2>
+          <p> Error handling assumes a pivotal role in API design, fortifying the API's capability to navigate unexpected scenarios adeptly. These scenarios encompass both client-side and server-side errors, spanning issues such as malformed or unauthorized requests. </p>
+          <p> To wield proficient error handling, the API must furnish cogent and informative error messages, complemented by judiciously assigned HTTP status codes that signify the error's nature. For instance, a 404 error code signifies the unavailability of a requested resource, while a 500 error code denotes server-side errors. Such meticulous error handling simplifies developers' comprehension of and response to errors, fostering an API that stands resilient and dependable. </p>
+          <h2 id="the-imperative-of-comprehensive-documentation"> The Imperative of Comprehensive Documentation </h2>
+          <p> Documentation stands as the lynchpin of API design, endowing developers with the knowledge requisite for efficacious API comprehension and utilization. Robust documentation must encompass clear and succinct elucidations of API operations, delineations of input and output formats, and insights into error handling mechanisms. </p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          # Handling errors in Flask</span>
+          from flask import Flask, jsonify, abort
+          
+          app = Flask(__name__)
+          
+          @app.route('/get_user/<int:user_id>', methods=['GET'])
+          def <span class="keyword">get_user</span>(user_id):
+              # Simulate a scenario where the user is not found
+              if user_id == 0:
+                  abort(404, description="User not found")
+              return jsonify({'user_id': user_id, 'name': 'John Doe'})
+          
+          @app.errorhandler(404)
+          def <span class="keyword">not_found_error</span>(error):
+              return jsonify({'error': 'Not Found', 'message': error.description}), 404
+          
+          </int:user_id></code>
+          </pre>
+          </div>
+          <i>Implementing Error Handling</i>
+          <h2 id="api-design-faq"> API Design FAQ </h2>
+          <h3> What is <a href="https://taliferro.com/api-design-services/">API design</a>, and why is it important? </h3>
+          <p> API design refers to the process of creating a structured interface that allows different software components to communicate and share data seamlessly. It is crucial because it determines how effectively software systems can integrate and interact, impacting usability and performance. </p>
+          <h3> What are the key principles of good API design? </h3>
+          <p><span> Good API design hinges on principles like consistency, predictability, flexibility, <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a>, proper use of HTTP verbs, meticulous error handling, and comprehensive documentation. </span></p>
+          <h3> Why is consistency essential in API design? </h3>
+          <p> Consistency ensures that the API has a clear and uniform structure, making it easier for developers to understand and use. It also minimizes the chances of unexpected errors. </p>
+          <h3> How can I design an API to be flexible and scalable? </h3>
+          <p> Employ a modular design approach, breaking the API into smaller, reusable components that can adapt to changing requirements. Anticipate future needs to ensure the API can evolve with the software system. </p>
+          <h3> What is the significance of using HTTP verbs appropriately in API design? </h3>
+          <p> Proper use of HTTP verbs indicates the purpose of each API operation, enhancing clarity and predictability. For example, GET requests retrieve data, while POST requests create new resources. </p>
+          <h3> Why is error handling crucial in API design? </h3>
+          <p> Effective error handling ensures the API can respond appropriately to unexpected situations, enhancing its robustness and reliability. It includes handling client-side and server-side errors with clear messages and HTTP status codes. </p>
+          <h3> How can I provide comprehensive documentation for my API? </h3>
+          <p><span> Comprehensive documentation should include clear explanations of API operations, input/output formats, and error handling. Use standardized <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">naming conventions</a> and offer concise and unambiguous documentation. </span></p>
+          <h3> What are some common challenges in API design? </h3>
+          <p> Common challenges include balancing simplicity with functionality, maintaining backward compatibility, and optimizing performance while adhering to design principles. </p>
+          <h3><span> How does good API design impact <a href="https://taliferro.com/blog/mar2023/mar092023/automated-testing.html">software development</a> projects? </span></h3>
+          <p> Good API design accelerates development by providing a structured and consistent interface. It also promotes code reusability and simplifies integration, reducing development time and errors. </p>
+          <h3> Can you recommend any tools or resources for API design? </h3>
+          <p><span> Some popular tools for API design include Swagger, Postman, and API Blueprint. Additionally, resources like API design guidelines and <a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a> documents can be valuable references. </span></p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p><span> API design encapsulates the quintessence of <a href="https://taliferro.com/blog/jun2023/jun042023/api-gateways-a-journey-from-pessimism-to-value.html">software integration</a> and interoperability. Its impact reverberates through modern software ecosystems, underpinning the creation of applications that seamlessly communicate and collaborate. By hewing to the tenets of consistency and predictability, embracing flexibility and scalability, harnessing HTTP verbs judiciously, mastering error handling, and furnishing comprehensive documentation, API designers equip themselves to craft interfaces that transcend mere functionality, culminating in harmonious software landscapes where disparate components converge in concert. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">API consulting</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the integration problem</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API Design</em></li>
+                <li><em>Software Development</em></li>
+                <li><em>HTTP Verbs</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li><a href="https://taliferro.com/api-design-services/">API Design</a></li>
+              <li>Software Development</li>
+              <li>HTTP Verbs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="five-tips-for-proper-api-design">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb012023/small-sprint.html">&larr; Fewer Features Per Sprint Isn't a Limitation</a>
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb032023/hubspot-as-your-data-system-of-record.html">Bad Data in HubSpot Isn't a HubSpot Problem &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

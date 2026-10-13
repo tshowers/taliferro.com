@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Fair Once Isn't Fair Forever | Taliferro Blog</title>
+  <meta name="description" content="A model can pass every fairness check at launch and still start discriminating months later, quietly. See how Taliferro builds bias drift monitoring into machine learning work.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Fair Once Isn't Fair Forever">
+  <meta property="og:description" content="A model can pass every fairness check at launch and still start discriminating months later, quietly. Here's what Taliferro checks for.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="Fair Once Isn't Fair Forever" />
+  <meta name="twitter:description" content="A model can pass every fairness check at launch and still start discriminating months later, quietly. Here's what Taliferro checks for.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">
+  <link rel="canonical" href="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Fair Once Isn't Fair Forever", "item": "https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html"
+        },
+        "headline": "Fair Once Isn't Fair Forever",
+        "description": "A model can pass every fairness check at launch and still start discriminating months later, quietly. See how Taliferro builds bias drift monitoring into machine learning work.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2025-02-01T09:00:00-07:00",
+        "dateModified": "2026-08-02T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#why-a-fair-model-turns-unfair">Why models</a>
+        <a href="#what-taliferro-actually-checks">What we check</a>
+        <a href="#where-this-actually-bites">Where it bites</a>
+        <a href="#how-taliferro-builds-this-in">How we build it in</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Fair Once Isn't Fair Forever</h1>
+          <p>A model can pass every fairness check at launch and still start discriminating six months later — not because anyone changed the code, but because the world the data described quietly changed underneath it. Taliferro builds bias drift monitoring into machine learning work so a hiring, lending, or healthcare model gets checked on a schedule, not just once at the start. The check that matters is the one nobody remembered to run.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div>
+            <p class="wow fadeInUp" data-link-bridge="true">When machine learning starts influencing real decisions, <a href="https://taliferro.com/machine-learning-services/">machine learning consulting</a> shows how Taliferro turns modeling work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+            <h2 id="why-a-fair-model-turns-unfair">Why a fair model turns unfair</h2>
+            <p>Nobody ships a model that's unfair on purpose. It passes its fairness check, everyone signs off, and it goes live. The problem is that the world it was trained on doesn't hold still. A hiring model trained on last year's applicant pool starts drifting the moment this year's pool looks different. Nobody touched the code — the ground underneath it moved.</p>
+            <ul>
+              <li><strong>The data shifts.</strong> New applicants, new borrowers, new patients don't look exactly like the group the model learned from.</li>
+              <li><strong>Old patterns resurface.</strong> A model can quietly relearn a biased pattern from historical data, just expressed differently.</li>
+              <li><strong>Nobody's watching.</strong> Most teams check fairness once, at launch, and then move on to the next project.</li>
+            </ul>
+            <h2 id="what-taliferro-actually-checks">What Taliferro actually checks</h2>
+            <p>Taliferro treats fairness as something to monitor, not something to certify once. The routine is simple on paper:</p>
+            <ol>
+              <li><strong>Watch it.</strong> Track the model's decisions over time, broken out by the groups that matter for that use case.</li>
+              <li><strong>Catch the drift.</strong> Flag it the moment outcomes start splitting unevenly across those groups — before it shows up as a pattern of complaints.</li>
+              <li><strong>Retrain it.</strong> Update the model with current data so it reflects who's actually in front of it now, not who was in front of it a year ago.</li>
+            </ol>
+            <div class="video-embed my-3" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+              <iframe src="https://www.youtube.com/embed/PKlCCvy_N-c" title="Be Remarkable with TODD" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+            </div>
+            <h2 id="where-this-actually-bites">Where this actually bites</h2>
+            <p>This isn't an abstract risk. It shows up in the systems that decide things people can't easily appeal:</p>
+            <ul>
+              <li><strong>Hiring.</strong> A screening model that starts favoring one group over another quietly filters out qualified people before a human ever sees the application.</li>
+              <li><strong>Lending.</strong> A model that drifts on who gets approved can lock out an entire neighborhood or demographic without anyone deciding to.</li>
+              <li><strong>Healthcare.</strong> A model working off stale data can give advice that no longer matches the patients it's actually serving.</li>
+            </ul>
+            <h2 id="how-taliferro-builds-this-in">How Taliferro builds this in</h2>
+            <p>Fairness monitoring isn't a bolt-on audit Taliferro runs once and files away. It's part of how <a href="https://taliferro.com/machine-learning-services/">Taliferro's machine learning consulting</a> work gets built — on a schedule, tied to real decision points, not a checkbox at launch. If you're running AI in hiring, lending, healthcare, or public services, that's exactly the kind of system this needs to be designed into from day one, not added after something goes wrong.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need stronger model confidence?</strong>
+            <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">machine learning consulting</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">talk through the use case</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><a href="https://taliferro.com/machine-learning-services/" target="_blank" title="Machine Learning Services">machine learning</a></li>
+                <li><a href="https://taliferro.com/business-momentum-system/" target="_blank" title="Momentum System (MS)">business momentum system</a></li>
+                <li><a href="https://taliferro.com/blog/toc.html" target="_blank" title="Browse Topics">AI fairness</a></li>
+                <li><a href="https://taliferro.com/blog/toc.html" target="_blank" title="Browse Topics">model monitoring</a></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="bias-drift-detection-keeping-ai-fair-over-time">Machine learning consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/jan2025/jan032025/simplify-your-data-collection-with-todd-survey.html">&larr; Collecting Answers Isn't the Hard Part. Using Them Is.</a>
+            <a class="button" href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Ask It Twice. Get Two Different Answers. &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

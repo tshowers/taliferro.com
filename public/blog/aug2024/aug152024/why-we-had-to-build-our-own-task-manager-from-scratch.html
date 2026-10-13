@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Why We Built Our Own Task Manager — and What We Learned</title>
+  <meta name="description" content="We built our own task manager after realizing today’s tools add work instead of removing it. Here’s what we learned about building software that acts, not asks.">
+  <meta name="keywords" content="task manager, productivity, workflow, custom task manager, unique workflow, task management, progress tracking, project management, task prioritization, innovation" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="tech">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Why We Built Our Own Task Manager — and What We Learned">
+  <meta property="og:description" content="We built our own task manager after realizing today’s tools add work instead of removing it. Here’s what we learned about building software that acts, not asks.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/aug2024/aug152024/why-we-had-to-build-our-own-task-manager-from-scratch.html">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="Why We Built Our Own Task Manager — and What We Learned" />
+  <meta name="twitter:description" content="We built our own task manager after realizing today’s tools add work instead of removing it. Here’s what we learned about building software that acts, not asks." />
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/aug2024/aug152024/why-we-had-to-build-our-own-task-manager-from-scratch.html">
+  <link rel="canonical" href="https://taliferro.com/blog/aug2024/aug152024/why-we-had-to-build-our-own-task-manager-from-scratch.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Why We Built Our Own Task Manager — and What We Learned", "item": "https://taliferro.com/blog/aug2024/aug152024/why-we-had-to-build-our-own-task-manager-from-scratch.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why build your own task manager?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because most tools add friction instead of removing it. We needed a system that acts, not asks—turning data into real progress."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What was missing from existing task tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "They required constant manual updates, creating notification debt and workflow rigidity instead of freeing time for real work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What’s the guiding principle behind your system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Software should act, not ask. If a system already has the data, it should move the work forward automatically."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/aug2024/aug152024/why-we-had-to-build-our-own-task-manager-from-scratch.html"
+        },
+        "headline": "Why We Built Our Own Task Manager — and What We Learned",
+        "description": "We built our own task manager after realizing today’s tools add work instead of removing it. Learn how software that acts, not asks, changes productivity.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "keywords": "build your own task manager, why we built our own software, automation fatigue, task management AI, productivity tools 2025",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2024-08-15T09:00:00-07:00",
+        "dateModified": "2025-10-18T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Why We Built Our Own Task Manager",
+      "description": "Tyrone Showers explains why the team built its own task manager to reduce friction and create software that acts, not asks.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/zVSfy92UqVk/hqdefault.jpg",
+      "uploadDate": "2025-10-18T09:00:00-07:00",
+      "duration": "PT1M",
+      "contentUrl": "https://youtube.com/shorts/zVSfy92UqVk",
+      "embedUrl": "https://www.youtube.com/embed/zVSfy92UqVk",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Taliferro Group",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+          "width": 842,
+          "height": 514
+        }
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Tyrone Showers"
+      },
+      "inLanguage": "en-US"
+    }
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#why-we-had-to-build-our-own-task-manager">Why We</a>
+        <a href="#related-reading">Related Reading</a>
+        <a href="#faq">FAQ</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Why We Had to Build Our Own Task Manager from Scratch</h1>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div>
+            <h2 id="why-we-had-to-build-our-own-task-manager">Why We Had To Build Our Own Task Manager</h2>
+            <p>You know the feeling—projects piling up, deadlines approaching, and your to-do list just keeps growing. You've tried all the apps, notebooks, and sticky notes, but something's always off. The tools that are supposed to keep you organized end up making you feel more scattered. We were in that same spot. That's why we had to create our own task manager.</p>
+            <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">software development support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a> keeps the work tied to outcomes instead of activity.</p>
+            <figure class="blog-video-float-right">
+              <div class="video-9x16">
+                <iframe src="https://www.youtube.com/embed/zVSfy92UqVk" title="Why we built our own task manager (YouTube Short)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <figcaption class="sr-only">YouTube Short: Tactical Outreach insight</figcaption>
+            </figure>
+            <h3>What Today’s Tools Get Wrong</h3>
+            <p>Most tools capture work; they don’t help you complete it. We realized we were spending more time <em>managing</em> tasks than moving them forward. Dashboards multiplied, notifications piled up, and every “smart” feature asked us for more inputs. That’s not help—that’s overhead.</p>
+            <ul>
+              <li><strong>Activity masquerades as progress.</strong> You feel busy updating boards, tagging teammates, and assigning due dates—but nothing shipped.</li>
+              <li><strong>One-size-fits-all workflows.</strong> The tool’s model becomes your process, even when your work doesn’t fit the mold.</li>
+              <li><strong>Notification debt.</strong> Alerts without context create anxiety, not clarity. You end up firefighting instead of finishing.</li>
+            </ul>
+            <h3>The Problem With Existing Tools</h3>
+            <p>Most task managers out there? They're designed for the average user. Built on a one-size-fits-all mentality. But the truth is, none of us are average. Our workflows are unique, our priorities shift constantly, and we handle tasks in different ways. The standard approach just doesn't cut it.</p>
+            <p>We noticed a pattern: tools push their workflow onto you. Instead of doing work, you spend cycles feeding the system. The computer should do the work, not display it. If a tool can’t reduce the number of steps between “see the task” and “ship the task,” it’s adding friction.</p>
+            <p>Here’s the lens we use now:</p>
+            <ul>
+              <li><strong>Fewer clicks, more outcomes.</strong> If a feature doesn’t shorten the path to done, we cut it.</li>
+              <li><strong>Decision over data entry.</strong> Capture only the data that drives a decision; ignore the rest.</li>
+              <li><strong>Context at the moment of action.</strong> Surface what matters <em>when</em> it matters—no digging for it.</li>
+            </ul>
+            <h3>The Need for Flexibility</h3>
+            <p>We needed something more flexible, something that recognized that a task isn't just a simple list item. It's a goal, a step toward something bigger. Tasks can get complex—they involve multiple people, different stages, changing deadlines. We needed a tool that could handle all that without becoming a burden itself.</p>
+            <h3>Our Guiding Principle: Software Should Act, Not Ask</h3>
+            <p>Automation isn’t about adding more buttons; it’s about removing steps. We built our tool around a simple rule: if the system already has the data, it should take the next step—or draft it for you. That shift turns “boards and badges” into real momentum. It’s the same philosophy we apply to tactical outreach—<a href="https://taliferro.com/blog/aug2024/aug242024/who-should-you-reach-out-to-todd-knows.html">software that acts, not asks</a>.</p>
+            <blockquote>Data entry isn’t progress; decisions are.</blockquote>
+            <p>Once we started designing for decisions, clarity showed up. Tasks stopped floating in lists and started moving through a finish line.</p>
+            <p>What if your task manager didn't just track your tasks, but helped you prioritize them, suggested better ways to get them done, and alerted you when something was about to go off track? That's what we had in mind.</p>
+            <h3>2025 Reality Check</h3>
+            <p>Teams in 2025 aren’t short on tools—they’re short on <em>capacity</em>. AI promises more, but most implementations still notify instead of helping. We optimized for three realities: fewer tools, tighter workflows, and previews that lead directly to action.</p>
+            <h3>Why We Couldn't Wait for Someone Else to Build It</h3>
+            <p>Sitting around and waiting for someone else to build what we needed wasn't an option. Innovation doesn't come from waiting—it comes from seeing the problem up close, getting frustrated with the limitations, and deciding that the status quo isn't good enough.</p>
+            <p>We knew what was missing because we felt it every day. And once you see that gap, you can't ignore it. We weren't going to wait for someone else to create the perfect task manager. We had to build it ourselves.</p>
+            <p>We weren’t chasing features—we were subtracting friction.</p>
+            <h3>What You Can Do Today (Even Without Our Tool)</h3>
+            <ul>
+              <li><strong>Kill one status field.</strong> If a status doesn’t change a decision, remove it.</li>
+              <li><strong>Replace two meetings with a written update.</strong> Decide once, share once, and get back to work.</li>
+              <li><strong>Bundle notifications.</strong> Check alerts twice a day; turn off the rest.</li>
+              <li><strong>Define “done.”</strong> Every task needs a visible finish line. Ambiguity is where projects stall.</li>
+            </ul>
+            <p>These moves reduce noise immediately—and make any tool you use feel lighter.</p>
+            <h3>Building With Purpose</h3>
+            <p>Our task manager is more than just another tool—it's built on what we value. It's not just about being productive—it's about making meaningful progress. It's about creating something that fits into your workflow, not forcing you to fit into it.</p>
+            <p>We built it because we believe in intentional work. We built it because we know the right tool can make a real difference. We built it because we're not satisfied with average—and you shouldn't be either.</p>
+            <h3>The Result</h3>
+            <p>What we built isn’t another place for tasks to sit—it’s a partner that trims steps, surfaces context, and moves work forward.</p>
+            <p>We didn’t build our own because we wanted another system—we built it because we were tired of being managed by ours.</p>
+          </div>
+          <h2 id="related-reading">Related Reading</h2>
+          <ul class="related-posts">
+            <li><a href="https://taliferro.com/blog/aug2024/aug242024/who-should-you-reach-out-to-todd-knows.html">Who Should You Reach Out To? TODD Knows</a></li>
+            <li><a href="https://taliferro.com/blog/sep2025/sep212025/bms-complete-guide-2025.html">CRMs Record What Happened. A Momentum System Drives What Happens Next.</a></li>
+            <li><a href="https://taliferro.com/blog/aug2025/aug262025/the-real-cost-of-manual-outreach-in-2025.html">The Real Cost of Manual Outreach in 2025</a></li>
+            <li><a href="https://taliferro.com/blog/mar2025/mar112025/the-power-of-the-follow-up.html">You Colored the Cell. You Didn't Make the Call.</a></li>
+          </ul>
+          <h2 id="faq">FAQ</h2>
+          <div class="faq">
+            <h3>Why build your own task manager?</h3>
+            <p>Because most tools add friction instead of removing it. We needed a system that acts, not asks—turning data into real progress.</p>
+            <h3>What was missing from existing task tools?</h3>
+            <p>They required constant manual updates, creating notification debt and workflow rigidity instead of freeing time for real work.</p>
+            <h3>What’s the guiding principle behind your system?</h3>
+            <p>Software should act, not ask. If a system already has the data, it should move the work forward automatically.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="why-we-had-to-build-our-own-task-manager-from-scratch">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">workflow execution support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/aug2024/aug132024/why-todd-is-the-secret-weapon-your-organization-needs.html">&larr; Why TODD Is the Secret Weapon Your Organization Needs</a>
+          <a class="button" href="https://taliferro.com/blog/aug2024/aug242024/who-should-you-reach-out-to-todd-knows.html">Who should you reach out to? TODD knows &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

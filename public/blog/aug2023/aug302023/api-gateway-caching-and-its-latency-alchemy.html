@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>API Gateway Caching Can Cut Latency Dramatically</title>
+  <meta name="description" content="API Gateway caching stores and reuses responses so backend systems stop repeating the same work. Taliferro on how it cuts latency, and where it needs care.">
+  <meta name="keywords" content="API Gateway caching, Latency reduction, Data caching, Expedient data transfer, Digital experiences, Latency alchemy, Backend resources, Caching mechanics, Technical enchantment, Digital evolution">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="API Gateway Caching Can Cut Latency Dramatically">
+  <meta property="og:description" content="API Gateway caching stores and reuses responses so backend systems stop repeating the same work. Taliferro on how it cuts latency, and where it needs care.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/aug2023/aug302023/api-gateway-caching-and-its-latency-alchemy.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="API Gateway Caching Can Cut Latency Dramatically">
+  <meta name="twitter:description" content="API Gateway caching stores and reuses responses so backend systems stop repeating the same work. Taliferro on how it cuts latency, and where it needs care.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/aug2023/aug302023/api-gateway-caching-and-its-latency-alchemy.html">
+  <link rel="canonical" href="https://taliferro.com/blog/aug2023/aug302023/api-gateway-caching-and-its-latency-alchemy.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "API Gateway Caching Can Cut Latency Dramatically", "item": "https://taliferro.com/blog/aug2023/aug302023/api-gateway-caching-and-its-latency-alchemy.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/aug2023/aug302023/api-gateway-caching-and-its-latency-alchemy.html"
+        },
+        "headline": "API Gateway Caching Can Cut Latency Dramatically",
+        "description": "API Gateway caching stores and reuses responses so backend systems stop repeating the same work. Taliferro on how it cuts latency, and where it needs care.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-08-30",
+        "dateModified": "2026-09-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#latency">Latency</a>
+        <a href="#conclusion">Conclusion</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>API Gateway Caching Can Cut Latency Dramatically</h1>
+          <p>Every repeated API request that hits the backend is time a cache could have saved. Taliferro breaks down how API Gateway caching actually cuts latency, and the discipline it takes to keep cached data from going stale.</p>
+          <p class="fine">Published: 30 Aug 2023 · Updated: 6 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp"> Every request that hits an API's backend takes time — and a large share of requests are asking for data that hasn't changed since the last time someone asked. API Gateway caching stores and reuses those responses instead of regenerating them every time, and for the right workloads it can cut latency dramatically. Here's how it actually works, and what it takes to do well. </p>
+          <h2 id="latency" class="text-capitalize wow fadeInUp"> How Caching Actually Cuts Latency </h2>
+          <p class="wow fadeInUp"> Without caching, every client request forces the API Gateway to route all the way through backend systems, adding real milliseconds at each hop. Caching interrupts that by storing responses at the <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a> Gateway itself, so requests for the same thing don't need to make that round trip again. </p>
+          <p class="wow fadeInUp"> The mechanism is simple reuse. As requests come in, the cache checks whether it already has a matching response ready. If it does, that response goes straight back to the client — no repeat trip to the backend needed. That's what removes load from backend systems and cuts response times for anything requested repeatedly. </p>
+          <p class="wow fadeInUp"> That reuse matters most exactly when traffic spikes. Consider a popular <a href="https://taliferro.com/ecommerce-development/">e-commerce</a> platform during a promotional event: without caching, the backend strains under the surge and latency climbs. With caching in place, a large share of those repeated requests never touch the backend at all, and users get fast responses even under load. </p>
+          <p class="wow fadeInUp"> Caching isn't free of trade-offs, though. Data changes, and a cache that doesn't refresh on a sensible schedule starts serving stale answers instead of fast ones. Getting the cache invalidation strategy right — how long to hold a response, and when to force a refresh — is what determines whether caching helps or quietly causes bugs. </p>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp"> <a href="https://taliferro.com/api-design-services/"><strong>API</strong></a> Gateway caching is a genuinely effective tool against latency, not a gimmick — but it takes real judgment to configure well. Get the caching strategy right, including how it invalidates stale data, and it's one of the highest-leverage changes available for a <a href="https://taliferro.com/blog/dec2022/dec022022/the-benefits-of-having-an-api-gateway.html">API Gateway</a> under real traffic. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">talk through the gateway design</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API Gateway caching</em></li>
+                <li><em>Latency reduction</em></li>
+                <li><em>Data caching</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>API Gateway caching</li>
+              <li>Latency reduction</li>
+              <li>Data caching</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="api-gateway-caching-and-its-latency-alchemy">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/aug2023/aug292023/the-barbie-movie-and-technology.html">&larr; Real Diversity in Tech Means Authentic Voices, Not Assimilation</a>
+            <a class="button" href="https://taliferro.com/blog/aug2023/aug312023/the-arcane-art-of-container-orchestration.html">Container Orchestration Fixes the Overprovisioning Problem &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

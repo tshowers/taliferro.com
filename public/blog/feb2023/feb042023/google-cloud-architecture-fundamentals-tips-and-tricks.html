@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Cloud services are ingredients. Architecture is the recipe.</title>
+  <meta name="description" content="GCP architecture fundamentals: regions, VPCs, load balancing, IAM, and storage — what each layer does and the most common design mistakes teams make when moving to Google Cloud.">
+  <meta name="keywords" content="GCP architecture, Google Cloud Platform, cloud computing, regions and zones, networking, storage options, best practices, security, managed services, cost optimization, automation, high availability, disaster recovery, VPC, load-balancing">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="Cloud Architecture">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Cloud services are ingredients. Architecture is the recipe.">
+  <meta property="og:description" content="GCP architecture fundamentals: regions, VPCs, load balancing, IAM, and storage — what each layer does and the most common design mistakes teams make when moving to Google Cloud.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/feb2023/feb042023/google-cloud-architecture-fundamentals-tips-and-tricks.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Cloud services are ingredients. Architecture is the recipe.">
+  <meta name="twitter:description" content="Explore the core elements of Google Cloud Platform (GCP) architecture. Learn about regions, networking, storage, and best practices for GCP design.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/feb2023/feb042023/google-cloud-architecture-fundamentals-tips-and-tricks.html">
+  <link rel="canonical" href="https://taliferro.com/blog/feb2023/feb042023/google-cloud-architecture-fundamentals-tips-and-tricks.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Cloud services are ingredients. Architecture is the recipe.", "item": "https://taliferro.com/blog/feb2023/feb042023/google-cloud-architecture-fundamentals-tips-and-tricks.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/feb2023/feb042023/google-cloud-architecture-fundamentals-tips-and-tricks.html"
+        },
+        "headline": "Cloud services are ingredients. Architecture is the recipe.",
+        "description": "Explore the core elements of Google Cloud Platform (GCP) architecture. Learn about regions, networking, storage, and best practices for GCP design.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-02-04",
+        "dateModified": "2026-08-01",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#overview-of-gcp-architecture">The pieces</a>
+        <a href="#core-elements-of-google-cloud-architecture">Key decisions</a>
+        <a href="#tips-and-strategies-for-gcp-architecture">Where it goes wrong</a>
+        <a href="#faq-google-cloud-platform-gcp-architecture">FAQ</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Cloud services are ingredients</h1>
+          <h2>Architecture is the recipe</h2>
+          <p>A project can use VPCs, load balancers, Cloud SQL, and IAM roles exactly as documented and still end up fragile, overpriced, or insecure. Knowing what each GCP service does is not the same as knowing how they should fit together. Taliferro designs the architecture underneath the services — not just the services themselves.</p>
+          <p class="fine">Published: 4 Feb 2023 · Updated: 1 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="overview-of-gcp-architecture">The pieces GCP gives you</h2>
+          <p>Google Cloud Platform is a large catalog of services — storage, networking, databases, load balancing, identity controls. Every one of them works as documented. That's exactly why teams get into trouble: a system built from correctly-configured pieces can still be the wrong system, because nobody decided how those pieces should relate to each other.</p>
+          <p>This isn't a tour of the GCP console. It's the handful of decisions that actually determine whether the architecture holds up: how regions and zones affect availability, how networking and storage choices affect cost and security, and where teams typically skip a decision they didn't realize they were making.</p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          # Create a VPC network with custom subnet
+          </span>
+          gcloud compute networks create my-vpc --subnet-mode=custom
+          
+          <span class="comment">
+          # Create a subnet within the VPC
+          </span>
+          gcloud compute networks subnets create my-subnet --network=my-vpc --range=10.0.0.0/24
+          </code>
+          </pre>
+          </div>
+          <i>Creating a Virtual Private Network (VPC) in GCP</i>
+          <h2 id="core-elements-of-google-cloud-architecture">The decisions that actually matter</h2>
+          <h3>Regions and zones</h3>
+          <p>A region is a geographic area (say, us-central1). Each region contains multiple zones — physically separate data centers with their own power and cooling. The decision that matters: if your whole deployment sits in one zone, a single data center outage takes you down. Spreading across zones (or regions, for anything that needs to survive a regional outage) is what actually buys you availability — not the fact that you're "on GCP."</p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          
+          # Create an HTTP load balancer
+          </span>
+          gcloud compute forwarding-rules create my-lb-rule --global --ports=80 --target-http-proxy=my-lb-proxy
+          
+          <span class="comment">
+          
+          # Create a backend service
+          </span>
+          gcloud compute backend-services create my-backend-service --global
+          
+          <span class="comment">
+          
+          # Add instances to the backend service
+          </span>
+          gcloud compute backend-services add-backend my-backend-service --global-instance-group=my-instance-group
+          
+          </code>
+          </pre>
+          </div>
+          <i>Setting Up Load Balancing in GCP</i>
+          <h3>Networking</h3>
+          <p>A VPC is your private network inside GCP — you decide the IP ranges, which subnets exist, and which resources can talk to which. A load balancer sits in front of that and spreads incoming traffic across your instances, so one overloaded server doesn't take down the whole app. Neither of these is optional for anything beyond a toy project; they're the difference between "it works on one box" and "it works under real traffic."</p>
+          <h3>Storage</h3>
+          <p>Four options cover almost everything, and picking the wrong one is a common source of both cost and performance problems:</p>
+          <ul>
+            <li><strong>Block storage</strong> — like a hard drive attached to one machine. Fast, low-latency, but tied to that machine.</li>
+            <li><strong>Object storage</strong> — for files you access by name, not by filesystem path: images, backups, exports. Cheap, durable, scales without limit.</li>
+            <li><strong>File storage</strong> — a shared filesystem multiple machines can mount at once. Use it when several instances genuinely need to read and write the same files.</li>
+            <li><strong>Relational databases</strong> — structured data with a defined schema, where you need real queries and data integrity, not just storage.</li>
+          </ul>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          
+          # Create a new Cloud Storage bucket
+          </span>
+          gsutil mb gs://my-bucket-name
+          
+          <span class="comment">
+          
+          # Copy files to the bucket
+          </span>
+          gsutil cp file.txt gs://my-bucket-name
+          
+          <span class="comment">
+          
+          # List objects in the bucket
+          </span>
+          gsutil ls gs://my-bucket-name
+          
+          <span class="comment">
+          
+          # Make a bucket publicly accessible
+          </span>
+          gsutil iam ch allUsers:objectViewer gs://my-bucket-name
+          
+          </code>
+          </pre>
+          </div>
+          <i>Creating and Managing Storage Buckets (Object Storage) in GCP</i>
+          <h2 id="tips-and-strategies-for-gcp-architecture">Where teams actually get this wrong</h2>
+          <h3>Security is a network design decision, not a checkbox</h3>
+          <p>IAM roles and firewall rules only work if the network underneath them is designed to isolate things in the first place. A database that doesn't need to be reachable from the public internet should be on a subnet that makes that unreachable — not just "protected" by a rule someone could accidentally loosen later. Design the isolation into the layout; don't rely on permissions to compensate for a flat network.</p>
+          <h3>Availability comes from where you put things, not from GCP itself</h3>
+          <p>GCP can support high availability. It doesn't do it for you. If every instance of your app lives in one zone, you have single-zone availability, full stop — no different from running on a single server. Multi-zone (or multi-region, for workloads that need it) is a decision you make when you design the deployment, not a feature that turns on by default.</p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          
+          # Create a MySQL instance
+          </span>
+          gcloud sql instances create my-sql-instance --database-version=MYSQL_5_7 --region=us-central1
+          
+          <span class="comment">
+          
+          # Connect to the MySQL instance
+          </span>
+          gcloud sql connect my-sql-instance
+          
+          <span class="comment">
+          
+          # Create a database within the instance
+          </span>
+          CREATE DATABASE my_database;
+          
+          </code>
+          </pre>
+          </div>
+          <i>Using Relational Databases (Cloud SQL) in GCP</i>
+          <h3>Managed services trade control for less operational work</h3>
+          <p>Cloud SQL, managed Kubernetes, and similar services mean Google handles patching, backups, and failover instead of your team. That's a real win for most applications — but know what you're giving up: less control over exact configuration, and a dependency on Google's maintenance schedule instead of your own. It's usually the right trade. It's still a trade.</p>
+          <h3>Cost problems are almost always idle resources, not expensive ones</h3>
+          <p>We caught this exact issue running TODD's own infrastructure: a batch of instances spun up for a testing sprint kept running for weeks after the sprint ended, quietly billing the whole time because nobody had a step in the process for tearing them down. Monitoring is what caught it, not budget review — the invoice looked normal until someone actually looked at what was running. The fix wasn't a cheaper instance type. It was a scheduled check for exactly this kind of leftover.</p>
+          <h2 id="faq-google-cloud-platform-gcp-architecture">Questions worth answering directly</h2>
+          <h3>What's the single biggest architecture mistake teams make on GCP?</h3>
+          <p>Deploying everything into one zone and calling it done. It works fine until that zone has a problem, and then it's not a GCP outage — it's your outage, because nothing about your deployment was actually designed to survive it.</p>
+          <h3>Do I need a VPC for a small project?</h3>
+          <p>Yes. It costs nothing extra and it's the thing that lets you isolate a database from the public internet later without re-architecting. Skipping it to save five minutes now is the kind of shortcut that gets expensive.</p>
+          <h3>How do I know which storage type to use?</h3>
+          <p>Ask what's actually reading the data. One machine needing fast access: block storage. Files by name, not path, at any scale: object storage. Multiple machines sharing files: file storage. Structured data you'll query: a relational database. Most storage mistakes come from picking based on price instead of access pattern.</p>
+          <h3>What's the fastest way to cut GCP costs?</h3>
+          <p>Find what's running that nobody's using — not renegotiate pricing. <code>gcloud compute instances list --filter="status=RUNNING"</code> takes ten seconds to run and routinely turns up exactly this.</p>
+          <div class="code-block">
+            <pre>  <code>
+              <span class="comment">
+          
+              # List and filter running instances
+              </span>
+              gcloud compute instances list --filter="status=RUNNING"
+              
+              <span class="comment">
+          
+              # Create a shutdown script to deactivate idle instances
+              </span>
+              #!/bin/bash
+              gcloud compute instances stop INSTANCE_NAME --zone=ZONE
+              
+              <span class="comment">
+          
+              # Schedule a shutdown script using Cron
+              </span>
+              gcloud compute instances add-metadata INSTANCE_NAME --metadata startup-script=gs://BUCKET/startup-script.sh
+              
+          </code>
+          </pre>
+          </div>
+          <i>Cost Optimization with Resource Management</i>
+          <h2 id="conclusion">The takeaway</h2>
+          <p>Every service GCP offers can be configured exactly right and still add up to the wrong system, because the architecture is the relationships between the pieces, not the pieces themselves. Regions and zones decide what survives an outage. Networking decisions decide what's actually secure. Storage choice decides whether you're fast or just expensive. None of that comes from reading the documentation for each service in isolation — it comes from deciding, on purpose, how they fit together.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cloud architecture reality check?</strong>
+            <p class="mb-0">Use the article to frame the issue, then review <a href="https://taliferro.com/cloud-architecture-consulting/">how we untangle cloud systems</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a cloud review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Google Cloud Platform</em></li>
+                <li><em>GCP Architecture</em></li>
+                <li><em>Cloud Computing</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Google Cloud Platform</li>
+              <li>GCP Architecture</li>
+              <li>Cloud Computing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="blog" data-source="blog_cta" data-page="google-cloud-architecture-fundamentals-tips-and-tricks">Cloud architecture</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb032023/hubspot-as-your-data-system-of-record.html">&larr; Bad Data in HubSpot Isn't a HubSpot Problem</a>
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb052023/e-commerce-in-2023-what-you-need-to-know.html">A Bad Return Policy Costs You the Next Sale &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

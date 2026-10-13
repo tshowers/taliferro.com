@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>You Don't Need an Accurate Estimate. You Need One Good Enough to Start.</title>
+  <meta name="description" content="A Fermi estimate isn't trying to be accurate. It's trying to be close enough, fast enough, to tell you if a project is worth starting.">
+  <meta name="keywords" content="Fermi estimation, software development, project planning, intuitive estimation, software projects, business strategy, project execution, Enrico Fermi, agile development, task estimation, development efficiency, project duration, resource management, software project management, iterative development, project risk assessment, estimation techniques, software engineering, project outcome improvement, time management in software">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="You Don't Need an Accurate Estimate. You Need One Good Enough to Start.">
+  <meta property="og:description" content="A Fermi estimate isn't trying to be accurate. It's trying to be close enough, fast enough, to tell you if a project is worth starting.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2022/dec242022/how-fermi-estimation-can-solve-your-software-development-problems.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="You Don't Need an Accurate Estimate. You Need One Good Enough to Start.">
+  <meta name="twitter:description" content="A Fermi estimate isn't trying to be accurate. It's trying to be close enough, fast enough, to tell you if a project is worth starting.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2022/dec242022/how-fermi-estimation-can-solve-your-software-development-problems.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2022/dec242022/how-fermi-estimation-can-solve-your-software-development-problems.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "You Don't Need an Accurate Estimate. You Need One Good Enough to Start.", "item": "https://taliferro.com/blog/dec2022/dec242022/how-fermi-estimation-can-solve-your-software-development-problems.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2022/dec242022/how-fermi-estimation-can-solve-your-software-development-problems.html"
+        },
+        "headline": "You Don't Need an Accurate Estimate. You Need One Good Enough to Start.",
+        "description": "A Fermi estimate isn't trying to be accurate. It's trying to be close enough, fast enough, to tell you if a project is worth starting.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-12-24",
+        "dateModified": "2026-08-06T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#origins">Origins</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#how-to">How To</a>
+        <a href="#how-does-it-work">How does</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>You Don't Need an Accurate Estimate You Need One Good Enough to Start</h1>
+          <p>A Fermi estimate isn't trying to be accurate — it's trying to be close enough, fast enough, to tell you whether a project is worth starting at all. Break the big unknown into smaller pieces you can actually guess at, add them up, and you'll know more in five minutes than you would waiting a week for a precise number.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p><span> Fermi estimation is a simple yet potent tool you can use for your business and the development of your software projects. The purpose of Fermi estimation is to estimate things without breaking a sweat. How does it work? We take advantage of intuition and experience to get closer and closer to our desired result. For example, in just 5 minutes, you can make a list of all the countries in the world and have an idea of how many there are in total. Fermi estimates are based on the order of magnitude or scale instead of accuracy. </span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the delivery process itself is the bottleneck, <a href="https://taliferro.com/agile-coaching/">agile coaching services</a> shows how Taliferro turns agile delivery into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="origins" class="text-capitalize"> Origins </h2>
+          <p><span> Fermi's estimation comes from the Italian physicist Enrico Fermi, who used it in his research on nuclear physics. Today, fermi estimation is a standard technique software developers use to estimate work time for projects, save money and improve project outcomes. </span></p>
+          <h2 id="benefits" class="text-capitalize"> Benefits </h2>
+          <p> Using fermi estimation, you will estimate how long something takes by making a guess based on experience or past performance. You may ask yourself questions like "How long would it take me to write?" or "How long would it take my team to complete?" </p>
+          <h2 id="how-to" class="text-capitalize"> How To ... </h2>
+          <p><span> Estimate small tasks first - Start with little things, such as setting up an email account or getting familiar with code editor shortcuts, before moving on to more significant tasks, such as updating an existing <a href="https://taliferro.com/blog/oct2023/oct292023/why-your-website-should-be-more-than-a-fancy-business-card.html">website</a> template or creating new scripts/toolsets. </span></p>
+          <p> Write down all the steps needed - Write down each step needed to complete this task and include them in your list. </p>
+          <p> Ask others for help if needed - If any steps need to be added to your list, feel free to ask someone else about those details so that everything gets noticed when estimating project timelines. </p>
+          <p> The purpose of Fermi estimation is to estimate things without breaking a sweat. </p>
+          <p> This simple yet extremely powerful tool can be used for business and the development of <a href="https://taliferro.com/blog/dec2022/dec082022/how-to-start-a-software-project-that-inspires-excitement.html">software projects</a>. </p>
+          <h2 id="how-does-it-work" class="text-capitalize"> How does it work? </h2>
+          <p> In iterative development, you start with a significant number and break it down into smaller numbers. You keep breaking it down until you get to a number that is easy to estimate. </p>
+          <p> You use your experience to estimate the smaller numbers. Then, at each step of the way, you perform another round of fermi estimation to get an even more accurate result. </p>
+          <p> We take advantage of intuition and experience to get closer and closer to our desired result. </p>
+          <p> Fermi estimation is a technique that can be used to make estimates quickly and accurately. It's based on the idea that we need to know how long something will take, so we ask ourselves how many steps it takes to complete that task. Once you have an estimate for each step, add them all up, and you have your answer. </p>
+          <p> The more experience you have with fermi estimation, the better your estimates become. The more often you practice fermi estimation, the better at it you will become. </p>
+          <p> With this technique, you take one big problem area and break it into smaller subproblems before working through them methodically until you get an answer that's good enough for what you need; then, repeat the process with another problem until all your questions have been resolved satisfactorily. </p>
+          <p> A fermi estimate is a number that represents a wide range of possibilities. It's a ballpark figure you can use to make quick decisions and start a project. </p>
+          <p> For example, suppose you need to build an app that will connect farmers with buyers so they can sell their crops at the best price. In that case, estimate how much time it will take by using your experience in other similar projects (the size or scale), as well as some rough guesses about what steps remain (the order). </p>
+          <p> If I had built apps similar in scope before, but none were exactly like my new project, I might start with my first guess at the total amount of effort involved in creating this app—about two weeks—and then ask myself how many smaller tasks there are within that larger task (e.g., writing code vs. debugging vs. testing). This would give me another estimate based on smaller pieces within the more significant part: maybe seven days per task times three tasks equals 21 full days needed for development work. </p>
+          <p> Fermi helps determine whether there is even enough time, money, or other resources available to execute the project in the first place. </p>
+          <p><span> As you know, <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> is all about learning and failing. You can't learn if you're not failing at least once per day—and you can't fail if you don't take risks. And since software projects are high-risk endeavors by their very nature, fermi estimation will help alleviate some of that risk by assisting developers in making educated guesses about what obstacles might come up during development along the way so that they can plan accordingly for those challenges ahead. </span></p>
+          <p> Therefore, if you want to start an internal project, estimate how much time would be necessary by simply evaluating the features and tasks involved. </p>
+          <h2 id="estimate-how-long-it-will-take-to-complete-the-pro" class="text-capitalize"> Estimate how long it will take to complete the project </h2>
+          <p> Estimating how long a project will take can be done by simply calculating the features and tasks involved. For instance, if you want to start an internal project, estimate how much time would be necessary by evaluating only the features and functions applied. </p>
+          <p> To do this, write down your tasks on 3x5 cards and then calculate their duration. Afterward, total up all of your estimates together and stare at them blankly for a while until they feel real enough that you can stop looking at them so intently - this is called "believing,". </p>
+          <p> Then ask yourself, is there anything else I need before we move forward with this? How confident am I about these estimates? Do they seem reasonable? Are my teammates going to trust me now that we've made some progress on our first task together? </p>
+          <p><span> You already know how to do Fermi estimation instinctively, but now you can use it strategically. Fermi estimation is a simple yet potent tool you can use for your business and the development of your software projects. The purpose of Fermi estimation is to be able to estimate things. This means that when someone asks you about something big or complicated, like how much time it would take for them to build their <a href="https://taliferro.com/blog/mar2023/mar132023/turning-a-website-into-a-web-business.html">website</a> from scratch or how much it would cost them to completely renovate their home office space with all new furniture and appliances (which they may well not need), you'll be able to give them an answer right away without having done any research first. </span></p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p> There are many reasons to use Fermi estimation, but one of the most important ones is that it helps you avoid making decisions based on inaccurate information. Using this method, we can get closer and closer to our desired result. It can also be a great way to ensure you're not overworking yourself and staying in touch with reality. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need delivery to move faster?</strong>
+            <p class="mb-0">Turn slower sprints into shipped work with <a href="https://taliferro.com/agile-coaching/">agile coaching services</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum-focused operating model</a>, or <a href="https://taliferro.com/contact.html">talk through the sprint problem</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Fermi estimation</em></li>
+                <li><em><span><a href="https://taliferro.com/blog/mar2023/mar092023/automated-testing.html">software development</a></span></em></li>
+                <li><em>project planning</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Fermi estimation</li>
+              <li>software development</li>
+              <li>project planning</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/agile-coaching/" data-intent="blog" data-source="blog_cta" data-page="how-fermi-estimation-can-solve-your-software-development-problems">Agile coaching</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec232022/six-things-you-might-not-know-about-software-architecture.html">&larr; Most Architecture Decisions Are Reversible. A Few Aren't. Know the Difference.</a>
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec252022/top-four-benefits-of-separating-your-database.html">A Single Database Doing Everything Is a Bottleneck Waiting to Happen &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

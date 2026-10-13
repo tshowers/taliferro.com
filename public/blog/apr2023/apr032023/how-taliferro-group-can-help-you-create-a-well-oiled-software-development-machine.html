@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Why Teams With Agile, CI/CD, and Code Reviews Still Ship Bad Software</title>
+  <meta name="description" content="Agile ceremonies, a CI/CD pipeline, and code review gates don't guarantee quality software — the habits underneath them do. What actually moves the needle, from Taliferro's own delivery work.">
+  <meta name="keywords" content="software development quality, agile methodology, CI/CD, code reviews, test-driven development, software delivery, Taliferro Group">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Why Teams With Agile, CI/CD, and Code Reviews Still Ship Bad Software", "item": "https://taliferro.com/blog/apr2023/apr032023/how-taliferro-group-can-help-you-create-a-well-oiled-software-development-machine.html" }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/apr2023/apr032023/how-taliferro-group-can-help-you-create-a-well-oiled-software-development-machine.html"
+        },
+        "headline": "Why Teams With Agile, CI/CD, and Code Reviews Still Ship Bad Software",
+        "description": "Agile ceremonies, a CI/CD pipeline, and code review gates don't guarantee quality software — the habits underneath them do. What actually moves the needle, from Taliferro's own delivery work.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-04-03",
+        "dateModified": "2026-08-10",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <meta name="taliferro:category" content="Agile Coaching">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Why Teams With Agile, CI/CD, and Code Reviews Still Ship Bad Software">
+  <meta property="og:description" content="Agile ceremonies, a CI/CD pipeline, and code review gates don't guarantee quality software — the habits underneath them do.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/apr2023/apr032023/how-taliferro-group-can-help-you-create-a-well-oiled-software-development-machine.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Why Teams With Agile, CI/CD, and Code Reviews Still Ship Bad Software">
+  <meta name="twitter:description" content="Agile ceremonies, a CI/CD pipeline, and code review gates don't guarantee quality software — the habits underneath them do.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/apr2023/apr032023/how-taliferro-group-can-help-you-create-a-well-oiled-software-development-machine.html">
+  <link rel="canonical" href="https://taliferro.com/blog/apr2023/apr032023/how-taliferro-group-can-help-you-create-a-well-oiled-software-development-machine.html">
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#the-checklist-problem">The Problem</a>
+        <a href="#code-review-is-a-conversation-not-a-gate">Code Review</a>
+        <a href="#tests-first-changes-the-design">TDD</a>
+        <a href="#a-pipeline-is-only-as-good-as-what-it-tests">CI/CD</a>
+        <a href="#how-this-shows-up-in-our-own-work">In Practice</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Checking Every Box Doesn't Make Software Good</h1>
+          <p>Agile ceremonies, a CI/CD pipeline, code reviews — teams check every box and still ship mediocre software. Taliferro holds the same practices to a stricter test: does this habit actually catch problems, or is it just theater we've gotten used to performing?</p>
+          <p class="fine">Published: 3 Apr 2023 · Updated: 10 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div>
+            <h2 id="the-checklist-problem">The Checklist Problem</h2>
+            <p>Most software teams can list their practices from memory: Agile ceremonies, a CI/CD pipeline, code review gates, maybe test-driven development. Every box is checked. The software still ships late, still breaks in production, and is still hard to change six months later.</p>
+            <p>The practices aren't the problem. What's missing is the habit underneath each one — the thing that makes a practice actually do its job instead of becoming theater. Here's where that shows up.</p>
+            <h2 id="code-review-is-a-conversation-not-a-gate">Code Review Is a Conversation, Not a Gate</h2>
+            <p>A review that exists only to satisfy a merge requirement teaches nobody anything. "LGTM" on a 400-line diff isn't quality control, it's a rubber stamp. Reviews that actually catch problems ask a different question than "does this work?" — they ask "will the next person understand why this exists?" That means the reviewer explains their reasoning when they push back, not just approves or blocks, and it means reviews happen on changes small enough to actually read.</p>
+            <h2 id="tests-first-changes-the-design">Tests-First Changes the Design, Not Just the Coverage Number</h2>
+            <p>TDD gets sold as a bug-prevention technique, and it does catch bugs — but that's the smaller benefit. Writing the test first forces you to design the interface before the implementation, which surfaces awkward APIs before they're load-bearing. A function that's painful to test is usually a function that's doing too much.</p>
+            <div class="code-block">
+              <pre>  <code>
+                    <span class="comment">
+                    # Write the test first — it forces you to decide the interface
+                    # before you decide the implementation.
+                    </span>
+                    def <span class="keyword">test_add_numbers</span>():
+                        assert add_numbers(<span class="keyword">2</span>, <span class="keyword">3</span>) == <span class="keyword">5</span>
+                        assert add_numbers(<span class="keyword">-1</span>, <span class="keyword">1</span>) == <span class="keyword">0</span>
+
+                    <span class="comment">
+                    # Now the implementation has a spec to satisfy.
+                    </span>
+                    def add_numbers(num1, num2):
+                        return num1 + num2
+                    </code>
+                    </pre>
+            </div>
+            <h2 id="a-pipeline-is-only-as-good-as-what-it-tests">A Pipeline Is Only as Good as What It Tests</h2>
+            <p>CI/CD automates the boring parts of shipping — build, test, deploy — and that's genuinely valuable. But a green pipeline running a weak test suite is false confidence dressed up as rigor. Automation speeds up whatever you point it at, including bad tests. The pipeline earns trust from what's inside it, not from existing.</p>
+            <h2 id="how-this-shows-up-in-our-own-work">How This Shows Up in Our Own Work</h2>
+            <p>Taliferro builds cross-functional teams — developers, testers, and whoever owns the client relationship — into the same delivery loop, so a design tradeoff gets caught by someone who has to explain it to the client, not discovered after launch. We hold TODD, our own Momentum System, to the same bar we hold client work to: if a habit doesn't survive contact with our own product, we don't recommend it to anyone else's.</p>
+            <h2 id="conclusion">The Takeaway</h2>
+            <p>Agile, CI/CD, and code reviews are infrastructure, not outcomes. They create the conditions for quality software — they don't guarantee it. The teams that actually ship good software are the ones that keep asking whether each practice is still doing its job, not just whether it's still on the checklist.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+          <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need delivery to move faster?</strong>
+          <p class="mb-0">Turn slower sprints into shipped work with <a href="https://taliferro.com/agile-coaching/">agile coaching services</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">talk through the sprint problem</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><em>software development</em></li>
+              <li><em>Taliferro Group</em></li>
+              <li><em>Agile methodology</em></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li>software development</li>
+            <li>Taliferro Group</li>
+            <li>Agile methodology</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/agile-coaching/" data-intent="blog" data-source="blog_cta" data-page="how-taliferro-group-can-help-you-create-a-well-oiled-software-development-machine">Agile coaching</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/apr2023/apr022023/creating-a-powerful-and-impactful-presentation-a-comprehensive-guide.html">&larr; 9 Steps to an Engaging Presentation</a>
+          <a class="button" href="https://taliferro.com/blog/apr2023/apr042023/oauth-vs-jwt-a-comparative-analysis-of-pros-and-cons.html">OAuth vs. JWT: Why It's Not Really a Choice &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

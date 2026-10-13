@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>What Chrome Lighthouse Catches Before Customers Notice</title>
+  <meta name="description" content="Slow load times, accessibility gaps, and SEO issues all quietly cost you customers — Chrome Lighthouse catches them before your visitors do. Here's how to actually use it.">
+  <meta name="keywords" content="User experience, Chrome Lighthouse, website performance, SEO, accessibility, customer satisfaction, online presence, optimization, site speed, mobile optimization, trust, credibility">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="What Chrome Lighthouse Catches Before Customers Notice">
+  <meta property="og:description" content="Slow load times, accessibility gaps, and SEO issues all quietly cost you customers — Chrome Lighthouse catches them before your visitors do. Here's how to actually use it.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="What Chrome Lighthouse Catches Before Customers Notice">
+  <meta name="twitter:description" content="Slow load times, accessibility gaps, and SEO issues all quietly cost you customers — Chrome Lighthouse catches them before your visitors do. Here's how to actually use it.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html">
+  <link rel="canonical" href="https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "What Chrome Lighthouse Catches Before Customers Notice", "item": "https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/aug2023/aug012023/check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers.html"
+        },
+        "headline": "What Chrome Lighthouse Catches Before Customers Notice",
+        "description": "Slow load times, accessibility gaps, and SEO issues all quietly cost you customers — Chrome Lighthouse catches them before your visitors do. Here's how to actually use it.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-08-01",
+        "dateModified": "2026-09-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#understanding-chrome-lighthouse">Understanding Chrome</a>
+        <a href="#why-lighthouse-matters-to-your-business">Why Lighthouse</a>
+        <a href="#conclusion">Conclusion</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>What Chrome Lighthouse Catches Before Customers Notice</h1>
+          <p>Most sites lose customers to problems nobody on the team has actually looked for — slow loads, accessibility gaps, SEO issues. Taliferro walks through what Chrome Lighthouse actually audits and why each category matters more than it looks like it does.</p>
+          <p class="fine">Published: 1 Aug 2023 · Updated: 6 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp"><span><span> A slow or clunky <a href="https://taliferro.com/blog/oct2023/oct292023/why-your-website-should-be-more-than-a-fancy-business-card.html">website</a> loses customers before they ever reach a product page or a contact form. Chrome Lighthouse, Google's free, built-in auditing tool, is how a team actually finds those problems instead of guessing at them. Here's what it checks and why each category matters more than it looks like it does at a glance. </span></p>
+          <h2 id="understanding-chrome-lighthouse" class="text-capitalize wow fadeInUp"> Understanding Chrome Lighthouse </h2>
+          <p class="wow fadeInUp"> Chrome <a href="https://taliferro.com/blog/oct2022/oct092022/using-the-lighthouse-google-developer-tool-to-measure-your-websites-performance.html">Lighthouse</a><span><span><span> audits a page across performance, accessibility, </span><a href="https://taliferro.com/blog/aug2023/aug152023/building-a-robust-lead-generation-pipeline.html">SEO</a>, </span><a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a>, and progressive web app compliance in one report, free, built into Chrome's developer tools. That single report is usually enough to surface the specific things quietly turning visitors away. </span></p>
+          <h2 id="why-lighthouse-matters-to-your-business" class="text-capitalize wow fadeInUp"> Why Lighthouse Matters to Your Business </h2>
+          <h3 class="text-capitalize wow fadeInUp"> Customer Expectations Are High </h3>
+          <p class="wow fadeInUp"> Users expect a page to load in seconds, and a slow load is one of the most reliable ways to lose someone before they even see what the site offers. Laggy or unresponsive interactions do similar damage once someone's actually on the page — it reads as a broken product, not just a slow one. Lighthouse's performance and UX-adjacent checks are what surface exactly where that friction is coming from. </p>
+          <h3 class="text-capitalize wow fadeInUp"> SEO and Mobile Rankings </h3>
+          <p class="wow fadeInUp"><span> Site speed is a direct input into Google's <a href="https://taliferro.com/blog/oct2023/oct262023/the-power-of-gesture-based-contextual-search.html">ranking</a> algorithm, so a slow site doesn't just frustrate visitors — it also loses visibility in search results before those visitors ever arrive. Because Google indexes primarily on the mobile version of a site, Lighthouse's mobile performance checks matter just as much as its desktop ones, not as an afterthought. </span></p>
+          <h3 class="text-capitalize wow fadeInUp"> Accessibility </h3>
+          <p class="wow fadeInUp"><span><span> An accessible site is both the right thing to build and good <a href="https://taliferro.com/blog/jul2023/jul292023/not-just-code-and-pixels.html">business strategy</a> — Lighthouse's accessibility audits catch the gaps that quietly exclude </span><a href="https://taliferro.com/blog/jun2023/jun242023/empowering-marginalized-communities-with-secure-online-access.html">real</a> users, which is also real addressable market a business is otherwise leaving on the table. In some regions accessibility is a legal requirement, not just good practice, and Lighthouse flags non-compliance before it becomes a legal problem instead of after. </span></p>
+          <h3 class="text-capitalize wow fadeInUp"> Mobile Responsiveness </h3>
+          <p class="wow fadeInUp"><span> A site that looks and works fine on desktop but breaks on a phone is losing whatever share of traffic arrives on mobile — often the majority. Lighthouse's mobile checks confirm the design actually adapts to different screen sizes rather than just assuming it does, and getting that right shows up directly in <a href="https://taliferro.com/blog/sep2023/sep062023/enhancing-e-commerce-retention-through-webrtc-enabled-customer-support.html">retention</a>. </span></p>
+          <h3 class="text-capitalize wow fadeInUp"> Trust and Credibility </h3>
+          <p class="wow fadeInUp"><span> Lighthouse also checks the <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a> fundamentals of a site — the kind of thing users never consciously notice until it's missing, at which point they leave and don't come back. A site that passes these checks reads as trustworthy enough to hand over a payment or a phone number, which is the actual bar for turning a visitor into a customer. </span></p>
+          <h3 class="text-capitalize wow fadeInUp"> How to Check and Improve Your Site with Lighthouse </h3>
+          <ol>
+            <li> Open Chrome's Developer Tools, select the Lighthouse tab, and run the report. </li>
+            <li> Examine the scores and actionable recommendations provided by Lighthouse. </li>
+            <li> Collaborate with your development team to act on the insights. </li>
+            <li> Continuously monitor and adjust your site's performance. Optimization is an ongoing process, not a one-time fix. </li>
+          </ol>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp"> Site performance and customer satisfaction are tied together tightly enough that even small Lighthouse-driven fixes tend to show up in retention and conversion. Running the audit, working through the flagged issues with a development team, and rechecking regularly — this isn't a one-time fix, it's an ongoing part of running a site that actually holds on to the customers who show up. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
+          <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><em>User experience</em></li>
+              <li><em>Chrome Lighthouse</em></li>
+              <li><em><span><a href="https://taliferro.com/blog/may2023/may152023/slow-fashion-more-like-slow-websites.html">website performance</a></span></em></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+          <p class="quote">Tags</p>
+          <ul class="list">
+            <li>User experience</li>
+            <li>Chrome Lighthouse</li>
+            <li>website performance</li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="website_performance" data-source="blog_cta" data-page="check-your-chrome-lighthouse-performance-as-it-may-be-costing-you-customers">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/jul2023/jul312023/a-holistic-approach-to-sales-pipeline-management.html">&larr; Gartner's Sales Pipeline Guide Undersells New Customer Acquisition</a>
+          <a class="button" href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">Gartner's 5 AI Trends Miss the Human Side of the Story &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

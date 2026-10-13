@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Clustering Algorithms Explained: When Silhouette Scores Lie</title>
+  <meta name="description" content="Clustering algorithms can look right and still fail. Learn when silhouette scores mislead, how to test clusters, and what to trust instead." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Clustering Algorithms Explained: When Silhouette Scores Lie">
+  <meta property="og:description" content="Clustering algorithms can look right and still fail. Learn when silhouette scores mislead, how to test clusters, and what to trust instead.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Clustering Algorithms Explained: When Silhouette Scores Lie">
+  <meta name="twitter:description" content="Clustering algorithms can look right and still fail. Learn when silhouette scores mislead, how to test clusters, and what to trust instead.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html">
+  <link rel="canonical" href="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Clustering Algorithms Explained: When Silhouette Scores Lie", "item": "https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html"
+        },
+        "headline": "Clustering Algorithms Explained: When Silhouette Scores Lie",
+        "description": "Clustering algorithms can look right and still fail. Learn when silhouette scores mislead, how to test clusters, and what to trust instead.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-08-14",
+        "dateModified": "2026-09-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "How Taliferro Group Does Machine Learning",
+  "description": "Watch how Taliferro Group applies machine learning in real-world projects, complementing clustering and silhouette analysis.",
+  "thumbnailUrl": "https://img.youtube.com/vi/PKlCCvy_N-c/maxresdefault.jpg",
+  "uploadDate": "2025-09-17T09:00:00-07:00",
+  "inLanguage": "en",
+  "contentUrl": "https://www.youtube.com/watch?v=PKlCCvy_N-c",
+  "embedUrl": "https://www.youtube.com/embed/PKlCCvy_N-c"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good silhouette score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A score close to 1 indicates strong clustering. Scores near 0 suggest overlapping clusters, while negative values show misclassification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which clustering algorithm works best with silhouette scores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Silhouette analysis works with K-Means, Hierarchical Clustering, and DBSCAN. The best choice depends on your dataset’s shape, scale, and noise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should businesses care about silhouette scores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They validate whether customer segments or operational groupings are statistically meaningful, improving the reliability of analytics used in decisions."
+      }
+    }
+  ]
+}
+</script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <script src="https://taliferro.com/js/exit-intent.js" defer></script>
+  <meta name="page-intent" content="ai_ml">
+  <meta name="page-title" content="Clustering Algorithms Explained">
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#clustering-a-brief-overview">Clustering Overview</a>
+        <a href="#why-choosing-the-right-cluster-count-is-hard">Cluster Count</a>
+        <a href="#how-silhouette-scores-actually-work">Silhouette Scores</a>
+        <a href="#how-to-use-silhouette-scores-the-right-way">Best Practices</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>A good score can still be a bad answer</h1>
+          <p>Silhouette scores measure how neatly data points separate. They cannot tell you whether the groups make business sense, reflect reality, or support a useful decision. Before trusting the number, test the assumptions behind it.</p>
+          <p class="fine">Published: 14 Aug 2023 · Updated: 6 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder, Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp">Clustering groups data by similarity. Teams use it for customer segmentation, fraud detection, and finding patterns nobody assigned anyone to look for. The hard part was never running the algorithm — any of them will happily produce clusters from almost any data you feed them. The hard part is knowing whether the clusters it found mean anything.</p>
+          <p class="wow fadeInUp">Taliferro learned this the hard way building <a href="https://taliferro.com/business-momentum-system/">TODD</a>, our own product. An early version clustered incoming customer signals to decide which ones needed follow-up first. The clustering scored well — a silhouette score above 0.8, genuinely tight and well-separated groups. But when we looked at what actually separated the clusters, it was which integration the signal came from (Slack versus email versus a form), not anything about how urgent it was. Mathematically clean clusters. Useless for the actual decision.</p>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222">
+            <strong>Quick truth:</strong>
+            <p class="mb-0">A strong silhouette score does not mean the segmentation is useful. It only means the points are well separated under the assumptions of the method you chose — and it says nothing about whether those assumptions matched reality.</p>
+          </div>
+          <h2 id="clustering-a-brief-overview" class="text-capitalize wow fadeInUp"> Clustering: A Brief Overview </h2>
+          <p class="wow fadeInUp"> Clustering algorithms group data points into clusters based on similarity or density so that points within a cluster are more similar to each other than to points in other clusters. Common choices in 2025 include: </p>
+          <ul>
+            <li><strong>K-Means</strong>: Partitions data into <i>K</i> clusters by minimizing within-cluster variance. Fast and effective for convex, similarly sized clusters.</li>
+            <li><strong>Hierarchical (Agglomerative/Divisive)</strong>: Builds a tree (dendrogram) of clusters; useful when you want multi-scale structure.</li>
+            <li><strong>DBSCAN</strong>: Density-based; finds arbitrarily shaped clusters and flags outliers—no need to pre-specify <i>K</i>.</li>
+            <li><strong>HDBSCAN</strong>: A hierarchical, parameter-robust extension of DBSCAN that handles variable density better and often needs less tuning.</li>
+            <li><strong>Spectral Clustering</strong>: Uses graph Laplacian eigenvectors to separate non-convex clusters when Euclidean assumptions break down.</li>
+            <li><strong>Gaussian Mixture Models (GMM)</strong>: A probabilistic approach that models clusters as mixtures of Gaussians; gives soft assignments and uncertainty.</li>
+          </ul>
+          <h2 id="why-choosing-the-right-cluster-count-is-hard" class="text-capitalize wow fadeInUp"> Why Choosing the Right Cluster Count Is Hard </h2>
+          <p class="wow fadeInUp">Pick too few clusters and you flatten real differences together. Pick too many and you get noise that looks like insight — three clusters that are really just one group split by chance. The Elbow method narrows the guesswork, but it's still a guess. That's the actual reason silhouette scoring exists: to put a number on how well-separated the clusters you picked really are.</p>
+          <h2 id="how-silhouette-scores-actually-work" class="text-capitalize wow fadeInUp"> How Silhouette Scores Actually Work </h2>
+          <p class="wow fadeInUp"> The score compares how close a point is to others in its own cluster versus the nearest different cluster. It ranges from −1 to 1, and it's most reliable on compact, well-separated groups — the geometric assumption baked into the metric, which is exactly what can mislead you if your real-world groups don't happen to be shaped that way. </p>
+          <ul>
+            <li> 1: The data point is well clustered. </li>
+            <li> 0: The data point is on or very close to the decision boundary between two neighboring clusters. </li>
+            <li> -1: The data point is incorrectly clustered. </li>
+          </ul>
+          <p class="wow fadeInUp"> The overall silhouette score is the mean across samples. In practice, complement it with a <i>silhouette plot</i> to spot imbalanced clusters, and consider alternatives when clusters are non‑convex or densities vary:</p>
+          <ul>
+            <li><strong>Davies–Bouldin Index (DBI)</strong>: Lower is better; penalizes overlapping clusters.</li>
+            <li><strong>Calinski–Harabasz (CH)</strong>: Higher is better; balances within/between dispersion.</li>
+          </ul>
+          <p class="wow fadeInUp"> For large datasets, computing pairwise distances can be expensive. Use stratified sampling (e.g., 10–20% of points), mini‑batch K‑Means, or approximate nearest neighbors to estimate silhouette efficiently, then validate results on a held‑out slice.</p>
+          <h2 id="how-to-use-silhouette-scores-the-right-way" class="text-capitalize wow fadeInUp"> How to Use Silhouette Scores the Right Way </h2>
+          <ol>
+            <li><strong>Choose and fit a clustering method</strong> (K‑Means, HDBSCAN, Spectral, GMM) appropriate to your data’s shape and noise.</li>
+            <li><strong>Evaluate multiple clusterings</strong>: sweep <i>K</i> (for K‑Means/GMM) or parameters (for DBSCAN/HDBSCAN), computing silhouette on a sample if needed.</li>
+            <li><strong>Inspect the silhouette plot</strong> to detect skinny or overlapping clusters that a single average may hide.</li>
+            <li><strong>Cross‑check with DBI/CH</strong> and domain metrics (e.g., downstream accuracy, revenue lift) to select the most useful segmentation.</li>
+          </ol>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222">
+            <strong>Applying this in production?</strong>
+            <p class="mb-0"> Taliferro helps teams validate clustering, segmentation, and ML outputs before they drive business decisions. <a href="https://taliferro.com/machine-learning-services/">Explore machine learning consulting</a>. </p>
+          </div>
+          <h3 class="text-capitalize wow fadeInUp"> Quick Example (scikit‑learn) </h3>
+          <p class="wow fadeInUp" style="opacity:0.95;">Install once: <code>pip install scikit-learn matplotlib</code>. The snippet below sweeps <i>K</i> to maximize the silhouette score, then plots a silhouette diagram for the chosen clustering.</p>
+          <pre><code class="language-python">from sklearn.datasets import make_blobs
+          from sklearn.cluster import KMeans
+          from sklearn.metrics import silhouette_score, silhouette_samples
+          import numpy as np
+          import matplotlib.pyplot as plt
+          
+          # 1) Synthetic dataset for demo (replace with your data matrix X)
+          X, _ = make_blobs(n_samples=2000, centers=4, cluster_std=0.60, random_state=42)
+          
+          # 2) Sweep K and compute silhouette score
+          scores = []
+          ks = range(2, 9)
+          for k in ks:
+              km = KMeans(n_clusters=k, n_init="auto", random_state=42)
+              labels = km.fit_predict(X)
+              scores.append(silhouette_score(X, labels))
+          
+          best_k = ks[int(np.argmax(scores))]
+          print(f"Best k by silhouette: {best_k}, score={max(scores):.3f}")
+          
+          # 3) Fit best model and compute per‑sample silhouette
+          km = KMeans(n_clusters=best_k, n_init="auto", random_state=42)
+          labels = km.fit_predict(X)
+          s = silhouette_samples(X, labels)
+          
+          # 4) Silhouette plot
+          fig, ax = plt.subplots()
+          y_lower = 10
+          for i in range(best_k):
+              ith_s = np.sort(s[labels == i])
+              size = ith_s.shape[0]
+              ax.fill_betweenx(np.arange(y_lower, y_lower + size), 0, ith_s, alpha=0.7)
+              ax.text(-0.05, y_lower + 0.5 * size, str(i))
+              y_lower += size + 10
+          
+          ax.axvline(np.mean(s), linestyle="--")
+          ax.set_xlabel("Silhouette coefficient")
+          ax.set_ylabel("Cluster")
+          ax.set_yticks([])
+          plt.show()</code></pre>
+          <h2 id="related-reading" class="text-capitalize wow fadeInUp"> Related Reading </h2>
+          <ul>
+            <li><a href="https://taliferro.com/blog/jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html">Why silhouette scores fail on imbalanced data</a></li>
+            <li><a href="https://taliferro.com/blog/jan2026/jan062026/when-high-clustering-scores-still-break-decisions.html">When high clustering scores still break decisions</a></li>
+            <li><a href="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">Bias Drift Detection: Keep AI Fair Over Time</a></li>
+            <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Consistent Output Protocol (COP): Make AI Reliable</a></li>
+          </ul>
+          <h2 id="why-teams-still-use-silhouette-scores" class="text-capitalize wow fadeInUp"> What the score actually tells you — and what it doesn't </h2>
+          <p class="wow fadeInUp">It's still worth computing. It just answers a narrower question than people treat it as answering.</p>
+          <ul>
+            <li><strong>It tells you:</strong> whether the points in a cluster are closer to each other than to points in other clusters, as a single number you can compare across runs.</li>
+            <li><strong>It tells you:</strong> which of several candidate values of K produced the geometrically tightest groupings.</li>
+            <li><strong>It does not tell you:</strong> whether those groupings correspond to anything a human would recognize or act on.</li>
+            <li><strong>It does not tell you:</strong> whether the feature you clustered on was even the right one to split customers, transactions, or signals by in the first place.</li>
+          </ul>
+          <h2 id="final-take" class="text-capitalize wow fadeInUp"> Before you trust the number </h2>
+          <p class="wow fadeInUp">Run these checks before you let a silhouette score justify a decision:</p>
+          <ol>
+            <li>Pull a handful of records from each cluster and read them. Do the groupings make sense to someone who knows the business, or only to the algorithm?</li>
+            <li>Check what's actually driving the separation. Plot the top features by cluster — if the split traces back to something incidental (signup date, data source, timezone) instead of the thing you meant to segment by, the score is measuring the wrong axis.</li>
+            <li>Test the clusters against a real outcome. If you're segmenting customers, do the segments predict something that matters — churn, spend, response rate? If not, a high score is describing structure that doesn't pay off.</li>
+          </ol>
+          <p class="wow fadeInUp">A silhouette score is a diagnostic, not a verdict. It tells you the clusters are mathematically clean. Only steps like these tell you whether they're actually useful.</p>
+          <h2 id="video-how-taliferro-group-does-machine-learning" class="text-capitalize wow fadeInUp"> Video: How Taliferro Group Does Machine Learning </h2>
+          <p class="small" style="opacity:0.85;">Watch how Taliferro Group applies machine learning in real-world projects, complementing the clustering and silhouette analysis discussed in this article.</p>
+          <h2 id="faq" class="text-capitalize wow fadeInUp"> FAQ </h2>
+          <h3>What is a good silhouette score?</h3>
+          <p>A score close to 1 indicates strong clustering. Scores near 0 suggest overlapping clusters, while negative values show misclassification.</p>
+          <h3>Which clustering algorithm works best with silhouette scores?</h3>
+          <p>Silhouette analysis works with K-Means, Hierarchical Clustering, and DBSCAN. The best choice depends on your dataset’s shape, scale, and noise.</p>
+          <h3>Why should businesses care about silhouette scores?</h3>
+          <p>They validate whether customer segments or operational groupings are statistically meaningful, improving the reliability of analytics used in decisions.</p>
+          <div class="video-embed my-3" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+            <iframe src="https://www.youtube.com/embed/PKlCCvy_N-c" title="How Taliferro Group Does Machine Learning" frameborder="0" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need stronger model confidence?</strong>
+          <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">machine learning consulting</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum-focused operating system</a>, or <a href="https://taliferro.com/contact.html">talk through the use case</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html" title="Unsupervised learning context & strategy">Unsupervised Learning</a></li>
+              <li><a href="https://taliferro.com/blog/jul2023/jul182023/data-science-and-analytics-leveraging-insights-for-business-success.html" title="Data science & analytics for business">Data Science</a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Need help validating segmentation or machine learning output?</p>
+        <p>Tell us what model or clustering problem you are working through. We will point to the first thing to verify.</p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="clustering-algorithms-and-silhouette-scores">Machine learning consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/aug2023/aug132023/leveraging-user-level-threads-for-rapid-context-switches-in-software-development.html">&larr; Green Threads Win on Speed, OS Threads Win on Cores</a>
+          <a class="button" href="https://taliferro.com/blog/aug2023/aug152023/building-a-robust-lead-generation-pipeline.html">Organic Lead Generation Works in Stages, Not One Big Push &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

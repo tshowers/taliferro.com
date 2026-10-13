@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Most Rollouts Don't Fail at Launch. They Fail Before It.</title>
+  <meta name="description" content="A software rollout plan is where you decide who's responsible for what and how training happens — before any of it is improvised live in production.">
+  <meta name="keywords" content="software rollout plan, software implementation, system procurement, user training, rollout strategy">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Most Rollouts Don't Fail at Launch. They Fail Before It.">
+  <meta property="og:description" content="Skip the planning work and you're improvising responsibility, training, and rollback decisions live, in front of the people you're rolling out to.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2022/dec032022/creating-a-software-rollout-plan.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Most Rollouts Don't Fail at Launch. They Fail Before It.">
+  <meta name="twitter:description" content="Skip the planning work and you're improvising responsibility, training, and rollback decisions live, in front of the people you're rolling out to.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2022/dec032022/creating-a-software-rollout-plan.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2022/dec032022/creating-a-software-rollout-plan.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Most Rollouts Don't Fail at Launch. They Fail Before It.", "item": "https://taliferro.com/blog/dec2022/dec032022/creating-a-software-rollout-plan.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2022/dec032022/creating-a-software-rollout-plan.html"
+        },
+        "headline": "Most Rollouts Don't Fail at Launch. They Fail Before It.",
+        "description": "A rollout plan is where responsibility, training, and rollback decisions get made before they have to be improvised live.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-12-03",
+        "dateModified": "2026-08-06T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#software-rollout-plan">Software Rollout</a>
+        <a href="#procuring-the-software">Procuring The</a>
+        <a href="#evaluating-the-software">Evaluating The</a>
+        <a href="#planning-for-installation-and-configuration">Planning For</a>
+        <a href="#training-users-on-the-system">Training Users</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Most Rollouts Don't Fail at Launch They Fail Before It</h1>
+          <p>A rollout plan isn't a formality — it's where you decide who's responsible for what, what happens if the install breaks something, and how many users get trained at once, before any of it happens live. Skip that work and you're improvising all of it in production.</p>
+          <p class="fine">Published: 3 Dec 2022 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="software-rollout-plan"> Software Rollout Plan </h2>
+          <p> Meticulous planning through a comprehensive rollout plan is paramount. Such a plan not only helps mitigate common issues but also ensures a seamless and efficient transition. A software rollout plan serves as a detailed set of instructions, delineating the process by which a piece of software will be integrated into your organization. It encompasses critical facets, including delineation of responsibilities, procedural steps, and requisite actions for each individual involved. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">software development support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="procuring-the-software"> Procuring The Software </h2>
+          <p> The initial step in this journey is software procurement. When seeking software solutions, you'll encounter a multitude of options. Ideally, the perfect choice would seamlessly integrate with your existing system, possessing the requisite features. However, this ideal alignment is not always attainable, owing to factors such as software availability and regional constraints. </p>
+          <p> Should local options fall short of meeting your requirements, it may be worthwhile to explore outsourcing opportunities abroad. Lower costs and a broader pool of talent can be found in overseas development, provided you align your chosen developer with your company's core values and vision. </p>
+          <h2 id="evaluating-the-software"> Evaluating The Software </h2>
+          <p> As the rollout date draws near, a critical evaluation of the software is imperative. This evaluation encompasses a comprehensive analysis of the software's strengths and weaknesses, features, and functionality. Additionally, it involves identifying and addressing compatibility issues with existing hardware and software, all of which should be meticulously documented within your rollout plan. Cost considerations, encompassing both initial procurement and ongoing support, should also be factored into the evaluation. </p>
+          <h2 id="planning-for-installation-and-configuration"> Planning For Installation And Configuration </h2>
+          <p> The subsequent phase of the software rollout plan centers around installation and configuration. This involves meticulous planning of the steps required for software installation, configuring it to seamlessly integrate with existing systems and user interfaces, and conducting rigorous testing to identify and rectify any bugs or defects. </p>
+          <p> Simultaneously, the plan must encompass the rollout itself. Decisions regarding the number of users to be trained simultaneously and the most effective training methodologies should be made. Additionally, post-installation maintenance considerations come into play, including determining the timeline for code maintenance commencement, any required upgrades or modifications, and the deployment processes for implementing changes. </p>
+          <h2 id="training-users-on-the-system"> Training Users On The System </h2>
+          <p> Training constitutes a pivotal component of the software rollout plan. Ensuring that users are well-versed in utilizing the new system correctly and efficiently is indispensable. Training sessions should be extended to encompass all users, both internal and external, who will interact with the new software. </p>
+          <p> Customizing training to accommodate varying experience levels, learning styles, and cultural differences among employees is essential. Moreover, training should be an ongoing process, with sessions repeated as necessary, particularly in roles marked by high turnover rates, such as data entry clerks or executives interfacing regularly with financial reports. </p>
+          <h2 id="rolling-out-the-new-software"> Rolling Out The New Software </h2>
+          <p> With the groundwork in place, the software rollout progresses to Phase 1. During this phase, a memo is disseminated to apprise employees of the impending changes to the software and the reasons necessitating their attention. </p>
+          <h2 id="takeaway"> Takeaway </h2>
+          <p> A salient takeaway from this comprehensive plan is the need to encompass training, testing, and rollback strategies within the software rollout plan. Depending on the project's nature and organizational requirements, additional components can be introduced to tailor the plan accordingly. </p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p> A meticulously crafted software rollout plan serves as an indispensable linchpin in the successful deployment of any new system. By guiding the process from software procurement through training and implementation, the plan ensures that users are well-prepared for the impending transition. The manifold advantages of a rollout plan encompass time and cost savings while safeguarding the organization against setbacks attributable to lack of preparation. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">software development support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">tell us what is stuck</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Software Rollout Plan</em></li>
+                <li><em>Software Implementation</em></li>
+                <li><em>System Procurement</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Software Rollout Plan</li>
+              <li>Software Implementation</li>
+              <li>System Procurement</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="creating-a-software-rollout-plan">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec022022/the-benefits-of-having-an-api-gateway.html">&larr; One Door In Is Easier to Defend Than Ten</a>
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec042022/turning-it-expense-projects-into-revenue-generating-products.html">The Internal Tool You Already Built Might Be a Product You Haven't Sold Yet &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

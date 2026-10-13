@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Machine Learning Isn't a Deliverable. It's a Deployment You Keep Making.</title>
+  <meta name="description" content="A trained model isn't the finish line. As data changes, the model has to keep changing too — that ongoing cycle is what earns better predictions.">
+  <meta name="keywords" content="machine learning consulting, model deployment, predictive analytics, machine learning services">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Machine Learning Isn't a Deliverable. It's a Deployment You Keep Making.">
+  <meta property="og:description" content="New deployments, tracked clearly, as data changes and goals evolve. That ongoing cycle is what earns better predictions over time.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2022/dec162022/a-how-to-guide-on-ordering-a-machine-learning-project-for-your-company.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Machine Learning Isn't a Deliverable. It's a Deployment You Keep Making.">
+  <meta name="twitter:description" content="New deployments, tracked clearly, as data changes and goals evolve. That ongoing cycle is what earns better predictions over time.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2022/dec162022/a-how-to-guide-on-ordering-a-machine-learning-project-for-your-company.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2022/dec162022/a-how-to-guide-on-ordering-a-machine-learning-project-for-your-company.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Machine Learning Isn't a Deliverable. It's a Deployment You Keep Making.", "item": "https://taliferro.com/blog/dec2022/dec162022/a-how-to-guide-on-ordering-a-machine-learning-project-for-your-company.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2022/dec162022/a-how-to-guide-on-ordering-a-machine-learning-project-for-your-company.html"
+        },
+        "headline": "Machine Learning Isn't a Deliverable. It's a Deployment You Keep Making.",
+        "description": "A trained model isn't the finish line. The ongoing cycle of redeployment as data changes is what earns better predictions.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-12-16",
+        "dateModified": "2026-08-06T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Machine Learning Isn't a Deliverable It's a Deployment You Keep Making</h1>
+          <p>A trained model isn't the finish line. As data changes and goals evolve, the model has to keep changing too — new deployments, tracked in a clear log so everyone knows what's live and when it changed. That ongoing cycle, not the first delivery, is what actually earns better predictions over time.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p><span> <a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a> is the best way to predict what will happen next in your business, but it can be challenging to understand. Creating a <a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a> project that works well for your company takes time and expertise. And that's where we come in! </span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">When machine learning starts influencing real decisions, <a href="https://taliferro.com/machine-learning-services/">machine learning consulting</a> shows how Taliferro turns modeling work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <p> I'll look at your data and determine your company's best machine-learning strategy. </p>
+          <p> Once you've decided to move forward with a machine-learning project, we'll look at your data and determine the best machine-learning strategy for your company. We'll help you prepare your data for machine learning using statistical methods such as sampling and feature engineering, train several models, and assess their success using statistical methods. </p>
+          <p> We'll brief you on how machine learning works and what it can achieve. </p>
+          <p> Machine learning is a branch ofcomputer science that uses algorithms to learn from data. It can be used for many things, including image recognition, natural language processing, and prediction. </p>
+          <p> There are three main machine learning types: supervised, unsupervised, and reinforcement. Supervised learning uses labeled training data to learn a model; unsupervised learning learns without labels; reinforcement learning learns by interacting with an environment. We'll focus on supervised machine learning since it's most relevant for BI projects and because the type of labeled data you need for those projects is usually available in your company's databases or through existing services like Google Analytics. </p>
+          <p> We'll help you prepare your data for machine learning via database migration, data wrangling, and enrichment. </p>
+          <p> Preparing your data for machine learning is a crucial part of the process and can make or break your project. We'll help you get your data ready by migrating your database and cleaning up any missing values. </p>
+          <p> We also add new data to your database, such as user demographics. </p>
+          <p> We'll train several models and assess their success using statistical methods. </p>
+          <p> After we have trained several models, we will assess their success using statistical methods. These techniques allow us to objectively compare our models' performance and determine whether or not they are effective at making predictions about our customer base. </p>
+          <p> There are many different statistical methods for assessing the success of a machine learning model. One commonly used method is the Receiver Operating Characteristic (ROC) curve. This method allows us to compare two (or more) classification algorithms, such as logistic regression or neural networks, to determine which performs best on our training data set. </p>
+          <p> You'll select the best model, and we'll deploy it to your app. </p>
+          <p> Once the model is trained, it's time to deploy it in your app. You'll select the best model, and we'll deploy it to your app. We recommend collecting more data or refining your goals before production deployment. This can be done by adding new features, improving feature weights, or changing the scoring metric for particular user actions (e.g., ratings). The machine learning engine allows you to change these things on-the-fly during training, so you never lose momentum on new ideas. </p>
+          <p> We'll keep deploying new models as you collect more data or refine your goals. </p>
+          <p> As your business evolves and the data you have to work with changes, we will keep deploying new models as you collect more data or refine your goals. </p>
+          <p> We'll also ensure that you can easily track which model is currently being used by looking at your account management system logs. If a new model was deployed successfully, there should be an entry in this log indicating what was deployed on a given date. </p>
+          <p> In addition to ensuring that our models are working well for you and delivering results within budget, we'll also ensure they're being deployed at optimal times. </p>
+          <p><span> We deploy weekly updates on Thursday mornings (Pacific Standard <a href="https://taliferro.com/blog/aug2023/aug092023/the-symbiotic-dance-of-two-life-constants.html">Time</a>). You'll receive an email with details about any updates made during that week, including whether or not any of them affected performance significantly enough for us to recommend their deployment into production immediately (which would include changing over from one active model to another). </span></p>
+          <p> Our <a href="https://taliferro.com/machine-learning-services/">machine learning</a> projects help companies make better predictions about their customers and the future direction of their businesses. </p>
+          <p> Machine learning is a tool that can help you make better decisions. Most importantly, it's a way of building models that can predict the future. </p>
+          <p> Machine learning uses algorithms to identify patterns and make predictions based on historical data. It works by finding relationships between variables in large data sets and then extrapolating those patterns into new situations - like predicting which customers are likely to buy what products at what price point based on their previous purchases or behavior. Machine learning models can also be applied to problems where there aren't enough historical records available (like predicting when something might happen), so they're often used in scientific fields like medicine or environmental science, where there's not always an abundance of data available for analysis. </p>
+          <p> We hope this guide has given you an insight into how we work. We know that machine learning can be confusing, and it's easy to feel overwhelmed by the many pieces of the puzzle or get stuck on one aspect. That's why our team is so experienced at helping businesses navigate this process—we want to make sure your company can find its unique path toward success with machine learning. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need stronger model confidence?</strong>
+            <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">how we validate models</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum-focused operating system</a>, or <a href="https://taliferro.com/contact.html">show us the model problem</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>machine learning</em></li>
+                <li><em><span><a href="https://taliferro.com/blog/jul2023/jul292023/not-just-code-and-pixels.html">business strategy</a></span></em></li>
+                <li><em>data preparation</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>machine learning</li>
+              <li>business strategy</li>
+              <li>data preparation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="ai_ml" data-source="blog_cta" data-page="a-how-to-guide-on-ordering-a-machine-learning-project-for-your-company">Machine learning consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec152022/the-importance-of-being-digital-efficiency.html">&larr; More Technology Does Not Mean Less Work</a>
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec192022/creating-the-perfect-client-experience.html">Waiting for the Client to Complain Is Already Too Late &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

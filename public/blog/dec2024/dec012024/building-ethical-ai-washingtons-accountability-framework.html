@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Building Ethical AI: Washington’s Accountability Framework for AI Bias</title>
+  <meta name="description" content="Washington’s accountability framework addresses AI bias and fairness. See how Taliferro and the Office of Equity created ethical AI guardrails, oversight, and community engagement." />
+  <meta name="keywords" content="ethical AI, accountability framework, generative AI, Washington State, Office of Equity, algorithmic justice, community engagement, bias mitigation, AI transparency, digital equity, AI ethics, governance, generative AI policies, responsible AI use, fairness in AI systems" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Building Ethical AI: Washington’s Accountability Framework for AI Bias">
+  <meta property="og:description" content="How Washington’s accountability framework tackles AI bias with ethical guardrails, fairness, transparency, and community input." />
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2024-12-01T09:00:00-07:00">
+  <meta property="article:modified_time" content="2025-09-28T09:00:00-07:00">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="Building Ethical AI: Washington’s Accountability Framework for AI Bias" />
+  <meta name="twitter:description" content="How Washington’s accountability framework tackles AI bias with ethical guardrails, fairness, transparency, and community input." />
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Building Ethical AI: Washington’s Accountability Framework for AI Bias", "item": "https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html"
+        },
+        "headline": "Building Ethical AI: Washington’s Accountability Framework for AI Bias",
+        "description": "Washington’s accountability framework addresses AI bias and fairness. Taliferro and the Office of Equity co-developed ethical AI guardrails, oversight, and community engagement.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2024-12-01T09:00:00-07:00",
+        "dateModified": "2025-09-28T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+    </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AI bias?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI bias refers to systematic and unfair outcomes produced by algorithms. It can arise from training data, model design, or deployment context and often impacts marginalized groups the most."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Washington’s accountability framework address AI bias?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The framework embeds fairness reviews, oversight mechanisms, and community engagement. Agencies assess risk, document decisions, and implement mitigation steps before and after deployment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can organizations do to reduce AI bias?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adopt bias testing and monitoring, diversify training data, document model lineage, and include impacted communities in design and evaluation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is community engagement important for AI fairness?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Inclusive engagement surfaces real-world harms and edge cases early, improving policy quality and model reliability while building public trust."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Taliferro Group — Who We Are (Overview Video)",
+    "description": "Short video message from Tyrone Showers about Taliferro Group’s mission and work.",
+    "thumbnailUrl": ["https://img.youtube.com/vi/y2pJl-pStbo/hqdefault.jpg"],
+    "uploadDate": "2025-09-28T09:00:00-07:00",
+    "embedUrl": "https://www.youtube.com/embed/y2pJl-pStbo",
+    "contentUrl": "https://www.youtube.com/watch?v=y2pJl-pStbo"
+  }
+  </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#addressing-the-challenges-of-gen-ai">Addressing the</a>
+        <a href="#framework-development-key-focus-areas">Framework Development:</a>
+        <a href="#empowering-community-engagement">Empowering Community</a>
+        <a href="#collaborative-efforts-and-lessons-learned">Collaborative Efforts</a>
+        <a href="#looking-ahead">Looking Ahead</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Building Ethical AI: Washington’s Accountability Framework for AI Bias</h1>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div>
+            <h1>Partnering for Ethical AI: Supporting Washington's Gen AI Accountability Framework</h1>
+            <p> The rise of generative AI (Gen AI) is reshaping industries, offering remarkable opportunities but also raising pressing questions about ethics, equity, and transparency. In response, Washington state issued <strong>Executive Order 24-01</strong>, mandating the creation of guidelines to ensure the responsible and equitable use of AI technologies. Taliferro was proud to work alongside the Office of Equity to support this important initiative. </p>
+            <p class="wow fadeInUp" data-link-bridge="true">When machine learning starts influencing real decisions, <a href="https://taliferro.com/machine-learning-services/">how we validate models</a> shows how Taliferro turns modeling work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum-focused operating system</a> keeps the work tied to outcomes instead of activity.</p>
+            <p> This article highlights our role in advancing ethical AI in Washington, including contributions to the <strong>Generative AI Accountability Framework</strong> and a <strong>Community Engagement Plan</strong> designed to center fairness and transparency in AI governance. </p>
+            <h2 id="addressing-the-challenges-of-gen-ai">Addressing the Challenges of Gen AI</h2>
+            <p> Executive Order 24-01 established a clear vision for responsible AI use by emphasizing: </p>
+            <ul>
+              <li><strong>Ethical Principles:</strong> Building systems that prioritize fairness and reduce harm.</li>
+              <li><strong>Community Involvement:</strong> Ensuring impacted groups have a voice in policy creation.</li>
+              <li><strong>Transparency and Accountability:</strong> Promoting trust through oversight and openness.</li>
+            </ul>
+            <p> Taliferro collaborated with state agencies to align on these priorities, bringing technical expertise and a commitment to equity-driven solutions. </p>
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+              <iframe src="https://www.youtube.com/embed/y2pJl-pStbo" title="Taliferro Group — Who We Are (Overview Video)" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+            <h2 id="framework-development-key-focus-areas">Framework Development: Key Focus Areas</h2>
+            <p> At the heart of this initiative lies the <strong>Generative AI Accountability Framework</strong>, which provides ethical and operational guidance for the state's use of AI. Some key components include: </p>
+            <ul>
+              <li><strong>Fairness and Inclusion:</strong> Ensuring AI serves all Washington residents, including marginalized communities.</li>
+              <li><strong>Oversight Mechanisms:</strong> Establishing governance structures for monitoring AI implementations.</li>
+              <li><strong>Community-Driven Policies:</strong> Engaging diverse populations to inform the framework's development.</li>
+            </ul>
+            <p> By embedding these principles, the framework sets the stage for equitable AI governance and accountability. </p>
+            <h2 id="empowering-community-engagement">Empowering Community Engagement</h2>
+            <p> The <strong>Community Engagement Plan</strong> reflects the state's commitment to listening and responding to its residents. Through methods like public forums, surveys, and focus groups, the plan ensures that policies reflect the lived experiences of Washington's diverse populations. </p>
+            <p> Special emphasis was placed on engaging Tribal governments, incorporating their perspectives into discussions about AI's impact on education, resource management, and more. </p>
+            <p>For a broader look at how marginalized communities can be excluded by AI systems—and what to do about it—see <a href="https://rollingout.com/2025/05/21/digital-gentrification-when-ai-doesnt-see-us/" target="_blank" rel="noopener">Digital Gentrification: When AI Doesn’t See Us</a>.</p>
+            <h2 id="collaborative-efforts-and-lessons-learned">Collaborative Efforts and Lessons Learned</h2>
+            <p> This initiative brought together multiple agencies and stakeholders to create a unified vision for AI in Washington. Each partner contributed unique expertise, from technology implementation to workforce readiness. </p>
+            <p>
+              <strong>Lessons learned</strong> from the process include the importance of collaboration, flexibility in responding to evolving needs, and maintaining transparency to foster trust.
+            </p>
+            <h2 id="looking-ahead">Looking Ahead</h2>
+            <p> The Generative AI Accountability Framework and Community Engagement Plan mark important milestones in the journey toward ethical AI governance. Next steps include: </p>
+            <ul>
+              <li>Expanding engagement efforts to reach more communities.</li>
+              <li>Supporting state agencies in operationalizing the framework.</li>
+              <li>Developing training programs to ensure ethical AI practices.</li>
+            </ul>
+            <p> These efforts position Washington as a leader in equitable AI use, setting an example for others to follow. For practical tools businesses are exploring today, see <a href="https://www.mescomputing.com/news/ai/10-hot-business-ai-tools-for-the-midmarket" target="_blank" rel="noopener">10 Hot Business AI Tools for the Midmarket</a>. </p>
+            <h2 id="conclusion">Conclusion</h2>
+            <p> Taliferro's partnership with the Office of Equity represents a shared commitment to advancing algorithmic justice and digital equity. By contributing to Washington's AI framework, we've helped lay the foundation for a future where technology serves everyone fairly and transparently. </p>
+            <p> We look forward to continuing this work, helping organizations navigate the complex intersection of technology and ethics while keeping fairness at the forefront. </p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <p>Below are quick answers to common questions about AI bias and Washington’s accountability framework.</p>
+          <h2 id="faq-ai-bias-washingtons-framework">FAQ: AI Bias & Washington’s Framework</h2>
+          <details>
+            <summary>What is AI bias?</summary>
+            <p>AI bias refers to systematic and unfair outcomes produced by algorithms. It can arise from training data, model design, or deployment context and often impacts marginalized groups the most.</p>
+          </details>
+          <details>
+            <summary>How does Washington’s accountability framework address AI bias?</summary>
+            <p>The framework embeds fairness reviews, oversight mechanisms, and community engagement. Agencies assess risk, document decisions, and implement mitigation steps before and after deployment.</p>
+          </details>
+          <details>
+            <summary>What can organizations do to reduce AI bias?</summary>
+            <p>Adopt bias testing and monitoring, diversify training data, document model lineage, and include impacted communities in design and evaluation.</p>
+          </details>
+          <details>
+            <summary>Why is community engagement important for AI fairness?</summary>
+            <p>Inclusive engagement surfaces real-world harms and edge cases early, improving policy quality and model reliability while building public trust.</p>
+          </details>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need stronger model confidence?</strong>
+            <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">how we validate models</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a consult</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Ask It Twice. Get Two Different Answers.</a></li>
+                <li><a href="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">Fair Once Isn't Fair Forever</a></li>
+                <li><a href="https://taliferro.com/blog/oct2024/oct042024/why-generative-ai-fails-when-you-need-one-hundred-percent-accurate-results.html">Why Generative AI Fails When You Need 100% Accurate Results</a></li>
+                <li><a href="https://taliferro.com/blog/sep2024/sep072024/the-urgent-need-to-address-racial-bias-in-ai.html">The Urgent Need to Address Racial Bias in AI</a></li>
+                <li><a href="https://taliferro.com/blog/jun2024/jun072024/partner-for-racially-neutral-tech.html">Partner for Racially Neutral Tech</a></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="building-ethical-ai-washingtons-accountability-framework">Machine learning consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/nov2024/nov152024/a-safe-space-for-sharing-why-i-built-sayit.html">&larr; A Safe Space for Sharing: Why I Built SayIt</a>
+            <a class="button" href="https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html">Secure Customer Access to Project Data &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

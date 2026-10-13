@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>AI Doesn't Stall Because People Are Lazy. It Stalls Because Nobody Fixed the System Underneath.</title>
+  <meta name="taliferro:division" content="tech">
+  <meta name="description" content="AI spend is rising, but results are stalling. Not because the tech is fake—because most organizations bolt AI onto workflows that are already messy. How TODD fixes the inputs first." />
+  <meta name="keywords" content="AI adoption, AI ROI, enterprise AI, workflow automation, operational efficiency, business momentum system, TODD" />
+  <meta property="og:title" content="AI Doesn't Stall Because People Are Lazy. It Stalls Because Nobody Fixed the System Underneath.">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="AI spend is rising, but results are stalling. Not because the tech is fake—because most organizations bolt AI onto workflows that are already messy.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2025/dec232025/why-ai-adoption-is-stalling.html">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Doesn't Stall Because People Are Lazy. It Stalls Because Nobody Fixed the System Underneath.">
+  <meta name="twitter:description" content="AI spend is rising, but results are stalling. Not because the tech is fake—because most organizations bolt AI onto workflows that are already messy.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2025/dec232025/why-ai-adoption-is-stalling.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2025/dec232025/why-ai-adoption-is-stalling.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "AI Doesn't Stall Because People Are Lazy. It Stalls Because Nobody Fixed the System Underneath.", "item": "https://taliferro.com/blog/dec2025/dec232025/why-ai-adoption-is-stalling.html" }
+  ]
+}
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="tech">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "AI Doesn't Stall Because People Are Lazy. It Stalls Because Nobody Fixed the System Underneath.",
+  "description": "A short clip that illustrates the gap between AI hype and day-to-day operational impact—why many teams stall at pilots instead of gaining real momentum.",
+  "thumbnailUrl": [
+    "https://i.ytimg.com/vi/liHzKIkqJ7c/hqdefault.jpg"
+  ],
+  "uploadDate": "2025-12-23T09:00:00-08:00",
+  "embedUrl": "https://www.youtube.com/embed/liHzKIkqJ7c",
+  "url": "https://www.youtube.com/watch?v=liHzKIkqJ7c",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Taliferro Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+      "width": 842,
+      "height": 514
+    }
+  }
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is AI adoption stalling in many companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because AI is often bolted onto messy workflows. Unclear ROI, people friction, and bad data make it hard to scale beyond pilots."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you get real ROI from AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use AI where it produces next actions: clean data, generate follow-ups, create tasks, and reduce repetitive coordination."
+      }
+    }
+  ]
+}
+</script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#what-ai-adoption-is-stalling-actually-means">What “AI</a>
+        <a href="#the-three-reasons-ai-doesnt-translate-into-product">The three</a>
+        <a href="#what-actually-works-ai-that-produces-next-actions">What actually</a>
+        <a href="#how-todd-turns-ai-into-momentum">How TODD</a>
+        <a href="#a-practical-checklist-for-deciding-where-ai-belong">A practical</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>AI doesn&#39;t stall because people are lazy It stalls because nobody fixed the system underneath</h1>
+          <p>AI spend is rising and boards are asking about it, but a lot of teams still feel the same thing day to day: the work is heavy, follow-ups slip, and the data isn't clean enough to move fast. That gap exists because most organizations bolt AI onto workflows that are already messy. Taliferro built TODD to fix the inputs first, so AI produces next actions instead of one more dashboard.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <p class="wow fadeInUp"> AI is everywhere right now. Boards are asking about it. Vendors are selling it. Teams are experimenting with it. Yet a lot of businesses still feel the same thing day-to-day: the work is still heavy, follow-ups still slip, and the data still isn’t clean enough to move fast. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">software development support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
+          <p class="wow fadeInUp"> That gap—big AI spend, small operational impact—is why AI adoption is stalling. Not because the tech is fake. Because most organizations try to bolt AI onto workflows that are already messy. </p>
+          <figure class="blog-video-float-right">
+            <div class="video-9x16"><iframe src="https://www.youtube.com/embed/liHzKIkqJ7c?rel=0&modestbranding=1&playsinline=1" title="Why AI Adoption Is Stalling – YouTube Short" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin">
+              </iframe></div>
+            <figcaption class="sr-only">YouTube Short: Why AI Adoption Is Stalling</figcaption>
+          </figure>
+          <h2 id="what-ai-adoption-is-stalling-actually-means" class="text-capitalize">What “AI adoption is stalling” actually means</h2>
+          <p class="wow fadeInUp"> Most businesses aren’t rejecting AI. They’re stuck in a pilot loop. They have pockets of usage, a few experiments, and a couple of “cool demos.” But when it’s time to scale, the same problems show up: </p>
+          <ul class="wow fadeInUp">
+            <li><strong>Unclear ROI</strong>: leaders can’t connect AI outputs to measurable outcomes.</li>
+            <li><strong>Workflow friction</strong>: teams don’t know where AI fits into real work.</li>
+            <li><strong>Tool sprawl</strong>: AI becomes “one more system” to manage.</li>
+            <li><strong>Trust issues</strong>: nobody wants to rely on AI when the underlying data is messy.</li>
+          </ul>
+          <p class="wow fadeInUp"> You can see this theme in how AI is discussed publicly: spending is high, but converting that investment into reliable day-to-day value is still hard. <a href="https://www.barrons.com/articles/ai-development-spending-79d225f5" target="_blank" rel="noopener">(source)</a>
+          </p>
+          <h2 id="the-three-reasons-ai-doesnt-translate-into-product" class="text-capitalize">The three reasons AI doesn’t translate into productivity</h2>
+          <h3 class="text-capitalize">1) AI gets treated like a feature instead of a system</h3>
+          <p class="wow fadeInUp"> A lot of AI rollouts stop at a feature: a chatbot, a summarizer, a search box, or a plugin. Those can help, but they don’t fix the real productivity drain. They don’t repair the inputs. They don’t connect the work. They don’t protect follow-ups. </p>
+          <p class="wow fadeInUp"> If the system is broken, AI becomes a nicer interface on top of the same chaos. </p>
+          <h3 class="text-capitalize">2) People friction is real</h3>
+          <p class="wow fadeInUp"> Adoption stalls when teams don’t trust the outcome or don’t feel safe using the tool in real workflows. Many organizations see tension between leadership excitement and employee reality. That isn’t a character flaw. It’s a design problem. <a href="https://www.axios.com/2025/03/18/enterprise-ai-tension-workers-execs" target="_blank" rel="noopener">(source)</a>
+          </p>
+          <p class="wow fadeInUp"> The fix is not “tell people to use AI.” The fix is to make AI outputs practical, predictable, and tied to the next step. </p>
+          <h3 class="text-capitalize">3) Bad data makes AI look worse than it is</h3>
+          <p class="wow fadeInUp"> AI depends on inputs. If your contact list has duplicates, inconsistent categories, and missing fields, your AI experience will feel random. If documents aren’t organized, summaries don’t land. If survey responses aren’t mapped cleanly, insights don’t turn into action. </p>
+          <p class="wow fadeInUp"> This is the same operational pain point businesses have had for years: scattered information creates extra steps, weak visibility, and rework. <a href="https://www.juzsolutions.com/operational-pain-points/" target="_blank" rel="noopener">(source)</a>
+          </p>
+          <h2 id="what-actually-works-ai-that-produces-next-actions" class="text-capitalize">What actually works: AI that produces next actions</h2>
+          <p class="wow fadeInUp"> AI creates value when it changes what happens next. Not when it produces more text, more dashboards, or more “insights” that a human still has to translate into work. </p>
+          <p class="wow fadeInUp"> That’s the design principle behind TODD. We built <strong>TODD as a Momentum System (MS)</strong>—a system that uses AI to improve your data and produce next actions that move relationships and projects forward. </p>
+          <p class="wow fadeInUp"> If you want the foundation, start here: <a href="https://taliferro.com/business-momentum-system/business-momentum-system-not-a-crm.html">Momentum System (Not a CRM)</a>. </p>
+          <h2 id="how-todd-turns-ai-into-momentum" class="text-capitalize">How TODD turns AI into momentum</h2>
+          <h3 class="text-capitalize">A) TODD fixes the inputs first</h3>
+          <p class="wow fadeInUp"> AI feels smart when the inputs are clean. It feels unreliable when the inputs are messy. TODD starts with the foundation: contact fields, categories, missing data, and consistency. When the list is trustworthy, the next action becomes obvious. </p>
+          <p class="wow fadeInUp"> For the data angle, read: <a href="https://taliferro.com/blog/dec2025/dec202025/the-hidden-cost-of-disconnected-data.html">Disconnected Data Is the Quiet Killer of Productivity</a>. </p>
+          <h3 class="text-capitalize">B) TODD connects context across four core business objects</h3>
+          <p class="wow fadeInUp"> AI doesn’t help if it only sees one slice of your world. TODD keeps the work connected across: </p>
+          <ul class="wow fadeInUp">
+            <li><strong>Contacts</strong> (people and organizations you need to engage)</li>
+            <li><strong>Tasks</strong> (moves and follow-ups that create progress)</li>
+            <li><strong>Documents</strong> (notes, proposals, policies, history)</li>
+            <li><strong>Surveys</strong> (intake and feedback that adds signal)</li>
+          </ul>
+          <p class="wow fadeInUp"> When those objects are connected, AI can do something useful: generate the next step with the right context attached. </p>
+          <h3 class="text-capitalize">C) TODD outputs actions, not “insights”</h3>
+          <p class="wow fadeInUp"> TODD is built to produce work you can execute immediately: </p>
+          <ul class="wow fadeInUp">
+            <li>Suggested follow-ups and outreach drafts</li>
+            <li>Tasks created from notes and activity</li>
+            <li>Contact segments you can act on (not just view)</li>
+            <li>Data cleanup recommendations that improve downstream results</li>
+          </ul>
+          <p class="wow fadeInUp"> This is the difference between a tool that helps you <em>manage</em> and a system that helps you <em>move</em>. </p>
+          <h3 class="text-capitalize">D) TODD reduces the “AI anxiety” loop</h3>
+          <p class="wow fadeInUp"> When AI is framed as a replacement, people resist. When it’s framed as a practical assistant that handles repetitive steps, adoption becomes easier. TODD is built to take the busywork off the table—so humans stay on judgment, relationships, and decisions. </p>
+          <p class="wow fadeInUp"> If you’re still thinking “we should just buy another tool,” read this first: <a href="https://taliferro.com/blog/dec2025/dec152025/why-most-business-tools-fail-to-improve-productivity.html">Why Most Business Tools Fail to Improve Productivity (and What Actually Works)</a>. </p>
+          <h2 id="a-practical-checklist-for-deciding-where-ai-belong" class="text-capitalize">A practical checklist for deciding where AI belongs</h2>
+          <ul class="wow fadeInUp">
+            <li><strong>Start with repeatable work</strong>: follow-ups, categorization, drafting, cleanup.</li>
+            <li><strong>Fix the inputs</strong>: messy data will make AI feel unreliable.</li>
+            <li><strong>Demand next actions</strong>: if the output doesn’t change what happens next, it’s not helping.</li>
+            <li><strong>Keep context attached</strong>: AI needs the right history to be useful.</li>
+          </ul>
+          <p class="wow fadeInUp"> AI adoption doesn’t stall because people are lazy. It stalls because the system isn’t built to convert AI output into forward motion. </p>
+          <h2 id="closing-thought" class="text-capitalize">Closing thought</h2>
+          <p class="wow fadeInUp"> The organizations that win with AI won’t be the ones with the most AI features. They’ll be the ones who use AI to improve data, reduce manual coordination, and keep momentum moving every day. That’s what a <a href="https://taliferro.com/business-momentum-system/">Momentum System</a> is designed to do. </p>
+          <h2 id="faq" class="text-capitalize">FAQ</h2>
+          <h3 class="text-capitalize">Why is AI adoption stalling in many companies?</h3>
+          <p class="wow fadeInUp"> Because AI is often bolted onto messy workflows. Unclear ROI, people friction, and bad data make it hard to scale beyond pilots. </p>
+          <h3 class="text-capitalize">How do you get real ROI from AI?</h3>
+          <p class="wow fadeInUp"> Use AI where it produces next actions: clean data, generate follow-ups, create tasks, and reduce repetitive coordination. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+        </div>
+        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <strong>Need momentum, not another patch?</strong>
+          <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">software development support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the drag point</a>.</p>
+        </div>
+        <div class="post__tags mt-small">
+          <div class="tagcloud">
+            <ul>
+              <li><a href="https://taliferro.com/business-momentum-system/business-momentum-system-not-a-crm.html" title="Momentum System">Momentum System</a></li>
+              <li><a href="https://taliferro.com/blog/dec2025/dec202025/the-hidden-cost-of-disconnected-data.html" title="Disconnected Data">Disconnected Data</a></li>
+              <li><a href="https://taliferro.com/blog/dec2025/dec152025/why-most-business-tools-fail-to-improve-productivity.html" title="Productivity">Productivity</a></li>
+            </ul>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">Want this fixed on your site?</p>
+        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+        <div class="btnrow" style="margin-top:10px;">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="why-ai-adoption-is-stalling">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        </div>
+        <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card">
+        <p class="quote">More from the blog</p>
+        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+          <a class="button" href="https://taliferro.com/blog/dec2025/dec202025/the-hidden-cost-of-disconnected-data.html">&larr; Disconnected Data Is the Quiet Killer of Productivity</a>
+          <a class="button" href="https://taliferro.com/blog/dec2025/dec302025/we-have-the-data-but-its-spread-across-five-systems.html">We have the data, but it’s spread across five systems &rarr;</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

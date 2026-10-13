@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>The Slowest Part of Your System Is Setting the Pace</title>
+  <meta name="description" content="Most performance problems come from a small section of code running again and again. Taliferro on how to find that hot path and fix it for real.">
+  <meta name="keywords" content="software development, hot paths, code optimization, profiling, performance enhancement, efficiency, software engineering">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="The Slowest Part of Your System Is Setting the Pace">
+  <meta property="og:description" content="Most performance problems come from a small section of code running again and again. Taliferro on how to find that hot path and fix it for real.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/aug2023/aug112023/a-pursuit-of-major-performance-gains-through-minor-adjustments.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="The Slowest Part of Your System Is Setting the Pace">
+  <meta name="twitter:description" content="Most performance problems come from a small section of code running again and again. Taliferro on how to find that hot path and fix it for real.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/aug2023/aug112023/a-pursuit-of-major-performance-gains-through-minor-adjustments.html">
+  <link rel="canonical" href="https://taliferro.com/blog/aug2023/aug112023/a-pursuit-of-major-performance-gains-through-minor-adjustments.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "The Slowest Part of Your System Is Setting the Pace", "item": "https://taliferro.com/blog/aug2023/aug112023/a-pursuit-of-major-performance-gains-through-minor-adjustments.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/aug2023/aug112023/a-pursuit-of-major-performance-gains-through-minor-adjustments.html"
+        },
+        "headline": "The Slowest Part of Your System Is Setting the Pace",
+        "description": "Most performance problems come from a small section of code running again and again. Taliferro on how to find that hot path and fix it for real.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-08-11",
+        "dateModified": "2026-09-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#understanding-hot-paths">What it is</a>
+        <a href="#the-diagnostic-tool">Finding it</a>
+        <a href="#strategies-for-optimizing-hot-paths">Fixing it</a>
+        <a href="#conclusion">Takeaway</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>The slowest part of your system is setting the pace</h1>
+          <p>Most performance problems do not come from the entire application. They come from a small section of code running again and again. Find that hot path, improve it, and a minor adjustment can change the speed of the whole system.</p>
+          <p class="fine">Published: 11 Aug 2023 · Updated: 6 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Where the time actually goes </h2>
+          <p class="wow fadeInUp">Picture a page that loads slowly. Nine times out of ten, it's not because everything on the page is slow — it's because one function runs ten thousand times when it should run once, or a database gets queried inside a loop instead of once before the loop starts. That one spot is the <strong>hot path</strong>: the small piece of code that runs so often it ends up deciding the speed of everything around it.</p>
+          <p class="wow fadeInUp">Fix that one spot, and the whole system feels faster — even though you didn't touch anything else.</p>
+          <h2 id="understanding-hot-paths" class="text-capitalize wow fadeInUp"> What a hot path actually is </h2>
+          <p class="wow fadeInUp">Not every slow line of code matters. A function that runs once, when the app starts up, is nearly invisible no matter how slow it is. A function that runs on every page view, every search, or every row of a spreadsheet — that's a hot path. It's "hot" because of how often it fires, not because any single run of it looks slow on its own.</p>
+          <p class="wow fadeInUp"><strong>Example:</strong> a function that looks up a customer by checking every customer in a list takes 2 milliseconds when you have 100 customers. Nobody notices. Run that same function 50,000 times a day once you have 100,000 customers, and it's now the reason the app feels sluggish — even though no single line of code "broke."</p>
+          <h2 id="the-diagnostic-tool" class="text-capitalize wow fadeInUp"> How to find it, instead of guessing </h2>
+          <p class="wow fadeInUp">Most developers guess wrong about what's slow. Code that <em>feels</em> slow to read and code that actually <em>runs</em> constantly are usually two different things. A profiler settles the argument by measuring instead of guessing. It watches your program run and reports back on three things:</p>
+          <ul>
+            <li><strong>Time</strong> — which functions eat the most total time, not because any one call is slow, but because they run so often.</li>
+            <li><strong>Memory</strong> — where memory keeps climbing instead of getting released, a sign something is leaking or holding on to data it no longer needs.</li>
+            <li><strong>CPU</strong> — which operations are actually keeping the processor busy.</li>
+          </ul>
+          <p class="wow fadeInUp">You don't need to profile everything. Profile the paths your users actually hit the most — the search bar, the checkout flow, the dashboard that loads on login. That's where hot paths live.</p>
+          <h2 id="strategies-for-optimizing-hot-paths" class="text-capitalize wow fadeInUp"> Once you find it, fix it like this </h2>
+          <p class="wow fadeInUp">You don't need to rewrite the whole system. You need to fix the one path that's actually hot. Here's what usually works, roughly in the order it tends to matter:</p>
+          <h3 class="text-capitalize wow fadeInUp"> Stop doing the same work twice </h3>
+          <p class="wow fadeInUp">The single biggest win is almost always caching: if a function computes the same answer for the same input over and over, save the answer the first time and reuse it. This fixes more hot paths than any clever algorithm trick.</p>
+          <h3 class="text-capitalize wow fadeInUp"> Use the right data structure </h3>
+          <p class="wow fadeInUp">Looping through a list to find one item gets slower as the list grows. A lookup table finds the same item in roughly the same amount of time whether you have 100 records or 10 million. That's the difference between "the checkout page got slow once we hit 50,000 customers" and "the checkout page never got slow."</p>
+          <p class="wow fadeInUp">Taliferro hit this exact bug building <a href="https://taliferro.com/business-momentum-system/">TODD</a>, our own product. An early version matched incoming signals to a contact by scanning the full contact list — fine with a hundred test records, painfully slow once it was running against real customer data. Swapping that scan for a lookup table took that one operation from the slowest part of TODD to something nobody notices anymore.</p>
+          <h3 class="text-capitalize wow fadeInUp"> Stop waiting on things that could happen at the same time </h3>
+          <p class="wow fadeInUp">If your code waits for a database call, then waits for an email to send, then waits for a file to save — one after another — it's spending most of its time waiting, not working. Running independent steps at the same time is often a bigger win than making any single step faster.</p>
+          <h3 class="text-capitalize wow fadeInUp"> Measure again after you fix it </h3>
+          <p class="wow fadeInUp">This is the step people skip. Run the profiler again after the change. Sometimes a "fix" just moves the bottleneck somewhere else instead of removing it — you want proof it got faster, not a guess that it probably did.</p>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> The takeaway </h2>
+          <p class="wow fadeInUp">You don't need to optimize your whole codebase. You need to find the one place that runs the most, fix that one place, and check that it actually got faster. That's the entire practice — everything else is detail.</p>
+          <p class="wow fadeInUp">If you don't know where your hot path is yet, that's usually the real project: not writing faster code, but finding out which code even matters. That's the same diagnostic work Taliferro does on client systems — find the one place that's actually setting the pace, fix that, and let the rest of the system inherit the speed.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em><span><a href="https://taliferro.com/blog/oct2023/oct232023/the-lamentable-state-of-government-software-a-ticking-time-bomb.html">software development</a></span></em></li>
+                <li><em>hot paths</em></li>
+                <li><em>code optimization</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>software development</li>
+              <li>hot paths</li>
+              <li>code optimization</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="a-pursuit-of-major-performance-gains-through-minor-adjustments">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/aug2023/aug102023/living-in-dual-realities.html">&larr; The Duality of Systematic Racism and Optimism</a>
+            <a class="button" href="https://taliferro.com/blog/aug2023/aug122023/the-often-overlooked-missing-piece-of-the-career-puzzle.html">Why Experience Beats a Bigger Paycheck for Career Growth &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

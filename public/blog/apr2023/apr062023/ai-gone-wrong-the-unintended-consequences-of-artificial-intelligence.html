@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>The Unintended Consequences of AI</title>
+  <meta name="description" content="Explore ethical, privacy, bias, labor, and environmental concerns from AI's rapid adoption.">
+  <meta name="keywords" content="AI, unintended consequences, privacy erosion, algorithmic bias, labor market impact, environmental toll, deep fake technology, ethical guidelines, regulatory frameworks, education, public discourse, responsible AI, interdisciplinary collaboration, technology ethics, mitigating negative impacts">
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/apr2023/apr062023/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.html"
+        },
+        "headline": "The Unintended Consequences of AI",
+        "description": "Explore ethical, privacy, bias, labor, and environmental concerns from AI's rapid adoption.",
+        "about": [
+          {"@type":"Thing","name":"Artificial intelligence"},
+          {"@type":"Thing","name":"Algorithmic bias"},
+          {"@type":"Thing","name":"MLOps"},
+          {"@type":"Thing","name":"Responsible AI"},
+          {"@type":"Thing","name":"Bias drift detection"}
+        ],
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-04-06",
+        "dateModified": "2026-08-10",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      </script>
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    {"@type":"ListItem","position":2,"name":"Blog","item":"https://taliferro.com/blog/"},
+    {"@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html"},
+    {"@type":"ListItem","position":4,"name":"The Unintended Consequences of AI","item":"https://taliferro.com/blog/apr2023/apr062023/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.html"}
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does Taliferro Group use machine learning responsibly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on transparency and measurable fairness. Our Bias Drift Detection system flags when predictions start favoring or penalizing certain groups, and Auto Data Generation ensures balanced data coverage before deployment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Taliferro’s machine learning different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We combine engineering discipline with equity-driven design. Every model connects to a business or community outcome—never AI for AI’s sake."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What industries benefit most from your approach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Government, nonprofit, and telecom/tech clients — anywhere a decision system affects real people at scale, bias monitoring and clear success metrics matter more, not less."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "How Taliferro Group Does Machine Learning",
+  "description": "A practical overview of Taliferro Group's machine learning approach: use cases, bias monitoring, MLOps, and measurable outcomes.",
+  "thumbnailUrl": [
+    "https://i.ytimg.com/vi/PKlCCvy_N-c/hqdefault.jpg"
+  ],
+  "embedUrl": "https://www.youtube.com/embed/PKlCCvy_N-c",
+  "contentUrl": "https://www.youtube.com/watch?v=PKlCCvy_N-c",
+  "uploadDate": "2025-10-06T00:00:00Z",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Taliferro Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+      "width": 842,
+      "height": 514
+    }
+  }
+}
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="tech">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="The Unintended Consequences of AI">
+  <meta property="og:description" content="Explore ethical, privacy, bias, labor, and environmental concerns from AI's rapid adoption.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/apr2023/apr062023/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="The Unintended Consequences of AI">
+  <meta name="twitter:description" content="Explore ethical, privacy, bias, labor, and environmental concerns from AI's rapid adoption.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/apr2023/apr062023/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.html">
+  <link rel="canonical" href="https://taliferro.com/blog/apr2023/apr062023/ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence.html">
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#concerns">Concerns</a>
+        <a href="#taliferro-ml">How Taliferro</a>
+        <a href="#conclusion">Conclusion</a>
+        <a href="#faq">Frequently Asked</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>The Unintended Consequences of AI</h1>
+          <p>Every AI system creates a second effect alongside the one it was built for — surveillance creep, laundered bias, a labor shift nobody planned for. Taliferro treats "what's the second effect" as a normal design question, not damage control after launch.</p>
+          <p class="fine">Published: 6 Apr 2023 · Updated: 10 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p>AI adoption gets sold on the upside: faster diagnoses, instant translation, automated busywork gone. All real. What gets less airtime is that every one of those systems creates a second, unintended effect alongside the intended one — and that second effect is usually the one nobody budgeted time to check for.</p>
+          <nav aria-label="Table of contents" class="toc" style="border:1px solid #eee;border-radius:8px;padding:12px;margin:16px 0;">
+            <strong>On this page</strong>
+            <ul>
+              <li><a href="#concerns">Concerns</a></li>
+              <li><a href="#taliferro-ml">How Taliferro Group Does Machine Learning</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+          </nav>
+          <h2 id="concerns" class="text-capitalize"> Concerns </h2>
+          <h3>Surveillance Creep</h3>
+          <p>Facial recognition gets deployed for a narrow, defensible use — flagging a known shoplifter, say — and the same infrastructure quietly becomes general-purpose surveillance, because the cameras and the model don't know the difference between the use case that was approved and the one that wasn't. The technology doesn't expand on its own; nobody revisits the original narrow justification once the system is live.</p>
+          <h3>Bias That Looks Like Neutrality</h3>
+          <p>A hiring model trained on ten years of "who got hired" data will learn who got hired — including whatever bias was baked into those decisions. The model doesn't introduce the bias; it launders it, turning a subjective pattern into something that looks like an objective score. That's what makes it worse than a biased human reviewer, not better: the score feels neutral precisely because it's numeric.</p>
+          <h3>Labor Displacement Without a Transition Plan</h3>
+          <p>Automating a task doesn't automatically eliminate a job — but it does eliminate the entry-level version of that job, which is usually how people learned to do the senior version. The real labor question isn't "will AI take jobs," it's "who's responsible for the people whose first rung on the ladder just got automated away."</p>
+          <h3>The Compute Cost Nobody Puts on the Invoice</h3>
+          <p>Training and running large models takes real energy, and that cost doesn't show up anywhere in a product's feature list. It's not a reason to avoid AI — it's a reason to actually weigh whether a smaller, cheaper model gets 90% of the result before defaulting to the largest one available.</p>
+          <h3>Deepfakes and the Trust Tax</h3>
+          <p>The direct harm from a convincing fake is obvious. The less obvious harm is what happens to everything else: once convincing fakes are common, real footage becomes deniable too. "That's not really me" becomes a plausible defense for genuine evidence, not just fake evidence. That erosion of trust in real media is arguably the bigger long-term cost.</p>
+          <p>None of these are reasons to avoid AI. They're reasons to treat "what's the unintended second effect of this system" as a normal design question, not an afterthought raised only after something goes wrong publicly.</p>
+          <h2 id="taliferro-ml">How Taliferro Group Does Machine Learning</h2>
+          <p>At Taliferro Group, machine learning isn’t abstract theory—it’s applied intelligence tied to measurable business outcomes. We design compact, reliable pipelines, monitor bias drift in production, and align models to explicit revenue or efficiency goals. Two examples we commonly deploy: anomaly detection for revenue leakage and propensity modeling to prioritize sales actions.</p>
+          <div class="video-wrapper" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:1rem 0;border:1px solid #e6ebf2;background:#000">
+            <iframe src="https://www.youtube.com/embed/PKlCCvy_N-c" title="How Taliferro Group Does Machine Learning" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <h3>Our ML Playbook (Condensed)</h3>
+          <ul>
+            <li><strong>Discovery &amp; framing:</strong> quantify success metrics (e.g., cost/hour saved, churn points reduced).</li>
+            <li><strong>Data design:</strong> feature pipeline with data contracts; synthetic data where coverage is thin.</li>
+            <li><strong>Modeling:</strong> start simple baselines; only increase complexity when the delta is proven.</li>
+            <li><strong>MLOps:</strong> CI/CD for models, automated evals, and bias-drift monitors.</li>
+            <li><strong>Adoption:</strong> decisions-in-the-loop dashboards; training for end users; feedback back into features.</li>
+          </ul>
+          <p>See more of our approach on the <a href="https://taliferro.com/machine-learning-services/" target="_blank" rel="noopener">Taliferro ML site</a>.</p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p>AI's unintended consequences aren't a reason to slow down adoption across the board — they're a reason to ask "what's this system's second effect" at design time instead of after launch. Surveillance creep, bias, labor displacement, and compute cost are all cheaper to catch on a whiteboard than to fix in production.</p>
+          <h2 id="faq">Frequently Asked Questions</h2>
+          <div class="faq">
+            <h3>How does Taliferro Group use machine learning responsibly?</h3>
+            <p>We focus on transparency and measurable fairness. Our Bias Drift Detection system flags when predictions start favoring or penalizing certain groups, and Auto Data Generation ensures balanced data coverage before deployment.</p>
+            <h3>What makes Taliferro’s machine learning different?</h3>
+            <p>We combine engineering discipline with equity-driven design. Every model connects to a business or community outcome—never “AI for AI’s sake.”</p>
+            <h3>What industries benefit most from your approach?</h3>
+            <p>We’ve helped government agencies reduce racial bias in decision systems, optimized outreach for nonprofits, and improved revenue prediction in tech and telecom sectors.</p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need stronger model confidence?</strong>
+            <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">predictive analytics services</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book a consult</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>AI</em></li>
+                <li><em>unintended consequences</em></li>
+                <li><em>privacy erosion</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>AI</li>
+              <li>unintended consequences</li>
+              <li>privacy erosion</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="ai_ml" data-source="blog_cta" data-page="ai-gone-wrong-the-unintended-consequences-of-artificial-intelligence">Machine learning consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/apr2023/apr052023/ethical-dilemmas-in-it-the-challenges-of-balancing-innovation-and-responsibility.html">&larr; Ethical Dilemmas in IT Aren't Abstract — They're Design Decisions</a>
+            <a class="button" href="https://taliferro.com/blog/apr2023/apr072023/the-dark-side-of-social-media-mental-health-privacy-and-cyberbullying.html">Social Media&#39;s Mental Health Impact &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

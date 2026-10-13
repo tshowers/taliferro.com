@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Microservices Don't Remove Complexity. They Relocate It.</title>
+  <meta name="description" content="Breaking a monolith into services doesn't remove complexity. It moves it from inside one codebase to the connections between many.">
+  <meta name="keywords" content="Microservices Architecture, software development, scalability, flexibility, monolithic architecture drawbacks, business capability, programming languages, REST APIs, modular design, independent services, domain-specific languages, DBaaS, testability, deployment, modern applications, software architecture, code reusability, debugging, code maintenance, system resilience, communication protocols, enterprise applications, agile development, distributed systems, application performance">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Microservices Don't Remove Complexity. They Relocate It.">
+  <meta property="og:description" content="Breaking a monolith into services doesn't remove complexity. It moves it from inside one codebase to the connections between many.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2022/dec262022/how-to-create-microservices-for-simplicity.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Microservices Don't Remove Complexity. They Relocate It.">
+  <meta name="twitter:description" content="Breaking a monolith into services doesn't remove complexity. It moves it from inside one codebase to the connections between many.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2022/dec262022/how-to-create-microservices-for-simplicity.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2022/dec262022/how-to-create-microservices-for-simplicity.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Microservices Don't Remove Complexity. They Relocate It.", "item": "https://taliferro.com/blog/dec2022/dec262022/how-to-create-microservices-for-simplicity.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2022/dec262022/how-to-create-microservices-for-simplicity.html"
+        },
+        "headline": "Microservices Don't Remove Complexity. They Relocate It.",
+        "description": "Breaking a monolith into services doesn't remove complexity. It moves it from inside one codebase to the connections between many.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-12-26",
+        "dateModified": "2026-08-06T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#why-microservice-architecture-matters">Why Microservice</a>
+        <a href="#the-drawbacks-of-monolithic-architecture">The Drawbacks</a>
+        <a href="#what-is-microservices-architecture">What Is</a>
+        <a href="#benefits-of-microservices">Benefits of</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Microservices Don't Remove Complexity They Relocate It</h1>
+          <p>Breaking a monolith into small, independent services makes each piece easier to test, scale, and deploy on its own. It doesn't make the complexity disappear — it moves from inside one codebase to the connections between many services, which is a different problem, not a smaller one.</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p><span> If you've been working with software for the past few years, you've heard about <a href="https://taliferro.com/blog/aug2023/aug212023/the-biggest-mistake-ctos-make.html">microservices architecture</a>. It's a popular approach to building applications that can help engineers and product teams decompose monolithic codebases into smaller, more manageable chunks. I'll explain what </span><a href="https://taliferro.com/cloud-architecture-consulting/"><strong>microservices architecture</strong></a> is, why it matters, and some key benefits and challenges of using it. By the end of this article, you'll know whether your team should consider moving toward <a href="https://taliferro.com/blog/jan2024/jan072024/scalable-microservices-boost-app-performance.html"><strong>microservices</strong></a>. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution model</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="why-microservice-architecture-matters" class="text-capitalize"> Why Microservice Architecture Matters </h2>
+          <p><span> Microservice architecture is a <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> practice that involves building an application as a suite of small, independent services. Each service can be operated and scaled independently, which makes the system more flexible, efficient, and resilient. Microservices are composed of three core elements: </span></p>
+          <ul>
+            <li> Services - These are individual units that provide one single function or capability. For example, you might have separate services for managing user accounts or managing payments. </li>
+            <li> Communication protocols - Communication protocols define how client applications will interact as they invoke various operations on your service layer to consume its functionality (e.g., HTTP/REST.) </li>
+            <li> Domain Specific Languages (DSLs) - A DSL is used to express the business logic associated with each service in your architecture; this allows you to use shared libraries across different projects and team members without having to worry about getting everyone up to speed on every tiny detail about what each component does within these libraries before they can start working together effectively. </li>
+          </ul>
+          <h2 id="the-drawbacks-of-monolithic-architecture" class="text-capitalize"> The Drawbacks of Monolithic Architecture </h2>
+          <p> Microservices architecture has many advantages over traditional monolithic architecture. </p>
+          <ul>
+            <li> Monolithic architectures are not scalable </li>
+            <li> Monolithic architectures are not flexible </li>
+            <li> Monolithic architectures are hard to maintain </li>
+            <li> Monolithic architectures are difficult to test </li>
+            <li> Monolithic architectures are difficult to deploy </li>
+            <li> Monolithic architectures are difficult to replace </li>
+          </ul>
+          <h2 id="what-is-microservices-architecture" class="text-capitalize"> What Is Microservices Architecture? </h2>
+          <p><span> Microservices are modular and loosely coupled: each microservice implements a single business capability, has a single responsibility, and can be built in any <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> language. </span></p>
+          <p> Each microservice has its database instance or uses shared database instances via database as a service (DBaaS). Applications built with microservices use <a href="https://taliferro.com/blog/apr2023/apr132023/the-misapplication-of-rest-api-dissecting-the-discrepancy-between-api-and-rest.html">REST</a> or APIs to communicate with one another; this enables the composition of new applications without modifying existing ones or rebuilding entire systems. </p>
+          <h2 id="benefits-of-microservices" class="text-capitalize"> Benefits of Microservices </h2>
+          <p> So why should you go the microservices route? </p>
+          <ul>
+            <li> Scalability: As you build your application, it's easy to make small changes and push them across all teams. </li>
+            <li> Flexibility: You can scale up or down at any time without changing too much code. This makes it easier for the developers because they don't have to worry about ensuring that everything stays compatible when they make changes. </li>
+            <li> Reusability: If a feature is built correctly, it can indeed be reused in some form or fashion somewhere else in the application (or another application). This would help reduce development time and cost since it would only require minor changes here and there instead of building everything from scratch every time something needs to be done differently. </li>
+            <li> Testability: By using smaller components that are more modularized into their pieces, they can run independently if required. Meaning easier testing because now there isn't just one large chunk of code but rather many small chunks, which makes finding bugs much faster/easier since each component could be tested individually instead of having all these dependencies which might not necessarily work together properly until later on down the line when integration testing starts occurring rather of just unit tests like we do now. </li>
+          </ul>
+          <h2 id="challenges-of-using-microservices" class="text-capitalize"> Challenges of Using Microservices </h2>
+          <ul>
+            <li> Microservices take more work to manage. </li>
+            <li> Microservices take more work to scale. </li>
+            <li> Microservices are more challenging to test. </li>
+          </ul>
+          <p> Microservices can be harder to maintain and debug because of the increased complexity of having many small services instead of one or two larger ones. </p>
+          <h2 id="microservice-architecture-is-an-effective-tool-for" class="text-capitalize"> Microservice architecture is an effective tool for breaking down large, monolithic applications </h2>
+          <p> Compared to monolithic architectures, microservices can help you scale your software more effectively and improve the flexibility with which it can be used. </p>
+          <p> Let's say you work on an extensive web application that handles all of its processing in a single thread of execution (i.e., it runs as a single process). Things will start getting sluggish pretty quickly—and even worse than that if there's an error. </p>
+          <h2 id="conclusion" class="text-capitalize"> Conclusion </h2>
+          <p><span> Microservice architecture is a powerful for improving your <a href="https://taliferro.com/blog/sep2022/sep102022/rest-in-peace.html">software architecture</a>. It allows you to focus on a tiny piece of functionality at a time and keep everything else working smoothly by isolating it from the rest of the system. Microservices also allow you to scale up or down depending on your needs, making them ideal for modern applications where data volumes can be unpredictable. However, there are some downsides as well, such as increased complexity due to multiple dependencies between services, which means they must always be deployed together in order not to break anything else. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">book an API review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Microservices Architecture</em></li>
+                <li><em><span><a href="https://taliferro.com/blog/mar2023/mar092023/automated-testing.html">software development</a></span></em></li>
+                <li><em>scalability</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Microservices Architecture</li>
+              <li>software development</li>
+              <li>scalability</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="how-to-create-microservices-for-simplicity">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec252022/top-four-benefits-of-separating-your-database.html">&larr; A Single Database Doing Everything Is a Bottleneck Waiting to Happen</a>
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec272022/reasons-you-should-not-be-a-gcp-partner.html">The GCP Partner Program Wasn't Built With My Demographic in Mind. It Shows. &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

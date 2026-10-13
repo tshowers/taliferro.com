@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Change One Layer. Nothing Else Should Notice.</title>
+  <meta name="description" content="Each layer stays independent from the ones below it. That's what makes a piece upgradable without rebuilding the whole system.">
+  <meta name="keywords" content="layered architecture, cloud applications, microservices, scalability, enterprise architecture">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="taliferro:category" content="Cloud Architecture">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Change One Layer. Nothing Else Should Notice.">
+  <meta property="og:description" content="Change something at the top and it shouldn't require touching what's underneath. That's the whole point of a layer.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2022/dec072022/lets-talk-about-layered-architecture-in-the-cloud.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Change One Layer. Nothing Else Should Notice.">
+  <meta name="twitter:description" content="Change something at the top and it shouldn't require touching what's underneath. That's the whole point of a layer.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2022/dec072022/lets-talk-about-layered-architecture-in-the-cloud.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2022/dec072022/lets-talk-about-layered-architecture-in-the-cloud.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Change One Layer. Nothing Else Should Notice.", "item": "https://taliferro.com/blog/dec2022/dec072022/lets-talk-about-layered-architecture-in-the-cloud.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2022/dec072022/lets-talk-about-layered-architecture-in-the-cloud.html"
+        },
+        "headline": "Change One Layer. Nothing Else Should Notice.",
+        "description": "Each layer stays independent from the ones below it — that's what makes a piece upgradable without rebuilding the whole system.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2022-12-07",
+        "dateModified": "2026-08-06T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#layered-architecture">Layered Architecture</a>
+        <a href="#what-is-a-layer">What Is</a>
+        <a href="#the-basics-of-a-layered-architecture">The Basics</a>
+        <a href="#monolith-or-microservice">Monolith Or</a>
+        <a href="#layers-in-the-cloud">Layers In</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Change One Layer Nothing Else Should Notice</h1>
+          <p>Each component in a layered system stays independent from the ones below it. Change something at the top and it shouldn't require touching what's underneath — and the reverse holds too. That's what makes individual pieces upgradable without rebuilding the whole system.</p>
+          <p class="fine">Published: 7 Dec 2022 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="layered-architecture"> Layered Architecture </h2>
+          <p> The buzz often centers around microservice architecture. Microservices have gained popularity due to their ease of deployment and management compared to monolithic applications. However, it's crucial to recognize that microservices still adhere to foundational principles that have been integral to monolithic apps for a substantial period: abstraction, encapsulation, and the separation of concerns. In this article, we delve into the significance of these principles within the context of layered application architecture in the cloud. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">When cloud complexity starts slowing delivery, <a href="https://taliferro.com/cloud-architecture-consulting/">how we untangle cloud systems</a> shows how Taliferro turns cloud architecture into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution model</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="what-is-a-layer"> What Is A Layer? </h2>
+          <p> A layer represents a set of functions and services with a specific role in an application. For instance, an application may encompass a user interface layer responsible for presenting information, a data layer handling requests, and a business logic layer determining how to process and respond to those requests. This architectural approach enables the incorporation of new features without disrupting existing components in other layers, simplifying codebase modifications. </p>
+          <p><span><span> When software developers embark on creating applications, they must contemplate how to structure their code into logical groups termed "layers." Each layer contributes value to the overall application by collaborating seamlessly with other layers through well-defined interfaces, such as API <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">endpoints</a>. These layers can be stacked upon one another to construct a complete application. This process adheres to the modular design philosophy, allowing individual </span><a href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">modules</a> to interact through clearly defined contracts, rendering them easily replaceable while preserving their dependencies. </span></p>
+          <h2 id="the-basics-of-a-layered-architecture"> The Basics Of A Layered Architecture </h2>
+          <p> A layered architecture dissects an application into distinct components, each bearing a specific responsibility. This division can range from straightforward to intricate. The simplest approach involves segmenting the application based on its responsibilities and interactions: </p>
+          <ul>
+            <li><strong>Presentation Layer:</strong> This layer manages the user interface and translates user input into commands for other layers through an API. </li>
+            <li><strong>Business Logic Layer:</strong> Here, the business rules and processes are housed, serving one or more applications. </li>
+            <li><strong>Data Access/Data Management Layer:</strong> This layer oversees data access and provides methods for executing database queries and other data-related tasks. </li>
+          </ul>
+          <p> The essence of layering lies in the autonomy of each component relative to those beneath it in the stack. Changes made at one level do not ripple down to lower levels, and conversely, modifications at lower levels do not impact higher ones. This facilitates individual component upgrades without necessitating the simultaneous reconstruction of the entire system. </p>
+          <h2 id="monolith-or-microservice"> Monolith Or Microservice? </h2>
+          <p><span> The decision between monoliths and microservices hinges on context. The traditional monolithic architecture has been a stalwart in enterprise settings for decades, whereas the microservice approach aligns with modern <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> practices and DevOps principles. </span></p>
+          <p><span> If you possess an existing codebase that cannot be readily disassembled into smaller, independently deployable microservices, retaining a monolithic architecture may be pragmatic. Subsequently, as part of an ongoing transformation from waterfall development to continuous delivery, you can gradually transition to a <a href="https://taliferro.com/blog/aug2023/aug212023/the-biggest-mistake-ctos-make.html">microservices architecture</a>. </span></p>
+          <h2 id="layers-in-the-cloud"> Layers In The Cloud </h2>
+          <p><span> Layered architecture naturally finds a home in the cloud. Cloud computing furnishes the infrastructure for layering applications and services, facilitating <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a>. When a specific segment of your application experiences unexpected surges in traffic, you can swiftly provision new servers and services until equilibrium is restored. It's imperative to note that not all applications warrant this layered architecture, but it does excel in specific scenarios. For example, when developing an API-first service offering diverse functionalities based on user authentication status, each user session can operate within its layer. Each layer possesses its set of resources and tailors responses according to user authentication. </span></p>
+          <h2 id="abstracting-application-cloud-architecture"> Abstracting Application Cloud Architecture </h2>
+          <p><span> The prevailing form of layered architecture is the three-tier model. It comprises the presentation, service, and data layers, along with a distinct user interface (UI) or application <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> interface (API). </span></p>
+          <ul>
+            <li> The UI facilitates user interaction with the software. </li>
+            <li> The API extends programmatic access to the application's functions via the internet. </li>
+            <li> The service layer governs data storage and retrieval across various application lifecycle phases. </li>
+          </ul>
+          <p> In a cloud-based environment, developers can seamlessly integrate these services into their applications through API calls, mitigating complexity as they are relieved of the burden of managing deployment intricacies. This brings us to a fundamental question: What precisely does "cloud" signify? </p>
+          <h2 id="layered-applications-in-the-cloud"> Layered Applications In The Cloud </h2>
+          <p> In the realm of Cloud Computing, layered architecture emerges as an exemplary approach to designing applications. The principles underpinning layered architecture in cloud-based applications mirror those applied in monolithic counterparts, a concept we shall explore further in the following sections. </p>
+          <p> Cloud Computing empowers the utilization of diverse resources (e.g., CPUs, memory, and storage) depending on fluctuating needs and timelines. This implies that an application may not always have access to sufficient resources for its entirety at any given moment. Consequently, the application must be divided into components capable of independently or sequentially utilizing resources from one or more services. Let's delve into how this concept applies to both architectural paradigms: </p>
+          <h2 id="the-problem-with-soa-and-microservices"> The Problem With SOA And Microservices </h2>
+          <p> You may have encountered the misconception that Service-Oriented Architecture (SOA) and microservices are interchangeable terms. This is far from accurate. </p>
+          <p><span> SOA, an architectural pattern originating in the late '90s, remains relevant today. It excels at decoupling business logic from its underlying infrastructure, fostering loose coupling among services for seamless integration into various aspects of enterprise architecture (EA). Importantly, SOA isn't solely about <a href="https://taliferro.com/blog/nov2023/nov272023/pioneering-solutions-for-seattles-emerging-tech-challenges.html">technology</a>; it revolves around structuring applications effectively. </span></p>
+          <p> Microservices, on the other hand, represent a set of technologies employed in building Service-Oriented Architectures—they are not synonymous. </p>
+          <p> Cloud-based applications can indeed embrace the same core principles that have underpinned monolithic applications for years: the separation of concerns, abstraction, and modularity. However, they necessitate a slightly different implementation approach. </p>
+          <p> The primary objective is the creation of self-contained components with well-defined responsibilities and interfaces. These components should be highly reusable, considering the challenges that can arise as your application scales. </p>
+          <p> Microservice architecture, when executed correctly, can distinguish between a pragmatic solution and an ineffectual one. </p>
+          <h2 id="microservices-unveiled"> Microservices Unveiled </h2>
+          <p> Microservices present a methodology for constructing applications capable of seamless scaling. Rather than having a single monolithic application, microservices advocate for numerous small services, each dedicated to specific functions within your system. These microservices can further decompose into subcomponents, contingent on the granularity requirements of each service. Each microservice should operate independently, free from reliance on other sections of the application or system. This autonomy facilitates scalability by enabling the addition or removal of instances as needed, eliminating the need to deploy an entirely new server to handle increased loads. Additionally, it allows for individual performance monitoring, ensuring that bottlenecks or disruptions do not propagate throughout the system. </p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p><span> I have provided a comprehensive overview of layered applications, emphasizing that this approach extends beyond legacy codebases and remains relevant in the realm of modern cloud-based applications. As you embark on the design of your next application or undertake the overhaul of an existing one, contemplate the advantages of layering for enhanced performance, scalability, and <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a>. Embracing layered architecture in the cloud can pave the way for more robust and adaptable solutions. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cloud architecture reality check?</strong>
+            <p class="mb-0">Use the article to frame the issue, then review <a href="https://taliferro.com/cloud-architecture-consulting/">cloud design support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution model</a>, or <a href="https://taliferro.com/contact.html">book a cloud review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>layered architecture</em></li>
+                <li><em>cloud applications</em></li>
+                <li><em>microservices</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>layered architecture</li>
+              <li>cloud applications</li>
+              <li>microservices</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="api_design" data-source="blog_cta" data-page="lets-talk-about-layered-architecture-in-the-cloud">Cloud architecture</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec062022/using-facebook-to-build-your-audience.html">&larr; We Set Out to Build a Facebook Audience. Hackers Got There First.</a>
+            <a class="button" href="https://taliferro.com/blog/dec2022/dec082022/how-to-start-a-software-project-that-inspires-excitement.html">The Team You Start With Decides What the Software Becomes &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

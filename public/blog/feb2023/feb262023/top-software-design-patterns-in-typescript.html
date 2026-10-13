@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>A Design Pattern Is Just a Name for a Problem You've Solved Before</title>
+  <meta name="description" content="Singleton, Factory, Observer, Strategy — TypeScript's core design patterns aren't abstract theory, they're names for problems every developer runs into twice. The ones that actually earn a place in your toolkit, from Taliferro.">
+  <meta name="keywords" content="TypeScript, Design patterns, Singleton pattern, Factory pattern, Decorator pattern, Observer pattern, Strategy pattern, Adapter pattern, Dependency Injection pattern, Maintainable code, Reusable code, Extensible code">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="A Design Pattern Is Just a Name for a Problem You've Solved Before">
+  <meta property="og:description" content="Singleton, Factory, Observer, Strategy — TypeScript's core design patterns aren't abstract theory, they're names for problems every developer runs into twice. The ones that actually earn a place in your toolkit, from Taliferro.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/feb2023/feb262023/top-software-design-patterns-in-typescript.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="A Design Pattern Is Just a Name for a Problem You've Solved Before">
+  <meta name="twitter:description" content="Singleton, Factory, Observer, Strategy — TypeScript's core design patterns aren't abstract theory, they're names for problems every developer runs into twice. The ones that actually earn a place in your toolkit, from Taliferro.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/feb2023/feb262023/top-software-design-patterns-in-typescript.html">
+  <link rel="canonical" href="https://taliferro.com/blog/feb2023/feb262023/top-software-design-patterns-in-typescript.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "A Design Pattern Is Just a Name for a Problem You've Solved Before", "item": "https://taliferro.com/blog/feb2023/feb262023/top-software-design-patterns-in-typescript.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/feb2023/feb262023/top-software-design-patterns-in-typescript.html"
+        },
+        "headline": "A Design Pattern Is Just a Name for a Problem You've Solved Before",
+        "description": "Singleton, Factory, Observer, Strategy — TypeScript's core design patterns aren't abstract theory, they're names for problems every developer runs into twice. The ones that actually earn a place in your toolkit, from Taliferro.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-02-26",
+        "dateModified": "2026-08-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#singleton-pattern">Singleton pattern</a>
+        <a href="#factory-pattern">Factory pattern</a>
+        <a href="#decorator-pattern">Decorator pattern</a>
+        <a href="#observer-pattern">Observer pattern</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>A Design Pattern Is Just a Name for a Problem You've Solved Before</h1>
+          <p>A design pattern isn't a rule to memorize — it's a name for a problem you've already run into once and will run into again. Knowing the name doesn't make you a better developer by itself, but it means the next time you hit the problem, you recognize it instead of reinventing the fix. Observer is the one Taliferro reaches for most — for reasons that make sense the first time you've had to keep three things in sync by hand.</p>
+          <p class="fine">Published: 26 Feb 2023 · Updated: 06 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p><span> TypeScript is a <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> language widely used for building large-scale applications, especially those involving </span><a href="https://taliferro.com/blog/dec2023/dec182023/smart-web-development.html">web development</a><span>. Like any other <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> language, TypeScript provides developers with various tools and techniques for creating high-quality software. Software design patterns are essential tools in the TypeScript developer's toolkit. Software design patterns are reusable solutions to common <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> problems. They help developers write more maintainable, reusable, and extensible code. This article will look at some of the basic </span><a href="https://taliferro.com/blog/nov2022/nov262022/software-design-guide.html">software design</a> patterns in TypeScript. </p>
+          <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">software development support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="singleton-pattern" class="text-capitalize"> Singleton pattern </h2>
+          <p> The Singleton pattern is a creational pattern that ensures that a class has only one instance and provides a global point of access. This pattern is useful when you need only one instance of a class, for example, when working with a database connection or a logger. In TypeScript, the Singleton pattern ensures that a class has only one instance and provides a global access point. </p>
+          <h2 id="factory-pattern" class="text-capitalize"> Factory pattern </h2>
+          <p> The Factory pattern is another creational pattern that is used to create objects without specifying the exact class of thing that will be created. In TypeScript, the Factory pattern is used to create objects without limiting their precise class. This pattern is proper when you need to create similar but not identical things, for example, when working with different buttons or forms. </p>
+          <h2 id="decorator-pattern" class="text-capitalize"> Decorator pattern </h2>
+          <p> The Decorator pattern is a structural pattern that allows you to add functionality dynamically to an object without changing its class. In TypeScript, the Decorator pattern is used to add functionality to an object dynamically without changing its class. This pattern is proper when you want to add new functionality to an object without modifying its existing functionality, for example, when adding logging or caching to a function. </p>
+          <h2 id="observer-pattern" class="text-capitalize"> Observer pattern </h2>
+          <p>What is now my favorite pattern, the Observer pattern is a behavioral pattern that allows you to define a one-to-many dependency between objects so that when one thing changes state, all its dependents are notified and updated automatically. In TypeScript, the Observer pattern is used to define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically. This pattern is useful when you need to keep multiple things in sync with each other, for example, when working with event listeners. </p>
+          <h2 id="strategy-pattern" class="text-capitalize"> Strategy pattern </h2>
+          <p> The Strategy pattern is a behavioral pattern that allows you to define a family of algorithms, encapsulate each one, and make them interchangeable. In TypeScript, the Strategy pattern is used to describe a family of algorithms, encapsulate each, and make them interchangeable. This pattern is proper when you need to switch between different algorithms at runtime, for example, when working with varying sorting algorithms. </p>
+          <h2 id="adapter-pattern" class="text-capitalize"> Adapter pattern </h2>
+          <p> The Adapter pattern is a structural pattern that allows you to adapt an existing class to work with another interface. This pattern is useful when you need to work with an existing class that does not implement an interface that you need, for example, when working with legacy code. In TypeScript, the Adapter pattern is used to adjust an existing class to work with another interface. </p>
+          <h2 id="dependency-injection-pattern" class="text-capitalize"> Dependency Injection pattern </h2>
+          <p><span> The Dependency Injection pattern is a design pattern that allows you to provide dependencies to an object at runtime rather than at compile time. In TypeScript, the Dependency Injection pattern provides dependencies to an object at runtime rather than compile time. This pattern is proper when you create highly decoupled objects, for example, when working with an extensive application with many <a href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">modules</a>. </span></p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p> Software design patterns are an essential part of the TypeScript developer's toolkit. They provide a set of proven solutions to common programming problems, making writing maintainable, reusable, and extensible code easier. </p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>TypeScript</em></li>
+                <li><em>Design patterns</em></li>
+                <li><em>Singleton pattern</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>TypeScript</li>
+              <li>Design patterns</li>
+              <li>Singleton pattern</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="top-software-design-patterns-in-typescript">Tell us what is stuck</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb252023/navigating-company-politics-as-a-consultant.html">&larr; A Consultant Who Takes Sides Stops Being Useful</a>
+            <a class="button" href="https://taliferro.com/blog/feb2023/feb272023/dont-over-integrate.html">Every Integration You Add Is a New Point of Failure &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

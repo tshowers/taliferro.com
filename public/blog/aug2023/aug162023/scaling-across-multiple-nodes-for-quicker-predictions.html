@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Batch Scoring Shouldn't Run on One Node at a Time</title>
+  <meta name="description" content="Azure's parallel-run step splits batch scoring across multiple compute nodes instead of one. Taliferro on how to set it up and when it's worth it.">
+  <meta name="keywords" content="Azure, parallel-run, batch scoring, efficiency, optimization">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Batch Scoring Shouldn't Run on One Node at a Time">
+  <meta property="og:description" content="Azure's parallel-run step splits batch scoring across multiple compute nodes instead of one. Taliferro on how to set it up and when it's worth it.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/aug2023/aug162023/scaling-across-multiple-nodes-for-quicker-predictions.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="Batch Scoring Shouldn't Run on One Node at a Time">
+  <meta name="twitter:description" content="Azure's parallel-run step splits batch scoring across multiple compute nodes instead of one. Taliferro on how to set it up and when it's worth it.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/aug2023/aug162023/scaling-across-multiple-nodes-for-quicker-predictions.html">
+  <link rel="canonical" href="https://taliferro.com/blog/aug2023/aug162023/scaling-across-multiple-nodes-for-quicker-predictions.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "Batch Scoring Shouldn't Run on One Node at a Time", "item": "https://taliferro.com/blog/aug2023/aug162023/scaling-across-multiple-nodes-for-quicker-predictions.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/aug2023/aug162023/scaling-across-multiple-nodes-for-quicker-predictions.html"
+        },
+        "headline": "Batch Scoring Shouldn't Run on One Node at a Time",
+        "description": "Azure's parallel-run step splits batch scoring across multiple compute nodes instead of one. Taliferro on how to set it up and when it's worth it.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-08-16",
+        "dateModified": "2026-09-06",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#azures-parallel-run-step-an-overview">Overview</a>
+        <a href="#key-features-of-parallel-run-step">Key Features</a>
+        <a href="#how-to-leverage-parallel-run-step-for-batch-scorin">Setup</a>
+        <a href="#conclusion">Conclusion</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Batch Scoring Shouldn't Run on One Node at a Time</h1>
+          <p>A prediction model that scores a growing dataset on a single compute node gets slower every quarter, even if nothing about the model changes. Taliferro looks at how Azure's parallel-run step fixes that by spreading the work across nodes instead.</p>
+          <p class="fine">Published: 16 Aug 2023 · Updated: 6 Sep 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
+          <p class="wow fadeInUp"> Batch scoring means running a predictive model against a batch of data points to generate scores or predictions. As data volume grows, running that job on a single machine gets slower every cycle — the model doesn't change, but the wait does. </p>
+          <p class="wow fadeInUp"> Azure's parallel-run step fixes that by spreading the scoring job across multiple compute nodes instead of one. Here's how it actually works, and what it takes to set up. </p>
+          <h2 id="azures-parallel-run-step-an-overview" class="text-capitalize wow fadeInUp"> Azure's Parallel-Run Step: An Overview </h2>
+          <p class="wow fadeInUp"> Azure's parallel-run step is part of the Azure Machine Learning (ML) service that allows for parallel execution of a scoring script across several compute nodes. This is particularly beneficial when dealing with large datasets or complex models that require extensive computational resources. </p>
+          <h2 id="key-features-of-parallel-run-step" class="text-capitalize wow fadeInUp"> Key Features of Parallel-Run Step </h2>
+          <ul>
+            <li> Scalability - It effortlessly scales across multiple nodes, adapting to the size and complexity of the data. </li>
+            <li> Flexibility - It supports various data formats and storage options, integrating seamlessly with existing infrastructure. </li>
+            <li> Performance Optimization - By parallelizing the scoring process, it significantly reduces the time required to generate predictions. </li>
+            <li> Monitoring and Logging - It provides comprehensive monitoring and logging capabilities to track performance and troubleshoot issues. </li>
+          </ul>
+          <h2 id="how-to-leverage-parallel-run-step-for-batch-scorin" class="text-capitalize wow fadeInUp"> How to Leverage Parallel-Run Step for Batch Scoring </h2>
+          <h3 class="text-capitalize wow fadeInUp"> Prepare the Environment </h3>
+          <p class="wow fadeInUp"> Create a Compute Target: Define the compute cluster that will execute the parallel-run step. </p>
+          <p class="wow fadeInUp"> Configure Data Inputs: Specify the input data, which can be sourced from various Azure storage solutions. </p>
+          <p class="wow fadeInUp"> Set Up Scoring Script: Develop the scoring script that contains the logic for applying the predictive model to the data. </p>
+          <h3 class="text-capitalize wow fadeInUp"> Configure the Parallel-Run Step </h3>
+          <ul>
+            <li> Determine Parallelism - Set the number of nodes and the degree of parallelism according to the data size and desired performance. </li>
+            <li> Select Mini-Batch Size - Choose the size of the mini-batches that the data will be divided into for parallel processing. </li>
+          </ul>
+          <h3 class="text-capitalize wow fadeInUp"> Execute the Parallel-Run Step </h3>
+          <ul>
+            <li> Run the Experiment - Execute the parallel-run step as part of an Azure ML Pipeline. </li>
+            <li> Monitor the Progress - Utilize Azure's monitoring tools to track the progress and performance of the parallel execution. </li>
+          </ul>
+          <h3 class="text-capitalize wow fadeInUp"> Analyze the Results </h3>
+          <ul>
+            <li> Retrieve Predictions - Access the generated predictions from the designated output location. </li>
+            <li><span> Evaluate Performance - Assess the <a href="https://taliferro.com/blog/oct2023/oct282023/the-real-secret-to-e-commerce-efficiency.html">efficiency</a> and accuracy of the parallel-run step and make adjustments as needed. </span></li>
+          </ul>
+          <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
+          <p class="wow fadeInUp"> Azure's parallel-run step doesn't make a model smarter — it makes the infrastructure around it stop being the bottleneck. Splitting execution across nodes turns a batch job that gets slower every quarter into one that scales with the data instead of fighting it. </p>
+          <p class="wow fadeInUp"><span> That's a real fix for <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a> and <a href="https://taliferro.com/blog/sep2023/sep152023/leveraging-flow-hooks-in-api-proxies.html">performance</a>, not a cosmetic one — the same batch scoring job runs in a fraction of the time without touching the model's accuracy. </span></p>
+          <p class="wow fadeInUp"><span> For teams doing serious <a href="https://taliferro.com/blog/aug2023/aug142023/clustering-algorithms-and-silhouette-scores.html">data science</a> and <a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html">machine learning</a> work, that difference compounds — a batch job that takes minutes instead of hours changes how often it's practical to run at all. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cloud architecture reality check?</strong>
+            <p class="mb-0">Use the article to frame the issue, then review <a href="https://taliferro.com/cloud-architecture-consulting/">cloud design support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">book a cloud review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>Azure</em></li>
+                <li><em>parallel-run</em></li>
+                <li><em>batch scoring</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>Azure</li>
+              <li>parallel-run</li>
+              <li>batch scoring</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="blog" data-source="blog_cta" data-page="scaling-across-multiple-nodes-for-quicker-predictions">Cloud architecture</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/aug2023/aug152023/building-a-robust-lead-generation-pipeline.html">&larr; Organic Lead Generation Works in Stages, Not One Big Push</a>
+            <a class="button" href="https://taliferro.com/blog/aug2023/aug172023/the-intersection-of-art-and-business-a-composers-perspective.html">What Composing Music Taught Me About Building a Business &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

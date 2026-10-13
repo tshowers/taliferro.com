@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>APIs: The Game Changer in Coding Practices!</title>
+  <meta name="description" content="Discover how API consulting enhances code reviews and pair programming in e-commerce. Learn lesser-known concepts for code quality and collaboration.">
+  <meta name="keywords" content="API consulting, code reviews, pair programming, e-commerce, code quality, collaboration, API best practices, security, performance, knowledge transfer">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="APIs: The Game Changer in Coding Practices!">
+  <meta property="og:description" content="Discover how API consulting enhances code reviews and pair programming in e-commerce. Learn lesser-known concepts for code quality and collaboration.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/feb2024/feb042024/api-consultings-role-in-code-reviews-and-pair-programming.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="APIs: The Game Changer in Coding Practices!">
+  <meta name="twitter:description" content="Discover how API consulting enhances code reviews and pair programming in e-commerce. Learn lesser-known concepts for code quality and collaboration.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/feb2024/feb042024/api-consultings-role-in-code-reviews-and-pair-programming.html">
+  <link rel="canonical" href="https://taliferro.com/blog/feb2024/feb042024/api-consultings-role-in-code-reviews-and-pair-programming.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "APIs: The Game Changer in Coding Practices!", "item": "https://taliferro.com/blog/feb2024/feb042024/api-consultings-role-in-code-reviews-and-pair-programming.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/feb2024/feb042024/api-consultings-role-in-code-reviews-and-pair-programming.html"
+        },
+        "headline": "APIs: The Game Changer in Coding Practices!",
+        "description": "Discover how API consulting enhances code reviews and pair programming in e-commerce. Learn lesser-known concepts for code quality and collaboration.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2024-02-04T09:00:00-07:00",
+        "dateModified": "2024-03-06T09:00:00-05:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+      
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#apis-the-game-changer-in-coding-practices">APIs: The</a>
+        <a href="#understanding-the-role-of-code-reviews-and-pair-pr">Understanding the</a>
+        <a href="#the-api-consulting-advantage-in-code-reviews-and-p">The API</a>
+        <a href="#code-review-best-practices">Code Review</a>
+        <a href="#pair-programming-benefits">Pair Programming</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>API Consulting&#39;s Role in Code Reviews and Pair Programming</h1>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="apis-the-game-changer-in-coding-practices">APIs: The Game Changer in Coding Practices!</h2>
+          <p><span><span> Achieving high-quality software is a goal that goal requires more than just skilled developers and cutting-edge <a href="https://taliferro.com/blog/nov2023/nov272023/pioneering-solutions-for-seattles-emerging-tech-challenges.html">technology</a><span>. Code reviews and pair <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a>, guided by API </span></span><a href="https://taliferro.com/blog/jun2023/jun132023/embracing-fallibility.html">consulting</a><span>, have emerged as indispensable practices for ensuring code quality, reliability, and <a href="https://taliferro.com/blog/jun2023/jun282023/the-angular-shared-module-reducing-repetition-and-exploring-its-advantages-and-disadvantages.html">maintainability</a> in e-commerce. In this comprehensive guide, we will explore how these collaborative techniques can elevate your e-commerce development process and unearth lesser-known concepts that can make a significant difference. </span></span></p>
+          <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">API consulting</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">execution model</a> keeps the work tied to outcomes instead of activity.</p>
+          <h2 id="understanding-the-role-of-code-reviews-and-pair-pr"> Understanding the Role of Code Reviews and Pair Programming in E-Commerce </h2>
+          <p><span> Let's grasp why code reviews and pair <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> are vital in the context of e-commerce. </span></p>
+          <p> Code Reviews involve the examination of code by peers to identify defects, adherence to coding standards, and potential improvements. Code reviews not only catch bugs early but also serve as a knowledge-sharing platform where developers can learn from each other and maintain code consistency. </p>
+          <p><span> Pair <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> is a collaborative development technique where two developers work together at a single workstation. One developer writes code (the driver), while the other (the observer) reviews each line of code as it's written. Pair <a href="https://taliferro.com/blog/jun2023/jun302023/memory-leaks-a-lingering-concern-or-an-issue-of-the-past.html">programming</a> fosters real-time problem-solving, knowledge sharing, and immediate feedback. </span></p>
+          <p><span> API <a href="https://taliferro.com/blog/jun2023/jun132023/embracing-fallibility.html">consulting</a> plays a pivotal role in guiding and supporting code reviews and pair programming, ensuring that APIs are correctly integrated, maintainable, and performant. </span></p>
+          <h2 id="the-api-consulting-advantage-in-code-reviews-and-p"><span> The <a href="https://taliferro.com/blog/jan2024/jan112024/apigee-expertise-transforming-api-consulting.html">API Consulting</a> Advantage in Code Reviews and Pair Programming </span></h2>
+          <p><span><span><span><span><span> API consultants bring their <a href="https://taliferro.com/blog/oct2023/oct222023/why-your-online-store-wont-grow-without-expert-technical-consultation.html">expertise</a> in </span></span><a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">API design</a>, integration, and </span><a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a> to code reviews and pair programming sessions. They offer valuable insights and ensure that API-related aspects, such as data flow, </span><a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a><span>, and <a href="https://taliferro.com/blog/oct2023/oct282023/the-real-secret-to-e-commerce-efficiency.html">efficiency</a>, are considered during the development process. </span></span></p>
+          <p><span> Here are some key advantages of incorporating <a href="https://taliferro.com/blog/feb2024/feb052024/how-we-elevate-e-commerce-with-tdd-and-api-consulting.html">API consulting</a> into your code review and pair programming processes in e-commerce: </span></p>
+          <ul>
+            <li><strong>API Best Practices:</strong><span> API consultants ensure that APIs adhere to industry <a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a>, promoting consistency and standardization. </span></li>
+            <li><strong>Security Review:</strong><span> They conduct <a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a> reviews to identify potential vulnerabilities and recommend appropriate safeguards. </span></li>
+            <li><strong>Performance Optimization:</strong> API consultants optimize API performance, ensuring that the integration does not introduce latency or bottlenecks. </li>
+            <li><strong>Scalability:</strong><span> They plan for API <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a>, ensuring that the code can handle increased load and traffic. </span></li>
+          </ul>
+          <p> Now, let's explore the various facets of code reviews and pair programming in e-commerce, uncovering lesser-known concepts that can enhance your understanding of these practices. </p>
+          <h2 id="code-review-best-practices"> Code Review Best Practices </h2>
+          <p><span> In <a href="https://taliferro.com/ecommerce-development/">e-commerce</a>, code reviews are not merely about finding bugs. They encompass a holistic assessment of code quality, <a href="https://taliferro.com/blog/jun2023/jun282023/the-angular-shared-module-reducing-repetition-and-exploring-its-advantages-and-disadvantages.html">maintainability</a>, and adherence to coding standards. Lesser-known concept: Implementing automated code analysis tools to assist in identifying code smells, adherence to style guides, and potential vulnerabilities. </span></p>
+          <h2 id="pair-programming-benefits"> Pair Programming Benefits </h2>
+          <p> Pair programming goes beyond mere code writing; it fosters a culture of collaboration and knowledge sharing. Lesser-known concept: Implementing mob programming, an extension of pair programming where multiple developers collaborate on the same code, promoting collective code ownership and faster problem-solving. </p>
+          <h2 id="continuous-integration-with-code-reviews"> Continuous Integration with Code Reviews </h2>
+          <p><span> Integrating code reviews into a <a href="https://taliferro.com/blog/feb2024/feb032024/efficient-e-commerce-ci-cd-with-api-consulting.html">CI/CD</a> pipeline ensures that code changes are thoroughly examined before deployment. Lesser-known concept: Implementing "pre-commit" code reviews, where code is reviewed before it's committed to the repository, reducing the chances of defects making it into the codebase. </span></p>
+          <h2 id="api-design-reviews"><span>
+              <a href="https://taliferro.com/blog/jan2024/jan222024/best-practices-for-api-design-and-development.html">API Design</a> Reviews </span></h2>
+          <p><span> API consultants play a crucial role in <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">API design</a> reviews during pair programming sessions. They ensure that APIs are intuitive, well-documented, and align with the overall architecture. Lesser-known concept: Conducting "API usability" reviews to assess how easy it is for developers to understand and use the API effectively. </span></p>
+          <h2 id="test-driven-development-tdd"><span>
+              <a href="https://taliferro.com/blog/sep2023/sep192023/elevating-user-interfaces-and-enhancing-performance-metrics.html">Test-Driven Development</a><span> (<a href="https://taliferro.com/blog/sep2023/sep192023/elevating-user-interfaces-and-enhancing-performance-metrics.html">TDD</a>) </span></span></h2>
+          <p><span><span><span>
+                  <a href="https://taliferro.com/blog/sep2023/sep192023/elevating-user-interfaces-and-enhancing-performance-metrics.html">TDD</a><span><span><span> involves writing tests before writing code to ensure that the code meets the specified requirements. API consultants guide developers in creating comprehensive test suites for API integrations. Lesser-known concept: Using property-based testing to generate a wide range of test cases automatically, enhancing test coverage and finding edge cases. </span></span></span></span></span></span></p>
+          <h2 id="security-centric-code-reviews"> Security-Centric Code Reviews </h2>
+          <p><span>
+              <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a> is paramount in e-commerce. API consultants conduct <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a>-focused code reviews to identify vulnerabilities such as SQL injection, cross-site scripting (XSS), and data exposure risks. Lesser-known concept: Implementing "threat modeling" sessions to proactively identify potential <a href="https://taliferro.com/blog/oct2023/oct272023/rethinking-digital-security.html">security</a> threats and devise mitigation strategies. </span></p>
+          <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe src="https://www.youtube.com/embed/OopgSISYvP4" title="Taliferro Group - Revolutionizing API Strategy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left: 0; width: 100%; height: 100%;"></iframe>
+          </div>
+          <h2 id="knowledge-transfer"> Knowledge Transfer </h2>
+          <p> Code reviews and pair programming sessions serve as opportunities for knowledge transfer and mentorship. Lesser-known concept: Implementing "code walkthroughs" to discuss code changes and architectural decisions, promoting understanding among team members. </p>
+          <h2 id="api-performance-tuning"> API Performance Tuning </h2>
+          <p> API performance is critical in e-commerce applications. API consultants conduct performance reviews during pair programming sessions to identify and address bottlenecks and inefficiencies. Lesser-known concept: Implementing "load testing" to assess how the API performs under heavy traffic conditions, ensuring it can handle peak loads. </p>
+          <h2 id="the-future-of-code-reviews-and-pair-programming-in"> The Future of Code Reviews and Pair Programming in E-Commerce </h2>
+          <p><span> As e-commerce continues to evolve, code quality and collaboration will remain at the heart of successful development practices. Emerging trends such as <a href="https://taliferro.com/blog/aug2023/aug212023/the-biggest-mistake-ctos-make.html">microservices architecture</a><span>, serverless computing, and <a href="https://taliferro.com/blog/may2023/may222023/succumbing-to-competitors-leveraging-ai-ml-for-a-competitive-edge.html">AI</a><span>-driven <a href="https://taliferro.com/blog/feb2024/feb022024/personalization-through-api-in-e-commerce.html">personalization</a> will require robust code reviews and pair programming processes. </span></span></span></p>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p><span><span> Code reviews and pair programming, guided by API <a href="https://taliferro.com/blog/jun2023/jun132023/embracing-fallibility.html">consulting</a>, are not just </span><a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">quality assurance</a><span> measures but essential components of a thriving e-commerce development culture. By embracing these practices and the lesser-known concepts within them, businesses can deliver reliable, secure, and high-performance <a href="https://taliferro.com/blog/mar2023/mar102023/advantages-and-disadvantages-of-using-popular-e-commerce-platforms.html">e-commerce solutions</a> to their customers. </span></span></p>
+          <p><span><span> The synergy between <a href="https://taliferro.com/blog/feb2024/feb052024/how-we-elevate-e-commerce-with-tdd-and-api-consulting.html">API consulting</a> and code quality practices ensures that your e-commerce platform remains agile, scalable, and resilient in the dynamic landscape of online retail. Embrace this collaborative approach, and you'll not only elevate your code quality but also foster a culture of continuous improvement and </span><a href="https://taliferro.com/blog/jun2023/jun292023/shaping-the-future-of-legal-education.html">innovation</a> in your e-commerce development teams. </span></p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">API design support</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book an API review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API consulting</em></li>
+                <li><em>code reviews</em></li>
+                <li><em>pair programming</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li>API consulting</li>
+              <li>code reviews</li>
+              <li>pair programming</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="api-consultings-role-in-code-reviews-and-pair-programming">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/feb2024/feb032024/efficient-e-commerce-ci-cd-with-api-consulting.html">&larr; Efficient E-Commerce CI/CD with API Consulting</a>
+            <a class="button" href="https://taliferro.com/blog/feb2024/feb052024/how-we-elevate-e-commerce-with-tdd-and-api-consulting.html">How We Elevate E-Commerce with TDD and API Consulting &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

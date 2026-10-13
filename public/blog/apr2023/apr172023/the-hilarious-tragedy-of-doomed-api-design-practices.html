@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>10 Common API Design Mistakes (and How to Avoid Them)</title>
+  <meta name="description" content="Avoid the most common API design mistakes. Learn best practices for REST API design, clear endpoints, versioning, pagination, error handling, and security.">
+  <meta name="keywords" content="API design mistakes, REST API best practices, common API errors, API anti-patterns, versioning, pagination, status codes, error handling, API security, naming conventions">
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html"
+        },
+        "headline": "10 Common API Design Mistakes (and How to Avoid Them)",
+        "description": "Avoid the most common API design mistakes. Learn best practices for REST API design, clear endpoints, versioning, pagination, error handling, and security.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/",
+          "sameAs": "https://www.linkedin.com/in/tyrone-showers"
+        },
+        "datePublished": "2023-04-17",
+        "dateModified": "2026-08-10",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+    </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the most common API design mistakes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typical mistakes include unclear endpoint naming, inconsistent conventions, over-nesting resources, poor versioning, ignoring pagination, misusing HTTP methods and status codes, unhelpful error messages, and weak security."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I avoid REST API anti-patterns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adopt consistent naming, document thoroughly, return predictable status codes, implement pagination and filtering, use semantic HTTP methods, and secure authentication and authorization from the start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What’s the best way to version an API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Choose a clear, consistent approach (e.g., URI versioning or header-based) and deprecate responsibly with documentation and migration timelines."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "How Taliferro Group Tackles API Design",
+    "description": "A concise overview of Taliferro Group’s approach to robust, secure, and maintainable API design.",
+    "thumbnailUrl": ["https://i.ytimg.com/vi/OopgSISYvP4/hqdefault.jpg"],
+    "embedUrl": "https://www.youtube.com/embed/OopgSISYvP4",
+    "thumbnail": {
+      "@type": "ImageObject",
+      "url": "https://i.ytimg.com/vi/OopgSISYvP4/hqdefault.jpg"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Taliferro Group",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+        "width": 842,
+        "height": 514
+      }
+    }
+  }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="alternate" type="application/rss+xml" href="https://taliferro.com/blog/rss.xml">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="taliferro:category" content="API">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="10 Common API Design Mistakes (and How to Avoid Them)">
+  <meta property="og:description" content="Avoid the most common API design mistakes. Learn best practices for REST API design, clear endpoints, versioning, pagination, error handling, and security.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Taliferro Blog">
+  <meta property="article:published_time" content="2023-04-17T00:00:00+00:00">
+  <meta property="article:modified_time" content="2026-08-10T00:00:00+00:00">
+  <meta property="article:section" content="API Design">
+  <meta property="article:tag" content="API design mistakes">
+  <meta property="article:tag" content="REST API best practices">
+  <meta property="article:tag" content="API anti-patterns">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image:alt" content="API design mistakes guide: avoid pitfalls in REST API design.">
+  <meta name="twitter:site" content="@TaliferroLLC">
+  <meta name="twitter:title" content="10 Common API Design Mistakes (and How to Avoid Them)">
+  <meta name="twitter:description" content="Avoid the most common API design mistakes. Learn best practices for REST API design, clear endpoints, versioning, pagination, error handling, and security.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta name="twitter:url" content="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">
+  <link rel="canonical" href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+    { "@type": "ListItem", "position": 4, "name": "10 Common API Design Mistakes (and How to Avoid Them)", "item": "https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html" }
+  ]
+}
+</script>
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#introduction">Introduction</a>
+        <a href="#key-takeaways">Key Takeaways</a>
+        <a href="#video-how-taliferro-group-tackles-api-design">Video: How</a>
+        <a href="#mistake-1-inscrutable-endpoints-api-design-mistake">Mistake 1</a>
+        <a href="#mistake-2-inconsistent-naming-conventions">Mistake 2</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>10 Common API Design Mistakes (and How to Avoid Them)</h1>
+          <p>Most bad APIs aren't one catastrophic decision — they're ten small, individually reasonable-seeming choices that compound. This is the checklist Taliferro actually uses when reviewing an API before it ships.</p>
+          <p class="fine">Published: 17 Apr 2023 · Updated: 10 Aug 2026</p>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <h2 id="introduction"> Introduction </h2>
+          <p>Most bad APIs aren't bad because of one catastrophic decision — they're bad because of ten small, individually reasonable-seeming choices that compound. Here are the ten that show up most often, what they cost you in practice, and how to avoid each one.</p>
+          <p style="font-style:italic; background:#f7f7f9; border-left:4px solid #e0e0e0; padding:0.75rem 1rem;">
+            <strong>Current guidance:</strong> This reflects current REST and HTTP best practices, stronger security baselines (OAuth 2.1/PKCE, mTLS in sensitive environments), and clearer guidance on pagination, error payloads, and versioning strategies.
+          </p>
+          <h2 id="key-takeaways">Key Takeaways</h2>
+          <ul>
+            <li>Use clear, predictable endpoint naming—avoid inscrutable endpoints.</li>
+            <li>Follow REST API best practices for versioning, pagination, and HTTP methods.</li>
+            <li>Return consistent status codes and actionable error messages.</li>
+            <li>Prioritize API security from day one to prevent avoidable vulnerabilities.</li>
+          </ul>
+          <h2 id="video-how-taliferro-group-tackles-api-design">Video: How Taliferro Group Tackles API Design</h2>
+          <div class="video video-responsive" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/OopgSISYvP4?rel=0" title="How Taliferro Group Tackles API Design" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            </iframe>
+          </div>
+          <h2 id="mistake-1-inscrutable-endpoints-api-design-mistake" class="text-capitalize"> Mistake 1 — Inscrutable Endpoints</h2>
+          <p>An endpoint name should tell a developer what it does without needing the docs open. Endpoints like <code>/proc2</code> or <code>/handleData</code> force every integrator to guess, test, and re-guess. Name resources as nouns (<code>/customers/{id}/orders</code>), not verbs or internal jargon only your team understands.</p>
+          <h2 id="mistake-2-inconsistent-naming-conventions" class="text-capitalize"> Mistake 2 — Inconsistent Naming Conventions</h2>
+          <p>Mixing camelCase, snake_case, and PascalCase across the same API means every client has to special-case each endpoint's quirks. Pick one convention, document it, and enforce it in code review — consistency here is what makes an API guessable instead of memorized.</p>
+          <h2 id="mistake-3-nested-resource-overload" class="text-capitalize"> Mistake 3 — Nested-Resource Overload</h2>
+          <p>Deep nesting like <code>/companies/{id}/departments/{id}/teams/{id}/members/{id}/tasks</code> looks organized and is actually a maintenance trap — every level adds a parameter clients must track correctly. Two levels of nesting is usually the practical ceiling; beyond that, flatten with query parameters or separate top-level resources.</p>
+          <h2 id="mistake-4-overzealous-versioning" class="text-capitalize"> Mistake 4 — Overzealous Versioning</h2>
+          <p>Versioning matters for compatibility, but bumping the version for every minor field addition forces clients into a constant, unnecessary upgrade treadmill. Reserve a new version for breaking changes; additive, backward-compatible changes don't need one.</p>
+          <h2 id="mistake-5-inadequate-documentation" class="text-capitalize"> Mistake 5 — Inadequate Documentation</h2>
+          <p>An API without real docs — actual request/response examples, not just a field list — pushes every integration question into your support queue. Generate docs from your schema (OpenAPI/Swagger) so they can't silently drift out of sync with the actual behavior.</p>
+          <h2 id="mistake-6-overloading-http-methods" class="text-capitalize"> Mistake 6 — Overloading HTTP Methods</h2>
+          <p>Using GET to delete something, or POST for an operation that's supposed to be safely repeatable, breaks the assumptions every HTTP client, cache, and proxy makes about your API. Match methods to their semantics: GET reads, POST creates, PUT/PATCH updates, DELETE removes — no exceptions for convenience.</p>
+          <h2 id="mistake-7-confounding-error-messages" class="text-capitalize"> Mistake 7 — Confounding Error Messages</h2>
+          <p>"Something went wrong" tells a developer nothing actionable. A good error response names exactly what field failed, why, and what a valid value looks like — the difference between a five-minute fix and a support ticket.</p>
+          <pre style="white-space:pre; overflow:auto;"><code>// ❌ Bad: ambiguous error
+          HTTP/1.1 400 Bad Request
+          Content-Type: application/json
+          
+          { "error": "Something went wrong" }
+          
+          // ✅ Good: actionable, consistent shape
+          HTTP/1.1 400 Bad Request
+          Content-Type: application/json
+          
+          {
+            "error": {
+              "code": "INVALID_PARAMETER",
+              "message": "Query parameter 'limit' must be an integer between 1 and 100.",
+              "details": [
+                { "field": "limit", "reason": "out_of_range", "min": 1, "max": 100 }
+              ],
+              "traceId": "a1b2c3d4"
+            }
+          }</code></pre>
+          <h2 id="mistake-8-ignoring-pagination" class="text-capitalize"> Mistake 8 — Ignoring Pagination</h2>
+          <p>An endpoint that returns every record in one response works fine in testing with 50 rows and falls over in production with 500,000. Build pagination in from day one — retrofitting it later is a breaking change for every existing client.</p>
+          <pre style="white-space:pre; overflow:auto;"><code style="font-size: smaller;">// ✅ Recommended cursor-based pagination
+          GET /v1/customers?limit=50&amp;cursor=eyJpZCI6IjEyMzQ1In0
+          
+          HTTP/1.1 200 OK
+          Content-Type: application/json
+          
+          {
+            "items": [ /* ... */ ],
+            "page": {
+              "limit": 50,
+              "next": "eyJpZCI6IjU2Nzg5In0",
+              "prev": null
+            }
+          }
+          
+          // Include RFC 5988-style link headers for clients
+          Link: &lt;https://api.example.com/v1/customers?limit=50&amp;cursor=eyJpZCI6IjU2Nzg5In0&gt;; rel="next"
+          </code></pre>
+          <h2 id="mistake-9-misuse-of-status-codes" class="text-capitalize"> Mistake 9 — Misuse of Status Codes</h2>
+          <p>Returning 200 on a failed request, or 404 for something that actually succeeded, breaks every client and monitoring tool that relies on status codes to know what happened without parsing the body. Use codes as intended: 2xx for success, 4xx for client errors, 5xx for server errors — and be consistent about which specific code maps to which failure.</p>
+          <h2 id="mistake-10-neglecting-security" class="text-capitalize"> Mistake 10 — Neglecting Security</h2>
+          <p>Security bolted on after launch is security done wrong — missing rate limits, weak or absent authentication, and sensitive data returned in responses nobody audited. Build authentication, authorization, and rate limiting in from the start; retrofitting them onto an API already in production use is far more disruptive than designing for them up front.</p>
+          <h2 id="free-api-health-check-instant-score">Free API Health Check (Instant Score)</h2>
+          <p>Want a quick, objective read on your API? Take our short assessment and get an instant score across naming, versioning, pagination, error design, and security baselines.</p>
+          <p>
+            <a class="button button_solid button_black" href="https://taliferro.com/api-certification/" aria-label="Evaluate your API now"> Evaluate Your API Now </a>
+          </p>
+          <h2 id="related-reading">Related Reading</h2>
+          <ul>
+            <li><a href="https://taliferro.com/blog/jan2024/jan222024/best-practices-for-api-design-and-development.html">REST API Best Practices (Complete Guide)</a></li>
+            <li><a href="https://taliferro.com/blog/may2025/may012025/why-your-crm-isnt-helping-you-grow.html">Your CRM Remembers. It Doesn't Move.</a></li>
+          </ul>
+          <h2 id="conclusion"> Conclusion </h2>
+          <p>None of these ten mistakes are exotic — they're the default outcome of shipping fast without a naming convention, a pagination plan, or a security review. Catching them early, before clients depend on the broken behavior, is far cheaper than fixing them after launch.</p>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <h2 id="api-design-frequently-asked-questions">API Design — Frequently Asked Questions</h2>
+          <details>
+            <summary>What are the most common API design mistakes?</summary>
+            <p>Typical mistakes include unclear endpoint naming, inconsistent conventions, over-nesting resources, poor versioning, ignoring pagination, misusing HTTP methods and status codes, unhelpful error messages, and weak security.</p>
+          </details>
+          <details>
+            <summary>How do I avoid REST API anti-patterns?</summary>
+            <p>Adopt consistent naming, document thoroughly, return predictable status codes, implement pagination and filtering, use semantic HTTP methods, and secure authentication and authorization from the start.</p>
+          </details>
+          <details>
+            <summary>What’s the best way to version an API?</summary>
+            <p>Choose a clear, consistent approach (e.g., URI versioning or header-based) and deprecate responsibly with documentation and migration timelines.</p>
+          </details>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">API consulting</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">momentum system</a>, or <a href="https://taliferro.com/contact.html">show us the integration problem</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><em>API design</em></li>
+                <li><em>blunders</em></li>
+                <li><em>inscrutable endpoints</em></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <p class="quote">Tags</p>
+            <ul class="list">
+              <li><a href="https://taliferro.com/api-design-services/">API Design</a></li>
+              <li>blunders</li>
+              <li>inscrutable endpoints</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="the-hilarious-tragedy-of-doomed-api-design-practices">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/apr2023/apr152023/the-dark-side-of-fortunes-30-under-30-when-success-turns-to-crime.html">&larr; Young Entrepreneurs and Crime: Unraveling the Dark Side</a>
+            <a class="button" href="https://taliferro.com/blog/apr2023/apr192023/my-comedic-journey-as-a-project-manager-for-microsofts-commerce-server.html">From Miami to Gatineau: A Project Manager&#39;s Adventure &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

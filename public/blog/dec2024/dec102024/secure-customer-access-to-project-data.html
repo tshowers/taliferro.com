@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <script>
+    const isLocal =
+      location.hostname === '127.0.0.1' ||
+      location.hostname === 'localhost' ||
+      location.hostname === '0.0.0.0' ||
+      location.hostname === '[::1]' ||
+      location.protocol === 'file:';
+
+    if (!isLocal) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Secure Customer Access to Project Data</title>
+  <meta name="description" content="Build a secure client portal for project data access. Case study: role‑based access, contact‑based permissions, audit reporting, and real‑time updates that improve transparency and compliance." />
+  <meta name="keywords" content="secure client access, client portal, customer portal, project data access, client login, role‑based access control, RBAC, data transparency tools, audit reporting, vendor collaboration" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="author" content="Taliferro Group">
+  <meta name="taliferro:division" content="group">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="content-language" content="en">
+  <meta property="og:title" content="Secure Customer Access to Project Data">
+  <meta property="og:description" content="Build a secure client portal for project data access. Case study: role‑based access, contact‑based permissions, audit reporting, and real‑time updates for transparency and compliance.">
+  <meta property="og:image" content="https://taliferro.com/img/taliferro-blog.webp">
+  <meta property="og:url" content="https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@TaliferroLLC" />
+  <meta name="twitter:title" content="Secure Customer Access to Project Data" />
+  <meta name="twitter:description" content="Build a secure client portal for project data access. Case study: role‑based access, contact‑based permissions, audit reporting, and real‑time updates for transparency and compliance.">
+  <meta name="twitter:image" content="https://taliferro.com/img/taliferro-blog.webp" />
+  <meta name="twitter:url" content="https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html">
+  <link rel="canonical" href="https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html">
+  <link rel="manifest" href="https://taliferro.com/img/general/manifest.json" />
+  <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
+  <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html"
+        },
+        "headline": "Secure Customer Access to Project Data",
+        "description": "Build a secure client portal for project data access. Case study: role‑based access, contact‑based permissions, audit reporting, and real‑time updates that improve transparency and compliance.",
+        "image": "https://taliferro.com/img/taliferro-blog.webp",
+        "author": {
+          "@type": "Person",
+          "name": "Tyrone Showers",
+          "url": "https://taliferro.com/team/tyrone-showers/"
+        },
+        "datePublished": "2024-12-10T09:00:00-07:00",
+        "dateModified": "2025-09-28T09:00:00-07:00",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Taliferro Group",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://taliferro.com/img/general/taliferro-group-logo.png",
+            "width": 842,
+            "height": 514
+          }
+        }
+      }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Taliferro Group — Who We Are (Overview Video)",
+      "description": "Overview video from Tyrone Showers about Taliferro Group and how we approach secure, practical engineering.",
+      "thumbnailUrl": ["https://img.youtube.com/vi/y2pJl-pStbo/hqdefault.jpg"],
+      "uploadDate": "2025-09-28T09:00:00-07:00",
+      "embedUrl": "https://www.youtube.com/embed/y2pJl-pStbo",
+      "contentUrl": "https://www.youtube.com/watch?v=y2pJl-pStbo"
+    }
+    </script>
+  <script type="text/javascript">
+    if (
+      location.protocol !== 'file:' &&
+      location.hostname !== '127.0.0.1' &&
+      location.hostname !== 'localhost' &&
+      location.hostname !== '0.0.0.0' &&
+      location.hostname !== '[::1]'
+    ) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+        t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "vd128967w5");
+    }
+  </script>
+  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is a secure client portal for project data?", "acceptedAnswer": {"@type": "Answer", "text": "A secure client portal lets customers log in to see only the project information they’re authorized to view, based on role‑based access controls and project mappings."}},
+        {"@type": "Question", "name": "How do you limit data to the right customer?", "acceptedAnswer": {"@type": "Answer", "text": "We map each customer to specific project IDs and enforce role‑based access control (RBAC). The app filters data dynamically so only relevant contacts and records are visible."}},
+        {"@type": "Question", "name": "Can this support audits and compliance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We include audit reports, communication history, and vendor engagement logs so customers and internal teams can verify activity quickly."}},
+        {"@type": "Question", "name": "What tech is used?", "acceptedAnswer": {"@type": "Answer", "text": "Standards‑based auth (e.g., OAuth 2.0), structured APIs for performance, and a database schema that associates contacts and artifacts to projects."}}
+      ]
+    }
+    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taliferro.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://taliferro.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Table of Contents", "item": "https://taliferro.com/blog/toc.html" },
+        {"@type": "ListItem", "position": 4, "name": "Secure Customer Access to Project Data", "item": "https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html"}
+      ]
+    }
+    </script>
+</head>
+
+<body class="page-affordable-web-dev page-blog">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
+        <span>Taliferro Group</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#helping-maven-inc-build-a-transparent-customer-acc">Helping Maven</a>
+        <a href="#the-problem-enhancing-customer-access-to-relevant-">The Problem:</a>
+        <a href="#the-solution-tailored-project-access-using-contact">The Solution:</a>
+        <a href="#technical-details-how-it-works">Technical Details:</a>
+        <a href="#why-customers-love-this-feature">Why Customers</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="page-shell">
+      <div class="hero-grid">
+        <div>
+          <h1>Secure Customer Access to Project Data</h1>
+          <div class="btnrow">
+            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
+            <p class="fine">Co-Founder Taliferro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ARTICLE -->
+  <section class="section" aria-label="Article">
+    <div class="page-shell">
+      <div class="kicker">Article</div>
+      <div class="card">
+        <div class="post__content clearfix">
+          <div>
+            <h2 id="helping-maven-inc-build-a-transparent-customer-acc">Helping Maven Inc. Build a Transparent Customer Access System</h2>
+            <p> In today's data-driven world, transparency and efficiency are critical for fostering trust and maintaining strong business relationships. Taliferro recently collaborated with Maven Inc. to design a system that empowers their customers to log in and view project-specific data, ensuring a tailored experience that meets the unique needs of Maven's clients. This article explores the problem, our approach to solving it, and the broader benefits of the solution. </p>
+            <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">API consulting</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.com/business-momentum-system/">momentum system</a> keeps the work tied to outcomes instead of activity.</p>
+            <h2 id="the-problem-enhancing-customer-access-to-relevant-">The Problem: Enhancing Customer Access to Relevant Data</h2>
+            <p> Maven Inc., a company committed to fostering business relationships, faced a challenge: their customers needed a secure and intuitive way to access specific project data. </p>
+            <p> This data often included: </p>
+            <ul>
+              <li>Contacts of individuals who worked on projects directly related to the customer.</li>
+              <li>Information needed to audit Maven's engagement with minority businesses.</li>
+              <li>Communication records between Maven and past vendors.</li>
+            </ul>
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+              <iframe src="https://www.youtube.com/embed/y2pJl-pStbo" title="Taliferro Group — Who We Are (Overview Video)" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+            <p> Without a clear, automated process, customers found it difficult to obtain this data, leading to inefficiencies, potential compliance issues, and missed opportunities for vendor collaboration. Maven needed a solution that prioritized data accuracy, security, and ease of access. </p>
+            <h2 id="the-solution-tailored-project-access-using-contact">The Solution: Tailored Project Access Using Contact-Based Permissions</h2>
+            <p> At Taliferro, we specialize in designing systems that are not only functional but also scalable and secure. For Maven, we developed a robust login system that allowed their customers to view contacts associated with specific projects. Here's how it works: </p>
+            <ol>
+              <li>
+                <strong>Customer-Specific Project Mapping</strong><br> Each customer is assigned a data object that defines their permissions. For example:
+                <pre>
+                              {
+                                  "email": "john.doe@maven.com",
+                                  "projects": [12345, 39092]
+                              }
+                                          </pre> When John Doe logs in, the system references this object to retrieve and display only the contacts related to projects <code>12345</code> and <code>39092</code>.
+              </li>
+              <li>
+                <strong>Dynamic Filtering</strong><br> The system dynamically filters the database, ensuring that only relevant project data is displayed. This eliminates unnecessary information clutter and ensures compliance with privacy standards.
+              </li>
+              <li>
+                <strong>Secure Access Control</strong><br> Role-based access control (RBAC) was implemented to ensure that each user could only view data within their designated scope. This prevents unauthorized access and maintains data integrity.
+              </li>
+              <li>
+                <strong>Real-Time Updates</strong><br> The system integrates seamlessly with Maven's existing infrastructure, ensuring that any updates to project data are reflected in real-time for the customer.
+              </li>
+            </ol>
+            <h2 id="technical-details-how-it-works">Technical Details: How It Works</h2>
+            <p> Our team leveraged modern technologies to build a scalable and secure solution. Here's a breakdown of the process: </p>
+            <ul>
+              <li>
+                <strong>Database Structure</strong><br> We structured Maven's database to associate contacts with specific projects. Each contact record includes metadata about the projects they've worked on, allowing for efficient querying.
+              </li>
+              <li>
+                <strong>Authentication and Authorization</strong><br> Using secure authentication protocols, such as OAuth 2.0, we ensured that only authorized users could access the system. Authorization layers further restricted data access based on the customer's project list.
+              </li>
+              <li>
+                <strong>Frontend Interface</strong><br> A user-friendly dashboard was designed, enabling customers to search, sort, and view contacts effortlessly. The interface also includes options to download reports for auditing or vendor follow-ups.
+              </li>
+              <li>
+                <strong>API Integration</strong><br> We developed APIs that allowed Maven to fetch and display data efficiently. These APIs ensure high performance even with large datasets, providing a seamless user experience.
+              </li>
+            </ul>
+            <h2 id="why-customers-love-this-feature">Why Customers Love This Feature</h2>
+            <p> This solution isn't just a technical upgrade; it's a game-changer for Maven's customers. Here's why: </p>
+            <ul>
+              <li>
+                <strong>Audit and Accountability</strong><br> Customers can now audit Maven's engagement with minority businesses, ensuring compliance with diversity initiatives. This transparency strengthens trust and helps Maven maintain its commitment to inclusion.
+              </li>
+              <li>
+                <strong>Vendor Collaboration</strong><br> Access to past vendor information enables customers to reconnect with suppliers they've worked with, fostering long-term relationships and simplifying procurement processes.
+              </li>
+              <li>
+                <strong>Improved Communication</strong><br> By viewing communication logs, customers can assess how Maven interacts with contacts, ensuring that projects are managed effectively and professionally.
+              </li>
+              <li>
+                <strong>Time Savings</strong><br> What previously required multiple manual steps is now automated, saving customers significant time and effort.
+              </li>
+            </ul>
+            <h2 id="the-business-impact-for-maven-inc">The Business Impact for Maven Inc</h2>
+            <p> The benefits of this solution extend beyond Maven's customers. For Maven, it represents a strategic advantage in a competitive market: </p>
+            <ul>
+              <li>
+                <strong>Enhanced Customer Satisfaction</strong><br> By giving customers control and visibility over their data, Maven has elevated the customer experience, turning a pain point into a value-added feature.
+              </li>
+              <li>
+                <strong>Operational Efficiency</strong><br> Automating data filtering and access reduces the workload on Maven's internal teams, freeing up resources for other critical tasks.
+              </li>
+              <li>
+                <strong>Increased Customer Retention</strong><br> Transparency builds trust, which is essential for maintaining long-term business relationships. Customers are more likely to continue working with Maven when they feel valued and informed.
+              </li>
+              <li>
+                <strong>Compliance Readiness</strong><br> With robust auditing capabilities, Maven is better equipped to demonstrate compliance with industry regulations and diversity initiatives.
+              </li>
+            </ul>
+            <h2 id="lessons-learned-the-value-of-custom-solutions">Lessons Learned: The Value of Custom Solutions</h2>
+            <p> This project underscores the importance of tailored solutions in meeting unique business needs. Off-the-shelf software rarely addresses specific challenges like those faced by Maven. By collaborating closely with Maven, we were able to deliver a solution that aligned perfectly with their goals and those of their customers. </p>
+            <h2 id="next-steps-for-maven-and-taliferro">Next Steps for Maven and Taliferro</h2>
+            <p> With the initial rollout complete, Maven and Taliferro are exploring additional features to further enhance the system: </p>
+            <ul>
+              <li>Advanced Analytics: Providing customers with insights into project performance and engagement metrics.</li>
+              <li>Integration with CRM Tools: Allowing customers to sync Maven's data with their internal systems.</li>
+              <li>Mobile Access: Ensuring that customers can access project data on the go.</li>
+            </ul>
+            <h2 id="conclusion-building-for-the-future">Conclusion: Building for the Future</h2>
+            <p> At Taliferro, we believe that technology should empower businesses and their customers. Our partnership with Maven Inc. demonstrates how a well-designed system can enhance transparency, improve efficiency, and strengthen trust. By focusing on customer-specific needs, we helped Maven transform a challenge into an opportunity to stand out in their industry. </p>
+            <p> If your organization faces similar challenges, Taliferro is here to help. Let's work together to design solutions that make a difference. </p>
+          </div>
+          <cite>Tyrone Showers</cite><br>
+          <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
+          <h2 id="faq">FAQ</h2>
+          <details>
+            <summary>What is a secure client portal for project data?</summary>
+            <p>A secure client portal lets customers log in to see only the project information they’re authorized to view, based on role‑based access controls and project mappings.</p>
+          </details>
+          <details>
+            <summary>How do you limit data to the right customer?</summary>
+            <p>We map each customer to specific project IDs and enforce role‑based access control (RBAC). The app filters data dynamically so only relevant contacts and records are visible.</p>
+          </details>
+          <details>
+            <summary>Can this support audits and compliance?</summary>
+            <p>Yes. We include audit reports, communication history, and vendor engagement logs so customers and internal teams can verify activity quickly.</p>
+          </details>
+          <details>
+            <summary>What tech is used?</summary>
+            <p>Standards‑based auth (e.g., OAuth 2.0), structured APIs for performance, and a database schema that associates contacts and artifacts to projects.</p>
+          </details>
+          <h2 id="related-reading">Related Reading</h2>
+          <ul>
+            <li><a href="https://taliferro.com/blog/jun2024/jun042024/master-deal-flow-with-todds-new-dashboard.html">Master Deal Flow with TODD</a></li>
+            <li><a href="https://taliferro.com/blog/may2025/may012025/why-your-crm-isnt-helping-you-grow.html">Your CRM Remembers. It Doesn't Move.</a></li>
+            <li><a href="https://taliferro.com/blog/sep2024/sep012024/stop-entering-data-for-nothing-todd-puts-It-to-work.html">Stop Entering Data for Nothing</a></li>
+          </ul>
+          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+            <strong>Need a cleaner API path?</strong>
+            <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.com/business-momentum-system/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book an API review</a>.</p>
+          </div>
+          <div class="post__tags mt-small">
+            <div class="tagcloud">
+              <ul>
+                <li><a href="https://taliferro.com/blog/sep2024/sep152024/how-machine-learning-is-secretly-changing-cyber-security.html">ML in Cybersecurity (2025)</a></li>
+                <li><a href="https://taliferro.com/blog/jun2024/jun052024/discover-the-secret-to-perfectly-integrated-email-and-contacts.html">Integrated Email &amp; Contacts</a></li>
+                <li><a href="https://taliferro.com/blog/aug2024/aug152024/why-we-had-to-build-our-own-task-manager-from-scratch.html">Why We Built Our Own Task Manager</a></li>
+                <li><a href="https://taliferro.com/blog/jun2024/jun302024/how-taliferro-group-pushes-3-5-updates-weekly-with-agile.html">Ship Faster with Agile</a></li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">Want this fixed on your site?</p>
+          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
+          <div class="btnrow" style="margin-top:10px;">
+            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="blog" data-source="blog_cta" data-page="secure-customer-access-to-project-data">API consulting</a>
+            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+          </div>
+          <p class="fine" data-todd-links="true" style="margin-top:10px;">Explore Taliferro&#39;s free tools: <a href="https://ask.taliferro.tech">Ask TODD</a> &middot; <a href="https://find.taliferro.tech">Find</a> &middot; <a href="https://signature.taliferro.tech">Email Signature Builder</a> &middot; <a href="https://sayit.taliferro.tech">SayIt</a> &middot; <a href="https://lead-vault.taliferro.tech">Lead Vault</a> &middot; <a href="https://maya.taliferro.tech">Meet Maya</a> &mdash; or <a href="https://taliferro.com/todd-affiliate-program/">become an affiliate</a>.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="card">
+          <p class="quote">More from the blog</p>
+          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
+            <a class="button" href="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">&larr; Building Ethical AI: Washington’s Accountability Framework for AI Bias</a>
+            <a class="button" href="https://taliferro.com/blog/jan2025/jan012025/how-to-use-todd-as-your-go-to-follow-up-tool.html">You Didn't Lose the Lead. You Lost Track of It. &rarr;</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/sitemap.html">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
