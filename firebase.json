@@ -629,6 +629,11 @@
         "type": 301
       },
       {
+        "source": "/website-development/website-developer-near-me.html",
+        "destination": "/website-development/",
+        "type": 301
+      },
+      {
         "source": "/website-development/bespoke-software-website-development.html",
         "destination": "/website-development/",
         "type": 301
