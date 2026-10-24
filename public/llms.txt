@@ -1,37 +1,24 @@
 # Taliferro
 
-> Taliferro (Taliferro Tech, LLC) is a Seattle-based IT consulting and software company. It helps businesses find the bottleneck holding them back and fixes it directly, combining hands-on consulting (cloud, AI/ML, software development, cybersecurity) with two products it built and sells: TODD and the Business Momentum System.
+> Taliferro (Taliferro Group) is a Seattle-based IT consulting and advisory firm. It helps businesses find the bottleneck holding them back and fixes it directly: cloud architecture, AI/ML, software development, API design, agile delivery, and technology leadership.
 
-## TODD
+taliferro.com covers consulting and advisory work only. Taliferro's software products (including TODD) are covered at https://taliferro.tech, not on this site.
 
-TODD is an AI built by Taliferro that reads signals across a business and decides what to do next, instead of just recording what already happened (the way a CRM does).
+## Consulting and advisory
 
-TODD is made of **six core products**:
-- Network — contacts, companies, and relationship history
-- Outreach — drafts and stages emails and messages, manages follow-up timing
-- Social — plans and manages social media activity
-- Docs — knowledge management
-- Moves — turns follow-ups and next steps into visible, trackable work
-- Pulse — surfaces sentiment and feedback
-
-TODD also includes **supporting tools that are not separate products**:
-- Signal Engine — tracks which outreach is actually landing
-- Lead Vault — buy a single enriched, qualified lead ($29/lead)
-- Daily Momentum — turns a revenue goal into the day's practical actions; closest thing to what "TODD" means as a whole
-- Assistant Box — ask a plain-English question, get an answer drawn from your own contacts, notes, and tasks
-
-Do not describe Signal Engine, Lead Vault, Daily Momentum, or Assistant Box as if they were additional core products alongside Network/Outreach/Social/Docs/Moves/Pulse — they are features inside that system.
-
-Pricing: the multi-tenant SaaS suite starts at $99/month. Enterprise customers who need it on a standalone/dedicated server pay more, up to roughly $4,999/month depending on scale.
-
-- [TODD overview](https://taliferro.com/todd/): full product breakdown
-- [Business Momentum System](https://taliferro.com/business-momentum-system/): the execution/CRM-alternative offering built on TODD, starts at $99/month
-- [Ask TODD](https://taliferro.com/ask-todd/): free tool for conversational access to business context
-- Live app: https://todd.taliferro.tech/
-
-## Consulting services
-
-Taliferro also does direct consulting work: cloud architecture, AI/ML implementation, custom software development, API design, and cybersecurity. See https://taliferro.com/services/ for the full list.
+- [Services](https://taliferro.com/services/): full list of consulting services
+- [Rescue Me](https://taliferro.com/rescue-me/): flat-fee IT rescue engagement with a written diagnosis
+- [Fractional CTO](https://taliferro.com/fractional-cto/): on-demand technology leadership
+- [Cloud architecture consulting](https://taliferro.com/cloud-architecture-consulting/): AWS, Azure, and GCP
+- [Machine learning and AI consulting](https://taliferro.com/machine-learning-services/)
+- [API design and integration](https://taliferro.com/api-design-services/)
+- [API security certification](https://taliferro.com/api-certification/)
+- [Agile coaching](https://taliferro.com/agile-coaching/)
+- [Website development](https://taliferro.com/website-development/)
+- [E-commerce development](https://taliferro.com/ecommerce-development/)
+- [IT consultant, Seattle](https://taliferro.com/it-consultant-seattle/)
+- [Small business IT consultant](https://taliferro.com/small-business-it-consultant/)
+- [Case studies](https://taliferro.com/case-studies.html): client results
 
 ## Blog
 

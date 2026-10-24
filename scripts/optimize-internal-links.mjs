@@ -3,7 +3,7 @@ import path from 'path'
 
 const root = path.resolve('root/public')
 const blogRoot = path.join(root, 'blog')
-const bmsUrl = 'https://taliferro.com/business-momentum-system/'
+const bmsUrl = 'https://taliferro.tech/'
 const contactUrl = 'https://taliferro.com/contact.html'
 
 const topicConfig = {

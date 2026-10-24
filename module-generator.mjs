@@ -37,14 +37,10 @@ const HTML_SCAN_DIRS = [
   path.join(SITE_ROOT, 'agile-coaching'),
   path.join(SITE_ROOT, 'api-design-services'),
   path.join(SITE_ROOT, 'blog'),
-  path.join(SITE_ROOT, 'business-momentum-system'),
   path.join(SITE_ROOT, 'cloud-architecture-consulting'),
   path.join(SITE_ROOT, 'ecommerce-development'),
-  path.join(SITE_ROOT, 'laboratory-information-system'),
   path.join(SITE_ROOT, 'machine-learning-services'),
-  path.join(SITE_ROOT, 'todd'),
-  path.join(SITE_ROOT, 'website-development'),
-  path.join(SITE_ROOT, 'lead-vault')
+  path.join(SITE_ROOT, 'website-development')
 ]
 
 // Manual arrays you update as you add new media.

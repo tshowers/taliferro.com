@@ -74,233 +74,208 @@
     ],
     "redirects": [
       {
+        "source": "/business-momentum-system/automatic-lead-generation{,/**}",
+        "destination": "https://taliferro.tech/products/lead-vault",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/todd-partner-program.html",
+        "destination": "https://taliferro.tech/affiliates",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/todd-affiliate-program.html",
+        "destination": "https://taliferro.tech/affiliates",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/pricing{,/**}",
+        "destination": "https://taliferro.tech/products",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/network{,/**}",
+        "destination": "https://taliferro.tech/products/network",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/outreach{,/**}",
+        "destination": "https://taliferro.tech/products/outreach",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/moves{,/**}",
+        "destination": "https://taliferro.tech/products/moves",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/pulse{,/**}",
+        "destination": "https://taliferro.tech/products/pulse",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/docs{,/**}",
+        "destination": "https://taliferro.tech/products/docs",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/knowledge{,/**}",
+        "destination": "https://taliferro.tech/products/docs",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system{,/**}",
+        "destination": "https://taliferro.tech/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/index.html%22",
+        "destination": "https://taliferro.tech/",
+        "type": 301
+      },
+      {
+        "source": "/business-momentum-system/index.html%2522",
+        "destination": "https://taliferro.tech/",
+        "type": 301
+      },
+      {
+        "source": "/todd/network{,/**}",
+        "destination": "https://taliferro.tech/products/network",
+        "type": 301
+      },
+      {
+        "source": "/todd/outreach{,/**}",
+        "destination": "https://taliferro.tech/products/outreach",
+        "type": 301
+      },
+      {
+        "source": "/todd/moves{,/**}",
+        "destination": "https://taliferro.tech/products/moves",
+        "type": 301
+      },
+      {
+        "source": "/todd/pulse{,/**}",
+        "destination": "https://taliferro.tech/products/pulse",
+        "type": 301
+      },
+      {
+        "source": "/todd/docs{,/**}",
+        "destination": "https://taliferro.tech/products/docs",
+        "type": 301
+      },
+      {
+        "source": "/todd/knowledge{,/**}",
+        "destination": "https://taliferro.tech/products/docs",
+        "type": 301
+      },
+      {
+        "source": "/todd/automatic-lead-generation{,/**}",
+        "destination": "https://taliferro.tech/products/lead-vault",
+        "type": 301
+      },
+      {
+        "source": "/todd{,/**}",
+        "destination": "https://taliferro.tech/",
+        "type": 301
+      },
+      {
+        "source": "/todd-affiliate-program{,/**}",
+        "destination": "https://taliferro.tech/affiliates",
+        "type": 301
+      },
+      {
+        "source": "/products{,/**}",
+        "destination": "https://taliferro.tech/products",
+        "type": 301
+      },
+      {
+        "source": "/ask-todd{,/**}",
+        "destination": "https://taliferro.tech/products/ask-todd",
+        "type": 301
+      },
+      {
+        "source": "/find{,/**}",
+        "destination": "https://taliferro.tech/products/find",
+        "type": 301
+      },
+      {
+        "source": "/annoucements/find.html",
+        "destination": "https://taliferro.tech/products/find",
+        "type": 301
+      },
+      {
+        "source": "/annoucements/find-ad.html",
+        "destination": "https://taliferro.tech/products/find",
+        "type": 301
+      },
+      {
+        "source": "/sayit{,/**}",
+        "destination": "https://taliferro.tech/products/sayit",
+        "type": 301
+      },
+      {
+        "source": "/music{,/**}",
+        "destination": "https://taliferro.tech/products/music",
+        "type": 301
+      },
+      {
+        "source": "/pulse{,/**}",
+        "destination": "https://taliferro.tech/products/pulse",
+        "type": 301
+      },
+      {
+        "source": "/maya{,/**}",
+        "destination": "https://taliferro.tech/products/maya",
+        "type": 301
+      },
+      {
+        "source": "/moves{,/**}",
+        "destination": "https://taliferro.tech/products/moves",
+        "type": 301
+      },
+      {
+        "source": "/network{,/**}",
+        "destination": "https://taliferro.tech/products/network",
+        "type": 301
+      },
+      {
+        "source": "/customer-acquisition-pipeline{,/**}",
+        "destination": "https://taliferro.tech/products/network",
+        "type": 301
+      },
+      {
+        "source": "/outreach{,/**}",
+        "destination": "https://taliferro.tech/products/outreach",
+        "type": 301
+      },
+      {
+        "source": "/lead-vault{,/**}",
+        "destination": "https://taliferro.tech/products/lead-vault",
+        "type": 301
+      },
+      {
+        "source": "/email-signature-builder{,/**}",
+        "destination": "https://taliferro.tech/products/email-signature",
+        "type": 301
+      },
+      {
+        "source": "/docs{,/**}",
+        "destination": "https://taliferro.tech/products/docs",
+        "type": 301
+      },
+      {
+        "source": "/social-media-management{,/**}",
+        "destination": "https://taliferro.tech/products/social",
+        "type": 301
+      },
+      {
+        "source": "/laboratory-information-system{,/**}",
+        "destination": "/services/",
+        "type": 302
+      },
+      {
         "source": "/blog/oct2022/oct052022/what-is-youtube-studio.html",
         "destination": "/blog/toc.html",
-        "type": 301
-      },
-      {
-        "source": "/docs/index.html",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/docs",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/docs/",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/docs/index.html",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/network/index.html",
-        "destination": "/network/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/network",
-        "destination": "/network/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/network/",
-        "destination": "/network/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/network/index.html",
-        "destination": "/network/",
-        "type": 301
-      },
-      {
-        "source": "/outreach/index.html",
-        "destination": "/outreach/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/outreach",
-        "destination": "/outreach/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/outreach/",
-        "destination": "/outreach/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/outreach/index.html",
-        "destination": "/outreach/",
-        "type": 301
-      },
-      {
-        "source": "/moves/index.html",
-        "destination": "/moves/",
-        "type": 301
-      },
-      {
-        "source": "/pulse/index.html",
-        "destination": "/pulse/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/moves",
-        "destination": "/moves/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/moves/",
-        "destination": "/moves/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/moves/index.html",
-        "destination": "/moves/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/pulse",
-        "destination": "/pulse/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/pulse/",
-        "destination": "/pulse/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/pulse/index.html",
-        "destination": "/pulse/",
-        "type": 301
-      },
-      {
-        "source": "/todd/index.html",
-        "destination": "/todd/",
-        "type": 301
-      },
-      {
-        "source": "/todd/docs",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/todd/docs/",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/todd/docs/index.html",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/todd/knowledge",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/todd/knowledge/",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/todd/knowledge/index.html",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/todd/moves",
-        "destination": "/moves/",
-        "type": 301
-      },
-      {
-        "source": "/todd/moves/",
-        "destination": "/moves/",
-        "type": 301
-      },
-      {
-        "source": "/todd/moves/index.html",
-        "destination": "/moves/",
-        "type": 301
-      },
-      {
-        "source": "/todd/network",
-        "destination": "/network/",
-        "type": 301
-      },
-      {
-        "source": "/todd/network/",
-        "destination": "/network/",
-        "type": 301
-      },
-      {
-        "source": "/todd/network/index.html",
-        "destination": "/network/",
-        "type": 301
-      },
-      {
-        "source": "/todd/outreach",
-        "destination": "/outreach/",
-        "type": 301
-      },
-      {
-        "source": "/todd/outreach/",
-        "destination": "/outreach/",
-        "type": 301
-      },
-      {
-        "source": "/todd/outreach/index.html",
-        "destination": "/outreach/",
-        "type": 301
-      },
-      {
-        "source": "/todd/pulse",
-        "destination": "/pulse/",
-        "type": 301
-      },
-      {
-        "source": "/todd/pulse/",
-        "destination": "/pulse/",
-        "type": 301
-      },
-      {
-        "source": "/todd/pulse/index.html",
-        "destination": "/pulse/",
-        "type": 301
-      },
-      {
-        "source": "/todd/automatic-lead-generation",
-        "destination": "/business-momentum-system/automatic-lead-generation/",
-        "type": 301
-      },
-      {
-        "source": "/todd/automatic-lead-generation/",
-        "destination": "/business-momentum-system/automatic-lead-generation/",
-        "type": 301
-      },
-      {
-        "source": "/todd/automatic-lead-generation/index.html",
-        "destination": "/business-momentum-system/automatic-lead-generation/",
-        "type": 301
-      },
-      {
-        "source": "/todd/landing",
-        "destination": "/business-momentum-system/landing/",
-        "type": 301
-      },
-      {
-        "source": "/todd/landing/",
-        "destination": "/business-momentum-system/landing/",
-        "type": 301
-      },
-      {
-        "source": "/todd/landing/index.html",
-        "destination": "/business-momentum-system/landing/",
         "type": 301
       },
       {
@@ -334,11 +309,6 @@
         "type": 301
       },
       {
-        "source": "/laboratory-information-system/index.html",
-        "destination": "/laboratory-information-system/",
-        "type": 301
-      },
-      {
         "source": "/team/tyrone-showers/index.html",
         "destination": "/team/tyrone-showers/",
         "type": 301
@@ -369,11 +339,6 @@
         "type": 301
       },
       {
-        "source": "/business-momentum-system/todd-affiliate-program.html",
-        "destination": "/todd-affiliate-program/",
-        "type": 301
-      },
-      {
         "source": "/index.html",
         "destination": "/",
         "type": 301
@@ -381,21 +346,6 @@
       {
         "source": "/blog/index.html",
         "destination": "/blog/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/index.html%22",
-        "destination": "/business-momentum-system/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/index.html%2522",
-        "destination": "/business-momentum-system/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/index.html",
-        "destination": "/business-momentum-system/",
         "type": 301
       },
       {
@@ -466,21 +416,6 @@
       {
         "source": "/cloud-architecture-consulting/.html",
         "destination": "/cloud-architecture-consulting/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/features/communication-frequency-line-chart",
-        "destination": "/business-momentum-system/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/contact.html",
-        "destination": "/contact.html",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/pricing",
-        "destination": "https://todd.taliferro.tech/pricing",
         "type": 301
       },
       {
@@ -646,21 +581,6 @@
       {
         "source": "/website-development/responsive-web-design-services.html",
         "destination": "/website-development/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/knowledge",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/knowledge/",
-        "destination": "/docs/",
-        "type": 301
-      },
-      {
-        "source": "/business-momentum-system/knowledge/index.html",
-        "destination": "/docs/",
         "type": 301
       }
     ],
