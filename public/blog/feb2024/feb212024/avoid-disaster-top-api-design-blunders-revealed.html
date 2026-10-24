@@ -63,8 +63,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -111,51 +111,46 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#ignoring-user-experience-ux">Ignoring User</a>
-        <a href="#not-designing-with-the-end-user-in-mind">Not Designing</a>
-        <a href="#overlooking-developer-feedback">Overlooking Developer</a>
-        <a href="#inadequate-documentation">Inadequate Documentation</a>
-        <a href="#the-pitfalls-of-poor-documentation">The Pitfalls</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Avoid Disaster: Top API Design Blunders Revealed!</h1>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>API</span></nav>
+      <h1>Avoid Disaster: Top API Design Blunders Revealed!</h1>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2024-02-21">Feb 21, 2024</time> · 17 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <p><span> The architecture of an API stands not merely as a conduit for communication but as the very foundation upon which digital ecosystems are built. It is here, in the intricate dance of data and functionality, that the future of technology finds its rhythm. The craft of <a href="https://taliferro.com/blog/apr2023/apr172023/the-hilarious-tragedy-of-doomed-api-design-practices.html">API design</a>, then, is akin to the art of storytelling—where clarity, structure, and accessibility dictate not just the success of a single application but the harmony of an entire system. </span></p>
           <p class="wow fadeInUp" data-link-bridge="true">If this API work needs to hold up under production pressure, <a href="https://taliferro.com/api-design-services/">API design support</a> shows how Taliferro turns integration work into working execution, and the <a href="https://taliferro.tech/">execution model</a> keeps the work tied to outcomes instead of activity.</p>
@@ -261,47 +256,75 @@
           </ul>
           <p> In the annals of technology, the lessons of the past serve as the foundations for the future. Let us take these insights, these hard-earned truths, and use them to craft APIs that not only meet the needs of today but anticipate the demands of tomorrow. By learning from our mistakes and embracing the principles of effective API design, we pave the way for a future where technology serves as a bridge to innovation, connection, and growth. </p>
           <p> Remember that the goal is not merely to avoid disaster but to aspire towards excellence. In the careful consideration of user experience, documentation, security, scalability, simplicity, and versioning, we find the keys to unlocking the full potential of our APIs. Let these principles guide us as we strive to build better, more effective APIs, tools that not only serve but inspire, marking our path with the milestones of progress and innovation. </p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need a cleaner API path?</strong>
             <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">API consulting</a>, connect it to the <a href="https://taliferro.tech/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the integration problem</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>API design</em></li>
-                <li><em>user experience</em></li>
-                <li><em>documentation</em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li><a href="https://taliferro.com/api-design-services/">API Design</a></li>
-              <li>user experience</li>
-              <li>documentation</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>API design</li>
+          <li>user experience</li>
+          <li>documentation</li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#ignoring-user-experience-ux">Ignoring User Experience (UX)</a>
+          <a href="#not-designing-with-the-end-user-in-mind">Not Designing with the End-User in Mind</a>
+          <a href="#overlooking-developer-feedback">Overlooking Developer Feedback</a>
+          <a href="#inadequate-documentation">Inadequate Documentation</a>
+          <a href="#the-pitfalls-of-poor-documentation">The Pitfalls of Poor Documentation</a>
+          <a href="#best-practices-for-effective-documentation">Best Practices for Effective Documentation</a>
+          <a href="#neglecting-security-measures">Neglecting Security Measures</a>
+          <a href="#common-security-oversights">Common Security Oversights</a>
+          <a href="#implementing-robust-security-protocols">Implementing Robust Security Protocols</a>
+          <a href="#failing-to-plan-for-scalability">Failing to Plan for Scalability</a>
+          <a href="#the-importance-of-scalable-design">The Importance of Scalable Design</a>
+          <a href="#techniques-for-building-scalable-apis">Techniques for Building Scalable APIs</a>
+          <a href="#overcomplicating-api-endpoints">Overcomplicating API Endpoints</a>
+          <a href="#the-dangers-of-overcomplexity">The Dangers of Overcomplexity</a>
+          <a href="#simplifying-your-api-design">Simplifying Your API Design</a>
+          <a href="#versioning-negligence">Versioning Negligence</a>
+          <a href="#the-need-for-proper-api-versioning">The Need for Proper API Versioning</a>
+          <a href="#versioning-strategies">Versioning Strategies</a>
+          <a href="#conclusion">Conclusion</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="avoid-disaster-top-api-design-blunders-revealed">API consulting</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/feb2024/feb202024/slash-costs-genius-cloud-strategies-that-save-you-a-fortune.html">&larr; Slash Costs: Genius Cloud Strategies That Save You a Fortune</a>
-            <a class="button" href="https://taliferro.com/blog/feb2024/feb222024/cost-control-manage-your-api-without-breaking-the-bank.html">Cost Control: Manage Your API Without Breaking the Bank &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="avoid-disaster-top-api-design-blunders-revealed">API consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/feb2024/feb202024/slash-costs-genius-cloud-strategies-that-save-you-a-fortune.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Slash Costs: Genius Cloud Strategies That Save You a Fortune</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/feb2024/feb222024/cost-control-manage-your-api-without-breaking-the-bank.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Cost Control: Manage Your API Without Breaking the Bank</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

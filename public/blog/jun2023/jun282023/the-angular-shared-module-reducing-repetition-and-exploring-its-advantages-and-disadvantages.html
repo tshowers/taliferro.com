@@ -62,8 +62,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -111,53 +111,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#introduction">Introduction</a>
-        <a href="#reducing-repetition-with-sharedmodule">Reducing Repetition</a>
-        <a href="#advantages-of-the-sharedmodule">Advantages of</a>
-        <a href="#disadvantages-and-considerations">Disadvantages and</a>
-        <a href="#conclusion">Conclusion</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Angular's SharedModule Solves One Problem, Creates Another</h1>
-          <p>A SharedModule keeps common components, directives, and pipes from getting duplicated across an Angular app's feature modules — but it isn't free. Here's what it actually buys a project, and where it can quietly cause coupling problems if it's overused.</p>
-          <p class="fine">Published: 28 Jun 2023 · Updated: 17 Aug 2026</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Articles</span></nav>
+      <h1>Angular's SharedModule Solves One Problem, Creates Another</h1>
+      <p class="post-dek">A SharedModule keeps common components, directives, and pipes from getting duplicated across an Angular app's feature modules — but it isn't free. Here's what it actually buys a project, and where it can quietly cause coupling problems if it's overused.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2023-06-28">Jun 28, 2023</time> · 2 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="introduction" class="wow fadeInUp text-capitalize"> Introduction </h2>
           <p class="wow fadeInUp"><span> In <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a>, the SharedModule exists to cut down on repetition and keep code organized. By re-exporting commonly used <a href="https://taliferro.com/blog/mar2023/mar212023/angular-project-best-practices.html">modules</a>, components, and <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">directives</a> from one place, it lets a project avoid duplicating the same code across feature modules — but it comes with tradeoffs worth understanding before leaning on it too heavily. </span></p>
@@ -183,47 +177,61 @@
           <p class="wow fadeInUp"> In certain cases, SharedModule might not suit the needs of every feature module. Some modules may require their own specific dependencies or unique configurations, making the SharedModule less suitable for those scenarios. Careful consideration of module design and flexibility is essential. </p>
           <h2 id="conclusion" class="wow fadeInUp text-capitalize"> Conclusion </h2>
           <p class="wow fadeInUp"><span> The <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a> SharedModule is a genuinely useful tool for cutting repetition and keeping a codebase organized and consistent. But it's not free — the coupling and namespace risks are real, not hypothetical. Weighing what each feature module actually needs against those tradeoffs is what determines whether the SharedModule helps an <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a> application scale cleanly or just adds hidden dependencies. </span></p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need the frontend to move faster?</strong>
             <p class="mb-0">If you want execution instead of more rework, start with <a href="https://taliferro.com/website-development/">website development services</a>, connect it to the <a href="https://taliferro.tech/">execution system</a>, or <a href="https://taliferro.com/contact.html">talk through the build</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>SharedModule</em></li>
-                <li><em>code organization</em></li>
-                <li><em>maintainability</em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li>SharedModule</li>
-              <li>code organization</li>
-              <li>maintainability</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>SharedModule</li>
+          <li>code organization</li>
+          <li>maintainability</li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#introduction">Introduction</a>
+          <a href="#reducing-repetition-with-sharedmodule">Reducing Repetition with SharedModule</a>
+          <a href="#advantages-of-the-sharedmodule">Advantages of the SharedModule</a>
+          <a href="#disadvantages-and-considerations">Disadvantages and Considerations</a>
+          <a href="#conclusion">Conclusion</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Same-day help</div>
+          <div class="post-rescue__title">What's broken right now?</div>
+          <p>Pick the problem. Get one focused session and a written recommendation the same day.</p>
+          <a class="button" href="/#triage" data-source="blog_aside">Start triage</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="ai_ml" data-source="blog_cta" data-page="the-angular-shared-module-reducing-repetition-and-exploring-its-advantages-and-disadvantages">Website development</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/jun2023/jun272023/the-quadrilateral-working-week-challenging-assumptions-and-considering-alternatives.html">&larr; The Four-Day Week Sounds Great Until You Read the Fine Print</a>
-            <a class="button" href="https://taliferro.com/blog/jun2023/jun292023/shaping-the-future-of-legal-education.html">Legal Education Is Still Teaching for a Profession That's Gone &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="ai_ml" data-source="blog_cta" data-page="the-angular-shared-module-reducing-repetition-and-exploring-its-advantages-and-disadvantages">Website development</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/jun2023/jun272023/the-quadrilateral-working-week-challenging-assumptions-and-considering-alternatives.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">The Four-Day Week Sounds Great Until You Read the Fine Print</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/jun2023/jun292023/shaping-the-future-of-legal-education.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Legal Education Is Still Teaching for a Profession That's Gone</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

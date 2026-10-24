@@ -62,8 +62,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -159,58 +159,52 @@
   <script src="https://taliferro.com/js/exit-intent.js" defer></script>
   <meta name="page-intent" content="ai_ml">
   <meta name="page-title" content="Clustering Algorithms Explained">
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#introduction">Introduction</a>
-        <a href="#clustering-a-brief-overview">Clustering Overview</a>
-        <a href="#why-choosing-the-right-cluster-count-is-hard">Cluster Count</a>
-        <a href="#how-silhouette-scores-actually-work">Silhouette Scores</a>
-        <a href="#how-to-use-silhouette-scores-the-right-way">Best Practices</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>A good score can still be a bad answer</h1>
-          <p>Silhouette scores measure how neatly data points separate. They cannot tell you whether the groups make business sense, reflect reality, or support a useful decision. Before trusting the number, test the assumptions behind it.</p>
-          <p class="fine">Published: 14 Aug 2023 · Updated: 6 Sep 2026</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder, Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Machine Learning</span></nav>
+      <h1>A good score can still be a bad answer</h1>
+      <p class="post-dek">Silhouette scores measure how neatly data points separate. They cannot tell you whether the groups make business sense, reflect reality, or support a useful decision. Before trusting the number, test the assumptions behind it.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2023-08-14">Aug 14, 2023</time> · 5 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
           <p class="wow fadeInUp">Clustering groups data by similarity. Teams use it for customer segmentation, fraud detection, and finding patterns nobody assigned anyone to look for. The hard part was never running the algorithm — any of them will happily produce clusters from almost any data you feed them. The hard part is knowing whether the clusters it found mean anything.</p>
           <p class="wow fadeInUp">Taliferro learned this the hard way building <a href="https://taliferro.tech/">TODD</a>, our own product. An early version clustered incoming customer signals to decide which ones needed follow-up first. The clustering scored well — a silhouette score above 0.8, genuinely tight and well-separated groups. But when we looked at what actually separated the clusters, it was which integration the signal came from (Slack versus email versus a form), not anything about how urgent it was. Mathematically clean clusters. Useless for the actual decision.</p>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222">
+          <div class="callout">
             <strong>Quick truth:</strong>
             <p class="mb-0">A strong silhouette score does not mean the segmentation is useful. It only means the points are well separated under the assumptions of the method you chose — and it says nothing about whether those assumptions matched reality.</p>
           </div>
@@ -246,7 +240,7 @@
             <li><strong>Inspect the silhouette plot</strong> to detect skinny or overlapping clusters that a single average may hide.</li>
             <li><strong>Cross‑check with DBI/CH</strong> and domain metrics (e.g., downstream accuracy, revenue lift) to select the most useful segmentation.</li>
           </ol>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222">
+          <div class="callout">
             <strong>Applying this in production?</strong>
             <p class="mb-0"> Taliferro helps teams validate clustering, segmentation, and ML outputs before they drive business decisions. <a href="https://taliferro.com/machine-learning-services/">Explore machine learning consulting</a>. </p>
           </div>
@@ -330,37 +324,60 @@
           <cite>Tyrone Showers</cite><br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
         </div>
-        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        <div class="callout" data-internal-cta="true">
           <strong>Need stronger model confidence?</strong>
           <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">machine learning consulting</a>, connect it to the <a href="https://taliferro.tech/">momentum-focused operating system</a>, or <a href="https://taliferro.com/contact.html">talk through the use case</a>.</p>
         </div>
-        <div class="post__tags mt-small">
-          <div class="tagcloud">
-            <ul>
-              <li><a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html" title="Unsupervised learning context & strategy">Unsupervised Learning</a></li>
-              <li><a href="https://taliferro.com/blog/jul2023/jul182023/data-science-and-analytics-leveraging-insights-for-business-success.html" title="Data science & analytics for business">Data Science</a></li>
-            </ul>
-          </div>
-          <div class="divider"></div>
+        <ul class="post-tags" aria-label="Tags">
+          <li><a href="https://taliferro.com/blog/aug2023/aug022023/the-missed-opportunities-in-understanding-data-science-and-machine-learnings-future.html" title="Unsupervised learning context & strategy">Unsupervised Learning</a></li>
+          <li><a href="https://taliferro.com/blog/jul2023/jul182023/data-science-and-analytics-leveraging-insights-for-business-success.html" title="Data science & analytics for business">Data Science</a></li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#introduction">Introduction</a>
+          <a href="#clustering-a-brief-overview">Clustering: A Brief Overview</a>
+          <a href="#why-choosing-the-right-cluster-count-is-hard">Why Choosing the Right Cluster Count Is Hard</a>
+          <a href="#how-silhouette-scores-actually-work">How Silhouette Scores Actually Work</a>
+          <a href="#how-to-use-silhouette-scores-the-right-way">How to Use Silhouette Scores the Right Way</a>
+          <a href="#related-reading">Related Reading</a>
+          <a href="#why-teams-still-use-silhouette-scores">What the score actually tells you — and what it doesn't</a>
+          <a href="#final-take">Before you trust the number</a>
+          <a href="#video-how-taliferro-group-does-machine-learning">Video: How Taliferro Group Does Machine Learning</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-      </div>
-      <div class="divider"></div>
-      <div class="card">
-        <p class="quote">Need help validating segmentation or machine learning output?</p>
-        <p>Tell us what model or clustering problem you are working through. We will point to the first thing to verify.</p>
-        <div class="btnrow" style="margin-top:10px;">
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Need help validating segmentation or machine learning output?</h2>
+          <p>Tell us what model or clustering problem you are working through. We will point to the first thing to verify.</p>
+        </div>
+        <div class="btnrow">
           <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="clustering-algorithms-and-silhouette-scores">Machine learning consulting</a>
           <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="card">
-        <p class="quote">More from the blog</p>
-        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-          <a class="button" href="https://taliferro.com/blog/aug2023/aug132023/leveraging-user-level-threads-for-rapid-context-switches-in-software-development.html">&larr; Green Threads Win on Speed, OS Threads Win on Cores</a>
-          <a class="button" href="https://taliferro.com/blog/aug2023/aug152023/building-a-robust-lead-generation-pipeline.html">Organic Lead Generation Works in Stages, Not One Big Push &rarr;</a>
-        </nav>
-      </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/aug2023/aug132023/leveraging-user-level-threads-for-rapid-context-switches-in-software-development.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Green Threads Win on Speed, OS Threads Win on Cores</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/aug2023/aug152023/building-a-robust-lead-generation-pipeline.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Organic Lead Generation Works in Stages, Not One Big Push</span>
+        </a>
+      </nav>
     </div>
   </section>
   <div class="bottom-pad"></div>

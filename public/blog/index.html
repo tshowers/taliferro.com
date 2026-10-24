@@ -60,8 +60,8 @@
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta http-equiv="Cache-Control" content="max-age=43200">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="text/javascript">
     if (
       location.protocol !== 'file:' &&
@@ -77,155 +77,137 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#latest-posts">Latest posts</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
   <header class="hero">
     <div class="page-shell">
-      <div class="hero-grid">
+      <div class="hero-grid blog-hero-grid">
         <div>
           <h1>Taliferro Blog</h1>
-          <p> Practical writing on systems, AI, APIs, delivery, and the real work that keeps momentum moving. </p>
+          <p class="lead">Practical writing on systems, AI, APIs, delivery, and the real work that keeps momentum moving.</p>
           <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/">Home</a>
+            <a class="button button-primary" href="#latest">Latest posts</a>
             <a class="button" href="https://taliferro.com/blog/toc.html">Table of contents</a>
           </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">Explore by topic</p>
-            <div class="pillrow" aria-label="Explore by topic">
-              <a class="pill" href="https://taliferro.com/blog/ai-adoption/">AI Adoption</a>
-              <a class="pill" href="https://taliferro.com/blog/bms/">Momentum System</a>
-              <a class="pill" href="https://taliferro.com/blog/crm-alternatives/">CRM Alternatives</a>
-              <a class="pill" href="https://taliferro.com/blog/execution-problems/">Execution Problems</a>
-              <a class="pill" href="https://taliferro.com/blog/outreach-cost/">Outreach Cost</a>
-            </div>
+          <div class="pillrow" aria-label="Explore by topic">
+            <a class="pill" href="https://taliferro.com/blog/ai-adoption/">AI Adoption</a>
+            <a class="pill" href="https://taliferro.com/blog/bms/">Momentum System</a>
+            <a class="pill" href="https://taliferro.com/blog/crm-alternatives/">CRM Alternatives</a>
+            <a class="pill" href="https://taliferro.com/blog/execution-problems/">Execution Problems</a>
+            <a class="pill" href="https://taliferro.com/blog/outreach-cost/">Outreach Cost</a>
           </div>
         </div>
-        <div class="hero-media">
-          <div class="ph">
-            <p class="quote">Featured</p>
-            <p class="fine">A few strong entry points.</p>
-          </div>
-          <div class="video-16x9" aria-label="Featured blog video" role="region">
-            <iframe src="https://www.youtube.com/embed/QrpW9jowSKY?rel=0" title="Featured blog video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-            </iframe>
-          </div>
-          <div class="ph">
-            <p class="quote">Best next step</p>
-            <p class="fine">Pick one hub, then read two posts.</p>
-          </div>
+        <div class="video-16x9 blog-feature-video" aria-label="Featured blog video" role="region">
+          <iframe src="https://www.youtube.com/embed/QrpW9jowSKY?rel=0" title="Featured blog video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </header>
   <!-- LATEST:BEGIN -->
-  <section class="section" aria-label="Latest posts">
+  <section class="section" id="latest" aria-label="Latest posts">
     <div class="page-shell">
-      <div class="kicker">Latest</div>
-      <h2 id="latest-posts">Latest posts</h2>
-      <div class="grid grid-3">
-        <div class="card">
-          <p class="tag">Outreach</p>
-          <h3>The Secret to Customer Acquisition Is Follow-Through, Not Just Traffic</h3>
-          <p class="fine">Aug 1, 2026</p>
-          <p class="fine">Traffic matters, but the real secret to customer acquisition is what happens after the signal shows up. Follow-through is the difference.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="aug2026/aug012026/the-secret-to-customer-acquisition-is-follow-through-not-just-traffic.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">Execution</p>
-          <h3>Work Doesn't Explode. It Loosens.</h3>
-          <p class="fine">Jul 1, 2026</p>
-          <p class="fine">Execution drift happens when work slowly loses clarity after the decision. Better follow-through reduces that drift before it becomes expensive.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="jul2026/jul012026/how-better-follow-through-reduces-execution-drift.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">Outreach</p>
-          <h3>Lead Volume Is Not Lead Quality</h3>
-          <p class="fine">Jun 1, 2026</p>
-          <p class="fine">A full pipeline can still be a weak pipeline. Lead quality matters more than raw volume when the goal is real customer acquisition.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="jun2026/jun012026/lead-volume-is-not-lead-quality.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">Momentum System</p>
-          <h3>The Smartest Software Decision Isn't Bigger Software</h3>
-          <p class="fine">May 1, 2026</p>
-          <p class="fine">Sometimes the most expensive business problems are caused by tiny repetitive friction. Small internal tools can remove that drag faster than giant software rollouts.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="may2026/may012026/why-small-internal-tools-solve-expensive-workflow-problems.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">Outreach</p>
-          <h3>What Clients Really Mean When They Say They Need More Leads</h3>
-          <p class="fine">Apr 1, 2026</p>
-          <p class="fine">When clients say they need more leads, they often mean something deeper: better fit, better signal, and better follow-through.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="apr2026/apr012026/what-clients-really-mean-when-they-say-they-need-more-leads.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">Outreach</p>
-          <h3>Attention Creates the Possibility of a Customer. It Doesn't Create the Customer.</h3>
-          <p class="fine">Mar 1, 2026</p>
-          <p class="fine">Customer acquisition usually breaks after the interest shows up. Learn why follow-up failure destroys good demand and what to fix first.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="mar2026/mar012026/why-follow-up-failure-kills-customer-acquisition.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">AI Adoption</p>
-          <h3>Technology Either Builds Momentum or It Drains It</h3>
-          <p class="fine">Feb 10, 2026</p>
-          <p class="fine">Responsible use of technology is not about compliance. It is about momentum, and how disciplined systems keep automation accountable.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="feb2026/feb102026/responsible-use-of-technology.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">AI Adoption</p>
-          <h3>AI in Real Estate: Why Most Firms Are Using It Incorrectly</h3>
-          <p class="fine">Feb 1, 2026</p>
-          <p class="fine">AI in real estate is growing fast, but most firms are using it incorrectly. Here's where AI is misapplied and what disciplined machine learning looks like instead.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="feb2026/feb012026/ai-and-real-estate.html">Read</a>
-          </div>
-        </div>
-        <div class="card">
-          <p class="tag">AI Adoption</p>
-          <h3>Why Silhouette Scores Fail on Imbalanced Data</h3>
-          <p class="fine">Jan 20, 2026</p>
-          <p class="fine">Silhouette score can look great even when clustering is wrong on imbalanced data. Here's why it fails and better ways to validate clusters before you trust them.</p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html">Read</a>
-          </div>
+      <div class="library-head">
+        <h2 id="latest-posts">Latest posts</h2>
+        <div class="chip-row" role="group" aria-label="Filter posts by topic">
+          <button class="chip chip--sm" type="button" data-filter="All" aria-pressed="true">All</button>
+          <button class="chip chip--sm" type="button" data-filter="Outreach" aria-pressed="false">Outreach</button>
+          <button class="chip chip--sm" type="button" data-filter="Execution" aria-pressed="false">Execution</button>
+          <button class="chip chip--sm" type="button" data-filter="Momentum System" aria-pressed="false">Momentum System</button>
+          <button class="chip chip--sm" type="button" data-filter="AI Adoption" aria-pressed="false">AI Adoption</button>
         </div>
       </div>
-      <div class="divider"></div>
+      <div class="post-grid">
+        <a class="post-card" href="aug2026/aug012026/the-secret-to-customer-acquisition-is-follow-through-not-just-traffic.html" data-tag="Outreach">
+          <div class="post-card__top"><span class="tag tag--sm">Outreach</span><span class="post-card__date">Aug 1, 2026</span></div>
+          <h3>The Secret to Customer Acquisition Is Follow-Through, Not Just Traffic</h3>
+          <p>Traffic matters, but the real secret to customer acquisition is what happens after the signal shows up. Follow-through is the difference.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="jul2026/jul012026/how-better-follow-through-reduces-execution-drift.html" data-tag="Execution">
+          <div class="post-card__top"><span class="tag tag--sm">Execution</span><span class="post-card__date">Jul 1, 2026</span></div>
+          <h3>Work Doesn't Explode. It Loosens.</h3>
+          <p>Execution drift happens when work slowly loses clarity after the decision. Better follow-through reduces that drift before it becomes expensive.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="jun2026/jun012026/lead-volume-is-not-lead-quality.html" data-tag="Outreach">
+          <div class="post-card__top"><span class="tag tag--sm">Outreach</span><span class="post-card__date">Jun 1, 2026</span></div>
+          <h3>Lead Volume Is Not Lead Quality</h3>
+          <p>A full pipeline can still be a weak pipeline. Lead quality matters more than raw volume when the goal is real customer acquisition.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="may2026/may012026/why-small-internal-tools-solve-expensive-workflow-problems.html" data-tag="Momentum System">
+          <div class="post-card__top"><span class="tag tag--sm">Momentum System</span><span class="post-card__date">May 1, 2026</span></div>
+          <h3>The Smartest Software Decision Isn't Bigger Software</h3>
+          <p>Sometimes the most expensive business problems are caused by tiny repetitive friction. Small internal tools can remove that drag faster than giant software rollouts.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="apr2026/apr012026/what-clients-really-mean-when-they-say-they-need-more-leads.html" data-tag="Outreach">
+          <div class="post-card__top"><span class="tag tag--sm">Outreach</span><span class="post-card__date">Apr 1, 2026</span></div>
+          <h3>What Clients Really Mean When They Say They Need More Leads</h3>
+          <p>When clients say they need more leads, they often mean something deeper: better fit, better signal, and better follow-through.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="mar2026/mar012026/why-follow-up-failure-kills-customer-acquisition.html" data-tag="Outreach">
+          <div class="post-card__top"><span class="tag tag--sm">Outreach</span><span class="post-card__date">Mar 1, 2026</span></div>
+          <h3>Attention Creates the Possibility of a Customer. It Doesn't Create the Customer.</h3>
+          <p>Customer acquisition usually breaks after the interest shows up. Learn why follow-up failure destroys good demand and what to fix first.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="feb2026/feb102026/responsible-use-of-technology.html" data-tag="AI Adoption">
+          <div class="post-card__top"><span class="tag tag--sm">AI Adoption</span><span class="post-card__date">Feb 10, 2026</span></div>
+          <h3>Technology Either Builds Momentum or It Drains It</h3>
+          <p>Responsible use of technology is not about compliance. It is about momentum, and how disciplined systems keep automation accountable.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="feb2026/feb012026/ai-and-real-estate.html" data-tag="AI Adoption">
+          <div class="post-card__top"><span class="tag tag--sm">AI Adoption</span><span class="post-card__date">Feb 1, 2026</span></div>
+          <h3>AI in Real Estate: Why Most Firms Are Using It Incorrectly</h3>
+          <p>AI in real estate is growing fast, but most firms are using it incorrectly. Here's where AI is misapplied and what disciplined machine learning looks like instead.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="post-card" href="jan2026/jan202026/why-silhouette-scores-fail-on-imbalanced-data.html" data-tag="AI Adoption">
+          <div class="post-card__top"><span class="tag tag--sm">AI Adoption</span><span class="post-card__date">Jan 20, 2026</span></div>
+          <h3>Why Silhouette Scores Fail on Imbalanced Data</h3>
+          <p>Silhouette score can look great even when clustering is wrong on imbalanced data. Here's why it fails and better ways to validate clusters before you trust them.</p>
+          <span class="more">Read →</span>
+        </a>
+      </div>
       <div class="btnrow">
         <a class="button button-primary" href="toc.html">Browse all topics</a>
         <a class="button" href="/blog/bms/">Start with BMS</a>
+      </div>
+    </div>
+  </section>
+  <!-- CTA -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="dark-panel blog-cta">
+        <div>
+          <h2 id="reading-because-somethings-broken">Reading because something's broken?</h2>
+          <p>Skip the research. A $999 Rescue gives you a written plan in 3 days.</p>
+        </div>
+        <a class="button" href="/#triage">Start the 60-second triage</a>
       </div>
     </div>
   </section>
@@ -246,6 +228,20 @@
       setTheme(saved || (prefersDark ? 'dark' : 'light'));
       btn.addEventListener('click', function () {
         setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var chips = document.querySelectorAll('[data-filter]');
+      var cards = document.querySelectorAll('.post-grid [data-tag]');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var f = chip.getAttribute('data-filter');
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+          cards.forEach(function (card) { card.hidden = f !== 'All' && card.getAttribute('data-tag') !== f; });
+          if (window.gtag) gtag('event', 'blog_filter', { filter: f });
+        });
       });
     })();
   </script>

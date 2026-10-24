@@ -60,8 +60,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -108,51 +108,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#why-a-fair-model-turns-unfair">Why models</a>
-        <a href="#what-taliferro-actually-checks">What we check</a>
-        <a href="#where-this-actually-bites">Where it bites</a>
-        <a href="#how-taliferro-builds-this-in">How we build it in</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Fair Once Isn't Fair Forever</h1>
-          <p>A model can pass every fairness check at launch and still start discriminating six months later — not because anyone changed the code, but because the world the data described quietly changed underneath it. Taliferro builds bias drift monitoring into machine learning work so a hiring, lending, or healthcare model gets checked on a schedule, not just once at the start. The check that matters is the one nobody remembered to run.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Machine Learning</span></nav>
+      <h1>Fair Once Isn't Fair Forever</h1>
+      <p class="post-dek">A model can pass every fairness check at launch and still start discriminating six months later — not because anyone changed the code, but because the world the data described quietly changed underneath it. Taliferro builds bias drift monitoring into machine learning work so a hiring, lending, or healthcare model gets checked on a schedule, not just once at the start. The check that matters is the one nobody remembered to run.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2025-02-01">Feb 1, 2025</time> · 2 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <div>
             <p class="wow fadeInUp" data-link-bridge="true">When machine learning starts influencing real decisions, <a href="https://taliferro.com/machine-learning-services/">machine learning consulting</a> shows how Taliferro turns modeling work into working execution, and the <a href="https://taliferro.tech/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
@@ -183,42 +179,61 @@
             <h2 id="how-taliferro-builds-this-in">How Taliferro builds this in</h2>
             <p>Fairness monitoring isn't a bolt-on audit Taliferro runs once and files away. It's part of how <a href="https://taliferro.com/machine-learning-services/">Taliferro's machine learning consulting</a> work gets built — on a schedule, tied to real decision points, not a checkbox at launch. If you're running AI in hiring, lending, healthcare, or public services, that's exactly the kind of system this needs to be designed into from day one, not added after something goes wrong.</p>
           </div>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need stronger model confidence?</strong>
             <p class="mb-0">Use this article as a starting point, then move into <a href="https://taliferro.com/machine-learning-services/">machine learning consulting</a>, connect it to the <a href="https://taliferro.tech/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">talk through the use case</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><a href="https://taliferro.com/machine-learning-services/" target="_blank" title="Machine Learning Services">machine learning</a></li>
-                <li><a href="https://taliferro.tech/" target="_blank" title="Momentum System (MS)">business momentum system</a></li>
-                <li><a href="https://taliferro.com/blog/toc.html" target="_blank" title="Browse Topics">AI fairness</a></li>
-                <li><a href="https://taliferro.com/blog/toc.html" target="_blank" title="Browse Topics">model monitoring</a></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li><a href="https://taliferro.com/machine-learning-services/" target="_blank" title="Machine Learning Services">machine learning</a></li>
+          <li><a href="https://taliferro.tech/" target="_blank" title="Momentum System (MS)">business momentum system</a></li>
+          <li><a href="https://taliferro.com/blog/toc.html" target="_blank" title="Browse Topics">AI fairness</a></li>
+          <li><a href="https://taliferro.com/blog/toc.html" target="_blank" title="Browse Topics">model monitoring</a></li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#why-a-fair-model-turns-unfair">Why a fair model turns unfair</a>
+          <a href="#what-taliferro-actually-checks">What Taliferro actually checks</a>
+          <a href="#where-this-actually-bites">Where this actually bites</a>
+          <a href="#how-taliferro-builds-this-in">How Taliferro builds this in</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="bias-drift-detection-keeping-ai-fair-over-time">Machine learning consulting</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/jan2025/jan032025/simplify-your-data-collection-with-todd-survey.html">&larr; Collecting Answers Isn't the Hard Part. Using Them Is.</a>
-            <a class="button" href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Ask It Twice. Get Two Different Answers. &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="bias-drift-detection-keeping-ai-fair-over-time">Machine learning consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/jan2025/jan032025/simplify-your-data-collection-with-todd-survey.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Collecting Answers Isn't the Hard Part. Using Them Is.</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Ask It Twice. Get Two Different Answers.</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

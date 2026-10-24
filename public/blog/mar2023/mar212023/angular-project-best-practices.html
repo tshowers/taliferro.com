@@ -61,8 +61,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <meta name="keywords" content="Angular project, project structure, modules, directives, pipes, best practices, lazy loading, SharedModule, attribute directives, pure pipes, impure pipes, performance optimization">
   <script type="application/ld+json">
       {
@@ -111,53 +111,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#introduction">Introduction</a>
-        <a href="#project-structure">Project Structure</a>
-        <a href="#organize-files-by-feature">Organize Files</a>
-        <a href="#use-barrel-files">Use Barrel</a>
-        <a href="#follow-the-angular-style-guide">Follow the</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Stop Organizing Angular Projects by File Type — Organize by Feature</h1>
-          <p>The default instinct is to put all your components in one folder, all your services in another. It feels organized. It stops being organized the moment the project has more than a handful of features, because finding everything related to one thing means hunting across five folders. Group by feature instead, and the codebase stays navigable as it grows.</p>
-          <p class="fine">Published: 21 Mar 2023 · Updated: 06 Aug 2026</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Web Development</span></nav>
+      <h1>Stop Organizing Angular Projects by File Type — Organize by Feature</h1>
+      <p class="post-dek">The default instinct is to put all your components in one folder, all your services in another. It feels organized. It stops being organized the moment the project has more than a handful of features, because finding everything related to one thing means hunting across five folders. Group by feature instead, and the codebase stays navigable as it grows.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2023-03-21">Mar 21, 2023</time> · 6 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="introduction"> Introduction </h2>
           <p><span> <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a> is a popular and powerful front-end framework for building complex, interactive web applications. When starting a new <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a><span> project, it's essential to follow <a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">best practices</a> to ensure the project is well-organized, maintainable, and scalable. In this blog post, we'll cover how to properly construct an </span><a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">Angular</a><span> project and best practices for developing modules, <a href="https://taliferro.com/blog/mar2023/mar162023/why-i-like-angular.html">directives</a>, and pipes. </span></span></p>
@@ -280,44 +274,67 @@
           <a href="https://www.wikihow.com/Author/Tyrone-Showers"><i class="fa fa-book" aria-label="wikiHow"></i></a>
           <a href="https://taliferro.com/team/tyrone-showers/"><i class="fa fa-linkedin" aria-label="LinkedIn"></i></a>
         </div>
-        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        <div class="callout" data-internal-cta="true">
           <strong>Need the frontend to move faster?</strong>
           <p class="mb-0">If you want execution instead of more rework, start with <a href="https://taliferro.com/website-development/">web development that ships clean</a>, connect it to the <a href="https://taliferro.tech/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">show us the delivery bottleneck</a>.</p>
         </div>
-        <div class="post__tags mt-small">
-          <div class="tagcloud">
-            <ul>
-              <li><em>Angular project</em></li>
-              <li><em>project structure</em></li>
-              <li><em>modules</em></li>
-            </ul>
-          </div>
-          <div class="divider"></div>
-          <p class="quote">Tags</p>
-          <ul class="list">
-            <li>Angular project</li>
-            <li>project structure</li>
-            <li>modules</li>
-          </ul>
+        <ul class="post-tags" aria-label="Tags">
+          <li>Angular project</li>
+          <li>project structure</li>
+          <li>modules</li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#introduction">Introduction</a>
+          <a href="#project-structure">Project Structure</a>
+          <a href="#organize-files-by-feature">Organize Files by Feature</a>
+          <a href="#use-barrel-files">Use Barrel Files</a>
+          <a href="#follow-the-angular-style-guide">Follow the Angular Style Guide</a>
+          <a href="#modules">Modules</a>
+          <a href="#keep-modules-small">Keep Modules Small</a>
+          <a href="#use-lazy-loading">Use Lazy Loading</a>
+          <a href="#sharedmodule">SharedModule</a>
+          <a href="#directives">Directives</a>
+          <a href="#use-attribute-directives">Use Attribute Directives</a>
+          <a href="#use-hostlisteners-and-hostbindings">Use HostListeners and HostBindings</a>
+          <a href="#pipes">Pipes</a>
+          <a href="#keep-pipes-pure">Keep Pipes Pure</a>
+          <a href="#use-impure-pipes-with-caution">Use Impure Pipes with Caution</a>
+          <a href="#conclusion">Conclusion</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Legacy</div>
+          <div class="post-rescue__title">Rebuild or patch? Get one honest answer</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/rebuild-vs-patch/" data-source="blog_aside">See the Rescue</a>
         </div>
-      </div>
-      <div class="divider"></div>
-      <div class="card">
-        <p class="quote">Want this fixed on your site?</p>
-        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-        <div class="btnrow" style="margin-top:10px;">
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
+        </div>
+        <div class="btnrow">
           <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="angular-project-best-practices">Website development</a>
           <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="card">
-        <p class="quote">More from the blog</p>
-        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-          <a class="button" href="https://taliferro.com/blog/mar2023/mar202023/questions-to-ask-in-a-data-analytics-project.html">&larr; Most Data Analytics Projects Fail Before Anyone Opens a Dataset</a>
-          <a class="button" href="https://taliferro.com/blog/mar2023/mar222023/learning-platform-user-experience.html">Students Don't Quit Because the Material Is Hard &rarr;</a>
-        </nav>
-      </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/mar2023/mar202023/questions-to-ask-in-a-data-analytics-project.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Most Data Analytics Projects Fail Before Anyone Opens a Dataset</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/mar2023/mar222023/learning-platform-user-experience.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Students Don't Quit Because the Material Is Hard</span>
+        </a>
+      </nav>
     </div>
   </section>
   <div class="bottom-pad"></div>

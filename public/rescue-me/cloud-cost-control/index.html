@@ -94,107 +94,155 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
-<body class="story-page">
+<body class="page-rescue">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#cloud-waste-starts-long-before-the-invoice-becomes">Cloud</a>
-        <a href="#you-cannot-manage-what-nobody-is-naming-clearly">Support</a>
-        <a href="#the-platform-moves-faster-than-the-controls-around">Product</a>
-        <a href="#get-the-first-cuts-ranked-by-risk-speed-and-saving">Risk</a>
-        <a href="#stop-paying-for-waste-you-cannot-see">Paying</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/" aria-current="page">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="page-shell">
-      <div class="hero-grid">
-        <div class="story-panel">
+    <main>
+    <section class="hero rescue-hero">
+      <div class="page-shell hero-grid">
+        <div>
           <div class="kicker">CTO · Cloud Spend</div>
           <h1>Your Cloud Bill Is Bigger Than Your Old Data Center</h1>
-          <p class="story-summary">Cloud overspending is rarely a cloud problem. It is usually a visibility and governance problem.</p>
-          <p class="story-detail">Teams optimize for speed. Nobody owns the total bill. The waste compounds quietly until finance notices.</p>
-          <div class="btnrow">
+          <p class="rescue-summary">Cloud overspending is rarely a cloud problem. It is usually a visibility and governance problem.</p>
+          <p class="rescue-detail">Teams optimize for speed. Nobody owns the total bill. The waste compounds quietly until finance notices.</p>
+          <div class="rescue-chips">
+            <span class="pill pill--solid">$999 flat</span>
+            <span class="pill">Intake within 24 hours</span>
+            <span class="pill">Written plan in 3 days</span>
+          </div>
+          <div class="hero-actions">
             <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
             <a class="button" href="mailto:info@taliferro.com?subject=Cloud%20Cost%20Control%20Rescue">Ask a question</a>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="https://taliferro.com/img/how-to-stop-overpaying-for-cloud-infrastructure-cloud-cost-optimization1.webp" alt="CTO reviewing unexpectedly high cloud infrastructure costs that have outpaced the on-premise data center" style="width:100%;display:block;" loading="eager" />
+        <div>
+          <img class="media rescue-hero__img" src="https://taliferro.com/img/how-to-stop-overpaying-for-cloud-infrastructure-cloud-cost-optimization1.webp" alt="CTO reviewing unexpectedly high cloud infrastructure costs that have outpaced the on-premise data center" loading="eager" />
         </div>
       </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
-    </div>
-  </header>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">The signal</div>
-        <h2 id="cloud-waste-starts-long-before-the-invoice-becomes">Cloud waste starts long before the invoice becomes a crisis</h2>
-        <p class="story-summary">When resources are easy to launch and hard to own, cost rises faster than accountability.</p>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="how-it-works">
-    <div class="page-shell">
-      <div class="story-split">
-        <div class="story-panel">
+    </section>
+
+    <section class="rescue-story" id="how-it-works" aria-label="How the problem develops">
+      <div class="page-shell">
+        <div class="rescue-steps">
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">1</span>
+          <div class="kicker">The signal</div>
+          <h3 id="cloud-waste-starts-long-before-the-invoice-becomes">Cloud waste starts long before the invoice becomes a crisis</h3>
+          <p>When resources are easy to launch and hard to own, cost rises faster than accountability.</p>
+        </article>
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">2</span>
           <div class="kicker">The real cost</div>
-          <h2 id="you-cannot-manage-what-nobody-is-naming-clearly">You cannot manage what nobody is naming clearly</h2>
-          <p class="story-summary">Idle environments, oversized instances, and orphaned storage do not look dramatic. They just stay on and keep billing.</p>
+          <h3 id="you-cannot-manage-what-nobody-is-naming-clearly">You cannot manage what nobody is naming clearly</h3>
+          <p>Idle environments, oversized instances, and orphaned storage do not look dramatic. They just stay on and keep billing.</p>
+        </article>
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">3</span>
+          <div class="kicker">Why it keeps happening</div>
+          <h3 id="the-platform-moves-faster-than-the-controls-around">The platform moves faster than the controls around it</h3>
+          <p>Provisioning is instant. Cost feedback is delayed. By the time the team sees the bill, the pattern is already entrenched.</p>
+        </article>
+        <article class="card rescue-step card--cyan rescue-step--fix">
+          <span class="num-badge" aria-hidden="true">4</span>
+          <div class="kicker">The rescue</div>
+          <h3 id="get-the-first-cuts-ranked-by-risk-speed-and-saving">Get the first cuts ranked by risk, speed, and savings</h3>
+          <p>You get a written diagnosis that shows where the waste lives, what can be cut safely now, and what governance needs to change so it does not return.</p>
+        </article>
         </div>
-        <div class="hero-media">
-          <img src="https://taliferro.com/img/how-to-stop-overpaying-for-cloud-infrastructure-cloud-cost-optimization2.webp" alt="Cloud cost dashboard and infrastructure spend under review" style="width:100%;display:block;" loading="lazy" />
+        <p class="rescue-note">Most companies do not need a bigger FinOps tool first. They need tagging, ownership, shutdown rules, and one view both engineering and finance trust.</p>
+      </div>
+    </section>
+
+    <section class="rescue-faq" id="faq">
+      <div class="page-shell split">
+        <div>
+          <div class="kicker">FAQ</div>
+          <h2 id="before-you-book">Before you book</h2>
+          <img class="media rescue-faq__img" src="https://taliferro.com/img/how-to-stop-overpaying-for-cloud-infrastructure-cloud-cost-optimization2.webp" alt="Cloud cost dashboard and infrastructure spend under review" loading="lazy" />
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Why are cloud costs always higher than projected?</summary>
+            <p>Because cloud makes it easy to spin up resources and hard to track who owns them. Without cost tagging, showback, and auto-shutdown policies, every team optimizes for convenience and someone else pays the bill. Cloud pricing is also deliberately complex — the incentive structure favors the vendor, not the customer.</p>
+          </details>
+          <details>
+            <summary>What percentage of cloud spend is typically wasted?</summary>
+            <p>Industry data consistently shows 30–35% of cloud spend is waste — idle instances, oversized resources, orphaned storage, and dev environments that run continuously at production scale. The exact number varies by organization, but almost every environment we've reviewed has immediate, low-risk cuts available.</p>
+          </details>
+          <details>
+            <summary>How quickly can cloud costs actually be reduced?</summary>
+            <p>Quick wins — rightsizing, turning off idle resources, eliminating orphaned storage — can be executed in 1–2 weeks and typically yield 15–25% reduction immediately. Structural changes like reserved instances and architecture optimization take longer but produce larger sustained savings.</p>
+          </details>
+          <details>
+            <summary>Do we need a dedicated FinOps team to manage cloud costs?</summary>
+            <p>Only if cloud spend is over $5M per year. Below that, the problem is usually governance and tagging, not a dedicated team. Start with clear ownership and the right guardrails — that's usually enough. A FinOps team without governance infrastructure just creates an expensive reporting function.</p>
+          </details>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel">
-        <div class="kicker">Why it keeps happening</div>
-        <h2 id="the-platform-moves-faster-than-the-controls-around">The platform moves faster than the controls around it</h2>
-        <p class="story-summary">Provisioning is instant. Cost feedback is delayed. By the time the team sees the bill, the pattern is already entrenched.</p>
-        <p class="story-detail">Most companies do not need a bigger FinOps tool first. They need tagging, ownership, shutdown rules, and one view both engineering and finance trust.</p>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">The rescue</div>
-        <h2 id="get-the-first-cuts-ranked-by-risk-speed-and-saving">Get the first cuts ranked by risk, speed, and savings</h2>
-        <p class="story-summary">You get a written diagnosis that shows where the waste lives, what can be cut safely now, and what governance needs to change so it does not return.</p>
-      </div>
-    </div>
-  </section>
-  <!-- FINAL CTA -->
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">Same-Day Rescue</div>
-        <p class="story-price">$999</p>
-        <h2 id="stop-paying-for-waste-you-cannot-see">Stop paying for waste you cannot see</h2>
-        <p class="story-summary">Get a focused cloud cost diagnosis in 3 days, with the first cuts ranked by risk and impact.</p>
-        <div class="btnrow" style="justify-content:center;">
-          <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
-          <a class="button" href="mailto:info@taliferro.com?subject=Cloud%20Cost%20Control%20Rescue">Ask a question</a>
-          <a class="button" href="tel:+14016462662">Call directly</a>
+    </section>
+
+    <section class="rescue-cta">
+      <div class="page-shell">
+        <div class="dark-panel rescue-cta__band">
+          <div>
+            <div class="kicker">Same-Day Rescue</div>
+            <h2 id="stop-paying-for-waste-you-cannot-see">Stop paying for waste you cannot see</h2>
+            <p>Get a focused cloud cost diagnosis in 3 days, with the first cuts ranked by risk and impact.</p>
+          </div>
+          <div>
+            <div class="rescue-price">$999</div>
+            <div class="hero-actions">
+            <a class="button" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
+            <a class="button button--ghost" href="mailto:info@taliferro.com?subject=Cloud%20Cost%20Control%20Rescue">Ask a question</a>
+            <a class="button button--ghost" href="tel:+14016462662">Call directly</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="rescue-related" data-related-services="true">
+      <div class="page-shell">
+        <h2>If this isn't the whole problem</h2>
+        <div class="grid grid-3">
+        <a class="link-card" href="https://taliferro.com/rescue-me/">
+          <span class="link-card__title">IT Rescue — $999 Flat</span>
+          <p>Diagnose the problem in 3 business days. No retainer.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/cloud-architecture-consulting/">
+          <span class="link-card__title">Cloud Architecture Consulting</span>
+          <p>Find what's costing too much or breaking under load.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/it-consultant-seattle/">
+          <span class="link-card__title">IT Consultant Seattle</span>
+          <p>Cut cloud costs and untangle messy technology, flat fee.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        </div>
+      </div>
+    </section>
+  </main>
   <script>
     (function () {
       var btn = document.querySelector('.theme-toggle');
@@ -214,31 +262,7 @@
       });
     })();
   </script>
-    <!-- RELATED SERVICES -->
-    <section class="section" data-related-services="true">
-        <div class="page-shell">
-            <div class="kicker">Related services</div>
-            <h2>If this isn't the whole problem</h2>
-            <div class="grid grid-3">
-                <a class="card" href="https://taliferro.com/rescue-me/">
-                    <h3>IT Rescue — $999 Flat</h3>
-                    <p>Diagnose the problem in 3 business days. No retainer.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-                <a class="card" href="https://taliferro.com/cloud-architecture-consulting/">
-                    <h3>Cloud Architecture Consulting</h3>
-                    <p>Find what's costing too much or breaking under load.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-                <a class="card" href="https://taliferro.com/it-consultant-seattle/">
-                    <h3>IT Consultant Seattle</h3>
-                    <p>Cut cloud costs and untangle messy technology, flat fee.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-            </div>
-        </div>
-    </section>
-<footer class="footer no-print">
+  <footer class="footer no-print">
     <div class="page-shell">
       <div class="footer-inner">
         <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>

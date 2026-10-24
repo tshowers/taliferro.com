@@ -62,8 +62,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -154,50 +154,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#taliferros-take-on-precision-and-generative-ai-whe">Taliferro's Take</a>
-        <a href="#related-reading">Related Reading</a>
-        <a href="#faq">FAQ</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Confidence is not accuracy</h1>
-          <p>Generative AI can produce an answer that sounds certain even when it is wrong. When the result must be provable, repeatable, and exact, the system needs verification—not better-sounding guesses.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Machine Learning</span></nav>
+      <h1>Confidence is not accuracy</h1>
+      <p class="post-dek">Generative AI can produce an answer that sounds certain even when it is wrong. When the result must be provable, repeatable, and exact, the system needs verification—not better-sounding guesses.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2024-10-04">Oct 4, 2024</time> · 2 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <div>
             <p>Ask a generative AI model a question and it always sounds sure of itself — even when the answer is wrong. That's the trap. How confident the phrasing sounds has nothing to do with whether the number, citation, or fact behind it is actually correct.</p>
@@ -222,51 +219,63 @@
           <cite>Tyrone Showers</cite><br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
         </div>
-        <h2 id="related-reading" class="text-capitalize wow fadeInUp"> Related Reading </h2>
-        <ul>
+        <div class="post-extras">
+          <h2 id="related-reading" class="text-capitalize wow fadeInUp"> Related Reading </h2>
+          <ul>
           <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html">Consistent Output Protocol (COP): Make AI Reliable</a></li>
           <li><a href="https://taliferro.com/blog/feb2025/feb012025/bias-drift-detection-keeping-ai-fair-over-time.html">Bias Drift Detection: Keep AI Fair Over Time</a></li>
           <li><a href="https://taliferro.com/blog/dec2024/dec012024/building-ethical-ai-washingtons-accountability-framework.html">Building Ethical AI: Washington’s Accountability Model</a></li>
         </ul>
-        <h2 id="faq" class="text-capitalize wow fadeInUp"> FAQ </h2>
-        <h3>When should I avoid Generative AI?</h3>
-        <p>Whenever the answer must be provably correct and consistent, like financial reporting, legal citations, medical dosing, or compliance workflows. Use deterministic systems, rule engines, or retrieval with exact sources instead.</p>
-        <h3>What are better options when accuracy matters?</h3>
-        <p>Deterministic calculators, typed pipelines, retrieval‑augmented generation with strict citations, or fine‑tuned classifiers where outputs can be validated.</p>
-        <h3>How do I keep accuracy high if I must use GenAI?</h3>
-        <p>Constrain prompts, use function calling for calculations, add post‑validation checks, and log/monitor outputs with a review loop.</p>
-        <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+          <h2 id="faq" class="text-capitalize wow fadeInUp"> FAQ </h2>
+          <h3>When should I avoid Generative AI?</h3>
+          <p>Whenever the answer must be provably correct and consistent, like financial reporting, legal citations, medical dosing, or compliance workflows. Use deterministic systems, rule engines, or retrieval with exact sources instead.</p>
+          <h3>What are better options when accuracy matters?</h3>
+          <p>Deterministic calculators, typed pipelines, retrieval‑augmented generation with strict citations, or fine‑tuned classifiers where outputs can be validated.</p>
+          <h3>How do I keep accuracy high if I must use GenAI?</h3>
+          <p>Constrain prompts, use function calling for calculations, add post‑validation checks, and log/monitor outputs with a review loop.</p>
+        </div>
+        <div class="callout" data-internal-cta="true">
           <strong>Need analytics people will actually use?</strong>
           <p class="mb-0">Move from reporting to action with <a href="https://taliferro.com/machine-learning-services/">predictive analytics consulting</a>, connect it to the <a href="https://taliferro.tech/">momentum model</a>, or <a href="https://taliferro.com/contact.html">show us the reporting gap</a>.</p>
         </div>
-        <div class="post__tags mt-small">
-          <div class="tagcloud">
-            <ul>
-              <li><a href="https://taliferro.com/toc.html#ai-ml" title="See more AI & ML articles">Generative AI</a></li>
-              <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html" title="Techniques to improve accuracy and consistency">AI accuracy</a></li>
-              <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html" title="Designing precise, reliable outputs">AI precision</a></li>
-            </ul>
-          </div>
-          <div class="divider"></div>
+        <ul class="post-tags" aria-label="Tags">
+          <li><a href="https://taliferro.com/toc.html#ai-ml" title="See more AI & ML articles">Generative AI</a></li>
+          <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html" title="Techniques to improve accuracy and consistency">AI accuracy</a></li>
+          <li><a href="https://taliferro.com/blog/feb2025/feb222025/consistent-output-protocol-cop-making-ai-reliable.html" title="Designing precise, reliable outputs">AI precision</a></li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-      </div>
-      <div class="divider"></div>
-      <div class="card">
-        <p class="quote">Want this fixed on your site?</p>
-        <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-        <div class="btnrow" style="margin-top:10px;">
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
+        </div>
+        <div class="btnrow">
           <a class="button button-primary" href="https://taliferro.com/machine-learning-services/" data-intent="blog" data-source="blog_cta" data-page="why-generative-ai-fails-when-you-need-one-hundred-percent-accurate-results">Machine learning and analytics consulting</a>
           <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="card">
-        <p class="quote">More from the blog</p>
-        <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-          <a class="button" href="https://taliferro.com/blog/sep2024/sep302024/todd-the-ai-workforce-as-a-service.html">&larr; TODD: The AI Workforce</a>
-          <a class="button" href="https://taliferro.com/blog/nov2024/nov012024/how-todd-simplifies-follow-ups-and-strengthens-connections.html">How TODD Simplifies Follow-Ups and Strengthens Connections &rarr;</a>
-        </nav>
-      </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/sep2024/sep302024/todd-the-ai-workforce-as-a-service.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">TODD: The AI Workforce</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/nov2024/nov012024/how-todd-simplifies-follow-ups-and-strengthens-connections.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">How TODD Simplifies Follow-Ups and Strengthens Connections</span>
+        </a>
+      </nav>
     </div>
   </section>
   <div class="bottom-pad"></div>

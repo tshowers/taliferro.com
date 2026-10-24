@@ -47,8 +47,8 @@
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <link rel="mask-icon" href="https://taliferro.com/img/general/safari-pinned-tab.svg" color="#5195d9">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -118,190 +118,97 @@
   <script src="https://taliferro.com/js/exit-intent.js" defer></script>
   <meta name="page-intent" content="general">
   <meta name="page-title" content="Contact Us">
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body>
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#send-a-message">Contact</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="page-shell">
-      <div class="hero-grid">
+  <!-- CONTACT -->
+  <main class="hero contact-hero" id="form">
+    <div class="page-shell contact-layout">
+      <div class="contact-side">
         <div>
           <h1>Tell us where the work stopped</h1>
-          <p>Give us the goal, what is getting in the way, and when it matters. Taliferro will respond with the clearest next step—not a rehearsed sales pitch.</p>
-          <div class="pillrow" aria-label="What we help with">
-            <span class="pill">Cloud architecture</span>
-            <span class="pill">APIs + integration</span>
-            <span class="pill">AI &amp; ML</span>
-            <span class="pill">Delivery + agile</span>
-          </div>
-          <div class="btnrow">
-            <a class="button button-primary" href="#form">Send a message</a>
-            <a class="button" href="#map">Find us</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">Contact info</p>
-            <ul class="list">
-              <li><strong>Email:</strong> <a href="mailto:info@taliferro.com">info@taliferro.com</a></li>
-              <li><strong>Phone:</strong> <a href="tel:+14016462662">401.646.2662</a></li>
-              <li><strong>Office:</strong> 1424 11th Ave STE 400, Seattle, WA 98122</li>
-            </ul>
-          </div>
+          <p class="lead">Give us the goal, what is getting in the way, and when it matters. Taliferro will respond with the clearest next step—not a rehearsed sales pitch.</p>
         </div>
-        <div class="hero-media">
-          <div class="ph">
-            <p class="quote">What happens after you send this</p>
-            <p> A person reads it — not a bot, not a queue. If it's a fit, you'll hear back with a specific next step, not a call to "discuss your needs." </p>
-          </div>
-          <div class="ph">
-            <p class="quote">Prefer email?</p>
-            <p>
-              <a href="mailto:info@taliferro.com?subject=Project%20inquiry">info@taliferro.com</a>
-            </p>
-            <div class="divider"></div>
-            <p class="fine">We reply as soon as we can.</p>
-          </div>
+        <div class="card card--cyan">
+          <h3>What happens after you send this</h3>
+          <p>A person reads it — not a bot, not a queue. If it's a fit, you'll hear back with a specific next step, not a call to "discuss your needs."</p>
         </div>
+        <div class="card contact-rows">
+          <div><span>Email</span><a href="mailto:info@taliferro.com">info@taliferro.com</a></div>
+          <div><span>Phone</span><a href="tel:+14016462662">401.646.2662</a></div>
+          <div><span>Office</span><address>1424 11th Ave STE 400, Seattle, WA 98122</address></div>
+        </div>
+        <iframe id="map" class="contact-map" title="Taliferro office map" src="https://www.google.com/maps?q=1424%2011th%20Ave%20Ste%20400%20Seattle%20WA%2098122&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
-    </div>
-  </header>
-  <!-- FORM + MAP -->
-  <section class="section" id="form">
-    <div class="page-shell">
-      <div class="kicker">Message</div>
-      <h2 id="send-a-message">Send a message</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <form class="" id="newsletterForm" onsubmit="return false;">
-            <!-- honeypot (bots will fill this) -->
-            <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
-              <label>Middle Name <input type="text" name="middleName" tabindex="-1" autocomplete="off" value="" />
-              </label>
-            </div>
-            <!-- header -->
-            <div class="row form__row">
-              <div class="col form__col">
-                <h3 class="h3 mt-0 mb-0">Send Message</h3>
-              </div>
-            </div>
-            <!-- - header -->
-            <!-- input #1 -->
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <input class="input-float__input" type="text" name="firstName" required="required" data-msg="Please enter your first name" /><span class="input-float__label">First Name</span><span class="form__error"></span>
-                </label>
-              </div>
-            </div>
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <input class="input-float__input" type="text" name="lastName" required="required" data-msg="Please enter your last name" /><span class="input-float__label">Last Name</span><span class="form__error"></span>
-                </label>
-              </div>
-            </div>
-            <!-- - input #1 -->
-            <!-- input #2 -->
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <input class="input-float__input" type="email" name="email" required="required" data-msg="Please enter a correct e-mail" /><span class="input-float__label">Your E-mail</span><span class="form__error"></span>
-                </label>
-              </div>
-            </div>
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <input class="input-float__input" type="text" name="companyName" /><span class="input-float__label">Company or Organization</span><span class="form__error"></span>
-                </label>
-              </div>
-            </div>
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <input class="input-float__input" type="tel" name="phoneNumber" /><span class="input-float__label">Phone Number</span><span class="form__error"></span>
-                </label>
-              </div>
-            </div>
-            <!-- - input #2 -->
-            <!-- input #3 -->
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <select class="input-float__input" name="interestArea" required="required">
-                    <option value="">Select an interest</option>
-                    <option value="AI and automation">AI and automation</option>
-                    <option value="Cloud architecture">Cloud architecture</option>
-                    <option value="APIs and integration">APIs and integration</option>
-                    <option value="Software development">Software development</option>
-                    <option value="Delivery and agile help">Delivery and agile help</option>
-                    <option value="General consulting">General consulting</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <span class="input-float__label">What are you interested in?</span><span class="form__error"></span>
-                </label>
-              </div>
-            </div>
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <textarea class="input-float__input input-float__input_textarea" name="helpNeeded" required="required" placeholder="Example: Our releases keep slipping and we are not sure whether the problem is the team, the process, or the architecture."></textarea><span class="input-float__label">What do you need help with?</span><span class="form__error"></span>
-                </label>
-              </div>
-            </div>
-            <div class="row form__row">
-              <div class="col form__col">
-                <label class="input-float js-input-float">
-                  <textarea class="input-float__input input-float__input_textarea" name="visitor_msg"></textarea><span class="input-float__label">Additional context</span><span class="form__error"></span>
-                </label>
-                <p class="fine" style="margin:8px 0 0;">Tell us the problem, the app or workflow you are evaluating, and what outcome you want next.</p>
-              </div>
-            </div>
-            <!-- - input #3 -->
-            <!-- submit -->
-            <div class="row form__row">
-              <div class="col form__col form__col_submit">
-                <button class="button button-primary" type="button" id="submitBtn">Send</button>
-              </div>
-            </div>
-            <div class="row form__row">
-              <div class="col form__col">
-                <p id="formStatus" class="fine" aria-live="polite" style="margin:0;"></p>
-              </div>
-            </div>
-            <!-- - submit -->
-          </form>
-        </div>
-        <div class="card" id="map">
-          <p class="quote">Location</p>
-          <div class="divider"></div>
-          <div class="figure-info split-text js-split-text" data-split-text-type="lines,words" data-split-text-set="words">
-            <div class="figure-info__option small-caps">Office</div>
-            <div class="figure-info__value paragraph">1424 11th Ave, Ste 400<br>Seattle, WA 98122<br>USA</div>
+
+      <div class="form-card">
+        <h2 id="send-a-message">Send a message</h2>
+        <form id="newsletterForm" onsubmit="return false;">
+          <!-- honeypot (bots will fill this) -->
+          <div style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+            <label>Middle Name <input type="text" name="middleName" tabindex="-1" autocomplete="off" value="" />
+            </label>
           </div>
-          <div class="divider"></div>
-          <iframe title="Taliferro office map" src="https://www.google.com/maps?q=1424%2011th%20Ave%20Ste%20400%20Seattle%20WA%2098122&output=embed" style="width:100%;height:360px;border:0;border-radius:14px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+          <div class="field-row">
+            <label class="field">First name<input type="text" name="firstName" required="required" autocomplete="given-name" /></label>
+            <label class="field">Last name<input type="text" name="lastName" required="required" autocomplete="family-name" /></label>
+          </div>
+          <label class="field">Your e-mail<input type="email" name="email" required="required" autocomplete="email" /></label>
+          <div class="field-row">
+            <label class="field">Company or organization<input type="text" name="companyName" autocomplete="organization" /></label>
+            <label class="field">Phone number<input type="tel" name="phoneNumber" autocomplete="tel" /></label>
+          </div>
+          <fieldset class="choice-group" data-choice="interestArea">
+            <legend>What are you interested in?</legend>
+            <div class="chip-row">
+              <label class="chip chip--sm"><input type="radio" name="interestArea" value="AI and automation" required="required" />AI and automation</label>
+              <label class="chip chip--sm"><input type="radio" name="interestArea" value="Cloud architecture" />Cloud architecture</label>
+              <label class="chip chip--sm"><input type="radio" name="interestArea" value="APIs and integration" />APIs and integration</label>
+              <label class="chip chip--sm"><input type="radio" name="interestArea" value="Software development" />Software development</label>
+              <label class="chip chip--sm"><input type="radio" name="interestArea" value="Delivery and agile help" />Delivery and agile help</label>
+              <label class="chip chip--sm"><input type="radio" name="interestArea" value="General consulting" />General consulting</label>
+              <label class="chip chip--sm"><input type="radio" name="interestArea" value="Other" />Other</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-group" data-choice="urgency">
+            <legend>When does this matter?</legend>
+            <div class="chip-row">
+              <label class="chip chip--sm"><input type="radio" name="urgency" value="Today" />Today</label>
+              <label class="chip chip--sm"><input type="radio" name="urgency" value="This week" />This week</label>
+              <label class="chip chip--sm"><input type="radio" name="urgency" value="This month" />This month</label>
+              <label class="chip chip--sm"><input type="radio" name="urgency" value="Just exploring" />Just exploring</label>
+            </div>
+          </fieldset>
+          <label class="field">What do you need help with?<textarea name="helpNeeded" required="required" rows="4" placeholder="Example: Our releases keep slipping and we are not sure whether the problem is the team, the process, or the architecture."></textarea></label>
+          <label class="field">Additional context<textarea name="visitor_msg" rows="3"></textarea><span class="fine">Tell us the problem, the app or workflow you are evaluating, and what outcome you want next.</span></label>
+          <div class="send-row">
+            <button class="button button-primary" type="button" id="submitBtn">Send</button>
+            <span class="fine">Urgent? <a href="/rescue-me/">A $999 Rescue starts within 24 hours.</a></span>
+          </div>
+          <p id="formStatus" class="fine" aria-live="polite" style="margin:0;"></p>
+        </form>
       </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
     </div>
-  </section>
+  </main>
   <div class="bottom-pad"></div>
   <script>
     (function () {
@@ -363,6 +270,7 @@
           companyName: String(data.get('companyName') || '').trim(),
           phoneNumber: String(data.get('phoneNumber') || '').trim(),
           interestArea: String(data.get('interestArea') || '').trim(),
+          urgency: String(data.get('urgency') || '').trim(),
           helpNeeded: String(data.get('helpNeeded') || '').trim(),
           visitorMessage: String(data.get('visitor_msg') || '').trim(),
           middleName: String(data.get('middleName') || '').trim(),
@@ -414,6 +322,16 @@
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         submitForm();
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var groups = document.querySelectorAll('#newsletterForm .choice-group');
+      groups.forEach(function (group) {
+        group.addEventListener('change', function (event) {
+          if (window.gtag) gtag('event', 'contact_chip_select', { field: group.getAttribute('data-choice'), value: event.target.value });
+        });
       });
     })();
   </script>

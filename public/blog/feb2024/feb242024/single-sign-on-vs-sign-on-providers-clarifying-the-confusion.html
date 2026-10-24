@@ -62,8 +62,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -110,51 +110,46 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#single-sign-on-vs-sign-on-providers-clarifying-the">Single Sign-On</a>
-        <a href="#the-basics-of-single-sign-on-sso">The Basics</a>
-        <a href="#enter-sign-on-providers-the-next-level">Enter Sign-On</a>
-        <a href="#okta-encompasses-a-broader-spectrum-of-iam-functio">Okta encompasses</a>
-        <a href="#the-key-differences">The Key</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>SSO vs. Okta: Unpacking Identity Management</h1>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Web Development</span></nav>
+      <h1>SSO vs. Okta: Unpacking Identity Management</h1>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2024-02-24">Feb 24, 2024</time> · 4 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="single-sign-on-vs-sign-on-providers-clarifying-the"> Single Sign-On vs. Sign-On Providers: Clarifying the Confusion </h2>
           <p> The terms "Single Sign-On" (SSO) and "Sign-On Providers" often get tossed around interchangeably. However, as a seasoned professional in the tech consulting space, I've come to recognize the critical nuances that distinguish the two. Understanding these differences is not just academic; it's fundamental to making informed decisions about securing and streamlining access within organizations. </p>
@@ -168,7 +163,7 @@
             <div class="col-lg-6"><img src="https://taliferro.com/blog/img/blog/single-sign-on-vs-sign-on-providers-clarifying-the-confusion1.webp" alt=""></div>
             <div class="col-lg-6"><img src="https://taliferro.com/blog/img/blog/single-sign-on-vs-sign-on-providers-clarifying-the-confusion2.webp" alt=""></div>
           </div>
-          <h2 id="okta-encompasses-a-broader-spectrum-of-iam-functio"> Okta encompasses a broader spectrum of IAM functionalities beyond SSO, including: </h2>
+          <h2 id="okta-encompasses-a-broader-spectrum-of-iam-functio"> Okta encompasses a broader spectrum of IAM functionalities beyond SSO, including </h2>
           <ul>
             <li> User Management: Centralized control over user access to applications, services, and data. </li>
             <li><span>
@@ -198,47 +193,63 @@
           <p> The decision depends on your organization's specific needs. If you're looking for a way to streamline access to multiple applications, SSO might be sufficient. However, if you need a more robust approach to IAM, including enhanced security features and user management capabilities, a comprehensive solution like Okta would be more appropriate. </p>
           <h2 id="conclusion"> Conclusion </h2>
           <p> In the ever-evolving digital landscape, understanding the tools at our disposal is paramount. While Single Sign-On offers a gateway to convenience and security, Sign-On Providers like Okta open the door to a fortress of identity management capabilities. As we navigate the complexities of digital identities, making informed choices between SSO and comprehensive IAM solutions is not just beneficial—it's essential for safeguarding our digital ecosystems. </p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need momentum, not another patch?</strong>
             <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">system design that removes drag</a>, connect it to the <a href="https://taliferro.tech/">execution-first operating model</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>Single Sign-On</em></li>
-                <li><em>identity management</em></li>
-                <li><em><span><a href="https://taliferro.com/blog/sep2022/sep032022/i-hate-passwords.html">cybersecurity</a></span></em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li>Single Sign-On</li>
-              <li>identity management</li>
-              <li>cybersecurity</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>Single Sign-On</li>
+          <li>identity management</li>
+          <li><a href="https://taliferro.com/blog/sep2022/sep032022/i-hate-passwords.html">cybersecurity</a></li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#single-sign-on-vs-sign-on-providers-clarifying-the">Single Sign-On vs. Sign-On Providers: Clarifying the Confusion</a>
+          <a href="#the-basics-of-single-sign-on-sso">The Basics of Single Sign-On (SSO)</a>
+          <a href="#enter-sign-on-providers-the-next-level">Enter Sign-On Providers: The Next Level</a>
+          <a href="#okta-encompasses-a-broader-spectrum-of-iam-functio">Okta encompasses a broader spectrum of IAM functionalities beyond SSO, including</a>
+          <a href="#the-key-differences">The Key Differences</a>
+          <a href="#faq-understanding-single-sign-on-and-sign-on-provi">FAQ: Understanding Single Sign-On and Sign-On Providers Like Okta</a>
+          <a href="#conclusion">Conclusion</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Legacy</div>
+          <div class="post-rescue__title">Rebuild or patch? Get one honest answer</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/rebuild-vs-patch/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="single-sign-on-vs-sign-on-providers-clarifying-the-confusion">Tell us what is stuck</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/feb2024/feb232024/email-sign-in-security-theft-proof-your-account.html">&larr; Email Sign-In Security: Theft Proof Your Account</a>
-            <a class="button" href="https://taliferro.com/blog/feb2024/feb252024/this-one-mistake-could-be-slowing-down-your-business-growth.html">This One Mistake Could Be Slowing Down Your Business Growth &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="single-sign-on-vs-sign-on-providers-clarifying-the-confusion">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/feb2024/feb232024/email-sign-in-security-theft-proof-your-account.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Email Sign-In Security: Theft Proof Your Account</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/feb2024/feb252024/this-one-mistake-could-be-slowing-down-your-business-growth.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">This One Mistake Could Be Slowing Down Your Business Growth</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

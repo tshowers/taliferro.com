@@ -94,107 +94,155 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
-<body class="story-page">
+<body class="page-rescue">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#low-velocity-is-expensive-even-before-the-outage-h">Velocity</a>
-        <a href="#the-team-cannot-move-fast-when-every-change-touche">Team</a>
-        <a href="#tools-cannot-compensate-for-a-fragile-release-syst">Tools</a>
-        <a href="#get-the-bottleneck-named-clearly-and-the-first-fix">Solution</a>
-        <a href="#find-what-is-actually-slowing-delivery">Actually</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/" aria-current="page">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="page-shell">
-      <div class="hero-grid">
-        <div class="story-panel">
+    <main>
+    <section class="hero rescue-hero">
+      <div class="page-shell hero-grid">
+        <div>
           <div class="kicker">CTO · Engineering Velocity</div>
           <h1>You Cannot Afford Slow Releases That Still Break Production</h1>
-          <p class="story-summary">When every deploy feels risky, the issue is usually structural, not motivational.</p>
-          <p class="story-detail">Teams start protecting themselves with standby windows, manual checks, and long release gaps. That feels safer, but it slows everything down.</p>
-          <div class="btnrow">
+          <p class="rescue-summary">When every deploy feels risky, the issue is usually structural, not motivational.</p>
+          <p class="rescue-detail">Teams start protecting themselves with standby windows, manual checks, and long release gaps. That feels safer, but it slows everything down.</p>
+          <div class="rescue-chips">
+            <span class="pill pill--solid">$999 flat</span>
+            <span class="pill">Intake within 24 hours</span>
+            <span class="pill">Written plan in 3 days</span>
+          </div>
+          <div class="hero-actions">
             <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
             <a class="button" href="mailto:info@taliferro.com?subject=Ship%20Faster%20Rescue">Ask a question</a>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="https://taliferro.com/img/post3.webp" alt="CTO and engineering team struggling with slow deployments and production outages" style="width:100%;display:block;" loading="eager" />
+        <div>
+          <img class="media rescue-hero__img" src="https://taliferro.com/img/post3.webp" alt="CTO and engineering team struggling with slow deployments and production outages" loading="eager" />
         </div>
       </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
-    </div>
-  </header>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">The signal</div>
-        <h2 id="low-velocity-is-expensive-even-before-the-outage-h">Low velocity is expensive even before the outage hits</h2>
-        <p class="story-summary">Every delayed release gives competitors time, pulls engineers into coordination, and teaches the business not to expect speed.</p>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="how-it-works">
-    <div class="page-shell">
-      <div class="story-split">
-        <div class="story-panel">
+    </section>
+
+    <section class="rescue-story" id="how-it-works" aria-label="How the problem develops">
+      <div class="page-shell">
+        <div class="rescue-steps">
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">1</span>
+          <div class="kicker">The signal</div>
+          <h3 id="low-velocity-is-expensive-even-before-the-outage-h">Low velocity is expensive even before the outage hits</h3>
+          <p>Every delayed release gives competitors time, pulls engineers into coordination, and teaches the business not to expect speed.</p>
+        </article>
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">2</span>
           <div class="kicker">The real cost</div>
-          <h2 id="the-team-cannot-move-fast-when-every-change-touche">The team cannot move fast when every change touches everything</h2>
-          <p class="story-summary">Tight coupling and unclear ownership turn each release into a consensus exercise instead of a routine operation.</p>
+          <h3 id="the-team-cannot-move-fast-when-every-change-touche">The team cannot move fast when every change touches everything</h3>
+          <p>Tight coupling and unclear ownership turn each release into a consensus exercise instead of a routine operation.</p>
+        </article>
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">3</span>
+          <div class="kicker">Why it keeps happening</div>
+          <h3 id="tools-cannot-compensate-for-a-fragile-release-syst">Tools cannot compensate for a fragile release system</h3>
+          <p>More automation helps only after the biggest bottleneck is named. Otherwise the workflow just gets faster at repeating the same failure pattern.</p>
+        </article>
+        <article class="card rescue-step card--cyan rescue-step--fix">
+          <span class="num-badge" aria-hidden="true">4</span>
+          <div class="kicker">The rescue</div>
+          <h3 id="get-the-bottleneck-named-clearly-and-the-first-fix">Get the bottleneck named clearly and the first fix ordered properly</h3>
+          <p>You get a written diagnosis showing what is slowing releases, where the deployment risk lives, and what to change first to move faster without adding more fragility.</p>
+        </article>
         </div>
-        <div class="hero-media">
-          <img src="https://taliferro.com/img/ship-faster.webp" alt="Engineering delivery and production risk under review" style="width:100%;display:block;" loading="lazy" />
+        <p class="rescue-note">The leverage is usually smaller changes, clearer ownership, and fewer hidden dependencies.</p>
+      </div>
+    </section>
+
+    <section class="rescue-faq" id="faq">
+      <div class="page-shell split">
+        <div>
+          <div class="kicker">FAQ</div>
+          <h2 id="before-you-book">Before you book</h2>
+          <img class="media rescue-faq__img" src="https://taliferro.com/img/ship-faster.webp" alt="Engineering delivery and production risk under review" loading="lazy" />
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Why do software deployments keep causing outages?</summary>
+            <p>Usually tight coupling — one change in one place breaks something in three other places. The fix is decoupling, not more testing. More testing on a tightly coupled system just means longer release cycles with the same outage rate. The architectural problem must be addressed.</p>
+          </details>
+          <details>
+            <summary>How do you increase deployment frequency without increasing risk?</summary>
+            <p>Make deployments smaller. Smaller change sets are easier to test, easier to roll back, and easier to trace when something breaks. Frequency is a side effect of smaller batch sizes, not a goal in itself. Teams that try to deploy faster without making batches smaller usually make the problem worse.</p>
+          </details>
+          <details>
+            <summary>What's the fastest way to improve engineering velocity?</summary>
+            <p>Remove the single biggest blocker. In most organizations, that's a combination of unclear ownership, manual deployment steps, or a monolithic codebase that makes changes expensive. One well-placed structural fix has more leverage than ten incremental improvements scattered across the system.</p>
+          </details>
+          <details>
+            <summary>Do we need to rebuild our architecture to ship faster?</summary>
+            <p>Not always. Many organizations double their deployment frequency without any architectural overhaul — just by cleaning up their release process and clarifying who owns what. Architecture changes may be needed, but start with process before committing to a multi-year rebuild.</p>
+          </details>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel">
-        <div class="kicker">Why it keeps happening</div>
-        <h2 id="tools-cannot-compensate-for-a-fragile-release-syst">Tools cannot compensate for a fragile release system</h2>
-        <p class="story-summary">More automation helps only after the biggest bottleneck is named. Otherwise the workflow just gets faster at repeating the same failure pattern.</p>
-        <p class="story-detail">The leverage is usually smaller changes, clearer ownership, and fewer hidden dependencies.</p>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">The rescue</div>
-        <h2 id="get-the-bottleneck-named-clearly-and-the-first-fix">Get the bottleneck named clearly and the first fix ordered properly</h2>
-        <p class="story-summary">You get a written diagnosis showing what is slowing releases, where the deployment risk lives, and what to change first to move faster without adding more fragility.</p>
-      </div>
-    </div>
-  </section>
-  <!-- FINAL CTA -->
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">Same-Day Rescue</div>
-        <p class="story-price">$999</p>
-        <h2 id="find-what-is-actually-slowing-delivery">Find what is actually slowing delivery</h2>
-        <p class="story-summary">Get a focused diagnostic in 3 days, with the first bottlenecks named clearly and in order.</p>
-        <div class="btnrow" style="justify-content:center;">
-          <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
-          <a class="button" href="mailto:info@taliferro.com?subject=Ship%20Faster%20Rescue">Ask a question</a>
-          <a class="button" href="tel:+14016462662">Call directly</a>
+    </section>
+
+    <section class="rescue-cta">
+      <div class="page-shell">
+        <div class="dark-panel rescue-cta__band">
+          <div>
+            <div class="kicker">Same-Day Rescue</div>
+            <h2 id="find-what-is-actually-slowing-delivery">Find what is actually slowing delivery</h2>
+            <p>Get a focused diagnostic in 3 days, with the first bottlenecks named clearly and in order.</p>
+          </div>
+          <div>
+            <div class="rescue-price">$999</div>
+            <div class="hero-actions">
+            <a class="button" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
+            <a class="button button--ghost" href="mailto:info@taliferro.com?subject=Ship%20Faster%20Rescue">Ask a question</a>
+            <a class="button button--ghost" href="tel:+14016462662">Call directly</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="rescue-related" data-related-services="true">
+      <div class="page-shell">
+        <h2>If this isn't the whole problem</h2>
+        <div class="grid grid-3">
+        <a class="link-card" href="https://taliferro.com/rescue-me/">
+          <span class="link-card__title">IT Rescue — $999 Flat</span>
+          <p>Diagnose the problem in 3 business days. No retainer.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/agile-coaching/">
+          <span class="link-card__title">Agile Coaching & Scrum Consulting</span>
+          <p>Fix slow delivery and team coordination without a reorg.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/website-development/">
+          <span class="link-card__title">Website Development</span>
+          <p>Custom sites and software from a team that sticks around after launch.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        </div>
+      </div>
+    </section>
+  </main>
   <script>
     (function () {
       var btn = document.querySelector('.theme-toggle');
@@ -214,31 +262,7 @@
       });
     })();
   </script>
-    <!-- RELATED SERVICES -->
-    <section class="section" data-related-services="true">
-        <div class="page-shell">
-            <div class="kicker">Related services</div>
-            <h2>If this isn't the whole problem</h2>
-            <div class="grid grid-3">
-                <a class="card" href="https://taliferro.com/rescue-me/">
-                    <h3>IT Rescue — $999 Flat</h3>
-                    <p>Diagnose the problem in 3 business days. No retainer.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-                <a class="card" href="https://taliferro.com/agile-coaching/">
-                    <h3>Agile Coaching & Scrum Consulting</h3>
-                    <p>Fix slow delivery and team coordination without a reorg.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-                <a class="card" href="https://taliferro.com/website-development/">
-                    <h3>Website Development</h3>
-                    <p>Custom sites and software from a team that sticks around after launch.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-            </div>
-        </div>
-    </section>
-<footer class="footer no-print">
+  <footer class="footer no-print">
     <div class="page-shell">
       <div class="footer-inner">
         <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>

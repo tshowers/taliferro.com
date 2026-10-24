@@ -63,8 +63,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -112,51 +112,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-api-design-best-practices page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#api-consulting">The Contract Problem</a>
-        <a href="#start-with-a-clear-purpose">Design Decisions</a>
-        <a href="#emphasize-security-from-the-start">Security &amp; Scale</a>
-        <a href="#faq">FAQ</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>The Best API Design Decision Is the One You Never Have to Reverse</h1>
-          <p>Once a developer outside your team builds against an endpoint, changing that endpoint breaks their code — which means the real cost of a bad API design decision isn't paid today, it's paid every time someone builds on top of it before you catch the mistake. Taliferro designs APIs like contracts with people we'll never meet: clear naming, predictable behavior, and versioning built in from day one, because "we'll fix it later" gets a lot more expensive once "later" means breaking someone else's production system.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>API</span></nav>
+      <h1>The Best API Design Decision Is the One You Never Have to Reverse</h1>
+      <p class="post-dek">Once a developer outside your team builds against an endpoint, changing that endpoint breaks their code — which means the real cost of a bad API design decision isn't paid today, it's paid every time someone builds on top of it before you catch the mistake. Taliferro designs APIs like contracts with people we'll never meet: clear naming, predictable behavior, and versioning built in from day one, because "we'll fix it later" gets a lot more expensive once "later" means breaking someone else's production system.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2024-01-22">Jan 22, 2024</time> · 2 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="api-consulting">The Contract Problem</h2>
           <p>A website redesign is mostly invisible to the outside world. An API is different: the moment someone integrates against it, the API's shape becomes part of their code too. Rename a field, change a response format, or remove an endpoint, and every integration built on the old version breaks — sometimes ones you don't even know exist. That's why API design deserves more upfront thought than most teams give it. The mistakes are the same ones every time; they're just expensive in proportion to how many people built on top of them before anyone noticed.</p>
@@ -181,47 +177,60 @@
           <p>Because it's the mechanism that lets an API change without breaking everyone already using it. Skipping it doesn't avoid the need to change the API later — it just makes that change a breaking one.</p>
           <h3>Why treat security as a day-one decision instead of a later addition?</h3>
           <p>Because authentication and authorization touch the API's core structure. Adding them after the fact usually means redesigning things that are already in production and already depended on.</p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need a cleaner API path?</strong>
             <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">API design support</a>, connect it to the <a href="https://taliferro.tech/">execution model</a>, or <a href="https://taliferro.com/contact.html">talk through the gateway design</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>API Design</em></li>
-                <li><em>API Development</em></li>
-                <li><em>Best Practices</em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li><a href="https://taliferro.com/api-design-services/">API Design</a></li>
-              <li>API Development</li>
-              <li>Best Practices</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>API Design</li>
+          <li>API Development</li>
+          <li>Best Practices</li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#api-consulting">The Contract Problem</a>
+          <a href="#start-with-a-clear-purpose">The Decisions That Are Hard to Reverse</a>
+          <a href="#emphasize-security-from-the-start">Security and Scale Aren't Add-Ons</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="best-practices-for-api-design-and-development">API consulting</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/jan2024/jan212024/the-future-of-api-consulting-trends-and-predictions.html">&larr; Every One of These Trends Is Real. Almost None Are Your Problem Right Now.</a>
-            <a class="button" href="https://taliferro.com/blog/jan2024/jan232024/how-apigee-consulting-services-elevate-your-api-strategy.html">How Apigee Consulting Services Elevate Your API Strategy &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="best-practices-for-api-design-and-development">API consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/jan2024/jan212024/the-future-of-api-consulting-trends-and-predictions.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Every One of These Trends Is Real. Almost None Are Your Problem Right Now.</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/jan2024/jan232024/how-apigee-consulting-services-elevate-your-api-strategy.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">How Apigee Consulting Services Elevate Your API Strategy</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

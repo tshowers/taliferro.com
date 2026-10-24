@@ -157,19 +157,31 @@ python3 run-lighthouse.py --port 9090            # custom port
 
 ## Shared CSS
 
-**`css/taliferro-styles-v15.css`** — site-wide stylesheet used by all migrated pages.
+**`css/taliferro-styles-v22.css`** — site-wide "Spiral" theme (Oct 2026), linked from every page as `/css/taliferro-styles-v22.css`. The top of the file is the design handoff stylesheet unchanged; below it are the rollout additions (site header, v21 compatibility rules, print styles, shared components) and the template sections (blog post, home, rescue, service, contact/about/results/blog index).
 
 Key design tokens:
 | Token | Value |
 |-------|-------|
-| `--ink` | `#05070a` (dark text) |
-| `--muted` | `#68727d` (secondary text) |
-| `--soft` | `#f5f5f7` (light background) |
-| `--teal` | `#008f8c` (accent) |
-| `--radius` | `24px` |
+| `--bg` | `#eef5f8` (page ground) |
+| `--surface` | `#dde9ef` (tinted panel) |
+| `--text` | `#0f1e2b` (headings) |
+| `--accent` | `#1f63c4` (primary blue) |
+| `--cyan-500` | `#1aa3c8` (secondary accent) |
+| `--radius-lg` | `28px` (cards, containers) |
 | `--max` | `1180px` (max container width) |
 
-Dark mode is toggled by adding `class="theme-dark"` to `<body>`. The toggle script is injected by `migrate-styles.py` and stored in `localStorage` under the key `taliferro-theme`.
+Headings use Caprasimo, body text Figtree (both from Google Fonts, imported at the top of the file).
+
+Dark mode is toggled by adding `class="theme-dark"` to `<body>`. The toggle script is stored in `localStorage` under the key `taliferro-theme`.
+
+---
+
+## Theme scripts (Node, in `root/scripts/`)
+
+Both are dependency-free, safe to re-run, and support `--dry-run` and `--file <public/...html>`.
+
+- **`theme-v22-sitewide.mjs`** — on every page: swaps the stylesheet link to v22, sets the theme-color metas, and replaces the `<header class="topbar">` block with the one site header (Rescue / Services / Results / Blog / About + "Get same-day help" → `/#triage`). Run it on any new page, and **re-run it after every edit to the stylesheet**: links carry `?v=<content hash>` because Firebase caches CSS for a day, so the hash change is what makes browsers fetch the new file.
+- **`theme-v22-blog-posts.mjs`** — applies the blog post template to dated posts: breadcrumb, author row with date and read time, sticky aside (table of contents from `h2[id]` plus a Rescue card picked by category), tag pills, CTA card, prev/next cards. The article body is kept as-is. Posts already converted are skipped, so run it after adding new posts.
 
 ---
 
@@ -185,3 +197,6 @@ Dark mode is toggled by adding `class="theme-dark"` to `<body>`. The toggle scri
 | Remove sticky CTAs       | `python3 remove-sticky-cta.py --run`                       |
 | Add footer to new pages  | `python3 inject-footer.py --run`                           |
 | Re-migrate a single page | `python3 migrate-styles.py --run --file path/to/page.html` |
+| Theme a new page         | `node scripts/theme-v22-sitewide.mjs --file public/path.html` |
+| After editing v22 CSS    | `node scripts/theme-v22-sitewide.mjs` (refreshes `?v=` hash) |
+| Template new blog posts  | `node scripts/theme-v22-blog-posts.mjs`                    |

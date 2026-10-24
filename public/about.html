@@ -47,8 +47,8 @@
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <link rel="mask-icon" href="https://taliferro.com/img/general/safari-pinned-tab.svg" color="#5195d9">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -108,22 +108,25 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="./css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body>
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#we-show-up-like-its-personalbecause-it-is">Values</a>
-        <a href="#one-minute-on-what-we-do">Video</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html" aria-current="page">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
@@ -133,30 +136,21 @@
       <div class="hero-grid">
         <div>
           <h1>Good people should not have to fight bad systems</h1>
-          <p>Taliferro Group provides consulting and advice to remove the friction that slows people, projects, and businesses down. We help organizations fix the systems standing in their way.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/contact.html">Get in touch</a>
-            <a class="button" href="https://taliferro.com/">Back to home</a>
-          </div>
+          <p class="lead">Taliferro Group provides consulting and advice to remove the friction that slows people, projects, and businesses down. We help organizations fix the systems standing in their way.</p>
           <div class="pillrow" aria-label="Quick facts">
             <span class="pill">Seattle, WA</span>
             <span class="pill">Products + Services</span>
-            <span class="pill"><strong>40</strong>&nbsp;years in technology</span>
+            <span class="pill">40 years in technology</span>
+          </div>
+          <div class="btnrow">
+            <a class="button button-primary" href="/contact.html">Get in touch</a>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="./img/about-taliferro.webp" alt="About Taliferro" style="width:100%;border-radius:12px;">
-          <div class="ph">
-            <div class="metric">
-              <strong>40</strong>
-              <span>Years in Technology</span>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">This work is personal.</p>
-            <p> Our story is rooted in lived experience— in boardrooms and break rooms, in policies and people. We’re here because we’ve been the ones asking for better. Now, we help others build it. </p>
-          </div>
-          <div class="ph">
-            <p class="fine"> Not affiliated with any actor, entertainer, or fictional character who shares the Taliferro surname. Full disclaimer below. </p>
+        <div class="about-figure">
+          <img class="media" src="./img/about-taliferro.webp" alt="About Taliferro" width="1536" height="1024">
+          <div class="about-badge">
+            <div class="about-badge__n">40</div>
+            <div class="about-badge__l">Years in Technology</div>
           </div>
         </div>
       </div>
@@ -165,70 +159,69 @@
   <!-- VALUES / STORY -->
   <section class="section">
     <div class="page-shell">
-      <div class="kicker">How we show up</div>
-      <h2 id="we-show-up-like-its-personalbecause-it-is">We show up like it’s personal—because it is</h2>
-      <p> We don't disappear into slides or jargon. We ask, we listen, and we sit with a problem until it actually makes sense — because most of the time, the person stuck in a bad system isn't the problem. The system is. </p>
+      <div class="section-head about-head">
+        <div class="kicker">How we show up</div>
+        <h2 id="we-show-up-like-its-personalbecause-it-is">We show up like it’s personal—because it is</h2>
+        <p>We don't disappear into slides or jargon. We ask, we listen, and we sit with a problem until it actually makes sense — because most of the time, the person stuck in a bad system isn't the problem. The system is.</p>
+      </div>
       <div class="grid grid-3" role="list">
         <div class="card" role="listitem">
-          <p class="quote">We've been the ones asking for better.</p>
-          <p> This isn't theoretical for us. We've sat in the boardrooms and the break rooms, dealt with policies that didn't fit the people they governed. That's the seat we show up from now — not consultants reciting a framework, people who've been stuck too. </p>
+          <h3>We've been the ones asking for better.</h3>
+          <p>This isn't theoretical for us. We've sat in the boardrooms and the break rooms, dealt with policies that didn't fit the people they governed. That's the seat we show up from now — not consultants reciting a framework, people who've been stuck too.</p>
         </div>
         <div class="card" role="listitem">
-          <p class="quote">We start where the confusion actually is.</p>
-          <p> Most people don't need a lecture on best practices. They need someone to look at the actual mess — the spreadsheet, the backlog, the process nobody wrote down — and say: start here. That's the job. </p>
+          <h3>We start where the confusion actually is.</h3>
+          <p>Most people don't need a lecture on best practices. They need someone to look at the actual mess — the spreadsheet, the backlog, the process nobody wrote down — and say: start here. That's the job.</p>
         </div>
         <div class="card" role="listitem">
-          <p class="quote">We fix the system, not the person.</p>
-          <p> You're not broken. You're operating inside a process that was never built with you in mind. We don't tell you to work harder inside a broken system — we fix the system. </p>
+          <h3>We fix the system, not the person.</h3>
+          <p>You're not broken. You're operating inside a process that was never built with you in mind. We don't tell you to work harder inside a broken system — we fix the system.</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- VIDEO (16x9) -->
+  <!-- WHAT WE DO + VIDEO -->
   <section class="section">
-    <div class="page-shell">
-      <div class="kicker">Watch</div>
-      <h2 id="one-minute-on-what-we-do">What we do</h2>
-      <div class="card">
-        <div class="video-16x9" aria-label="YouTube video" role="region">
-          <!-- Replace REPLACE_VIDEO_ID with your YouTube ID  https://youtu.be/y2pJl-pStbo?si=jsVcI36Xk9CI7HHn-->
-          <iframe src="https://www.youtube.com/embed/y2pJl-pStbo" title="Taliferro — About" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-          </iframe>
+    <div class="page-shell about-watch">
+      <div>
+        <div class="kicker">Watch</div>
+        <h2 id="one-minute-on-what-we-do">What we do</h2>
+        <div class="about-lists">
+          <div class="card card--cyan">
+            <h3>What we build</h3>
+            <ul>
+              <li>Systems that reduce busywork and increase follow-through.</li>
+              <li>Tools that support people instead of getting in their way.</li>
+            </ul>
+          </div>
+          <div class="card card--blue">
+            <h3>How we help</h3>
+            <ul>
+              <li>Agile project management and delivery support.</li>
+              <li>Cloud architecture, APIs, data design, and security.</li>
+              <li>Practical AI guidance that fits how teams actually operate.</li>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="video-16x9" aria-label="YouTube video" role="region">
+        <iframe src="https://www.youtube.com/embed/y2pJl-pStbo" title="Taliferro — About" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </section>
-  <!-- DETAILS -->
+  <!-- DISCLAIMER -->
   <section class="section">
     <div class="page-shell">
-      <div class="kicker">About</div>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>What we build</h3>
-          <ul class="list">
-            <li>Systems that reduce busywork and increase follow-through.</li>
-            <li>Tools that support people instead of getting in their way.</li>
-          </ul>
+      <div class="card about-disclaimer">
+        <div>
+          <h3>Brand and name disclaimer</h3>
+          <p class="fine">Taliferro Tech, LLC and its brands are not affiliated with any individual, actor, entertainer, or fictional character with the same surname. References to people or characters named Taliferro in entertainment, media, or fiction are unrelated.</p>
         </div>
-        <div class="card">
-          <h3>How we help</h3>
-          <ul class="list">
-            <li>Agile project management and delivery support.</li>
-            <li>Cloud architecture, APIs, data design, and security.</li>
-            <li>Practical AI guidance that fits how teams actually operate.</li>
-          </ul>
+        <div class="about-disclaimer__actions">
+          <a class="button button-primary" href="/contact.html">Get in touch</a>
+          <a class="button" href="/sitemap.html">Explore the site</a>
         </div>
       </div>
-      <div class="divider"></div>
-      <details>
-        <summary>Brand and name disclaimer</summary>
-        <p> Taliferro Tech, LLC and its brands are not affiliated with any individual, actor, entertainer, or fictional character with the same surname. References to people or characters named Taliferro in entertainment, media, or fiction are unrelated. </p>
-      </details>
-      <div class="btnrow">
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get in touch</a>
-        <a class="button" href="sitemap.html">Explore the site</a>
-      </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
     </div>
   </section>
   <div class="bottom-pad"></div>

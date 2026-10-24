@@ -62,8 +62,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -110,51 +110,46 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#scale-or-fail-designing-gcp-architectures-that-wit">Scale or</a>
-        <a href="#understanding-scalability-its-not-just-about-size">Understanding Scalability:</a>
-        <a href="#the-traffic-avalanche">The Traffic</a>
-        <a href="#embracing-gcps-building-blocks">Embracing GCP's</a>
-        <a href="#building-blocks-in-action">Building Blocks</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Scale or Fail: GCP Architectures That Withstand Anything!</h1>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Cloud Architecture</span></nav>
+      <h1>Scale or Fail: GCP Architectures That Withstand Anything!</h1>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2024-03-02">Mar 2, 2024</time> · 4 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <figure class="blog-video-float-right">
             <div class="video-9x16"><iframe src="https://www.youtube.com/embed/liHzKIkqJ7c?rel=0&modestbranding=1&playsinline=1" title="Why Your Website Is Costing You – YouTube Short" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin">
@@ -223,41 +218,66 @@
           <h2 id="conclusion-scaling-up-scaling-out"> Conclusion: Scaling Up, Scaling Out </h2>
           <p> Scalability isn't a destination; it's a journey. By embracing GCP's flexible building blocks, designing for resilience, and harnessing the power of automation, you can create architectures that not only scale to meet your needs but also withstand anything that comes their way. So, remember: when it comes to <a href="https://taliferro.com/cloud-architecture-consulting/">cloud architecture</a>, it's not just about scaling up—it's about scaling out, building robust and resilient systems that can stand the test of time. </p>
           <p> Scale or fail? With GCP by your side, the choice is clear. Let's scale up and soar to new heights together! </p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need a cloud architecture reality check?</strong>
             <p class="mb-0">Use the article to frame the issue, then review <a href="https://taliferro.com/cloud-architecture-consulting/">how we untangle cloud systems</a>, connect it to the <a href="https://taliferro.tech/">execution model</a>, or <a href="https://taliferro.com/contact.html">talk through the migration</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><a href="https://www.google.com/search?q=GCP:taliferro.blog" target="_blank" title="Search Google for for this term">GCP</a></li>
-                <li><a href="https://www.google.com/search?q=google+cloud+platform:taliferro.blog" target="_blank" title="Search Google for for this term">Google Cloud Platform</a></li>
-                <li><a href="https://www.google.com/search?q=scalability:taliferro.blog" target="_blank" title="Search Google for for this term">scalability</a></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li><a href="https://www.google.com/search?q=GCP:taliferro.blog" target="_blank" title="Search Google for for this term">GCP</a></li>
+          <li><a href="https://www.google.com/search?q=google+cloud+platform:taliferro.blog" target="_blank" title="Search Google for for this term">Google Cloud Platform</a></li>
+          <li><a href="https://www.google.com/search?q=scalability:taliferro.blog" target="_blank" title="Search Google for for this term">scalability</a></li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#scale-or-fail-designing-gcp-architectures-that-wit">Scale or Fail: Designing GCP Architectures That Withstand Anything!</a>
+          <a href="#understanding-scalability-its-not-just-about-size">Understanding Scalability: It's Not Just About Size</a>
+          <a href="#the-traffic-avalanche">The Traffic Avalanche</a>
+          <a href="#embracing-gcps-building-blocks">Embracing GCP's Building Blocks</a>
+          <a href="#building-blocks-in-action">Building Blocks in Action</a>
+          <a href="#designing-for-resilience-expect-the-unexpected">Designing for Resilience: Expect the Unexpected</a>
+          <a href="#the-day-the-servers-went-down">The Day the Servers Went Down</a>
+          <a href="#automating-everything-the-power-of-devops">Automating Everything: The Power of DevOps</a>
+          <a href="#the-night-shift-chronicles">The Night Shift Chronicles</a>
+          <a href="#conclusion-scaling-up-scaling-out">Conclusion: Scaling Up, Scaling Out</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Cloud</div>
+          <div class="post-rescue__title">Stop overpaying for infrastructure</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/cloud-cost-control/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="blog" data-source="blog_cta" data-page="scale-or-fail-gcp-architectures-that-withstand-anything">Cloud architecture</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/mar2024/mar012024/ten-secrets-to-unbreakable-api-security-you-need-to-know.html">&larr; 10 Secrets to Unbreakable API Security You Need to Know!</a>
-            <a class="button" href="https://taliferro.com/blog/mar2024/mar032024/slash-your-startup-costs-with-these-gcp-hacks.html">Slash Your Startup Costs with These GCP Hacks! &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/cloud-architecture-consulting/" data-intent="blog" data-source="blog_cta" data-page="scale-or-fail-gcp-architectures-that-withstand-anything">Cloud architecture</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/mar2024/mar012024/ten-secrets-to-unbreakable-api-security-you-need-to-know.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">10 Secrets to Unbreakable API Security You Need to Know!</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/mar2024/mar032024/slash-your-startup-costs-with-these-gcp-hacks.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Slash Your Startup Costs with These GCP Hacks!</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

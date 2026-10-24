@@ -63,8 +63,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -112,52 +112,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#introduction">Introduction</a>
-        <a href="#easy-to-read">easy-to-read</a>
-        <a href="#keep-it-consistent">Keep it</a>
-        <a href="#return-the-correct-status-codes">Return the</a>
-        <a href="#proportion">Proportion</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Your API Doesn't Need to Be Clever It Needs to Be Boring</h1>
-          <p>The most interesting-looking APIs are usually the most frustrating to integrate with — a custom naming scheme, a clever non-standard structure, a "better way" to do CRUD. The best ones are the ones a developer can guess correctly without reading the docs, because they already look like every other well-built API. Boring is the feature.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>API</span></nav>
+      <h1>Your API Doesn't Need to Be Clever It Needs to Be Boring</h1>
+      <p class="post-dek">The most interesting-looking APIs are usually the most frustrating to integrate with — a custom naming scheme, a clever non-standard structure, a "better way" to do CRUD. The best ones are the ones a developer can guess correctly without reading the docs, because they already look like every other well-built API. Boring is the feature.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2022-11-23">Nov 23, 2022</time> · 3 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="introduction"> Introduction </h2>
           <p> An API is a contract with every developer who will ever integrate with it — including the version of your own team six months from now who forgot the details. It doesn't need to be impressive. It needs to behave exactly the way someone would guess it behaves, without opening the documentation. These practices apply regardless of language or framework, and they all point the same direction: fewer surprises. </p>
@@ -180,47 +175,63 @@
           <p> <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, and <code>DELETE</code> are the verbs that change something; <code>GET</code> should never have a side effect. <code>PUT</code> and <code>DELETE</code> should also be idempotent — sending the same request five times in a row should leave the resource in the same state as sending it once. That matters most on a flaky connection: a client that isn't sure whether its request landed can safely retry a <code>PUT</code> without fear of applying it twice, which is exactly why payment APIs pair this with an idempotency key — a unique ID the client generates once per logical request, so a retried request with the same key returns the original result instead of charging the customer again. </p>
           <h2 id="conclusion"> Conclusion </h2>
           <p> None of this is clever. That's the point — an API that behaves exactly the way a developer expects is the one nobody remembers fighting with, and that's the actual goal. Taliferro designs APIs around that same discipline: predictable over impressive, every time. </p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need a cleaner API path?</strong>
             <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.tech/">Momentum System</a>, or <a href="https://taliferro.com/contact.html">book an API review</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>API Design</em></li>
-                <li><em>REST</em></li>
-                <li><em>CRUD Operations</em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li>API Design</li>
-              <li>REST</li>
-              <li>CRUD Operations</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>API Design</li>
+          <li>REST</li>
+          <li>CRUD Operations</li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#introduction">Introduction</a>
+          <a href="#easy-to-read">Use JSON, because everyone else already does</a>
+          <a href="#keep-it-consistent">Keep it consistent</a>
+          <a href="#return-the-correct-status-codes">Return the correct status codes</a>
+          <a href="#proportion">Keep business logic out of the endpoint itself</a>
+          <a href="#dont-get-cute-stick-with-crud">Don't get cute — stick with CRUD</a>
+          <a href="#conclusion">Conclusion</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="website_performance" data-source="blog_cta" data-page="api-design-best-practices">API consulting</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/nov2022/nov222022/gcp-cloud-architecture.html">&larr; I Tried AWS, Then Azure. GCP Is the One I Kept.</a>
-            <a class="button" href="https://taliferro.com/blog/nov2022/nov242022/software-as-a-service-has-come-a-long-way.html">Exploring the Growth and Impact of Software as a Service &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="website_performance" data-source="blog_cta" data-page="api-design-best-practices">API consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/nov2022/nov222022/gcp-cloud-architecture.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">I Tried AWS, Then Azure. GCP Is the One I Kept.</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/nov2022/nov242022/software-as-a-service-has-come-a-long-way.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Exploring the Growth and Impact of Software as a Service</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

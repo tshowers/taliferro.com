@@ -63,8 +63,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -112,53 +112,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#api-gateway">API Gateway</a>
-        <a href="#a-single-point-of-entry">A Single</a>
-        <a href="#automatic-load-balancing">Automatic Load</a>
-        <a href="#decoupling-and-isolation-between-the-client-and-mi">Decoupling And</a>
-        <a href="#mediation">Mediation</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>One Door In Is Easier to Defend Than Ten</h1>
-          <p>An API gateway serves as the single entry point for every client request — which means there's exactly one place to enforce authentication, one place to rate-limit, and one place to watch when something goes wrong. Ten services with ten separate entry points means ten separate places that can quietly go wrong instead.</p>
-          <p class="fine">Published: 2 Dec 2022 · Updated: 06 Aug 2026</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>API</span></nav>
+      <h1>One Door In Is Easier to Defend Than Ten</h1>
+      <p class="post-dek">An API gateway serves as the single entry point for every client request — which means there's exactly one place to enforce authentication, one place to rate-limit, and one place to watch when something goes wrong. Ten services with ten separate entry points means ten separate places that can quietly go wrong instead.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2022-12-02">Dec 2, 2022</time> · 3 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="api-gateway"> API Gateway </h2>
           <p><span><span> Some view APIs (Application Programming Interfaces) as an additional layer of complexity atop an already intricate <a href="https://taliferro.com/blog/nov2023/nov272023/pioneering-solutions-for-seattles-emerging-tech-challenges.html">technology</a><span><span> stack. However, the reality is quite the opposite. APIs serve as the essential binding agent that unifies an entire system, enabling seamless interactions among its various components. They lay the foundation for consistent user experiences across all channels, enhance </span></span></span><a href="https://taliferro.com/blog/oct2023/oct282023/the-real-secret-to-e-commerce-efficiency.html">efficiency</a><span><span> by permitting concurrent data access from multiple clients, and simplify <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">scalability</a> by segregating each microservice. Amidst these functions, API Gateways emerge as the linchpin, offering a host of indispensable features. In this exposition, we delve into the core functionalities of an API Gateway and elucidate its paramount role in every enterprise embarking on </span><a href="https://taliferro.com/blog/oct2023/oct302023/digital-transformation-best-practices.html">digital transformation</a> endeavors. </span></span></p>
@@ -181,47 +175,63 @@
           <p> Security stands as a cornerstone benefit of incorporating an API Gateway. It fortifies your APIs through the implementation of authentication, authorization, and other security features, such as SSL termination and proxy servers. </p>
           <p> Furthermore, an API Gateway affords the flexibility to deploy robust security protocols like OAuth (Open Authorization), enhancing the protection of your services and data. </p>
           <p><span> The indispensable role of API Gateways in contemporary microservices architectures cannot be overstated. They serve as the central point of entry, fostering decoupling and isolation among components, ensuring scalability, and imbuing security. API Gateways provide a comprehensive solution, encompassing automatic load balancing, mediation, and traffic management capabilities. Embracing an API Gateway empowers organizations to navigate the <a href="https://taliferro.com/blog/sep2023/sep142023/digital-transformation-in-business-an-examination-of-challenges.html">digital transformation</a><span> landscape with resilience, <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">efficiency</a>, and heightened security—an imperative cornerstone of modern technological ecosystems. </span></span></p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need a cleaner API path?</strong>
             <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.tech/">execution model</a>, or <a href="https://taliferro.com/contact.html">talk through the gateway design</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>API Gateway</em></li>
-                <li><em>Microservices Architecture</em></li>
-                <li><em><span><a href="https://taliferro.com/blog/feb2023/feb102023/failing-in-digital-transformation.html">Digital Transformation</a></span></em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li>API Gateway</li>
-              <li>Microservices Architecture</li>
-              <li>Digital Transformation</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>API Gateway</li>
+          <li>Microservices Architecture</li>
+          <li><a href="https://taliferro.com/blog/feb2023/feb102023/failing-in-digital-transformation.html">Digital Transformation</a></li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#api-gateway">API Gateway</a>
+          <a href="#a-single-point-of-entry">A Single Point Of Entry</a>
+          <a href="#automatic-load-balancing">Automatic Load Balancing</a>
+          <a href="#decoupling-and-isolation-between-the-client-and-mi">Decoupling And Isolation Between The Client And Microservices</a>
+          <a href="#mediation">Mediation</a>
+          <a href="#traffic-management">Traffic Management</a>
+          <a href="#security">Security</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="the-benefits-of-having-an-api-gateway">API consulting</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/dec2022/dec012022/how-your-websites-poor-performance-is-costing-you-money.html">&larr; A Slow Website Isn't an Inconvenience. It's a Sales Number.</a>
-            <a class="button" href="https://taliferro.com/blog/dec2022/dec032022/creating-a-software-rollout-plan.html">Most Rollouts Don't Fail at Launch. They Fail Before It. &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="the-benefits-of-having-an-api-gateway">API consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/dec2022/dec012022/how-your-websites-poor-performance-is-costing-you-money.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">A Slow Website Isn't an Inconvenience. It's a Sales Number.</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/dec2022/dec032022/creating-a-software-rollout-plan.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Most Rollouts Don't Fail at Launch. They Fail Before It.</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

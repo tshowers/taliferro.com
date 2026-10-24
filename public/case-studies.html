@@ -41,8 +41,8 @@
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <link rel="mask-icon" href="https://taliferro.com/img/general/safari-pinned-tab.svg" color="#5195d9">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -109,164 +109,158 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body>
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#browse-case-studies">Browse</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html" aria-current="page">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
   <header class="hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Case studies</h1>
-          <p> Real work. Real outcomes. Browse examples across <a href="https://taliferro.com/api-design-services">APIs</a>, AI, policy, dashboards, and operations. </p>
-          <div class="card">
-            <p class="quote">What you’ll see</p>
-            <ul class="list">
-              <li>Systems that reduce manual work and improve follow-through.</li>
-              <li>Integrations that connect tools without fragile glue code.</li>
-              <li>AI work that increases speed without losing control.</li>
-            </ul>
-          </div>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/contact.html">Contact us</a>
-            <a class="button" href="#library">Browse case studies</a>
-            <a class="button" href="support-material/capability-statement.html">Capability statement</a>
-          </div>
-          <div class="pillrow" aria-label="Topics">
-            <span class="pill">API integration</span>
-            <span class="pill">AI &amp; ML</span>
-            <span class="pill">Policy</span>
-            <span class="pill">Dashboards</span>
-            <span class="pill">Operations</span>
-          </div>
-        </div>
-        <div class="hero-media">
-          <div class="ph">
-            <p class="quote">Fast read format</p>
-            <p> Each case study is a short PDF. Share it internally or use it as a starting point for scoping. </p>
-          </div>
-          <div class="ph">
-            <p class="quote">Want help applying this?</p>
-            <p> Tell us what you’re trying to improve. We’ll recommend the next step. </p>
-            <div class="btnrow" style="margin-top:10px">
-              <a class="btn ghost small" href="mailto:info@taliferro.com?subject=Case%20study%20question">Email</a>
-              <a class="btn ghost small" href="tel:+14016462662">Call</a>
-            </div>
-          </div>
-        </div>
+      <h1>Case studies</h1>
+      <p class="lead">Real work. Real outcomes. Each page shows the problem, what we built, and what changed.</p>
+      <div class="btnrow">
+        <a class="button button-primary" href="/contact.html">Talk to us</a>
+        <a class="button" href="support-material/capability-statement.html">Capability statement</a>
       </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
     </div>
   </header>
+  <!-- FEATURED -->
+  <section class="section featured-case" aria-label="Featured case study">
+    <div class="page-shell">
+      <div class="dark-panel proof-band">
+        <div>
+          <div class="kicker">Featured · Web Dev · API · Cloud</div>
+          <h2 id="blair-capital-management">Blair Capital Management</h2>
+          <p>Built a financial firm's first website, wired real-time yield data via APIs, and deployed the full stack on GCP.</p>
+          <a class="button" href="support-material/blair-capital-management-case-study.html">Read case study</a>
+        </div>
+        <div class="stat-tiles">
+          <div class="stat-tile"><div class="stat-tile__n">300%</div><div class="stat-tile__l">AUM growth</div></div>
+          <div class="stat-tile"><div class="stat-tile__n">50%</div><div class="stat-tile__l">Cost reduction</div></div>
+          <div class="stat-tile"><div class="stat-tile__n">80%</div><div class="stat-tile__l">Client engagement increase</div></div>
+          <div class="stat-tile"><div class="stat-tile__n">60%</div><div class="stat-tile__l">Faster onboarding</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- LIBRARY -->
   <section class="section" id="library">
     <div class="page-shell">
-      <div class="kicker">Library</div>
-      <h2 id="browse-case-studies">Browse case studies</h2>
-      <p>Real work. Real outcomes. Each page shows the problem, what we built, and what changed.</p>
-      <div class="grid grid-2">
-        <div class="card">
-          <img src="https://taliferro.com/img/ai-driven-business-communication-case-study.webp" alt="AI-driven business communication" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">AI · TODD</p>
-          <h3>AI-Driven Business Communication</h3>
-          <p>Improved response times, routine inquiry handling, and customer satisfaction using AI-powered calls and texts with TODD.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/ai-driven-business-communication-case-study.html">Read case study</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://taliferro.com/img/blair-capital-management-case-study.webp" alt="Blair Capital Management case study" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">Web Dev · API · Cloud · Financial Services</p>
-          <h3>Blair Capital Management</h3>
-          <p>Built a financial firm's first website, wired real-time yield data via APIs, and deployed the full stack on GCP. Result: 300% AUM growth and 50% cost reduction in 12 months.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/blair-capital-management-case-study.html">Read case study</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://taliferro.com/img/business-momenuntum-system-case-study.webp" alt="Business momentum system case study" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">TODD · Operations</p>
-          <h3>Business Momentum: Seattle Service Business</h3>
-          <p>Automated scheduling, quotes, invoicing, follow-ups, and customer reviews for a Seattle service business using TODD.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/business-momentum-case-study.html">Read case study</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://taliferro.com/img/e-commerce-cloud-transformation-case-study.webp" alt="E-commerce cloud transformation case study" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">Cloud · E-Commerce</p>
-          <h3>E-Commerce Cloud Transformation</h3>
-          <p>Connected Shopify, HubSpot, and QuickBooks, improved cloud performance, and strengthened analytics for a Seattle retailer.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/e-commerce-cloud-transformation-case-study.html">Read case study</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://taliferro.com/img/office-of-equity-case-study.webp" alt="Office of equity GenAI case study" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">AI · Policy · Government</p>
-          <h3>Washington State Office of Equity — GenAI Accountability</h3>
-          <p>Built a Generative AI Accountability Blueprint with equity-centered governance, bias safeguards, and procurement guidance.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/office-of-equity-gen-ai-case-study.html">Read case study</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://taliferro.com/img/operational-efficiency-case-study.webp" alt="Operational efficiency case study" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">Operations · Insurance</p>
-          <h3>Operational Efficiency: Insurance Agency</h3>
-          <p>Improved customer acquisition, retention, compliance, and risk management through technology and process improvements.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/operational-efficiency-case-study.html">Read case study</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://taliferro.com/img/secure-flexibility-and-prompt-precision-case-study.webp" alt="Secure flexibility and prompt precision case study" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">TODD · Government · AI</p>
-          <h3>Secure Flexibility and Prompt Precision</h3>
-          <p>Provided AI assistance across siloed state agency departments while protecting data and reducing document generation time.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/secure-flexibility-and-prompt-precision-case-study.html">Read case study</a>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://taliferro.com/img/social-media-case-study.webp" alt="Social media intelligence case study" loading="lazy" />
-          <div class="divider"></div>
-          <p class="fine">TODD · E-Commerce · Social</p>
-          <h3>Social Media Intelligence: Fashion Retailer</h3>
-          <p>Improved website performance, simplified customer data analysis, and increased social media engagement for an online retailer.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="support-material/social-media-case-study.html">Read case study</a>
-          </div>
+      <div class="library-head">
+        <h2 id="browse-case-studies">Browse case studies</h2>
+        <div class="chip-row" role="group" aria-label="Filter case studies">
+          <button class="chip chip--sm" type="button" data-filter="All" aria-pressed="true">All</button>
+          <button class="chip chip--sm" type="button" data-filter="AI" aria-pressed="false">AI</button>
+          <button class="chip chip--sm" type="button" data-filter="Cloud" aria-pressed="false">Cloud</button>
+          <button class="chip chip--sm" type="button" data-filter="Operations" aria-pressed="false">Operations</button>
+          <button class="chip chip--sm" type="button" data-filter="Government" aria-pressed="false">Government</button>
+          <button class="chip chip--sm" type="button" data-filter="E-Commerce" aria-pressed="false">E-Commerce</button>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="btnrow">
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Talk to us</a>
-        <a class="button" href="https://taliferro.com/">Back to home</a>
+      <div class="case-grid">
+        <a class="case-card" href="support-material/ai-driven-business-communication-case-study.html" data-cat="AI">
+          <div class="case-card__band case-card__band--blue">
+            <span class="case-card__band-label">Client</span>
+            <span class="case-card__client">Small business</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__tags">AI · TODD</span>
+            <h3>AI-Driven Business Communication</h3>
+            <p>Improved response times, routine inquiry handling, and customer satisfaction using AI-powered calls and texts with TODD.</p>
+            <span class="more">Read case study →</span>
+          </div>
+        </a>
+        <a class="case-card" href="support-material/business-momentum-case-study.html" data-cat="Operations">
+          <div class="case-card__band case-card__band--cyan">
+            <span class="case-card__band-label">Client</span>
+            <span class="case-card__client">Seattle service business</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__tags">TODD · Operations</span>
+            <h3>Business Momentum: Seattle Service Business</h3>
+            <p>Automated scheduling, quotes, invoicing, follow-ups, and customer reviews for a Seattle service business using TODD.</p>
+            <span class="more">Read case study →</span>
+          </div>
+        </a>
+        <a class="case-card" href="support-material/e-commerce-cloud-transformation-case-study.html" data-cat="Cloud E-Commerce">
+          <div class="case-card__band case-card__band--dark">
+            <span class="case-card__band-label">Client</span>
+            <span class="case-card__client">Seattle retailer</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__tags">Cloud · E-Commerce</span>
+            <h3>E-Commerce Cloud Transformation</h3>
+            <p>Connected Shopify, HubSpot, and QuickBooks, improved cloud performance, and strengthened analytics for a Seattle retailer.</p>
+            <span class="more">Read case study →</span>
+          </div>
+        </a>
+        <a class="case-card" href="support-material/office-of-equity-gen-ai-case-study.html" data-cat="AI Government">
+          <div class="case-card__band case-card__band--blue">
+            <span class="case-card__band-label">Client</span>
+            <span class="case-card__client">Washington State</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__tags">AI · Policy · Government</span>
+            <h3>Washington State Office of Equity — GenAI Accountability</h3>
+            <p>Built a Generative AI Accountability Blueprint with equity-centered governance, bias safeguards, and procurement guidance.</p>
+            <span class="more">Read case study →</span>
+          </div>
+        </a>
+        <a class="case-card" href="support-material/operational-efficiency-case-study.html" data-cat="Operations">
+          <div class="case-card__band case-card__band--cyan">
+            <span class="case-card__band-label">Client</span>
+            <span class="case-card__client">Insurance agency</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__tags">Operations · Insurance</span>
+            <h3>Operational Efficiency: Insurance Agency</h3>
+            <p>Improved customer acquisition, retention, compliance, and risk management through technology and process improvements.</p>
+            <span class="more">Read case study →</span>
+          </div>
+        </a>
+        <a class="case-card" href="support-material/secure-flexibility-and-prompt-precision-case-study.html" data-cat="AI Government">
+          <div class="case-card__band case-card__band--dark">
+            <span class="case-card__band-label">Client</span>
+            <span class="case-card__client">State agencies</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__tags">TODD · Government · AI</span>
+            <h3>Secure Flexibility and Prompt Precision</h3>
+            <p>Provided AI assistance across siloed state agency departments while protecting data and reducing document generation time.</p>
+            <span class="more">Read case study →</span>
+          </div>
+        </a>
+        <a class="case-card" href="support-material/social-media-case-study.html" data-cat="E-Commerce">
+          <div class="case-card__band case-card__band--cyan">
+            <span class="case-card__band-label">Client</span>
+            <span class="case-card__client">Fashion retailer</span>
+          </div>
+          <div class="case-card__body">
+            <span class="case-card__tags">TODD · E-Commerce · Social</span>
+            <h3>Social Media Intelligence: Fashion Retailer</h3>
+            <p>Improved website performance, simplified customer data analysis, and increased social media engagement for an online retailer.</p>
+            <span class="more">Read case study →</span>
+          </div>
+        </a>
       </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
     </div>
   </section>
   <div class="bottom-pad"></div>
@@ -286,6 +280,22 @@
       setTheme(saved || (prefersDark ? 'dark' : 'light'));
       btn.addEventListener('click', function () {
         setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var chips = document.querySelectorAll('[data-filter]');
+      var cards = document.querySelectorAll('.case-grid [data-cat]');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var f = chip.getAttribute('data-filter');
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+          cards.forEach(function (card) {
+            card.hidden = f !== 'All' && card.getAttribute('data-cat').split(' ').indexOf(f) === -1;
+          });
+          if (window.gtag) gtag('event', 'case_study_filter', { filter: f });
+        });
       });
     })();
   </script>

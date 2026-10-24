@@ -63,8 +63,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -112,53 +112,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#introduction">Introduction</a>
-        <a href="#the-issue-of-over-fetching-in-rest">Over-Fetching</a>
-        <a href="#overview-of-graphql">GraphQL</a>
-        <a href="#efficiency-advantages-of-using-graphql">Advantages</a>
-        <a href="#conclusion">Conclusion</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>GraphQL Fixes REST's Over-Fetching Problem by Design</h1>
-          <p>A REST endpoint returns whatever shape the server decided on, whether the client needs all of it or not. Taliferro breaks down how GraphQL flips that by letting the client ask for exactly the data it wants.</p>
-          <p class="fine">Published: 8 Sep 2023 · Updated: 11 Sep 2026</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>API</span></nav>
+      <h1>GraphQL Fixes REST's Over-Fetching Problem by Design</h1>
+      <p class="post-dek">A REST endpoint returns whatever shape the server decided on, whether the client needs all of it or not. Taliferro breaks down how GraphQL flips that by letting the client ask for exactly the data it wants.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2023-09-08">Sep 8, 2023</time> · 2 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="introduction" class="text-capitalize wow fadeInUp"> Introduction </h2>
           <p class="wow fadeInUp"><span><span> APIs are the connective tissue of modern <a href="https://taliferro.com/blog/sep2023/sep292023/the-advantages-and-disadvantages-of-bespoke-software-development-a-balanced-perspective.html">software development</a> — the way different services actually exchange data. One of REST's structural weaknesses is over-fetching: an endpoint returns a fixed shape whether the client needs all of it or not. GraphQL, built by Facebook, fixes that at the design level by letting the client specify exactly what it wants. Here's how that actually improves </span><a href="https://taliferro.com/blog/jun2023/jun142023/third-party-interactions-surpassing-digital-supplier-interactions.html">API efficiency</a>. </span></p>
@@ -179,47 +173,61 @@
           <p class="wow fadeInUp"> The size of the improvement depends heavily on how over-fetching-heavy the existing REST endpoints are — a case with deeply nested, bloated responses sees a much bigger win than a case that's already lean. Rather than assuming a fixed number, it's worth measuring actual payload sizes before and after to see the real gain for a specific API. </p>
           <h2 id="conclusion" class="text-capitalize wow fadeInUp"> Conclusion </h2>
           <p class="wow fadeInUp"><span> GraphQL is a real fix for API <a href="https://taliferro.com/blog/mar2023/mar262023/the-importance-of-system-architecture-for-small-businesses-and-the-role-of-outside-experts-in-driving-growth.html">efficiency</a> — precise data retrieval genuinely removes the over-fetching burden that REST bakes in structurally. Adopting it takes real upfront work, adapting infrastructure and training a team on a new query language, but the payoff in leaner, faster API responses makes it a serious option worth evaluating. </span></p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need a cleaner API path?</strong>
             <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">API consulting</a>, connect it to the <a href="https://taliferro.tech/">execution model</a>, or <a href="https://taliferro.com/contact.html">show us the integration problem</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>GraphQL</em></li>
-                <li><em>API efficiency</em></li>
-                <li><em>data retrieval</em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li>GraphQL</li>
-              <li>API efficiency</li>
-              <li>data retrieval</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>GraphQL</li>
+          <li>API efficiency</li>
+          <li>data retrieval</li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#introduction">Introduction</a>
+          <a href="#the-issue-of-over-fetching-in-rest">The Issue of Over-Fetching in REST</a>
+          <a href="#overview-of-graphql">Overview of GraphQL</a>
+          <a href="#efficiency-advantages-of-using-graphql">Efficiency Advantages of Using GraphQL</a>
+          <a href="#conclusion">Conclusion</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="evaluating-the-impact-of-graphql-on-api-efficiency-reducing-over-fetching-of-data-by-up-to-80-percent">API consulting</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/sep2023/sep072023/assessing-the-efficacy-of-rpa-bots-in-accelerating-legacy-systems-workflows-by-40-percent-without-a-system-revamp.html">&larr; RPA Automates Legacy Workflows Without the Costly Rewrite</a>
-            <a class="button" href="https://taliferro.com/blog/sep2023/sep092023/pursuing-enhanced-sales-and-efficiency-follow-this-structured-pathway-to-success.html">Taliferro Group: Boosting Sales &amp;amp; Efficiency for Clients &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="evaluating-the-impact-of-graphql-on-api-efficiency-reducing-over-fetching-of-data-by-up-to-80-percent">API consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/sep2023/sep072023/assessing-the-efficacy-of-rpa-bots-in-accelerating-legacy-systems-workflows-by-40-percent-without-a-system-revamp.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">RPA Automates Legacy Workflows Without the Costly Rewrite</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/sep2023/sep092023/pursuing-enhanced-sales-and-efficiency-follow-this-structured-pathway-to-success.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Taliferro Group: Boosting Sales &amp;amp; Efficiency for Clients</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

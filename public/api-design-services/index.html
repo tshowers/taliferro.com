@@ -115,131 +115,112 @@
   <script src="https://taliferro.com/js/exit-intent.js" defer></script>
   <meta name="page-intent" content="api_design">
   <meta name="page-title" content="API Design & Integration Services">
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body>
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#teams-ship-endpoints-but-they-forget-the-experienc">APIs</a>
-        <a href="#design-the-contract-first-then-build-with-confiden">Build</a>
-        <a href="#integration-gets-easier-when-the-contract-is-stabl">Integration</a>
-        <a href="#api-design-excellence">Design</a>
-        <a href="#apis-keep-momentum-when-the-contract-is-stable">Momentum</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/" aria-current="page">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
-  <!-- HERO: Problem -->
-  <header class="hero">
-    <div class="wrap hero-grid">
+  <!-- HERO -->
+  <header class="hero svc-hero">
+    <div class="page-shell hero-grid">
       <div>
-        <div class="kicker">API Design • Integration • Security • Governance • Apigee</div>
+        <div class="kicker">API Design · Integration · Security · Governance · Apigee</div>
         <h1>The API broke before anyone wrote the code</h1>
-        <p>Unclear payloads, inconsistent errors, and loose versioning turn integrations into guesswork. Taliferro designs the contract first so teams know what to send, what to expect, and how the API can change without breaking everything around it.</p>
+        <p class="lead">Unclear payloads, inconsistent errors, and loose versioning turn integrations into guesswork. Taliferro designs the contract first so teams know what to send, what to expect, and how the API can change without breaking everything around it.</p>
         <div class="pillrow">
-          <div class="pill">Clear contracts</div>
-          <div class="pill">Fewer integration failures</div>
-          <div class="pill">Security by default</div>
-          <div class="pill">AT&amp;T's Apigee SME for 6 years</div>
+          <span class="pill">Clear contracts</span>
+          <span class="pill">Fewer integration failures</span>
+          <span class="pill">Security by default</span>
+          <span class="pill">AT&amp;T's Apigee SME for 6 years</span>
         </div>
         <div class="btnrow">
           <a class="button button-primary" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a>
-          <a class="button" href="https://taliferro.com/rescue-me/">Start with a $999 IT Rescue</a>
-          <a class="button" href="#how">How we work</a>
-          <a class="button" href="https://taliferro.com/case-studies.html">See case studies</a>
-        </div>
-        <div class="divider"></div>
-        <div class="grid grid-3">
-          <div class="card">
-            <div class="metric"><b>Stable</b><span><br>integration behavior</span></div>
-            <div class="fine">Less guesswork, fewer surprises.</div>
-          </div>
-          <div class="card">
-            <div class="metric"><b class="nowrap">Secure</b><br><span>defaults</span></div>
-            <div class="fine">Auth, roles, and scopes that match reality.</div>
-          </div>
-          <div class="card">
-            <div class="metric"><b class="nowrap">DX</b><br><span>that speeds teams up</span></div>
-            <div class="fine">Docs, examples, and conventions.</div>
-          </div>
+          <a class="button" href="/rescue-me/data-quality/">Start with a $999 IT Rescue</a>
         </div>
       </div>
-      <div class="hero-media">
-        <div class="ph"> request/response contract<br /><br />
-          <img src="https://taliferro.com/api-design-services/img/api-design-and-consulting2.webp" alt="API design and integration" />
+      <aside class="svc-check-card" data-self-check data-page="api-design-services" data-review="free API audit" data-review-label="Get an API assessment" data-review-href="mailto:info@taliferro.com?subject=API%20Assessment%20Request" data-rescue-href="/rescue-me/data-quality/" aria-label="Fast self-check">
+        <div class="kicker">Fast self-check</div>
+        <h3>How many of these sound familiar?</h3>
+        <div class="svc-checks">
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Do integrations break after “small” changes?</span></button>
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Do teams interpret the same field differently?</span></button>
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Do errors vary by endpoint and service?</span></button>
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Does security feel bolted on?</span></button>
         </div>
-        <div class="card">
-          <h3>Fast self-check</h3>
-          <ul class="list">
-            <li>Do integrations break after “small” changes?</li>
-            <li>Do teams interpret the same field differently?</li>
-            <li>Do errors vary by endpoint and service?</li>
-            <li>Does security feel bolted on?</li>
-          </ul>
-          <div class="btnrow">
-            <a class="btn small primary" href="mailto:info@taliferro.com?subject=API%20Assessment%20Request">Get an API assessment</a>
-          </div>
-        </div>
-      </div>
+        <p class="svc-verdict" aria-live="polite"><strong>Pick any that apply.</strong> Each one is a sign the system needs attention.</p>
+        <a class="button button-primary svc-check-cta" href="mailto:info@taliferro.com?subject=API%20Assessment%20Request">Get an API assessment</a>
+      </aside>
     </div>
   </header>
-  <!-- PROBLEM EXPANSION -->
+  <!-- PROBLEM -->
   <section class="section">
-    <div class="wrap grid grid-2">
+    <div class="page-shell split">
       <div>
         <div class="kicker">The real issue</div>
         <h2 id="teams-ship-endpoints-but-they-forget-the-experienc">Teams ship endpoints. But they forget the experience</h2>
-        <p> API problems show up as integration delays, brittle systems, and security gaps. The root cause is usually missing standards and unclear ownership. </p>
-        <ul class="list">
+        <p>API problems show up as integration delays, brittle systems, and security gaps. The root cause is usually missing standards and unclear ownership.</p>
+        <ul class="list svc-list">
           <li><strong>Inconsistent schemas</strong> — the same concept has multiple shapes.</li>
           <li><strong>Error chaos</strong> — clients can’t recover reliably.</li>
           <li><strong>Version drift</strong> — breaking changes appear without guardrails.</li>
           <li><strong>Security late</strong> — identity and access don’t match business rules.</li>
         </ul>
       </div>
-      <div class="ph"> client → gateway → services<br />
-        <img src="https://taliferro.com/api-design-services/img/api-design-and-consulting1.webp" alt="API contract and error standards" />
-      </div>
+      <img class="media svc-media" src="https://taliferro.com/api-design-services/img/api-design-and-consulting1.webp" alt="API contract and error standards" loading="lazy">
     </div>
   </section>
-  <!-- APPROACH -->
-  <section id="how" class="section">
+  <!-- HOW -->
+  <section class="section" id="how">
     <div class="page-shell">
-      <div class="kicker">How we work</div>
-      <h2 id="design-the-contract-first-then-build-with-confiden">Design the contract first. Then build with confidence</h2>
-      <p> We keep APIs simple, explicit, and consistent. Our goal is fewer integration tickets and faster delivery. </p>
-      <div class="grid grid-4">
-        <div class="card">
-          <h3>1) Map the domain</h3>
-          <p>We define ownership, boundaries, and the concepts that matter.</p>
-          <div class="fine">Output: domain + API surface.</div>
-        </div>
-        <div class="card">
-          <h3>2) Define standards</h3>
-          <p>Naming, pagination, errors, idempotency, and versioning.</p>
-          <div class="fine">Output: API style guide.</div>
-        </div>
-        <div class="card">
-          <h3>3) Secure the design</h3>
-          <p>Authn/authz, scopes, roles, and audit requirements.</p>
-          <div class="fine">Output: security defaults.</div>
-        </div>
-        <div class="card">
-          <h3>4) Deliver DX</h3>
-          <p>OpenAPI specs, examples, and docs that reduce support.</p>
-          <div class="fine">Output: spec + docs + examples.</div>
+      <div class="surface-panel">
+        <div class="kicker">How we work</div>
+        <h2 id="design-the-contract-first-then-build-with-confiden">Design the contract first. Then build with confidence</h2>
+        <p class="svc-intro">We keep APIs simple, explicit, and consistent. Our goal is fewer integration tickets and faster delivery.</p>
+        <div class="svc-steps">
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">1</span>
+            <h3>Map the domain</h3>
+            <p>We define ownership, boundaries, and the concepts that matter.</p>
+            <p class="fine">Output: domain + API surface.</p>
+          </div>
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">2</span>
+            <h3>Define standards</h3>
+            <p>Naming, pagination, errors, idempotency, and versioning.</p>
+            <p class="fine">Output: API style guide.</p>
+          </div>
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">3</span>
+            <h3>Secure the design</h3>
+            <p>Authn/authz, scopes, roles, and audit requirements.</p>
+            <p class="fine">Output: security defaults.</p>
+          </div>
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">4</span>
+            <h3>Deliver DX</h3>
+            <p>OpenAPI specs, examples, and docs that reduce support.</p>
+            <p class="fine">Output: spec + docs + examples.</p>
+          </div>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="grid grid-2">
+      <div class="grid grid-2 svc-after">
         <div class="card">
           <h3>Frameworks and standards</h3>
           <ul class="list">
@@ -251,7 +232,7 @@
             <li>Versioning strategies that teams follow</li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card card--blue">
           <h3>What you get</h3>
           <ul class="list">
             <li>Clean API contracts and conventions</li>
@@ -267,123 +248,163 @@
   <!-- CREDIBILITY -->
   <section class="section">
     <div class="page-shell">
-      <div class="kicker">Credibility</div>
-      <h2 id="integration-gets-easier-when-the-contract-is-stabl">Integration gets easier when the contract is stable</h2>
-      <p>Taliferro was AT&amp;T's Apigee subject matter expert for six years. The same discipline that scale requires is what goes into every API we design now, regardless of company size.</p>
+      <div class="section-head">
+        <div class="kicker">Credibility</div>
+        <h2 id="integration-gets-easier-when-the-contract-is-stabl">Integration gets easier when the contract is stable</h2>
+        <p>Taliferro was AT&amp;T's Apigee subject matter expert for six years. The same discipline that scale requires is what goes into every API we design now, regardless of company size.</p>
+      </div>
       <div class="grid grid-3">
-        <div class="card">
+        <div class="card card--cyan svc-cred">
           <h3>Fewer breaking changes</h3>
           <p>Versioning and standards reduce surprise outages.</p>
-          <div class="fine">Stability builds trust.</div>
         </div>
-        <div class="card">
+        <div class="card card--cyan svc-cred">
           <h3>Better security posture</h3>
           <p>Security rules match real business permissions.</p>
-          <div class="fine">Less rework, fewer gaps.</div>
         </div>
-        <div class="card">
+        <div class="card card--cyan svc-cred">
           <h3>Faster integrations</h3>
           <p>Clear docs and examples reduce back-and-forth.</p>
-          <div class="fine">Teams move faster.</div>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="grid grid-2">
-        <div class="ph"> API lifecycle<br />
-          <img src="https://taliferro.com/api-design-services/img/api-design-and-consulting3.webp" alt="API design outcomes" />
-        </div>
+      <div class="split svc-feature">
+        <img class="media svc-media" src="https://taliferro.com/api-design-services/img/api-design-and-consulting3.webp" alt="API design outcomes" loading="lazy">
         <div class="card">
           <h3>Blair Capital Management — real-time yield data</h3>
-          <p> Blair Capital had investor data locked in spreadsheets and no digital presence. We designed APIs that surfaced real-time YTD yield data on their new website — investors could see live portfolio performance for the first time. Deployed on GCP. Result: 80% increase in client engagement and 60% faster onboarding. </p>
-          <div class="btnrow">
-            <a class="button button-primary" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a>
-            <a class="button" href="https://taliferro.com/case-studies.html">View case studies</a>
-          </div>
+          <p>Blair Capital had investor data locked in spreadsheets and no digital presence. We designed APIs that surfaced real-time YTD yield data on their new website — investors could see live portfolio performance for the first time. Deployed on GCP. Result: 80% increase in client engagement and 60% faster onboarding.</p>
+          <div class="btnrow"><a class="button button-primary" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a><a class="button" href="https://taliferro.com/case-studies.html">View case studies</a></div>
         </div>
       </div>
     </div>
   </section>
-  <!-- SECOND PAGE LINK -->
   <section class="section">
-    <div class="page-shell">
-      <div class="kicker">More detail</div>
-      <h2 id="api-design-excellence">API Design Excellence</h2>
-      <p> A deeper look at standards, security, and developer experience. </p>
-      <div class="btnrow">
-        <a class="button button-primary" href="./api-design-excellence.html">Go to API Design Excellence</a>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="wrap grid grid-2">
-      <div class="card">
+    <div class="page-shell split svc-why">
+      <div>
         <div class="kicker">Why it matters</div>
         <h2 id="apis-keep-momentum-when-the-contract-is-stable">APIs keep momentum when the contract is stable</h2>
         <p>A stable API contract turns integration work into an execution advantage: less integration drag, clearer ownership, and system changes that stay tied to outcomes.</p>
       </div>
-      <div class="card">
-        <div class="kicker">Related reading</div>
-        <ul class="list">
-          <li><a href="https://taliferro.com/blog/jan2024/jan142024/secure-api-gateway-setup-step-by-step-guide.html">Secure API Gateway Setup</a></li>
-          <li><a href="https://taliferro.com/blog/apr2024/apr042024/why-going-api-first-is-your-golden-ticket-to-innovation.html">Why Going API-First Matters</a></li>
-          <li><a href="https://taliferro.com/blog/apr2024/apr062024/secrets-of-effortless-system-unification-with-api-magic.html">System Unification with APIs</a></li>
-        </ul>
+      <div class="svc-links">
+        <a class="link-card" href="https://taliferro.com/blog/jan2024/jan142024/secure-api-gateway-setup-step-by-step-guide.html"><span class="tag tag--sm">Related reading</span>
+          <span class="link-card__title">Secure API Gateway Setup</span>
+          <span class="more">Read →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/blog/apr2024/apr042024/why-going-api-first-is-your-golden-ticket-to-innovation.html"><span class="tag tag--sm">Related reading</span>
+          <span class="link-card__title">Why Going API-First Matters</span>
+          <span class="more">Read →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/blog/apr2024/apr062024/secrets-of-effortless-system-unification-with-api-magic.html"><span class="tag tag--sm">Related reading</span>
+          <span class="link-card__title">System Unification with APIs</span>
+          <span class="more">Read →</span>
+        </a>
       </div>
     </div>
   </section>
-  <!-- FAQ -->
   <section class="section">
     <div class="page-shell">
-      <div class="kicker">FAQ</div>
-      <h2 id="common-questions-about-api-work">Common questions about API work</h2>
-      <div class="grid">
-        <details>
+      <div class="section-head">
+        <div class="kicker">More detail</div>
+        <h2 id="api-design-excellence">API Design Excellence</h2>
+        <p>A deeper look at standards, security, and developer experience.</p>
+      </div>
+
+      <div class="btnrow"><a class="button button-primary" href="./api-design-excellence.html">Go to API Design Excellence</a></div>
+    </div>
+  </section>
+  <!-- FAQ (text matches the FAQPage JSON-LD) -->
+  <section class="section" id="faq">
+    <div class="page-shell svc-faq">
+      <div>
+        <div class="kicker">FAQ</div>
+        <h2 id="common-questions-about-api-work">Common questions about API work</h2>
+      </div>
+      <div class="faq">
+        <details open>
           <summary>Do you work with REST, GraphQL, and event-driven APIs?</summary>
-          <p> Yes. We design REST and GraphQL APIs and also help teams define event-driven integrations. The right style depends on the workflow, data ownership, and how teams evolve the system over time. </p>
+          <p>Yes. We design REST and GraphQL APIs and also help teams define event-driven integrations. The right style depends on the workflow, data ownership, and how teams evolve the system over time.</p>
         </details>
         <details>
           <summary>What usually breaks integrations?</summary>
-          <p> Unclear contracts, inconsistent naming, missing error standards, and versioning that isn’t enforced. Security and identity decisions made late also cause costly rework. </p>
+          <p>Unclear contracts, inconsistent naming, missing error standards, and versioning that isn’t enforced. Security and identity decisions made late also cause costly rework.</p>
         </details>
         <details>
           <summary>Can you help us secure our APIs?</summary>
-          <p> Yes. We design authentication and authorization approaches, define security requirements, and help teams implement secure defaults. We also help create governance that keeps security consistent as the API grows. </p>
+          <p>Yes. We design authentication and authorization approaches, define security requirements, and help teams implement secure defaults. We also help create governance that keeps security consistent as the API grows.</p>
         </details>
         <details>
           <summary>Do you provide documentation and developer experience (DX) support?</summary>
-          <p> Yes. We produce OpenAPI specs, examples, and clear documentation so teams can integrate without guesswork. Good DX reduces support tickets and speeds delivery. </p>
+          <p>Yes. We produce OpenAPI specs, examples, and clear documentation so teams can integrate without guesswork. Good DX reduces support tickets and speeds delivery.</p>
         </details>
       </div>
     </div>
   </section>
   <!-- FINAL CTA -->
   <section class="section">
-    <div class="wrap grid grid-2">
-      <div>
-        <div class="kicker">Next step</div>
-        <h2 id="want-an-api-teams-can-rely-on">Want an API teams can rely on?</h2>
-        <p> Send a note. We’ll respond with the fastest path to stabilize your APIs and integrations. </p>
-        <div class="btnrow">
-          <a class="button button-primary" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a>
+    <div class="page-shell">
+      <div class="dark-panel svc-final">
+        <div>
+          <div class="kicker">Next step</div>
+          <h2 id="want-an-api-teams-can-rely-on">Want an API teams can rely on?</h2>
+          <p>Send a note. We’ll respond with the fastest path to stabilize your APIs and integrations.</p>
+          <div class="btnrow"><a class="button" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a><a class="button button--ghost" href="/rescue-me/data-quality/">Start with a $999 IT Rescue</a></div>
+          <p class="svc-email">Prefer email? <a href="mailto:info@taliferro.com?subject=API%20Design%20and%20Integration%20Help">info@taliferro.com</a></p>
         </div>
-        <p class="fine" style="margin-top:12px">Prefer email? <a href="mailto:info@taliferro.com?subject=API%20Design%20and%20Integration%20Help">info@taliferro.com</a></p>
-      </div>
-      <div class="card">
-        <h3>What to send us</h3>
-        <p>To make the call useful, send whatever you already have. Even partial info helps.</p>
-        <ul class="list">
-          <li>What systems need to connect</li>
-          <li>API style (REST/GraphQL/events) if known</li>
-          <li>One integration that keeps breaking</li>
-          <li>Auth approach (SSO, API keys, OAuth) if known</li>
-          <li>Any deadlines (launch, partner integration, audit)</li>
-        </ul>
-        <p class="fine">Screenshots, logs, and a short description all work.</p>
+        <div class="inner-panel">
+          <h3>What to send us</h3>
+          <p>To make the call useful, send whatever you already have. Even partial info helps.</p>
+          <ul>
+            <li>What systems need to connect</li>
+            <li>API style (REST/GraphQL/events) if known</li>
+            <li>One integration that keeps breaking</li>
+            <li>Auth approach (SSO, API keys, OAuth) if known</li>
+            <li>Any deadlines (launch, partner integration, audit)</li>
+          </ul>
+          <p class="svc-note">Screenshots, logs, and a short description all work.</p>
+        </div>
       </div>
     </div>
   </section>
   <div class="bottom-pad"></div>
-  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var box = document.querySelector('[data-self-check]');
+      if (!box) return;
+      var checks = box.querySelectorAll('.svc-check');
+      var verdict = box.querySelector('.svc-verdict');
+      var cta = box.querySelector('.svc-check-cta');
+      var review = box.getAttribute('data-review');
+      var lines = [
+        ['Pick any that apply.', 'Each one is a sign the system needs attention.'],
+        ['1 of 4.', 'Worth a look before it spreads. A ' + review + ' will show where it started.'],
+        ['2 of 4.', 'These usually share a root cause. A ' + review + ' finds it.'],
+        ['3 of 4.', 'This is costing you more than it should. Start with a $999 IT Rescue.'],
+        ['4 of 4.', 'This is costing you every week. Start with a $999 IT Rescue for a written plan in 3 days.']
+      ];
+      function update() {
+        var n = box.querySelectorAll('.svc-check[aria-pressed="true"]').length;
+        verdict.innerHTML = '';
+        var strong = document.createElement('strong');
+        strong.textContent = lines[n][0];
+        verdict.appendChild(strong);
+        verdict.appendChild(document.createTextNode(' ' + lines[n][1]));
+        var rescue = n >= 3;
+        cta.textContent = rescue ? 'Start with a $999 IT Rescue' : box.getAttribute('data-review-label');
+        cta.setAttribute('href', box.getAttribute(rescue ? 'data-rescue-href' : 'data-review-href'));
+        return n;
+      }
+      Array.prototype.forEach.call(checks, function (btn, i) {
+        btn.addEventListener('click', function () {
+          var on = btn.getAttribute('aria-pressed') !== 'true';
+          btn.setAttribute('aria-pressed', String(on));
+          var n = update();
+          if (window.gtag) gtag('event', 'self_check', { page: box.getAttribute('data-page'), item: i + 1, checked: on, total_checked: n });
+        });
+      });
+      cta.addEventListener('click', function () {
+        if (window.gtag) gtag('event', 'self_check_cta', { page: box.getAttribute('data-page'), destination: cta.getAttribute('href') });
+      });
+    })();
+  </script>
   <script>
     (function () {
       var btn = document.querySelector('.theme-toggle');

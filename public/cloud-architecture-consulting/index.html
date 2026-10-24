@@ -136,316 +136,344 @@
             })(window, document, "clarity", "script", "vd128967w5");
         }
     </script>
-    <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+    <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
     <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body>
     <header class="topbar no-print">
-        <div class="page-shell topbar-inner">
-            <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-                <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-                <span>Taliferro Group</span>
-            </a>
-            <nav class="nav-links" aria-label="Page navigation">
-                <a href="#cloud-failures-are-architectural-not-technical">Cloud</a>
-                <a href="#cloud-architecture-consulting-defined">Architecture</a>
-                <a href="#teams-bring-us-in-when">Teams</a>
-                <a href="#architecture-that-stays-legible-under-pressure">Stays</a>
-                <a href="#what-teams-see-after-cleanup">Cleanup</a>
-                <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-                <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
-            </nav>
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
+      </a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/" aria-current="page">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero svc-hero">
+    <div class="page-shell hero-grid">
+      <div>
+        <div class="kicker">Cloud Architecture · AWS · Azure · GCP</div>
+        <h1>Your cloud bill is a diagram of your decisions</h1>
+        <p class="lead">Every duplicate service, mystery dependency, and risky deployment began as a reasonable choice nobody revisited. Taliferro helps teams redraw the architecture so cost, ownership, and failure are clear before the next change makes the problem bigger.</p>
+        <div class="pillrow">
+          <span class="pill">Cost-aware by default</span>
+          <span class="pill">Failure-tolerant design</span>
+          <span class="pill">Clear ownership boundaries</span>
+          <span class="pill">Built to evolve</span>
         </div>
-    </header>
-    <!-- HERO -->
-    <header class="hero">
-        <div class="wrap hero-grid">
-            <div>
-                <div class="kicker"><a href="https://taliferro.com/">Taliferro</a> • Cloud Architecture • AWS • Azure • GCP</div>
-                <h1>Your cloud bill is a diagram of your decisions</h1>
-                <p>Every duplicate service, mystery dependency, and risky deployment began as a reasonable choice nobody revisited. Taliferro helps teams redraw the architecture so cost, ownership, and failure are clear before the next change makes the problem bigger.</p>
-                <div class="pillrow">
-                    <div class="pill">Cost-aware by default</div>
-                    <div class="pill">Failure-tolerant design</div>
-                    <div class="pill">Clear ownership boundaries</div>
-                    <div class="pill">Built to evolve</div>
-                </div>
-                <div class="btnrow">
-                    <a class="button button-primary" href="https://taliferro.com/contact.html">Book a cloud review</a>
-                    <a class="button" href="https://taliferro.com/rescue-me/">Start with a $999 IT Rescue</a>
-                    <a class="button" href="https://taliferro.com/case-studies.html">See outcomes</a>
-                    <a class="button" href="#how">How we design</a>
-                </div>
-                <div class="divider"></div>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <div class="metric"><b>↓</b><br><span>cloud spend</span></div>
-                        <div class="fine">Without reducing capability.</div>
-                    </div>
-                    <div class="card">
-                        <div class="metric"><b>↑</b><br><span>system clarity</span></div>
-                        <div class="fine">Fewer “nobody knows” components.</div>
-                    </div>
-                    <div class="card">
-                        <div class="metric"><b>Stable</b><br><span>under load</span></div>
-                        <div class="fine">Designed for failure, not hope.</div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-media">
-                <div class="ph">
-                    <strong><img src="https://taliferro.com/cloud-architecture-consulting/img/cloud-architecture.webp" alt="Cloud Architecture Consulting"></strong><br /> Architecture diagram, service map, or infrastructure flow.
-                </div>
-                <div class="card">
-                    <h3>Fast self-check</h3>
-                    <ul class="list">
-                        <li>Do cloud costs spike unexpectedly?</li>
-                        <li>Does no one fully understand the system?</li>
-                        <li>Do deployments feel risky?</li>
-                        <li>Does scaling introduce fragility?</li>
-                    </ul>
-                    <div class="btnrow">
-                        <a class="btn small primary" href="https://taliferro.com/contact.html">Get a cloud assessment</a>
-                    </div>
-                </div>
-            </div>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/contact.html">Book a cloud review</a>
+          <a class="button" href="/rescue-me/cloud-cost-control/">Start with a $999 IT Rescue</a>
         </div>
-    </header>
-    <!-- PROBLEM -->
-    <section class="section">
-        <div class="wrap grid grid-2">
-            <div>
-                <div class="kicker">The real issue</div>
-                <h2 id="cloud-failures-are-architectural-not-technical">Cloud failures are architectural, not technical</h2>
-                <p> Teams don’t fail because they picked the wrong cloud provider. They fail because responsibilities blur, scaling assumptions go unchallenged, and costs are treated as an accounting problem instead of a design constraint. </p>
-                <ul class="list">
-                    <li><strong>A duplicate service gets stood up</strong> because nobody could find the original, or it was faster than asking around.</li>
-                    <li><strong>A mystery dependency shows up during an outage</strong> — nobody remembers adding it, or why it's load-bearing.</li>
-                    <li><strong>A risky deployment ships anyway</strong> because reverting it now would take longer than pushing forward.</li>
-                    <li>Every one of these started as a reasonable call. The problem is that nobody ever went back and revisited it.</li>
-                </ul>
-            </div>
-            <div class="ph">
-                <strong><img src="https://taliferro.com/cloud-architecture-consulting/img/cloud-architecture2.webp" alt="Cloud Architecture Advice"></strong><br /> Intentional cloud architecture
-            </div>
+      </div>
+      <aside class="svc-check-card" data-self-check data-page="cloud-architecture-consulting" data-review="cloud review" data-review-label="Get a cloud assessment" data-review-href="https://taliferro.com/contact.html" data-rescue-href="/rescue-me/cloud-cost-control/" aria-label="Fast self-check">
+        <div class="kicker">Fast self-check</div>
+        <h3>How many of these sound familiar?</h3>
+        <div class="svc-checks">
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Do cloud costs spike unexpectedly?</span></button>
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Does no one fully understand the system?</span></button>
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Do deployments feel risky?</span></button>
+          <button class="svc-check" type="button" aria-pressed="false"><span class="svc-check__dot" aria-hidden="true"></span><span>Does scaling introduce fragility?</span></button>
         </div>
-    </section>
-    <!-- ENGAGEMENT -->
-    <section class="section" id="engagement">
-        <div class="page-shell">
-            <div class="kicker">What this engagement looks like</div>
-            <h2 id="cloud-architecture-consulting-defined">Cloud architecture consulting, defined</h2>
-            <div class="grid grid-2">
-                <div class="card">
-                    <p>Cloud architecture consulting is not a report or a slide deck. It’s a focused engagement to make your system easier to understand, safer to change, and cheaper to operate.</p>
-                    <ul class="list">
-                        <li>Architecture review and system mapping</li>
-                        <li>Boundary and ownership analysis</li>
-                        <li>Failure domain and risk assessment</li>
-                        <li>Cost drivers made explicit</li>
-                        <li>A prioritized action plan your team can execute</li>
-                    </ul>
-                    <p class="fine">You keep control. We bring clarity.</p>
-                </div>
-                <div class="card">
-                    <h3>What you get at the end</h3>
-                    <ul class="list">
-                        <li>A clear picture of how the system actually works</li>
-                        <li>Known failure points and how they propagate</li>
-                        <li>Where cost and complexity are leaking in</li>
-                        <li>What to fix first—and what can wait</li>
-                    </ul>
-                    <div class="btnrow">
-                        <a class="button button-primary" href="https://taliferro.com/contact.html">Book a cloud review</a>
-                        <a class="button" href="https://taliferro.com/case-studies.html">See outcomes</a>
-                    </div>
-                </div>
-            </div>
+        <p class="svc-verdict" aria-live="polite"><strong>Pick any that apply.</strong> Each one is a sign the system needs attention.</p>
+        <a class="button button-primary svc-check-cta" href="https://taliferro.com/contact.html">Get a cloud assessment</a>
+      </aside>
+    </div>
+  </header>
+  <!-- PROBLEM -->
+  <section class="section">
+    <div class="page-shell split">
+      <div>
+        <div class="kicker">The real issue</div>
+        <h2 id="cloud-failures-are-architectural-not-technical">Cloud failures are architectural, not technical</h2>
+        <p>Teams don’t fail because they picked the wrong cloud provider. They fail because responsibilities blur, scaling assumptions go unchallenged, and costs are treated as an accounting problem instead of a design constraint.</p>
+        <ul class="list svc-list">
+          <li><strong>A duplicate service gets stood up</strong> because nobody could find the original, or it was faster than asking around.</li>
+          <li><strong>A mystery dependency shows up during an outage</strong> — nobody remembers adding it, or why it's load-bearing.</li>
+          <li><strong>A risky deployment ships anyway</strong> because reverting it now would take longer than pushing forward.</li>
+          <li>Every one of these started as a reasonable call. The problem is that nobody ever went back and revisited it.</li>
+        </ul>
+      </div>
+      <img class="media svc-media" src="https://taliferro.com/cloud-architecture-consulting/img/cloud-architecture2.webp" alt="Intentional cloud architecture" loading="lazy">
+    </div>
+  </section>
+  <section class="section" id="engagement">
+    <div class="page-shell">
+      <div class="section-head">
+        <div class="kicker">What this engagement looks like</div>
+        <h2 id="cloud-architecture-consulting-defined">Cloud architecture consulting, defined</h2>
+        <p>Cloud architecture consulting is not a report or a slide deck. It’s a focused engagement to make your system easier to understand, safer to change, and cheaper to operate.</p>
+      </div>
+      <div class="grid grid-2">
+          <div class="card">
+            <h3>What the engagement covers</h3>
+            <ul class="list">
+              <li>Architecture review and system mapping</li>
+              <li>Boundary and ownership analysis</li>
+              <li>Failure domain and risk assessment</li>
+              <li>Cost drivers made explicit</li>
+              <li>A prioritized action plan your team can execute</li>
+            </ul>
+            <p class="fine">You keep control. We bring clarity.</p>
+          </div>
+          <div class="card card--blue">
+            <h3>What you get at the end</h3>
+            <ul class="list">
+              <li>A clear picture of how the system actually works</li>
+              <li>Known failure points and how they propagate</li>
+              <li>Where cost and complexity are leaking in</li>
+              <li>What to fix first—and what can wait</li>
+            </ul>
+            <div class="btnrow"><a class="button button-primary" href="https://taliferro.com/contact.html">Book a cloud review</a><a class="button" href="https://taliferro.com/case-studies.html">See outcomes</a></div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="use-cases">
+    <div class="page-shell">
+      <div class="section-head">
+        <div class="kicker">Common use cases</div>
+        <h2 id="teams-bring-us-in-when">Teams bring us in when:</h2>
+      </div>
+      <div class="grid grid-3">
+          <div class="card">
+            <h3>Cloud spend keeps climbing</h3>
+            <p>Costs rise without a clear reason because architecture decisions and scaling assumptions were never made explicit.</p>
+          </div>
+          <div class="card">
+            <h3>Deployments feel risky</h3>
+            <p>Changes ripple unpredictably through shared services and tightly coupled components.</p>
+          </div>
+          <div class="card">
+            <h3>No one fully understands the system</h3>
+            <p>Knowledge is siloed, documentation is outdated, and decisions depend on a few key people.</p>
+          </div>
+          <div class="card">
+            <h3>Reliability depends on luck</h3>
+            <p>Failures cascade because boundaries and failure domains were never designed intentionally.</p>
+          </div>
+          <div class="card">
+            <h3>Growth introduces fragility</h3>
+            <p>Scaling traffic, teams, or data volume makes the system harder—not easier—to operate.</p>
+          </div>
+          <div class="card">
+            <h3>You’re planning a major change</h3>
+            <p>Migrations, re-platforming, or compliance pressure require architectural clarity before execution.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- HOW -->
+  <section class="section" id="how">
+    <div class="page-shell">
+      <div class="surface-panel">
+        <div class="kicker">How we design</div>
+        <h2 id="architecture-that-stays-legible-under-pressure">Architecture that stays legible under pressure</h2>
+        <div class="svc-steps">
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">1</span>
+            <h3>Map reality</h3>
+            <p>We diagram what actually exists — not what the docs claim.</p>
+          </div>
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">2</span>
+            <h3>Define boundaries</h3>
+            <p>Clear ownership, clear failure domains, clear costs.</p>
+          </div>
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">3</span>
+            <h3>Design for failure</h3>
+            <p>Systems assume components will fail — and recover cleanly.</p>
+          </div>
+          <div class="svc-step">
+            <span class="num-badge num-badge--solid">4</span>
+            <h3>Optimize last</h3>
+            <p>Cost and performance tuning after structure is correct.</p>
+          </div>
         </div>
-    </section>
-    <!-- USE CASES -->
-    <section class="section" id="use-cases">
-        <div class="page-shell">
-            <div class="kicker">Common use cases</div>
-            <h2 id="teams-bring-us-in-when">Teams bring us in when:</h2>
-            <div class="grid grid-3">
-                <div class="card">
-                    <h3>Cloud spend keeps climbing</h3>
-                    <p>Costs rise without a clear reason because architecture decisions and scaling assumptions were never made explicit.</p>
-                </div>
-                <div class="card">
-                    <h3>Deployments feel risky</h3>
-                    <p>Changes ripple unpredictably through shared services and tightly coupled components.</p>
-                </div>
-                <div class="card">
-                    <h3>No one fully understands the system</h3>
-                    <p>Knowledge is siloed, documentation is outdated, and decisions depend on a few key people.</p>
-                </div>
-                <div class="card">
-                    <h3>Reliability depends on luck</h3>
-                    <p>Failures cascade because boundaries and failure domains were never designed intentionally.</p>
-                </div>
-                <div class="card">
-                    <h3>Growth introduces fragility</h3>
-                    <p>Scaling traffic, teams, or data volume makes the system harder—not easier—to operate.</p>
-                </div>
-                <div class="card">
-                    <h3>You’re planning a major change</h3>
-                    <p>Migrations, re-platforming, or compliance pressure require architectural clarity before execution.</p>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+  <!-- CREDIBILITY -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="section-head">
+        <div class="kicker">Credibility</div>
+        <h2 id="what-teams-see-after-cleanup">What teams see after cleanup</h2>
+        <p class="fine">Experience includes work with AT&amp;T, T-Mobile, and Wipro.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card card--cyan svc-cred">
+          <h3>Lower spend</h3>
+          <p>Architectural fixes remove waste permanently.</p>
         </div>
-    </section>
-    <!-- HOW -->
-    <section id="how" class="section">
-        <div class="page-shell">
-            <div class="kicker">How we design</div>
-            <h2 id="architecture-that-stays-legible-under-pressure">Architecture that stays legible under pressure</h2>
-            <div class="grid grid-4">
-                <div class="card">
-                    <h3>1) Map reality</h3>
-                    <p>We diagram what actually exists — not what the docs claim.</p>
-                </div>
-                <div class="card">
-                    <h3>2) Define boundaries</h3>
-                    <p>Clear ownership, clear failure domains, clear costs.</p>
-                </div>
-                <div class="card">
-                    <h3>3) Design for failure</h3>
-                    <p>Systems assume components will fail — and recover cleanly.</p>
-                </div>
-                <div class="card">
-                    <h3>4) Optimize last</h3>
-                    <p>Cost and performance tuning after structure is correct.</p>
-                </div>
-            </div>
+        <div class="card card--cyan svc-cred">
+          <h3>Faster changes</h3>
+          <p>Clear boundaries reduce coordination overhead.</p>
         </div>
-    </section>
-    <!-- CREDIBILITY -->
-    <section class="section">
-        <div class="page-shell">
-            <div class="kicker">Credibility</div>
-            <h2 id="what-teams-see-after-cleanup">What teams see after cleanup</h2>
-            <div class="fine" style="margin-top:-8px; margin-bottom: 8px;">Experience includes work with AT&amp;T, T-Mobile, and Wipro.</div>
-            <div class="grid grid-3">
-                <div class="card">
-                    <h3>Lower spend</h3>
-                    <p>Architectural fixes remove waste permanently.</p>
-                </div>
-                <div class="card">
-                    <h3>Faster changes</h3>
-                    <p>Clear boundaries reduce coordination overhead.</p>
-                </div>
-                <div class="card">
-                    <h3>Calmer operations</h3>
-                    <p>Incidents become contained, not cascading.</p>
-                </div>
-            </div>
+        <div class="card card--cyan svc-cred">
+          <h3>Calmer operations</h3>
+          <p>Incidents become contained, not cascading.</p>
         </div>
-    </section>
-    <!-- VIDEO -->
-    <section class="section">
-        <div class="page-shell">
-            <div class="card">
-                <video controls preload="metadata" playsinline poster="https://taliferro.com/cloud-architecture-consulting/img/cloud-architecture-video.webp">
-                    <source src="https://taliferro.com/cloud-architecture-consulting/img/video/cloud-architecture-consulting.mp4" type="video/mp4" />
-                </video>
-            </div>
+      </div>
+    </div>
+  </section>
+  <!-- VIDEO -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="svc-video">
+        <video controls preload="metadata" playsinline poster="https://taliferro.com/cloud-architecture-consulting/img/cloud-architecture-video.webp">
+          <source src="https://taliferro.com/cloud-architecture-consulting/img/video/cloud-architecture-consulting.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+  <!-- PROBLEM -->
+  <section class="section">
+    <div class="page-shell split">
+      <div>
+        <div class="kicker">Why it matters</div>
+        <h2 id="cloud-architecture-matters-when-momentum-is-on-the">Cloud architecture matters when momentum is on the line</h2>
+        <p>Good cloud architecture gives the work a business frame: fewer failure cascades, lower waste, and clearer ownership so teams can keep moving under pressure.</p>
+      </div>
+      <div class="card card--surface">
+        <div class="kicker">Path</div>
+        <h3>From diagnosis to execution</h3>
+        <p>A cloud review identifies exactly what's costing you and why. We stay with the fix until it is tracked and finished — instead of it becoming one more item nobody owns.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="page-shell">
+      <div class="section-head">
+        <div class="kicker">Related insights</div>
+        <h2 id="common-cloud-failure-patterns">Common cloud failure patterns</h2>
+      </div>
+      <div class="grid grid-3">
+        <a class="link-card" href="https://taliferro.com/blog/mar2023/mar172023/questions-to-ask-starting-a-cloud-project.html"><span class="tag tag--sm">Blog</span>
+          <span class="link-card__title">Questions to Ask Starting a Cloud Project</span>
+          <p>Get the architecture questions right before complexity compounds.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/blog/mar2023/mar192023/controlling-cloud-cost.html"><span class="tag tag--sm">Blog</span>
+          <span class="link-card__title">Controlling Cloud Cost</span>
+          <p>Fix the structural reasons spend keeps climbing.</p>
+          <span class="more">Read →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/blog/feb2023/feb042023/google-cloud-architecture-fundamentals-tips-and-tricks.html"><span class="tag tag--sm">Blog</span>
+          <span class="link-card__title">Google Cloud Architecture Fundamentals</span>
+          <p>Build a more reliable foundation before growth adds pressure.</p>
+          <span class="more">Read →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ (text matches the FAQPage JSON-LD) -->
+  <section class="section" id="faq">
+    <div class="page-shell svc-faq">
+      <div>
+        <div class="kicker">FAQ</div>
+        <h2 id="common-questions-before-a-cloud-review">Common questions before a cloud review</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>We already have cloud engineers. What do you add?</summary>
+          <p>We bring an outside architectural lens. Most teams know how to build in the cloud. The hard part is keeping the system legible as it grows—clear boundaries, predictable failure domains, and cost treated as a design constraint.</p>
+        </details>
+        <details>
+          <summary>Do you work with AWS, Azure, and GCP?</summary>
+          <p>Yes. The provider matters, but the architecture matters more. We focus on boundaries, flow, reliability, and cost control—then choose the simplest cloud-native building blocks that fit.</p>
+        </details>
+        <details>
+          <summary>How do you reduce cloud spend without cutting capability?</summary>
+          <p>Most waste comes from architecture drift: over-provisioned services, duplicated tooling, runaway data and storage patterns, and unbounded scaling assumptions. We fix the structure first, then optimize the right levers.</p>
+        </details>
+        <details>
+          <summary>What do you need from us to get started?</summary>
+          <p>A rough spend range, your biggest operational pain, and any upcoming deadlines or scale events. Screenshots and notes are fine. We’ll map what exists and identify what to fix first.</p>
+        </details>
+        <details>
+          <summary>How fast can we see impact?</summary>
+          <p>Teams usually see quick wins once boundaries and costs are made explicit. Larger changes depend on risk tolerance, deployment constraints, and how much of the system is shared.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="dark-panel svc-final">
+        <div>
+          <div class="kicker">Next step</div>
+          <h2 id="want-a-cloud-architecture-you-can-reason-about">Want a cloud architecture you can reason about?</h2>
+          <p>Book a short call. We’ll identify where cost, fragility, or confusion is entering the system.</p>
+          <div class="btnrow"><a class="button" href="https://taliferro.com/contact.html">Book a cloud review</a><a class="button button--ghost" href="/rescue-me/cloud-cost-control/">Start with a $999 IT Rescue</a></div>
         </div>
-    </section>
-    <section class="section">
-        <div class="wrap grid grid-2">
-            <div class="card">
-                <div class="kicker">Why it matters</div>
-                <h2 id="cloud-architecture-matters-when-momentum-is-on-the">Cloud architecture matters when momentum is on the line</h2>
-                <p>Good cloud architecture gives the work a business frame: fewer failure cascades, lower waste, and clearer ownership so teams can keep moving under pressure.</p>
-            </div>
-            <div class="card">
-                <div class="kicker">Path</div>
-                <h3>From diagnosis to execution</h3>
-                <p>A cloud review identifies exactly what's costing you and why. We stay with the fix until it is tracked and finished — instead of it becoming one more item nobody owns.</p>
-            </div>
+        <div class="inner-panel">
+          <h3>What to send us</h3>
+          <p>To make the call useful, send whatever you already have. Even partial info helps.</p>
+          <ul>
+            <li>Which cloud provider(s) you’re using (AWS, Azure, GCP)</li>
+            <li>Rough monthly cloud spend (a range is fine)</li>
+            <li>The biggest issue slowing you down right now</li>
+            <li>Any upcoming scale, migration, or deadline pressure</li>
+          </ul>
+          <p class="svc-note">Don’t worry about formatting. Screenshots, notes, or a quick paragraph all work.</p>
         </div>
-    </section>
-    <!-- RELATED INSIGHTS -->
-    <section class="section">
-        <div class="page-shell">
-            <div class="kicker">Related insights</div>
-            <h2 id="common-cloud-failure-patterns">Common cloud failure patterns</h2>
-            <div class="grid grid-3">
-                <a class="card" href="https://taliferro.com/blog/mar2023/mar172023/questions-to-ask-starting-a-cloud-project.html">
-                    <h3>Questions to Ask Starting a Cloud Project</h3>
-                    <p>Get the architecture questions right before complexity compounds.</p>
-                    <div class="fine">Blog • 6–8 min read</div>
-                </a>
-                <a class="card" href="https://taliferro.com/blog/mar2023/mar192023/controlling-cloud-cost.html">
-                    <h3>Controlling Cloud Cost</h3>
-                    <p>Fix the structural reasons spend keeps climbing.</p>
-                    <div class="fine">Blog • 6–8 min read</div>
-                </a>
-                <a class="card" href="https://taliferro.com/blog/feb2023/feb042023/google-cloud-architecture-fundamentals-tips-and-tricks.html">
-                    <h3>Google Cloud Architecture Fundamentals</h3>
-                    <p>Build a more reliable foundation before growth adds pressure.</p>
-                    <div class="fine">Blog • 6–8 min read</div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- FAQ (Not fluff; real objections) -->
-    <section class="section">
-        <div class="page-shell">
-            <div class="kicker">FAQ</div>
-            <h2 id="common-questions-before-a-cloud-review">Common questions before a cloud review</h2>
-            <div class="grid">
-                <details>
-                    <summary>We already have cloud engineers. What do you add?</summary>
-                    <p> We bring an outside architectural lens. Most teams know how to build in the cloud. The hard part is keeping the system legible as it grows—clear boundaries, predictable failure domains, and cost treated as a design constraint. </p>
-                </details>
-                <details>
-                    <summary>Do you work with AWS, Azure, and GCP?</summary>
-                    <p> Yes. The provider matters, but the architecture matters more. We focus on boundaries, flow, reliability, and cost control—then choose the simplest cloud-native building blocks that fit. </p>
-                </details>
-                <details>
-                    <summary>How do you reduce cloud spend without cutting capability?</summary>
-                    <p> Most waste comes from architecture drift: over-provisioned services, duplicated tooling, runaway data and storage patterns, and unbounded scaling assumptions. We fix the structure first, then optimize the right levers. </p>
-                </details>
-                <details>
-                    <summary>What do you need from us to get started?</summary>
-                    <p> A rough spend range, your biggest operational pain, and any upcoming deadlines or scale events. Screenshots and notes are fine. We’ll map what exists and identify what to fix first. </p>
-                </details>
-                <details>
-                    <summary>How fast can we see impact?</summary>
-                    <p> Teams usually see quick wins once boundaries and costs are made explicit. Larger changes depend on risk tolerance, deployment constraints, and how much of the system is shared. We’ll propose a sequence that reduces risk while improving reliability. </p>
-                </details>
-            </div>
-        </div>
-    </section>
-    <!-- FINAL CTA -->
-    <section class="section">
-        <div class="wrap grid grid-2">
-            <div>
-                <div class="kicker">Next step</div>
-                <h2 id="want-a-cloud-architecture-you-can-reason-about">Want a cloud architecture you can reason about?</h2>
-                <p> Book a short call. We’ll identify where cost, fragility, or confusion is entering the system. </p>
-                <div class="btnrow">
-                    <a class="button button-primary" href="https://taliferro.com/contact.html">Book a cloud review</a>
-                </div>
-            </div>
-            <div class="card">
-                <h3>What to send us</h3>
-                <p> To make the call useful, send whatever you already have. Even partial info helps. </p>
-                <ul class="list">
-                    <li>Which cloud provider(s) you’re using (AWS, Azure, GCP)</li>
-                    <li>Rough monthly cloud spend (a range is fine)</li>
-                    <li>The biggest issue slowing you down right now</li>
-                    <li>Any upcoming scale, migration, or deadline pressure</li>
-                </ul>
-                <p class="fine"> Don’t worry about formatting. Screenshots, notes, or a quick paragraph all work. </p>
-            </div>
-        </div>
-    </section>
-    <div class="bottom-pad"></div>
+      </div>
+    </div>
+  </section>
+  <div class="bottom-pad"></div>
+  <script>
+    (function () {
+      var box = document.querySelector('[data-self-check]');
+      if (!box) return;
+      var checks = box.querySelectorAll('.svc-check');
+      var verdict = box.querySelector('.svc-verdict');
+      var cta = box.querySelector('.svc-check-cta');
+      var review = box.getAttribute('data-review');
+      var lines = [
+        ['Pick any that apply.', 'Each one is a sign the system needs attention.'],
+        ['1 of 4.', 'Worth a look before it spreads. A ' + review + ' will show where it started.'],
+        ['2 of 4.', 'These usually share a root cause. A ' + review + ' finds it.'],
+        ['3 of 4.', 'This is costing you more than it should. Start with a $999 IT Rescue.'],
+        ['4 of 4.', 'This is costing you every week. Start with a $999 IT Rescue for a written plan in 3 days.']
+      ];
+      function update() {
+        var n = box.querySelectorAll('.svc-check[aria-pressed="true"]').length;
+        verdict.innerHTML = '';
+        var strong = document.createElement('strong');
+        strong.textContent = lines[n][0];
+        verdict.appendChild(strong);
+        verdict.appendChild(document.createTextNode(' ' + lines[n][1]));
+        var rescue = n >= 3;
+        cta.textContent = rescue ? 'Start with a $999 IT Rescue' : box.getAttribute('data-review-label');
+        cta.setAttribute('href', box.getAttribute(rescue ? 'data-rescue-href' : 'data-review-href'));
+        return n;
+      }
+      Array.prototype.forEach.call(checks, function (btn, i) {
+        btn.addEventListener('click', function () {
+          var on = btn.getAttribute('aria-pressed') !== 'true';
+          btn.setAttribute('aria-pressed', String(on));
+          var n = update();
+          if (window.gtag) gtag('event', 'self_check', { page: box.getAttribute('data-page'), item: i + 1, checked: on, total_checked: n });
+        });
+      });
+      cta.addEventListener('click', function () {
+        if (window.gtag) gtag('event', 'self_check_cta', { page: box.getAttribute('data-page'), destination: cta.getAttribute('href') });
+      });
+    })();
+  </script>
     <script>
         (function () {
             var btn = document.querySelector('.theme-toggle');

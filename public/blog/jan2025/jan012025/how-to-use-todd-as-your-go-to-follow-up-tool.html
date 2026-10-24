@@ -60,8 +60,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -139,53 +139,48 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#why-the-lead-actually-goes-cold">Why leads</a>
-        <a href="#what-todd-actually-does">What TODD</a>
-        <a href="#a-day-with-todd">A day with</a>
-        <a href="#where-todd-fits-with-your-crm">Where TODD</a>
-        <a href="#faq">FAQ</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>You Didn't Lose the Lead</h1>
-          <h2> You Lost Track of It</h2>
-          <p>A CRM can log every contact you've ever met and still let the follow-up slip, the context fade, and the lead go cold. Taliferro built TODD as a Momentum System that remembers what was said, tells you who needs a nudge today, and drafts the follow-up itself — not another dashboard, an assistant that finishes the job. No sticky notes.</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>Web Development</span></nav>
+      <h1>You Didn't Lose the Lead</h1>
+      <h2 class="post-sub">You Lost Track of It</h2>
+      <p class="post-dek">A CRM can log every contact you've ever met and still let the follow-up slip, the context fade, and the lead go cold. Taliferro built TODD as a Momentum System that remembers what was said, tells you who needs a nudge today, and drafts the follow-up itself — not another dashboard, an assistant that finishes the job. No sticky notes.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2025-01-01">Jan 1, 2025</time> · 2 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <div>
             <p class="wow fadeInUp" data-link-bridge="true">When the deeper issue is stalled execution, <a href="https://taliferro.com/website-development/">software development support</a> shows how Taliferro turns execution work into working execution, and the <a href="https://taliferro.tech/">Momentum System</a> keeps the work tied to outcomes instead of activity.</p>
@@ -221,12 +216,9 @@
             <p>Yes. TODD works for solo entrepreneurs and small teams, and scales as your follow-up volume grows.</p>
             <p>If you want TODD to do the follow-up heavy lifting for you, <a href="https://todd.taliferro.tech/">try TODD as a Momentum System</a> and let it turn your contacts and notes into the next moves that keep work moving.</p>
           </div>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
-            <strong>Need momentum, not another patch?</strong>
-            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">workflow execution support</a>, connect it to the <a href="https://taliferro.tech/">momentum system</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
-          </div>
           <div class="post__tags mt-small">
             <h3 class="h6">Related reading</h3>
             <ul>
@@ -238,24 +230,52 @@
             <div class="divider"></div>
           </div>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="how-to-use-todd-as-your-go-to-follow-up-tool">Tell us what is stuck</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
+        <div class="callout" data-internal-cta="true">
+            <strong>Need momentum, not another patch?</strong>
+            <p class="mb-0">Start with <a href="https://taliferro.com/website-development/">workflow execution support</a>, connect it to the <a href="https://taliferro.tech/">momentum system</a>, or <a href="https://taliferro.com/contact.html">book a short consult</a>.</p>
           </div>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#why-the-lead-actually-goes-cold">Why the lead actually goes cold</a>
+          <a href="#what-todd-actually-does">What TODD actually does</a>
+          <a href="#a-day-with-todd">A day with TODD</a>
+          <a href="#where-todd-fits-with-your-crm">Where TODD fits with your CRM</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Legacy</div>
+          <div class="post-rescue__title">Rebuild or patch? Get one honest answer</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/rebuild-vs-patch/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html">&larr; Secure Customer Access to Project Data</a>
-            <a class="button" href="https://taliferro.com/blog/jan2025/jan032025/simplify-your-data-collection-with-todd-survey.html">Collecting Answers Isn't the Hard Part. Using Them Is. &rarr;</a>
-          </nav>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
+        </div>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/website-development/" data-intent="blog" data-source="blog_cta" data-page="how-to-use-todd-as-your-go-to-follow-up-tool">Tell us what is stuck</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/dec2024/dec102024/secure-customer-access-to-project-data.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Secure Customer Access to Project Data</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/jan2025/jan032025/simplify-your-data-collection-with-todd-survey.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Collecting Answers Isn't the Hard Part. Using Them Is.</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>

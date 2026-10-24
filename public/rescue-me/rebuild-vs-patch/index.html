@@ -94,107 +94,155 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
-<body class="story-page">
+<body class="page-rescue">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#legacy-systems-do-not-fail-loudly-at-first-they-dr">Legacy</a>
-        <a href="#you-are-already-paying-for-the-decision-you-have-n">Paying</a>
-        <a href="#rebuild-feels-risky-patching-feels-temporary-both-">Rebuild</a>
-        <a href="#get-one-honest-recommendation-before-you-commit-re">Honest</a>
-        <a href="#decide-what-to-rebuild-and-what-to-leave-alone">Decide</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/" aria-current="page">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
-  <!-- HERO -->
-  <header class="hero">
-    <div class="page-shell">
-      <div class="hero-grid">
-        <div class="story-panel">
+    <main>
+    <section class="hero rescue-hero">
+      <div class="page-shell hero-grid">
+        <div>
           <div class="kicker">CTO · Legacy Systems</div>
           <h1>The Old System Is Slowing You Down. Rebuild It or Fix It?</h1>
-          <p class="story-summary">The wrong answer costs years. The right answer is usually knowable sooner than people think.</p>
-          <p class="story-detail">You do not need more debate first. You need a clear read on what the current system is costing, blocking, and still capable of supporting.</p>
-          <div class="btnrow">
+          <p class="rescue-summary">The wrong answer costs years. The right answer is usually knowable sooner than people think.</p>
+          <p class="rescue-detail">You do not need more debate first. You need a clear read on what the current system is costing, blocking, and still capable of supporting.</p>
+          <div class="rescue-chips">
+            <span class="pill pill--solid">$999 flat</span>
+            <span class="pill">Intake within 24 hours</span>
+            <span class="pill">Written plan in 3 days</span>
+          </div>
+          <div class="hero-actions">
             <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
             <a class="button" href="mailto:info@taliferro.com?subject=Legacy%20System%20Assessment">Ask a question</a>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="https://taliferro.com/img/post4.webp" alt="CTO evaluating whether to rebuild or modernize legacy system blocking company growth" style="width:100%;display:block;" loading="eager" />
+        <div>
+          <img class="media rescue-hero__img" src="https://taliferro.com/img/post4.webp" alt="CTO evaluating whether to rebuild or modernize legacy system blocking company growth" loading="eager" />
         </div>
       </div>
-      <div class="bottom-pad" aria-hidden="true"></div>
-    </div>
-  </header>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">The signal</div>
-        <h2 id="legacy-systems-do-not-fail-loudly-at-first-they-dr">Legacy systems do not fail loudly at first. They drain quietly</h2>
-        <p class="story-summary">Each new feature gets slower, each workaround gets more permanent, and the cost of waiting keeps compounding.</p>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="how-it-works">
-    <div class="page-shell">
-      <div class="story-split">
-        <div class="story-panel">
+    </section>
+
+    <section class="rescue-story" id="how-it-works" aria-label="How the problem develops">
+      <div class="page-shell">
+        <div class="rescue-steps">
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">1</span>
+          <div class="kicker">The signal</div>
+          <h3 id="legacy-systems-do-not-fail-loudly-at-first-they-dr">Legacy systems do not fail loudly at first. They drain quietly</h3>
+          <p>Each new feature gets slower, each workaround gets more permanent, and the cost of waiting keeps compounding.</p>
+        </article>
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">2</span>
           <div class="kicker">The real cost</div>
-          <h2 id="you-are-already-paying-for-the-decision-you-have-n">You are already paying for the decision you have not made yet</h2>
-          <p class="story-summary">Staffing gets harder. Change gets slower. Growth options get narrower because too much of the business still depends on brittle, aging logic.</p>
+          <h3 id="you-are-already-paying-for-the-decision-you-have-n">You are already paying for the decision you have not made yet</h3>
+          <p>Staffing gets harder. Change gets slower. Growth options get narrower because too much of the business still depends on brittle, aging logic.</p>
+        </article>
+        <article class="card rescue-step">
+          <span class="num-badge" aria-hidden="true">3</span>
+          <div class="kicker">Why it is hard to call</div>
+          <h3 id="rebuild-feels-risky-patching-feels-temporary-both-">Rebuild feels risky. Patching feels temporary. Both instincts are true</h3>
+          <p>The real question is whether the architecture still fits the next stage of the business.</p>
+        </article>
+        <article class="card rescue-step card--cyan rescue-step--fix">
+          <span class="num-badge" aria-hidden="true">4</span>
+          <div class="kicker">The rescue</div>
+          <h3 id="get-one-honest-recommendation-before-you-commit-re">Get one honest recommendation before you commit real money</h3>
+          <p>You get a written assessment of whether to rebuild, modernize, or harden what you have now, plus the reasoning and the first next move.</p>
+        </article>
         </div>
-        <div class="hero-media">
-          <img src="https://taliferro.com/img/rebuild-vs-patch.webp" alt="Legacy platform under technical and business review" style="width:100%;display:block;" loading="lazy" />
+        <p class="rescue-note">That answer has to come from the system and the business model together, not from a vendor pitch or internal fatigue.</p>
+      </div>
+    </section>
+
+    <section class="rescue-faq" id="faq">
+      <div class="page-shell split">
+        <div>
+          <div class="kicker">FAQ</div>
+          <h2 id="before-you-book">Before you book</h2>
+          <img class="media rescue-faq__img" src="https://taliferro.com/img/rebuild-vs-patch.webp" alt="Legacy platform under technical and business review" loading="lazy" />
+        </div>
+        <div class="faq">
+          <details>
+            <summary>When should you rebuild vs. modernize a legacy system?</summary>
+            <p>Rebuild when the architecture is fundamentally incompatible with where the business is going. Modernize when the core logic is sound and the bottlenecks are in specific layers — the database, API layer, or UI. Most CTOs overestimate the need to rebuild and underestimate how long it takes. The right test: can you clearly describe the new system in terms of the current business model? If not, the business needs to stabilize before the architecture can.</p>
+          </details>
+          <details>
+            <summary>How long does a full legacy system replacement actually take?</summary>
+            <p>Honest answer: 18–36 months for enterprise-scale systems. Most estimates are wrong because they don't account for data migration, integration testing, and user retraining. Budget for 2x what engineering estimates. The teams that succeed are the ones that account for this upfront, not the ones that discover it mid-project.</p>
+          </details>
+          <details>
+            <summary>What are the clear signs a legacy system needs replacing rather than refactoring?</summary>
+            <p>Replace when: (1) the tech stack can't be staffed because the skill set is too rare, (2) adding features requires understanding 10-year-old business logic that nobody can explain, or (3) the system processes data in a fundamentally different model than your business operates today. Refactor when the logic is sound and specific layers are the bottleneck.</p>
+          </details>
+          <details>
+            <summary>What is the cost of doing nothing with a legacy system?</summary>
+            <p>You're already paying it — in slower delivery, higher engineering turnover, and accumulated workarounds that make every project more expensive. The question isn't whether to pay; it's whether you pay now with a plan or later in a crisis. Unplanned legacy failure typically costs 3–5x more than planned modernization.</p>
+          </details>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel">
-        <div class="kicker">Why it is hard to call</div>
-        <h2 id="rebuild-feels-risky-patching-feels-temporary-both-">Rebuild feels risky. Patching feels temporary. Both instincts are true</h2>
-        <p class="story-summary">The real question is whether the architecture still fits the next stage of the business.</p>
-        <p class="story-detail">That answer has to come from the system and the business model together, not from a vendor pitch or internal fatigue.</p>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">The rescue</div>
-        <h2 id="get-one-honest-recommendation-before-you-commit-re">Get one honest recommendation before you commit real money</h2>
-        <p class="story-summary">You get a written assessment of whether to rebuild, modernize, or harden what you have now, plus the reasoning and the first next move.</p>
-      </div>
-    </div>
-  </section>
-  <!-- FINAL CTA -->
-  <section class="section">
-    <div class="page-shell">
-      <div class="story-panel story-panel--center">
-        <div class="kicker">Same-Day Rescue</div>
-        <p class="story-price">$999</p>
-        <h2 id="decide-what-to-rebuild-and-what-to-leave-alone">Decide what to rebuild and what to leave alone</h2>
-        <p class="story-summary">Get one honest recommendation, the reasoning behind it, and the first next move in 3 days.</p>
-        <div class="btnrow" style="justify-content:center;">
-          <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
-          <a class="button" href="mailto:info@taliferro.com?subject=Legacy%20System%20Assessment">Ask a question</a>
-          <a class="button" href="tel:+14016462662">Call directly</a>
+    </section>
+
+    <section class="rescue-cta">
+      <div class="page-shell">
+        <div class="dark-panel rescue-cta__band">
+          <div>
+            <div class="kicker">Same-Day Rescue</div>
+            <h2 id="decide-what-to-rebuild-and-what-to-leave-alone">Decide what to rebuild and what to leave alone</h2>
+            <p>Get one honest recommendation, the reasoning behind it, and the first next move in 3 days.</p>
+          </div>
+          <div>
+            <div class="rescue-price">$999</div>
+            <div class="hero-actions">
+            <a class="button" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
+            <a class="button button--ghost" href="mailto:info@taliferro.com?subject=Legacy%20System%20Assessment">Ask a question</a>
+            <a class="button button--ghost" href="tel:+14016462662">Call directly</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="rescue-related" data-related-services="true">
+      <div class="page-shell">
+        <h2>If this isn't the whole problem</h2>
+        <div class="grid grid-3">
+        <a class="link-card" href="https://taliferro.com/rescue-me/">
+          <span class="link-card__title">IT Rescue — $999 Flat</span>
+          <p>Diagnose the problem in 3 business days. No retainer.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/website-development/">
+          <span class="link-card__title">Website Development</span>
+          <p>Custom sites and software from a team that sticks around after launch.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        <a class="link-card" href="https://taliferro.com/fractional-cto/">
+          <span class="link-card__title">Fractional CTO</span>
+          <p>Technology leadership without the full-time hire.</p>
+          <span class="more">Consulting service →</span>
+        </a>
+        </div>
+      </div>
+    </section>
+  </main>
   <script>
     (function () {
       var btn = document.querySelector('.theme-toggle');
@@ -214,31 +262,7 @@
       });
     })();
   </script>
-    <!-- RELATED SERVICES -->
-    <section class="section" data-related-services="true">
-        <div class="page-shell">
-            <div class="kicker">Related services</div>
-            <h2>If this isn't the whole problem</h2>
-            <div class="grid grid-3">
-                <a class="card" href="https://taliferro.com/rescue-me/">
-                    <h3>IT Rescue — $999 Flat</h3>
-                    <p>Diagnose the problem in 3 business days. No retainer.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-                <a class="card" href="https://taliferro.com/website-development/">
-                    <h3>Website Development</h3>
-                    <p>Custom sites and software from a team that sticks around after launch.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-                <a class="card" href="https://taliferro.com/fractional-cto/">
-                    <h3>Fractional CTO</h3>
-                    <p>Technology leadership without the full-time hire.</p>
-                    <div class="fine">Consulting service</div>
-                </a>
-            </div>
-        </div>
-    </section>
-<footer class="footer no-print">
+  <footer class="footer no-print">
     <div class="page-shell">
       <div class="footer-inner">
         <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>

@@ -63,8 +63,8 @@
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico">
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2585a2" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070a" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#eef5f8" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#07121f" />
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -112,53 +112,47 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="https://taliferro.com/css/taliferro-styles-v21.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=8efd1e83">
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
 <body class="page-affordable-web-dev page-blog">
   <header class="topbar no-print">
     <div class="page-shell topbar-inner">
-      <a class="brand" href="https://taliferro.com" aria-label="Taliferro Group home">
-        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" loading="lazy" onerror="this.style.display='none'" />
-        <span>Taliferro Group</span>
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
       </a>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#apigee-configuration">Apigee Configuration</a>
-        <a href="#define-clear-business-objectives">Define Clear</a>
-        <a href="#infrastructure-deployment">Infrastructure Deployment</a>
-        <a href="#api-design-and-development">API Design</a>
-        <a href="#security-and-access-control">Security And</a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a href="/about.html">About</a>
         <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
-        <a class="button button-primary" href="https://taliferro.com/contact.html">Get Started</a>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
       </nav>
     </div>
   </header>
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero post-hero">
     <div class="page-shell">
-      <div class="hero-grid">
-        <div>
-          <h1>Most Apigee Problems Start With How It Was Configured</h1>
-          <p>Apigee is powerful but easy to misconfigure — this guide walks through setting it up correctly, with real scenarios and working code samples, so business objectives, security, and performance are handled from the start instead of patched in later.</p>
-          <p class="fine">Published: 25 Jun 2023 · Updated: 17 Aug 2026</p>
-          <div class="btnrow">
-            <a class="button button-primary" href="https://taliferro.com/blog/">Blog home</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
-          <div class="card" style="margin-top:16px;">
-            <p class="quote">By <a href="https://taliferro.com/team/tyrone-showers/">Tyrone Showers</a></p>
-            <p class="fine">Co-Founder Taliferro</p>
-          </div>
-        </div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span>API</span></nav>
+      <h1>Most Apigee Problems Start With How It Was Configured</h1>
+      <p class="post-dek">Apigee is powerful but easy to misconfigure — this guide walks through setting it up correctly, with real scenarios and working code samples, so business objectives, security, and performance are handled from the start instead of patched in later.</p>
+      <div class="byline">
+        <span class="byline__avatar" aria-hidden="true">TS</span>
+        <span class="byline__text">
+          <a class="byline__name" href="/team/tyrone-showers/">Tyrone Showers</a>
+          <span class="byline__meta">Co-Founder Taliferro · <time datetime="2023-06-25">Jun 25, 2023</time> · 5 min read</span>
+        </span>
       </div>
     </div>
   </header>
   <!-- ARTICLE -->
-  <section class="section" aria-label="Article">
-    <div class="page-shell">
-      <div class="kicker">Article</div>
-      <div class="card">
+  <section class="section post-body" aria-label="Article">
+    <div class="page-shell post-layout">
+      <article class="post-article">
         <div class="post__content clearfix">
           <h2 id="apigee-configuration"> Apigee Configuration </h2>
           <p><span> Getting <a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API management</a> right starts with how Apigee is configured, not how it's patched afterward. This guide walks through real scenarios and working steps for setting it up: optimizing performance, tightening <a href="https://taliferro.com/blog/nov2023/nov232023/the-exclusive-benefits-of-our-limited-api-certification.html">security</a>, and building in the scalability a growing </span><a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API program</a> is going to need. </span></p>
@@ -384,47 +378,66 @@
           </ul>
           <h2 id="conclusion"> Conclusion </h2>
           <p><span> The steps above — clear objectives, deliberate infrastructure choices, solid API design, layered security, real traffic management, active monitoring, careful backend integration, and <a href="https://taliferro.com/blog/oct2023/oct212023/automate-automate-automate-the-self-growing-garden-of-cloud-auto-scaling.html">automated</a> deployments — are what separate an Apigee setup that scales cleanly from one that needs constant firefighting. Get the configuration right the first time, and <a href="https://taliferro.com/blog/nov2023/nov102023/implementing-decentralized-api-management-with-apigee-edge-microgateway.html">API management</a> stops being a source of ongoing pain. </span></p>
-          <cite>Tyrone Showers</cite><br>
+          <cite>Tyrone Showers</cite>
+          <br>
           <a href="mailto:ty.showers@taliferro.com"><i class="fa fa-envelope-o" aria-label="Email Me"></i></a>
-          <div class="callout mt-3 p-3" style="border-left:4px solid #222" data-internal-cta="true">
+        </div>
+        <div class="callout" data-internal-cta="true">
             <strong>Need a cleaner API path?</strong>
             <p class="mb-0">Turn the article into action with <a href="https://taliferro.com/api-design-services/">how we harden API delivery</a>, connect it to the <a href="https://taliferro.tech/">momentum system</a>, or <a href="https://taliferro.com/contact.html">talk through the gateway design</a>.</p>
           </div>
-          <div class="post__tags mt-small">
-            <div class="tagcloud">
-              <ul>
-                <li><em>Apigee configuration</em></li>
-                <li><em>security</em></li>
-                <li><em>API management</em></li>
-              </ul>
-            </div>
-            <div class="divider"></div>
-            <p class="quote">Tags</p>
-            <ul class="list">
-              <li>Apigee configuration</li>
-              <li>security</li>
-              <li>API management</li>
-            </ul>
-          </div>
+        <ul class="post-tags" aria-label="Tags">
+          <li>Apigee configuration</li>
+          <li>security</li>
+          <li>API management</li>
+        </ul>
+      </article>
+      <aside class="post-aside no-print">
+        <nav class="post-toc" aria-label="In this post">
+          <div class="kicker">In this post</div>
+          <a href="#apigee-configuration">Apigee Configuration</a>
+          <a href="#define-clear-business-objectives">Define Clear Business Objectives</a>
+          <a href="#infrastructure-deployment">Infrastructure Deployment</a>
+          <a href="#api-design-and-development">API Design And Development</a>
+          <a href="#security-and-access-control">Security And Access Control</a>
+          <a href="#traffic-management-and-performance-optimization">Traffic Management And Performance Optimization</a>
+          <a href="#monitoring-and-analytics">Monitoring And Analytics</a>
+          <a href="#integration-with-backend-systems">Integration With Backend Systems</a>
+          <a href="#continuous-integration-and-deployment">Continuous Integration And Deployment</a>
+          <a href="#conclusion">Conclusion</a>
+        </nav>
+        <div class="post-rescue">
+          <div class="post-rescue__kicker">Rescue · Data</div>
+          <div class="post-rescue__title">Fix unreliable data before it costs more</div>
+          <p>$999 flat. Written plan in 3 days.</p>
+          <a class="button" href="/rescue-me/data-quality/" data-source="blog_aside">See the Rescue</a>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">Want this fixed on your site?</p>
-          <p> Tell us your URL and what feels slow. We’ll point to the first thing to fix. </p>
-          <div class="btnrow" style="margin-top:10px;">
-            <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="mastering-apigee">API consulting</a>
-            <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
-          </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section post-end no-print" aria-label="Next steps">
+    <div class="page-shell">
+      <div class="post-cta">
+        <div>
+          <h2>Want this fixed on your site?</h2>
+          <p>Tell us your URL and what feels slow. We’ll point to the first thing to fix.</p>
         </div>
-        <div class="divider"></div>
-        <div class="card">
-          <p class="quote">More from the blog</p>
-          <nav class="post-nav btnrow" style="margin-top:10px;" aria-label="Post navigation">
-            <a class="button" href="https://taliferro.com/blog/jun2023/jun242023/empowering-marginalized-communities-with-secure-online-access.html">&larr; Empowering Inclusive Web Security</a>
-            <a class="button" href="https://taliferro.com/blog/jun2023/jun262023/the-impending-generative-ai-revolution-and-its-implications-for-employment.html">Generative AI Is Coming for Knowledge Workers Too &rarr;</a>
-          </nav>
+        <div class="btnrow">
+          <a class="button button-primary" href="https://taliferro.com/api-design-services/" data-intent="api_design" data-source="blog_cta" data-page="mastering-apigee">API consulting</a>
+          <a class="button" href="https://taliferro.com/blog/toc.html">Browse topics</a>
         </div>
       </div>
+      <nav class="post-nav" aria-label="Post navigation">
+        <a class="post-nav__link" href="https://taliferro.com/blog/jun2023/jun242023/empowering-marginalized-communities-with-secure-online-access.html">
+          <span class="post-nav__dir">← Previous</span>
+          <span class="post-nav__title">Empowering Inclusive Web Security</span>
+        </a>
+        <a class="post-nav__link post-nav__link--next" href="https://taliferro.com/blog/jun2023/jun262023/the-impending-generative-ai-revolution-and-its-implications-for-employment.html">
+          <span class="post-nav__dir">Next →</span>
+          <span class="post-nav__title">Generative AI Is Coming for Knowledge Workers Too</span>
+        </a>
+      </nav>
+    </div>
   </section>
   <div class="bottom-pad"></div>
   <script>
