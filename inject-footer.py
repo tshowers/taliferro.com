@@ -25,6 +25,7 @@ FOOTER = """\
           <a href="/about.html">About</a>
           <a href="/contact.html">Contact</a>
           <a href="/case-studies.html">Case Studies</a>
+          <a href="/gallery/">Gallery</a>
           <a href="/sitemap.html">Sitemap</a>
         </nav>
       </div>

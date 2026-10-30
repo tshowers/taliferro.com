@@ -808,3 +808,52 @@ body.theme-dark :is(.post__content, .post-extras) [style*="color:#4b5563"] { col
 /* Caprasimo has a single weight; never let the browser fake a bold from it
    (v21-era inline font-weight:830 etc. on headings smeared the letterforms) */
 body { font-synthesis-weight: none; }
+
+/* Gallery: poster wall + lightbox */
+.gallery-hero { padding-bottom: 40px; }
+.gallery-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+.gallery-head > div:first-child { max-width: 640px; }
+.gallery-head h1 { margin-bottom: 16px; }
+.gallery-head .lead { font-size: 18px; margin: 0; }
+.gallery-head .chip-row { gap: 8px; }
+.gallery-head .chip:not([aria-pressed="true"]) { border-color: transparent; }
+.gallery-wall { padding-top: 0; }
+.poster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 18px; }
+.poster-card { background: var(--card); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: var(--shadow-sm); transition: box-shadow .15s; }
+.poster-card:hover { box-shadow: var(--shadow-md); }
+.poster-card[hidden] { display: none; }
+.poster-card__open { display: block; padding: 0; border: 0; border-radius: 0; background: var(--blue-900); cursor: zoom-in; }
+/* contain, not cover: several posters are 3:2 and cover would crop their headlines */
+.poster-card__open img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 0; }
+.poster-card__body { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.poster-card .tag { align-self: flex-start; }
+.tag--product { background: var(--blue-100); color: var(--blue-800); }
+.poster-card__title { font-size: 21px; line-height: 1.22; margin: 0; }
+.poster-card__body p { font-size: 15px; margin: 0; }
+.poster-card__cta { margin-top: auto; padding-top: 8px; font-size: 14px; font-weight: 700; color: var(--blue-700); text-decoration: none; }
+.poster-card__cta:hover { color: var(--accent); }
+body.theme-dark .tag--product { background: var(--blue-800); color: var(--blue-100); }
+body.theme-dark .poster-card__cta { color: var(--cyan-300); }
+
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(5, 18, 32, .78); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.lightbox[hidden] { display: none; }
+body.lightbox-open { overflow: hidden; }
+.lightbox__panel { background: var(--card); border-radius: var(--radius-lg); overflow: hidden; width: min(1040px, 100%); max-height: calc(100vh - 48px);
+  display: flex; flex-direction: column; box-shadow: 0 24px 64px rgba(0, 0, 0, .35); }
+.lightbox__img { display: block; width: 100%; flex: 1 1 auto; min-height: 0; max-height: calc(100vh - 200px); object-fit: contain; border-radius: 0; background: var(--blue-900); }
+.lightbox__bar { padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.lightbox__text { display: flex; flex-direction: column; gap: 4px; max-width: 620px; }
+.lightbox__title { font-size: 24px; line-height: 1.2; margin: 0; }
+.lightbox__sub { font-size: 15px; margin: 0; }
+.lightbox__actions { display: flex; gap: 10px; align-items: center; }
+.lightbox__nav { width: 44px; height: 44px; padding: 0; border-radius: 50%; font-size: 18px; }
+.lightbox__cta { padding: 13px 22px; font-size: 15px; }
+.lightbox__close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%;
+  background: #fff; color: var(--text); font-size: 20px; cursor: pointer; }
+@media (max-width: 640px) {
+  .lightbox { padding: 12px; }
+  .lightbox__bar { padding: 18px 20px; }
+  .lightbox__actions { width: 100%; }
+  .lightbox__cta { flex: 1; justify-content: center; }
+}

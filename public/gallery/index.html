@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
     const isLocal = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:';
     if (!isLocal) {
@@ -14,16 +15,25 @@
       gtag('js', new Date()); gtag('config', 'G-FDDC4DHEQN');
     }
   </script>
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
-  <title>Gallery | Taliferro Group</title>
-  <meta name="description" content="A fullscreen scrolling showcase from Taliferro Group." />
+  <title>Find Your Problem on the Wall | Gallery | Taliferro</title>
+  <meta name="description" content="Each Taliferro poster is a technology problem we fix: cloud costs, slow delivery, API security, AI adoption, ecommerce friction. Open one to see how." />
   <link rel="canonical" href="https://taliferro.com/gallery/" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="icon" type="image/x-icon" href="https://taliferro.com/img/general/favicon.ico" />
   <link rel="apple-touch-icon" href="https://taliferro.com/img/general/apple-touch-icon.png" />
-  <meta name="theme-color" content="#05070a" />
+  <meta name="theme-color" content="#eef5f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#07121f" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="Find Your Problem on the Wall | Taliferro" />
+  <meta property="og:description" content="Each poster is a problem we fix. Open one to see how." />
+  <meta property="og:url" content="https://taliferro.com/gallery/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Taliferro" />
+  <meta property="og:image" content="https://taliferro.com/img/gallery/taliferro-3.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Find Your Problem on the Wall | Taliferro" />
+  <meta name="twitter:description" content="Each poster is a problem we fix. Open one to see how." />
+  <meta name="twitter:image" content="https://taliferro.com/img/gallery/taliferro-3.webp" />
   <script type="text/javascript">
     if (location.protocol !== 'file:' && location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
       (function (c, l, a, r, i, t, y) {
@@ -33,70 +43,386 @@
       })(window, document, "clarity", "script", "vd128967w5");
     }
   </script>
-  <link rel="stylesheet" href="../css/gallery.css">
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=84cd05e7">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
-<body>
-  <a class="gallery-back-link" href="https://taliferro.com" aria-label="Back to Taliferro Group home">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
-  </a>
-  <div class="gallery-scroll-hint" aria-hidden="true">
-    <span>Scroll</span>
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
+<body class="page-gallery">
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
+      </a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+  <header class="hero gallery-hero">
+    <div class="page-shell">
+      <div class="gallery-head">
+        <div>
+          <h1>Find your problem on the wall</h1>
+          <p class="lead">Each poster is a problem we fix. Open one to see how.</p>
+        </div>
+        <div class="chip-row" role="group" aria-label="Filter posters by topic">
+          <!-- GALLERY-FILTERS:START -->
+          <button class="chip chip--sm" type="button" data-filter="All" aria-pressed="true">All</button>
+          <button class="chip chip--sm" type="button" data-filter="Product" aria-pressed="false">Product</button>
+          <button class="chip chip--sm" type="button" data-filter="Delivery" aria-pressed="false">Delivery</button>
+          <button class="chip chip--sm" type="button" data-filter="Cloud" aria-pressed="false">Cloud</button>
+          <button class="chip chip--sm" type="button" data-filter="Ecommerce" aria-pressed="false">Ecommerce</button>
+          <button class="chip chip--sm" type="button" data-filter="AI" aria-pressed="false">AI</button>
+          <button class="chip chip--sm" type="button" data-filter="API" aria-pressed="false">API</button>
+          <button class="chip chip--sm" type="button" data-filter="Strategy" aria-pressed="false">Strategy</button>
+          <!-- GALLERY-FILTERS:END -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- POSTERS (generated by root/scripts/gen-gallery.mjs from img/gallery/posters.json) -->
+  <section class="section gallery-wall" aria-label="Posters">
+    <div class="page-shell">
+      <div class="poster-grid">
+        <!-- GALLERY:START -->
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-1">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Stop answering the same question twice.">
+            <img src="/img/gallery/taliferro-1.webp" alt="Stop answering the same question twice. Response Flow captures your best answers and makes them instantly reusable." loading="eager" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">Stop answering the same question twice.</h2>
+            <p>Response Flow captures your best answers and makes them instantly reusable.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See Response Flow →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Delivery" data-poster="taliferro-3">
+          <button class="poster-card__open" type="button" aria-label="Open poster: The bug no one on your team can see.">
+            <img src="/img/gallery/taliferro-3.webp" alt="The bug no one on your team can see. Most software looks complete until someone with a different perspective shows you what you missed." loading="eager" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">Delivery</span>
+            <h2 class="poster-card__title">The bug no one on your team can see.</h2>
+            <p>Most software looks complete until someone with a different perspective shows you what you missed.</p>
+            <a class="poster-card__cta" href="/rescue-me/ship-faster/">Remove the release bottleneck →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Cloud" data-poster="taliferro-5">
+          <button class="poster-card__open" type="button" aria-label="Open poster: How to stop overpaying for cloud infrastructure.">
+            <img src="/img/gallery/taliferro-5.webp" alt="How to stop overpaying for cloud infrastructure. Smarter cloud decisions. Lower costs. Greater impact." loading="eager" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">Cloud</span>
+            <h2 class="poster-card__title">How to stop overpaying for cloud infrastructure.</h2>
+            <p>Smarter cloud decisions. Lower costs. Greater impact.</p>
+            <a class="poster-card__cta" href="/rescue-me/cloud-cost-control/">Cut your cloud bill →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-6">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Your customers are talking. Are you listening?">
+            <img src="/img/gallery/taliferro-6.webp" alt="Your customers are talking. Are you listening? Todd Pulse helps you hear what matters before they decide to leave." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">Your customers are talking. Are you listening?</h2>
+            <p>Todd Pulse helps you hear what matters before they decide to leave.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See Todd Pulse →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Ecommerce" data-poster="taliferro-2">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Carts die from friction.">
+            <img src="/img/gallery/taliferro-2.webp" alt="Carts die from friction. Make checkout easy, make buying effortless, and turn more visitors into customers." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">Ecommerce</span>
+            <h2 class="poster-card__title">Carts die from friction.</h2>
+            <p>Make checkout easy, make buying effortless, and turn more visitors into customers.</p>
+            <a class="poster-card__cta" href="/ecommerce-development/">Fix your checkout →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="AI" data-poster="taliferro-4">
+          <button class="poster-card__open" type="button" aria-label="Open poster: How to adopt AI without breaking your company.">
+            <img src="/img/gallery/taliferro-4.webp" alt="How to adopt AI without breaking your company. The right strategy, aligned with your people, for real impact." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">AI</span>
+            <h2 class="poster-card__title">How to adopt AI without breaking your company.</h2>
+            <p>The right strategy, aligned with your people, for real impact.</p>
+            <a class="poster-card__cta" href="/rescue-me/ai-without-risk/">Adopt AI without the risk →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-10">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Your next big opportunity is already in your business.">
+            <img src="/img/gallery/taliferro-10.webp" alt="Your next big opportunity is already in your business. TODD helps you see it, act on it and move forward." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">Your next big opportunity is already in your business.</h2>
+            <p>TODD helps you see it, act on it and move forward.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See TODD →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="API" data-poster="taliferro-8">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Most API breaches aren’t hacked. They’re left unlocked.">
+            <img src="/img/gallery/taliferro-8.webp" alt="Most API breaches aren’t hacked. They’re left unlocked. Inventory what’s exposed, verify who can reach it, and get outside eyes on it before an attacker does." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">API</span>
+            <h2 class="poster-card__title">Most API breaches aren’t hacked. They’re left unlocked.</h2>
+            <p>Inventory what’s exposed, verify who can reach it, and get outside eyes on it before an attacker does.</p>
+            <a class="poster-card__cta" href="/api-design-services/">Get an API security review →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Strategy" data-poster="taliferro-12">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Why is IT so expensive and still so slow?">
+            <img src="/img/gallery/taliferro-12.webp" alt="Why is IT so expensive and still so slow? High costs and hidden roadblocks. Smarter IT gets faster outcomes." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">Strategy</span>
+            <h2 class="poster-card__title">Why is IT so expensive and still so slow?</h2>
+            <p>High costs and hidden roadblocks. Smarter IT gets faster outcomes.</p>
+            <a class="poster-card__cta" href="/rescue-me/it-spend-slow/">Find where the money goes →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-7">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Silence is feedback too.">
+            <img src="/img/gallery/taliferro-7.webp" alt="Silence is feedback too. Todd Pulse uncovers what your customers aren’t saying out loud." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">Silence is feedback too.</h2>
+            <p>Todd Pulse uncovers what your customers aren’t saying out loud.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See Todd Pulse →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Ecommerce" data-poster="taliferro-16">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Ecommerce chaos costs more.">
+            <img src="/img/gallery/taliferro-16.webp" alt="Ecommerce chaos costs more. Too many tools, disconnected data and messy workflows. We bring clarity to your store." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">Ecommerce</span>
+            <h2 class="poster-card__title">Ecommerce chaos costs more.</h2>
+            <p>Too many tools, disconnected data and messy workflows. We bring clarity to your store.</p>
+            <a class="poster-card__cta" href="/ecommerce-development/">Untangle your store →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-13">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Every missed opportunity started as ignored information.">
+            <img src="/img/gallery/taliferro-13.webp" alt="Every missed opportunity started as ignored information. TODD sees what others miss so you can act while it matters." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">Every missed opportunity started as ignored information.</h2>
+            <p>TODD sees what others miss so you can act while it matters.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See TODD →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Strategy" data-poster="taliferro-9">
+          <button class="poster-card__open" type="button" aria-label="Open poster: From tangled systems to a clear path forward.">
+            <img src="/img/gallery/taliferro-9.webp" alt="From tangled systems to a clear path forward. Cloud, AI, APIs, agile coaching and web work from one team that sees the whole picture." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm">Strategy</span>
+            <h2 class="poster-card__title">From tangled systems to a clear path forward.</h2>
+            <p>Cloud, AI, APIs, agile coaching and web work from one team that sees the whole picture.</p>
+            <a class="poster-card__cta" href="/services/">Browse services →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-14">
+          <button class="poster-card__open" type="button" aria-label="Open poster: You don’t have an information problem. You have an attention problem.">
+            <img src="/img/gallery/taliferro-14.webp" alt="You don’t have an information problem. You have an attention problem. TODD cuts through the noise so you can focus on what matters." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">You don’t have an information problem. You have an attention problem.</h2>
+            <p>TODD cuts through the noise so you can focus on what matters.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See TODD →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-15">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Every complaint started as a whisper.">
+            <img src="/img/gallery/taliferro-15.webp" alt="Every complaint started as a whisper. Todd Pulse captures early signals so you can act before small becomes big." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">Every complaint started as a whisper.</h2>
+            <p>Todd Pulse captures early signals so you can act before small becomes big.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See Todd Pulse →</a>
+          </div>
+        </article>
+        <article class="poster-card" data-cat="Product" data-poster="taliferro-11">
+          <button class="poster-card__open" type="button" aria-label="Open poster: Capture one great answer. Deliver it every time.">
+            <img src="/img/gallery/taliferro-11.webp" alt="Capture one great answer. Deliver it every time. Response Flow turns your team’s knowledge into a step-by-step system anyone can follow." loading="lazy" />
+          </button>
+          <div class="poster-card__body">
+            <span class="tag tag--sm tag--product">Product</span>
+            <h2 class="poster-card__title">Capture one great answer. Deliver it every time.</h2>
+            <p>Response Flow turns your team’s knowledge into a step-by-step system anyone can follow.</p>
+            <a class="poster-card__cta" href="https://taliferro.tech" target="_blank" rel="noopener">See Response Flow →</a>
+          </div>
+        </article>
+        <!-- GALLERY:END -->
+      </div>
+    </div>
+  </section>
+  <!-- CTA -->
+  <section class="section">
+    <div class="page-shell">
+      <div class="dark-panel blog-cta">
+        <div>
+          <h2 id="dont-see-your-problem">Don't see your problem?</h2>
+          <p>Describe it in 60 seconds and we'll point to the right fix.</p>
+        </div>
+        <a class="button" href="/#triage">Start the triage</a>
+      </div>
+    </div>
+  </section>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <div class="lightbox__panel">
+      <img class="lightbox__img" src="" alt="" />
+      <div class="lightbox__bar">
+        <div class="lightbox__text">
+          <h2 class="lightbox__title" id="lightbox-title"></h2>
+          <p class="lightbox__sub"></p>
+        </div>
+        <div class="lightbox__actions">
+          <button class="lightbox__nav" type="button" data-step="-1" aria-label="Previous poster">←</button>
+          <button class="lightbox__nav" type="button" data-step="1" aria-label="Next poster">→</button>
+          <a class="button button-primary lightbox__cta" href="#"></a>
+        </div>
+      </div>
+    </div>
+    <button class="lightbox__close" type="button" aria-label="Close">×</button>
   </div>
-  <main class="gallery-viewport">
-    <!-- GALLERY:START -->
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-1.webp" alt="Two colleagues reviewing work together on a laptop" loading="eager" fetchpriority="high" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-2.webp" alt="Illustration of a team overwhelmed by scattered tasks and messages" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-3.webp" alt="Two engineers examining server hardware" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-4.webp" alt="Abstract teal and gold light" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-5.webp" alt="Portrait of a woman smiling by a window" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-6.webp" alt="Woman smiling while working at a laptop" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-7.webp" alt="Businessman working at a laptop in an office" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-8.webp" alt="Hand holding a printed monthly report with charts" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-9.webp" alt="Coffee, laptops, and a flowchart sketch on a desk" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-10.webp" alt="Close-up of hands typing on a laptop with code on screen" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-11.webp" alt="Illustration of a woman shopping online" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-12.webp" alt="Abstract illustration of headphones with sound waves" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-13.webp" alt="Team laughing while holding up sticky notes" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-14.webp" alt="Team collaborating behind a glass wall covered in sticky notes" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-15.webp" alt="Hands sketching a website wireframe" loading="lazy" />
-    </section>
-    <section class="gallery-scene">
-      <img src="../img/gallery/taliferro-16.webp" alt="Team celebrating with a fist bump" loading="lazy" />
-    </section>
-    <!-- GALLERY:END -->
-  </main>
-  <script src="../js/taliferro.gallery.js"></script>
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/gallery/" aria-current="page">Gallery</a>
+          <a href="/sitemap.html">Sitemap</a>
+        <a href="https://taliferro.tech">Looking for our software? taliferro.tech</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <!-- Dark mode toggle -->
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+  <!-- Filters, lightbox, tracking -->
+  <script>
+    (function () {
+      var chips = document.querySelectorAll('[data-filter]');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.poster-card'));
+      var box = document.getElementById('lightbox');
+      var img = box.querySelector('.lightbox__img');
+      var title = box.querySelector('.lightbox__title');
+      var sub = box.querySelector('.lightbox__sub');
+      var cta = box.querySelector('.lightbox__cta');
+      var current = null, opener = null;
+
+      function track(name, params) {
+        if (typeof window.gtag === 'function') window.gtag('event', name, params);
+      }
+      function visible() { return cards.filter(function (c) { return !c.hidden; }); }
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var f = chip.getAttribute('data-filter');
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+          cards.forEach(function (card) { card.hidden = f !== 'All' && card.getAttribute('data-cat') !== f; });
+          track('gallery_filter', { filter: f });
+        });
+      });
+
+      function show(card) {
+        var link = card.querySelector('.poster-card__cta');
+        var cardImg = card.querySelector('img');
+        current = card;
+        img.src = cardImg.getAttribute('src');
+        img.alt = cardImg.alt;
+        title.textContent = card.querySelector('.poster-card__title').textContent;
+        sub.textContent = card.querySelector('.poster-card__body p').textContent;
+        cta.href = link.href;
+        cta.textContent = link.textContent.replace(/\s*→$/, '');
+        if (link.target) { cta.target = link.target; cta.rel = link.rel; } else { cta.removeAttribute('target'); cta.removeAttribute('rel'); }
+        track('gallery_open', { poster_id: card.getAttribute('data-poster') });
+      }
+      function open(card) {
+        opener = document.activeElement;
+        show(card);
+        box.hidden = false;
+        document.body.classList.add('lightbox-open');
+        box.querySelector('.lightbox__close').focus();
+      }
+      function close() {
+        box.hidden = true;
+        document.body.classList.remove('lightbox-open');
+        if (opener) opener.focus();
+      }
+      function step(d) {
+        var list = visible();
+        var k = list.indexOf(current);
+        if (list.length) show(list[(k + d + list.length) % list.length]);
+      }
+
+      cards.forEach(function (card) {
+        card.querySelector('.poster-card__open').addEventListener('click', function () { open(card); });
+        card.querySelector('.poster-card__cta').addEventListener('click', function (e) {
+          track('gallery_cta', { poster_id: card.getAttribute('data-poster'), href: e.currentTarget.href });
+        });
+      });
+      cta.addEventListener('click', function () {
+        track('gallery_cta', { poster_id: current.getAttribute('data-poster'), href: cta.href });
+      });
+      box.querySelectorAll('[data-step]').forEach(function (b) {
+        b.addEventListener('click', function () { step(Number(b.getAttribute('data-step'))); });
+      });
+      box.querySelector('.lightbox__close').addEventListener('click', close);
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (box.hidden) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowRight') step(1);
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'Tab') {
+          var f = box.querySelectorAll('button, a[href]');
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>

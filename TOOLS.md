@@ -182,6 +182,7 @@ Both are dependency-free, safe to re-run, and support `--dry-run` and `--file <p
 
 - **`theme-v22-sitewide.mjs`** — on every page: swaps the stylesheet link to v22, sets the theme-color metas, and replaces the `<header class="topbar">` block with the one site header (Rescue / Services / Results / Blog / About + "Get same-day help" → `/#triage`). Run it on any new page, and **re-run it after every edit to the stylesheet**: links carry `?v=<content hash>` because Firebase caches CSS for a day, so the hash change is what makes browsers fetch the new file.
 - **`theme-v22-blog-posts.mjs`** — applies the blog post template to dated posts: breadcrumb, author row with date and read time, sticky aside (table of contents from `h2[id]` plus a Rescue card picked by category), tag pills, CTA card, prev/next cards. The article body is kept as-is. Posts already converted are skipped, so run it after adding new posts.
+- **`gen-gallery.mjs`** — rebuilds the poster wall on `/gallery/` (filter chips and cards) from `public/img/gallery/posters.json`, one record per poster in display order: `{ img, category, headline, subline, ctaLabel, href }`. Alt text is headline + subline. To add a poster, drop the image in `public/img/gallery/`, add its record, and run it (`--dry-run` supported).
 
 ---
 

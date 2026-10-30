@@ -6415,7 +6415,7 @@
           "position": 401,
           "item": {
             "@type": "Article",
-            "headline": "The Slowest Part of Your System Is Setting the Pace",
+            "headline": "What Is a Hot Path in Programming? How to Find and Fix It",
             "url": "https://taliferro.com/blog/aug2023/aug112023/a-pursuit-of-major-performance-gains-through-minor-adjustments.html",
             "author": {
               "@type": "Person",
