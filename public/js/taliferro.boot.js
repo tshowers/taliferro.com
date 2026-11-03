@@ -248,7 +248,7 @@ function boot () {
         ecommerce: 'Type one sentence about your e-commerce issue',
         website_development: 'Type one sentence about your website issue',
         bms: 'Type one sentence about momentum',
-        todd: 'Type one sentence about what TODD should handle'
+        todd: 'Type one sentence about what 16Ahead should handle'
       }
       state.placeholderText =
         placeholderByIntent[entryIntent] || state.placeholderText

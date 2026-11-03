@@ -32,33 +32,33 @@ function ga (name, params = {}) {
 }
 
 const CANONICAL_DEFINITIONS = {
-  TODD: 'TODD stands for Tactical Outreach and Data Development.',
+  TODD: 'TODD is now 16Ahead. Tell 16Ahead your mission and it keeps your business moving toward it: https://16ahead.com',
   BMS: 'BMS stands for Momentum System.',
 
   'Taliferro Group':
     'Taliferro Group is the services arm of Taliferro Tech, LLC. It provides consulting in web development, web security, e‑commerce, Agile coaching, APIs/integration, cloud, AI, and machine learning.',
 
   'Taliferro Tech':
-    'Taliferro Tech builds software products. Key products include a Laboratory Information System and TODD (a Momentum System).',
+    'Taliferro Tech builds 16Ahead (https://16ahead.com), formerly called TODD.',
 
   Network:
-    'Network is TODD’s contact module: manage contacts with automated data cleanup, enrichment, and email validation.',
+    'Network is 16Ahead’s contact space: manage contacts with automated data cleanup, enrichment, and email validation.',
 
   Outreach:
-    'Outreach is TODD’s email module: draft emails, run campaigns, and stay on top of follow‑ups.',
+    'Outreach is 16Ahead’s email space: draft emails, run campaigns, and stay on top of follow‑ups.',
 
   Pulse:
-    'Pulse is TODD’s survey module: collect feedback and signals through surveys.',
+    'Pulse is 16Ahead’s survey space: collect feedback and signals through surveys.',
 
   Moves:
-    'Moves is TODD’s task and project module: outcome‑linked tasks tied to outreach, proposals, or data work.',
+    'Moves is 16Ahead’s task and project space: outcome‑linked tasks tied to outreach, proposals, or data work.',
 
-  Docs: 'Docs is TODD’s document and knowledge module: store documents and keep notes organized.',
+  Docs: 'Docs is 16Ahead’s document and knowledge space: store documents and keep notes organized.',
 
   MatchMaker:
     'MatchMaker pairs primes and subs (or partners) using NAICS codes, categories, and certifications.',
 
-  Glossary: 'TODD Help and Glossary: https://todd.taliferro.tech/help'
+  Glossary: '16Ahead Help and Glossary: https://app.16ahead.com/help'
 }
 
 async function postJson (url, payload, signal) {

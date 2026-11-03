@@ -91,9 +91,9 @@
 
     todd: {
       kicker: 'Momentum broke somewhere',
-      headline: 'Quick TODD check?',
+      headline: 'Quick 16Ahead check?',
       body: 'Type what’s stuck. We’ll route you to the right next step.',
-      cta: 'Describe what you want TODD to do',
+      cta: 'Describe what you want 16Ahead to do',
       intent: 'todd'
     },
 

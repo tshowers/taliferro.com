@@ -176,6 +176,7 @@
     <div class="page-shell post-layout">
       <article class="post-article">
         <div class="post__content clearfix">
+<div class="callout" data-rename-note="16ahead"><p>TODD is now 16Ahead. This post was written under the old name; the product lives on at <a href="https://16ahead.com">16ahead.com</a>.</p></div>
           <p>If your Angular project still has an <code>AppModule</code>, or you're used to wiring Firebase into a module instead of a config file, Angular 20 is going to feel different. Standalone components are the default now, not an opt-in — and that changes exactly where and how AngularFire gets set up.</p>
           <p>Taliferro ran into this directly rebuilding the frontend for <a href="https://taliferro.tech/">TODD</a>, our own product, on Angular 20. The old NgModule-based Firebase setup didn't just need a tweak — it had to move into <code>app.config.ts</code> entirely, or the new rendering features wouldn't work correctly.</p>
           <p>This guide walks through that exact migration: creating a standalone Angular 20 project, adding AngularFire, wiring Firebase services into <code>app.config.ts</code>, and confirming the connection actually works.</p>

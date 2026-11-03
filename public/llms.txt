@@ -2,7 +2,7 @@
 
 > Taliferro (Taliferro Group) is a Seattle-based IT consulting and advisory firm. It helps businesses find the bottleneck holding them back and fixes it directly: cloud architecture, AI/ML, software development, API design, agile delivery, and technology leadership.
 
-taliferro.com covers consulting and advisory work only. Taliferro's software products (including TODD) are covered at https://taliferro.tech, not on this site.
+taliferro.com covers consulting and advisory work only. Taliferro's software product, 16Ahead (formerly TODD), is covered at https://16ahead.com, and the company behind it at https://taliferro.tech, not on this site.
 
 ## Consulting and advisory
 
@@ -19,6 +19,10 @@ taliferro.com covers consulting and advisory work only. Taliferro's software pro
 - [IT consultant, Seattle](https://taliferro.com/it-consultant-seattle/)
 - [Small business IT consultant](https://taliferro.com/small-business-it-consultant/)
 - [Case studies](https://taliferro.com/case-studies.html): client results
+
+## Careers
+
+- [Careers](https://taliferro.com/careers/): part-time roles with Taliferro Tech, LLC, the software company that builds 16Ahead. These jobs are not with Taliferro Group, and Taliferro Group's consulting practice is not hiring through this page.
 
 ## Blog
 

@@ -125,17 +125,17 @@
       },
       {
         "source": "/business-momentum-system{,/**}",
-        "destination": "https://taliferro.tech/",
+        "destination": "https://16ahead.com/",
         "type": 301
       },
       {
         "source": "/business-momentum-system/index.html%22",
-        "destination": "https://taliferro.tech/",
+        "destination": "https://16ahead.com/",
         "type": 301
       },
       {
         "source": "/business-momentum-system/index.html%2522",
-        "destination": "https://taliferro.tech/",
+        "destination": "https://16ahead.com/",
         "type": 301
       },
       {
@@ -175,7 +175,7 @@
       },
       {
         "source": "/todd{,/**}",
-        "destination": "https://taliferro.tech/",
+        "destination": "https://16ahead.com/",
         "type": 301
       },
       {

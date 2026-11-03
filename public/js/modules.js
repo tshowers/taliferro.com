@@ -48197,7 +48197,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech'
+      url: 'https://lead-vault.16ahead.com'
     },
     description:
       'Lead Vault helps you find buyers already looking for what you sell, then move those leads into action inside TODD.'
@@ -48230,7 +48230,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['web_dev'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/cloud-services.html'
+      url: 'https://lead-vault.16ahead.com/buyers/cloud-services.html'
     },
     description:
       'Use Lead Vault to find companies already moving infrastructure, platforms, or applications to the cloud, then move stronger buyer signal into TODD for outreach and execution.'
@@ -48294,7 +48294,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['web_dev'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/cloud-services-seattle.html'
+      url: 'https://lead-vault.16ahead.com/buyers/cloud-services-seattle.html'
     },
     description:
       'Use Lead Vault to find Seattle companies already moving infrastructure, platforms, or applications to the cloud, then move stronger buyer signal into TODD for outreach and execution.'
@@ -48358,7 +48358,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['web_dev'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/cloud-services-washington.html'
+      url: 'https://lead-vault.16ahead.com/buyers/cloud-services-washington.html'
     },
     description:
       'Use Lead Vault to find Washington companies already moving infrastructure, platforms, or applications to the cloud, then move stronger buyer signal into TODD for outreach and execution.'
@@ -48422,7 +48422,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/cybersecurity.html'
+      url: 'https://lead-vault.16ahead.com/buyers/cybersecurity.html'
     },
     description:
       'Use Lead Vault to find companies already responding to security risk, compliance pressure, or threat exposure, then move stronger buyer signal into TODD for outreach and execution.'
@@ -48486,7 +48486,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/cybersecurity-seattle.html'
+      url: 'https://lead-vault.16ahead.com/buyers/cybersecurity-seattle.html'
     },
     description:
       'Use Lead Vault to find Seattle companies already responding to security risk, compliance pressure, or threat exposure, then move stronger buyer signal into TODD for outreach and execution.'
@@ -48550,7 +48550,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/cybersecurity-washington.html'
+      url: 'https://lead-vault.16ahead.com/buyers/cybersecurity-washington.html'
     },
     description:
       'Use Lead Vault to find Washington companies already responding to security risk, compliance pressure, or threat exposure, then move stronger buyer signal into TODD for outreach and execution.'
@@ -48614,7 +48614,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/real-estate-investors.html'
+      url: 'https://lead-vault.16ahead.com/buyers/real-estate-investors.html'
     },
     description:
       'Use Lead Vault to find real estate investors already acquiring or evaluating property, then move stronger buyer signal into TODD for outreach and execution.'
@@ -48678,7 +48678,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/technology-services.html'
+      url: 'https://lead-vault.16ahead.com/buyers/technology-services.html'
     },
     description:
       'Use Lead Vault to find companies already looking for technology services, then move stronger buyer signal into TODD for outreach and follow-through.'
@@ -48742,7 +48742,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/technology-services-seattle.html'
+      url: 'https://lead-vault.16ahead.com/buyers/technology-services-seattle.html'
     },
     description:
       'Use Lead Vault to find Seattle companies already looking for technology services, then move stronger buyer signal into TODD for outreach and follow-through.'
@@ -48807,7 +48807,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/buyers/technology-services-washington.html'
+      url: 'https://lead-vault.16ahead.com/buyers/technology-services-washington.html'
     },
     description:
       'Use Lead Vault to find Washington companies already looking for technology services, then move stronger buyer signal into TODD for outreach and follow-through.'
@@ -48898,7 +48898,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://lead-vault.taliferro.tech/sectors/healthcare.html'
+      url: 'https://lead-vault.16ahead.com/sectors/healthcare.html'
     },
     description:
       'Use Lead Vault to explore healthcare buyer signals across hospitals, clinics, and health systems, then move stronger opportunities into TODD.'
@@ -49196,7 +49196,7 @@ window.TALIFERRO_MODULES = [
     best_for: ['all'],
     asset: {
       kind: 'url',
-      url: 'https://ask.taliferro.tech'
+      url: 'https://assistant.16ahead.com'
     },
     description:
       'TODD is a Momentum System (MS) that helps teams keep work moving before it turns into admin work. Follow-ups, next steps, cleaner data, and momentum—without extra busywork.'
