@@ -16,18 +16,18 @@
     }
   </script>
   <meta name="robots" content="index, follow" />
-  <title>IT Rescue Engagement — $999 Flat | IT Consulting Seattle | Taliferro</title>
-  <meta name="description" content="Your team can't give you a straight answer. Taliferro diagnoses cloud costs, data quality, AI adoption, APIs, or broken workflows — written findings in 3 business days. $999 flat. No retainer." />
+  <title>Tech Diagnosis Engagement — $999 Flat | IT Consulting Seattle | Taliferro</title>
+  <meta name="description" content="Your team can't give you a straight answer. Taliferro diagnoses cloud costs, data quality, AI adoption, APIs, or broken workflows — written findings within 24 hours. $999 flat. No retainer." />
   <link rel="canonical" href="https://taliferro.com/rescue-me/" />
-  <meta property="og:title" content="IT Rescue Engagement — $999 Flat | Taliferro" />
-  <meta property="og:description" content="Taliferro diagnoses your IT problem and delivers a clear written answer in 3 business days. $999 flat. No retainer. Seattle-based, remote-ready." />
+  <meta property="og:title" content="Tech Diagnosis Engagement — $999 Flat | Taliferro" />
+  <meta property="og:description" content="Taliferro diagnoses your IT problem and delivers a clear written answer within 24 hours. $999 flat. No retainer. Seattle-based, remote-ready." />
   <meta property="og:url" content="https://taliferro.com/rescue-me/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Taliferro" />
   <meta property="og:image" content="https://taliferro.com/img/general/taliferro-group-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IT Rescue Engagement — $999 Flat | Taliferro" />
-  <meta name="twitter:description" content="Written IT diagnosis in 3 business days. $999 flat. No retainer. Cloud, data, AI, APIs, and more." />
+  <meta name="twitter:title" content="Tech Diagnosis Engagement — $999 Flat | Taliferro" />
+  <meta name="twitter:description" content="Written IT diagnosis within 24 hours. $999 flat. No retainer. Cloud, data, AI, APIs, and more." />
   <meta name="twitter:image" content="https://taliferro.com/img/general/taliferro-group-logo.png" />
   <script type="application/ld+json">
   {
@@ -36,9 +36,9 @@
       {
         "@type": "ProfessionalService",
         "@id": "https://taliferro.com/rescue-me/#service",
-        "name": "Taliferro IT Rescue Engagement",
+        "name": "Taliferro Tech Diagnosis Engagement",
         "url": "https://taliferro.com/rescue-me/",
-        "description": "Taliferro reviews cloud costs, data quality, AI adoption, APIs, or broken workflows and delivers a clear written diagnosis with prioritized next steps. $999 flat. Results in 3 business days.",
+        "description": "Taliferro reviews cloud costs, data quality, AI adoption, APIs, or broken workflows and delivers a clear written diagnosis with prioritized next steps. $999 flat. Results within 24 hours.",
         "priceRange": "$999",
         "provider": { "@type": "Organization", "name": "Taliferro Tech, LLC", "url": "https://taliferro.com/" },
         "areaServed": [{ "@type": "City", "name": "Seattle" }, { "@type": "Country", "name": "United States" }]
@@ -47,22 +47,40 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Taliferro", "item": "https://taliferro.com/" },
-          { "@type": "ListItem", "position": 2, "name": "IT Rescue Engagement", "item": "https://taliferro.com/rescue-me/" }
+          { "@type": "ListItem", "position": 2, "name": "Tech Diagnosis Engagement", "item": "https://taliferro.com/rescue-me/" }
         ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "What exactly do I get for $999?", "acceptedAnswer": { "@type": "Answer", "text": "A written diagnosis of your specific problem, a prioritized action list with defined first moves, and a 60-minute debrief call. Delivered within 3 business days of your intake call." } },
-          { "@type": "Question", "name": "How fast will this actually move?", "acceptedAnswer": { "@type": "Answer", "text": "We schedule intake within 24 hours of payment. Delivery is within 3 business days of that call. Most clients have their diagnosis before the end of the week they booked." } },
+          { "@type": "Question", "name": "What exactly do I get for $999?", "acceptedAnswer": { "@type": "Answer", "text": "A written diagnosis of your specific problem, a prioritized action list with defined first moves, and a 60-minute debrief call. You answer a short questionnaire, see a free preview, and get the full report within 24 hours of payment." } },
+          { "@type": "Question", "name": "How fast will this actually move?", "acceptedAnswer": { "@type": "Answer", "text": "The questionnaire takes about 3 minutes and your free preview is ready a few minutes later. Pay $999 and your full report, reviewed by Tyrone before release, arrives by email within 24 hours." } },
           { "@type": "Question", "name": "What kinds of problems do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "Cloud cost and architecture, data quality and reporting, AI adoption, API and integration failures, engineering velocity, legacy system decisions, and general technology strategy for executive leaders." } },
-          { "@type": "Question", "name": "Will you try to sell me a bigger engagement?", "acceptedAnswer": { "@type": "Answer", "text": "No. The rescue is complete in itself. If after delivery you want to continue working together, that is a separate conversation you initiate — not something we push." } }
+          { "@type": "Question", "name": "Will you try to sell me a bigger engagement?", "acceptedAnswer": { "@type": "Answer", "text": "No. The diagnosis is complete in itself. If after delivery you want to continue working together, that is a separate conversation you initiate — not something we push." } }
         ]
       }
     ]
   }
   </script>
   <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=da796c0a">
+  <script>
+    /* ---- Tech Diagnosis funnel switch ----
+       usePulse: false -> "Book" buttons go straight to Stripe (current flow).
+       usePulse: true  -> they go to the Tech Diagnosis Pulse in TODD (master tenant), carrying utm params.
+       Flip only once the Pulse is deployed and published. */
+    window.RESCUE_LINKS = {
+      usePulse: true,
+      pulseUrl: 'https://pulse.16ahead.com/take/D5Sl91k6fBX4sWo64FJE'
+    };
+  </script>
+  <!-- Meta Pixel ("Taliferro Tech Facebook Data", shared with Find); off on localhost -->
+  <script>
+    if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) {
+      !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1136623382219314');
+      fbq('track', 'PageView');
+    }
+  </script>
   <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
 </head>
 
@@ -90,16 +108,16 @@
     <div class="page-shell">
       <div class="hero-grid">
         <div>
-          <div class="kicker">IT Rescue Engagement</div>
+          <div class="kicker">Tech Diagnosis Engagement</div>
           <h1>The most expensive problem is the one nobody can explain</h1>
-          <p>Cloud costs keep rising. Delivery keeps slowing. Data keeps disagreeing. Everyone has an update, but nobody has an answer. Taliferro investigates the problem and delivers a written diagnosis with prioritized next steps in three business days—for a $999 flat fee.</p>
+          <p>Cloud costs keep rising. Delivery keeps slowing. Data keeps disagreeing. Everyone has an update, but nobody has an answer. Answer a 3-minute questionnaire and see a free preview of what we found. Unlock the full written diagnosis with prioritized next steps for $999, delivered within 24 hours.</p>
           <div class="btnrow">
-            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_hero" data-track-destination="stripe">Book Your Rescue — $999</a>
+            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_hero" data-track-destination="stripe">Start your free preview</a>
             <a class="button" href="https://calendar.app.google/yC6mU7ZBQXdk4esa8" target="_blank" rel="noopener" data-track-cta="schedule_rescue_hero" data-track-destination="calendar">Schedule a call first</a>
           </div>
           <div class="pillrow" aria-label="Trust indicators">
             <div class="pill">✓ 57 systems reviewed this year</div>
-            <div class="pill">✓ Intake within 24 hours</div>
+            <div class="pill">✓ Free preview in minutes</div>
             <div class="pill">✓ No retainer</div>
             <div class="pill">✓ Seattle-based, remote-ready</div>
           </div>
@@ -109,16 +127,16 @@
             <div class="kicker">What you get</div>
             <div class="metric"><strong>$999</strong><span>Flat fee. One engagement.</span></div>
             <div class="divider"></div>
-            <p><strong>Delivered within 3 business days:</strong></p>
+            <p><strong>Delivered within 24 hours of payment:</strong></p>
             <ul class="list">
-              <li>Intake call within 24 hours of booking</li>
+              <li>A free preview before you pay anything</li>
               <li>Written diagnosis — specific, not generic</li>
               <li>Prioritized action list with defined first moves</li>
               <li>60-minute debrief to walk through findings</li>
               <li>Independent of your internal team</li>
             </ul>
             <div class="divider"></div>
-            <p class="fine">If we scope the intake and decide we're not the right fit, we'll tell you before any work starts.</p>
+            <p class="fine">See the preview first. If it doesn't describe your problem, don't buy it.</p>
           </div>
         </div>
       </div>
@@ -158,7 +176,7 @@
         </div>
       </div>
       <div class="card" style="margin-top:24px;">
-        <p class="fine"><strong>This is not for you if:</strong> you want a vendor to implement something, you need ongoing managed services, or you already know exactly what needs to be built. The rescue is a focused diagnostic engagement — not a delivery engagement.</p>
+        <p class="fine"><strong>This is not for you if:</strong> you want a vendor to implement something, you need ongoing managed services, or you already know exactly what needs to be built. It is a focused diagnostic engagement — not a delivery engagement.</p>
       </div>
     </div>
   </section>
@@ -168,14 +186,14 @@
       <div class="grid grid-2">
         <div>
           <div class="kicker">How it works</div>
-          <h2>Exactly what happens after you book</h2>
-          <p>No ambiguity. Here is the full sequence from payment to delivery.</p>
+          <h2>Exactly what happens, start to finish</h2>
+          <p>No ambiguity. Here is the full sequence from the first question to the debrief.</p>
           <ol class="list">
-            <li><strong>1) You book online — $999, paid once.</strong> Stripe checkout. Secure, instant. You'll receive a confirmation with next steps immediately.</li>
-            <li><strong>2) We schedule an intake call within 24 hours.</strong> A senior consultant from Taliferro contacts you to schedule a scoping call. You describe the situation in plain language — no prep required.</li>
-            <li><strong>3) We review the systems, context, and business impact.</strong> We look at what you share — architecture diagrams, reports, team org, vendor contracts, whatever is relevant. We ask clarifying questions. We do the analysis independently.</li>
-            <li><strong>4) You receive your written diagnosis — within 3 business days.</strong> A direct document naming the problem, the likely failure points, and prioritized first moves. Not a slide deck. Not a framework. A written answer you can act on.</li>
-            <li><strong>5) We debrief for 60 minutes.</strong> Walk through the findings together. Ask questions. Get clarity on the action sequence. If you want to continue working with us after this, that's a separate conversation — not a presupposition.</li>
+            <li><strong>1) Answer a 3-minute questionnaire.</strong> Plain language, no prep. What's broken, who builds it, and what it's costing you.</li>
+            <li><strong>2) See your free preview in minutes.</strong> The headline diagnosis and what we found, ranked by severity. Nothing to pay yet.</li>
+            <li><strong>3) Unlock the full report — $999, paid once.</strong> Secure Stripe checkout. Then book your 60-minute debrief for after you've had time to read it.</li>
+            <li><strong>4) Tyrone reviews it, and you have it within 24 hours.</strong> Every report is personally reviewed before release. You get a private link by email: every finding explained, a step-by-step action plan with owners and effort, and quick wins for this week. Not a slide deck. A written answer you can act on.</li>
+            <li><strong>5) We debrief for 60 minutes.</strong> Once you've read the report, we walk through the findings together. Ask questions. Get clarity on the action sequence. If you want to continue working with us after this, that's a separate conversation — not a presupposition.</li>
           </ol>
         </div>
         <div class="card">
@@ -185,7 +203,7 @@
           <div class="divider"></div>
           <p>Taliferro has reviewed enterprise systems across healthcare, finance, logistics, and SaaS — from $50M companies to pre-revenue startups. The problems are usually the same. The answers are specific to you.</p>
           <div class="btnrow">
-            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_process" data-track-destination="stripe">Book the Rescue</a>
+            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_process" data-track-destination="stripe">Start your free preview</a>
           </div>
         </div>
       </div>
@@ -220,27 +238,27 @@
         <div>
           <div class="kicker">The investment</div>
           <h2>$999 is a cheap answer to an expensive problem</h2>
-          <p>Cloud inefficiencies, slow delivery, and broken data cost most companies significantly more than $999 per month. The rescue pays for itself if it changes one decision.</p>
+          <p>Cloud inefficiencies, slow delivery, and broken data cost most companies significantly more than $999 per month. The diagnosis pays for itself if it changes one decision.</p>
           <ul class="list">
             <li>Big 4 consulting — hourly rate: <strong>$400–$800/hr</strong></li>
             <li>Mid-size firm engagement minimum: <strong>$15,000–$50,000</strong></li>
             <li>Fractional CTO — monthly retainer: <strong>$5,000–$15,000/mo</strong></li>
             <li>Waiting another quarter to decide: <strong>Unknown — usually painful</strong></li>
-            <li>Taliferro IT Rescue: <strong>$999 flat</strong></li>
+            <li>Taliferro Tech Diagnosis: <strong>$999 flat</strong></li>
           </ul>
           <div class="card" style="margin-top:16px;">
-            <p class="fine"><strong>No retainer trap.</strong> The $999 rescue is a single, time-boxed engagement. If you want to continue working with Taliferro after delivery, that's a separate conversation — not an automatic continuation. We don't lock clients into contracts they didn't choose.</p>
+            <p class="fine"><strong>No retainer trap.</strong> The $999 diagnosis is a single, time-boxed engagement. If you want to continue working with Taliferro after delivery, that's a separate conversation — not an automatic continuation. We don't lock clients into contracts they didn't choose.</p>
           </div>
         </div>
         <div class="card">
           <div class="kicker">Start today</div>
-          <div class="metric"><strong>$999</strong><span>One flat fee. No retainer. Results in 3 business days.</span></div>
+          <div class="metric"><strong>$999</strong><span>One flat fee. No retainer. Results within 24 hours.</span></div>
           <div class="btnrow" style="margin-top:16px;">
-            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_price" data-track-destination="stripe">Book the Rescue Now</a>
+            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_price" data-track-destination="stripe">Start your free preview</a>
           </div>
           <p class="fine" style="margin-top:10px;"><a href="tel:+14016462662" data-track-cta="call_rescue_price" data-track-destination="phone">Or call us first: +1 (401) 646-2662</a></p>
           <div class="pillrow" aria-label="Highlights">
-            <div class="pill">Intake in 24 hrs</div>
+            <div class="pill">Free preview first</div>
             <div class="pill">Written delivery</div>
             <div class="pill">60-min debrief</div>
             <div class="pill">No upsell pressure</div>
@@ -297,27 +315,27 @@
       <div class="grid grid-2" style="margin-top:24px;">
         <details class="card">
           <summary>What exactly do I get for $999?</summary>
-          <p>A written diagnosis of your specific problem, a prioritized action list with defined first moves, and a 60-minute debrief call. Delivered within 3 business days of your intake call. No slides. No frameworks. A direct answer.</p>
+          <p>A written diagnosis of your specific problem, a prioritized action list with defined first moves, and a 60-minute debrief call. You answer a short questionnaire, see a free preview, and get the full report within 24 hours of payment. No slides. No frameworks. A direct answer.</p>
         </details>
         <details class="card">
           <summary>How fast will this actually move?</summary>
-          <p>We schedule intake within 24 hours of payment. Delivery is within 3 business days of that call. Most clients have their diagnosis before the end of the week they booked.</p>
+          <p>The questionnaire takes about 3 minutes and your free preview is ready a few minutes later. Pay $999 and your full report, reviewed by Tyrone before release, arrives by email within 24 hours.</p>
         </details>
         <details class="card">
           <summary>What if you can't actually help me?</summary>
-          <p>If we scope the intake call and it's clear we're not the right fit for the problem, we'll tell you before doing any work. We'd rather lose a $999 engagement than deliver something that doesn't help you.</p>
+          <p>You see a free preview before you pay anything. If it doesn't describe your problem, don't buy it. And if your problem is office IT, like computers, email or Wi-Fi, the questionnaire points you to local help for free.</p>
         </details>
         <details class="card">
-          <summary>Do I need to prepare anything before the intake call?</summary>
-          <p>No. Come as you are. Describe the problem in plain language. If you have diagrams, vendor contracts, or reports you want us to review, share them — but nothing is required in advance.</p>
+          <summary>Do I need to prepare anything?</summary>
+          <p>No. The questionnaire asks plain-language questions and takes about 3 minutes. Numbers help if you have them, like what you've spent so far or what each month of delay costs, but nothing is required.</p>
         </details>
         <details class="card">
           <summary>Will you try to sell me a bigger engagement?</summary>
-          <p>No. The rescue is complete in itself. If after delivery you want to continue working together, that's a separate conversation you initiate — not something we push.</p>
+          <p>No. The diagnosis is complete in itself. If after delivery you want to continue working together, that's a separate conversation you initiate — not something we push.</p>
         </details>
         <details class="card">
           <summary>Are you local to Seattle or is this remote?</summary>
-          <p>Taliferro is Seattle-based and serves clients nationally. The rescue engagement is fully remote — all intake, review, and delivery happens digitally. Location doesn't matter.</p>
+          <p>Taliferro is Seattle-based and serves clients nationally. The diagnosis engagement is fully remote — the questionnaire, report, and debrief all happen online. Location doesn't matter.</p>
         </details>
         <details class="card">
           <summary>What kinds of problems do you cover?</summary>
@@ -325,7 +343,7 @@
         </details>
         <details class="card">
           <summary>My team says there's no problem. Should I still book?</summary>
-          <p>If you believe there's a problem that your team isn't surfacing clearly, independent eyes are exactly what the rescue is for. We don't report to your team — we report to you.</p>
+          <p>If you believe there's a problem that your team isn't surfacing clearly, independent eyes are exactly what the diagnosis is for. We don't report to your team — we report to you.</p>
         </details>
       </div>
     </div>
@@ -334,13 +352,13 @@
   <section class="section section-cta">
     <div class="wrap center">
       <div class="kicker">Ready?</div>
-      <h2>Get a clear answer this week</h2>
-      <p>The problem isn't going away. Every week without a diagnosis is a week the cost keeps compounding. Book the rescue and have a written answer in 3 business days.</p>
+      <h2>Get a clear answer tomorrow</h2>
+      <p>The problem isn't going away. Every week without a diagnosis is a week the cost keeps compounding. Start with the free preview. If it fits, have the full written answer within 24 hours.</p>
       <div class="btnrow center">
-        <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_final" data-track-destination="stripe">Book Your Rescue — $999</a>
+        <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener" data-track-cta="book_rescue_final" data-track-destination="stripe">Start your free preview</a>
         <a class="button" href="https://calendar.app.google/yC6mU7ZBQXdk4esa8" target="_blank" rel="noopener" data-track-cta="schedule_rescue_final" data-track-destination="calendar">Schedule a call first</a>
       </div>
-      <p class="fine" style="margin-top:16px;">Intake within 24 hours · Written delivery in 3 business days · No retainer</p>
+      <p class="fine" style="margin-top:16px;">Free preview in minutes · Full report within 24 hours of payment · No retainer</p>
     </div>
   </section>
   <!-- FOOTER -->
@@ -348,7 +366,7 @@
     <section class="section" data-related-services="true">
         <div class="page-shell">
             <div class="kicker">Related services</div>
-            <h2>If the $999 rescue isn't the full fix</h2>
+            <h2>If the $999 diagnosis isn't the full fix</h2>
             <div class="grid grid-3">
                 <a class="card" href="https://taliferro.com/it-consultant-seattle/">
                     <h3>IT Consultant Seattle</h3>
@@ -403,6 +421,22 @@
       });
     })();
   </script>
+  <!-- Point "Book" buttons at the Pulse when the funnel switch is on -->
+  <script>
+    (function () {
+      var cfg = window.RESCUE_LINKS || {};
+      if (!cfg.usePulse || !cfg.pulseUrl) return;
+      var url = new URL(cfg.pulseUrl);
+      new URLSearchParams(location.search).forEach(function (v, k) {
+        if (/^(utm_|src$|fbclid$|msclkid$)/.test(k)) url.searchParams.set(k, v);
+      });
+      if (!url.searchParams.has('src')) url.searchParams.set('src', 'rescue-me');
+      document.querySelectorAll('a[data-track-destination="stripe"]').forEach(function (a) {
+        a.href = url.toString();
+        a.setAttribute('data-track-destination', 'pulse');
+      });
+    })();
+  </script>
   <!-- CTA tracking -->
   <script>
     (function trackRescueCta() {
@@ -438,6 +472,12 @@
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'landing_cta_click', payload);
           if (payload.cta_name) window.gtag('event', payload.cta_name, payload);
+        }
+        if (typeof window.fbq === 'function' && payload.destination === 'stripe') {
+          window.fbq('track', 'InitiateCheckout', { value: 999, currency: 'USD', content_name: 'Tech Rescue' });
+        }
+        if (typeof window.fbq === 'function' && payload.destination === 'pulse') {
+          window.fbq('trackCustom', 'StartTechRescuePulse', { content_name: 'Tech Rescue' });
         }
         window.uetq = window.uetq || [];
         window.uetq.push('event', 'landing_cta_click', payload);

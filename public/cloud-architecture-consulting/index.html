@@ -173,7 +173,7 @@
         </div>
         <div class="btnrow">
           <a class="button button-primary" href="https://taliferro.com/contact.html">Book a cloud review</a>
-          <a class="button" href="/rescue-me/cloud-cost-control/">Start with a $999 IT Rescue</a>
+          <a class="button" href="/rescue-me/cloud-cost-control/">Start with a $999 Tech Diagnosis</a>
         </div>
       </div>
       <aside class="svc-check-card" data-self-check data-page="cloud-architecture-consulting" data-review="cloud review" data-review-label="Get a cloud assessment" data-review-href="https://taliferro.com/contact.html" data-rescue-href="/rescue-me/cloud-cost-control/" aria-label="Fast self-check">
@@ -417,7 +417,7 @@
           <div class="kicker">Next step</div>
           <h2 id="want-a-cloud-architecture-you-can-reason-about">Want a cloud architecture you can reason about?</h2>
           <p>Book a short call. We’ll identify where cost, fragility, or confusion is entering the system.</p>
-          <div class="btnrow"><a class="button" href="https://taliferro.com/contact.html">Book a cloud review</a><a class="button button--ghost" href="/rescue-me/cloud-cost-control/">Start with a $999 IT Rescue</a></div>
+          <div class="btnrow"><a class="button" href="https://taliferro.com/contact.html">Book a cloud review</a><a class="button button--ghost" href="/rescue-me/cloud-cost-control/">Start with a $999 Tech Diagnosis</a></div>
         </div>
         <div class="inner-panel">
           <h3>What to send us</h3>
@@ -446,8 +446,8 @@
         ['Pick any that apply.', 'Each one is a sign the system needs attention.'],
         ['1 of 4.', 'Worth a look before it spreads. A ' + review + ' will show where it started.'],
         ['2 of 4.', 'These usually share a root cause. A ' + review + ' finds it.'],
-        ['3 of 4.', 'This is costing you more than it should. Start with a $999 IT Rescue.'],
-        ['4 of 4.', 'This is costing you every week. Start with a $999 IT Rescue for a written plan in 3 days.']
+        ['3 of 4.', 'This is costing you more than it should. Start with a $999 Tech Diagnosis.'],
+        ['4 of 4.', 'This is costing you every week. Start with a $999 Tech Diagnosis for a written plan within 24 hours.']
       ];
       function update() {
         var n = box.querySelectorAll('.svc-check[aria-pressed="true"]').length;
@@ -457,7 +457,7 @@
         verdict.appendChild(strong);
         verdict.appendChild(document.createTextNode(' ' + lines[n][1]));
         var rescue = n >= 3;
-        cta.textContent = rescue ? 'Start with a $999 IT Rescue' : box.getAttribute('data-review-label');
+        cta.textContent = rescue ? 'Start with a $999 Tech Diagnosis' : box.getAttribute('data-review-label');
         cta.setAttribute('href', box.getAttribute(rescue ? 'data-rescue-href' : 'data-review-href'));
         return n;
       }

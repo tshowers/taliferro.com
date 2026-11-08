@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    /* ---- Funnel config: the only values to edit on this page ---- */
+    window.RESCUE_CONFIG = {
+      metaPixelId: '1136623382219314',                           // Meta Pixel ("Taliferro Tech Facebook Data", shared with Find); empty = Pixel off
+      debriefUrl: 'https://calendar.app.google/yC6mU7ZBQXdk4esa8', // debrief scheduling link (Pulse flow)
+      intakeUrl: 'https://calendar.app.google/aaMkkpCM7mwhksRn7',  // intake booking link (direct Stripe link flow, ?flow=intake)
+      value: 999,
+      currency: 'USD'
+    };
+  </script>
+  <script>
+    const isLocal = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:';
+    if (!isLocal) {
+      const s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDDC4DHEQN';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date()); gtag('config', 'G-FDDC4DHEQN');
+    }
+  </script>
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Payment Received — Tech Diagnosis | Taliferro</title>
+  <meta name="description" content="Your Tech Diagnosis payment was received. Your full report arrives by email within 24 hours." />
+  <link rel="canonical" href="https://taliferro.com/rescue-me/thank-you/" />
+  <link rel="stylesheet" href="/css/taliferro-styles-v22.css?v=da796c0a">
+  <script>if (!(location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.hostname === '0.0.0.0' || location.hostname === '[::1]' || location.protocol === 'file:')) { (function (w, d, t, u, o) { w[u] = w[u] || [], o.ts = (new Date).getTime(); var n = d.createElement(t); n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""), n.async = 1, n.onload = n.onreadystatechange = function () { var s = this.readyState; s && "loaded" !== s && "complete" !== s || (o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"), n.onload = n.onreadystatechange = null) }; var i = d.getElementsByTagName(t)[0]; i.parentNode.insertBefore(n, i); })(window, document, "script", "uetq", { ti: "187250715", enableAutoSpaTracking: true }); }</script>
+  <style>
+    .ty-steps { display: grid; gap: 14px; margin: 28px 0 32px; padding: 0; list-style: none; text-align: left; }
+    .ty-steps li { background: var(--card); border-radius: var(--radius-md); padding: 18px 22px; box-shadow: var(--shadow-sm); }
+    .ty-steps strong { display: block; color: var(--text); margin-bottom: 4px; }
+    .ty-steps p { margin: 0; }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="topbar no-print">
+    <div class="page-shell topbar-inner">
+      <a class="brand" href="/" aria-label="Taliferro home">
+        <img class="brandLogo" src="https://taliferro.com/img/general/taliferro-logo.svg" alt="Taliferro logo" width="36" height="36" onerror="this.style.display='none'" />
+        <span>Taliferro</span>
+      </a>
+      <nav class="nav-links" aria-label="Site navigation">
+        <a href="/rescue-me/">Rescue</a>
+        <a href="/services/">Services</a>
+        <a href="/case-studies.html">Results</a>
+        <a href="/blog/">Blog</a>
+        <a href="/about.html">About</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">Dark</button>
+        <a class="button button-primary" href="/#triage">Get same-day help</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap center" style="max-width:720px;">
+        <div class="kicker">Tech Diagnosis</div>
+        <h1 style="margin-left:auto;margin-right:auto;">Payment received</h1>
+        <p class="lead" id="ty-lead">Your Tech Diagnosis report is being finalized. Tyrone personally reviews every report before release. You'll get an email with a private link to your full report within 24 hours.</p>
+
+        <ol class="ty-steps" id="ty-steps">
+          <li><strong>1. Book your 60-minute debrief</strong><p>Pick a time at least two days out, so you've had your report for a day or more before we meet.</p></li>
+          <li><strong>2. Watch your inbox</strong><p>Your private report link arrives within 24 hours. Check spam if you don't see it.</p></li>
+          <li><strong>3. Walk through it together</strong><p>Read the report first. On the debrief we go through the findings and the first moves, and answer your questions.</p></li>
+        </ol>
+
+        <div class="btnrow center">
+          <a class="button button-primary" id="debrief-link" href="https://calendar.app.google/yC6mU7ZBQXdk4esa8" target="_blank" rel="noopener" data-track-cta="book_debrief_thankyou" data-track-destination="calendar">Book your debrief</a>
+        </div>
+        <p class="fine" style="margin-top:16px;">Questions? Call +1 (401) 646-2662 or email <a href="mailto:info@taliferro.com">info@taliferro.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer no-print">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <p class="footer-copy">Seattle &bull; Taliferro Tech, LLC &bull; &copy; 2026 Taliferro&reg; is registered in the U.S. Patent and Trademark Office. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/case-studies.html">Case Studies</a>
+          <a href="/gallery/">Gallery</a>
+          <a href="/sitemap.html">Sitemap</a>
+        <a href="https://taliferro.tech">Looking for our software? taliferro.tech</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark mode toggle -->
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var saved = localStorage.getItem('taliferro-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      function setTheme(mode) {
+        var isDark = mode === 'dark';
+        document.body.classList.toggle('theme-dark', isDark);
+        btn.textContent = isDark ? 'Light' : 'Dark';
+        btn.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('taliferro-theme', mode);
+      }
+      setTheme(saved || (prefersDark ? 'dark' : 'light'));
+      btn.addEventListener('click', function () {
+        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
+      });
+    })();
+  </script>
+
+  <!-- Purchase tracking: no API calls; Stripe's session_id is used only as the dedup event ID -->
+  <script>
+    (function () {
+      var cfg = window.RESCUE_CONFIG;
+      var params = new URLSearchParams(location.search);
+      var link = document.getElementById('debrief-link');
+      if (params.get('flow') === 'intake') {
+        // Paid through the direct Stripe link (no Pulse answers yet): the next step is the intake call
+        document.getElementById('ty-lead').textContent = 'Your Tech Diagnosis is booked. Pick a time for your intake call so we start with the right context. Your written diagnosis arrives within 24 hours of that call.';
+        document.getElementById('ty-steps').innerHTML =
+          '<li><strong>1. Book your intake call</strong><p>Choose a time that works for you. No prep required.</p></li>' +
+          '<li><strong>2. Bring the problem</strong><p>Links, screenshots, reports or notes. Whatever shows where things break.</p></li>' +
+          '<li><strong>3. Get your diagnosis</strong><p>A written diagnosis with prioritized first moves within 24 hours of the call, then a 60-minute debrief.</p></li>';
+        if (link) { link.textContent = 'Book your intake call'; link.href = cfg.intakeUrl; link.setAttribute('data-track-cta', 'book_intake_thankyou'); }
+      } else if (link && cfg.debriefUrl) {
+        link.href = cfg.debriefUrl;
+      }
+
+      var sessionId = params.get('session_id') || '';
+      var local = location.hostname === '127.0.0.1' || location.hostname === 'localhost' || location.protocol === 'file:';
+      if (!sessionId || local) return; // only real Stripe redirects count as purchases
+
+      // Fire once per checkout session, even if the page is refreshed or revisited
+      var key = 'rescue_purchase_' + sessionId;
+      try { if (localStorage.getItem(key)) return; localStorage.setItem(key, '1'); } catch (_) {}
+
+      if (cfg.metaPixelId) {
+        !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', cfg.metaPixelId);
+        fbq('track', 'PageView');
+        fbq('track', 'Purchase', { value: cfg.value, currency: cfg.currency, content_name: 'Tech Rescue' }, { eventID: sessionId });
+      }
+      if (typeof window.gtag === 'function') {
+        gtag('event', 'purchase', { transaction_id: sessionId, value: cfg.value, currency: cfg.currency, items: [{ item_name: 'Tech Rescue', price: cfg.value, quantity: 1 }] });
+      }
+      window.uetq = window.uetq || [];
+      window.uetq.push('event', 'purchase', { revenue_value: cfg.value, currency: cfg.currency });
+    })();
+  </script>
+</body>
+
+</html>

@@ -148,6 +148,7 @@ async function collectSectionPages(sectionDir){
         for await (const f of walk(absDir)){
       if (!isHtml(f)) continue;
       const rel = relFromRootNormalized(f);
+      if (/(^|\/)thank-you(\/|\.html$)/.test(rel)) continue; // post-payment pages are noindex; keep out of sitemaps
       const stat = await fs.stat(f);
 
       // Blog: prefer semantic lastmod from Article/BlogPosting JSON-LD

@@ -152,7 +152,7 @@
         </div>
         <div class="btnrow">
           <a class="button button-primary" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a>
-          <a class="button" href="/rescue-me/data-quality/">Start with a $999 IT Rescue</a>
+          <a class="button" href="/rescue-me/data-quality/">Start with a $999 Tech Diagnosis</a>
         </div>
       </div>
       <aside class="svc-check-card" data-self-check data-page="api-design-services" data-review="free API audit" data-review-label="Get an API assessment" data-review-href="mailto:info@taliferro.com?subject=API%20Assessment%20Request" data-rescue-href="/rescue-me/data-quality/" aria-label="Fast self-check">
@@ -346,7 +346,7 @@
           <div class="kicker">Next step</div>
           <h2 id="want-an-api-teams-can-rely-on">Want an API teams can rely on?</h2>
           <p>Send a note. We’ll respond with the fastest path to stabilize your APIs and integrations.</p>
-          <div class="btnrow"><a class="button" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a><a class="button button--ghost" href="/rescue-me/data-quality/">Start with a $999 IT Rescue</a></div>
+          <div class="btnrow"><a class="button" href="mailto:info@taliferro.com?subject=Free%20API%20Audit%20Request">Book a free API audit</a><a class="button button--ghost" href="/rescue-me/data-quality/">Start with a $999 Tech Diagnosis</a></div>
           <p class="svc-email">Prefer email? <a href="mailto:info@taliferro.com?subject=API%20Design%20and%20Integration%20Help">info@taliferro.com</a></p>
         </div>
         <div class="inner-panel">
@@ -377,8 +377,8 @@
         ['Pick any that apply.', 'Each one is a sign the system needs attention.'],
         ['1 of 4.', 'Worth a look before it spreads. A ' + review + ' will show where it started.'],
         ['2 of 4.', 'These usually share a root cause. A ' + review + ' finds it.'],
-        ['3 of 4.', 'This is costing you more than it should. Start with a $999 IT Rescue.'],
-        ['4 of 4.', 'This is costing you every week. Start with a $999 IT Rescue for a written plan in 3 days.']
+        ['3 of 4.', 'This is costing you more than it should. Start with a $999 Tech Diagnosis.'],
+        ['4 of 4.', 'This is costing you every week. Start with a $999 Tech Diagnosis for a written plan within 24 hours.']
       ];
       function update() {
         var n = box.querySelectorAll('.svc-check[aria-pressed="true"]').length;
@@ -388,7 +388,7 @@
         verdict.appendChild(strong);
         verdict.appendChild(document.createTextNode(' ' + lines[n][1]));
         var rescue = n >= 3;
-        cta.textContent = rescue ? 'Start with a $999 IT Rescue' : box.getAttribute('data-review-label');
+        cta.textContent = rescue ? 'Start with a $999 Tech Diagnosis' : box.getAttribute('data-review-label');
         cta.setAttribute('href', box.getAttribute(rescue ? 'data-rescue-href' : 'data-review-href'));
         return n;
       }

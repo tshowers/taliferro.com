@@ -70,7 +70,7 @@
   "description": "Taliferro Group provides AI & Machine Learning consulting that turns your data into revenue—predictive analytics, NLP, computer vision, and custom models. Book a consult.",
   "inLanguage": "en-US",
   "datePublished": "2024-01-01T05:58:44+00:00",
-  "dateModified": "2025-09-26T05:58:44+00:00",
+  "dateModified": "2026-11-07",
   "publisher": {
     "@type": "Organization",
     "name": "Taliferro Group",
@@ -322,7 +322,7 @@
         </div>
         <div class="btnrow">
           <a class="button button-primary" href="https://taliferro.com/contact.html">Book a free AI assessment</a>
-          <a class="button" href="/rescue-me/ai-without-risk/">Start with a $999 IT Rescue</a>
+          <a class="button" href="/rescue-me/ai-without-risk/">Start with a $999 Tech Diagnosis</a>
         </div>
       </div>
       <aside class="svc-check-card" data-self-check data-page="machine-learning-services" data-review="free AI assessment" data-review-label="Book a free AI assessment" data-review-href="https://taliferro.com/contact.html" data-rescue-href="/rescue-me/ai-without-risk/" aria-label="Fast self-check">
@@ -471,7 +471,7 @@
           <div class="kicker">Why it matters</div>
           <h2 id="machine-learning-is-only-useful-when-it-changes-ex">Machine learning is only useful when it changes execution</h2>
           <p>We give AI and machine learning work a practical frame: what should happen next, who should act, what gets measured, and where momentum is breaking down.</p>
-          <div class="btnrow"><a class="button" href="https://taliferro.com/contact.html">Contact us</a><a class="button button--ghost" href="/rescue-me/ai-without-risk/">Start with a $999 IT Rescue</a></div>
+          <div class="btnrow"><a class="button" href="https://taliferro.com/contact.html">Contact us</a><a class="button button--ghost" href="/rescue-me/ai-without-risk/">Start with a $999 Tech Diagnosis</a></div>
         </div>
         <div class="inner-panel">
           <h3>Related reading</h3>
@@ -497,8 +497,8 @@
         ['Pick any that apply.', 'Each one is a sign the system needs attention.'],
         ['1 of 4.', 'Worth a look before it spreads. A ' + review + ' will show where it started.'],
         ['2 of 4.', 'These usually share a root cause. A ' + review + ' finds it.'],
-        ['3 of 4.', 'This is costing you more than it should. Start with a $999 IT Rescue.'],
-        ['4 of 4.', 'This is costing you every week. Start with a $999 IT Rescue for a written plan in 3 days.']
+        ['3 of 4.', 'This is costing you more than it should. Start with a $999 Tech Diagnosis.'],
+        ['4 of 4.', 'This is costing you every week. Start with a $999 Tech Diagnosis for a written plan within 24 hours.']
       ];
       function update() {
         var n = box.querySelectorAll('.svc-check[aria-pressed="true"]').length;
@@ -508,7 +508,7 @@
         verdict.appendChild(strong);
         verdict.appendChild(document.createTextNode(' ' + lines[n][1]));
         var rescue = n >= 3;
-        cta.textContent = rescue ? 'Start with a $999 IT Rescue' : box.getAttribute('data-review-label');
+        cta.textContent = rescue ? 'Start with a $999 Tech Diagnosis' : box.getAttribute('data-review-label');
         cta.setAttribute('href', box.getAttribute(rescue ? 'data-rescue-href' : 'data-review-href'));
         return n;
       }
