@@ -76,9 +76,9 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Taliferro Data Quality Rescue",
+    "name": "Taliferro Data Quality Diagnosis",
     "url": "https://taliferro.com/rescue-me/data-quality/",
-    "description": "Diagnose root causes of enterprise data quality problems. $999 flat. Intake within 24 hours. Written delivery within 24 hours.",
+    "description": "Diagnose root causes of enterprise data quality problems. $999 flat. Free preview first. Written report within 24 hours of payment.",
     "priceRange": "$999",
     "provider": { "@type": "Organization", "name": "Taliferro Group", "url": "https://taliferro.com/" }
   }
@@ -89,7 +89,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Taliferro", "item": "https://taliferro.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Rescue Me", "item": "https://taliferro.com/rescue-me/" },
+      { "@type": "ListItem", "position": 2, "name": "Tech Diagnosis", "item": "https://taliferro.com/rescue-me/" },
       { "@type": "ListItem", "position": 3, "name": "Data Quality", "item": "https://taliferro.com/rescue-me/data-quality/" }
     ]
   }
@@ -106,7 +106,7 @@
         <span>Taliferro</span>
       </a>
       <nav class="nav-links" aria-label="Site navigation">
-        <a href="/rescue-me/" aria-current="page">Rescue</a>
+        <a href="/rescue-me/" aria-current="page">Diagnosis</a>
         <a href="/services/">Services</a>
         <a href="/case-studies.html">Results</a>
         <a href="/blog/">Blog</a>
@@ -127,11 +127,11 @@
           <p class="rescue-detail" data-landing-copy-two>Taliferro finds where visibility breaks, then gives your team a clear written diagnosis.</p>
           <div class="rescue-chips">
             <span class="pill pill--solid">$999 flat</span>
-            <span class="pill">Intake within 24 hours</span>
-            <span class="pill">Written plan within 24 hours</span>
+            <span class="pill">Free preview in minutes</span>
+            <span class="pill">Full report within 24 hours</span>
           </div>
           <div class="hero-actions">
-            <a class="button button-primary" data-primary-cta href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Get The Diagnosis</a>
+            <a class="button button-primary" data-primary-cta href="https://pulse.16ahead.com/take/D5Sl91k6fBX4sWo64FJE?src=data-quality" target="_blank" rel="noopener" data-pulse-cta>Start your free preview</a>
             <a class="button" href="https://calendar.app.google/yC6mU7ZBQXdk4esa8">Book a meeting</a>
           </div>
         </div>
@@ -160,7 +160,7 @@
             <h3 id="one-focused-session-clear-written-next-steps" data-story-final-title>One focused session. Clear written next steps</h3>
             <p data-story-final-copy>No long discovery project. No platform pitch. Just a direct diagnosis your team can act on.</p>
             <div class="btnrow">
-              <a class="button button-primary" data-story-cta href="https://calendar.app.google/yC6mU7ZBQXdk4esa8">Book Same-Day Rescue</a>
+              <a class="button button-primary" data-story-cta href="https://calendar.app.google/yC6mU7ZBQXdk4esa8">Book a call first</a>
               <a class="button" href="tel:+14016462662">Call directly</a>
             </div>
           </article>
@@ -191,7 +191,7 @@
           </article>
           <article class="card rescue-step card--cyan rescue-step--fix">
             <span class="num-badge" aria-hidden="true">4</span>
-            <div class="kicker">The rescue</div>
+            <div class="kicker">The diagnosis</div>
             <h3 id="we-find-where-visibility-breaks" data-section-four-title>We find where visibility breaks</h3>
             <p data-section-four-copy>One focused session. A clear diagnosis. The first moves your team should make next.</p>
           </article>
@@ -296,14 +296,14 @@
       <div class="page-shell">
         <div class="dark-panel rescue-cta__band">
           <div>
-            <div class="kicker">Same-Day Rescue</div>
+            <div class="kicker">Start here</div>
             <h2 id="stop-guessing-what-is-real" data-final-title>Stop guessing what is real</h2>
-            <p data-final-copy>Book one focused session. Get a written diagnosis within 24 hours.</p>
+            <p data-final-copy>Start with a free preview. Get the written diagnosis within 24 hours of payment.</p>
           </div>
           <div>
             <div class="rescue-price">$999</div>
             <div class="hero-actions">
-            <a class="button" href="https://calendar.app.google/yC6mU7ZBQXdk4esa8">Book Same-Day Rescue</a>
+            <a class="button" href="https://calendar.app.google/yC6mU7ZBQXdk4esa8">Book a call first</a>
             <a class="button button--ghost" href="mailto:info@taliferro.com?subject=Data%20Quality%20Rescue">Ask a question</a>
             <a class="button button--ghost" href="tel:+14016462662">Call directly</a>
             </div>
@@ -369,7 +369,20 @@
       </div>
     </div>
   </footer>
+  <!-- Carry ad tracking (utm_*, fbclid, msclkid) onto the Tech Diagnosis questionnaire links -->
+  <script>
+    (function () {
+      var keep = {};
+      new URLSearchParams(location.search).forEach(function (v, k) { if (/^(utm_|fbclid$|msclkid$)/.test(k)) keep[k] = v; });
+      document.querySelectorAll('a[data-pulse-cta]').forEach(function (a) {
+        var u = new URL(a.href);
+        Object.keys(keep).forEach(function (k) { u.searchParams.set(k, keep[k]); });
+        a.href = u.toString();
+      });
+    })();
+  </script>
 </body>
+
 <script>
   (function () {
     const params = new URLSearchParams(window.location.search);
@@ -389,7 +402,7 @@
         subtitle: 'When reports, spreadsheets, and dashboards disagree, your team stops acting and starts guessing.',
         copyOne: 'The problem is rarely the report. The problem is usually the system behind the report.',
         copyTwo: 'We are Business Transformation Consultants who find where visibility breaks, then gives your team a clear written diagnosis.',
-        primaryCta: 'Get The Diagnosis',
+        primaryCta: 'Start your free preview',
         proofTitle: 'Expert Business IT Network Systems',
         proofCopy: 'When leaders cannot see what is real, every decision takes longer than it should.',
         sectionTwoTitle: 'Your team cannot move fast when nobody trusts the view',
@@ -402,7 +415,7 @@
         sectionFiveTitle: 'A clear path back to one trusted view',
         sectionFiveCopy: 'You get the root causes, the broken handoffs, and the next moves needed to stop debating the data.',
         finalTitle: 'Stop guessing what is real.',
-        finalCopy: 'Book one focused session. Get a written diagnosis within 24 hours.',
+        finalCopy: 'Start with a free preview. Get the written diagnosis within 24 hours of payment.',
         storyKicker: 'Operational Visibility',
         storyTitle: 'Support starts with sight.',
         storyCopy: 'When reports disagree, teams lose time proving the truth instead of acting on it.',
@@ -417,7 +430,7 @@
         subtitle: 'Most transformation problems are really workflow, data, and operational visibility problems.',
         copyOne: 'If the business still runs on manual reconciliation, scattered spreadsheets, and disconnected systems, transformation stays theoretical.',
         copyTwo: 'Taliferro finds the operational drag and gives your team clear next steps within 24 hours.',
-        primaryCta: 'Book the diagnosis',
+        primaryCta: 'Start your free preview',
         proofTitle: 'Transformation fails when visibility is broken',
         proofCopy: 'Teams cannot improve what they cannot see, trust, or explain.',
         sectionTwoTitle: 'The business is not stuck because people are slow',
@@ -430,7 +443,7 @@
         sectionFiveTitle: 'A practical path to better flow',
         sectionFiveCopy: 'You get the broken handoffs, root causes, and next steps needed to move faster.',
         finalTitle: 'Stop calling system drag a people problem.',
-        finalCopy: 'Book one focused session. Get a written diagnosis within 24 hours.',
+        finalCopy: 'Start with a free preview. Get the written diagnosis within 24 hours of payment.',
         storyKicker: 'Business Transformation',
         storyTitle: 'Change starts where work gets stuck.',
         storyCopy: 'The system, not the slogan, determines how fast the business can move.',
@@ -445,7 +458,7 @@
         subtitle: 'When infrastructure, workflows, and reporting drift apart, the business slows down quietly.',
         copyOne: 'The issue is rarely one tool. It is usually the way tools, data, ownership, and process connect.',
         copyTwo: 'Taliferro identifies the break and gives your team clear next steps.',
-        primaryCta: 'Book the diagnosis',
+        primaryCta: 'Start your free preview',
         proofTitle: 'Disconnected systems create hidden labor',
         proofCopy: 'People copy, paste, reconcile, and chase updates because the system will not carry the work.',
         sectionTwoTitle: 'Good teams lose time between systems',
@@ -458,7 +471,7 @@
         sectionFiveTitle: 'A clearer systems path',
         sectionFiveCopy: 'You get root causes, broken handoffs, and practical next steps.',
         finalTitle: 'Stop letting disconnected systems slow the business.',
-        finalCopy: 'Book one focused session. Get a written diagnosis within 24 hours.',
+        finalCopy: 'Start with a free preview. Get the written diagnosis within 24 hours of payment.',
         storyKicker: 'IT Systems',
         storyTitle: 'Systems should reduce work.',
         storyCopy: 'When they add work, something underneath is broken.',
@@ -486,7 +499,7 @@
         sectionFiveTitle: 'A path to trusted reporting',
         sectionFiveCopy: 'You get the broken sources, weak handoffs, and next steps needed to restore confidence.',
         finalTitle: 'Stop building reports on broken inputs.',
-        finalCopy: 'Book one focused session. Get a written diagnosis within 24 hours.',
+        finalCopy: 'Start with a free preview. Get the written diagnosis within 24 hours of payment.',
         storyKicker: 'Data Warehouse',
         storyTitle: 'The warehouse is not magic.',
         storyCopy: 'It reflects the quality of the systems feeding it.',
@@ -514,7 +527,7 @@
         sectionFiveTitle: 'A path to analytics people trust',
         sectionFiveCopy: 'You get the root causes behind conflicting reports and unreliable dashboards.',
         finalTitle: 'Stop buying tools around a trust problem.',
-        finalCopy: 'Book one focused session. Get a written diagnosis within 24 hours.',
+        finalCopy: 'Start with a free preview. Get the written diagnosis within 24 hours of payment.',
         storyKicker: 'Analytics Tools',
         storyTitle: 'The chart is not the problem.',
         storyCopy: 'The problem is usually what the chart was fed.',
@@ -529,7 +542,7 @@
         subtitle: 'If the inputs are unclear, every insight carries doubt.',
         copyOne: 'Analysis should help leaders act. It should not send teams back into another round of spreadsheet proof.',
         copyTwo: 'Taliferro finds the break between data, reporting, and decision-making.',
-        primaryCta: 'Book the diagnosis',
+        primaryCta: 'Start your free preview',
         proofTitle: 'Trust comes before insight',
         proofCopy: 'The best analysis still fails when the team does not believe the data behind it.',
         sectionTwoTitle: 'Analysis should create clarity, not arguments',
@@ -542,7 +555,7 @@
         sectionFiveTitle: 'A clearer path to reliable analysis',
         sectionFiveCopy: 'You get root causes, broken handoffs, and practical fixes.',
         finalTitle: 'Stop analyzing data nobody trusts.',
-        finalCopy: 'Book one focused session. Get a written diagnosis within 24 hours.',
+        finalCopy: 'Start with a free preview. Get the written diagnosis within 24 hours of payment.',
         storyKicker: 'Data Analysis',
         storyTitle: 'Insight needs trust.',
         storyCopy: 'Without trust, analysis becomes another debate.',
@@ -631,7 +644,7 @@
       landing_title: selected.title
     });
 
-    document.querySelectorAll('a[href*="calendar.app.google"], a[href^="tel:"], a[href^="mailto:"], a[href*="buy.stripe.com"]').forEach((link) => {
+    document.querySelectorAll('a[href*="calendar.app.google"], a[href^="tel:"], a[href^="mailto:"], a[href*="pulse.16ahead.com"]').forEach((link) => {
       link.addEventListener('click', () => {
         trackEvent('landing_cta_click', {
           source: isMicrosoftAds ? 'microsoft_ads' : 'default',

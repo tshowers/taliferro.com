@@ -78,7 +78,7 @@
     "@type": "ProfessionalService",
     "name": "Taliferro IT Team Right-Sizing",
     "url": "https://taliferro.com/rescue-me/right-size-team/",
-    "description": "Diagnose why IT headcount isn't producing proportional output. $999 flat. Intake within 24 hours. Written delivery within 24 hours.",
+    "description": "Diagnose why IT headcount isn't producing proportional output. $999 flat. Free preview first. Written report within 24 hours of payment.",
     "priceRange": "$999",
     "provider": { "@type": "Organization", "name": "Taliferro Group", "url": "https://taliferro.com/" }
   }
@@ -89,7 +89,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Taliferro", "item": "https://taliferro.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Rescue Me", "item": "https://taliferro.com/rescue-me/" },
+      { "@type": "ListItem", "position": 2, "name": "Tech Diagnosis", "item": "https://taliferro.com/rescue-me/" },
       { "@type": "ListItem", "position": 3, "name": "Right-Size Your Team", "item": "https://taliferro.com/rescue-me/right-size-team/" }
     ]
   }
@@ -106,7 +106,7 @@
         <span>Taliferro</span>
       </a>
       <nav class="nav-links" aria-label="Site navigation">
-        <a href="/rescue-me/" aria-current="page">Rescue</a>
+        <a href="/rescue-me/" aria-current="page">Diagnosis</a>
         <a href="/services/">Services</a>
         <a href="/case-studies.html">Results</a>
         <a href="/blog/">Blog</a>
@@ -126,11 +126,11 @@
           <p class="rescue-detail">More people can create more meetings, more handoffs, and more unclear ownership unless the work is shaped differently.</p>
           <div class="rescue-chips">
             <span class="pill pill--solid">$999 flat</span>
-            <span class="pill">Intake within 24 hours</span>
-            <span class="pill">Written plan within 24 hours</span>
+            <span class="pill">Free preview in minutes</span>
+            <span class="pill">Full report within 24 hours</span>
           </div>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
+            <a class="button button-primary" href="https://pulse.16ahead.com/take/D5Sl91k6fBX4sWo64FJE?src=right-size-team" target="_blank" rel="noopener" data-pulse-cta>Start your free preview</a>
             <a class="button" href="mailto:info@taliferro.com?subject=Team%20Right-Sizing%20Rescue">Ask a question</a>
           </div>
         </div>
@@ -163,7 +163,7 @@
         </article>
         <article class="card rescue-step card--cyan rescue-step--fix">
           <span class="num-badge" aria-hidden="true">4</span>
-          <div class="kicker">The rescue</div>
+          <div class="kicker">The diagnosis</div>
           <h3 id="get-a-clear-view-of-where-the-team-is-heavy-thin-o">Get a clear view of where the team is heavy, thin, or misaligned</h3>
           <p>You get a written diagnosis showing where labor is being consumed, where accountability breaks, and what to consolidate, redirect, or protect.</p>
         </article>
@@ -204,14 +204,14 @@
       <div class="page-shell">
         <div class="dark-panel rescue-cta__band">
           <div>
-            <div class="kicker">Same-Day Rescue</div>
+            <div class="kicker">Start here</div>
             <h2 id="see-what-your-team-should-actually-look-like">See what your team should actually look like</h2>
             <p>Book one focused session and get a clear view of where the work is heavy, thin, or misaligned.</p>
           </div>
           <div>
             <div class="rescue-price">$999</div>
             <div class="hero-actions">
-            <a class="button" href="https://buy.stripe.com/bJefZh9IQfGfayS0Xm2VG0p" target="_blank" rel="noopener">Secure your slot</a>
+            <a class="button" href="https://pulse.16ahead.com/take/D5Sl91k6fBX4sWo64FJE?src=right-size-team" target="_blank" rel="noopener" data-pulse-cta>Start your free preview</a>
             <a class="button button--ghost" href="mailto:info@taliferro.com?subject=Team%20Right-Sizing%20Rescue">Ask a question</a>
             <a class="button button--ghost" href="tel:+14016462662">Call directly</a>
             </div>
@@ -277,6 +277,19 @@
       </div>
     </div>
   </footer>
+  <!-- Carry ad tracking (utm_*, fbclid, msclkid) onto the Tech Diagnosis questionnaire links -->
+  <script>
+    (function () {
+      var keep = {};
+      new URLSearchParams(location.search).forEach(function (v, k) { if (/^(utm_|fbclid$|msclkid$)/.test(k)) keep[k] = v; });
+      document.querySelectorAll('a[data-pulse-cta]').forEach(function (a) {
+        var u = new URL(a.href);
+        Object.keys(keep).forEach(function (k) { u.searchParams.set(k, keep[k]); });
+        a.href = u.toString();
+      });
+    })();
+  </script>
 </body>
+
 
 </html>

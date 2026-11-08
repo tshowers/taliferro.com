@@ -7,7 +7,7 @@ taliferro.com covers consulting and advisory work only. Taliferro's software pro
 ## Consulting and advisory
 
 - [Services](https://taliferro.com/services/): full list of consulting services
-- [Rescue Me](https://taliferro.com/rescue-me/): flat-fee IT rescue engagement with a written diagnosis
+- [Tech Diagnosis](https://taliferro.com/rescue-me/): $999 flat tech diagnosis with a free preview and a written report within 24 hours
 - [Fractional CTO](https://taliferro.com/fractional-cto/): on-demand technology leadership
 - [Cloud architecture consulting](https://taliferro.com/cloud-architecture-consulting/): AWS, Azure, and GCP
 - [Machine learning and AI consulting](https://taliferro.com/machine-learning-services/)
